@@ -18,6 +18,7 @@
 #include "txmempool.h"
 #include "ui_interface.h"
 #include "util.h"
+#include "utilmoneystr.h"
 
 #include <sstream>
 
@@ -1511,8 +1512,9 @@ bool CheckInputs(const CTransaction& tx, CValidationState &state, const CCoinsVi
         if (!tx.IsCoinStake())
         {
             if (nValueIn < tx.GetValueOut())
-                return state.DoS(100, error("CheckInputs() : %s value in < value out", tx.GetHash().ToString()),
-                                 REJECT_INVALID, "bad-txns-inputs-lower-outputs");
+                return state.DoS(100, error("CheckInputs() : %s value in (%s) < value out (%s)",
+                                            tx.GetHash().ToString(), FormatMoney(nValueIn), FormatMoney(tx.GetValueOut())),
+                                 REJECT_INVALID, "bad-txns-in-belowout");
 
             // Tally transaction fees
             CAmount nTxFee = nValueIn - tx.GetValueOut();
