@@ -38,6 +38,7 @@ public:
         nRPCPort = 45443;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
         nSubsidyHalvingInterval = 210000;
+        nMinerThreads = 0;
 
         // PoSV
         bnProofOfStakeLimit = CBigNum(~uint256(0) >> 20);
@@ -168,6 +169,7 @@ public:
         pchMessageStart[2] = 0xba;
         pchMessageStart[3] = 0xdf;
         nSubsidyHalvingInterval = 150;
+        nMinerThreads = 1;
         bnProofOfWorkLimit = bnProofOfStakeLimit = CBigNum(~uint256(0) >> 1);
         nLastProofOfWorkHeight = 350 - 1;
         genesis.nTime = 1401051600;
