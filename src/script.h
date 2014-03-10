@@ -193,6 +193,19 @@ enum
     SCRIPT_VERIFY_DERSIG    = (1U << 4), // enforce signature encodings as defined by BIP 66 (which is a softfork, while STRICTENC is not)
 };
 
+// Mandatory script verification flags that all new blocks must comply with for
+// them to be valid. (but old blocks may not comply with) Currently just P2SH,
+// but in the future other flags may be added, such as a soft-fork to enforce
+// strict DER encoding.
+static const unsigned int MANDATORY_SCRIPT_VERIFY_FLAGS = SCRIPT_VERIFY_P2SH;
+
+// Standard script verification flags that standard transactions will comply
+// with. However scripts violating these flags may still be present in valid
+// blocks and we must accept those blocks.
+static const unsigned int STANDARD_SCRIPT_VERIFY_FLAGS = MANDATORY_SCRIPT_VERIFY_FLAGS |
+                                                         SCRIPT_VERIFY_STRICTENC |
+                                                         SCRIPT_VERIFY_DERSIG ;
+
 enum txnouttype
 {
     TX_NONSTANDARD,
