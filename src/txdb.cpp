@@ -6,6 +6,7 @@
 #include "txdb.h"
 
 #include "core.h"
+#include "pow.h"
 #include "uint256.h"
 
 #include <stdint.h>

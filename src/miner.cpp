@@ -10,6 +10,7 @@
 #include "hash.h"
 #include "main.h"
 #include "net.h"
+#include "pow.h"
 #ifdef ENABLE_WALLET
 #include "wallet.h"
 #include "kernel.h"
