@@ -82,6 +82,8 @@ public:
     virtual bool AllowMinDifficultyBlocks() const { return false; }
     /* Make standard checks */
     virtual bool RequireStandard() const { return true; }
+    /* Make standard checks */
+    virtual bool IsTestNet() const { return false; }
     const string& DataDir() const { return strDataDir; }
     /* Make miner stop after a block is found. In RPC, don't return
      * until nGenProcLimit blocks are generated */
