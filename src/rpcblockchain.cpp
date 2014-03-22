@@ -57,7 +57,7 @@ double GetPoSVKernelPS()
         return 0;
 
     double dStakeKernelsTriedAvg = GetDifficulty(pindexBest) * 4294967296.0; // 2^32
-    return dStakeKernelsTriedAvg / nTargetSpacing;
+    return dStakeKernelsTriedAvg / Params().TargetSpacing();
 }
 
 

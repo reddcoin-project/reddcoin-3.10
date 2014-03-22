@@ -998,7 +998,7 @@ void BitcoinGUI::updateStakingIcon()
     if (nLastCoinStakeSearchInterval && nAverageWeight)
     {
         uint64_t nNetworkWeight = GetPoSVKernelPS();
-        uint64_t nEstimateTime = nTargetSpacing * nNetworkWeight / nTotalWeight;
+        uint64_t nEstimateTime = Params().TargetSpacing() * nNetworkWeight / nTotalWeight;
 
         QString text;
         if (nEstimateTime < 60)

@@ -11,10 +11,6 @@
 #include "main.h"
 #include "uint256.h"
 
-static const int64_t nTargetTimespan = 24 * 60 * 60; // 24 hours
-const int64_t nTargetSpacing = 60; // 1 minute
-static const int64_t nInterval = nTargetTimespan / nTargetSpacing;
-
 unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBlockHeader *pblock, uint64_t TargetBlocksSpacingSeconds, uint64_t PastBlocksMin, uint64_t PastBlocksMax)
 {
     const CBlockIndex  *BlockLastSolved = pindexLast;
@@ -178,8 +174,8 @@ unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime, bool fProofOfStak
 {
     const CBigNum &bnLimit = fProofOfStake ? Params().ProofOfStakeLimit() : Params().ProofOfWorkLimit();
     // Testnet has min-difficulty blocks
-    // after nTargetSpacing*2 time between blocks:
-    if (Params().AllowMinDifficultyBlocks() && nTime > nTargetSpacing*2)
+    // after Params().TargetSpacing()*2 time between blocks:
+    if (Params().AllowMinDifficultyBlocks() && nTime > Params().TargetSpacing()*2)
         return bnLimit.GetCompact();
 
     CBigNum bnResult;
@@ -189,7 +185,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime, bool fProofOfStak
         // Maximum 400% adjustment...
         bnResult *= 4;
         // ... in best-case exactly 4-times-normal target time
-        nTime -= nTargetTimespan*4;
+        nTime -= Params().TargetTimespan()*4;
     }
     if (bnResult > bnLimit)
         bnResult = bnLimit;

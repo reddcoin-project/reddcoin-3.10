@@ -271,7 +271,7 @@ Value getstakinginfo(const Array& params, bool fHelp)
 
     uint64_t nNetworkWeight = GetPoSVKernelPS();
     bool staking = nLastCoinStakeSearchInterval && nAverageWeight;
-    uint64_t nExpectedTime = nTargetSpacing * nNetworkWeight / nTotalWeight;
+    uint64_t nExpectedTime = Params().TargetSpacing() * nNetworkWeight / nTotalWeight;
 
     Object obj;
 
