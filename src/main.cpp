@@ -1345,7 +1345,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime, bool fProofOfStak
     const CBigNum &bnLimit = fProofOfStake ? Params().ProofOfStakeLimit() : Params().ProofOfWorkLimit();
     // Testnet has min-difficulty blocks
     // after nTargetSpacing*2 time between blocks:
-    if (TestNet() && nTime > nTargetSpacing*2)
+    if (Params().AllowMinDifficultyBlocks() && nTime > nTargetSpacing*2)
         return bnLimit.GetCompact();
 
     CBigNum bnResult;
@@ -1400,7 +1400,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
     else if (fProofOfStake && (uint64_t)(BlockLastSolved->nHeight - Params().LastProofOfWorkHeight()) < PastBlocksMin)
     {
         // difficulty is reset at the first PoSV blocks
-        if (TestNet())
+        if (Params().AllowMinDifficultyBlocks())
             return bnProofOfStakeLimit.GetCompact();
         else
             return bnProofOfStakeReset.GetCompact();
@@ -1488,7 +1488,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
     // always mine PoW blocks at the lowest diff on testnet
-    if (TestNet() && chainActive.Tip()->nHeight < Params().LastProofOfWorkHeight())
+    if (Params().AllowMinDifficultyBlocks() && chainActive.Tip()->nHeight < Params().LastProofOfWorkHeight())
         return Params().ProofOfWorkLimit().GetCompact();
 
     static const int64_t BlocksTargetSpacing = 1 * 60; // 1 Minute
@@ -1683,7 +1683,7 @@ void UpdateTime(CBlockHeader& block, const CBlockIndex* pindexPrev)
     block.nTime = max(pindexPrev->GetMedianTimePast()+1, GetAdjustedTime());
 
     // Updating time can change work required on testnet:
-    if (TestNet())
+    if (Params().AllowMinDifficultyBlocks())
         block.nBits = GetNextWorkRequired(pindexPrev, &block);
 }
 
