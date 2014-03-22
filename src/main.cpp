@@ -2022,9 +2022,9 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
     unsigned int flags = SCRIPT_VERIFY_NOCACHE | SCRIPT_VERIFY_P2SH;
 
     if (block.nVersion >= 4 &&
-        ((!TestNet() && CBlockIndex::IsSuperMajority(4, pindex->pprev, 7500, 10000)) ||
-            (TestNet() && CBlockIndex::IsSuperMajority(4, pindex->pprev, 510, 1000)))) {
-        flags |= SCRIPT_VERIFY_DERSIG;
+    	CBlockIndex::IsSuperMajority(4, pindex->pprev, Params().RejectBlockOutdatedMajority_4()))
+    {
+    	flags |= SCRIPT_VERIFY_DERSIG;
     }
 
     CBlockUndo blockundo;
@@ -2861,37 +2861,29 @@ bool AcceptBlockHeader(CBlockHeader& block, CValidationState& state, CBlockIndex
 
         // Reject block.nVersion=2 blocks when 95% (75% on testnet) of the network has upgraded:
         // Should pass here as all PoSV blocks nVersion=3
-        if (block.nVersion < 3)
+        if (block.nVersion < 3 && 
+            CBlockIndex::IsSuperMajority(3, pindexPrev, Params().RejectBlockOutdatedMajority()))
         {
-            if ((!TestNet() && CBlockIndex::IsSuperMajority(3, pindexPrev, 9500, 10000)) ||
-                (TestNet() && CBlockIndex::IsSuperMajority(3, pindexPrev, 750, 1000)))
-            {
-                return state.Invalid(error("AcceptBlock() : rejected nVersion=2 block"),
-                                     REJECT_OBSOLETE, "bad-version");
-            }
-        }
-        // Reject block.nVersion=3 blocks when 85% (51% on testnet) of the network has upgraded:
-        if (block.nVersion < 4)
-        {
-            if ((!TestNet() && CBlockIndex::IsSuperMajority(4, pindexPrev, 6120, 7200)) ||
-                (TestNet() && CBlockIndex::IsSuperMajority(4, pindexPrev, 750, 1000)))
-            {
-                return state.Invalid(error("AcceptBlock() : rejected nVersion=3 block"),
-                                     REJECT_OBSOLETE, "bad-version");
-            }
+            return state.Invalid(error("AcceptBlock() : rejected nVersion=2 block"),
+                                 REJECT_OBSOLETE, "bad-version");
         }
 
-        // Reject block.nVersion=4 blocks when 90% (75% on testnet) of the network has upgraded:
+        // Reject block.nVersion=3 blocks when 95% (51% on testnet) of the network has upgraded:
+        if (block.nVersion < 4 && 
+            CBlockIndex::IsSuperMajority(4, pindexPrev, Params().RejectBlockOutdatedMajority_4()))
+        {
+            return state.Invalid(error("AcceptBlock() : rejected nVersion=3 block"),
+                                 REJECT_OBSOLETE, "bad-version");
+        }
+
+        // Reject block.nVersion=4 blocks when 95% (75% on testnet) of the network has upgraded:
         // block header includes dev funding
-		if (block.nVersion < 5)
-		{
-			if ((!TestNet() && CBlockIndex::IsSuperMajority(5, pindexPrev, 9000, 10000)) ||
-				(TestNet() && CBlockIndex::IsSuperMajority(5, pindexPrev, 750, 1000)))
-			{
-				return state.Invalid(error("AcceptBlock() : rejected nVersion=4 block"),
-									 REJECT_OBSOLETE, "bad-version");
-			}
-		}
+		if (block.nVersion < 5 && 
+            CBlockIndex::IsSuperMajority(5, pindexPrev, Params().RejectBlockOutdatedMajority_5()))
+       {
+            return state.Invalid(error("AcceptBlock() : rejected nVersion=4 block"),
+                                 REJECT_OBSOLETE, "bad-version");
+       }
     }
 
     if (pindex == NULL)
@@ -2956,16 +2948,16 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         {
             // Check that dev fund transactions is correct
             // Dev fund transactions introduced in version 5 blocks
-            if (block.nVersion >= 5)
+            if (block.nVersion >= 5 && 
+                CBlockIndex::IsSuperMajority(5, pindex->pprev, Params().EnforceBlockUpgradeMajority_5()))
             {
-            	if (!IsDevTx(block.vtx[1]))
+                if (!IsDevTx(block.vtx[1]))
 				{
 					LogPrintf("WARNING: AcceptBlock(): check proof-of-stake developer address failed for block %s\n", hash.ToString().c_str());
 					return state.DoS(10, error("AcceptBlock() : contains a incorrect developer transaction"),
 													 REJECT_INVALID, "bad-dev-address");
 				}
             }
-
         }
 
     // Write block to history file
@@ -2998,8 +2990,21 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     return true;
 }
 
-bool CBlockIndex::IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired, unsigned int nToCheck)
+bool CBlockIndex::IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired)
 {
+    unsigned int nToCheck;
+    if (minVersion == 3)
+    {
+    	nToCheck = Params().ToCheckBlockUpgradeMajority();
+    }
+    else if (minVersion == 4)
+    {
+    	nToCheck = Params().ToCheckBlockUpgradeMajority_4();
+    }
+    else if (minVersion == 5)
+    {
+    	nToCheck = Params().ToCheckBlockUpgradeMajority_5();
+    }
     unsigned int nFound = 0;
     for (unsigned int i = 0; i < nToCheck && nFound < nRequired && pstart != NULL; i++)
     {

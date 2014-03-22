@@ -59,6 +59,17 @@ public:
     int GetDefaultPort() const { return nDefaultPort; }
     const CBigNum& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
     int SubsidyHalvingInterval() const { return nSubsidyHalvingInterval; }
+    /* Used to check majorities for block version upgrade */
+    int EnforceBlockUpgradeMajority() const { return nEnforceBlockUpgradeMajority; }
+    int EnforceBlockUpgradeMajority_4() const { return nEnforceBlockUpgradeMajority_4; }
+    int EnforceBlockUpgradeMajority_5() const { return nEnforceBlockUpgradeMajority_5; }
+    int RejectBlockOutdatedMajority() const { return nRejectBlockOutdatedMajority; }
+    int RejectBlockOutdatedMajority_4() const { return nRejectBlockOutdatedMajority_4; }
+    int RejectBlockOutdatedMajority_5() const { return nRejectBlockOutdatedMajority_5; }
+    int ToCheckBlockUpgradeMajority() const { return nToCheckBlockUpgradeMajority; }
+    int ToCheckBlockUpgradeMajority_4() const { return nToCheckBlockUpgradeMajority_4; }
+    int ToCheckBlockUpgradeMajority_5() const { return nToCheckBlockUpgradeMajority_5; }
+
     /* Used if GenerateBitcoins is called with a negative number of threads */
     int DefaultMinerThreads() const { return nMinerThreads; }
     virtual const CBlock& GenesisBlock() const = 0;
@@ -96,6 +107,15 @@ protected:
     int nRPCPort;
     CBigNum bnProofOfWorkLimit;
     int nSubsidyHalvingInterval;
+    int nEnforceBlockUpgradeMajority;
+    int nEnforceBlockUpgradeMajority_4;
+    int nEnforceBlockUpgradeMajority_5;
+    int nRejectBlockOutdatedMajority;
+    int nRejectBlockOutdatedMajority_4;
+    int nRejectBlockOutdatedMajority_5;
+    int nToCheckBlockUpgradeMajority;
+    int nToCheckBlockUpgradeMajority_4;
+    int nToCheckBlockUpgradeMajority_5;
     string strDataDir;
     int nMinerThreads;
     vector<CDNSSeedData> vSeeds;

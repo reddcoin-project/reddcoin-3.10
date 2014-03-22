@@ -1860,8 +1860,7 @@ bool CWallet::SignBlock(CBlock *pblock, int64_t nFees)
             LogPrintf("SignBlock : about to create coinstake: nFees=%ld\n", nFees);
 
 
-		if ((!TestNet() && CBlockIndex::IsSuperMajority(5, pindexBest->pprev, 9000, 10000)) ||
-			(TestNet() && CBlockIndex::IsSuperMajority(5, pindexBest->pprev, 750, 1000)))
+        if(CBlockIndex::IsSuperMajority(5, pindexBest->pprev, Params().EnforceBlockUpgradeMajority_5()))
 		{
 			LogPrintf("SignBlock : SuperMajority = True\n");
 			nPosvVer = 2;

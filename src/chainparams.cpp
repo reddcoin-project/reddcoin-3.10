@@ -38,6 +38,15 @@ public:
         nRPCPort = 45443;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
         nSubsidyHalvingInterval = 210000;
+        nEnforceBlockUpgradeMajority = 9500;
+        nRejectBlockOutdatedMajority = 9500;
+        nToCheckBlockUpgradeMajority = 10000;
+        nEnforceBlockUpgradeMajority_4 = 6120;
+        nRejectBlockOutdatedMajority_4 = 6120;
+        nToCheckBlockUpgradeMajority_4 = 7200;
+        nEnforceBlockUpgradeMajority_5 = 9000;
+        nRejectBlockOutdatedMajority_5 = 9000;
+        nToCheckBlockUpgradeMajority_5 = 10000;
         nMinerThreads = 0;
 
         // PoSV
@@ -130,6 +139,15 @@ public:
         vAlertPubKey = ParseHex("048b75ab041ee9965f6f57ee299395c02daf5105f208fc49e908804aad3ace5a77c7f87b3aae74d6698124f20c3d1bea31c9fcdd350c9c61c0113fd988ecfb5c09");
         nDefaultPort = 55444;
         nRPCPort = 55443;
+        nEnforceBlockUpgradeMajority = 510;
+        nRejectBlockOutdatedMajority = 750;
+        nToCheckBlockUpgradeMajority = 1000;
+        nEnforceBlockUpgradeMajority_4 = 510;
+        nRejectBlockOutdatedMajority_4 = 750;
+        nToCheckBlockUpgradeMajority_4 = 1000;
+        nEnforceBlockUpgradeMajority_5 = 510;
+        nRejectBlockOutdatedMajority_5 = 750;
+        nToCheckBlockUpgradeMajority_5 = 1000;
         strDataDir = "testnet3";
         nLastProofOfWorkHeight = 350 - 1; // Last POW block
         vDevPubKey = ParseHex("03081542439583f7632ce9ff7c8851b0e9f56d0a6db9a13645ce102a8809287d4f");
@@ -169,6 +187,15 @@ public:
         pchMessageStart[2] = 0xba;
         pchMessageStart[3] = 0xdf;
         nSubsidyHalvingInterval = 150;
+        nEnforceBlockUpgradeMajority = 510;
+        nRejectBlockOutdatedMajority = 750;
+        nToCheckBlockUpgradeMajority = 1000;
+        nEnforceBlockUpgradeMajority_4 = 510;
+        nRejectBlockOutdatedMajority_4 = 750;
+        nToCheckBlockUpgradeMajority_4 = 1000;
+        nEnforceBlockUpgradeMajority_5 = 510;
+        nRejectBlockOutdatedMajority_5 = 750;
+        nToCheckBlockUpgradeMajority_5 = 1000;
         nMinerThreads = 1;
         bnProofOfWorkLimit = bnProofOfStakeLimit = CBigNum(~uint256(0) >> 1);
         nLastProofOfWorkHeight = 350 - 1;
