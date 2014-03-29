@@ -83,6 +83,33 @@ qint64 WalletModel::getImmatureBalance() const
     return wallet->GetImmatureBalance();
 }
 
+qint64 WalletModel::getWatchBalance() const
+{
+    return wallet->GetWatchOnlyBalance();
+}
+
+qint64 WalletModel::getWatchUnconfirmedBalance() const
+{
+    return wallet->GetUnconfirmedWatchOnlyBalance();
+}
+
+qint64 WalletModel::getWatchImmatureBalance() const
+{
+    return wallet->GetImmatureWatchOnlyBalance();
+}
+
+int WalletModel::getNumTransactions() const
+{
+    int numTransactions = 0;
+    {
+        LOCK(wallet->cs_wallet);
+        // the size of mapWallet contains the number of unique transaction IDs
+        // (e.g. payments to yourself generate 2 transactions, but both share the same transaction ID)
+        numTransactions = wallet->mapWallet.size();
+    }
+    return numTransactions;
+}
+
 void WalletModel::updateStatus()
 {
     EncryptionStatus newEncryptionStatus = getEncryptionStatus();
@@ -120,14 +147,22 @@ void WalletModel::checkBalanceChanged()
     qint64 newStake = getStake();
     qint64 newUnconfirmedBalance = getUnconfirmedBalance();
     qint64 newImmatureBalance = getImmatureBalance();
+    qint64 newWatchOnlyBalance = getWatchBalance();
+    qint64 newWatchUnconfBalance = getWatchUnconfirmedBalance();
+    qint64 newWatchImmatureBalance = getWatchImmatureBalance();
 
-    if(cachedBalance != newBalance || cachedStake != newStake || cachedUnconfirmedBalance != newUnconfirmedBalance || cachedImmatureBalance != newImmatureBalance)
+    if(cachedBalance != newBalance || cachedStake != newStake|| cachedUnconfirmedBalance != newUnconfirmedBalance || cachedImmatureBalance != newImmatureBalance ||
+        cachedWatchOnlyBalance != newWatchOnlyBalance || cachedWatchUnconfBalance != newWatchUnconfBalance || cachedWatchImmatureBalance != newWatchImmatureBalance)
     {
         cachedBalance = newBalance;
         cachedStake = newStake;
         cachedUnconfirmedBalance = newUnconfirmedBalance;
         cachedImmatureBalance = newImmatureBalance;
-        emit balanceChanged(newBalance, newStake, newUnconfirmedBalance, newImmatureBalance);
+        cachedWatchOnlyBalance = newWatchOnlyBalance;
+        cachedWatchUnconfBalance = newWatchUnconfBalance;
+        cachedWatchImmatureBalance = newWatchImmatureBalance;
+        emit balanceChanged(newBalance, newStake, newUnconfirmedBalance, newImmatureBalance,
+                            newWatchOnlyBalance, newWatchUnconfBalance, newWatchImmatureBalance);
     }
 }
 
