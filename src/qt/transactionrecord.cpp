@@ -81,16 +81,19 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                     hashPrev = hash;
                 }
 
+                sub.involvesWatchAddress = mine == MINE_WATCH_ONLY;
                 parts.append(sub);
             }
         }
     }
     else
     {
+        bool involvesWatchAddress = false;
         isminetype fAllFromMe = MINE_SPENDABLE;
         BOOST_FOREACH(const CTxIn& txin, wtx.vin)
         {
             isminetype mine = wallet->IsMine(txin);
+            if(mine == MINE_WATCH_ONLY) involvesWatchAddress = true;
             if(fAllFromMe > mine) fAllFromMe = mine;
         }
 
@@ -98,6 +101,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
         BOOST_FOREACH(const CTxOut& txout, wtx.vout)
         {
             isminetype mine = wallet->IsMine(txout);
+            if(mine == MINE_WATCH_ONLY) involvesWatchAddress = true;
             if(fAllToMe > mine) fAllToMe = mine;
         }
 
@@ -108,6 +112,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
 
             parts.append(TransactionRecord(hash, nTime, TransactionRecord::SendToSelf, "",
                             -(nDebit - nChange), nCredit - nChange));
+            parts.last().involvesWatchAddress = involvesWatchAddress;
         }
         else if (fAllFromMe)
         {
@@ -152,6 +157,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 }
                 sub.debit = -nValue;
 
+                sub.involvesWatchAddress = involvesWatchAddress;
                 parts.append(sub);
             }
         }
@@ -161,6 +167,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
             // Mixed debit transaction, can't break down payees
             //
             parts.append(TransactionRecord(hash, nTime, TransactionRecord::Other, "", nNet, 0));
+            parts.last().involvesWatchAddress = involvesWatchAddress;
         }
     }
 
