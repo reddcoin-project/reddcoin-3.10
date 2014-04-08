@@ -298,12 +298,12 @@ public:
     std::set<CTxDestination> GetAccountAddresses(std::string strAccount) const;
 
     isminetype IsMine(const CTxIn& txin) const;
-    int64_t GetDebit(const CTxIn& txin) const;
+    int64_t GetDebit(const CTxIn& txin, const isminefilter& filter=(MINE_SPENDABLE|MINE_WATCH_ONLY)) const;
     isminetype IsMine(const CTxOut& txout) const
     {
         return ::IsMine(*this, txout.scriptPubKey);
     }
-    int64_t GetCredit(const CTxOut& txout, const isminefilter& filter = (MINE_WATCH_ONLY | MINE_SPENDABLE)) const
+    int64_t GetCredit(const CTxOut& txout, const isminefilter& filter=(MINE_WATCH_ONLY|MINE_SPENDABLE)) const
     {
         if (!MoneyRange(txout.nValue))
             throw std::runtime_error("CWallet::GetCredit() : value out of range");
@@ -334,12 +334,12 @@ public:
     	        return true;
    	    return false;
     }
-    int64_t GetDebit(const CTransaction& tx) const
+    int64_t GetDebit(const CTransaction& tx, const isminefilter& filter=(MINE_SPENDABLE|MINE_WATCH_ONLY)) const
     {
         int64_t nDebit = 0;
         BOOST_FOREACH(const CTxIn& txin, tx.vin)
         {
-            nDebit += GetDebit(txin);
+            nDebit += GetDebit(txin, filter);
             if (!MoneyRange(nDebit))
                 throw std::runtime_error("CWallet::GetDebit() : value out of range");
         }
@@ -504,6 +504,8 @@ public:
     mutable bool fCreditCached;
     mutable bool fImmatureCreditCached;
     mutable bool fAvailableCreditCached;
+    mutable bool fWatchDebitCached;
+    mutable bool fWatchCreditCached;
     mutable bool fImmatureWatchCreditCached;
     mutable bool fAvailableWatchCreditCached;
     mutable bool fChangeCached;
@@ -511,6 +513,8 @@ public:
     mutable int64_t nCreditCached;
     mutable int64_t nImmatureCreditCached;
     mutable int64_t nAvailableCreditCached;
+    mutable int64_t nWatchDebitCached;
+    mutable int64_t nWatchCreditCached;
     mutable int64_t nImmatureWatchCreditCached;
     mutable int64_t nAvailableWatchCreditCached;
     mutable int64_t nChangeCached;
@@ -549,6 +553,8 @@ public:
         fCreditCached = false;
         fImmatureCreditCached = false;
         fAvailableCreditCached = false;
+        fWatchDebitCached = false;
+        fWatchCreditCached = false;
         fImmatureWatchCreditCached = false;
         fAvailableWatchCreditCached = false;
         fChangeCached = false;
@@ -556,6 +562,8 @@ public:
         nCreditCached = 0;
         nImmatureCreditCached = 0;
         nAvailableCreditCached = 0;
+        nWatchDebitCached = 0;
+        nWatchCreditCached = 0;
         nAvailableWatchCreditCached = 0;
         nImmatureWatchCreditCached = 0;
         nChangeCached = 0;
@@ -610,6 +618,8 @@ public:
     {
         fCreditCached = false;
         fAvailableCreditCached = false;
+        fWatchDebitCached = false;
+        fWatchCreditCached = false;
         fAvailableWatchCreditCached = false;
         fImmatureWatchCreditCached = false;
         fDebitCached = false;
@@ -622,15 +632,35 @@ public:
         MarkDirty();
     }
 
-    int64_t GetDebit() const
+    int64_t GetDebit(const isminefilter& filter=(MINE_SPENDABLE|MINE_WATCH_ONLY)) const
     {
         if (vin.empty())
             return 0;
-        if (fDebitCached)
-            return nDebitCached;
-        nDebitCached = pwallet->GetDebit(*this);
-        fDebitCached = true;
-        return nDebitCached;
+
+        int64_t debit = 0;
+        if(filter & MINE_SPENDABLE)
+        {
+            if (fDebitCached)
+                debit += nDebitCached;
+            else
+            {
+                nDebitCached = pwallet->GetDebit(*this, MINE_SPENDABLE);
+                fDebitCached = true;
+                debit += nDebitCached;
+            }
+        }
+        if(filter & MINE_WATCH_ONLY)
+        {
+            if(fWatchDebitCached)
+                debit += nWatchDebitCached;
+            else
+            {
+                nWatchDebitCached = pwallet->GetDebit(*this, MINE_WATCH_ONLY);
+                fWatchDebitCached = true;
+                debit += nWatchDebitCached;
+            }
+        }
+        return debit;
     }
 
     int64_t GetCredit(bool fUseCache=true) const
@@ -747,7 +777,7 @@ public:
                 std::list<COutputEntry>& listSent, int64_t& nFee, std::string& strSentAccount, const isminefilter& filter=(MINE_SPENDABLE|MINE_WATCH_ONLY)) const;
 
     void GetAccountAmounts(const std::string& strAccount, int64_t& nReceived,
-                           int64_t& nSent, int64_t& nFee) const;
+                           int64_t& nSent, int64_t& nFee, const isminefilter& filter=(MINE_SPENDABLE|MINE_WATCH_ONLY)) const;
 
     bool IsFromMe() const
     {

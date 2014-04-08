@@ -559,7 +559,7 @@ Value getreceivedbyaccount(const Array& params, bool fHelp)
 }
 
 
-int64_t GetAccountBalance(CWalletDB& walletdb, const string& strAccount, int nMinDepth)
+int64_t GetAccountBalance(CWalletDB& walletdb, const string& strAccount, int nMinDepth, const isminefilter& filter = MINE_SPENDABLE)
 {
     int64_t nBalance = 0;
 
@@ -571,7 +571,7 @@ int64_t GetAccountBalance(CWalletDB& walletdb, const string& strAccount, int nMi
             continue;
 
         int64_t nReceived, nSent, nFee;
-        wtx.GetAccountAmounts(strAccount, nReceived, nSent, nFee);
+        wtx.GetAccountAmounts(strAccount, nReceived, nSent, nFee, filter);
 
         if (nReceived != 0 && wtx.GetDepthInMainChain() >= nMinDepth)
             nBalance += nReceived;
@@ -584,18 +584,18 @@ int64_t GetAccountBalance(CWalletDB& walletdb, const string& strAccount, int nMi
     return nBalance;
 }
 
-int64_t GetAccountBalance(const string& strAccount, int nMinDepth)
+int64_t GetAccountBalance(const string& strAccount, int nMinDepth, const isminefilter& filter = MINE_SPENDABLE)
 {
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    return GetAccountBalance(walletdb, strAccount, nMinDepth);
+    return GetAccountBalance(walletdb, strAccount, nMinDepth, filter);
 }
 
 
 Value getbalance(const Array& params, bool fHelp)
 {
-    if (fHelp || params.size() > 2)
+    if (fHelp || params.size() > 3)
         throw runtime_error(
-            "getbalance ( \"account\" minconf )\n"
+            "getbalance ( \"account\" minconf includeWatchonly )\n"
             "\nIf account is not specified, returns the server's total available balance.\n"
             "If account is specified, returns the balance in the account.\n"
             "Note that the account \"\" is not the same as leaving the parameter out.\n"
@@ -603,6 +603,7 @@ Value getbalance(const Array& params, bool fHelp)
             "\nArguments:\n"
             "1. \"account\"      (string, optional) The selected account, or \"*\" for entire wallet. It may be the default account using \"\".\n"
             "2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
+            "3. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')\n"
             "\nResult:\n"
             "amount              (numeric) The total amount in rdd received for this account.\n"
             "\nExamples:\n"
@@ -622,8 +623,14 @@ Value getbalance(const Array& params, bool fHelp)
         return  ValueFromAmount(pwalletMain->GetBalance());
 
     int nMinDepth = 1;
+    isminefilter filter = MINE_SPENDABLE;
     if (params.size() > 1)
+    {
         nMinDepth = params[1].get_int();
+        if(params.size() > 2)
+            if(params[2].get_bool())
+                filter = filter | MINE_WATCH_ONLY;
+    }
 
     if (params[0].get_str() == "*") {
         // Calculate total balance a different way from GetBalance()
@@ -640,7 +647,7 @@ Value getbalance(const Array& params, bool fHelp)
             string strSentAccount;
             list<COutputEntry> listReceived;
             list<COutputEntry> listSent;
-            wtx.GetAmounts(listReceived, listSent, allFee, strSentAccount);
+            wtx.GetAmounts(listReceived, listSent, allFee, strSentAccount, filter);
             if (wtx.GetDepthInMainChain() >= nMinDepth)
             {
                 BOOST_FOREACH(const COutputEntry& r, listReceived)
@@ -656,7 +663,7 @@ Value getbalance(const Array& params, bool fHelp)
 
     string strAccount = AccountFromValue(params[0]);
 
-    int64_t nBalance = GetAccountBalance(strAccount, nMinDepth);
+    int64_t nBalance = GetAccountBalance(strAccount, nMinDepth, filter);
 
     return ValueFromAmount(nBalance);
 }
