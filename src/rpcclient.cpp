@@ -48,6 +48,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "sendfrom", 3 },
     { "listtransactions", 1 },
     { "listtransactions", 2 },
+    { "listtransactions", 3 },
     { "listaccounts", 0 },
     { "listaccounts", 1 },
     { "walletpassphrase", 1 },
@@ -56,6 +57,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "prioritisetransaction", 2 },
     { "getblocktemplate", 0 },
     { "listsinceblock", 1 },
+    { "listsinceblock", 2 },
     { "sendmany", 1 },
     { "sendmany", 2 },
     { "addmultisigaddress", 0 },
@@ -138,7 +140,6 @@ Array RPCConvertValues(const std::string &strMethod, const std::vector<std::stri
                 throw runtime_error(string("Error parsing JSON:")+strVal);
             params.push_back(jVal);
         }
-
     }
 
     return params;
