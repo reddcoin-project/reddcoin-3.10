@@ -433,7 +433,7 @@ CBlockTemplate* CreateNewBlockWithKey(CReserveKey& reservekey)
 bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
 {
     uint256 hash = pblock->GetPoWHash();
-    uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
+    uint256 hashTarget = uint256().SetCompact(pblock->nBits);
 
     if(!pblock->IsProofOfWork())
         return error("CheckWork() : %s is not a proof-of-work block", hash.GetHex().c_str());
@@ -637,7 +637,7 @@ void static ReddcoinMiner(CWallet *pwallet)
         // Search
         //
         int64_t nStart = GetTime();
-        uint256 hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
+        uint256 hashTarget = uint256().SetCompact(pblock->nBits);
         uint256 hash;
         uint32_t nNonce = 0;
         uint32_t nOldNonce = 0;
@@ -714,7 +714,7 @@ void static ReddcoinMiner(CWallet *pwallet)
             if (Params().AllowMinDifficultyBlocks())
             {
                 // Changing pblock->nTime can change work required on testnet:
-                hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
+                hashTarget.SetCompact(pblock->nBits);
             }
         }
     } }
