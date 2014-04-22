@@ -83,7 +83,7 @@ const string strMessageMagic = "Reddcoin Signed Message:\n";
 // PoSV
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 set<pair<COutPoint, unsigned int> > setStakeSeenOrphan;
-int64_t nReserveBalance = 0;
+CAmount nReserveBalance = 0;
 
 // Internal stuff
 namespace {
@@ -763,7 +763,7 @@ bool CheckTransaction(const CTransaction& tx, CValidationState &state)
                          REJECT_INVALID, "bad-txns-oversize");
 
     // Check for negative or overflow output values
-    int64_t nValueOut = 0;
+    CAmount nValueOut = 0;
     BOOST_FOREACH(const CTxOut& txout, tx.vout)
     {
         if (txout.IsEmpty() && !tx.IsCoinBase() && !tx.IsCoinStake())
@@ -807,13 +807,13 @@ bool CheckTransaction(const CTransaction& tx, CValidationState &state)
     return true;
 }
 
-int64_t GetMinFee(const CTransaction& tx, unsigned int nBlockSize, unsigned int nBytes, bool fAllowFree, enum GetMinFee_mode mode)
+CAmount GetMinFee(const CTransaction& tx, unsigned int nBlockSize, unsigned int nBytes, bool fAllowFree, enum GetMinFee_mode mode)
 {
     {
         LOCK(mempool.cs);
         uint256 hash = tx.GetHash();
         double dPriorityDelta = 0;
-        int64_t nFeeDelta = 0;
+        CAmount nFeeDelta = 0;
         mempool.ApplyDeltas(hash, dPriorityDelta, nFeeDelta);
         if (dPriorityDelta > 0 || nFeeDelta > 0)
             return 0;
@@ -822,7 +822,7 @@ int64_t GetMinFee(const CTransaction& tx, unsigned int nBlockSize, unsigned int 
     // Base fee is either minTxFee or minRelayTxFee
     CFeeRate baseFeeRate = (mode == GMF_RELAY) ? tx.minRelayTxFee : tx.minTxFee;
     unsigned int nNewBlockSize = nBlockSize + nBytes;
-    int64_t nMinFee = baseFeeRate.GetFee(nBytes);
+    CAmount nMinFee = baseFeeRate.GetFee(nBytes);
 
     if (fAllowFree)
     {
@@ -919,7 +919,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState &state, const CTransa
         CCoinsView dummy;
         CCoinsViewCache view(dummy);
 
-        int64_t nValueIn = 0;
+        CAmount nValueIn = 0;
         {
         LOCK(pool.cs);
         CCoinsViewMemPool viewMemPool(*pcoinsTip, pool);
@@ -971,15 +971,15 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState &state, const CTransa
                                    hash.ToString(), nSigOps, MAX_TX_SIGOPS),
                              REJECT_NONSTANDARD, "bad-txns-too-many-sigops");
 
-        int64_t nValueOut = tx.GetValueOut();
-        int64_t nFees = nValueIn-nValueOut;
+        CAmount nValueOut = tx.GetValueOut();
+        CAmount nFees = nValueIn-nValueOut;
         double dPriority = view.GetPriority(tx, chainActive.Height());
 
         CTxMemPoolEntry entry(tx, nFees, GetTime(), dPriority, chainActive.Height());
         unsigned int nSize = entry.GetTxSize();
 
         // Don't accept it if it can't get into a block
-        int64_t txMinFee = GetMinFee(tx, 1000, nSize, true, GMF_RELAY);
+        CAmount txMinFee = GetMinFee(tx, 1000, nSize, true, GMF_RELAY);
         if (fLimitFree && nFees < txMinFee)
             return state.DoS(0, error("AcceptToMemoryPool : not enough fees %s, %d < %d",
                                       hash.ToString(), nFees, txMinFee),
@@ -1210,7 +1210,7 @@ uint256 WantedByOrphan(const COrphanBlock* pblockOrphan)
     return pblockOrphan->hashPrev;
 }
 
-int64_t GetBlockValue(int nHeight, int64_t nFees)
+CAmount GetBlockValue(int nHeight, const CAmount& nFees)
 {
     int64_t nSubsidy = 100000 * COIN;
 
@@ -1238,12 +1238,12 @@ int64_t GetBlockValue(int nHeight, int64_t nFees)
 }
 
 // PoSV: coinstake reward based on coin age spent (coin-days)
-int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
+CAmount GetProofOfStakeReward(int64_t nCoinAge, const CAmount& nFees)
 {
     // some scary rounding dirty trick here for leap / non-leap years
     // CoinAge=365 -> nSubsidy=9993
     // CoinAge=366 -> nSubsidy=10020
-    int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
+    CAmount nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
 
     if (fDebug && GetBoolArg("-printcreation", false))
         LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees));
@@ -1252,12 +1252,12 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
 }
 
 // PoSV v2: coinstake reward based on coin age spent (coin-days) with inflation adjustment to target 5% network inflation
-int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, double fInflationAdjustment)
+CAmount GetProofOfStakeReward(int64_t nCoinAge, const CAmount& nFees, double fInflationAdjustment)
 {
     // some scary rounding dirty trick here for leap / non-leap years
     // CoinAge=365 -> nSubsidy=9993
     // CoinAge=366 -> nSubsidy=10020
-    int64_t nSubsidy = (nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8)) * fInflationAdjustment;
+    CAmount nSubsidy = (nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8)) * fInflationAdjustment;
 
     LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s fInflationAdjustment=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees), fInflationAdjustment);
 
@@ -1480,8 +1480,8 @@ bool CheckInputs(const CTransaction& tx, CValidationState &state, const CCoinsVi
         // This is also true for mempool checks.
         CBlockIndex *pindexPrev = mapBlockIndex.find(inputs.GetBestBlock())->second;
         int nSpendHeight = pindexPrev->nHeight + 1;
-        int64_t nValueIn = 0;
-        int64_t nFees = 0;
+        CAmount nValueIn = 0;
+        CAmount nFees = 0;
         for (unsigned int i = 0; i < tx.vin.size(); i++)
         {
             const COutPoint &prevout = tx.vin[i].prevout;
@@ -1515,7 +1515,7 @@ bool CheckInputs(const CTransaction& tx, CValidationState &state, const CCoinsVi
                                  REJECT_INVALID, "bad-txns-inputs-lower-outputs");
 
             // Tally transaction fees
-            int64_t nTxFee = nValueIn - tx.GetValueOut();
+            CAmount nTxFee = nValueIn - tx.GetValueOut();
             if (nTxFee < 0)
                 return state.DoS(100, error("CheckInputs() : %s nTxFee < 0", tx.GetHash().ToString()),
                                  REJECT_INVALID, "bad-txns-fee-negative");
@@ -1769,7 +1769,7 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
     CCheckQueueControl<CScriptCheck> control(fScriptChecks && nScriptCheckThreads ? &scriptcheckqueue : NULL);
 
     int64_t nTimeStart = GetTimeMicros();
-    int64_t nFees = 0;
+    CAmount nFees = 0;
     int nInputs = 0;
     unsigned int nSigOps = 0;
     CDiskTxPos pos(pindex->GetBlockPos(), GetSizeOfCompactSize(block.vtx.size()));
@@ -1852,7 +1852,7 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
         if (!nCoinAge)
             return state.DoS(100, error("ConnectBlock() : %s unable to get coin age for coinstake", block.vtx[1].GetHash().ToString().substr(0,10).c_str()));
 
-        int64_t nCalculatedStakeReward;
+        CAmount nCalculatedStakeReward;
 
         if(block.nVersion <= 4) {
             nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees);

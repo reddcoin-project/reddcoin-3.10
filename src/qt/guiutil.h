@@ -5,6 +5,8 @@
 #ifndef GUIUTIL_H
 #define GUIUTIL_H
 
+#include "amount.h"
+
 #include <QEvent>
 #include <QHeaderView>
 #include <QMessageBox>
@@ -48,7 +50,7 @@ namespace GUIUtil
     QString formatBitcoinURI(const SendCoinsRecipient &info);
 
     // Returns true if given address+amount meets "dust" definition
-    bool isDust(const QString& address, qint64 amount);
+    bool isDust(const QString& address, const CAmount& amount);
 
     // HTML escaping for rich text controls
     QString HtmlEscape(const QString& str, bool fMultiLine=false);
@@ -186,7 +188,7 @@ namespace GUIUtil
 
     /* Format a CNodeCombinedStats.dPingTime into a user-readable string or display N/A, if 0*/
     QString formatPingTime(double dPingTime);
-    
+
 #ifdef Q_OS_MAC
     // workaround for Qt OSX Bug:
     // https://bugreports.qt-project.org/browse/QTBUG-15631

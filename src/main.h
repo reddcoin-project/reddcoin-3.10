@@ -67,9 +67,9 @@ static const unsigned int BLOCKFILE_CHUNK_SIZE = 0x1000000; // 16 MiB
 /** The pre-allocation chunk size for rev?????.dat files (since 0.8) */
 static const unsigned int UNDOFILE_CHUNK_SIZE = 0x100000; // 1 MiB
 /** Fake height value used in CCoins to signify they are only in the memory pool (since 0.8) */
-static const int64_t DUST_SOFT_LIMIT = 100000000; // 1 RDD
+static const CAmount DUST_SOFT_LIMIT = 100000000; // 1 RDD
 /** Dust Hard Limit, ignored as wallet inputs (mininput default) */
-static const int64_t DUST_HARD_LIMIT = 1000000;   // 0.01 RDD mininput
+static const CAmount DUST_HARD_LIMIT = 1000000;   // 0.01 RDD mininput
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
 static const int COINBASE_MATURITY = 30;
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
@@ -194,7 +194,7 @@ std::string GetWarnings(std::string strFor);
 bool GetTransaction(const uint256 &hash, CTransaction &tx, uint256 &hashBlock, bool fAllowSlow = false);
 /** Find the best known block, and make it the tip of the block chain */
 bool ActivateBestChain(CValidationState &state, CBlock *pblock = NULL);
-int64_t GetBlockValue(int nHeight, int64_t nFees);
+CAmount GetBlockValue(int nHeight, const CAmount& nFees);
 
 /** Create a new block index entry for a given block hash */
 CBlockIndex * InsertBlockIndex(uint256 hash);
@@ -213,8 +213,8 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState &state, const CTransa
                         bool* pfMissingInputs, bool fRejectInsaneFee=false);
 
 // PoSV
-int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees);
-int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, double fInflationAdjustment);
+CAmount GetProofOfStakeReward(int64_t nCoinAge, const CAmount& nFees);
+CAmount GetProofOfStakeReward(int64_t nCoinAge, const CAmount& nFees, double fInflationAdjustment);
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake);
 
 
@@ -259,7 +259,7 @@ enum GetMinFee_mode
     GMF_SEND,
 };
 
-int64_t GetMinFee(const CTransaction& tx, unsigned int nBlockSize, unsigned int nBytes, bool fAllowFree, enum GetMinFee_mode mode);
+CAmount GetMinFee(const CTransaction& tx, unsigned int nBlockSize, unsigned int nBytes, bool fAllowFree, enum GetMinFee_mode mode);
 
 //
 // Check transaction inputs, and make sure any
@@ -633,7 +633,7 @@ extern CBlockTreeDB *pblocktree;
 struct CBlockTemplate
 {
     CBlock block;
-    std::vector<int64_t> vTxFees;
+    std::vector<CAmount> vTxFees;
     std::vector<int64_t> vTxSigOps;
 };
 
