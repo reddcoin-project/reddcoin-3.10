@@ -1,0 +1,59 @@
+---
+name: "reddcoin"
+suites:
+- "precise"
+architectures:
+- "i386"
+- "amd64"
+packages: 
+- "g++"
+- "libqt4-dev"
+- "git-core"
+- "unzip"
+- "pkg-config"
+- "autoconf2.13"
+- "libtool"
+- "automake"
+- "faketime"
+- "bsdmainutils"
+reference_datetime: "2014-04-01 00:00:00"
+remotes:
+- "url": "https://github.com/reddcoin-project/reddcoin.git"
+  "dir": "reddcoin"
+files:
+- "bitcoin-deps-linux32-gitian-r3.zip"
+- "bitcoin-deps-linux64-gitian-r3.zip"
+- "boost-linux32-1.55.0-gitian-r1.zip"
+- "boost-linux64-1.55.0-gitian-r1.zip"
+script: |
+  STAGING="$HOME/install"
+  OPTFLAGS='-O2'
+  BINDIR="${OUTDIR}/bin/${GBUILD_BITS}" # 32/64 bit build specific output directory
+  TEMPDIR="$HOME/tempdir"
+  export TZ=UTC
+  export LIBRARY_PATH="$STAGING/lib"
+  mkdir -p ${BINDIR}
+  #
+  mkdir -p $STAGING
+  cd $STAGING
+  unzip ../build/bitcoin-deps-linux${GBUILD_BITS}-gitian-r3.zip
+  unzip ../build/boost-linux${GBUILD_BITS}-1.55.0-gitian-r1.zip
+  cd ../build
+  #
+  cd reddcoin
+  mkdir -p $OUTDIR/src
+  git archive HEAD | tar -x -C $OUTDIR/src
+  cp $OUTDIR/src/doc/README.md $OUTDIR
+  cp $OUTDIR/src/COPYING $OUTDIR
+  cd src
+  export BOOST_LIB_PATH="$LIBRARY_PATH"
+  export BOOST_LIB_SUFFIX="-mt"
+  # Boost is built without z on linux so it is not needed anymore. We do need rt however
+  sed -i 's/l z/l rt/g' makefile.unix
+  make -f makefile.unix $MAKEOPTS reddcoind STATIC=1 OPENSSL_INCLUDE_PATH="$STAGING/include" OPENSSL_LIB_PATH="$LIBRARY_PATH" USE_UPNP=1 DEBUGFLAGS= USE_SSE2=1
+  mkdir -p $BINDIR
+  install -s reddcoind $BINDIR
+  cd ..
+  qmake INCLUDEPATH="$STAGING/include" BOOST_LIB_SUFFIX="-mt" LIBS="-L$LIBRARY_PATH" RELEASE=1 USE_QRCODE=1 USE_SSE2=1
+  make $MAKEOPTS
+  install reddcoin-qt $BINDIR

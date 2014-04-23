@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = reddcoin-qt
 macx:TARGET = "Reddcoin-Qt"
-VERSION = 1.1.3
+VERSION = 1.1.3.2
 INCLUDEPATH += src src/json src/qt
 QT += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets

@@ -1,4 +1,4 @@
-Reddcoin 1.1.3
+Reddcoin 1.1.3.2
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2013 Litecoin Developers

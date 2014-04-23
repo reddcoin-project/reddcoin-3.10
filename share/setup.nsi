@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.8.6.2
+!define VERSION 1.1.3.2
 !define COMPANY "Reddcoin project"
 !define URL http://www.reddcoin.com/
 
@@ -45,13 +45,13 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile reddcoin-0.8.6.2-win32-setup.exe
+OutFile reddcoin-1.1.3.2-win32-setup.exe
 InstallDir $PROGRAMFILES\Reddcoin
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 0.8.6.2
+VIProductVersion 1.1.3.2
 VIAddVersionKey ProductName Reddcoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
