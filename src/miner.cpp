@@ -13,6 +13,11 @@
 #include "wallet.h"
 #include "kernel.h"
 #endif
+
+#include <openssl/sha.h>
+
+using namespace std;
+
 //////////////////////////////////////////////////////////////////////////////
 //
 // ReddcoinMiner
@@ -54,7 +59,14 @@ void SHA256Transform(void* pstate, void* pinput, const void* pinit)
         ((uint32_t*)pstate)[i] = ctx.h[i];
 }
 
-// Some explaining would be appreciated
+//
+// Unconfirmed transactions in the memory pool often depend on other
+// transactions in the memory pool. When we select transactions from the
+// pool, we select by highest priority or fee rate, so we might consider
+// transactions that depend on transactions that aren't yet in the block.
+// The COrphan class keeps track of these 'temporary orphans' while
+// CreateBlock is figuring out which transactions to include.
+//
 class COrphan
 {
 public:
