@@ -77,6 +77,7 @@ BITCOIN_CORE_H = \
   script.h \
   crypto/scrypt.h \
   serialize.h \
+  crypto/common.h \
   crypto/sha2.h \
   crypto/sha1.h \
   crypto/ripemd160.h \
