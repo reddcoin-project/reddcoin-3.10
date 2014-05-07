@@ -451,21 +451,20 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
             return error("ReddcoinMiner : mined block is stale");
-
-        // Remove key from key pool
-        reservekey.KeepKey();
-
-        // Track how many getdata requests this block gets
-        {
-            LOCK(wallet.cs_wallet);
-            wallet.mapRequestCount[hash] = 0;
-        }
-
-        // Process this block the same as if we had received it from another node
-        CValidationState state;
-        if (!ProcessBlock(state, NULL, pblock))
-            return error("ReddcoinMiner : ProcessBlock, block not accepted");
     }
+    // Remove key from key pool
+    reservekey.KeepKey();
+
+    // Track how many getdata requests this block gets
+    {
+        LOCK(wallet.cs_wallet);
+        wallet.mapRequestCount[hash] = 0;
+    }
+
+    // Process this block the same as if we had received it from another node
+    CValidationState state;
+    if (!ProcessBlock(state, NULL, pblock))
+        return error("ReddcoinMiner : ProcessBlock, block not accepted");
 
     return true;
 }
@@ -492,21 +491,20 @@ bool CheckStake(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
             return error("ReddcoinStaker : minted block is stale");
-
-        // Remove key from key pool
-        reservekey.KeepKey();
-
-        // Track how many getdata requests this block gets
-        {
-            LOCK(wallet.cs_wallet);
-            wallet.mapRequestCount[hash] = 0;
-        }
-
-        // Process this block the same as if we had received it from another node
-        CValidationState state;
-        if (!ProcessBlock(state, NULL, pblock))
-            return error("ReddcoinStaker : ProcessBlock, block not accepted");
     }
+    // Remove key from key pool
+    reservekey.KeepKey();
+
+    // Track how many getdata requests this block gets
+    {
+        LOCK(wallet.cs_wallet);
+        wallet.mapRequestCount[hash] = 0;
+    }
+
+    // Process this block the same as if we had received it from another node
+    CValidationState state;
+    if (!ProcessBlock(state, NULL, pblock))
+        return error("ReddcoinStaker : ProcessBlock, block not accepted");
 
     return true;
 }
