@@ -756,4 +756,3 @@ void GenerateReddcoins(bool fGenerate, CWallet* pwallet, int nThreads)
 }
 
 #endif
-
