@@ -27,7 +27,6 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
 
 #if QT_VERSION >= 0x040700
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)"));
 #endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_SM, this);
