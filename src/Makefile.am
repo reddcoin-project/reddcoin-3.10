@@ -230,7 +230,6 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 reddcoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
-  $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBLEVELDB) \
