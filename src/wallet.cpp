@@ -27,6 +27,7 @@ typedef vector<unsigned char> valtype;
 
 // Settings
 CFeeRate payTxFee(DEFAULT_TRANSACTION_FEE);
+unsigned int nTxConfirmTarget = 1;
 bool bSpendZeroConfChange = true;
 
 /**
@@ -1509,6 +1510,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
         return false;
     }
 
+    wtxNew.fTimeReceivedIsTxTime = true;
     wtxNew.BindWallet(this);
     CMutableTransaction txNew;
 
@@ -1637,19 +1639,31 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
                 }
                 dPriority = wtxNew.ComputePriority(dPriority, nBytes);
 
-                // Check that enough fee is included
-                CAmount nPayFee = payTxFee.GetFee(nBytes);
-                bool fAllowFree = AllowFree(dPriority);
-                CAmount nMinFee = GetMinFee(wtxNew, 1, nBytes, fAllowFree, GMF_SEND);
-                if (nFeeRet < max(nPayFee, nMinFee))
+                CAmount nFeeNeeded = GetMinimumFee(nBytes, nTxConfirmTarget, mempool);
+
+                if (nFeeRet >= nFeeNeeded)
+                    break; // Done, enough fee included.
+
+                // Too big to send for free? Include more fee and try again:
+                if (nBytes > MAX_FREE_TRANSACTION_CREATE_SIZE)
                 {
-                    nFeeRet = max(nPayFee, nMinFee);
+                    nFeeRet = nFeeNeeded;
                     continue;
                 }
 
-                wtxNew.fTimeReceivedIsTxTime = true;
+                // Not enough fee: enough priority?
+                double dPriorityNeeded = mempool.estimatePriority(nTxConfirmTarget);
+                // Not enough mempool history to estimate: use hard-coded AllowFree.
+                if (dPriorityNeeded <= 0 && AllowFree(dPriority))
+                    break;
 
-                break;
+                // Small enough, and priority high enough, to send for free
+                if (dPriority >= dPriorityNeeded)
+                    break;
+
+                // Include more fee and try again.
+                nFeeRet = nFeeNeeded;
+                continue;
             }
         }
     }
@@ -2130,6 +2144,23 @@ string CWallet::SendMoney(const CTxDestination &address, CAmount nValue, CWallet
 
     return "";
 }
+
+
+
+CAmount CWallet::GetMinimumFee(unsigned int nTxBytes, unsigned int nConfirmTarget, const CTxMemPool& pool)
+{
+    // payTxFee is user-set "I want to pay this much"
+    int64_t nFeeNeeded = payTxFee.GetFee(nTxBytes);
+    // User didn't set: use -txconfirmtarget to estimate...
+    if (nFeeNeeded == 0)
+        nFeeNeeded = pool.estimateFee(nConfirmTarget).GetFee(nTxBytes);
+    // ... unless we don't have enough mempool data, in which case fall
+    // back to a hard-coded fee
+    if (nFeeNeeded == 0)
+        nFeeNeeded = CTransaction::minTxFee.GetFee(nTxBytes);
+    return nFeeNeeded;
+}
+
 
 
 

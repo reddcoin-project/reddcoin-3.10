@@ -805,7 +805,7 @@ bool CheckTransaction(const CTransaction& tx, CValidationState &state)
     return true;
 }
 
-CAmount GetMinFee(const CTransaction& tx, unsigned int nBlockSize, unsigned int nBytes, bool fAllowFree, enum GetMinFee_mode mode)
+CAmount GetMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool fAllowFree)
 {
     {
         LOCK(mempool.cs);
@@ -817,45 +817,26 @@ CAmount GetMinFee(const CTransaction& tx, unsigned int nBlockSize, unsigned int 
             return 0;
     }
 
-    // Base fee is either minTxFee or minRelayTxFee
-    CFeeRate baseFeeRate = (mode == GMF_RELAY) ? tx.minRelayTxFee : tx.minTxFee;
-    unsigned int nNewBlockSize = nBlockSize + nBytes;
-    CAmount nMinFee = baseFeeRate.GetFee(nBytes);
+    // Reddcoin
+    // To limit dust spam, add 1000 byte penalty for each output less than DUST_THRESHOLD
+    BOOST_FOREACH(const CTxOut& txout, tx.vout)
+        if (txout.nValue < DUST_THRESHOLD)
+        {
+            nBytes += 1000;
+            fAllowFree = false;
+        }
+
+
+    CAmount nMinFee = tx.minRelayTxFee.GetFee(nBytes);
 
     if (fAllowFree)
     {
         // There is a free transaction area in blocks created by most miners,
-        // * If we are relaying we allow transactions up to DEFAULT_BLOCK_PRIORITY_SIZE - 1000
+        // * If we are relaying we allow transactions up to DEFAULT_BLOCK_PRIORITY_SIZE - 5000
         //   to be considered to fall into this category. We don't want to encourage sending
         //   multiple transactions instead of one big transaction to avoid fees.
-        // * If we are creating a transaction we allow transactions up to 5,000 bytes
-        //   to be considered safe and assume they can likely make it into this section.
-        if (nBytes < (mode == GMF_SEND ? 5000 : (DEFAULT_BLOCK_PRIORITY_SIZE - 1000)))
+        if (nBytes < (DEFAULT_BLOCK_PRIORITY_SIZE - 5000))
             nMinFee = 0;
-    }
-
-    // Reddcoin
-    // To limit dust spam, add baseFeeRate for each output less than DUST_SOFT_LIMIT
-    BOOST_FOREACH(const CTxOut& txout, tx.vout)
-        if (txout.nValue < DUST_SOFT_LIMIT)
-            nMinFee += baseFeeRate.GetFee(nBytes);
-
-    // Raise the price as the block approaches full
-    if (nBlockSize != 1 && nNewBlockSize >= MAX_BLOCK_SIZE_GEN/2)
-    {
-        if (nNewBlockSize >= MAX_BLOCK_SIZE_GEN)
-            return MAX_MONEY;
-        nMinFee *= MAX_BLOCK_SIZE_GEN / (MAX_BLOCK_SIZE_GEN - nNewBlockSize);
-    }
-
-    // This code can be removed after enough miners have upgraded to version 0.9.
-    // Until then, be safe when sending and require a fee if any output
-    // is less than CENT:
-    if (nMinFee < baseFeeRate.GetFee(nBytes) && mode == GMF_SEND)
-    {
-        BOOST_FOREACH(const CTxOut& txout, tx.vout)
-            if (txout.nValue < CENT)
-                nMinFee = baseFeeRate.GetFee(nBytes);
     }
 
     if (!MoneyRange(nMinFee))
@@ -977,7 +958,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState &state, const CTransa
         unsigned int nSize = entry.GetTxSize();
 
         // Don't accept it if it can't get into a block
-        CAmount txMinFee = GetMinFee(tx, 1000, nSize, true, GMF_RELAY);
+        CAmount txMinFee = GetMinRelayFee(tx, nSize, true);
         if (fLimitFree && nFees < txMinFee)
             return state.DoS(0, error("AcceptToMemoryPool : not enough fees %s, %d < %d",
                                       hash.ToString(), nFees, txMinFee),
