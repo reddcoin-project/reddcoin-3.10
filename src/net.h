@@ -47,6 +47,8 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const size_t MAPASKFOR_MAX_SZ = MAX_INV_SZ;
 /** The maximum number of new addresses to accumulate before announcing. */
 static const unsigned int MAX_ADDR_TO_SEND = 1000;
+/** -listen default */
+static const bool DEFAULT_LISTEN = true;
 /** -upnp default */
 #ifdef USE_UPNP
 static const bool DEFAULT_UPNP = USE_UPNP;
