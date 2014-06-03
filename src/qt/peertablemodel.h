@@ -11,10 +11,12 @@
 #include <QAbstractTableModel>
 #include <QStringList>
 
-class PeerTablePriv;
 class ClientModel;
+class PeerTablePriv;
 
+QT_BEGIN_NAMESPACE
 class QTimer;
+QT_END_NAMESPACE
 
 struct CNodeCombinedStats {
     CNodeStats nodeStats;
@@ -25,7 +27,7 @@ struct CNodeCombinedStats {
 class NodeLessThan
 {
 public:
-    NodeLessThan(int nColumn, Qt::SortOrder fOrder):
+    NodeLessThan(int nColumn, Qt::SortOrder fOrder) :
         column(nColumn), order(fOrder) {}
     bool operator()(const CNodeCombinedStats &left, const CNodeCombinedStats &right) const;
 
@@ -74,7 +76,6 @@ private:
     QStringList columns;
     PeerTablePriv *priv;
     QTimer *timer;
-
 };
 
 #endif // PEERTABLEMODEL_H

@@ -9,8 +9,8 @@
 #include "guiutil.h"
 #include "peertablemodel.h"
 
-#include "main.h"
 #include "chainparams.h"
+#include "main.h"
 #include "rpcserver.h"
 #include "rpcclient.h"
 #include "util.h"
@@ -20,7 +20,6 @@
 #include <db_cxx.h>
 #endif
 #include <openssl/crypto.h>
-
 #include <QKeyEvent>
 #include <QScrollBar>
 #include <QThread>
@@ -624,6 +623,8 @@ void RPCConsole::updateNodeDetail(const CNodeCombinedStats *stats)
     ui->detailWidget->show();
 }
 
+// We override the virtual resizeEvent of the QWidget to adjust tables column
+// sizes as the tables width is proportional to the dialogs width.
 void RPCConsole::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);

@@ -78,7 +78,6 @@ public:
         BOOST_FOREACH(CNodeCombinedStats &stats, cachedNodeStats)
             stats.fNodeStateStatsAvailable = GetNodeStateStats(stats.nodeStats.nodeid, stats.nodeStateStats);
 
-
         if (sortColumn >= 0)
             // sort cacheNodeStats (use stable sort to prevent rows jumping around unneceesarily)
             qStableSort(cachedNodeStats.begin(), cachedNodeStats.end(), NodeLessThan(sortColumn, sortOrder));
@@ -103,7 +102,6 @@ public:
             return 0;
         }
     }
-
 };
 
 PeerTableModel::PeerTableModel(ClientModel *parent) :

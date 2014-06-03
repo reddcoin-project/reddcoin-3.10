@@ -13,6 +13,7 @@
 #include <QDialog>
 
 class ClientModel;
+class CNodeCombinedStats;
 
 QT_BEGIN_NAMESPACE
 class QItemSelection;

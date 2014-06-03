@@ -200,7 +200,6 @@ namespace GUIUtil
 #else
     typedef QProgressBar ProgressBar;
 #endif
-    
 } // namespace GUIUtil
 
 #endif // GUIUTIL_H
