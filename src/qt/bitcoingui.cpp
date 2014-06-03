@@ -583,7 +583,7 @@ void BitcoinGUI::aboutClicked()
 
 void BitcoinGUI::showHelpMessageClicked()
 {
-    HelpMessageDialog *help = new HelpMessageDialog(this);
+    HelpMessageDialog *help = new HelpMessageDialog(this, false);
     help->setAttribute(Qt::WA_DeleteOnClose);
     help->show();
 }
