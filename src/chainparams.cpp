@@ -6,8 +6,6 @@
 #include "chainparams.h"
 
 #include "assert.h"
-#include "core.h"
-#include "protocol.h"
 #include "util.h"
 
 #include <boost/assign/list_of.hpp>
@@ -26,6 +24,7 @@ unsigned int pnSeed[] =
 class CMainParams : public CChainParams {
 public:
     CMainParams() {
+        networkID = CChainParams::MAIN;
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
@@ -108,20 +107,17 @@ public:
             addr.nTime = GetTime() - GetRand(nOneWeek) - nOneWeek;
             vFixedSeeds.push_back(addr);
         }
-    }
 
-    virtual const CBlock& GenesisBlock() const { return genesis; }
-    virtual Network NetworkID() const { return CChainParams::MAIN; }
-
-    virtual const vector<CAddress>& FixedSeeds() const {
-        return vFixedSeeds;
+        fRequireRPCPassword = true;
+        fMiningRequiresPeers = true;
+        fDefaultCheckMemPool = false;
+        fAllowMinDifficultyBlocks = false;
+        fRequireStandard = true;
+        fIsTestNet = false;
+        fMineBlocksOnDemand = false;
     }
-protected:
-    CBlock genesis;
-    vector<CAddress> vFixedSeeds;
 };
 static CMainParams mainParams;
-
 
 //
 // Testnet (v3)
@@ -129,6 +125,7 @@ static CMainParams mainParams;
 class CTestNetParams : public CMainParams {
 public:
     CTestNetParams() {
+        networkID = CChainParams::TESTNET;
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
@@ -170,15 +167,17 @@ public:
         base58Prefixes[SECRET_KEY]     = std::vector<unsigned char>(1,239);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-    }
 
-    virtual bool AllowMinDifficultyBlocks() const { return true; }
-    virtual bool RequireStandard() const { return false; }
-    virtual bool IsTestNet() const { return true; }
-    virtual Network NetworkID() const { return CChainParams::TESTNET; }
+        fRequireRPCPassword = true;
+        fMiningRequiresPeers = true;
+        fDefaultCheckMemPool = false;
+        fAllowMinDifficultyBlocks = true;
+        fRequireStandard = false;
+        fIsTestNet = true;
+        fMineBlocksOnDemand = false;
+    }
 };
 static CTestNetParams testNetParams;
-
 
 //
 // Regression test
@@ -212,14 +211,15 @@ public:
         assert(hashGenesisBlock == uint256("0x0472dc040de80ded8bd385a2b6bc6e4e05cb6432047efa07692724c6ccef40ac"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
-    }
 
-    virtual bool RequireRPCPassword() const { return false; }
-    virtual bool MiningRequiresPeers() const { return false; }
-    virtual bool MineBlocksOnDemand() const { return true; }
-    virtual bool DefaultCheckMemPool() const { return true; }
-    virtual bool RequireStandard() const { return false; }
-    virtual Network NetworkID() const { return CChainParams::REGTEST; }
+        fRequireRPCPassword = false;
+        fMiningRequiresPeers = false;
+        fDefaultCheckMemPool = true;
+        fAllowMinDifficultyBlocks = true;
+        fRequireStandard = false;
+        fIsTestNet = true;
+        fMineBlocksOnDemand = true;
+    }
 };
 static CRegTestParams regTestParams;
 
