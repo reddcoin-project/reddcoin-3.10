@@ -72,6 +72,16 @@ enum RPCErrorCode
     RPC_WALLET_ALREADY_UNLOCKED_STAKING_ONLY = -18, // Wallet is already unlocked for staking only
 };
 
+class AcceptedConnection
+{
+public:
+    virtual ~AcceptedConnection() {}
+
+    virtual std::iostream& stream() = 0;
+    virtual std::string peer_address_to_string() const = 0;
+    virtual void close() = 0;
+};
+
 //
 // IOStream device that speaks SSL but can also speak non-SSL
 //
@@ -142,7 +152,9 @@ private:
 };
 
 std::string HTTPPost(const std::string& strMsg, const std::map<std::string,std::string>& mapRequestHeaders);
-std::string HTTPReply(int nStatus, const std::string& strMsg, bool keepalive);
+std::string HTTPReply(int nStatus, const std::string& strMsg, bool keepalive,
+                      bool headerOnly = false,
+                      const char *contentType = "application/json");
 bool ReadHTTPRequestLine(std::basic_istream<char>& stream, int &proto,
                          std::string& http_method, std::string& http_uri);
 int ReadHTTPStatus(std::basic_istream<char>& stream, int &proto);
