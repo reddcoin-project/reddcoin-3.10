@@ -268,7 +268,10 @@ case $host in
 
      CPPFLAGS="$CPPFLAGS -DMAC_OSX"
      ;;
-  *arm*)
+   *linux*)
+     TARGET_OS=linux
+     ;;
+   *arm*)
      use_sse2=no
      ;;     
    *)
