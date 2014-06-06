@@ -12,6 +12,7 @@ packages:
 - "bsdmainutils"
 - "pkg-config"
 - "p7zip-full"
+- "libtool"
 
 reference_datetime: "2016-05-28 00:00:00"
 remotes:
