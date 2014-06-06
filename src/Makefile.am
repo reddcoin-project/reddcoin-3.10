@@ -1,6 +1,10 @@
 AM_CPPFLAGS =  $(INCLUDES)
 AM_LDFLAGS = $(PTHREAD_CFLAGS)
 
+if USE_LIBSECP256K1
+secp256k1/libsecp256k1.la: $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
+	@$(MAKE) $(AM_MAKEFLAGS) -C $(@D) $(@F)
+endif
 
 if EMBEDDED_LEVELDB
 LEVELDB_CPPFLAGS += -I$(srcdir)/leveldb/include
@@ -20,10 +24,24 @@ endif
 BITCOIN_CONFIG_INCLUDES=-I$(builddir)/config
 BITCOIN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS)
 
+if USE_LIBSECP256K1
+BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
+endif
+
+LIBBITCOIN_SERVER=libbitcoin_server.a
+LIBBITCOIN_WALLET=libbitcoin_wallet.a
+LIBBITCOIN_SERVER_WALLET=libbitcoin_server_wallet.a
+LIBBITCOIN_COMMON=libbitcoin_common.a
+LIBBITCOIN_CLI=libbitcoin_cli.a
+LIBBITCOIN_UTIL=libbitcoin_util.a
+LIBBITCOIN_CRYPTO=crypto/libbitcoin_crypto.a
+LIBBITCOINQT=qt/libbitcoinqt.a
+
 noinst_LIBRARIES = \
   libbitcoin_server.a \
   libbitcoin_common.a \
   libbitcoin_cli.a \
+  libbitcoin_util.a \
   crypto/libbitcoin_crypto.a
 if ENABLE_WALLET
 BITCOIN_INCLUDES += $(BDB_CPPFLAGS)
@@ -135,6 +153,8 @@ libbitcoin_server_a_SOURCES = \
   $(JSON_H) \
   $(BITCOIN_CORE_H)
 
+# wallet: shared between bitcoind and bitcoin-qt, but only linked
+# when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_SOURCES = \
   db.cpp \
@@ -161,6 +181,10 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/ripemd160.h \
   crypto/scrypt.h
 
+if USE_SSE2
+crypto_libbitcoin_crypto_a_SOURCES += crypto/scrypt-sse2.cpp
+endif
+
 libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_common_a_SOURCES = \
   base58.cpp \
@@ -171,8 +195,15 @@ libbitcoin_common_a_SOURCES = \
   key.cpp \
   netbase.cpp \
   protocol.cpp \
-  rpcprotocol.cpp \
   script.cpp \
+  $(BITCOIN_CORE_H)
+
+# util: shared between all executables.
+# This library *must* be included to make sure that the glibc
+# backward-compatibility objects and their sanity checks are linked.
+libbitcoin_util_a_CPPFLAGS = $(BITCOIN_INCLUDES)
+libbitcoin_util_a_SOURCES = \
+  rpcprotocol.cpp \
   sync.cpp \
   util.cpp \
   timedata.cpp \
@@ -181,30 +212,32 @@ libbitcoin_common_a_SOURCES = \
   compat/glibcxx_sanity.cpp \
   $(BITCOIN_CORE_H)
 
-if USE_SSE2
-crypto_libbitcoin_crypto_a_SOURCES += crypto/scrypt-sse2.cpp
-endif
-
 if GLIBC_BACK_COMPAT
-libbitcoin_common_a_SOURCES += compat/glibc_compat.cpp
-libbitcoin_common_a_SOURCES += compat/glibcxx_compat.cpp
+libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
+libbitcoin_util_a_SOURCES += compat/glibcxx_compat.cpp
 endif
 
 libbitcoin_cli_a_SOURCES = \
   rpcclient.cpp \
   $(BITCOIN_CORE_H)
 
-nodist_libbitcoin_common_a_SOURCES = $(srcdir)/obj/build.h
+nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # reddcoind binary #
 reddcoind_LDADD = \
-  libbitcoin_server.a \
-  libbitcoin_cli.a \
-  libbitcoin_common.a \
-  crypto/libbitcoin_crypto.a \
+  $(LIBBITCOIN_SERVER) \
+  $(LIBBITCOIN_COMMON) \
+  $(LIBBITCOIN_CLI) \
+  $(LIBBITCOIN_UTIL) \
+  $(LIBBITCOIN_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBMEMENV)
+
+if USE_LIBSECP256K1
+  reddcoind_LDADD += secp256k1/libsecp256k1.la
+endif
+
 if ENABLE_WALLET
 reddcoind_LDADD += libbitcoin_wallet.a libbitcoin_server_wallet.a
 endif
@@ -220,11 +253,17 @@ reddcoind_CPPFLAGS = $(BITCOIN_INCLUDES)
 
 # reddcoin-cli binary #
 reddcoin_cli_LDADD = \
-  libbitcoin_cli.a \
-  libbitcoin_common.a \
-  crypto/libbitcoin_crypto.a \
+  $(LIBBITCOIN_CLI) \
+  $(LIBBITCOIN_COMMON) \
+  $(LIBBITCOIN_UTIL) \
+  $(LIBBITCOIN_CRYPTO) \
   $(BOOST_LIBS)
-reddcoin_cli_SOURCES = bitcoin-cli.cpp
+reddcoin_cli_SOURCES = \
+  bitcoin-cli.cpp
+
+if USE_LIBSECP256K1
+  reddcoin_cli_LDADD += secp256k1/libsecp256k1.la
+endif
 reddcoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
 
@@ -236,10 +275,11 @@ CLEANFILES = leveldb/libleveldb.a leveldb/libmemenv.a *.gcda *.gcno
 
 DISTCLEANFILES = obj/build.h
 
-EXTRA_DIST = leveldb
+EXTRA_DIST = leveldb secp256k1
 
 clean-local:
 	-$(MAKE) -C leveldb clean
+	-$(MAKE) -C secp256k1 clean
 	rm -f leveldb/*/*.gcno leveldb/helpers/memenv/*.gcno
 	-rm -f config.h
 
@@ -254,14 +294,6 @@ clean-local:
 %.pb.cc %.pb.h: %.proto
 	@test -f $(PROTOC)
 	$(AM_V_GEN) $(PROTOC) --cpp_out=$(@D) --proto_path=$(abspath $(<D) $<)
-
-LIBBITCOIN_SERVER=libbitcoin_server.a
-LIBBITCOIN_WALLET=libbitcoin_wallet.a
-LIBBITCOIN_SERVER_WALLET=libbitcoin_server_wallet.a
-LIBBITCOIN_COMMON=libbitcoin_common.a
-LIBBITCOIN_CLI=libbitcoin_cli.a
-LIBBITCOIN_CRYPTO=crypto/libbitcoin_crypto.a
-LIBBITCOINQT=qt/libbitcoinqt.a
 
 if ENABLE_TESTS
 include Makefile.test.include
