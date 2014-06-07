@@ -65,7 +65,8 @@ public:
         //     CTxOut(nValue=50.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
         //   vMerkleTree: 97ddfbbae6
         const char* pszTimestamp = "January 21st 2014 was such a nice day...";
-        CTransaction txNew(1390280400);
+        CMutableTransaction txNew;
+        txNew.nTime = 1390280400;
         txNew.nVersion = 1;
         txNew.vin.resize(1);
         txNew.vout.resize(1);

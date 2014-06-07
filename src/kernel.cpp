@@ -467,12 +467,12 @@ uint64_t GetCoinAge(const CTransaction& tx)
     BOOST_FOREACH(const CTxIn& txin, tx.vin)
     {
         // First try finding the previous transaction in database
-        CTransaction txPrev;
+        CTransaction txPrevious;
         uint256 hashTxPrev = txin.prevout.hash;
         uint256 hashBlock = 0;
-        if (!GetTransaction(hashTxPrev, txPrev, hashBlock, true))
+        if (!GetTransaction(hashTxPrev, txPrevious, hashBlock, true))
             continue;  // previous transaction not in main chain
-
+        CMutableTransaction txPrev(txPrevious);
         // Read block header
         CBlock block;
         if (!mapBlockIndex.count(hashBlock))

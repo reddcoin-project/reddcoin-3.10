@@ -1362,11 +1362,12 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend,
         return false;
     }
 
+    wtxNew.BindWallet(this);
+    CMutableTransaction txNew;
+
     // Transactions in PoW phase should have the old version.
     if (chainActive.Tip()->nHeight < Params().LastProofOfWorkHeight())
-        wtxNew.nVersion = POW_TX_VERSION;
-
-    wtxNew.BindWallet(this);
+        txNew.nVersion = POW_TX_VERSION;
 
     {
         LOCK2(cs_main, cs_wallet);
@@ -1374,8 +1375,8 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend,
             nFeeRet = payTxFee.GetFeePerK();
             while (true)
             {
-                wtxNew.vin.clear();
-                wtxNew.vout.clear();
+                txNew.vin.clear();
+                txNew.vout.clear();
                 wtxNew.fFromMe = true;
 
                 int64_t nTotalValue = nValue + nFeeRet;
@@ -1389,7 +1390,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend,
                         strFailReason = _("Transaction amount too small");
                         return false;
                     }
-                    wtxNew.vout.push_back(txout);
+                    txNew.vout.push_back(txout);
                 }
 
                 // Choose coins to use
@@ -1457,8 +1458,8 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend,
                     else
                     {
                         // Insert change txn at random position:
-                        vector<CTxOut>::iterator position = wtxNew.vout.begin()+GetRandInt(wtxNew.vout.size()+1);
-                        wtxNew.vout.insert(position, newTxOut);
+                        vector<CTxOut>::iterator position = txNew.vout.begin()+GetRandInt(txNew.vout.size()+1);
+                        txNew.vout.insert(position, newTxOut);
                     }
                 }
                 else
@@ -1466,16 +1467,19 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend,
 
                 // Fill vin
                 BOOST_FOREACH(const PAIRTYPE(const CWalletTx*,unsigned int)& coin, setCoins)
-                    wtxNew.vin.push_back(CTxIn(coin.first->GetHash(),coin.second));
+                    txNew.vin.push_back(CTxIn(coin.first->GetHash(),coin.second));
 
                 // Sign
                 int nIn = 0;
                 BOOST_FOREACH(const PAIRTYPE(const CWalletTx*,unsigned int)& coin, setCoins)
-                    if (!SignSignature(*this, *coin.first, wtxNew, nIn++))
+                    if (!SignSignature(*this, *coin.first, txNew, nIn++))
                     {
                         strFailReason = _("Signing transaction failed");
                         return false;
                     }
+
+                // Embed the constructed transaction data in wtxNew.
+                *static_cast<CTransaction*>(&wtxNew) = CTransaction(txNew);
 
                 // Limit size
                 unsigned int nBytes = ::GetSerializeSize(*(CTransaction*)&wtxNew, SER_NETWORK, PROTOCOL_VERSION);
@@ -1568,7 +1572,7 @@ bool CWallet::GetStakeWeight(uint64_t& nAverageWeight, uint64_t& nTotalWeight)
     return true;
 }
 
-bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64_t nFees, CTransaction& txNew, CKey& key, int nVer)
+bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64_t nFees, CMutableTransaction& txNew, CKey& key, int nVer)
 {
     CBlockIndex* pindexBest = chainActive.Tip();
     CBlockIndex* pindexPrev = pindexBest;
@@ -1839,7 +1843,8 @@ bool CWallet::SignBlock(CBlock *pblock, int64_t nFees)
     static int64_t nLastCoinStakeSearchTime = GetAdjustedTime(); // startup timestamp
 
     CKey key;
-    CTransaction txCoinStake;
+    CMutableTransaction txCoinStake;
+    CMutableTransaction txCoinbase(pblock->vtx[0]);
     int64_t nSearchTime = txCoinStake.nTime; // search to current time
     CBlockIndex *pindexBest = chainActive.Tip();
     int nPosvVer = 1;
@@ -1869,7 +1874,8 @@ bool CWallet::SignBlock(CBlock *pblock, int64_t nFees)
             {
                 // make sure coinstake would meet timestamp protocol
                 //    as it would be the same as the block timestamp
-                pblock->vtx[0].nTime = pblock->nTime = txCoinStake.nTime;
+            	txCoinbase.nTime = pblock->nTime = txCoinStake.nTime;
+            	pblock->vtx[0] = txCoinbase;
                 pblock->nTime = max(pindexBest->GetMedianTimePast()+1, pblock->GetMaxTransactionTime());
                 pblock->nTime = max(pblock->GetBlockTime(), PastDrift(pindexBest->GetBlockTime()));
 

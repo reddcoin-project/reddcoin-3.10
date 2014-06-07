@@ -91,9 +91,33 @@ std::string CFeeRate::ToString() const
     return result;
 }
 
-uint256 CTransaction::GetHash() const
+CMutableTransaction::CMutableTransaction() : nVersion(CTransaction::CURRENT_VERSION), nLockTime(0), nTime(GetAdjustedTime()) { }
+CMutableTransaction::CMutableTransaction(const CTransaction& tx) : nVersion(tx.nVersion), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime), nTime(tx.nTime) { }
+
+uint256 CMutableTransaction::GetHash() const
 {
     return SerializeHash(*this);
+}
+
+void CTransaction::UpdateHash() const
+{
+    *const_cast<uint256*>(&hash) = SerializeHash(*this);
+}
+
+CTransaction::CTransaction() : hash(0), nVersion(CTransaction::CURRENT_VERSION), vin(), vout(), nLockTime(0), nTime(0) { }
+
+CTransaction::CTransaction(const CMutableTransaction &tx) : nVersion(tx.nVersion), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime), nTime(tx.nTime) {
+	UpdateHash();
+}
+
+CTransaction& CTransaction::operator=(const CTransaction &tx) {
+    *const_cast<int*>(&nVersion) = tx.nVersion;
+    *const_cast<std::vector<CTxIn>*>(&vin) = tx.vin;
+    *const_cast<std::vector<CTxOut>*>(&vout) = tx.vout;
+    *const_cast<unsigned int*>(&nLockTime) = tx.nLockTime;
+    *const_cast<unsigned int*>(&nTime) = tx.nTime;
+    *const_cast<uint256*>(&hash) = tx.hash;
+    return *this;
 }
 
 int64_t CTransaction::GetValueOut() const

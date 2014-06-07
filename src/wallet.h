@@ -269,7 +269,7 @@ public:
     // PoSV
     int64_t GetStake() const;
     bool GetStakeWeight(uint64_t& nAverageWeight, uint64_t& nTotalWeight);
-    bool CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64_t nFees, CTransaction& txNew, CKey& key, int nVer);
+    bool CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64_t nFees, CMutableTransaction& txNew, CKey& key, int nVer);
     bool SignBlock(CBlock *pblock, int64_t nFees);
 
     bool NewKeyPool();
