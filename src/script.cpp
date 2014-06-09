@@ -1545,13 +1545,11 @@ public:
     bool operator()(const CScriptID &scriptID) const { return keystore->HaveCScript(scriptID); }
 };
 
-isminetype IsMine(const CKeyStore &keystore, const CTxDestination &dest)
+isminetype IsMine(const CKeyStore &keystore, const CTxDestination& dest)
 {
-    if (boost::apply_visitor(CKeyStoreIsMineVisitor(&keystore), dest))
-        return MINE_SPENDABLE;
-    if (keystore.HaveWatchOnly(dest))
-        return MINE_WATCH_ONLY;
-    return MINE_NO;
+    CScript script;
+    script.SetDestination(dest);
+    return IsMine(keystore, script);
 }
 
 isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
@@ -1559,7 +1557,7 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
     vector<valtype> vSolutions;
     txnouttype whichType;
     if (!Solver(scriptPubKey, whichType, vSolutions)) {
-        if (keystore.HaveWatchOnly(scriptPubKey.GetID()))
+        if (keystore.HaveWatchOnly(scriptPubKey))
             return MINE_WATCH_ONLY;
         return MINE_NO;
     }
@@ -1574,15 +1572,11 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
         keyID = CPubKey(vSolutions[0]).GetID();
         if (keystore.HaveKey(keyID))
             return MINE_SPENDABLE;
-        if (keystore.HaveWatchOnly(keyID))
-            return MINE_WATCH_ONLY;
         break;
     case TX_PUBKEYHASH:
         keyID = CKeyID(uint160(vSolutions[0]));
         if (keystore.HaveKey(keyID))
             return MINE_SPENDABLE;
-        if (keystore.HaveWatchOnly(keyID))
-            return MINE_WATCH_ONLY;
         break;
     case TX_SCRIPTHASH:
     {
@@ -1590,11 +1584,9 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
         CScript subscript;
         if (keystore.GetCScript(scriptID, subscript)) {
             isminetype ret = IsMine(keystore, subscript);
-            if (ret)
+            if (ret == MINE_SPENDABLE)
                 return ret;
         }
-        if (keystore.HaveWatchOnly(scriptID))
-            return MINE_WATCH_ONLY;
         break;
     }
     case TX_MULTISIG:
@@ -1611,7 +1603,7 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
     }
     }
 
-    if (keystore.HaveWatchOnly(scriptPubKey.GetID()))
+    if (keystore.HaveWatchOnly(scriptPubKey))
         return MINE_WATCH_ONLY;
     return MINE_NO;
 }
