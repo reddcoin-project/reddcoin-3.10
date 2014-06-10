@@ -87,7 +87,11 @@ bool AppInit(int argc, char* argv[])
         {
             std::string strUsage = _("Reddcoin Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n";
 
-            if (!mapArgs.count("-version"))
+            if (mapArgs.count("-version"))
+            {
+                strUsage += LicenseInfo();
+            }
+            else
             {
                 strUsage += "\n" + _("Usage:") + "\n" +
                       "  reddcoind [options]                     " + _("Start Reddcoin Core Daemon") + "\n" +
