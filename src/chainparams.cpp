@@ -25,6 +25,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         networkID = CChainParams::MAIN;
+        strNetworkID = "main";
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
@@ -126,6 +127,7 @@ class CTestNetParams : public CMainParams {
 public:
     CTestNetParams() {
         networkID = CChainParams::TESTNET;
+        strNetworkID = "test";
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
@@ -185,6 +187,8 @@ static CTestNetParams testNetParams;
 class CRegTestParams : public CTestNetParams {
 public:
     CRegTestParams() {
+        networkID = CChainParams::REGTEST;
+        strNetworkID = "regtest";
         pchMessageStart[0] = 0xff;
         pchMessageStart[1] = 0xc4;
         pchMessageStart[2] = 0xba;
