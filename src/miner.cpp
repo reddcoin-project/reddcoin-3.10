@@ -568,7 +568,10 @@ void ReddcoinStaker(CWallet *pwallet)
 			//
 			auto_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey));
 			if (!pblocktemplate.get())
-				return;
+            {
+                LogPrintf("Error in ReddcoinStaker: Keypool ran out, please call keypoolrefill before restarting the mining thread\n");
+                return;
+            }
 			CBlock *pblock = &pblocktemplate->block;
 			int64_t nFees = pblocktemplate->vTxFees[0] * -1;
 
@@ -630,7 +633,10 @@ void static ReddcoinMiner(CWallet *pwallet)
 
 			auto_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey));
 			if (!pblocktemplate.get())
-				return;
+            {
+                LogPrintf("Error in ReddcoinMiner: Keypool ran out, please call keypoolrefill before restarting the mining thread\n");
+                return;
+            }
 			CBlock *pblock = &pblocktemplate->block;
 
 			// exit if received a PoSV block template
