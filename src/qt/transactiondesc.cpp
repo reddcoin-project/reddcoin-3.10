@@ -19,6 +19,8 @@
 #include <stdint.h>
 #include <string>
 
+using namespace std;
+
 QString TransactionDesc::FormatTxStatus(const CWalletTx& wtx)
 {
     AssertLockHeld(cs_main);
