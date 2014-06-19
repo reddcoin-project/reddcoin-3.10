@@ -64,9 +64,11 @@ BITCOIN_CORE_H = \
   addrman.h \
   alert.h \
   allocators.h \
-  base58.h bignum.h \
+  base58.h \
+  bignum.h \
   bloom.h \
   chainparams.h \
+  chainparamsbase.h \
   checkpoints.h \
   checkqueue.h \
   clientversion.h \
@@ -127,7 +129,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-version.$(OBJEXT): obj/build.h
 
-# server: shared between bitcoind and bitcoin-qt
+# server: shared between reddcoind and reddcoin-qt
 libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
@@ -188,6 +190,7 @@ if USE_SSE2
 crypto_libbitcoin_crypto_a_SOURCES += crypto/scrypt-sse2.cpp
 endif
 
+# common: shared between bitcoind, and bitcoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_common_a_SOURCES = \
   base58.cpp \
@@ -206,10 +209,10 @@ libbitcoin_common_a_SOURCES = \
 # backward-compatibility objects and their sanity checks are linked.
 libbitcoin_util_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_util_a_SOURCES = \
+  chainparamsbase.cpp \
   rpcprotocol.cpp \
   sync.cpp \
   util.cpp \
-  timedata.cpp \
   version.cpp \
   compat/glibc_sanity.cpp \
   compat/glibcxx_sanity.cpp \
@@ -220,7 +223,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 libbitcoin_util_a_SOURCES += compat/glibcxx_compat.cpp
 endif
 
-# cli: shared between bitcoin-cli and bitcoin-qt
+# cli: shared between reddcoin-cli and reddcoin-qt
 libbitcoin_cli_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_SOURCES = \
   rpcclient.cpp \
