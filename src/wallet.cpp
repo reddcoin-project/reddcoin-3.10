@@ -8,8 +8,8 @@
 #include "base58.h"
 #include "checkpoints.h"
 #include "coincontrol.h"
-#include "net.h"
 #include "kernel.h"
+#include "net.h"
 #include "timedata.h"
 
 #include <boost/algorithm/string/replace.hpp>
