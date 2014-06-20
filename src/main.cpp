@@ -2753,12 +2753,7 @@ bool AcceptBlockHeader(CBlockHeader& block, CValidationState& state, CBlockIndex
             return state.DoS(100, error("CheckBlockHeader() : block with timestamp before last checkpoint"),
                              REJECT_CHECKPOINT, "time-too-old");
         }
-        bool fOverflow = false;
-		uint256 bnNewBlock;
-        bnNewBlock.SetCompact(block.nBits, NULL, &fOverflow);
-        uint256 bnRequired;
-        bnRequired.SetCompact(ComputeMinWork(pcheckpoint->nBits, deltaTime));
-        if (bnNewBlock > bnRequired)
+        if (!CheckMinWork(block.nBits, pcheckpoint->nBits, deltaTime))
         {
             return state.DoS(100, error("CheckBlockHeader() : block with too little proof-of-work"),
                              REJECT_INVALID, "bad-diffbits");
