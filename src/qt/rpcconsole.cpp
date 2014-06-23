@@ -576,7 +576,7 @@ void RPCConsole::peerLayoutChanged()
     if (fUnselect && selectedRow >= 0)
     {
         ui->peerWidget->selectionModel()->select(QItemSelection(selectedModelIndex.first(), selectedModelIndex.last()),
-                                                 QItemSelectionModel::Deselect);
+            QItemSelectionModel::Deselect);
     }
 
     if (fReselect)
