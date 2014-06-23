@@ -173,7 +173,7 @@ Commit your signature to gitian.sigs:
 
     - Code-sign MacOSX .dmg
 
-  Note: only Gavin has the code-signing keys currently.
+  Note: only John has the code-signing keys currently.
 
 - Create `SHA256SUMS.asc` for builds, and PGP-sign it. This is done manually.
   Include all the files to be uploaded. The file has `sha256sum` format with a
@@ -203,7 +203,7 @@ Hash: SHA256
 
   - Reddheads mailing list
 
-  - Update title of #bitcoin on Freenode IRC
+  - Update title of #ritcoin on Freenode IRC
 
   - Reddit /r/Reddcoin,
 
