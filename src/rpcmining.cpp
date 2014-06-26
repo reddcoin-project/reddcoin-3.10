@@ -419,7 +419,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Reddcoin is downloading blocks...");
 
     if (chainActive.Tip()->nHeight >= Params().LastProofOfWorkHeight())
-        throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
+        throw JSONRPCError(RPC_VERIFY_ERROR, "No more PoW blocks");
 
     static unsigned int nTransactionsUpdatedLast;
 
@@ -640,7 +640,7 @@ Value submitblock(const Array& params, bool fHelp)
     if (state.IsError())
     {
         std::string strRejectReason = state.GetRejectReason();
-        throw JSONRPCError(RPC_MISC_ERROR, strRejectReason);
+        throw JSONRPCError(RPC_VERIFY_ERROR, strRejectReason);
     }
     if (state.IsInvalid())
         return "rejected"; // TODO: report validation state
