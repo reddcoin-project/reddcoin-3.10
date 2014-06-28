@@ -346,7 +346,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn)
 
         // Fill in header
         pblock->hashPrevBlock  = pindexPrev->GetBlockHash();
-        UpdateTime(*pblock, pindexPrev);
+        UpdateTime(pblock, pindexPrev);
         pblock->nBits          = GetNextWorkRequired(pindexPrev, pblock);
         pblock->nNonce         = 0;
         pblocktemplate->vTxSigOps[0] = GetLegacySigOpCount(pblock->vtx[0]);
@@ -586,7 +586,7 @@ void ReddcoinStaker(CWallet *pwallet)
     }
 }
 
-void static ReddcoinMiner(CWallet *pwallet)
+void static ReddcoinMiner(CWallet* pwallet)
 {
     LogPrintf("ReddcoinMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
@@ -597,139 +597,125 @@ void static ReddcoinMiner(CWallet *pwallet)
     unsigned int nExtraNonce = 0;
 
     try {
-    	while (true) {
-			if (Params().MiningRequiresPeers()) {
-				// Busy-wait for the network to come online so we don't waste time mining
-				// on an obsolete chain. In regtest mode we expect to fly solo.
-				while (vNodes.empty()){
-					LogPrintf("ReddcoinMiner : Waiting for network online.\n");
-					MilliSleep(1000);
-				}
-			}
+        while (true) {
+            if (Params().MiningRequiresPeers()) {
+                // Busy-wait for the network to come online so we don't waste time mining
+                // on an obsolete chain. In regtest mode we expect to fly solo.
+                while (vNodes.empty()) {
+                    LogPrintf("ReddcoinMiner : Waiting for network online.\n");
+                    MilliSleep(1000);
+                }
+            }
 
-			while (IsInitialBlockDownload())
-			{
-				// Busy-wait for the download of the blockchain to complete
-				LogPrintf("ReddcoinMiner : Waiting... Blockchain Downloading.\n");
-				MilliSleep(60000);
-			}
+            while (IsInitialBlockDownload()) {
+                // Busy-wait for the download of the blockchain to complete
+                LogPrintf("ReddcoinMiner : Waiting... Blockchain Downloading.\n");
+                MilliSleep(60000);
+            }
 
-			//
-			// Create new block
-			//
-			unsigned int nTransactionsUpdatedLast = mempool.GetTransactionsUpdated();
-			CBlockIndex* pindexPrev = chainActive.Tip();
+            //
+            // Create new block
+            //
+            unsigned int nTransactionsUpdatedLast = mempool.GetTransactionsUpdated();
+            CBlockIndex* pindexPrev = chainActive.Tip();
 
-			auto_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey));
-			if (!pblocktemplate.get())
-            {
+            auto_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey));
+            if (!pblocktemplate.get()) {
                 LogPrintf("Error in ReddcoinMiner: Keypool ran out, please call keypoolrefill before restarting the mining thread\n");
                 return;
             }
-			CBlock *pblock = &pblocktemplate->block;
+            CBlock* pblock = &pblocktemplate->block;
 
-			// exit if received a PoSV block template
-			if (pblock->vtx[0].vout[0].IsEmpty())
-			{
-				LogPrintf("ReddcoinMiner : no more PoW blocks\n");
-				return;
-			}
+            // exit if received a PoSV block template
+            if (pblock->vtx[0].vout[0].IsEmpty()) {
+                LogPrintf("ReddcoinMiner : no more PoW blocks\n");
+                return;
+            }
 
-			IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
+            IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
-			LogPrintf("Running ReddcoinMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
-				   ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
+            LogPrintf("Running ReddcoinMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+                      ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
-			//
-			// Search
-			//
-			int64_t nStart = GetTime();
-			uint256 hashTarget = uint256().SetCompact(pblock->nBits);
-			uint256 hash;
-			uint32_t nNonce = 0;
-			uint32_t nOldNonce = 0;
-			while (true)
-			{
-				bool fFound = ScanHash(pblock, nNonce, &hash);
-				uint32_t nHashesDone = nNonce - nOldNonce;
-				nOldNonce = nNonce;
+            //
+            // Search
+            //
+            int64_t nStart = GetTime();
+            uint256 hashTarget = uint256().SetCompact(pblock->nBits);
+            uint256 hash;
+            uint32_t nNonce = 0;
+            uint32_t nOldNonce = 0;
+            while (true) {
+                bool fFound = ScanHash(pblock, nNonce, &hash);
+                uint32_t nHashesDone = nNonce - nOldNonce;
+                nOldNonce = nNonce;
 
-				// Check if something found
-				if (fFound)
-				{
-					if (hash <= hashTarget)
-					{
-						// Found a solution
-						pblock->nNonce = nNonce;
-						assert(hash == pblock->GetHash());
+                // Check if something found
+                if (fFound) {
+                    if (hash <= hashTarget) {
+                        // Found a solution
+                        pblock->nNonce = nNonce;
+                        assert(hash == pblock->GetHash());
 
-						SetThreadPriority(THREAD_PRIORITY_NORMAL);
-						LogPrintf("ReddcoinMiner:\n");
+                        SetThreadPriority(THREAD_PRIORITY_NORMAL);
+                        LogPrintf("ReddcoinMiner:\n");
                         LogPrintf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
                         ProcessBlockFound(pblock, *pwallet, reservekey);
-						SetThreadPriority(THREAD_PRIORITY_LOWEST);
+                        SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
-						// In regression test mode, stop mining after a block is found.
-						if (Params().MineBlocksOnDemand())
-							throw boost::thread_interrupted();
+                        // In regression test mode, stop mining after a block is found.
+                        if (Params().MineBlocksOnDemand())
+                            throw boost::thread_interrupted();
 
-						break;
-					}
-				}
+                        break;
+                    }
+                }
 
-				// Meter hashes/sec
-				static int64_t nHashCounter;
-				if (nHPSTimerStart == 0)
-				{
-					nHPSTimerStart = GetTimeMillis();
-					nHashCounter = 0;
-				}
-				else
-					nHashCounter += nHashesDone;
-				if (GetTimeMillis() - nHPSTimerStart > 4000)
-				{
-					static CCriticalSection cs;
-					{
-						LOCK(cs);
-						if (GetTimeMillis() - nHPSTimerStart > 4000)
-						{
-							dHashesPerSec = 1000.0 * nHashCounter / (GetTimeMillis() - nHPSTimerStart);
-							nHPSTimerStart = GetTimeMillis();
-							nHashCounter = 0;
-							static int64_t nLogTime;
-							if (GetTime() - nLogTime > 30 * 60)
-							{
-								nLogTime = GetTime();
-								LogPrintf("hashmeter %6.0f khash/s\n", dHashesPerSec/1000.0);
-							}
-						}
-					}
-				}
+                // Meter hashes/sec
+                static int64_t nHashCounter;
+                if (nHPSTimerStart == 0) {
+                    nHPSTimerStart = GetTimeMillis();
+                    nHashCounter = 0;
+                } else
+                    nHashCounter += nHashesDone;
+                if (GetTimeMillis() - nHPSTimerStart > 4000) {
+                    static CCriticalSection cs;
+                    {
+                        LOCK(cs);
+                        if (GetTimeMillis() - nHPSTimerStart > 4000) {
+                            dHashesPerSec = 1000.0 * nHashCounter / (GetTimeMillis() - nHPSTimerStart);
+                            nHPSTimerStart = GetTimeMillis();
+                            nHashCounter = 0;
+                            static int64_t nLogTime;
+                            if (GetTime() - nLogTime > 30 * 60) {
+                                nLogTime = GetTime();
+                                LogPrintf("hashmeter %6.0f khash/s\n", dHashesPerSec / 1000.0);
+                            }
+                        }
+                    }
+                }
 
-				// Check for stop or if block needs to be rebuilt
-				boost::this_thread::interruption_point();
-				// Regtest mode doesn't require peers
-				if (vNodes.empty() && Params().MiningRequiresPeers())
-					break;
-				if (nNonce >= 0xffff0000)
-					break;
-				if (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 60)
-					break;
-				if (pindexPrev != chainActive.Tip())
-					break;
+                // Check for stop or if block needs to be rebuilt
+                boost::this_thread::interruption_point();
+                // Regtest mode doesn't require peers
+                if (vNodes.empty() && Params().MiningRequiresPeers())
+                    break;
+                if (nNonce >= 0xffff0000)
+                    break;
+                if (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 60)
+                    break;
+                if (pindexPrev != chainActive.Tip())
+                    break;
 
-				// Update nTime every few seconds
-				UpdateTime(*pblock, pindexPrev);
-				if (Params().AllowMinDifficultyBlocks())
-				{
-					// Changing pblock->nTime can change work required on testnet:
-					hashTarget.SetCompact(pblock->nBits);
-				}
-			}
-		}
-    }
-    catch (boost::thread_interrupted)
-    {
+                // Update nTime every few seconds
+                UpdateTime(pblock, pindexPrev);
+                if (Params().AllowMinDifficultyBlocks()) {
+                    // Changing pblock->nTime can change work required on testnet:
+                    hashTarget.SetCompact(pblock->nBits);
+                }
+            }
+        }
+    } catch (boost::thread_interrupted) {
         LogPrintf("ReddcoinMiner terminated\n");
         throw;
     }
