@@ -100,7 +100,7 @@ void TxToJSON(const CTransaction& tx, const uint256 hashBlock, Object& entry)
             {
                 entry.push_back(Pair("confirmations", 1 + chainActive.Height() - pindex->nHeight));
                 entry.push_back(Pair("time", (int64_t)tx.nTime));
-                entry.push_back(Pair("blocktime", (int64_t)pindex->nTime));
+                entry.push_back(Pair("blocktime", pindex->GetBlockTime()));
             }
             else
                 entry.push_back(Pair("confirmations", 0));
