@@ -34,20 +34,22 @@ Release Process
 	popd
 	pushd ./gitian-builder
 
-###fetch and build inputs: (first time, or when dependency versions change)
-
-    mkdir -p inputs; cd inputs/
-
- Register and download the Apple SDK (see OSX Readme for details)
-	visit https://developer.apple.com/downloads/download.action?path=Developer_Tools/xcode_4.6.3/xcode4630916281a.dmg
+ ###Fetch and build inputs: (first time, or when dependency versions change)
  
- Using a Mac, create a tarball for the 10.7 SDK
+	mkdir -p inputs; cd inputs/
+
+ Register and download the Apple SDK: (see OSX Readme for details)
+ 
+ https://developer.apple.com/downloads/download.action?path=Developer_Tools/xcode_4.6.3/xcode4630916281a.dmg
+ 
+ Using a Mac, create a tarball for the 10.7 SDK and copy it to the inputs directory:
+ 
 	tar -C /Volumes/Xcode/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/ -czf MacOSX10.7.sdk.tar.gz MacOSX10.7.sdk
 
- Fetch and build inputs: (first time, or when dependency versions change)
-
+ Download remaining inputs, and build everything:
+ 
 	wget 'http://miniupnp.free.fr/files/download.php?file=miniupnpc-1.9.20140701.tar.gz' -O miniupnpc-1.9.20140701.tar.gz
-	wget 'https://www.openssl.org/source/openssl-1.0.1k.tar.gz'
+	wget 'https://www.openssl.org/source/openssl-1.0.1h.tar.gz'
 	wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
 	wget 'http://zlib.net/zlib-1.2.8.tar.gz'
 	wget 'ftp://ftp.simplesystems.org/pub/png/src/history/libpng16/libpng-1.6.8.tar.gz'
@@ -90,10 +92,10 @@ Release Process
 
  The expected SHA256 hashes of the intermediate inputs are:
 
-    b1f6f10148d4c4a1a69a58e703427578dc5a4de86eefd6b925e3abf3c8fbe542  reddcoin-deps-linux32-gitian-r9.zip
-    71e03e434af269dcbf3cb685cd1a5d51b8d2c904b67035eb4e5c1a2623b9f0df  reddcoin-deps-linux64-gitian-r9.zip
     f29b7d9577417333fb56e023c2977f5726a7c297f320b175a4108cf7cd4c2d29  boost-linux32-1.55.0-gitian-r1.zip
     88232451c4104f7eb16e469ac6474fd1231bd485687253f7b2bdf46c0781d535  boost-linux64-1.55.0-gitian-r1.zip
+    71e03e434af269dcbf3cb685cd1a5d51b8d2c904b67035eb4e5c1a2623b9f0df  reddcoin-deps-linux32-gitian-r9.zip
+    f03be39fb26670243d3a659e64d18e19d03dec5c11e9912011107768390b5268  reddcoin-deps-linux64-gitian-r9.zip
     57e57dbdadc818cd270e7e00500a5e1085b3bcbdef69a885f0fb7573a8d987e1  qt-linux32-4.6.4-gitian-r1.tar.gz
     60eb4b9c5779580b7d66529efa5b2836ba1a70edde2a0f3f696d647906a826be  qt-linux64-4.6.4-gitian-r1.tar.gz
     60dc2d3b61e9c7d5dbe2f90d5955772ad748a47918ff2d8b74e8db9b1b91c909  boost-win32-1.55.0-gitian-r6.zip
@@ -109,10 +111,10 @@ Release Process
     ec95abef1df2b096a970359787c01d8c45e2a4475b7ae34e12c022634fbdba8a  osx-depends-qt-5.2.1-r4.tar.gz
 
 
- Build reddcoind and reddcoin-qt on Linux32, Linux64, and Win32:
+ Build Reddcoin Core for Linux, Windows, and OS X:
   
 	./bin/gbuild --commit reddcoin=v${VERSION} ../reddcoin/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION} --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-linux.yml
 	pushd build/out
 	zip -r reddcoin-${VERSION}-linux-gitian.zip *
 	mv reddcoin-${VERSION}-linux-gitian.zip ../../../
@@ -135,7 +137,7 @@ Release Process
   1. linux 32-bit and 64-bit binaries + source (reddcoin-${VERSION}-linux-gitian.zip)
   2. windows 32-bit and 64-bit binaries + installer + source (reddcoin-${VERSION}-win-gitian.zip)
   3. OSX installer (Reddcoin-Qt.dmg)
-  4. Gitian signatures (in gitian.sigs/${VERSION}[-win|-osx]/(your gitian key)/
+  4. Gitian signatures (in gitian.sigs/${VERSION}-<linux|win|osx>/(your gitian key)/
 
 repackage gitian builds for release as stand-alone zip/tar/installer exe
 
@@ -158,6 +160,24 @@ repackage gitian builds for release as stand-alone zip/tar/installer exe
 
 ###Next steps:
 
+* Code-sign Windows -setup.exe (in a Windows virtual machine using signtool)
+ Note: only John has the code-signing keys currently.
+
+* upload builds to SourceForge
+
+* create SHA256SUMS for builds, and PGP-sign it
+
+* update bitcoin.org version
+  make sure all OS download links go to the right versions
+  
+* update download sizes on reddcoin.com/_templates/download.html
+
+* update forum version
+
+* update wiki download links
+
+* update wiki changelog: [https://wiki.reddcoin.com/wiki/Changelog](https://wiki.reddcoin.com/wiki/Changelog)
+
 Commit your signature to gitian.sigs:
 
 	pushd gitian.sigs
@@ -170,37 +190,9 @@ Commit your signature to gitian.sigs:
 
 -------------------------------------------------------------------------
 
-### After 3 or more people have gitian-built and their results match:
+### After 3 or more people have gitian-built, repackage gitian-signed zips:
 
-- Perform code-signing.
-
-    - Code-sign Windows -setup.exe (in a Windows virtual machine using signtool)
-
-    - Code-sign MacOSX .dmg
-
-  Note: only John has the code-signing keys currently.
-
-- Create `SHA256SUMS.asc` for builds, and PGP-sign it. This is done manually.
-  Include all the files to be uploaded. The file has `sha256sum` format with a
-  simple header at the top:
-
-```
-Hash: SHA256
-
-0060f7d38b98113ab912d4c184000291d7f026eaf77ca5830deec15059678f54  reddcoin-x.y.z-linux.tar.gz
-...
-```
-
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the reddcoin.com server
-
-- Update reddcoin.com version
-
-  - Make a pull request to add a file named `YYYY-MM-DD-vX.Y.Z.md` with the release notes
-  to https://github.com/bitcoin/bitcoin.org/tree/master/_releases
-   ([Example for 0.9.2.1](https://raw.githubusercontent.com/bitcoin/bitcoin.org/master/_releases/2014-06-19-v0.9.2.1.md)).
-
-  - After the pull request is merged, the website will automatically show the newest version, as well
-    as update the OS download links. Ping Saivann in case anything goes wrong
+- Upload gitian zips to github releases
 
 - Announce the release:
 
@@ -208,7 +200,7 @@ Hash: SHA256
 
   - Reddheads mailing list
 
-  - Update title of #ritcoin on Freenode IRC
+  - Update title of #reddcoin on Freenode IRC
 
   - Reddit /r/Reddcoin,
 
