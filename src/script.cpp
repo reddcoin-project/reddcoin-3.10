@@ -1558,8 +1558,8 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
     txnouttype whichType;
     if (!Solver(scriptPubKey, whichType, vSolutions)) {
         if (keystore.HaveWatchOnly(scriptPubKey))
-            return MINE_WATCH_ONLY;
-        return MINE_NO;
+            return ISMINE_WATCH_ONLY;
+        return ISMINE_NO;
     }
 
     CKeyID keyID;
@@ -1571,12 +1571,12 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
     case TX_PUBKEY:
         keyID = CPubKey(vSolutions[0]).GetID();
         if (keystore.HaveKey(keyID))
-            return MINE_SPENDABLE;
+            return ISMINE_SPENDABLE;
         break;
     case TX_PUBKEYHASH:
         keyID = CKeyID(uint160(vSolutions[0]));
         if (keystore.HaveKey(keyID))
-            return MINE_SPENDABLE;
+            return ISMINE_SPENDABLE;
         break;
     case TX_SCRIPTHASH:
     {
@@ -1584,7 +1584,7 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
         CScript subscript;
         if (keystore.GetCScript(scriptID, subscript)) {
             isminetype ret = IsMine(keystore, subscript);
-            if (ret == MINE_SPENDABLE)
+            if (ret == ISMINE_SPENDABLE)
                 return ret;
         }
         break;
@@ -1598,14 +1598,14 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
         // in shared-wallet situations.
         vector<valtype> keys(vSolutions.begin()+1, vSolutions.begin()+vSolutions.size()-1);
         if (HaveKeys(keys, keystore) == keys.size())
-            return MINE_SPENDABLE;
+            return ISMINE_SPENDABLE;
         break;
     }
     }
 
     if (keystore.HaveWatchOnly(scriptPubKey))
-        return MINE_WATCH_ONLY;
-    return MINE_NO;
+        return ISMINE_WATCH_ONLY;
+    return ISMINE_NO;
 }
 
 bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet)
