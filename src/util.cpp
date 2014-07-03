@@ -11,7 +11,6 @@
 
 #include "chainparamsbase.h"
 #include "sync.h"
-#include "ui_interface.h"
 #include "uint256.h"
 #include "version.h"
 
@@ -104,7 +103,6 @@ string strMiscWarning;
 bool fLogTimestamps = false;
 bool fLogIPs = false;
 volatile bool fReopenDebugLog = false;
-CClientUIInterface uiInterface;
 
 // Init OpenSSL library multithreading support
 static CCriticalSection** ppmutexOpenSSL;
