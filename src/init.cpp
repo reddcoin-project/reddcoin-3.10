@@ -290,9 +290,10 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += "\n" + _("Wallet options:") + "\n";
     strUsage += "  -disablewallet         " + _("Do not load the wallet and disable wallet RPC calls") + "\n";
     strUsage += "  -keypool=<n>           " + strprintf(_("Set key pool size to <n> (default: %u)"), 100) + "\n";
-    strUsage += "  -mintxfee=<amt>        " + strprintf(_("Fees (in RDD/Kb) smaller than this are considered zero fee for transaction creation (default: %s)"), FormatMoney(CTransaction::minTxFee.GetFeePerK())) + "\n";
+    strUsage += "  -mintxfee=<amt>        " + strprintf(_("Fees (in RDD/Kb) smaller than this are considered zero fee for transaction creation (default: %s)"), FormatMoney(CWallet::minTxFee.GetFeePerK())) + "\n";
     strUsage += "  -paytxfee=<amt>        " + strprintf(_("Fee (in RDD/kB) to add to transactions you send (default: %s)"), FormatMoney(payTxFee.GetFeePerK())) + "\n";
     strUsage += "  -rescan                " + _("Rescan the block chain for missing wallet transactions") + " " + _("on startup") + "\n";
+    strUsage += "  -respendnotify=<cmd>   " + _("Execute command when a network tx respends wallet tx input (%s=respend TxID, %t=wallet TxID)") + "\n";
     strUsage += "  -salvagewallet         " + _("Attempt to recover private keys from a corrupt wallet.dat") + " " + _("on startup") + "\n";
     strUsage += "  -spendzeroconfchange   " + strprintf(_("Spend unconfirmed change when sending transactions (default: %u)"), 1) + "\n";
     strUsage += "  -stakenotify=<cmd>     " + _("Execute command when a coinstake transaction is created (%s in cmd is replaced by TxID)") + "\n" +
@@ -335,8 +336,8 @@ std::string HelpMessage(HelpMessageMode mode)
         strUsage += "  -limitfreerelay=<n>    " + strprintf(_("Continuously rate-limit free transactions to <n>*1000 bytes per minute (default:%u)"), 15) + "\n";
         strUsage += "  -maxsigcachesize=<n>   " + strprintf(_("Limit size of signature cache to <n> entries (default: %u)"), 50000) + "\n";
     }
-    strUsage += "  -minrelaytxfee=<amt>   " + strprintf(_("Fees (in RDD/Kb) smaller than this are considered zero fee for relaying (default: %s)"), FormatMoney(CTransaction::minRelayTxFee.GetFeePerK())) + "\n";
-    strUsage += "  -mintxfee=<amt>        " + strprintf(_("Fees (in RDD/Kb) smaller than this are considered zero fee for transaction creation (default: %s)"), FormatMoney(CTransaction::minTxFee.GetFeePerK())) + "\n";
+    strUsage += "  -minrelaytxfee=<amt>   " + strprintf(_("Fees (in RDD/Kb) smaller than this are considered zero fee for relaying (default: %s)"), FormatMoney(::minRelayTxFee.GetFeePerK())) + "\n";
+    strUsage += "  -mintxfee=<amt>        " + strprintf(_("Fees (in RDD/Kb) smaller than this are considered zero fee for transaction creation (default: %s)"), FormatMoney(CWallet::minTxFee.GetFeePerK())) + "\n";
     strUsage += "  -printtoconsole        " + _("Send trace/debug info to console instead of debug.log file") + "\n";
     if (GetBoolArg("-help-debug", false))
     {
@@ -675,24 +676,24 @@ bool AppInit2(boost::thread_group& threadGroup)
     // a transaction spammer can cheaply fill blocks using
     // 1-satoshi-fee transactions. It should be set above the real
     // cost to you of processing a transaction.
-    if (mapArgs.count("-mintxfee"))
-    {
-        int64_t n = 0;
-        if (ParseMoney(mapArgs["-mintxfee"], n) && n > 0)
-            CTransaction::minTxFee = CFeeRate(n);
-        else
-            return InitError(strprintf(_("Invalid amount for -mintxfee=<amount>: '%s'"), mapArgs["-mintxfee"]));
-    }
     if (mapArgs.count("-minrelaytxfee"))
     {
         CAmount n = 0;
         if (ParseMoney(mapArgs["-minrelaytxfee"], n) && n > 0)
-            CTransaction::minRelayTxFee = CFeeRate(n);
+            ::minRelayTxFee = CFeeRate(n);
         else
             return InitError(strprintf(_("Invalid amount for -minrelaytxfee=<amount>: '%s'"), mapArgs["-minrelaytxfee"]));
     }
 
 #ifdef ENABLE_WALLET
+    if (mapArgs.count("-mintxfee"))
+    {
+        int64_t n = 0;
+        if (ParseMoney(mapArgs["-mintxfee"], n) && n > 0)
+            CWallet::minTxFee = CFeeRate(n);
+        else
+            return InitError(strprintf(_("Invalid amount for -mintxfee=<amount>: '%s'"), mapArgs["-mintxfee"]));
+    }
     if (mapArgs.count("-paytxfee"))
     {
         CAmount nFeePerK = 0;
@@ -701,10 +702,10 @@ bool AppInit2(boost::thread_group& threadGroup)
         if (nFeePerK > nHighTransactionFeeWarning)
             InitWarning(_("Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction."));
         payTxFee = CFeeRate(nFeePerK, 1000);
-        if (payTxFee < CTransaction::minRelayTxFee)
+        if (payTxFee < ::minRelayTxFee)
         {
             return InitError(strprintf(_("Invalid amount for -paytxfee=<amount>: '%s' (must be at least %s)"),
-                                       mapArgs["-paytxfee"], CTransaction::minRelayTxFee.ToString()));
+                                       mapArgs["-paytxfee"], ::minRelayTxFee.ToString()));
         }
     }
     nTxConfirmTarget = GetArg("-txconfirmtarget", 1);

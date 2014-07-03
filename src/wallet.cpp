@@ -52,6 +52,9 @@ unsigned int nStakeSplitAge = 45 * 24 * 60 * 60; // 45 days
  */
 CAmount nStakeCombineThreshold = 2000000 * COIN;
 
+/** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
+CFeeRate CWallet::minTxFee = CFeeRate(100000);  // Override with -mintxfee
+
 /** @defgroup mapWallet
  *
  * @{
@@ -1534,7 +1537,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
                 BOOST_FOREACH (const PAIRTYPE(CScript, CAmount)& s, vecSend)
                 {
                     CTxOut txout(s.second, s.first);
-                    if (txout.IsDust(CTransaction::minRelayTxFee))
+                    if (txout.IsDust(::minRelayTxFee))
                     {
                         strFailReason = _("Transaction amount too small");
                         return false;
@@ -1599,7 +1602,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
 
                     // Never create dust outputs; if we would, just
                     // add the dust to the fee.
-                    if (newTxOut.IsDust(CTransaction::minRelayTxFee))
+                    if (newTxOut.IsDust(::minRelayTxFee))
                     {
                         nFeeRet += nChange;
                         reservekey.ReturnKey();
@@ -2157,7 +2160,7 @@ CAmount CWallet::GetMinimumFee(unsigned int nTxBytes, unsigned int nConfirmTarge
     // ... unless we don't have enough mempool data, in which case fall
     // back to a hard-coded fee
     if (nFeeNeeded == 0)
-        nFeeNeeded = CTransaction::minTxFee.GetFee(nTxBytes);
+        nFeeNeeded = minTxFee.GetFee(nTxBytes);
     return nFeeNeeded;
 }
 

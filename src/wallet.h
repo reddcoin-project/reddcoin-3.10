@@ -301,6 +301,7 @@ public:
     bool CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, CAmount& nFees, CMutableTransaction& txNew, CKey& key, int nVer);
     bool SignBlock(CBlock *pblock, CAmount& nFees);
 
+    static CFeeRate minTxFee;
     static int64_t GetMinimumFee(unsigned int nTxBytes, unsigned int nConfirmTarget, const CTxMemPool& pool);
 
     bool NewKeyPool();

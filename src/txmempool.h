@@ -85,13 +85,15 @@ private:
     unsigned int nTransactionsUpdated;
     CMinerPolicyEstimator* minerPolicyEstimator;
 
+    CFeeRate minRelayFee; // Passed to constructor to avoid dependency on main
+
 public:
     mutable CCriticalSection cs;
     std::map<uint256, CTxMemPoolEntry> mapTx;
     std::map<COutPoint, CInPoint> mapNextTx;
     std::map<uint256, std::pair<double, CAmount> > mapDeltas;
 
-    CTxMemPool();
+    CTxMemPool(const CFeeRate& _minRelayFee);
     ~CTxMemPool();
 
     /*
