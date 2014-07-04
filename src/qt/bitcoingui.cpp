@@ -36,13 +36,10 @@
 #include <QDesktopWidget>
 #include <QDragEnterEvent>
 #include <QIcon>
-#include <QLabel>
 #include <QListWidget>
-#include <QMenu>
 #include <QMenuBar>
 #include <QMessageBox>
 #include <QMimeData>
-#include <QPoint>
 #include <QProgressBar>
 #include <QProgressDialog>
 #include <QSettings>
@@ -52,8 +49,6 @@
 #include <QTimer>
 #include <QToolBar>
 #include <QVBoxLayout>
-
-
 
 #if QT_VERSION < 0x050000
 #include <QUrl>
