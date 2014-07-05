@@ -419,6 +419,8 @@ QString CoinControlDialog::getPriorityLabel(const CTxMemPool& pool, double dPrio
     }
     // Note: if mempool hasn't accumulated enough history (estimatePriority
     // returns -1) we're conservative and classify as "lowest"
+    if (mempool.estimatePriority(nTxConfirmTarget) <= 0 && AllowFree(dPriority))
+        return ">=" + tr("medium");
     return tr("lowest");
 }
 
@@ -620,7 +622,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
     QString toolTip3 = tr("This label turns red, if any recipient receives an amount smaller than %1.").arg(BitcoinUnits::formatWithUnit(nDisplayUnit, ::minRelayTxFee.GetFee(546)));
 
     // how many satoshis the estimated fee can vary per byte we guess wrong
-    double dFeeVary = (double)std::max(CWallet::minTxFee.GetFeePerK(), payTxFee.GetFeePerK()) / 1000;
+    double dFeeVary = (double)std::max(CWallet::minTxFee.GetFeePerK(), std::max(payTxFee.GetFeePerK(), mempool.estimateFee(nTxConfirmTarget).GetFeePerK())) / 1000;
     QString toolTip4 = tr("Can vary +/- %1 satoshi(s) per input.").arg(dFeeVary);
 
     l3->setToolTip(toolTip4);
