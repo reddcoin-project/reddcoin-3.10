@@ -34,6 +34,17 @@ bool BitcoinUnits::valid(int unit)
     }
 }
 
+QString BitcoinUnits::id(int unit)
+{
+    switch(unit)
+    {
+    case BTC: return QString("rdd");
+    case mBTC: return QString("mrdd");
+    case uBTC: return QString("urdd");
+    default: return QString("???");
+    }
+}
+
 QString BitcoinUnits::name(int unit)
 {
     switch(unit)
