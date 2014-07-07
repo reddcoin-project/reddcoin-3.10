@@ -441,19 +441,13 @@ CBlockTemplate* CreateNewBlockWithKey(CReserveKey& reservekey)
     return CreateNewBlock(scriptPubKey);
 }
 
-bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
+bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
 {
-    uint256 hash = pblock->GetPoWHash();
-    uint256 hashTarget = uint256().SetCompact(pblock->nBits);
+	uint256 hash = pblock->GetPoWHash();
 
-    if(!pblock->IsProofOfWork())
-        return error("CheckWork() : %s is not a proof-of-work block", hash.GetHex().c_str());
-    if (hash > hashTarget)
-        return false;
+	if(!pblock->IsProofOfWork())
+        return error("ProcessBlockFound() : %s is not a proof-of-work block", hash.GetHex().c_str());
 
-    //// debug print
-    LogPrintf("ReddcoinMiner:\n");
-    LogPrintf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
     pblock->print();
     LogPrintf("mined %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue));
 
@@ -480,20 +474,21 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     return true;
 }
 
-bool CheckStake(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
+bool ProcessStakeFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
 {
     uint256 hash = pblock->GetHash();
     uint256 hashStake = 0, hashTarget = 0;
 
     if(!pblock->IsProofOfStake())
-        return error("CheckStake() : %s is not a proof-of-stake block", hash.GetHex().c_str());
+        return error("ProcessStakeFound() : %s is not a proof-of-stake block", hash.GetHex().c_str());
 
     // verify hash target and signature of coinstake tx
     if (!CheckProofOfStake(pblock->vtx[1], pblock->nBits, hashStake, hashTarget))
-        return error("CheckStake() : proof-of-stake checking failed");
+        return error("ProcessStakeFound() : proof-of-stake checking failed");
 
     //// debug print
-    LogPrintf("ReddcoinStaker: proof-of-stake found  \n  hash: %s\n  stake: %s\n  target: %s\n", hash.GetHex(), hashStake.GetHex(), hashTarget.GetHex());
+    LogPrintf("ReddcoinStaker:\n");
+    LogPrintf("proof-of-stake found  \n  hash: %s\n  stake: %s\n  target: %s\n", hash.GetHex(), hashStake.GetHex(), hashTarget.GetHex());
     pblock->print();
     LogPrintf("minted %s\n", FormatMoney(pblock->vtx[1].GetValueOut()));
 
@@ -579,7 +574,7 @@ void ReddcoinStaker(CWallet *pwallet)
 			if (pwallet->SignBlock(pblock, nFees))
 			{
 				SetThreadPriority(THREAD_PRIORITY_NORMAL);
-				CheckStake(pblock, *pwallet, reservekey);
+				ProcessStakeFound(pblock, *pwallet, reservekey);
 				SetThreadPriority(THREAD_PRIORITY_LOWEST);
 				MilliSleep(500);
 			}
@@ -675,7 +670,9 @@ void static ReddcoinMiner(CWallet *pwallet)
 						assert(hash == pblock->GetHash());
 
 						SetThreadPriority(THREAD_PRIORITY_NORMAL);
-						CheckWork(pblock, *pwallet, reservekey);
+						LogPrintf("ReddcoinMiner:\n");
+                        LogPrintf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
+                        ProcessBlockFound(pblock, *pwallet, reservekey);
 						SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
 						// In regression test mode, stop mining after a block is found.
