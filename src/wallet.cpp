@@ -1976,12 +1976,15 @@ bool CWallet::CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey)
 
 
 
-string CWallet::SendMoney(CScript scriptPubKey, int64_t nValue, CWalletTx& wtxNew)
+string CWallet::SendMoney(const CTxDestination &address, int64_t nValue, CWalletTx& wtxNew)
 {
-    CReserveKey reservekey(this);
-    int64_t nFeeRequired;
-    string strError;
+    // Check amount
+    if (nValue <= 0)
+        return _("Invalid amount");
+    if (nValue > GetBalance())
+        return _("Insufficient funds");
 
+    string strError;
     if (IsLocked())
     {
         strError = _("Error: Wallet locked, unable to create transaction!");
@@ -1991,9 +1994,17 @@ string CWallet::SendMoney(CScript scriptPubKey, int64_t nValue, CWalletTx& wtxNe
     if (fWalletUnlockStakingOnly)
     {
         strError = _("Error: Wallet unlocked for staking only, unable to create transaction.");
-       LogPrintf("SendMoney() : %s", strError.c_str());
+       LogPrintf("SendMoney() : %s", strError);
         return strError;
     }
+
+    // Parse Bitcoin address
+    CScript scriptPubKey;
+    scriptPubKey.SetDestination(address);
+
+    // Create and send the transaction
+    CReserveKey reservekey(this);
+    int64_t nFeeRequired;
     if (!CreateTransaction(scriptPubKey, nValue, wtxNew, reservekey, nFeeRequired, strError))
     {
         if (nValue + nFeeRequired > GetBalance())
@@ -2001,30 +2012,11 @@ string CWallet::SendMoney(CScript scriptPubKey, int64_t nValue, CWalletTx& wtxNe
         LogPrintf("SendMoney() : %s\n", strError);
         return strError;
     }
-
     if (!CommitTransaction(wtxNew, reservekey))
         return _("Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.");
 
     return "";
 }
-
-
-
-string CWallet::SendMoneyToDestination(const CTxDestination& address, int64_t nValue, CWalletTx& wtxNew)
-{
-    // Check amount
-    if (nValue <= 0)
-        return _("Invalid amount");
-    if (nValue > GetBalance())
-        return _("Insufficient funds");
-
-    // Parse Bitcoin address
-    CScript scriptPubKey;
-    scriptPubKey.SetDestination(address);
-
-    return SendMoney(scriptPubKey, nValue, wtxNew);
-}
-
 
 
 
