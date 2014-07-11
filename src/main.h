@@ -155,6 +155,9 @@ extern const int64_t nTargetSpacing;
 extern int64_t nLastCoinStakeSearchInterval;
 extern int64_t nReserveBalance;
 
+/** Best header we've seen so far (used for getheaders queries' starting points). */
+extern CBlockIndex *pindexBestHeader;
+
 /** Minimum disk space required - used in CheckDiskSpace() */
 static const uint64_t nMinDiskSpace = 52428800;
 
@@ -250,6 +253,8 @@ bool IsStaking();
 struct CNodeStateStats {
     int nMisbehavior;
     int nSyncHeight;
+    int nCommonHeight;
+    std::vector<int> vHeightInFlight;
 };
 
 struct CDiskTxPos : public CDiskBlockPos

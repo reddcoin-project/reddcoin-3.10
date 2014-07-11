@@ -43,6 +43,7 @@ CCriticalSection cs_main;
 
 BlockMap mapBlockIndex;
 CChain chainActive;
+CBlockIndex *pindexBestHeader = NULL;
 int64_t nTimeBestReceived = 0;
 CWaitableCriticalSection csBestBlock;
 CConditionVariable cvBlockChange;
@@ -54,6 +55,7 @@ bool fTxIndex = true;
 bool fIsBareMultisigStd = true;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
+
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying and mining) */
 CFeeRate minRelayTxFee = CFeeRate(DUST_THRESHOLD);
@@ -108,8 +110,6 @@ namespace {
      * as good as our current tip. Entries may be failed, though.
      */
     set<CBlockIndex*, CBlockIndexWorkComparator> setBlockIndexValid;
-    // Best header we've seen so far (used for getheaders queries' starting points).
-    CBlockIndex *pindexBestHeader = NULL;
     // Number of nodes with fSyncStarted.
     int nSyncStarted = 0;
     // All pairs A->B, where A (or one if its ancestors) misses transactions, but B has transactions.
@@ -460,6 +460,11 @@ bool GetNodeStateStats(NodeId nodeid, CNodeStateStats &stats) {
         return false;
     stats.nMisbehavior = state->nMisbehavior;
     stats.nSyncHeight = state->pindexBestKnownBlock ? state->pindexBestKnownBlock->nHeight : -1;
+    stats.nCommonHeight = state->pindexLastCommonBlock ? state->pindexLastCommonBlock->nHeight : -1;
+    BOOST_FOREACH(const QueuedBlock& queue, state->vBlocksInFlight) {
+        if (queue.pindex)
+            stats.vHeightInFlight.push_back(queue.pindex->nHeight);
+    }
     return true;
 }
 
