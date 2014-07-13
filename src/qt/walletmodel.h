@@ -134,6 +134,7 @@ public:
     qint64 getWatchImmatureBalance() const;
     int getNumTransactions() const;
     EncryptionStatus getEncryptionStatus() const;
+    bool processingQueuedTransactions() { return fProcessingQueuedTransactions; }
 
     // Check address for validity
     bool validateAddress(const QString &address);
@@ -197,6 +198,7 @@ public:
 
 private:
     CWallet *wallet;
+    bool fProcessingQueuedTransactions;
 
     // Wallet has an options model for wallet-specific options
     // (transaction fee, for example)
@@ -258,6 +260,8 @@ public slots:
     void updateAddressBook(const QString &address, const QString &label, bool isMine, const QString &purpose, int status);
     /* Current, immature or unconfirmed balance might have changed - emit 'balanceChanged' if so */
     void pollBalanceChanged();
+    /* Needed to update fProcessingQueuedTransactions through a QueuedConnection */
+    void setProcessingQueuedTransactions(bool value) { fProcessingQueuedTransactions = value; }
 };
 
 #endif // WALLETMODEL_H
