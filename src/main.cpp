@@ -1497,12 +1497,12 @@ void UpdateCoins(const CTransaction& tx, CValidationState &state, CCoinsViewCach
 
 bool CScriptCheck::operator()() const {
     const CScript &scriptSig = ptxTo->vin[nIn].scriptSig;
-    if (!VerifyScript(scriptSig, scriptPubKey, *ptxTo, nIn, nFlags, 0))
+    if (!VerifyScript(scriptSig, scriptPubKey, *ptxTo, nIn, nFlags))
         return error("CScriptCheck() : %s VerifySignature failed", ptxTo->GetHash().ToString());
     return true;
 }
 
-bool VerifySignature(const CTransaction& txFrom, const CTransaction& txTo, unsigned int nIn, int nHashType)
+bool VerifySignature(const CTransaction& txFrom, const CTransaction& txTo, unsigned int nIn)
 {
     assert(nIn < txTo.vin.size());
     const CTxIn& txin = txTo.vin[nIn];
@@ -1513,7 +1513,7 @@ bool VerifySignature(const CTransaction& txFrom, const CTransaction& txTo, unsig
     if (txin.prevout.hash != txFrom.GetHash())
         return false;
 
-    return VerifyScript(txin.scriptSig, txout.scriptPubKey, txTo, nIn, (SCRIPT_VERIFY_NOCACHE | SCRIPT_VERIFY_P2SH), 0);
+    return VerifyScript(txin.scriptSig, txout.scriptPubKey, txTo, nIn, (SCRIPT_VERIFY_NOCACHE | SCRIPT_VERIFY_P2SH));
 }
 
 bool CheckInputs(const CTransaction& tx, CValidationState &state, const CCoinsViewCache &inputs, bool fScriptChecks, unsigned int flags, std::vector<CScriptCheck> *pvChecks)
