@@ -568,8 +568,7 @@ double GetInflationAdjustment(const CBlockIndex* pindex)
 
 	int64_t nTime = GetTimeMicros() - nStart;
 
-	if (fBenchmark)
-		LogPrintf("- Inflation Unbound Adjustment = %s Using last %s blocks from height %s to height %s: %.2fms\n", nRawInflationAdjustment, nBlocksPerMonth, nHeightPrev, pindex->nHeight, 0.001 * nTime);
+	LogPrint("bench", "- Inflation Unbound Adjustment = %s Using last %s blocks from height %s to height %s: %.2fms\n", nRawInflationAdjustment, nBlocksPerMonth, nHeightPrev, pindex->nHeight, nTime * 0.001);
 
 	return nInflationAdjustment;
 }
