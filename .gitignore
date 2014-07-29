@@ -28,7 +28,6 @@ build-aux/test-driver
 config.log
 config.status
 configure
-libtool
 src/config/bitcoin-config.h
 src/config/bitcoin-config.h.in
 src/config/stamp-h1

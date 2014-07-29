@@ -34,6 +34,7 @@ LIBBITCOIN_COMMON=libbitcoin_common.a
 LIBBITCOIN_CLI=libbitcoin_cli.a
 LIBBITCOIN_UTIL=libbitcoin_util.a
 LIBBITCOIN_CRYPTO=crypto/libbitcoin_crypto.a
+LIBBITCOIN_UNIVALUE=univalue/libbitcoin_univalue.a
 LIBBITCOINQT=qt/libbitcoinqt.a
 
 noinst_LIBRARIES = \
@@ -41,6 +42,7 @@ noinst_LIBRARIES = \
   libbitcoin_common.a \
   libbitcoin_cli.a \
   libbitcoin_util.a \
+  univalue/libbitcoin_univalue.a \
   crypto/libbitcoin_crypto.a
 if ENABLE_WALLET
 BITCOIN_INCLUDES += $(BDB_CPPFLAGS)
@@ -57,6 +59,8 @@ endif
 if BUILD_BITCOIN_UTILS
   bin_PROGRAMS += reddcoin-cli
 endif
+
+bin_PROGRAMS += reddcoin-tx
 
 .PHONY: FORCE
 # bitcoin core #
@@ -152,7 +156,6 @@ libbitcoin_server_a_SOURCES = \
   rpcnet.cpp \
   rpcrawtransaction.cpp \
   rpcserver.cpp \
-  timedata.cpp \
   txdb.cpp \
   txmempool.cpp \
   $(JSON_H) \
@@ -190,6 +193,13 @@ if USE_SSE2
 crypto_libbitcoin_crypto_a_SOURCES += crypto/scrypt-sse2.cpp
 endif
 
+# univalue JSON library
+univalue_libbitcoin_univalue_a_SOURCES = \
+  univalue/univalue.cpp \
+  univalue/univalue_read.cpp \
+  univalue/univalue_write.cpp \
+  univalue/univalue.h
+
 # common: shared between bitcoind, and bitcoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_common_a_SOURCES = \
@@ -206,6 +216,7 @@ libbitcoin_common_a_SOURCES = \
   netbase.cpp \
   protocol.cpp \
   script.cpp \
+  timedata.cpp \
   $(BITCOIN_CORE_H)
 
 # util: shared between all executables.
@@ -242,6 +253,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 reddcoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
+  $(LIBBITCOIN_UNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBLEVELDB) \
@@ -283,6 +295,25 @@ if USE_LIBSECP256K1
   reddcoin_cli_LDADD += secp256k1/libsecp256k1.la
 endif
 reddcoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
+#
+
+# bitcoin-tx binary #
+reddcoin_tx_LDADD = \
+  $(LIBBITCOIN_UNIVALUE) \
+  $(LIBBITCOIN_COMMON) \
+  $(LIBBITCOIN_UTIL) \
+  $(LIBBITCOIN_CRYPTO) \
+  $(BOOST_LIBS)
+
+if USE_LIBSECP256K1
+  reddcoin_tx_LDADD += secp256k1/libsecp256k1.la
+endif
+
+  reddcoin_tx_LDADD += $(BOOST_LIBS) \
+  $(SSL_LIBS) \
+  $(CRYPTO_LIBS)
+reddcoin_tx_SOURCES = bitcoin-tx.cpp
+reddcoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
 
 if TARGET_WINDOWS
