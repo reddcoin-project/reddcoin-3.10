@@ -1,0 +1,22 @@
+[Unit]
+Description=Reddcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=reddcoin
+Group=reddcoin
+
+Type=forking
+PIDFile=/var/lib/reddcoind/reddcoind.pid
+ExecStart=/usr/bin/reddcoind -daemon -pid=/var/lib/reddcoind/reddcoind.pid \
+-conf=/etc/reddcoin/reddcoin.conf -datadir=/var/lib/reddcoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
