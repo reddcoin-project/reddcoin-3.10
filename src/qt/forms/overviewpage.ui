@@ -336,7 +336,7 @@
                  <string>Your current balance in watch-only addresses</string>
                 </property>
                 <property name="text">
-                 <string>0 RDD</string>
+                 <string notr="true">0 RDD</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -361,7 +361,7 @@
                  <string>Staked transactions to watch-only addresses</string>
                 </property>
                 <property name="text">
-                 <string>0 RDD</string>
+                 <string notr="true">0 RDD</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -386,7 +386,7 @@
                  <string>Unconfirmed transactions to watch-only addresses</string>
                 </property>
                 <property name="text">
-                 <string>0 RDD</string>
+                 <string notr="true">0 RDD</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -411,7 +411,7 @@
                  <string>Mined balance in watch-only addresses that has not yet matured</string>
                 </property>
                 <property name="text">
-                 <string>0 RDD</string>
+                 <string notr="true">0 RDD</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -455,7 +455,7 @@
                  <string>Current total balance in watch-only addresses</string>
                 </property>
                 <property name="text">
-                 <string>0 RDD</string>
+                 <string notr="true">0 RDD</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
