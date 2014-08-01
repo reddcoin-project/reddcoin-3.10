@@ -246,8 +246,8 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += "  -discover              " + _("Discover own IP address (default: 1 when listening and no -externalip)") + "\n";
     strUsage += "  -dns                   " + _("Allow DNS lookups for -addnode, -seednode and -connect") + " " + _("(default: 1)") + "\n";
     strUsage += "  -dnsseed               " + _("Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)") + "\n";
-    strUsage += "  -forcednsseed          " + _("Always query for peer addresses via DNS lookup (default: 0)") + "\n";
     strUsage += "  -externalip=<ip>       " + _("Specify your own public address") + "\n";
+    strUsage += "  -forcednsseed          " + _("Always query for peer addresses via DNS lookup (default: 0)") + "\n";
     strUsage += "  -listen                " + _("Accept connections from outside (default: 1 if no -proxy or -connect)") + "\n";
     strUsage += "  -maxconnections=<n>    " + _("Maintain at most <n> connections to peers (default: 125)") + "\n";
     strUsage += "  -maxreceivebuffer=<n>  " + _("Maximum per-connection receive buffer, <n>*1000 bytes (default: 5000)") + "\n";
@@ -318,8 +318,8 @@ std::string HelpMessage(HelpMessageMode mode)
         strUsage += "  -limitfreerelay=<n>    " + _("Continuously rate-limit free transactions to <n>*1000 bytes per minute (default:15)") + "\n";
         strUsage += "  -maxsigcachesize=<n>   " + _("Limit size of signature cache to <n> entries (default: 50000)") + "\n";
     }
-    strUsage += "  -mintxfee=<amt>        " + strprintf(_("Fees (in RDD/Kb) smaller than this are considered zero fee for transaction creation (default: %s)"), FormatMoney(CTransaction::minTxFee.GetFeePerK())) + "\n";
     strUsage += "  -minrelaytxfee=<amt>   " + strprintf(_("Fees (in RDD/Kb) smaller than this are considered zero fee for relaying (default: %s)"), FormatMoney(CTransaction::minRelayTxFee.GetFeePerK())) + "\n";
+    strUsage += "  -mintxfee=<amt>        " + strprintf(_("Fees (in RDD/Kb) smaller than this are considered zero fee for transaction creation (default: %s)"), FormatMoney(CTransaction::minTxFee.GetFeePerK())) + "\n";
     strUsage += "  -printtoconsole        " + _("Send trace/debug info to console instead of debug.log file") + "\n";
     if (GetBoolArg("-help-debug", false))
     {
