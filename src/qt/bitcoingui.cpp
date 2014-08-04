@@ -288,7 +288,7 @@ void BitcoinGUI::createActions(bool fIsTestnet)
         aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About Reddcoin Core"), this);
     else
         aboutAction = new QAction(QIcon(":/icons/bitcoin_testnet"), tr("&About Reddcoin Core"), this);
-    aboutAction->setStatusTip(tr("Show information about Reddcoin"));
+    aboutAction->setStatusTip(tr("Show information about Reddcoin Core"));
     aboutAction->setMenuRole(QAction::AboutRole);
 #if QT_VERSION < 0x050000
     aboutQtAction = new QAction(QIcon(":/trolltech/qmessagebox/images/qtlogo-64.png"), tr("About &Qt"), this);
