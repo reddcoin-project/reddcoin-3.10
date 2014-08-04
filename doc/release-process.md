@@ -160,24 +160,6 @@ repackage gitian builds for release as stand-alone zip/tar/installer exe
 
 ###Next steps:
 
-* Code-sign Windows -setup.exe (in a Windows virtual machine using signtool)
- Note: only John has the code-signing keys currently.
-
-* upload builds to SourceForge
-
-* create SHA256SUMS for builds, and PGP-sign it
-
-* update bitcoin.org version
-  make sure all OS download links go to the right versions
-  
-* update download sizes on reddcoin.com/_templates/download.html
-
-* update forum version
-
-* update wiki download links
-
-* update wiki changelog: [https://wiki.reddcoin.com/wiki/Changelog](https://wiki.reddcoin.com/wiki/Changelog)
-
 Commit your signature to gitian.sigs:
 
 	pushd gitian.sigs
@@ -190,8 +172,30 @@ Commit your signature to gitian.sigs:
 
 -------------------------------------------------------------------------
 
-### After 3 or more people have gitian-built, repackage gitian-signed zips:
+### After 3 or more people have gitian-built and their results match:
 
+- Perform code-signing.
+
+    - Code-sign Windows -setup.exe (in a Windows virtual machine using signtool)
+
+    - Code-sign MacOSX .dmg
+
+  Note: only John has the code-signing keys currently.
+
+- Create `SHA256SUMS.asc` for builds, and PGP-sign it. This is done manually.
+  Include all the files to be uploaded. The file has `sha256sum` format with a
+  simple header at the top:
+
+```
+Hash: SHA256
+
+0060f7d38b98113ab912d4c184000291d7f026eaf77ca5830deec15059678f54  reddcoin-x.y.z-linux.tar.gz
+...
+```
+
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to github release
+
+- Update reddcoin.com version
 - Upload gitian zips to github releases
 
 - Announce the release:
