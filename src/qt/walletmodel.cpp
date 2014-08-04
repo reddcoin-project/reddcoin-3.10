@@ -90,6 +90,11 @@ qint64 WalletModel::getWatchBalance() const
     return wallet->GetWatchOnlyBalance();
 }
 
+qint64 WalletModel::getWatchStakedBalance() const
+{
+    return wallet->GetStakedWatchOnlyBalance();
+}
+
 qint64 WalletModel::getWatchUnconfirmedBalance() const
 {
     return wallet->GetUnconfirmedWatchOnlyBalance();
@@ -150,21 +155,23 @@ void WalletModel::checkBalanceChanged()
     qint64 newUnconfirmedBalance = getUnconfirmedBalance();
     qint64 newImmatureBalance = getImmatureBalance();
     qint64 newWatchOnlyBalance = getWatchBalance();
+    qint64 newWatchStakedBalance = getWatchStakedBalance();
     qint64 newWatchUnconfBalance = getWatchUnconfirmedBalance();
     qint64 newWatchImmatureBalance = getWatchImmatureBalance();
 
     if(cachedBalance != newBalance || cachedStake != newStake|| cachedUnconfirmedBalance != newUnconfirmedBalance || cachedImmatureBalance != newImmatureBalance ||
-        cachedWatchOnlyBalance != newWatchOnlyBalance || cachedWatchUnconfBalance != newWatchUnconfBalance || cachedWatchImmatureBalance != newWatchImmatureBalance)
+        cachedWatchOnlyBalance != newWatchOnlyBalance || cachedWatchStakedBalance != newWatchStakedBalance || cachedWatchUnconfBalance != newWatchUnconfBalance || cachedWatchImmatureBalance != newWatchImmatureBalance)
     {
         cachedBalance = newBalance;
         cachedStake = newStake;
         cachedUnconfirmedBalance = newUnconfirmedBalance;
         cachedImmatureBalance = newImmatureBalance;
         cachedWatchOnlyBalance = newWatchOnlyBalance;
+        cachedWatchStakedBalance = newWatchStakedBalance;
         cachedWatchUnconfBalance = newWatchUnconfBalance;
         cachedWatchImmatureBalance = newWatchImmatureBalance;
         emit balanceChanged(newBalance, newStake, newUnconfirmedBalance, newImmatureBalance,
-                            newWatchOnlyBalance, newWatchUnconfBalance, newWatchImmatureBalance);
+                            newWatchOnlyBalance, newWatchStakedBalance, newWatchUnconfBalance, newWatchImmatureBalance);
     }
 }
 

@@ -35,7 +35,7 @@ public:
 
 public slots:
     void setBalance(qint64 balance, qint64 stake, qint64 unconfirmedBalance, qint64 immatureBalance,
-                    qint64 watchOnlyBalance, qint64 watchUnconfBalance, qint64 watchImmatureBalance);
+                    qint64 watchOnlyBalance, qint64 watchStakeBalance, qint64 watchUnconfBalance, qint64 watchImmatureBalance);
 
 signals:
     void transactionClicked(const QModelIndex &index);
@@ -49,6 +49,7 @@ private:
     qint64 currentUnconfirmedBalance;
     qint64 currentImmatureBalance;
     qint64 currentWatchOnlyBalance;
+    qint64 currentWatchStakedBalance;
     qint64 currentWatchUnconfBalance;
     qint64 currentWatchImmatureBalance;
 

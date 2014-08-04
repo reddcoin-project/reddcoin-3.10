@@ -264,6 +264,7 @@ public:
     int64_t GetUnconfirmedBalance() const;
     int64_t GetImmatureBalance() const;
     int64_t GetWatchOnlyBalance() const;
+    int64_t GetStakedWatchOnlyBalance() const;
     int64_t GetUnconfirmedWatchOnlyBalance() const;
     int64_t GetImmatureWatchOnlyBalance() const;
     bool CreateTransaction(const std::vector<std::pair<CScript, int64_t> >& vecSend,
@@ -669,7 +670,7 @@ public:
 
     int64_t GetImmatureCredit(bool fUseCache=true) const
     {
-        if (IsCoinBase() && GetBlocksToMaturity() > 0 && IsInMainChain())
+        if ((IsCoinBase() || IsCoinStake()) && GetBlocksToMaturity() > 0 && IsInMainChain())
         {
             if (fUseCache && fImmatureCreditCached)
                 return nImmatureCreditCached;
@@ -713,7 +714,7 @@ public:
 
     int64_t GetImmatureWatchOnlyCredit(const bool& fUseCache=true) const
     {
-        if (IsCoinBase() && GetBlocksToMaturity() > 0 && IsInMainChain())
+        if ((IsCoinBase() || IsCoinStake()) && GetBlocksToMaturity() > 0 && IsInMainChain())
         {
             if (fUseCache && fImmatureWatchCreditCached)
                 return nImmatureWatchCreditCached;
@@ -731,7 +732,7 @@ public:
             return 0;
 
         // Must wait until coinbase is safely deep enough in the chain before valuing it
-        if (IsCoinBase() && GetBlocksToMaturity() > 0)
+        if ((IsCoinBase() || IsCoinStake()) && GetBlocksToMaturity() > 0)
             return 0;
 
         if (fUseCache && fAvailableWatchCreditCached)
