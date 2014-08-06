@@ -358,12 +358,6 @@ if test x$use_glibc_compat != xno; then
 
 fi
 
-if test x$TARGET_OS != xwindows; then
-  # All windows code is PIC, forcing it on just adds useless compile warnings
-  AX_CHECK_COMPILE_FLAG([-fPIC],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fPIC"])
-  # AX_CHECK_LINK_FLAG([[-pie]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -pie"])
-fi
-
 if test x$use_hardening != xno; then
   AX_CHECK_COMPILE_FLAG([-Wstack-protector],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -Wstack-protector"])
   AX_CHECK_COMPILE_FLAG([-fstack-protector-all],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fstack-protector-all"])
@@ -380,7 +374,12 @@ if test x$use_hardening != xno; then
   AX_CHECK_LINK_FLAG([[-Wl,-z,relro]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,relro"])
   AX_CHECK_LINK_FLAG([[-Wl,-z,now]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,now"])
 
-  
+  if test x$TARGET_OS != xwindows; then
+    # All windows code is PIC, forcing it on just adds useless compile warnings
+    AX_CHECK_COMPILE_FLAG([-fPIE],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fPIE"])
+    AX_CHECK_LINK_FLAG([[-pie]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -pie"])
+  fi
+
   CXXFLAGS="$CXXFLAGS $HARDENED_CXXFLAGS"
   CPPFLAGS="$CPPFLAGS $HARDENED_CPPFLAGS"
   LDFLAGS="$LDFLAGS $HARDENED_LDFLAGS"
