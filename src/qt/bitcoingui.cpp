@@ -95,6 +95,7 @@ BitcoinGUI::BitcoinGUI(bool fIsTestnet, QWidget *parent) :
     openAction(0),
     showHelpMessageAction(0),
     trayIcon(0),
+    trayIconMenu(0),
     notificator(0),
     rpcConsole(0),
     prevBlocks(0),
@@ -473,8 +474,12 @@ void BitcoinGUI::setClientModel(ClientModel *clientModel)
             walletFrame->setClientModel(clientModel);
         }
 #endif
-
-        this->unitDisplayControl->setOptionsModel(clientModel->getOptionsModel());
+        unitDisplayControl->setOptionsModel(clientModel->getOptionsModel());
+    } else {
+        // Disable possibility to show main window via action
+        toggleHideAction->setEnabled(false);
+        // Disable context menu on tray icon
+        trayIconMenu->clear();
     }
 }
 
@@ -521,7 +526,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
 
 void BitcoinGUI::createTrayIcon(bool fIsTestnet)
 {
-// #ifndef Q_OS_MAC
+#ifndef Q_OS_MAC
     trayIcon = new QSystemTrayIcon(this);
 
     if (!fIsTestnet)
@@ -536,15 +541,14 @@ void BitcoinGUI::createTrayIcon(bool fIsTestnet)
     }
 
     trayIcon->show();
-// #endif
+#endif
 
     notificator = new Notificator(QApplication::applicationName(), trayIcon, this);
 }
 
 void BitcoinGUI::createTrayIconMenu()
 {
-    QMenu *trayIconMenu;
-// #ifndef Q_OS_MAC
+#ifndef Q_OS_MAC
     // return if trayIcon is unset (only on non-Mac OSes)
     if (!trayIcon)
         return;
@@ -554,7 +558,7 @@ void BitcoinGUI::createTrayIconMenu()
 
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
-#ifdef Q_OS_MAC
+#else
     // Note: On Mac, the dock icon is used to provide the tray's functionality.
     MacDockIconHandler *dockIconHandler = MacDockIconHandler::instance();
     dockIconHandler->setMainWindow((QMainWindow *)this);
@@ -578,16 +582,16 @@ void BitcoinGUI::createTrayIconMenu()
 #endif
 }
 
-// #ifndef Q_OS_MAC
+#ifndef Q_OS_MAC
 void BitcoinGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     if(reason == QSystemTrayIcon::Trigger)
     {
         // Click on system tray icon triggers show/hide of the main window
-        toggleHideAction->trigger();
+        toggleHidden();
     }
 }
-// #endif
+#endif
 
 void BitcoinGUI::optionsClicked()
 {
@@ -976,6 +980,7 @@ void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)
 {
     if(!clientModel)
         return;
+
     // activateWindow() (sometimes) helps with keyboard focus on Windows
     if (isHidden())
     {
