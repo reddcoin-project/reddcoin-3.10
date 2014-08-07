@@ -1,4 +1,3 @@
-AM_CPPFLAGS =  $(INCLUDES)
 AM_LDFLAGS = $(PTHREAD_CFLAGS) $(LIBTOOL_LDFLAGS)
 
 if USE_LIBSECP256K1
@@ -22,7 +21,7 @@ $(LIBLEVELDB) $(LIBMEMENV):
 endif
 
 BITCOIN_CONFIG_INCLUDES=-I$(builddir)/config
-BITCOIN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS)
+BITCOIN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
 if USE_LIBSECP256K1
 BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
@@ -248,7 +247,7 @@ if TARGET_WINDOWS
 reddcoind_SOURCES += bitcoind-res.rc
 endif
 
-reddcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS)
+reddcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS)
 reddcoind_CPPFLAGS = $(BITCOIN_INCLUDES)
 
 # reddcoin-cli binary #
@@ -257,7 +256,10 @@ reddcoin_cli_LDADD = \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
-  $(BOOST_LIBS)
+  $(BOOST_LIBS) \
+  $(SSL_LIBS) \
+  $(CRYPTO_LIBS)
+
 reddcoin_cli_SOURCES = \
   bitcoin-cli.cpp
 
