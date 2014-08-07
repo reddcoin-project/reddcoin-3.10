@@ -32,13 +32,13 @@ class COutPoint
 {
 public:
     uint256 hash;
-    unsigned int n;
+    uint32_t n;
 
     COutPoint() { SetNull(); }
-    COutPoint(uint256 hashIn, unsigned int nIn) { hash = hashIn; n = nIn; }
+    COutPoint(uint256 hashIn, uint32_t nIn) { hash = hashIn; n = nIn; }
     IMPLEMENT_SERIALIZE( READWRITE(FLATDATA(*this)); )
-    void SetNull() { hash = 0; n = (unsigned int) -1; }
-    bool IsNull() const { return (hash == 0 && n == (unsigned int) -1); }
+    void SetNull() { hash = 0; n = (uint32_t) -1; }
+    bool IsNull() const { return (hash == 0 && n == (uint32_t) -1); }
 
     friend bool operator<(const COutPoint& a, const COutPoint& b)
     {
@@ -63,12 +63,12 @@ class CInPoint
 {
 public:
     const CTransaction* ptx;
-    unsigned int n;
+    uint32_t n;
 
     CInPoint() { SetNull(); }
-    CInPoint(const CTransaction* ptxIn, unsigned int nIn) { ptx = ptxIn; n = nIn; }
-    void SetNull() { ptx = NULL; n = (unsigned int) -1; }
-    bool IsNull() const { return (ptx == NULL && n == (unsigned int) -1); }
+    CInPoint(const CTransaction* ptxIn, uint32_t nIn) { ptx = ptxIn; n = nIn; }
+    void SetNull() { ptx = NULL; n = (uint32_t) -1; }
+    bool IsNull() const { return (ptx == NULL && n == (uint32_t) -1); }
 };
 
 /** An input of a transaction.  It contains the location of the previous
@@ -80,15 +80,15 @@ class CTxIn
 public:
     COutPoint prevout;
     CScript scriptSig;
-    unsigned int nSequence;
+    uint32_t nSequence;
 
     CTxIn()
     {
         nSequence = std::numeric_limits<unsigned int>::max();
     }
 
-    explicit CTxIn(COutPoint prevoutIn, CScript scriptSigIn=CScript(), unsigned int nSequenceIn=std::numeric_limits<unsigned int>::max());
-    CTxIn(uint256 hashPrevTx, unsigned int nOut, CScript scriptSigIn=CScript(), unsigned int nSequenceIn=std::numeric_limits<unsigned int>::max());
+    explicit CTxIn(COutPoint prevoutIn, CScript scriptSigIn=CScript(), uint32_t nSequenceIn=std::numeric_limits<unsigned int>::max());
+    CTxIn(uint256 hashPrevTx, uint32_t nOut, CScript scriptSigIn=CScript(), uint32_t nSequenceIn=std::numeric_limits<uint32_t>::max());
 
     IMPLEMENT_SERIALIZE
     (
@@ -99,7 +99,7 @@ public:
 
     bool IsFinal() const
     {
-        return (nSequence == std::numeric_limits<unsigned int>::max());
+        return (nSequence == std::numeric_limits<uint32_t>::max());
     }
 
     friend bool operator==(const CTxIn& a, const CTxIn& b)
@@ -228,18 +228,18 @@ private:
 public:
     static CFeeRate minTxFee;
     static CFeeRate minRelayTxFee;
-    static const int CURRENT_VERSION=2;
+    static const int32_t CURRENT_VERSION=2;
 
     // The local variables are made const to prevent unintended modification
     // without updating the cached hash value. However, CTransaction is not
     // actually immutable; deserialization and assignment are implemented,
     // and bypass the constness. This is safe, as they update the entire
     // structure, including the hash.
-    const int nVersion;
+    const int32_t nVersion;
     const std::vector<CTxIn> vin;
     const std::vector<CTxOut> vout;
-    const unsigned int nLockTime;
-    const unsigned int nTime;
+    const uint32_t nLockTime;
+    const uint32_t nTime;
 
     /** Construct a CTransaction that qualifies as IsNull() */
     CTransaction();
@@ -251,23 +251,23 @@ public:
     CTransaction& operator=(const CTransaction& tx);
 
     IMPLEMENT_SERIALIZE(
-        READWRITE(*const_cast<int*>(&this->nVersion));
+        READWRITE(*const_cast<int32_t*>(&this->nVersion));
         //nVersion = this->nVersion;
         READWRITE(*const_cast<std::vector<CTxIn>*>(&vin));
         READWRITE(*const_cast<std::vector<CTxOut>*>(&vout));
-        READWRITE(*const_cast<unsigned int*>(&nLockTime));
+        READWRITE(*const_cast<uint32_t*>(&nLockTime));
         if (this->nVersion > POW_TX_VERSION)
         {
             // PoSV
-            READWRITE(*const_cast<unsigned int*>(&nTime));
+            READWRITE(*const_cast<uint32_t*>(&nTime));
         }
         else if (fRead)
         {
-        	*const_cast<unsigned int*>(&nTime) = 0;
+        	*const_cast<uint32_t*>(&nTime) = 0;
         }
         if (fRead)
         {
-        	UpdateHash();
+            UpdateHash();
         }
     )
 
@@ -314,11 +314,11 @@ public:
 /** A mutable version of CTransaction. */
 struct CMutableTransaction
 {
-    int nVersion;
+    int32_t nVersion;
     std::vector<CTxIn> vin;
     std::vector<CTxOut> vout;
-    unsigned int nLockTime;
-    unsigned int nTime;
+    uint32_t nLockTime;
+    uint32_t nTime;
 
     CMutableTransaction();
     CMutableTransaction(int64_t nTime);
@@ -337,7 +337,7 @@ struct CMutableTransaction
 		}
         else if (fRead)
 		{
-			*const_cast<unsigned int*>(&nTime) = 0;
+			*const_cast<uint32_t*>(&nTime) = 0;
 			GetHash();
 		}
     )
@@ -447,13 +447,13 @@ public:
     // Block Version 3 : Introduction of POSV Block
     // Block Version 4 : Introduction of BIP66
 	// Block Version 5 : Introduction of Developers Funding
-    static const int CURRENT_VERSION=5;
-    int nVersion;
+    static const int32_t CURRENT_VERSION=5;
+    int32_t nVersion;
     uint256 hashPrevBlock;
     uint256 hashMerkleRoot;
-    unsigned int nTime;
-    unsigned int nBits;
-    unsigned int nNonce;
+    uint32_t nTime;
+    uint32_t nBits;
+    uint32_t nNonce;
 
     CBlockHeader()
     {
