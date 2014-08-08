@@ -378,12 +378,6 @@ void openDebugLogfile()
         QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathDebug)));
 }
 
-ToolTipToRichTextFilter::ToolTipToRichTextFilter(int size_threshold, QObject *parent) :
-    QObject(parent), size_threshold(size_threshold)
-{
-
-}
-
 void SubstituteFonts()
 {
 #if defined(Q_OS_MAC)
@@ -402,6 +396,13 @@ void SubstituteFonts()
         QFont::insertSubstitution(".Lucida Grande UI", "Lucida Grande");
 #endif
 #endif
+}
+
+ToolTipToRichTextFilter::ToolTipToRichTextFilter(int size_threshold, QObject *parent) :
+    QObject(parent),
+    size_threshold(size_threshold)
+{
+
 }
 
 bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
