@@ -1,4 +1,6 @@
-Building Reddcoin
+####Building Reddcoin
+
+----
 
 See doc/readme-qt.rst for instructions on building Reddcoin-Qt,
 the intended-for-end-users, nice-graphical-interface, reference
