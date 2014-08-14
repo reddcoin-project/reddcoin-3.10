@@ -6,8 +6,9 @@
 #include <boost/assign/list_of.hpp>
 #include <math.h>
 #include "kernel.h"
+#include "scriptutils.h"
 #include "txdb.h"
-#include "script.h"
+
 
 using namespace std;
 

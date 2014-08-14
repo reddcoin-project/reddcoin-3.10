@@ -13,7 +13,7 @@
 #include "main.h"
 #include "net.h"
 #include "pow.h"
-#include "script.h"
+#include "scriptutils.h"
 #include "serialize.h"
 #include "util.h"
 
