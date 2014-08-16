@@ -54,7 +54,7 @@ if BUILD_BITCOIND
   bin_PROGRAMS += reddcoind
 endif
 
-if BUILD_BITCOIN_CLI
+if BUILD_BITCOIN_UTILS
   bin_PROGRAMS += reddcoin-cli
 endif
 
