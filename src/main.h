@@ -220,13 +220,13 @@ struct CDiskBlockPos
     int nFile;
     unsigned int nPos;
 
-    IMPLEMENT_SERIALIZE
+    IMPLEMENT_SERIALIZE;
 
-    template <typename T, typename Stream, typename Operation>
-    inline static size_t SerializationOp(T thisPtr, Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>
+    inline size_t SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         size_t nSerSize = 0;
-        READWRITE(VARINT(thisPtr->nFile));
-        READWRITE(VARINT(thisPtr->nPos));
+        READWRITE(VARINT(nFile));
+        READWRITE(VARINT(nPos));
         return nSerSize;
     }
 
@@ -255,13 +255,13 @@ struct CDiskTxPos : public CDiskBlockPos
 {
     unsigned int nTxOffset; // after header
 
-    IMPLEMENT_SERIALIZE
+    IMPLEMENT_SERIALIZE;
 
-    template <typename T, typename Stream, typename Operation>
-    inline static size_t SerializationOp(T thisPtr, Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>
+    inline size_t SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         size_t nSerSize = 0;
-        READWRITE(*(CDiskBlockPos*)thisPtr);
-        READWRITE(VARINT(thisPtr->nTxOffset));
+        READWRITE(*(CDiskBlockPos*)this);
+        READWRITE(VARINT(nTxOffset));
         return nSerSize;
     }
 
@@ -350,12 +350,12 @@ class CBlockUndo
 public:
     std::vector<CTxUndo> vtxundo; // for all but the coinbase
 
-    IMPLEMENT_SERIALIZE
+    IMPLEMENT_SERIALIZE;
 
-    template <typename T, typename Stream, typename Operation>
-    inline static size_t SerializationOp(T thisPtr, Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>
+    inline size_t SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         size_t nSerSize = 0;
-        READWRITE(thisPtr->vtxundo);
+        READWRITE(vtxundo);
         return nSerSize;
     }
 
@@ -459,27 +459,27 @@ protected:
 public:
 
     // serialization implementation
-    IMPLEMENT_SERIALIZE
+    IMPLEMENT_SERIALIZE;
 
-    template <typename T, typename Stream, typename Operation>
-    inline static size_t SerializationOp(T thisPtr, Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>
+    inline size_t SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         size_t nSerSize = 0;
         bool fRead = boost::is_same<Operation, CSerActionUnserialize>();
 
-        READWRITE(thisPtr->nTransactions);
-        READWRITE(thisPtr->vHash);
+        READWRITE(nTransactions);
+        READWRITE(vHash);
         std::vector<unsigned char> vBytes;
         if (fRead) {
             READWRITE(vBytes);
-            CPartialMerkleTree &us = *(const_cast<CPartialMerkleTree*>(thisPtr));
+            CPartialMerkleTree &us = *(const_cast<CPartialMerkleTree*>(this));
             us.vBits.resize(vBytes.size() * 8);
             for (unsigned int p = 0; p < us.vBits.size(); p++)
                 us.vBits[p] = (vBytes[p / 8] & (1 << (p % 8))) != 0;
             us.fBad = false;
         } else {
-            vBytes.resize((thisPtr->vBits.size()+7)/8);
-            for (unsigned int p = 0; p < thisPtr->vBits.size(); p++)
-                vBytes[p / 8] |= thisPtr->vBits[p] << (p % 8);
+            vBytes.resize((vBits.size()+7)/8);
+            for (unsigned int p = 0; p < vBits.size(); p++)
+                vBytes[p / 8] |= vBits[p] << (p % 8);
             READWRITE(vBytes);
         }
 
@@ -540,19 +540,19 @@ public:
     uint64_t nTimeFirst;         // earliest time of block in file
     uint64_t nTimeLast;          // latest time of block in file
 
-    IMPLEMENT_SERIALIZE
+    IMPLEMENT_SERIALIZE;
 
-    template <typename T, typename Stream, typename Operation>
-    inline static size_t SerializationOp(T thisPtr, Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>
+    inline size_t SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         size_t nSerSize = 0;
 
-        READWRITE(VARINT(thisPtr->nBlocks));
-        READWRITE(VARINT(thisPtr->nSize));
-        READWRITE(VARINT(thisPtr->nUndoSize));
-        READWRITE(VARINT(thisPtr->nHeightFirst));
-        READWRITE(VARINT(thisPtr->nHeightLast));
-        READWRITE(VARINT(thisPtr->nTimeFirst));
-        READWRITE(VARINT(thisPtr->nTimeLast));
+        READWRITE(VARINT(nBlocks));
+        READWRITE(VARINT(nSize));
+        READWRITE(VARINT(nUndoSize));
+        READWRITE(VARINT(nHeightFirst));
+        READWRITE(VARINT(nHeightLast));
+        READWRITE(VARINT(nTimeFirst));
+        READWRITE(VARINT(nTimeLast));
 
         return nSerSize;
     }
@@ -912,43 +912,43 @@ public:
         hashPrev = (pprev ? pprev->GetBlockHash() : 0);
     }
 
-    IMPLEMENT_SERIALIZE
+    IMPLEMENT_SERIALIZE;
 
-    template <typename T, typename Stream, typename Operation>
-    inline static size_t SerializationOp(T thisPtr, Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>
+    inline size_t SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         size_t nSerSize = 0;
 
         if (!(nType & SER_GETHASH))
             READWRITE(VARINT(nVersion));
 
-        READWRITE(VARINT(thisPtr->nHeight));
-        READWRITE(VARINT(thisPtr->nStatus));
-        READWRITE(VARINT(thisPtr->nTx));
-        if (thisPtr->nStatus & (BLOCK_HAVE_DATA | BLOCK_HAVE_UNDO))
-            READWRITE(VARINT(thisPtr->nFile));
-        if (thisPtr->nStatus & BLOCK_HAVE_DATA)
-            READWRITE(VARINT(thisPtr->nDataPos));
-        if (thisPtr->nStatus & BLOCK_HAVE_UNDO)
-            READWRITE(VARINT(thisPtr->nUndoPos));
+        READWRITE(VARINT(nHeight));
+        READWRITE(VARINT(nStatus));
+        READWRITE(VARINT(nTx));
+        if (nStatus & (BLOCK_HAVE_DATA | BLOCK_HAVE_UNDO))
+            READWRITE(VARINT(nFile));
+        if (nStatus & BLOCK_HAVE_DATA)
+            READWRITE(VARINT(nDataPos));
+        if (nStatus & BLOCK_HAVE_UNDO)
+            READWRITE(VARINT(nUndoPos));
 
         // block header
-        READWRITE(thisPtr->nVersion);
-        READWRITE(thisPtr->hashPrev);
-        READWRITE(thisPtr->hashMerkleRoot);
-        READWRITE(thisPtr->nTime);
-        READWRITE(thisPtr->nBits);
-        READWRITE(thisPtr->nNonce);
+        READWRITE(this->nVersion);
+        READWRITE(hashPrev);
+        READWRITE(hashMerkleRoot);
+        READWRITE(nTime);
+        READWRITE(nBits);
+        READWRITE(nNonce);
 
         // PoSV
-        READWRITE(thisPtr->nMint);
-        READWRITE(thisPtr->nMoneySupply);
-        READWRITE(thisPtr->nFlags);
-        READWRITE(thisPtr->nStakeModifier);
-        READWRITE(thisPtr->hashProof);
-        if (thisPtr->IsProofOfStake())
+        READWRITE(nMint);
+        READWRITE(nMoneySupply);
+        READWRITE(nFlags);
+        READWRITE(nStakeModifier);
+        READWRITE(hashProof);
+        if (IsProofOfStake())
         {
-            READWRITE(thisPtr->prevoutStake);
-            READWRITE(thisPtr->nStakeTime);
+            READWRITE(prevoutStake);
+            READWRITE(nStakeTime);
         }
         return nSerSize;
     }
@@ -1149,13 +1149,13 @@ public:
     // thus the filter will likely be modified.
     CMerkleBlock(const CBlock& block, CBloomFilter& filter);
 
-    IMPLEMENT_SERIALIZE
+    IMPLEMENT_SERIALIZE;
 
-    template <typename T, typename Stream, typename Operation>
-    inline static size_t SerializationOp(T thisPtr, Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>
+    inline size_t SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         size_t nSerSize = 0;
-        READWRITE(thisPtr->header);
-        READWRITE(thisPtr->txn);
+        READWRITE(header);
+        READWRITE(txn);
         return nSerSize;
     }
 };
