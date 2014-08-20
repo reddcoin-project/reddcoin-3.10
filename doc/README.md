@@ -47,7 +47,6 @@ The following are developer notes on how to build Reddcoin on your native platfo
 
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
-- [Windows Build Notes](build-msw.md)
 
 Development
 ---------------------
