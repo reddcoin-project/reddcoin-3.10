@@ -17,6 +17,9 @@
 
 class CTransaction;
 
+static const int64_t COIN = 100000000;
+static const int64_t CENT = 1000000;
+
 /** No amount larger than this (in satoshi) is valid.
  * The max value of int64_t is 1<<63 - 1. The value below
  * is chosen to be just below (1<<63 - 1) / 1e8
