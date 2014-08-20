@@ -1920,7 +1920,7 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
             const uint256& hash = tx.GetHash();
             if(fDebug) {
                 LogPrintf("CBlock::ConnectBlock : nHeight=%u, PoSV=%d, vts=%u, vtx.size=%u\n", pindex->nHeight, fProofOfStake, i, block.vtx.size());
-                block.print();
+                LogPrintf("%s\n", block.ToString());
             }
             if (view.HaveCoins(hash) && !view.GetCoins(hash).IsPruned())
                 return state.DoS(100, error("ConnectBlock() : tried to overwrite transaction"),
@@ -4419,7 +4419,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         vRecv >> block;
 
         LogPrint("net", "received block %s peer=%d\n", block.GetHash().ToString(), pfrom->id);
-        // block.print();
 
         CInv inv(MSG_BLOCK, block.GetHash());
         pfrom->AddInventoryKnown(inv);

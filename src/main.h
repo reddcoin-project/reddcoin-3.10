@@ -960,11 +960,6 @@ public:
             GetBlockHash().ToString());
     }
 
-    void print() const
-    {
-        LogPrintf("%s\n", ToString());
-    }
-
     // Check whether this block index entry is valid up to the passed validity level.
     bool IsValid(enum BlockStatus nUpTo = BLOCK_VALID_TRANSACTIONS) const
     {
@@ -1067,11 +1062,6 @@ public:
             GetBlockHash().ToString(),
             hashPrev.ToString());
         return str;
-    }
-
-    void print() const
-    {
-        LogPrintf("%s\n", ToString());
     }
 };
 
