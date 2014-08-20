@@ -448,7 +448,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
 	if(!pblock->IsProofOfWork())
         return error("ProcessBlockFound() : %s is not a proof-of-work block", hash.GetHex().c_str());
 
-    pblock->print();
+    LogPrintf("%s\n", pblock->ToString());
     LogPrintf("mined %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue));
 
     // Found a solution
@@ -489,7 +489,7 @@ bool ProcessStakeFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     //// debug print
     LogPrintf("ReddcoinStaker:\n");
     LogPrintf("proof-of-stake found  \n  hash: %s\n  stake: %s\n  target: %s\n", hash.GetHex(), hashStake.GetHex(), hashTarget.GetHex());
-    pblock->print();
+    LogPrintf("%s\n", pblock->ToString());
     LogPrintf("minted %s\n", FormatMoney(pblock->vtx[1].GetValueOut()));
 
     // Found a solution
