@@ -15,6 +15,7 @@
 #include "pow.h"
 #include "script.h"
 #include "serialize.h"
+#include "util.h"
 
 #include <stdint.h>
 

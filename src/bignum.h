@@ -9,6 +9,7 @@
 #include "serialize.h"
 #include "uint256.h"
 #include "util.h"
+#include "utilstrencodings.h"
 #include "version.h"
 
 #include <stdexcept>

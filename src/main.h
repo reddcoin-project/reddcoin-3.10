@@ -20,6 +20,7 @@
 #include "sync.h"
 #include "txmempool.h"
 #include "uint256.h"
+#include "utilmoneystr.h"
 
 #include <algorithm>
 #include <exception>

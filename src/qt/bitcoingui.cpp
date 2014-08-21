@@ -24,9 +24,9 @@
 #endif
 
 #include "init.h"
-#include "main.h"
-#include "wallet.h"
+#include "util.h"
 #include "ui_interface.h"
+#include "wallet.h"
 
 #include <iostream>
 

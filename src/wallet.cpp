@@ -11,8 +11,11 @@
 #include "kernel.h"
 #include "net.h"
 #include "timedata.h"
+#include "util.h"
+#include "utilmoneystr.h"
 
 #include <boost/algorithm/string/replace.hpp>
+#include <boost/thread.hpp>
 
 using namespace std;
 
@@ -51,6 +54,11 @@ struct CompareValueOnly
         return t1.first < t2.first;
     }
 };
+
+std::string COutput::ToString() const
+{
+    return strprintf("COutput(%s, %d, %d) [%s]", tx->GetHash().ToString(), i, nDepth, FormatMoney(tx->vout[i].nValue).c_str());
+}
 
 const CWalletTx* CWallet::GetWalletTx(const uint256& hash) const
 {

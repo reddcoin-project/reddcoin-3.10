@@ -12,7 +12,6 @@
 #include "txdb.h"
 #include "main.h"
 #include "ui_interface.h"
-#include "util.h"
 #include "walletdb.h"
 #include "kernel.h"
 
@@ -820,10 +819,7 @@ public:
         tx = txIn; i = iIn; nDepth = nDepthIn; fSpendable = fSpendableIn;
     }
 
-    std::string ToString() const
-    {
-        return strprintf("COutput(%s, %d, %d) [%s]", tx->GetHash().ToString(), i, nDepth, FormatMoney(tx->vout[i].nValue).c_str());
-    }
+    std::string ToString() const;
 };
 
 

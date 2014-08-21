@@ -10,6 +10,7 @@
 #include "core.h"
 #include "main.h"
 #include "uint256.h"
+#include "util.h"
 
 unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBlockHeader *pblock, uint64_t TargetBlocksSpacingSeconds, uint64_t PastBlocksMin, uint64_t PastBlocksMax)
 {
