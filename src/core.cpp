@@ -7,6 +7,8 @@
 
 #include "tinyformat.h"
 
+#include <boost/foreach.hpp>
+
 std::string COutPoint::ToString() const
 {
     return strprintf("COutPoint(%s, %u)", hash.ToString().substr(0,10), n);
@@ -230,6 +232,14 @@ bool CBlockHeader::IsProofOfStake() const
 }
 
 // PoSV
+int64_t CBlock::GetMaxTransactionTime() const
+{
+    int64_t maxTransactionTime = 0;
+    BOOST_FOREACH(const CTransaction& tx, vtx)
+        maxTransactionTime = std::max(maxTransactionTime, (int64_t)tx.nTime);
+    return maxTransactionTime;
+}
+
 bool CBlock::CheckBlockSignature() const
 {
     if (IsProofOfWork())

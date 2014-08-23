@@ -610,13 +610,7 @@ public:
     }
 
     // PoSV: get max transaction timestamp
-    int64_t GetMaxTransactionTime() const
-    {
-        int64_t maxTransactionTime = 0;
-        BOOST_FOREACH(const CTransaction& tx, vtx)
-            maxTransactionTime = std::max(maxTransactionTime, (int64_t)tx.nTime);
-        return maxTransactionTime;
-    }
+    int64_t GetMaxTransactionTime() const;
 
     bool CheckBlockSignature() const;
 
