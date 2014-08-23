@@ -5,6 +5,7 @@
 
 #include "core.h"
 
+#include "script/standard.h"
 #include "tinyformat.h"
 
 #include <boost/foreach.hpp>
