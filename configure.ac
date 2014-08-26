@@ -7,6 +7,8 @@ define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2020)
 AC_INIT([Reddcoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[support@reddcoin.com],[reddcoin])
+AC_CONFIG_SRCDIR([src/main.cpp])
+AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 LT_INIT([disable-shared])
@@ -145,10 +147,6 @@ AC_ARG_ENABLE([sse2],
   [use_sse2=yes])
 
 AC_ARG_WITH([protoc-bindir],[AS_HELP_STRING([--with-protoc-bindir=BIN_DIR],[specify protoc bin path])], [protoc_bin_path=$withval], [])
-
-
-AC_CONFIG_SRCDIR([src])
-AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 
 # Enable debug 
 AC_ARG_ENABLE([debug],
