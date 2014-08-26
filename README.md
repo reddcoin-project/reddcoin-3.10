@@ -1,6 +1,8 @@
 Reddcoin Core integration/staging tree
 =====================================
 
+[![Build Status](https://travis-ci.org/reddcoin/reddcoin.svg?branch=master)](https://travis-ci.org/reddcoin/reddcoin)
+
 https://www.reddcoin.com
 
 Copyright (c) 2009-2020 Bitcoin Developers  
@@ -72,8 +74,8 @@ Testing
 -------
 
 Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test. Please be patient and help out, and
-remember this is a security-critical project where any mistake might cost people
+requests than we can review and test on short notice. Please be patient and help out by testing
+other people's pull requests, and remember this is a security-critical project where any mistake might cost people
 lots of money.
 
 ### Automated Testing
@@ -99,10 +101,10 @@ Translations
 Changes to translations as well as new translations can be submitted to
 [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
 
-Periodically the translations are pulled from Transifex and merged into the git repository. See the
+Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.
 
-**Important**: We do not accept translation changes as github pull request because the next
+**Important**: We do not accept translation changes as GitHub pull requests because the next
 pull from Transifex would automatically overwrite them again.
 
 Development tips and tricks
