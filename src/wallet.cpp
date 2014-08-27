@@ -10,6 +10,8 @@
 #include "coincontrol.h"
 #include "kernel.h"
 #include "net.h"
+#include "script/script.h"
+#include "script/sign.h"
 #include "timedata.h"
 #include "util.h"
 #include "utilmoneystr.h"
