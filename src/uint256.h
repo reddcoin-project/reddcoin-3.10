@@ -327,4 +327,4 @@ public:
     uint64_t GetHash(const uint256& salt) const;
 };
 
-#endif
+#endif // BITCOIN_UINT256_H

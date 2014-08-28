@@ -4,7 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef _BITCOINRPC_SERVER_H_
-#define _BITCOINRPC_SERVER_H_ 1
+#define _BITCOINRPC_SERVER_H_
 
 #include "uint256.h"
 #include "rpcprotocol.h"
@@ -215,4 +215,4 @@ extern json_spirit::Value getstakinginfo(const json_spirit::Array& params, bool 
 extern json_spirit::Value reservebalance(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value getinterest(const json_spirit::Array& params, bool fHelp);
 
-#endif
+#endif // _BITCOINRPC_SERVER_H_
