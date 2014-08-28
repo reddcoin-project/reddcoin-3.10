@@ -1579,6 +1579,11 @@ bool VerifySignature(const CTransaction& txFrom, const CTransaction& txTo, unsig
     return VerifyScript(txin.scriptSig, txout.scriptPubKey, txTo, nIn, (SCRIPT_VERIFY_NOCACHE | SCRIPT_VERIFY_P2SH), nHashType);
 }
 
+bool VerifySignature(const CCoins& txFrom, const CTransaction& txTo, unsigned int nIn, unsigned int flags, int nHashType)
+{
+    return CScriptCheck(txFrom, txTo, nIn, flags, nHashType)();
+}
+
 bool CheckInputs(const CTransaction& tx, CValidationState &state, CCoinsViewCache &inputs, bool fScriptChecks, unsigned int flags, std::vector<CScriptCheck> *pvChecks)
 {
     if (!tx.IsCoinBase())

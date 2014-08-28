@@ -207,6 +207,7 @@ void UpdateTime(CBlockHeader& block, const CBlockIndex* pindexPrev);
 CBlockIndex * InsertBlockIndex(uint256 hash);
 /** Verify a signature */
 bool VerifySignature(const CTransaction& txFrom, const CTransaction& txTo, unsigned int nIn, int nHashType);
+bool VerifySignature(const CCoins& txFrom, const CTransaction& txTo, unsigned int nIn, unsigned int flags, int nHashType);
 /** Abort with a message */
 bool AbortNode(const std::string &msg);
 /** Get statistics from node state */
