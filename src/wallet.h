@@ -913,6 +913,7 @@ public:
         strOtherAccount.clear();
         strComment.clear();
         nOrderPos = -1;
+        nEntryNo = 0;
     }
 
     IMPLEMENT_SERIALIZE
