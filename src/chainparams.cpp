@@ -42,9 +42,8 @@ public:
         // Build the genesis block. Note that the output of the genesis coinbase cannot
         // be spent as it did not originally exist in the database.
         const char* pszTimestamp = "January 21st 2014 was such a nice day...";
-        CTransaction txNew;
+        CTransaction txNew(1390280400); // nTime
         txNew.nVersion = 1;
-        txNew.nTime = 1390280400;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
