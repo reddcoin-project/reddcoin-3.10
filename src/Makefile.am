@@ -176,6 +176,7 @@ libbitcoin_wallet_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_SOURCES = \
   db.cpp \
   crypter.cpp \
+  scriptutils.cpp \
   wallet.cpp \
   walletdb.cpp \
   $(BITCOIN_CORE_H)
@@ -230,7 +231,6 @@ libbitcoin_common_a_SOURCES = \
   script/script.cpp \
   script/sign.cpp \
   script/standard.cpp \
-  scriptutils.cpp \
   timedata.cpp \
   $(BITCOIN_CORE_H)
 
