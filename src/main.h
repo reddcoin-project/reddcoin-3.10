@@ -33,7 +33,7 @@
 class CBlockIndex;
 class CBloomFilter;
 class CInv;
-class COrphanBlock;
+struct COrphanBlock;
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
 static const unsigned int MAX_BLOCK_SIZE = 1000000;                      // 1000KB block hard limit
