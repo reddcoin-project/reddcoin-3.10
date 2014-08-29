@@ -90,7 +90,7 @@ class FrameworkInfo(object):
             return None
         
         # Don't deploy system libraries (exception for libQtuitools and libQtlucene).
-        if line.startswith("/System/Library/") or line.startswith("@executable_path") or (line.startswith("/usr/lib/") and "libQt" not in line):
+        if line.startswith("/System/Library/") or line.startswith("@executable_path") or line.startswith("@loader_path") or (line.startswith("/usr/lib/") and "libQt" not in line):
             return None
         
         m = cls.reOLine.match(line)
