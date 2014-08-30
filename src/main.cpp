@@ -1820,8 +1820,7 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
     // (its coinbase is unspendable)
     if (block.GetHash() == Params().HashGenesisBlock()) {
         view.SetBestBlock(pindex->GetBlockHash());
-        
-        chainActive.Genesis()->nMoneySupply = 10000 * COIN;
+        pindex->nMoneySupply = 10000 * COIN;
         return true;
     }
 
