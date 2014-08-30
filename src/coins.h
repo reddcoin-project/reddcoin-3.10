@@ -88,12 +88,12 @@ public:
     int nVersion;
 
     // construct a CCoins from a CTransaction, at a given height
-    CCoins(const CTransaction &tx, int nHeightIn) : fCoinBase(tx.IsCoinBase()), vout(tx.vout), nHeight(nHeightIn), nVersion(tx.nVersion) {
+    CCoins(const CTransaction &tx, int nHeightIn) : fCoinBase(tx.IsCoinBase()), fCoinStake(tx.IsCoinStake()), nTime(tx.nTime), vout(tx.vout), nHeight(nHeightIn), nVersion(tx.nVersion) {
         ClearUnspendable();
     }
 
     // empty constructor
-    CCoins() : fCoinBase(false), vout(0), nHeight(0), nVersion(0) { }
+    CCoins() : fCoinBase(false), fCoinStake(false), nTime(0), vout(0), nHeight(0), nVersion(0) { }
 
     // remove spent outputs at the end of vout
     void Cleanup() {
