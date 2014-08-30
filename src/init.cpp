@@ -1095,7 +1095,7 @@ bool AppInit2(boost::thread_group& threadGroup)
 #ifdef ENABLE_WALLET
     // Generate coins in the background
     if (pwalletMain)
-        GenerateReddcoins(GetBoolArg("-staking", true), pwalletMain, GetArg("-genproclimit", -1));
+        GenerateReddcoins(GetBoolArg("-staking", true), pwalletMain, GetArg("-genproclimit", 0));
 #endif
 
     // ********************************************************* Step 12: finished
