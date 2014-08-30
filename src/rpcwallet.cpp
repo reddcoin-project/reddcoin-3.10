@@ -38,7 +38,7 @@ void EnsureWalletIsUnlocked()
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
     if (fWalletUnlockStakingOnly)
-        throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Wallet is unlocked for staking only.");
+        throw JSONRPCError(RPC_WALLET_ALREADY_UNLOCKED_STAKING_ONLY, "Error: Wallet is unlocked for staking only.");
 }
 
 void WalletTxToJSON(const CWalletTx& wtx, Object& entry)

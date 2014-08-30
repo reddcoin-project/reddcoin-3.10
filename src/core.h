@@ -211,6 +211,15 @@ public:
         SetNull();
     }
 
+    CTransaction(unsigned int nCreateTime)
+    {
+        nVersion = CTransaction::CURRENT_VERSION;
+        vin.clear();
+        vout.clear();
+        nLockTime = 0;
+        nTime = nCreateTime;
+    }
+
     IMPLEMENT_SERIALIZE
     (
         READWRITE(this->nVersion);

@@ -33,7 +33,7 @@
 class CBlockIndex;
 class CBloomFilter;
 class CInv;
-class COrphanBlock;
+struct COrphanBlock;
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
 static const unsigned int MAX_BLOCK_SIZE = 1000000;                      // 1000KB block hard limit
@@ -207,6 +207,7 @@ void UpdateTime(CBlockHeader& block, const CBlockIndex* pindexPrev);
 CBlockIndex * InsertBlockIndex(uint256 hash);
 /** Verify a signature */
 bool VerifySignature(const CTransaction& txFrom, const CTransaction& txTo, unsigned int nIn, int nHashType);
+bool VerifySignature(const CCoins& txFrom, const CTransaction& txTo, unsigned int nIn, unsigned int flags, int nHashType);
 /** Abort with a message */
 bool AbortNode(const std::string &msg);
 /** Get statistics from node state */

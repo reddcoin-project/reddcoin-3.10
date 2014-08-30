@@ -1579,6 +1579,11 @@ bool VerifySignature(const CTransaction& txFrom, const CTransaction& txTo, unsig
     return VerifyScript(txin.scriptSig, txout.scriptPubKey, txTo, nIn, (SCRIPT_VERIFY_NOCACHE | SCRIPT_VERIFY_P2SH), nHashType);
 }
 
+bool VerifySignature(const CCoins& txFrom, const CTransaction& txTo, unsigned int nIn, unsigned int flags, int nHashType)
+{
+    return CScriptCheck(txFrom, txTo, nIn, flags, nHashType)();
+}
+
 bool CheckInputs(const CTransaction& tx, CValidationState &state, CCoinsViewCache &inputs, bool fScriptChecks, unsigned int flags, std::vector<CScriptCheck> *pvChecks)
 {
     if (!tx.IsCoinBase())
@@ -1611,8 +1616,11 @@ bool CheckInputs(const CTransaction& tx, CValidationState &state, CCoinsViewCach
             }
 
             // ppcoin: check transaction timestamp
-            if (coins.nTime > tx.nTime)
+            if (tx.nTime && coins.nTime > tx.nTime)
+            {
+                LogPrintf("CheckInputs() : coins.nTime = %lld, tx.nTime = %u\n", coins.nTime, tx.nTime);
                 return state.DoS(100, error("CheckInputs() : transaction timestamp earlier than input transaction"));
+            }
 
             // Check for negative or overflow input values
             nValueIn += coins.vout[prevout.n].nValue;
@@ -1815,8 +1823,7 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
     // (its coinbase is unspendable)
     if (block.GetHash() == Params().HashGenesisBlock()) {
         view.SetBestBlock(pindex->GetBlockHash());
-        
-        chainActive.Genesis()->nMoneySupply = 10000 * COIN;
+        pindex->nMoneySupply = 10000 * COIN;
         return true;
     }
 
