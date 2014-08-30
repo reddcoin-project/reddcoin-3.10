@@ -1616,8 +1616,11 @@ bool CheckInputs(const CTransaction& tx, CValidationState &state, CCoinsViewCach
             }
 
             // ppcoin: check transaction timestamp
-            if (coins.nTime > tx.nTime)
+            if (tx.nTime && coins.nTime > tx.nTime)
+            {
+                LogPrintf("CheckInputs() : coins.nTime = %lld, tx.nTime = %u\n", coins.nTime, tx.nTime);
                 return state.DoS(100, error("CheckInputs() : transaction timestamp earlier than input transaction"));
+            }
 
             // Check for negative or overflow input values
             nValueIn += coins.vout[prevout.n].nValue;
