@@ -108,7 +108,7 @@ BITCOIN_CORE_H = \
   script/script.h \
   script/sign.h \
   script/standard.h \
-  scriptutils.h \
+  wallet_ismine.h \
   serialize.h \
   sync.h \
   threadsafety.h \
@@ -176,7 +176,7 @@ libbitcoin_wallet_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_SOURCES = \
   db.cpp \
   crypter.cpp \
-  scriptutils.cpp \
+  wallet_ismine.cpp \
   wallet.cpp \
   walletdb.cpp \
   $(BITCOIN_CORE_H)

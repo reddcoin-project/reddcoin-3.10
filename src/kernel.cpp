@@ -6,7 +6,7 @@
 #include <boost/assign/list_of.hpp>
 #include <math.h>
 #include "kernel.h"
-#include "scriptutils.h"
+#include "wallet_ismine.h"
 #include "txdb.h"
 
 
