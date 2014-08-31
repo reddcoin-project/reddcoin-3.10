@@ -272,7 +272,7 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 61, // Reddcoin addresses start with R
+        PUBKEY_ADDRESS = 61, // Reddcoin addresses start with R, Bitcoin would be 0 as BTC adresses start with 1
         SCRIPT_ADDRESS = 5,
         PUBKEY_ADDRESS_TEST = 111,
         SCRIPT_ADDRESS_TEST = 196,
