@@ -270,23 +270,21 @@ public:
 
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
-        bool fRead = ser_action.ForRead();
-
         READWRITE(*const_cast<int32_t*>(&this->nVersion));
-        nVersion = this->nVersion;
+        // nVersion = this->nVersion;
         READWRITE(*const_cast<std::vector<CTxIn>*>(&vin));
         READWRITE(*const_cast<std::vector<CTxOut>*>(&vout));
         READWRITE(*const_cast<uint32_t*>(&nLockTime));
-        if (nVersion > POW_TX_VERSION)
+        if (this->nVersion > POW_TX_VERSION)
         {
             // PoSV
             READWRITE(*const_cast<uint32_t*>(&nTime));
         }
-        else if (fRead)
+        else if (ser_action.ForRead())
         {
         	*const_cast<uint32_t*>(&nTime) = 0;
         }
-        if (fRead)
+        if (ser_action.ForRead())
             UpdateHash();
     }
 
@@ -347,19 +345,17 @@ struct CMutableTransaction
 
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
-        bool fRead = boost::is_same<Operation, CSerActionUnserialize>();
-
         READWRITE(this->nVersion);
-        nVersion = this->nVersion;
+        // nVersion = this->nVersion;
         READWRITE(vin);
         READWRITE(vout);
         READWRITE(nLockTime);
-        if (nVersion > POW_TX_VERSION)
+        if (this->nVersion > POW_TX_VERSION)
 		{
 			// PoSV
 			READWRITE(nTime);
 		}
-        else if (fRead)
+        else if (ser_action.ForRead())
 		{
 			*const_cast<uint32_t*>(&nTime) = 0;
 			GetHash();
@@ -388,8 +384,7 @@ public:
 
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
-        bool fRead = ser_action.ForRead();
-        if (!fRead) {
+        if (!ser_action.ForRead()) {
             uint64_t nVal = CompressAmount(txout.nValue);
             READWRITE(VARINT(nVal));
         } else {
@@ -564,7 +559,7 @@ public:
         READWRITE(*(CBlockHeader*)this);
         READWRITE(vtx);
         // PoSV
-        if (nVersion > POW_BLOCK_VERSION)
+        if (this->nVersion > POW_BLOCK_VERSION)
             READWRITE(vchBlockSig);
     }
 
