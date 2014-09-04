@@ -31,6 +31,8 @@
 #include <utility>
 #include <vector>
 
+#include <boost/unordered_map.hpp>
+
 class CBlockIndex;
 class CBloomFilter;
 class CInv;
@@ -97,10 +99,16 @@ inline int64_t PastDrift(int64_t nTime)   { return nTime - 2 * 60 * 60; } // up 
 inline int64_t FutureDrift(int64_t nTime) { return nTime + 2 * 60 * 60; } // up to 2 hours from the future
 static const int64_t COIN_YEAR_REWARD = 5 * CENT; // 5% per year
 
+
+struct BlockHasher
+{
+    size_t operator()(const uint256& hash) const { return hash.GetLow64(); }
+};
+
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
 extern CTxMemPool mempool;
-typedef std::map<uint256, CBlockIndex*> BlockMap;
+typedef boost::unordered_map<uint256, CBlockIndex*, BlockHasher> BlockMap;
 extern BlockMap mapBlockIndex;
 extern uint64_t nLastBlockTx;
 extern uint64_t nLastBlockSize;
