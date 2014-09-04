@@ -155,6 +155,10 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 bool CheckProofOfWork(uint256 hash, unsigned int nBits)
 {
     CBigNum bnTarget;
+
+    if (Params().SkipProofOfWorkCheck())
+       return true;
+
     bnTarget.SetCompact(nBits);
 
     // Check range

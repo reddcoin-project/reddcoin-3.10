@@ -2618,7 +2618,8 @@ bool AcceptBlockHeader(CBlockHeader& block, CValidationState& state, CBlockIndex
             return state.DoS(100, error("AcceptBlockHeader() : reject proof-of-work at height %d", nHeight));
 
         // Check proof of work
-        if (block.nBits != GetNextWorkRequired(pindexPrev, &block))
+        if ((!Params().SkipProofOfWorkCheck()) &&
+           (block.nBits != GetNextWorkRequired(pindexPrev, &block)))
             return state.DoS(100, error("AcceptBlockHeader() : incorrect proof of work"),
                              REJECT_INVALID, "bad-diffbits");
 
