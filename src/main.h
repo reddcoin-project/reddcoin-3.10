@@ -100,7 +100,8 @@ static const int64_t COIN_YEAR_REWARD = 5 * CENT; // 5% per year
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
 extern CTxMemPool mempool;
-extern std::map<uint256, CBlockIndex*> mapBlockIndex;
+typedef std::map<uint256, CBlockIndex*> BlockMap;
+extern BlockMap mapBlockIndex;
 extern uint64_t nLastBlockTx;
 extern uint64_t nLastBlockSize;
 extern const std::string strMessageMagic;
