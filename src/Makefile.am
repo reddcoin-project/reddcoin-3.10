@@ -103,8 +103,8 @@ BITCOIN_CORE_H = \
   rpcclient.h \
   rpcprotocol.h \
   rpcserver.h \
-  script/interpreter.h \
   script/compressor.h \
+  script/interpreter.h \
   script/script.h \
   script/sign.h \
   script/standard.h \
@@ -226,8 +226,8 @@ libbitcoin_common_a_SOURCES = \
   keystore.cpp \
   netbase.cpp \
   protocol.cpp \
-  script/interpreter.cpp \
   script/compressor.cpp \
+  script/interpreter.cpp \
   script/script.cpp \
   script/sign.cpp \
   script/standard.cpp \
