@@ -18,6 +18,7 @@
 #include "pow.h"
 #include "crypto/scrypt.h"
 #include "script/script.h"
+#include "script/sigcache.h"
 #include "script/standard.h"
 #include "sync.h"
 #include "txmempool.h"
