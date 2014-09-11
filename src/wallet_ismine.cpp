@@ -30,8 +30,7 @@ unsigned int HaveKeys(const vector<valtype>& pubkeys, const CKeyStore& keystore)
 
 isminetype IsMine(const CKeyStore &keystore, const CTxDestination& dest)
 {
-    CScript script;
-    script.SetDestination(dest);
+    CScript script = GetScriptForDestination(dest);
     return IsMine(keystore, script);
 }
 
@@ -49,7 +48,7 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
     CTxDestination addr;
     CScript script;
     if(ExtractDestination(scriptPubKey, addr)) {
-    	script.SetDestination(addr);
+    	script = GetScriptForDestination(addr);
     }
 
     CKeyID keyID;
