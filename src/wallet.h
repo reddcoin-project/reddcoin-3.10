@@ -12,8 +12,8 @@
 #include "keystore.h"
 #include "txdb.h"
 #include "main.h"
-#include "wallet_ismine.h"
 #include "ui_interface.h"
+#include "wallet_ismine.h"
 #include "walletdb.h"
 #include "kernel.h"
 

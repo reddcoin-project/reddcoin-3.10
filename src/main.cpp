@@ -11,13 +11,13 @@
 #include "checkpoints.h"
 #include "checkqueue.h"
 #include "init.h"
+#include "kernel.h"
 #include "net.h"
 #include "pow.h"
 #include "txdb.h"
 #include "txmempool.h"
 #include "ui_interface.h"
 #include "util.h"
-#include "kernel.h"
 
 #include <sstream>
 
