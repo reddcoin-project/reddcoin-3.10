@@ -22,14 +22,14 @@ Xcode 4.3 or later, you'll need to install its command line tools. This can
 be done in `Xcode > Preferences > Downloads > Components` and generally must
 be re-done or updated every time Xcode is updated.
 
-There's an assumption that you already have `git` installed, as well. If
+There's also an assumption that you already have `git` installed. If
 not, it's the path of least resistance to install [Github for Mac](https://mac.github.com/)
 (OS X 10.7+) or
 [Git for OS X](https://code.google.com/p/git-osx-installer/). It is also
 available via Homebrew.
 
-You will also need to install [Homebrew](http://brew.sh)
-in order to install library dependencies.
+You will also need to install [Homebrew](http://brew.sh) in order to install library
+dependencies.
 
 The installation of the actual dependencies is covered in the Instructions
 sections below.
@@ -41,34 +41,27 @@ Instructions: Homebrew
 
         brew install autoconf automake libtool boost miniupnpc openssl pkg-config protobuf qt
 
-Note: After you have installed the dependencies, you should check that the Homebrew installed version of OpenSSL is the one available for compilation. You can check this by typing
+#### Installing berkeley-db4 using Homebrew
 
-        openssl version
+The homebrew package for berkeley-db4 has been broken for some time.  It will install without Java though.
 
-into Terminal. You should see OpenSSL 1.0.1f 6 Jan 2014.
-
-If not, you can ensure that the Homebrew OpenSSL is correctly linked by running
-
-        brew link openssl --force
-
-Rerunning "openssl version" should now return the correct version. If it
-doesn't, make sure `/usr/local/bin` comes before `/usr/bin` in your
-PATH. 
-
-Berkeley DB
------------
-It is recommended to use Berkeley DB 4.8. If you have to build it yourself,
-you can use [the installation script included in contrib/](contrib/install_db4.sh)
-like so
-
-```shell
-./contrib/install_db4.sh .
+Running this command takes you into brew's interactive mode, which allows you to configure, make, and install by hand:
+```
+$ brew install https://raw.github.com/mxcl/homebrew/master/Library/Formula/berkeley-db4.rb -–without-java 
 ```
 
-from the root of the repository.
+The rest of these commands are run inside brew interactive mode:
+```
+/private/tmp/berkeley-db4-UGpd0O/db-4.8.30 $ cd ..
+/private/tmp/berkeley-db4-UGpd0O $ db-4.8.30/dist/configure --prefix=/usr/local/Cellar/berkeley-db4/4.8.30 --mandir=/usr/local/Cellar/berkeley-db4/4.8.30/share/man --enable-cxx
+/private/tmp/berkeley-db4-UGpd0O $ make
+/private/tmp/berkeley-db4-UGpd0O $ make install
+/private/tmp/berkeley-db4-UGpd0O $ exit
+```
 
-**Note**: You only need Berkeley DB if the wallet is enabled (see the section *Disable-Wallet mode* below).
+After exiting, you'll get a warning that the install is keg-only, which means it wasn't symlinked to `/usr/local`.  You don't need it to link it to build bitcoin, but if you want to, here's how:
 
+    $ brew link --force berkeley-db4
 
 
 ### Building `reddcoind`
@@ -84,7 +77,7 @@ from the root of the repository.
         ./configure
         make
 
-3.  It is a good idea to build and run the unit tests, too:
+3.  It is also a good idea to build and run the unit tests:
 
         make check
 
