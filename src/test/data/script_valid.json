@@ -1,20 +1,29 @@
 [
-["", "DEPTH 0 EQUAL",   "Test the test: we should have an empty stack after scriptSig evaluation"],
-["  ", "DEPTH 0 EQUAL", "and multiple spaces should not change that."],
-["   ", "DEPTH 0 EQUAL"],
-["    ", "DEPTH 0 EQUAL"],
-["1 2", "2 EQUALVERIFY 1 EQUAL", "Similarly whitespace around and between symbols"],
-["1  2", "2 EQUALVERIFY 1 EQUAL"],
-["  1  2", "2 EQUALVERIFY 1 EQUAL"],
-["1  2  ", "2 EQUALVERIFY 1 EQUAL"],
-["  1  2  ", "2 EQUALVERIFY 1 EQUAL"],
+["
+Format is: [scriptPubKey, scriptSig, flags, ... comments]
+It is evaluated as if there was a crediting coinbase transaction with two 0
+pushes as scriptSig, and one output of 0 satoshi and given scriptPubKey,
+followed by a spending transaction which spends this output as only input (and
+correct prevout hash), using the given scriptSig. All nLockTimes are 0, all
+nSequences are max.
+"],
 
-["1", ""],
-["0x02 0x01 0x00", "", "all bytes are significant, not only the last one"],
-["0x09 0x00000000 0x00000000 0x10", "", "equals zero when cast to Int64"],
+["", "DEPTH 0 EQUAL", "P2SH,STRICTENC", "Test the test: we should have an empty stack after scriptSig evaluation"],
+["  ", "DEPTH 0 EQUAL", "P2SH,STRICTENC", "and multiple spaces should not change that."],
+["   ", "DEPTH 0 EQUAL", "P2SH,STRICTENC"],
+["    ", "DEPTH 0 EQUAL", "P2SH,STRICTENC"],
+["1 2", "2 EQUALVERIFY 1 EQUAL", "P2SH,STRICTENC", "Similarly whitespace around and between symbols"],
+["1  2", "2 EQUALVERIFY 1 EQUAL", "P2SH,STRICTENC"],
+["  1  2", "2 EQUALVERIFY 1 EQUAL", "P2SH,STRICTENC"],
+["1  2  ", "2 EQUALVERIFY 1 EQUAL", "P2SH,STRICTENC"],
+["  1  2  ", "2 EQUALVERIFY 1 EQUAL", "P2SH,STRICTENC"],
 
-["0x01 0x0b", "11 EQUAL", "push 1 byte"],
-["0x02 0x417a", "'Az' EQUAL"],
+["1", "", "P2SH,STRICTENC"],
+["0x02 0x01 0x00", "", "P2SH,STRICTENC", "all bytes are significant, not only the last one"],
+["0x09 0x00000000 0x00000000 0x10", "", "P2SH,STRICTENC", "equals zero when cast to Int64"],
+
+["0x01 0x0b", "11 EQUAL", "P2SH,STRICTENC", "push 1 byte"],
+["0x02 0x417a", "'Az' EQUAL", "P2SH,STRICTENC"],
 ["0x4b 0x417a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a",
  "'Azzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz' EQUAL", "push 75 bytes"],
 
