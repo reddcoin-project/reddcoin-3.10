@@ -14,8 +14,9 @@
 #endif
 
 #include <QApplication>
-#include <QPainter>
+#include <QCloseEvent>
 #include <QDesktopWidget>
+#include <QPainter>
 
 SplashScreen::SplashScreen(Qt::WindowFlags f, bool isTestNet) :
     QWidget(0, f), curAlignment(0)
@@ -118,7 +119,6 @@ SplashScreen::~SplashScreen()
 void SplashScreen::slotFinish(QWidget *mainWin)
 {
     hide();
-    deleteLater();
 }
 
 static void InitMessage(SplashScreen *splash, const std::string &message)
@@ -178,5 +178,10 @@ void SplashScreen::paintEvent(QPaintEvent *event)
     QRect r = rect().adjusted(5, 5, -5, -5);
     painter.setPen(curColor);
     painter.drawText(r, curAlignment, curMessage);
+}
+
+void SplashScreen::closeEvent(QCloseEvent *event)
+{
+    event->ignore();
 }
 
