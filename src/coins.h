@@ -383,7 +383,7 @@ protected:
     CCoinsView *base;
 
 public:
-    CCoinsViewBacked(CCoinsView &viewIn);
+    CCoinsViewBacked(CCoinsView *viewIn);
     bool GetCoins(const uint256 &txid, CCoins &coins) const;
     bool HaveCoins(const uint256 &txid) const;
     uint256 GetBestBlock() const;
@@ -425,7 +425,7 @@ protected:
     mutable CCoinsMap cacheCoins;
 
 public:
-    CCoinsViewCache(CCoinsView &baseIn, bool fDummy = false);
+    CCoinsViewCache(CCoinsView *baseIn);
     ~CCoinsViewCache();
 
     // Standard CCoinsView methods
