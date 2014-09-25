@@ -5,8 +5,10 @@
 
 #include "core.h"
 
+#include "hash.h"
 #include "script/standard.h"
 #include "tinyformat.h"
+#include "utilstrencodings.h"
 
 std::string COutPoint::ToString() const
 {
