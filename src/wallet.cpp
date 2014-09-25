@@ -1800,7 +1800,7 @@ bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, CAmou
                            LogPrintf("CreateCoinStake : failed to get key for kernel type=%d\n", whichType);
                         break;  // unable to find corresponding public key
                     }
-                    scriptPubKeyOut << key.GetPubKey() << OP_CHECKSIG;
+                    scriptPubKeyOut << ToByteVector(key.GetPubKey()) << OP_CHECKSIG;
                 }
                 if (whichType == TX_PUBKEY)
                 {
