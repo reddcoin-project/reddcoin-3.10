@@ -127,6 +127,7 @@ public:
         fAllowMinDifficultyBlocks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
+        fSkipProofOfWorkCheck = false;
     }
 };
 static CMainParams mainParams;
@@ -259,11 +260,7 @@ public:
         fDefaultCheckMemPool = true;
         fAllowMinDifficultyBlocks = false;
         fMineBlocksOnDemand = true;
-        fSkipProofOfWorkCheck = false;
     }
-    virtual bool SkipProofOfWorkCheck() const { return fSkipProofOfWorkCheck; }
-protected:
-    bool fSkipProofOfWorkCheck;
 public:
     // Published setters to allow changing values in unit test cases
     virtual void setSubsidyHalvingInterval(int anSubsidyHalvingInterval)  { nSubsidyHalvingInterval=anSubsidyHalvingInterval; }
