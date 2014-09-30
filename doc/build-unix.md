@@ -15,10 +15,12 @@ the usage of the absolute path.
 To Build
 ---------------------
 
-	./autogen.sh
-	./configure
-	make
-    make install # optional: will install to /usr/local/bin
+```bash
+./autogen.sh
+./configure
+make
+make install # optional: will install to /usr/local/bin
+```
 
 This will build reddcoin-qt as well if the dependencies are met.
 
