@@ -202,7 +202,7 @@ CBlockIndex * InsertBlockIndex(uint256 hash);
 /** Verify a signature */
 bool VerifySignature(const CTransaction& txFrom, const CTransaction& txTo, unsigned int nIn);
 /** Abort with a message */
-bool AbortNode(const std::string &msg);
+bool AbortNode(const std::string &msg, const std::string &userMessage="");
 /** Get statistics from node state */
 bool GetNodeStateStats(NodeId nodeid, CNodeStateStats &stats);
 /** Increase a node's misbehavior score. */
