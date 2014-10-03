@@ -287,14 +287,14 @@ case $host in
      ;;
 esac
 
-if test x$use_lcov == xyes; then
-  if test x$LCOV == x; then
+if test x$use_lcov = xyes; then
+  if test x$LCOV = x; then
     AC_MSG_ERROR("lcov testing requested but lcov not found")
   fi
-  if test x$GCOV == x; then
+  if test x$GCOV = x; then
     AC_MSG_ERROR("lcov testing requested but gcov not found")
   fi
-  if test x$GENHTML == x; then
+  if test x$GENHTML = x; then
     AC_MSG_ERROR("lcov testing requested but genhtml not found")
   fi
   LCOV="$LCOV --gcov-tool=$GCOV"
@@ -603,7 +603,7 @@ BITCOIN_QT_INIT
 
 if test x$use_pkgconfig = xyes; then
 
-  if test x"$PKG_CONFIG" == "x"; then
+  if test x"$PKG_CONFIG" = "x"; then
     AC_MSG_ERROR(pkg-config not found.)
   fi
 
@@ -717,7 +717,7 @@ if test x$bitcoin_enable_qt != xno; then
   dnl enable qr support
   AC_MSG_CHECKING([whether to build GUI with support for QR codes])
   if test x$have_qrencode = xno; then
-    if test x$use_qr == xyes; then
+    if test x$use_qr = xyes; then
      AC_MSG_ERROR("QR support requested but cannot be built. use --without-qrencode")
     fi
     AC_MSG_RESULT(no)
@@ -731,7 +731,7 @@ if test x$bitcoin_enable_qt != xno; then
     fi
   fi
 
-  if test x$XGETTEXT == x; then
+  if test x$XGETTEXT = x; then
     AC_MSG_WARN("xgettext is required to update qt translations")
   fi
 
@@ -777,13 +777,13 @@ fi
 AM_CONDITIONAL([TARGET_DARWIN], [test x$TARGET_OS = xdarwin])
 AM_CONDITIONAL([BUILD_DARWIN], [test x$BUILD_OS = xdarwin])
 AM_CONDITIONAL([TARGET_WINDOWS], [test x$TARGET_OS = xwindows])
-AM_CONDITIONAL([ENABLE_WALLET],[test x$enable_wallet == xyes])
-AM_CONDITIONAL([ENABLE_TESTS],[test x$use_tests == xyes])
-AM_CONDITIONAL([ENABLE_QT],[test x$bitcoin_enable_qt == xyes])
+AM_CONDITIONAL([ENABLE_WALLET],[test x$enable_wallet = xyes])
+AM_CONDITIONAL([ENABLE_TESTS],[test x$use_tests = xyes])
+AM_CONDITIONAL([ENABLE_QT],[test x$bitcoin_enable_qt = xyes])
 AM_CONDITIONAL([ENABLE_QT_TESTS],[test x$use_tests$bitcoin_enable_qt_test = xyesyes])
 AM_CONDITIONAL([USE_QRCODE], [test x$use_qr = xyes])
-AM_CONDITIONAL([USE_LCOV],[test x$use_lcov == xyes])
-AM_CONDITIONAL([USE_SSE2],[test x$use_sse2 == xyes])
+AM_CONDITIONAL([USE_LCOV],[test x$use_lcov = xyes])
+AM_CONDITIONAL([USE_SSE2],[test x$use_sse2 = xyes])
 AM_CONDITIONAL([GLIBC_BACK_COMPAT],[test x$use_glibc_compat = xyes])
 AM_CONDITIONAL([USE_LIBSECP256K1],[test x$use_libsecp256k1 = xyes])
 
