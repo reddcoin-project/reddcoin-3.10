@@ -242,7 +242,7 @@ std::string HelpMessage(HelpMessageMode mode)
 #if !defined(WIN32)
     strUsage += "  -sysperms              " + _("Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)") + "\n";
 #endif
-    strUsage += "  -txindex               " + _("Maintain a full transaction index (default: 1)") + "\n";
+    strUsage += "  -txindex               " + _("Maintain a full transaction index, used by the getrawtransaction rpc call (default: 1)") + "\n";
 
     strUsage += "\n" + _("Connection options:") + "\n";
     strUsage += "  -addnode=<ip>          " + _("Add a node to connect to and attempt to keep the connection open") + "\n";
@@ -283,7 +283,6 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += "  -keypool=<n>           " + _("Set key pool size to <n> (default: 100)") + "\n";
     strUsage += "  -paytxfee=<amt>        " + strprintf(_("Fee (in RDD/kB) to add to transactions you send (default: %s)"), FormatMoney(payTxFee.GetFeePerK())) + "\n";
     strUsage += "  -rescan                " + _("Rescan the block chain for missing wallet transactions") + " " + _("on startup") + "\n";
-    strUsage += "  -respendnotify=<cmd>   " + _("Execute command when a network tx respends wallet tx input (%s=respend TxID, %t=wallet TxID)") + "\n";
     strUsage += "  -salvagewallet         " + _("Attempt to recover private keys from a corrupt wallet.dat") + " " + _("on startup") + "\n";
     strUsage += "  -spendzeroconfchange   " + _("Spend unconfirmed change when sending transactions (default: 1)") + "\n";
     strUsage += "  -stakenotify=<cmd>     " + _("Execute command when a coinstake transaction is created (%s in cmd is replaced by TxID)") + "\n" +

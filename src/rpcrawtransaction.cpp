@@ -110,6 +110,8 @@ Value getrawtransaction(const Array& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "getrawtransaction \"txid\" ( verbose )\n"
+            "\nNOTE: By this function requires you to maintain a transaction index.\n"
+            "This is enabled by default within the wallet (-txindex=1).\n"
             "\nReturn the raw transaction data.\n"
             "\nIf verbose=0, returns a string that is serialized, hex-encoded data for 'txid'.\n"
             "If verbose is non-zero, returns an Object with information about 'txid'.\n"
@@ -202,7 +204,7 @@ Value listunspent(const Array& params, bool fHelp)
             "Results are an array of Objects, each of which has:\n"
             "{txid, vout, scriptPubKey, amount, confirmations}\n"
             "\nArguments:\n"
-            "1. minconf          (numeric, optional, default=1) The minimum confirmationsi to filter\n"
+            "1. minconf          (numeric, optional, default=1) The minimum confirmations to filter\n"
             "2. maxconf          (numeric, optional, default=9999999) The maximum confirmations to filter\n"
             "3. \"addresses\"    (string) A json array of reddcoin addresses to filter\n"
             "    [\n"
