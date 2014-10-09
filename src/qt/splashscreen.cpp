@@ -6,6 +6,7 @@
 
 #include "clientversion.h"
 #include "init.h"
+#include "networkstyle.h"
 #include "ui_interface.h"
 #include "util.h"
 #include "version.h"
@@ -19,33 +20,30 @@
 #include <QDesktopWidget>
 #include <QPainter>
 
-SplashScreen::SplashScreen(Qt::WindowFlags f, bool isTestNet) :
+SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) :
     QWidget(0, f), curAlignment(0)
 {
     // set reference point, paddings
-    int paddingTop              = 50;
+	int paddingRight            = 50;
+	int paddingTop              = 50;
     int paddingBottom           = 50;
-
+    int titleVersionVSpace      = 17;
+    int titleCopyrightVSpace    = 40;
     float fontFactor            = 1.0;
 
     // define text to place
     QString titleText       = tr("Reddcoin Core");
-    QString versionText     = QString("version %1").arg(QString::fromStdString(FormatFullVersion()));
+    QString versionText     = QString("Version %1").arg(QString::fromStdString(FormatFullVersion()));
     QString copyrightText1   = QChar(0xA9)+QString(" 2009-%1 ").arg(COPYRIGHT_YEAR) + QString(tr("The Bitcoin Core developers"));
     QString copyrightText2   = QChar(0xA9)+QString(" 2014-%1 ").arg(COPYRIGHT_YEAR) + QString(tr("The Reddcoin Core developers"));
-    QString testnetAddText  = QString(tr("[testnet]")); // define text to place as single text object
-    QString titleText_versionText = titleText + QString(" ") + versionText;
     QString copyrightText = copyrightText1 + QString("\n") + copyrightText2;
+    QString titleText_versionText = titleText + QString(" ") + versionText;
+    QString titleAddText    = networkStyle->getTitleAddText();
 
     QString font            = "Arial";
 
     // load the bitmap for writing some text over it
-    if(isTestNet) {
-        pixmap     = QPixmap(":/images/splash_testnet");
-    }
-    else {
-        pixmap     = QPixmap(":/images/splash");
-    }
+    pixmap     = networkStyle->getSplashImage();
 
     QPainter pixPaint(&pixmap);
     pixPaint.setPen(QColor(255,255,255));
@@ -83,23 +81,20 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, bool isTestNet) :
     pixPaint.drawText(0, pixmap.height()-paddingBottom-33, pixmap.width(),paddingTop,Qt::AlignCenter,copyrightText);
     pixPaint.setPen(QColor(255,255,255)); // Reset to white
 
-    // draw testnet string if testnet is on
-    if(isTestNet) {
+    // draw additional text if special network
+    if(!titleAddText.isEmpty()) {
         QFont boldFont = QFont(font, 17*fontFactor);
         boldFont.setWeight(QFont::Bold);
         pixPaint.setFont(boldFont);
         fm = pixPaint.fontMetrics();
-        int testnetAddTextWidth  = fm.width(testnetAddText);
-        pixPaint.drawText(pixmap.width()-testnetAddTextWidth-10,18,testnetAddText);
+        int titleAddTextWidth  = fm.width(titleAddText);
+        pixPaint.drawText(pixmap.width()-titleAddTextWidth-10,18,titleAddText);
     }
 
     pixPaint.end();
 
     // Set window title
-    if(isTestNet)
-        setWindowTitle(titleText + " " + testnetAddText);
-    else
-        setWindowTitle(titleText);
+    setWindowTitle(titleText + " " + titleAddText);
 
     // Resize window and move to center of desktop, disallow resizing
     QRect r(QPoint(), pixmap.size());
