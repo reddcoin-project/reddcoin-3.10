@@ -250,7 +250,7 @@ if TARGET_WINDOWS
 reddcoind_SOURCES += bitcoind-res.rc
 endif
 
-reddcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS)
+reddcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
 reddcoind_CPPFLAGS = $(BITCOIN_INCLUDES)
 reddcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS)
 
@@ -262,7 +262,8 @@ reddcoin_cli_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(BOOST_LIBS) \
   $(SSL_LIBS) \
-  $(CRYPTO_LIBS)
+  $(CRYPTO_LIBS) \
+  $(MINIUPNPC_LIBS)
 
 reddcoin_cli_SOURCES = \
   bitcoin-cli.cpp
