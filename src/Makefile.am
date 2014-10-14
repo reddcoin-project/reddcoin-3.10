@@ -339,7 +339,7 @@ reddcoin_tx_LDADD = \
 reddcoin_tx_SOURCES = bitcoin-tx.cpp
 reddcoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
-reddcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS)
+reddcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
 reddcoin_cli_SOURCES += bitcoin-cli-res.rc
