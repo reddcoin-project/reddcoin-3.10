@@ -74,7 +74,7 @@ if USE_LIBSECP256K1
 endif
 
 test_test_reddcoin_LDADD += $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
-test_test_reddcoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS)
+test_test_reddcoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 nodist_test_test_reddcoin_SOURCES = $(GENERATED_TEST_FILES)
 

@@ -252,7 +252,7 @@ endif
 
 reddcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
 reddcoind_CPPFLAGS = $(BITCOIN_INCLUDES)
-reddcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS)
+reddcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 # reddcoin-cli binary #
 reddcoin_cli_LDADD = \
@@ -277,7 +277,7 @@ reddcoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
 if TARGET_WINDOWS
 reddcoin_cli_SOURCES += bitcoin-cli-res.rc
 endif
-reddcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS)
+reddcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 CLEANFILES = leveldb/libleveldb.a leveldb/libmemenv.a *.gcda *.gcno
 
