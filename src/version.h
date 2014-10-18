@@ -24,12 +24,6 @@ extern const std::string CLIENT_NAME;
 extern const std::string CLIENT_BUILD;
 extern const std::string CLIENT_DATE;
 
-// PoSV
-// nTime field added to CTransaction
-// vchBlockSig field added to CBlock
-static const int POW_TX_VERSION = 1;
-static const int POW_BLOCK_VERSION = 2;
-
 //
 // network protocol versioning
 //
