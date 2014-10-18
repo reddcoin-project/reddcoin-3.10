@@ -26,6 +26,7 @@
 #include "tinyformat.h"
 #include "txmempool.h"
 #include "uint256.h"
+#include "undo.h"
 #include "utilmoneystr.h"
 
 #include <algorithm>
@@ -140,7 +141,6 @@ static const uint64_t nMinDiskSpace = 52428800;
 
 
 class CBlockTreeDB;
-class CTxUndo;
 class CScriptCheck;
 class CValidationState;
 class CValidationInterface;

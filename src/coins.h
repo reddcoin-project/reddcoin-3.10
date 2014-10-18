@@ -10,6 +10,7 @@
 #include "core/transaction.h"
 #include "serialize.h"
 #include "uint256.h"
+#include "undo.h"
 #include "util.h"
 
 #include <assert.h>
