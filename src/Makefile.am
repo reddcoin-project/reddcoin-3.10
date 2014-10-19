@@ -84,6 +84,7 @@ BITCOIN_CORE_H = \
   coincontrol.h \
   coins.h \
   compat.h \
+  compressor.h \
   core.h \
   core/transaction.h \
   core_io.h \
@@ -109,7 +110,6 @@ BITCOIN_CORE_H = \
   rpcclient.h \
   rpcprotocol.h \
   rpcserver.h \
-  script/compressor.h \
   script/interpreter.h \
   script/script.h \
   script/sigcache.h \
@@ -229,6 +229,7 @@ libbitcoin_common_a_SOURCES = \
   base58.cpp \
   chainparams.cpp \
   coins.cpp \
+  compressor.cpp \
   core.cpp \
   core/transaction.cpp \
   core_read.cpp \
@@ -239,7 +240,6 @@ libbitcoin_common_a_SOURCES = \
   keystore.cpp \
   netbase.cpp \
   protocol.cpp \
-  script/compressor.cpp \
   script/interpreter.cpp \
   script/script.cpp \
   script/sigcache.cpp \
