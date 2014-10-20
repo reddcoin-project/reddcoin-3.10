@@ -2233,7 +2233,7 @@ bool CWallet::GetTransaction(const uint256 &hash, CTransaction &txOut, uint256 &
                 CBlockHeader header;
                 try {
                     file >> header;
-                    fseek(file, postx.nTxOffset, SEEK_CUR);
+                    fseek(file.Get(), postx.nTxOffset, SEEK_CUR);
                     file >> txOut;
                 } catch (std::exception &e) {
                     return error("%s : Deserialize or I/O error - %s", __func__, e.what());
