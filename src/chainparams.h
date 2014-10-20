@@ -7,9 +7,9 @@
 #define BITCOIN_CHAIN_PARAMS_H
 
 #include "bignum.h"
-#include "core.h"
 #include "chainparamsbase.h"
 #include "checkpoints.h"
+#include "core/block.h"
 #include "protocol.h"
 #include "uint256.h"
 

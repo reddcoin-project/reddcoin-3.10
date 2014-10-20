@@ -6,7 +6,7 @@
 #include "miner.h"
 
 #include "amount.h"
-#include "core.h"
+#include "core/block.h"
 #include "core/transaction.h"
 #include "crypto/scrypt.h"
 #include "hash.h"
