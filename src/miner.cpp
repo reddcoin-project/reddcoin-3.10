@@ -19,6 +19,7 @@
 #endif
 
 #include <boost/thread.hpp>
+#include <boost/tuple/tuple.hpp>
 
 using namespace std;
 //////////////////////////////////////////////////////////////////////////////
