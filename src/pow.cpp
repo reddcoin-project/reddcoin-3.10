@@ -6,10 +6,10 @@
 #include "pow.h"
 
 #include "bignum.h"
+#include "chain.h"
 #include "chainparams.h"
 #include "core/block.h"
 #include "main.h"
-#include "timedata.h"
 #include "uint256.h"
 #include "util.h"
 
@@ -203,15 +203,6 @@ bool CheckMinWork(unsigned int nBits, unsigned int nBase, int64_t deltaTime, boo
         bnResult = bnLimit;
 
     return bnNewBlock <= bnResult;
-}
-
-void UpdateTime(CBlockHeader* pblock, const CBlockIndex* pindexPrev)
-{
-    pblock->nTime = std::max(pindexPrev->GetMedianTimePast()+1, GetAdjustedTime());
-
-    // Updating time can change work required on testnet:
-    if (Params().AllowMinDifficultyBlocks())
-        pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
 }
 
 uint256 GetProofIncrement(unsigned int nBits)

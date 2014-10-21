@@ -10,6 +10,7 @@
 #include <stdint.h>
 
 class CBlock;
+class CBlockHeader;
 class CBlockIndex;
 class CReserveKey;
 class CScript;
@@ -28,6 +29,7 @@ void IncrementExtraNonce(CBlock* pblock, CBlockIndex* pindexPrev, unsigned int& 
 bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey);
 /** Check minted proof-of-stake block */
 bool ProcessStakeFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey);
+void UpdateTime(CBlockHeader* block, const CBlockIndex* pindexPrev);
 
 extern double dHashesPerSec;
 extern int64_t nHPSTimerStart;
