@@ -11,7 +11,6 @@
 
 #include "bitcoinunits.h"
 #include "guiutil.h"
-#include "monitoreddatamapper.h"
 #include "optionsmodel.h"
 
 #include "main.h" // for MAX_SCRIPTCHECK_THREADS
@@ -24,6 +23,7 @@
 
 #include <boost/thread.hpp>
 
+#include <QDataWidgetMapper>
 #include <QDir>
 #include <QIntValidator>
 #include <QLocale>
@@ -103,7 +103,7 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
     ui->transactionFee->setSingleStep(CTransaction::minTxFee.GetFeePerK());
 
     /* Widget-to-option mapper */
-    mapper = new MonitoredDataMapper(this);
+    mapper = new QDataWidgetMapper(this);
     mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
     mapper->setOrientation(Qt::Vertical);
 
