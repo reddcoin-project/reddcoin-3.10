@@ -20,16 +20,6 @@
 
 class CTransaction;
 
-static const int64_t COIN = 100000000;
-static const int64_t CENT = 1000000;
-
-/** No amount larger than this (in satoshi) is valid.
- * The max value of int64_t is 1<<63 - 1. The value below
- * is chosen to be just below (1<<63 - 1) / 1e8
- */
-static const CAmount MAX_MONEY = 92233720368 * COIN;
-inline bool MoneyRange(const CAmount& nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
-
 /** An outpoint - a combination of a transaction hash and an index n into its vout */
 class COutPoint
 {
@@ -115,39 +105,6 @@ public:
 
     std::string ToString() const;
 };
-
-
-
-/** Type-safe wrapper class to for fee rates
- * (how much to pay based on transaction size)
- */
-class CFeeRate
-{
-private:
-    CAmount nSatoshisPerK; // unit is satoshis-per-1,000-bytes
-public:
-    CFeeRate() : nSatoshisPerK(0) { }
-    explicit CFeeRate(const CAmount& _nSatoshisPerK): nSatoshisPerK(_nSatoshisPerK) { }
-    CFeeRate(const CAmount& nFeePaid, size_t nSize);
-    CFeeRate(const CFeeRate& other) { nSatoshisPerK = other.nSatoshisPerK; }
-
-    CAmount GetFee(size_t size); // unit returned is satoshis
-    CAmount GetFeePerK() { return GetFee(1000); } // satoshis-per-1000-bytes
-
-    friend bool operator<(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK < b.nSatoshisPerK; }
-    friend bool operator>(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK > b.nSatoshisPerK; }
-    friend bool operator==(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK == b.nSatoshisPerK; }
-
-    std::string ToString() const;
-
-    ADD_SERIALIZE_METHODS;
-
-    template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
-        READWRITE(nSatoshisPerK);
-    }
-};
-
 
 /** An output of a transaction.  It contains the public key that the next input
  * must be able to sign with to claim it.

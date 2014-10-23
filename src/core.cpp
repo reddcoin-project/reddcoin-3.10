@@ -60,24 +60,6 @@ std::string CTxOut::ToString() const
     return strprintf("CTxOut(nValue=%d.%08d, scriptPubKey=%s)", nValue / COIN, nValue % COIN, scriptPubKey.ToString().substr(0,30));
 }
 
-CFeeRate::CFeeRate(const CAmount& nFeePaid, size_t nSize)
-{
-    if (nSize > 0)
-        nSatoshisPerK = nFeePaid*1000/nSize;
-    else
-        nSatoshisPerK = 0;
-}
-
-CAmount CFeeRate::GetFee(size_t nSize)
-{
-    return nSatoshisPerK*nSize / 1000;
-}
-
-std::string CFeeRate::ToString() const
-{
-    return strprintf("%d.%08d RDD/kB", nSatoshisPerK / COIN, nSatoshisPerK % COIN);
-}
-
 CMutableTransaction::CMutableTransaction() : nVersion(CTransaction::CURRENT_VERSION), nLockTime(0), nTime(GetAdjustedTime()) { }
 CMutableTransaction::CMutableTransaction(const CTransaction& tx) : nVersion(tx.nVersion), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime), nTime(tx.nTime) { }
 

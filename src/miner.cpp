@@ -5,6 +5,7 @@
 
 #include "miner.h"
 
+#include "amount.h"
 #include "core.h"
 #include "crypto/scrypt.h"
 #include "hash.h"
