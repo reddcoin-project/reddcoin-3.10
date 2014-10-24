@@ -325,6 +325,7 @@ public:
         nDefaultPort = 56444;
         assert(hashGenesisBlock == uint256("0x0472dc040de80ded8bd385a2b6bc6e4e05cb6432047efa07692724c6ccef40ac"));
 
+        vFixedSeeds.clear(); // Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
 
         fRequireRPCPassword = false;
