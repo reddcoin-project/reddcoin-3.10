@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "wallet.h"
@@ -29,26 +29,32 @@ typedef vector<unsigned char> valtype;
 CFeeRate payTxFee(DEFAULT_TRANSACTION_FEE);
 bool bSpendZeroConfChange = true;
 
-// optional setting to unlock wallet for staking only
-// serves to disable the trivial sendmoney when OS account compromised
-// provides no real security
+/**
+ * optional setting to unlock wallet for staking only
+ * serves to disable the trivial sendmoney when OS account compromised
+ * provides no real security
+ */
 bool fWalletUnlockStakingOnly = false;
 
-// we split the coinstake output in two to avoid concentrating
-// too many coins in one output. currently almost always split.
+/**
+ * we split the coinstake output in two to avoid concentrating
+ * too many coins in one output. currently almost always split.
+ */
 unsigned int nStakeSplitAge = 45 * 24 * 60 * 60; // 45 days
 
-// avoid concentrated transactions. on average, each block contains:
-// generated interest  ~= 27b * 5% / 365 / 1440 ~= 2.5k
-// corresponding stake ~= 27b / 365 / 1440 ~= 50k
-// optimally each output stakes once every week so 50k * 52 = 2.6m
-// but only a fraction of the total money supply is staked on the network
+/**
+ * avoid concentrated transactions. on average, each block contains:
+ * generated interest  ~= 27b * 5% / 365 / 1440 ~= 2.5k
+ * corresponding stake ~= 27b / 365 / 1440 ~= 50k
+ * optimally each output stakes once every week so 50k * 52 = 2.6m
+ * but only a fraction of the total money supply is staked on the network
+ */
 CAmount nStakeCombineThreshold = 2000000 * COIN;
 
-//////////////////////////////////////////////////////////////////////////////
-//
-// mapWallet
-//
+/** @defgroup mapWallet
+ *
+ * @{
+ */
 
 struct CompareValueOnly
 {
@@ -382,8 +388,10 @@ void CWallet::SyncMetaData(pair<TxSpends::iterator, TxSpends::iterator> range)
     }
 }
 
-// Outpoint is spent if any non-conflicted transaction
-// spends it:
+/**
+ * Outpoint is spent if any non-conflicted transaction
+ * spends it:
+ */
 bool CWallet::IsSpent(const uint256& hash, unsigned int n) const
 {
     const COutPoint outpoint(hash, n);
@@ -492,7 +500,7 @@ bool CWallet::EncryptWallet(const SecureString& strWalletPassphrase)
         {
             if (!pwalletdbEncryption->TxnCommit()) {
                 delete pwalletdbEncryption;
-                // We now have keys encrypted in memory, but no on disk...
+                // We now have keys encrypted in memory, but not on disk...
                 // die to avoid confusion and let the user reload their unencrypted wallet.
                 assert(false);
             }
@@ -690,9 +698,11 @@ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFromLoadWallet)
     return true;
 }
 
-// Add a transaction to the wallet, or update it.
-// pblock is optional, but should be provided if the transaction is known to be in a block.
-// If fUpdate is true, existing transactions will be updated.
+/**
+ * Add a transaction to the wallet, or update it.
+ * pblock is optional, but should be provided if the transaction is known to be in a block.
+ * If fUpdate is true, existing transactions will be updated.
+ */
 bool CWallet::AddToWalletIfInvolvingMe(const CTransaction& tx, const CBlock* pblock, bool fUpdate)
 {
     {
@@ -940,9 +950,11 @@ bool CWalletTx::WriteToDisk()
     return CWalletDB(pwallet->strWalletFile).WriteTx(GetHash(), *this);
 }
 
-// Scan the block chain (starting in pindexStart) for transactions
-// from or to us. If fUpdate is true, found transactions that already
-// exist in the wallet will be updated.
+/**
+ * Scan the block chain (starting in pindexStart) for transactions
+ * from or to us. If fUpdate is true, found transactions that already
+ * exist in the wallet will be updated.
+ */
 int CWallet::ScanForWalletTransactions(CBlockIndex* pindexStart, bool fUpdate)
 {
     int ret = 0;
@@ -1064,15 +1076,15 @@ void CWallet::ResendWalletTransactions()
     }
 }
 
+/** @} */ // end of mapWallet
 
 
 
 
-
-//////////////////////////////////////////////////////////////////////////////
-//
-// Actions
-//
+/** @defgroup Actions
+ *
+ * @{
+ */
 
 
 CAmount CWallet::GetBalance() const
@@ -1178,7 +1190,9 @@ CAmount CWallet::GetImmatureWatchOnlyBalance() const
     return nTotal;
 }
 
-// populate vCoins with vector of available COutputs.
+/**
+ * populate vCoins with vector of available COutputs.
+ */
 void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const CCoinControl *coinControl) const
 {
     vCoins.clear();
@@ -1284,7 +1298,7 @@ static void ApproximateBestSubset(vector<pair<CAmount, pair<const CWalletTx*,uns
                 //The solver here uses a randomized algorithm,
                 //the randomness serves no real security purpose but is just
                 //needed to prevent degenerate behavior and it is important
-                //that the rng fast. We do not use a constant random sequence,
+                //that the rng is fast. We do not use a constant random sequence,
                 //because there may be some privacy improvement by making
                 //the selection random.
                 if (nPass == 0 ? insecure_rand()&1 : !vfIncluded[i])
@@ -1961,7 +1975,9 @@ bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, CAmou
     return true;
 }
 
-// attempt to generate suitable proof-of-stake
+/** 
+ * Attempt to generate suitable proof-of-stake
+ */
 bool CWallet::SignBlock(CBlock *pblock, CAmount& nFees)
 {
     // if we are trying to sign something other than proof-of-stake block template
@@ -2022,7 +2038,9 @@ bool CWallet::SignBlock(CBlock *pblock, CAmount& nFees)
     return false;
 }
 
-// Call after CreateTransaction unless you want to abort
+/**
+ * Call after CreateTransaction unless you want to abort
+ */
 bool CWallet::CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey)
 {
     {
@@ -2156,7 +2174,7 @@ DBErrors CWallet::ZapWalletTx(std::vector<CWalletTx>& vWtx)
             setKeyPool.clear();
             // Note: can't top-up keypool here, because wallet is locked.
             // User will be prompted to unlock wallet the next operation
-            // the requires a new key.
+            // that requires a new key.
         }
     }
 
@@ -2212,8 +2230,10 @@ bool CWallet::DelAddressBook(const CTxDestination& address)
     return CWalletDB(strWalletFile).EraseName(CBitcoinAddress(address).ToString());
 }
 
-// Return transaction in tx, and if it was found inside a block, its hash is placed in hashBlock.
-// This is a blatant copy of the same function in main.cpp
+/**
+ * Return transaction in tx, and if it was found inside a block, its hash is placed in hashBlock.
+ * This is a blatant copy of the same function in main.cpp
+ */
 bool CWallet::GetTransaction(const uint256 &hash, CTransaction &txOut, uint256 &hashBlock, bool fAllowSlow)
 {
     CBlockIndex *pindexSlow = NULL;
@@ -2285,10 +2305,10 @@ bool CWallet::SetDefaultKey(const CPubKey &vchPubKey)
     return true;
 }
 
-//
-// Mark old keypool keys as used,
-// and generate all new keys
-//
+/**
+ * Mark old keypool keys as used,
+ * and generate all new keys 
+ */
 bool CWallet::NewKeyPool()
 {
     {
@@ -2671,6 +2691,7 @@ void CWallet::ListLockedCoins(std::vector<COutPoint>& vOutpts)
     }
 }
 
+/** @} */ // end of Actions
 
 class CAffectedKeysVisitor : public boost::static_visitor<void> {
 private:
