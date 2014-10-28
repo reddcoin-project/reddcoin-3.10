@@ -136,7 +136,6 @@ public:
     CAmount getWatchImmatureBalance() const;
     int getNumTransactions() const;
     EncryptionStatus getEncryptionStatus() const;
-    bool processingQueuedTransactions() { return fProcessingQueuedTransactions; }
 
     // Check address for validity
     bool validateAddress(const QString &address);
@@ -200,7 +199,6 @@ public:
 
 private:
     CWallet *wallet;
-    bool fProcessingQueuedTransactions;
     bool fHaveWatchOnly;
     bool fForceCheckBalanceChanged;
 
@@ -263,15 +261,13 @@ public slots:
     /* Wallet status might have changed */
     void updateStatus();
     /* New transaction, or transaction changed status */
-    void updateTransaction(const QString &hash, int status);
+    void updateTransaction();
     /* New, updated or removed address book entry */
     void updateAddressBook(const QString &address, const QString &label, bool isMine, const QString &purpose, int status);
     /* Watch-only added */
     void updateWatchOnlyFlag(bool fHaveWatchonly);
     /* Current, immature or unconfirmed balance might have changed - emit 'balanceChanged' if so */
     void pollBalanceChanged();
-    /* Needed to update fProcessingQueuedTransactions through a QueuedConnection */
-    void setProcessingQueuedTransactions(bool value) { fProcessingQueuedTransactions = value; }
 };
 
 #endif // WALLETMODEL_H
