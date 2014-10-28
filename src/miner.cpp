@@ -473,8 +473,8 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
 
     // Process this block the same as if we had received it from another node
     CValidationState state;
-    if (!ProcessBlock(state, NULL, pblock))
-        return error("ReddcoinMiner : ProcessBlock, block not accepted");
+    if (!ProcessNewBlock(state, NULL, pblock))
+        return error("ReddcoinMiner : ProcessNewBlock, block not accepted");
 
     return true;
 }
@@ -503,6 +503,7 @@ bool ProcessStakeFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
             return error("ReddcoinStaker : minted block is stale");
     }
+
     // Remove key from key pool
     reservekey.KeepKey();
 
@@ -514,8 +515,8 @@ bool ProcessStakeFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
 
     // Process this block the same as if we had received it from another node
     CValidationState state;
-    if (!ProcessBlock(state, NULL, pblock))
-        return error("ReddcoinStaker : ProcessBlock, block not accepted");
+    if (!ProcessNewBlock(state, NULL, pblock))
+        return error("ReddcoinStaker : ProcessNewBlock, block not accepted");
 
     return true;
 }
