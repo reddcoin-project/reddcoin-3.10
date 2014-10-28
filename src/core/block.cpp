@@ -6,6 +6,7 @@
 #include "core/block.h"
 
 #include "hash.h"
+#include "pubkey.h"
 #include "script/standard.h"
 #include "tinyformat.h"
 #include "utilstrencodings.h"
