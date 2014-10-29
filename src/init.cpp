@@ -768,6 +768,17 @@ bool AppInit2(boost::thread_group& threadGroup)
             threadGroup.create_thread(&ThreadScriptCheck);
     }
 
+    /* Start the RPC server already.  It will be started in "warmup" mode
+     * and not really process calls already (but it will signify connections
+     * that the server is there and will be ready later).  Warmup mode will
+     * be disabled when initialisation is finished.
+     */
+    if (fServer)
+    {
+        uiInterface.InitMessage.connect(SetRPCWarmupStatus);
+        StartRPCThreads();
+    }
+
     int64_t nStart;
 
 #if defined(USE_SSE2)
@@ -1269,8 +1280,6 @@ bool AppInit2(boost::thread_group& threadGroup)
 #endif
 
     StartNode(threadGroup);
-    if (fServer)
-        StartRPCThreads();
 
 #ifdef ENABLE_WALLET
     // Generate coins in the background
@@ -1280,6 +1289,7 @@ bool AppInit2(boost::thread_group& threadGroup)
 
     // ********************************************************* Step 11: finished
 
+    SetRPCWarmupFinished();
     uiInterface.InitMessage(_("Done loading"));
 
 #ifdef ENABLE_WALLET
