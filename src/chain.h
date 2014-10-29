@@ -262,11 +262,6 @@ public:
         return (int64_t)nTime;
     }
 
-    uint256 GetBlockWork() const
-    {
-        return GetProofIncrement(nBits);
-    }
-
     bool CheckIndex() const
 	{
 		/** Scrypt is used for block proof-of-work, but for purposes of performance the index internally uses sha256.

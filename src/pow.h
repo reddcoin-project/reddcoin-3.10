@@ -19,6 +19,6 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits);
 /** Check the work is more than the minimum a received block needs, without knowing its direct parent */
 bool CheckMinWork(unsigned int nBits, unsigned int nBase, int64_t deltaTime, bool fProofOfStake = false);
 
-uint256 GetProofIncrement(unsigned int nBits);
+uint256 GetBlockProof(const CBlockIndex& block);
 
 #endif // BITCOIN_POW_H
