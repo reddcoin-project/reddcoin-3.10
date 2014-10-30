@@ -65,7 +65,7 @@ def initialize_datadir(dir, n):
     datadir = os.path.join(dir, "node"+str(n))
     if not os.path.isdir(datadir):
         os.makedirs(datadir)
-    with open(os.path.join(datadir, "bitcoin.conf"), 'w') as f:
+    with open(os.path.join(datadir, "reddcoin.conf"), 'w') as f:
         f.write("regtest=1\n");
         f.write("rpcuser=rt\n");
         f.write("rpcpassword=rt\n");
@@ -77,7 +77,7 @@ def initialize_chain(test_dir):
     """
     Create (or copy from cache) a 200-block-long chain and
     4 wallets.
-    bitcoind and bitcoin-cli must be in search path.
+    reddcoind and reddcoin-cli must be in search path.
     """
 
     if not os.path.isdir(os.path.join("cache", "node0")):
@@ -85,11 +85,11 @@ def initialize_chain(test_dir):
         # Create cache directories, run bitcoinds:
         for i in range(4):
             datadir=initialize_datadir("cache", i)
-            args = [ "bitcoind", "-keypool=1", "-datadir="+datadir, "-discover=0" ]
+            args = [ os.getenv("REDDCOIND", "reddcoind"), "-keypool=1", "-datadir="+datadir, "-discover=0" ]
             if i > 0:
                 args.append("-connect=127.0.0.1:"+str(p2p_port(0)))
             bitcoind_processes[i] = subprocess.Popen(args)
-            subprocess.check_call([ "bitcoin-cli", "-datadir="+datadir,
+            subprocess.check_call([ os.getenv("REDDCOINCLI", "reddcoin-cli"), "-datadir="+datadir,
                                     "-rpcwait", "getblockcount"], stdout=devnull)
         devnull.close()
         rpcs = []
@@ -123,7 +123,7 @@ def initialize_chain(test_dir):
         from_dir = os.path.join("cache", "node"+str(i))
         to_dir = os.path.join(test_dir,  "node"+str(i))
         shutil.copytree(from_dir, to_dir)
-        initialize_datadir(test_dir, i) # Overwrite port/rpcport in bitcoin.conf
+        initialize_datadir(test_dir, i) # Overwrite port/rpcport in reddcoin.conf
 
 def _rpchost_to_args(rpchost):
     '''Convert optional IP:port spec to rpcconnect/rpcport args'''
@@ -150,11 +150,11 @@ def start_node(i, dir, extra_args=None, rpchost=None):
     Start a bitcoind and return RPC connection to it
     """
     datadir = os.path.join(dir, "node"+str(i))
-    args = [ "bitcoind", "-datadir="+datadir, "-keypool=1", "-discover=0" ]
+    args = [ os.getenv("REDDCOIND", "reddcoind"), "-datadir="+datadir, "-keypool=1", "-discover=0" ]
     if extra_args is not None: args.extend(extra_args)
     bitcoind_processes[i] = subprocess.Popen(args)
     devnull = open("/dev/null", "w+")
-    subprocess.check_call([ "bitcoin-cli", "-datadir="+datadir] +
+    subprocess.check_call([ os.getenv("REDDCOINCLI", "bitcoin-cli"), "-datadir="+datadir] +
                           _rpchost_to_args(rpchost)  +
                           ["-rpcwait", "getblockcount"], stdout=devnull)
     devnull.close()
