@@ -106,6 +106,7 @@ BITCOIN_CORE_H = \
   leveldbwrapper.h \
   limitedmap.h \
   main.h \
+  merkleblock.h \
   miner.h \
   mruset.h \
   netbase.h \
@@ -174,6 +175,7 @@ libbitcoin_server_a_SOURCES = \
   kernel.cpp \
   leveldbwrapper.cpp \
   main.cpp \
+  merkleblock.cpp \
   miner.cpp \
   net.cpp \
   noui.cpp \
