@@ -30,6 +30,7 @@ CFeeRate payTxFee(DEFAULT_TRANSACTION_FEE);
 unsigned int nTxConfirmTarget = 1;
 bool bSpendZeroConfChange = true;
 bool fSendFreeTransactions = true;
+bool fPayAtLeastCustomFee = true;
 
 /**
  * optional setting to unlock wallet for staking only
@@ -1523,7 +1524,10 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
     {
         LOCK2(cs_main, cs_wallet);
         {
-            nFeeRet = payTxFee.GetFeePerK();
+            if (fPayAtLeastCustomFee)
+                nFeeRet = payTxFee.GetFeePerK();
+            else
+                nFeeRet = 0;
             while (true)
             {
                 txNew.vin.clear();

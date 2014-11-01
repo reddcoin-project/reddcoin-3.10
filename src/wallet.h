@@ -34,8 +34,9 @@
 extern CFeeRate payTxFee;
 extern unsigned int nTxConfirmTarget;
 extern bool bSpendZeroConfChange;
-extern bool fSendFreeTransactions;
 extern bool fWalletUnlockStakingOnly;
+extern bool fSendFreeTransactions;
+extern bool fPayAtLeastCustomFee;
 
 //! -paytxfee default
 static const CAmount DEFAULT_TRANSACTION_FEE = 0;
