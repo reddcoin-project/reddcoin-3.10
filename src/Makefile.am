@@ -316,13 +316,10 @@ reddcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 # reddcoin-cli binary #
 reddcoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
-  $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
-  $(LIBBITCOIN_CRYPTO) \
   $(BOOST_LIBS) \
   $(SSL_LIBS) \
-  $(CRYPTO_LIBS) \
-  $(MINIUPNPC_LIBS)
+  $(CRYPTO_LIBS)
 
 reddcoin_cli_SOURCES = \
   bitcoin-cli.cpp
