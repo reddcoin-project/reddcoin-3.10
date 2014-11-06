@@ -177,6 +177,7 @@ libbitcoin_server_a_SOURCES = \
   rpcnet.cpp \
   rpcrawtransaction.cpp \
   rpcserver.cpp \
+  script/sigcache.cpp \
   txdb.cpp \
   txmempool.cpp \
   $(JSON_H) \
@@ -246,7 +247,6 @@ libbitcoin_common_a_SOURCES = \
   pubkey.cpp \
   script/interpreter.cpp \
   script/script.cpp \
-  script/sigcache.cpp \
   script/sign.cpp \
   script/standard.cpp \
   timedata.cpp \
@@ -343,11 +343,12 @@ if USE_LIBSECP256K1
 endif
 
   reddcoin_tx_LDADD += $(BOOST_LIBS) \
-  $(SSL_LIBS) \
   $(CRYPTO_LIBS)
+
 reddcoin_tx_SOURCES = bitcoin-tx.cpp
 reddcoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
+reddcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS)
 
 if TARGET_WINDOWS
 reddcoin_cli_SOURCES += bitcoin-cli-res.rc
