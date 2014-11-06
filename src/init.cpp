@@ -326,7 +326,7 @@ std::string HelpMessage(HelpMessageMode mode)
         strUsage += ", qt";
     strUsage += ".\n";
 #ifdef ENABLE_WALLET
-    strUsage += "  -genproclimit=<n>      " + strprintf(_("Set the processor limit for when generation is on (-1 = unlimited, default: %d)"), -1) + "\n";
+    strUsage += "  -genproclimit=<n>      " + strprintf(_("Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)"), 1) + "\n";
     strUsage += "  -staking               " + strprintf(_("Generate coins via staking to support network and gain reward (default: %u)"), 1) + "\n";
 #endif
     strUsage += "  -help-debug            " + _("Show all debugging options (usage: --help -help-debug)") + "\n";
