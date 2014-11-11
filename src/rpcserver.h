@@ -225,4 +225,10 @@ extern json_spirit::Value getstakinginfo(const json_spirit::Array& params, bool 
 extern json_spirit::Value reservebalance(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value getinterest(const json_spirit::Array& params, bool fHelp);
 
+// in rest.cpp
+extern bool HTTPReq_REST(AcceptedConnection *conn,
+                  std::string& strURI,
+                  std::map<std::string, std::string>& mapHeaders,
+                  bool fRun);
+
 #endif // BITCOIN_RPCSERVER_H
