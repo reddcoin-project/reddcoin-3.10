@@ -970,7 +970,7 @@ void ServiceConnection(AcceptedConnection *conn)
                 break;
 
         } else {
-            conn->stream() << HTTPReply(HTTP_NOT_FOUND, "", false) << std::flush;
+            conn->stream() << HTTPError(HTTP_NOT_FOUND, false) << std::flush;
             break;
         }
     }
