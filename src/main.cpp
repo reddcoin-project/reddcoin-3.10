@@ -2430,6 +2430,8 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
     // These are checks that are independent of context
     // that can be verified before saving an orphan block.
 
+    // Check that the header is valid (particularly PoW).  This is mostly
+    // redundant with the call in AcceptBlockHeader.
     if (!CheckBlockHeader(block, state, fCheckPOW))
         return false;
 
@@ -2570,6 +2572,9 @@ bool AcceptBlockHeader(CBlockHeader& block, CValidationState& state, CBlockIndex
                              REJECT_INVALID, "bad-diffbits");
         }
     }
+
+    if (!CheckBlockHeader(block, state))
+        return false;
 
     // Get prev block index
     CBlockIndex* pindexPrev = NULL;
