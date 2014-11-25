@@ -52,50 +52,24 @@ Release Process
 
  Build Reddcoin Core for Linux, Windows, and OS X:
   
-	./bin/gbuild --commit reddcoin=v${VERSION} ../reddcoin/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gbuild --commit reddcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-linux.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-linux.yml
-	pushd build/out
-	zip -r reddcoin-${VERSION}-linux-gitian.zip *
-	mv reddcoin-${VERSION}-linux-gitian.zip ../../../
-	popd
-	./bin/gbuild --commit reddcoin=v${VERSION} ../reddcoin/contrib/gitian-descriptors/gitian-win.yml
+	mv build/out/reddcoin-*.tar.gz build/out/src/bitcoin-*.tar.gz ../
+	./bin/gbuild --commit reddcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-win.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-win --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-win.yml
-	pushd build/out
-	zip -r reddcoin-${VERSION}-win-gitian.zip *
-	mv reddcoin-${VERSION}-win-gitian.zip ../../../
-	popd
-        ./bin/gbuild --commit reddcoin=v${VERSION} ../reddcoin/contrib/gitian-descriptors/gitian-osx.yml
-        ./bin/gsign --signer $SIGNER --release ${VERSION}-osx --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-osx.yml
-	pushd build/out
-	mv Reddcoin-Qt.dmg ../../../
-	popd
+	mv build/out/reddcoin-*.zip build/out/bitcoin-*.exe ../
+	./bin/gbuild --commit reddcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-osx.yml
+	mv build/out/reddcoin-*.tar.gz build/out/reddcoin-*.dmg ../
 	popd
 
   Build output expected:
 
-  1. linux 32-bit and 64-bit binaries + source (reddcoin-${VERSION}-linux-gitian.zip)
-  2. windows 32-bit and 64-bit binaries + installer + source (reddcoin-${VERSION}-win-gitian.zip)
-  3. OSX installer (Reddcoin-Qt.dmg)
-  4. Gitian signatures (in gitian.sigs/${VERSION}-<linux|win|osx>/(your gitian key)/
-
-repackage gitian builds for release as stand-alone zip/tar/installer exe
-
-**Linux .tar.gz:**
-
-	unzip reddcoin-${VERSION}-linux-gitian.zip -d reddcoin-${VERSION}-linux
-	tar czvf reddcoin-${VERSION}-linux.tar.gz reddcoin-${VERSION}-linux
-	rm -rf reddcoin-${VERSION}-linux
-
-**Windows .zip and setup.exe:**
-
-	unzip reddcoin-${VERSION}-win-gitian.zip -d reddcoin-${VERSION}-win
-	mv reddcoin-${VERSION}-win/reddcoin-*-setup.exe .
-	zip -r reddcoin-${VERSION}-win.zip reddcoin-${VERSION}-win
-	rm -rf reddcoin-${VERSION}-win
-
-**Mac OS X .dmg:**
-
-	mv Reddcoin-Qt.dmg reddcoin-${VERSION}-osx.dmg
+  1. source tarball (reddcoin-${VERSION}.tar.gz)
+  2. linux 32-bit and 64-bit binaries dist tarballs (reddcoin-${VERSION}-linux[32|64].tar.gz)
+  3. windows 32-bit and 64-bit installers and dist zips (reddcoin-${VERSION}-win[32|64]-setup.exe, bitcoin-${VERSION}-win[32|64].zip)
+  4. OSX installer (reddcoin-${VERSION}-osx.dmg)
+  5. Gitian signatures (in gitian.sigs/${VERSION}-<linux|win|osx>/(your gitian key)/
 
 ###Next steps:
 
