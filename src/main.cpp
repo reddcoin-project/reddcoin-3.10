@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "main.h"
@@ -34,9 +34,9 @@ using namespace std;
 # error "Reddcoin cannot be compiled without assertions."
 #endif
 
-//
-// Global state
-//
+/**
+ * Global state
+ */
 
 CCriticalSection cs_main;
 
@@ -74,7 +74,7 @@ map<uint256, COrphanTx> mapOrphanTransactions;
 map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 void EraseOrphansFor(NodeId peer);
 
-// Constant stuff for coinbase transactions we create:
+/** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
 const string strMessageMagic = "Reddcoin Signed Message:\n";
@@ -110,30 +110,35 @@ namespace {
 
     CBlockIndex *pindexBestInvalid;
 
-    // The set of all CBlockIndex entries with BLOCK_VALID_TRANSACTIONS or better that are at least
-    // as good as our current tip. Entries may be failed, though.
+    /**
+     * The set of all CBlockIndex entries with BLOCK_VALID_TRANSACTIONS or better that are at least
+     * as good as our current tip. Entries may be failed, though.
+     */
     set<CBlockIndex*, CBlockIndexWorkComparator> setBlockIndexValid;
 
     CCriticalSection cs_LastBlockFile;
     std::vector<CBlockFileInfo> vinfoBlockFile;
     int nLastBlockFile = 0;
 
-    // Every received block is assigned a unique and increasing identifier, so we
-    // know which one to give priority in case of a fork.
+    /**
+     * Every received block is assigned a unique and increasing identifier, so we
+     * know which one to give priority in case of a fork.
+     */
     CCriticalSection cs_nBlockSequenceId;
-    // Blocks loaded from disk are assigned id 0, so start the counter at 1.
+    /** Blocks loaded from disk are assigned id 0, so start the counter at 1. */
     uint32_t nBlockSequenceId = 1;
 
-    // Sources of received blocks, to be able to send them reject messages or ban
-    // them, if processing happens afterwards. Protected by cs_main.
+    /**
+     * Sources of received blocks, to be able to send them reject messages or ban
+     * them, if processing happens afterwards. Protected by cs_main.
+     */
     map<uint256, NodeId> mapBlockSource;
 
-    // Blocks that are in flight, and that are in the queue to be downloaded.
-    // Protected by cs_main.
+    /** Blocks that are in flight, and that are in the queue to be downloaded. Protected by cs_main. */
     struct QueuedBlock {
         uint256 hash;
-        int64_t nTime;  // Time of "getdata" request in microseconds.
-        int nQueuedBefore;  // Number of blocks in flight at the time of request.
+        int64_t nTime;  //! Time of "getdata" request in microseconds.
+        int nQueuedBefore;  //! Number of blocks in flight at the time of request.
     };
     map<uint256, pair<NodeId, list<QueuedBlock>::iterator> > mapBlocksInFlight;
     map<uint256, pair<NodeId, list<uint256>::iterator> > mapBlocksToDownload;
@@ -150,19 +155,19 @@ namespace {
 namespace {
 
 struct CMainSignals {
-    // Notifies listeners of updated transaction data (transaction, and optionally the block it is found in.
+    /** Notifies listeners of updated transaction data (transaction, and optionally the block it is found in. */
     boost::signals2::signal<void (const CTransaction &, const CBlock *)> SyncTransaction;
-    // Notifies listeners of an erased transaction (currently disabled, requires transaction replacement).
+    /** Notifies listeners of an erased transaction (currently disabled, requires transaction replacement). */
     boost::signals2::signal<void (const uint256 &)> EraseTransaction;
-    // Notifies listeners of an updated transaction without new data (for now: a coinbase potentially becoming visible).
+    /** Notifies listeners of an updated transaction without new data (for now: a coinbase potentially becoming visible). */
     boost::signals2::signal<void (const uint256 &)> UpdatedTransaction;
-    // Notifies listeners of a new active block chain.
+    /** Notifies listeners of a new active block chain. */
     boost::signals2::signal<void (const CBlockLocator &)> SetBestChain;
-    // Notifies listeners about an inventory item being seen on the network.
+    /** Notifies listeners about an inventory item being seen on the network. */
     boost::signals2::signal<void (const uint256 &)> Inventory;
-    // Tells listeners to broadcast their data.
+    /** Tells listeners to broadcast their data. */
     boost::signals2::signal<void ()> Broadcast;
-    // Notifies listeners of a block validation result
+    /** Notifies listeners of a block validation result */
     boost::signals2::signal<void (const CBlock&, const CValidationState&)> BlockChecked;
 } g_signals;
 
@@ -215,22 +220,24 @@ struct CBlockReject {
     uint256 hashBlock;
 };
 
-// Maintain validation-specific state about nodes, protected by cs_main, instead
-// by CNode's own locks. This simplifies asynchronous operation, where
-// processing of incoming data is done after the ProcessMessage call returns,
-// and we're no longer holding the node's locks.
+/**
+ * Maintain validation-specific state about nodes, protected by cs_main, instead
+ * by CNode's own locks. This simplifies asynchronous operation, where
+ * processing of incoming data is done after the ProcessMessage call returns,
+ * and we're no longer holding the node's locks.
+ */
 struct CNodeState {
-    // Accumulated misbehaviour score for this peer.
+    //! Accumulated misbehaviour score for this peer.
     int nMisbehavior;
-    // Whether this peer should be disconnected and banned (unless whitelisted).
+    //! Whether this peer should be disconnected and banned (unless whitelisted).
     bool fShouldBan;
-    // String name of this peer (debugging/logging purposes).
+    //! String name of this peer (debugging/logging purposes).
     std::string name;
-    // List of asynchronously-determined block rejections to notify this peer about.
+    //! List of asynchronously-determined block rejections to notify this peer about.
     std::vector<CBlockReject> rejects;
-    // The best known block we know this peer has announced.
+    //! The best known block we know this peer has announced.
     CBlockIndex *pindexBestKnownBlock;
-    // The hash of the last unknown block this peer has announced.
+    //! The hash of the last unknown block this peer has announced.
     uint256 hashLastUnknownBlock;
     list<QueuedBlock> vBlocksInFlight;
     int nBlocksInFlight;
@@ -251,7 +258,7 @@ struct CNodeState {
     }
 };
 
-// Map maintaining per-node state. Requires cs_main.
+/** Map maintaining per-node state. Requires cs_main. */
 map<NodeId, CNodeState> mapNodeState;
 
 // Requires cs_main.
@@ -640,15 +647,15 @@ bool IsDevTx(const CTransaction& tx)
     return false;
 }
 
-//
-// Check transaction inputs to mitigate two
-// potential denial-of-service attacks:
-//
-// 1. scriptSigs with extra data stuffed into them,
-//    not consumed by scriptPubKey (or P2SH script)
-// 2. P2SH scripts with a crazy number of expensive
-//    CHECKSIG/CHECKMULTISIG operations
-//
+/**
+ * Check transaction inputs to mitigate two
+ * potential denial-of-service attacks:
+ * 
+ * 1. scriptSigs with extra data stuffed into them,
+ *    not consumed by scriptPubKey (or P2SH script)
+ * 2. P2SH scripts with a crazy number of expensive
+ *    CHECKSIG/CHECKMULTISIG operations
+ */
 bool AreInputsStandard(const CTransaction& tx, const CCoinsViewCache& mapInputs)
 {
     if (tx.IsCoinBase())
@@ -1006,7 +1013,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState &state, const CTransa
     return true;
 }
 
-// Return transaction in tx, and if it was found inside a block, its hash is placed in hashBlock
+/** Return transaction in tx, and if it was found inside a block, its hash is placed in hashBlock */
 bool GetTransaction(const uint256 &hash, CTransaction &txOut, uint256 &hashBlock, bool fAllowSlow)
 {
     CBlockIndex *pindexSlow = NULL;
@@ -1922,7 +1929,7 @@ bool static WriteChainState(CValidationState &state) {
     return true;
 }
 
-// Update chainActive and related internal data structures.
+/** Update chainActive and related internal data structures. */
 void static UpdateTip(CBlockIndex *pindexNew) {
     chainActive.SetTip(pindexNew);
 
@@ -1961,7 +1968,7 @@ void static UpdateTip(CBlockIndex *pindexNew) {
     }
 }
 
-// Disconnect chainActive's tip.
+/** Disconnect chainActive's tip. */
 bool static DisconnectTip(CValidationState &state) {
     CBlockIndex *pindexDelete = chainActive.Tip();
     assert(pindexDelete);
@@ -2017,8 +2024,10 @@ static int64_t nTimeFlush = 0;
 static int64_t nTimeChainState = 0;
 static int64_t nTimePostConnect = 0;
 
-// Connect a new block to chainActive. pblock is either NULL or a pointer to a CBlock
-// corresponding to pindexNew, to bypass loading it again from disk.
+/** 
+ * Connect a new block to chainActive. pblock is either NULL or a pointer to a CBlock
+ * corresponding to pindexNew, to bypass loading it again from disk.
+ */
 bool static ConnectTip(CValidationState &state, CBlockIndex *pindexNew, CBlock *pblock) {
     assert(pindexNew->pprev == chainActive.Tip());
     mempool.check(pcoinsTip);
@@ -2082,8 +2091,10 @@ bool static ConnectTip(CValidationState &state, CBlockIndex *pindexNew, CBlock *
     return true;
 }
 
-// Return the tip of the chain with the most work in it, that isn't
-// known to be invalid (it's however far from certain to be valid).
+/**
+ * Return the tip of the chain with the most work in it, that isn't
+ * known to be invalid (it's however far from certain to be valid).
+ */
 static CBlockIndex* FindMostWorkChain() {
     do {
         CBlockIndex *pindexNew = NULL;
@@ -2122,8 +2133,10 @@ static CBlockIndex* FindMostWorkChain() {
     } while(true);
 }
 
-// Try to make some progress towards making pindexMostWork the active block.
-// pblock is either NULL or a pointer to a CBlock corresponding to pindexMostWork.
+/**
+ * Try to make some progress towards making pindexMostWork the active block.
+ * pblock is either NULL or a pointer to a CBlock corresponding to pindexMostWork.
+ */
 static bool ActivateBestChainStep(CValidationState &state, CBlockIndex *pindexMostWork, CBlock *pblock) {
     AssertLockHeld(cs_main);
     bool fInvalidFound = false;
@@ -2188,9 +2201,11 @@ static bool ActivateBestChainStep(CValidationState &state, CBlockIndex *pindexMo
     return true;
 }
 
-// Make the best chain active, in multiple steps. The result is either failure
-// or an activated best chain. pblock is either NULL or a pointer to a block
-// that is already loaded (to avoid loading it again from disk).
+/**
+ * Make the best chain active, in multiple steps. The result is either failure
+ * or an activated best chain. pblock is either NULL or a pointer to a block
+ * that is already loaded (to avoid loading it again from disk).
+ */
 bool ActivateBestChain(CValidationState &state, CBlock *pblock) {
     CBlockIndex *pindexNewTip = NULL;
     CBlockIndex *pindexMostWork = NULL;
@@ -2263,7 +2278,7 @@ CBlockIndex* AddToBlockIndex(CBlockHeader& block)
     return pindexNew;
 }
 
-// Mark a block as having its data received and checked (up to BLOCK_VALID_TRANSACTIONS).
+/** Mark a block as having its data received and checked (up to BLOCK_VALID_TRANSACTIONS). */
 bool ReceivedBlockTransactions(const CBlock &block, CValidationState& state, CBlockIndex *pindexNew, const CDiskBlockPos& pos, const uint256 &hashProof)
 {
     pindexNew->nTx = block.vtx.size();
@@ -2981,7 +2996,7 @@ uint256 CPartialMerkleTree::CalcHash(int height, unsigned int pos, const std::ve
     } else {
         // calculate left hash
         uint256 left = CalcHash(height-1, pos*2, vTxid), right;
-        // calculate right hash if not beyong the end of the array - copy left hash otherwise1
+        // calculate right hash if not beyond the end of the array - copy left hash otherwise1
         if (pos*2+1 < CalcTreeWidth(height-1))
             right = CalcHash(height-1, pos*2+1, vTxid);
         else
