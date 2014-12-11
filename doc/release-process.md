@@ -40,7 +40,7 @@ Release Process
 
 ###fetch and build inputs: (first time, or when dependency versions change)
  
-	mkdir -p inputs; cd inputs/
+	mkdir -p inputs
 
  Register and download the Apple SDK: (see OSX Readme for details)
  
@@ -50,7 +50,15 @@ Release Process
  
 	tar -C /Volumes/Xcode/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/ -czf MacOSX10.7.sdk.tar.gz MacOSX10.7.sdk
 
- Build Reddcoin Core for Linux, Windows, and OS X:
+###Optional: Seed the Gitian sources cache
+
+  By default, gitian will fetch source files as needed. For offline builds, they can be fetched ahead of time:
+
+	make -C ../bitcoin/depends download SOURCES_PATH=`pwd`/cache/common
+
+  Only missing files will be fetched, so this is safe to re-run for each build.
+
+###Build Reddcoin Core for Linux, Windows, and OS X:
   
 	./bin/gbuild --commit reddcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-linux.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-linux.yml
@@ -63,7 +71,6 @@ Release Process
 	mv build/out/reddcoin-*-unsigned.tar.gz inputs
 	mv build/out/reddcoin-*.tar.gz build/out/reddcoin-*.dmg ../
 	popd
-reddcoin-0.9.99-osx-unsigned.tar.gz
   Build output expected:
 
   1. source tarball (reddcoin-${VERSION}.tar.gz)
@@ -84,11 +91,12 @@ Commit your signature to gitian.sigs:
 	git push  # Assuming you can push to the gitian.sigs tree
 	popd
 
-Wait for OSX detached signature:
+  Wait for OSX detached signature:
 	Once the OSX build has 3 matching signatures, John will sign it with the apple App-Store key.
 	He will then upload a detached signature to be combined with the unsigned app to create a signed binary.
 
-Create the signed OSX binary:
+  Create the signed OSX binary:
+
 	pushd ./gitian-builder
 	# Fetch the signature as instructed by John
 	cp signature.tar.gz inputs/
