@@ -104,10 +104,11 @@ plain HTTP instead of JSON-RPC.
 
 Assuming a local RPC server running on port 45443, it is possible to request:
 - Blocks: http://localhost:45443/rest/block/*HASH*.*EXT*
-- Blocks without transactions: http://localhost:45443/block/notxdetails/*HASH*.*EXT*
-- Transactions (requires `-txindex`): http://localhost:45443/tx/*HASH*.*EXT*
+- Blocks without transactions: http://localhost:45443/rest/block/notxdetails/*HASH*.*EXT*
+- Transactions (requires `-txindex`): http://localhost:45443/rest/tx/*HASH*.*EXT*
 
-In every case, *EXT* can be `bin` (for raw binary data), `hex` (for hex-encoded binary) or `json`.
+In every case, *EXT* can be `bin` (for raw binary data), `hex` (for hex-encoded
+binary) or `json`.
 
 For more details, see the `doc/REST-interface.md` document in the repository.
 
