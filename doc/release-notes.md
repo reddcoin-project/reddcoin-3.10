@@ -259,6 +259,22 @@ The relay policy has changed to more properly implement the desired behavior of 
 relaying free (or very low fee) transactions unless they have a priority above the 
 AllowFreeThreshold(), in which case they are relayed subject to the rate limiter.
 
+BIP 66: strict DER encoding for signatures
+------------------------------------------
+
+Reddcoin Core 3.10 implements BIP 66, which introduces block version 4, and a new
+consensus rule, which prohibits non-DER signatures. Such transactions have been
+non-standard since Reddcoin v1.4.0 (released in February 2014), but were
+technically still permitted inside blocks.
+
+This change breaks the dependency on OpenSSL's signature parsing, and is
+required if implementations would want to remove all of OpenSSL from the
+consensus code.
+
+The same miner-voting mechanism as in BIP 34 is used: when 6120 out of a
+sequence of 7200 blocks have version number 3 or higher, the new consensus
+rule becomes active for those blocks. When 6120 out of a sequence of 6120
+blocks have version number 3 or higher, it becomes mandatory for all blocks.
 
 3.10.0 Change log
 =================
