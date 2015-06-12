@@ -505,7 +505,7 @@ Value setban(const Array& params, bool fHelp)
     else if(strCommand == "remove")
     {
         if (!( isSubnet ? CNode::Unban(subNet) : CNode::Unban(netAddr) ))
-            throw JSONRPCError(RPC_CLIENT_NODE_ALREADY_ADDED, "Error: Unban failed");
+            throw JSONRPCError(RPC_MISC_ERROR, "Error: Unban failed");
     }
 
     return Value::null;
