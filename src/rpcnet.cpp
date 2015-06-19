@@ -508,6 +508,7 @@ Value setban(const Array& params, bool fHelp)
             throw JSONRPCError(RPC_MISC_ERROR, "Error: Unban failed");
     }
 
+    DumpBanlist(); //store banlist to disk
     return Value::null;
 }
 
@@ -549,6 +550,7 @@ Value clearbanned(const Array& params, bool fHelp)
                             );
 
     CNode::ClearBanned();
+    DumpBanlist(); //store banlist to disk
 
     return Value::null;
 }
