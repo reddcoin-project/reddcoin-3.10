@@ -216,7 +216,7 @@ Value disconnectnode(const Array& params, bool fHelp)
     if (pNode == NULL)
         throw JSONRPCError(RPC_CLIENT_NODE_NOT_CONNECTED, "Node not found in connected nodes");
 
-    pNode->CloseSocketDisconnect();
+    pNode->fDisconnect = true;
 
     return Value::null;
 }
@@ -500,7 +500,7 @@ Value setban(const Array& params, bool fHelp)
 
         //disconnect possible nodes
         while(CNode *bannedNode = (isSubnet ? FindNode(subNet) : FindNode(netAddr)))
-            bannedNode->CloseSocketDisconnect();
+            bannedNode->fDisconnect = true;
     }
     else if(strCommand == "remove")
     {
