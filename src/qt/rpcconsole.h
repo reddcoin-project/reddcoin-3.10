@@ -21,6 +21,7 @@ namespace Ui {
 QT_BEGIN_NAMESPACE
 class QMenu;
 class QItemSelection;
+class QSignalMapper;
 QT_END_NAMESPACE
 
 /** Local Bitcoin RPC console. */
@@ -78,6 +79,8 @@ public slots:
     void peerLayoutChanged();
 	/** Disconnect a selected node on the Peers tab */
     void disconnectSelectedNode();
+    /** Ban a selected node on the Peers tab */
+    void banSelectedNode(int bantime);
 
 signals:
     // For RPC command executor
@@ -90,6 +93,8 @@ private:
     void setTrafficGraphRange(int mins);
     /** show detailed information on ui about selected node */
     void updateNodeDetail(const CNodeCombinedStats *stats);
+    /** clear the selected node */
+    void clearSelectedNode();
 
     enum ColumnWidths
     {
@@ -104,6 +109,7 @@ private:
     int historyPtr;
     NodeId cachedNodeid;
     QMenu *contextMenu;
+    QSignalMapper* signalMapper;
 };
 
 #endif // BITCOIN_QT_RPCCONSOLE_H
