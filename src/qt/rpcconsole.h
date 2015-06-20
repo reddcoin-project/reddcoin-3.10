@@ -59,7 +59,9 @@ private slots:
     void showEvent(QShowEvent *event);
     void hideEvent(QHideEvent *event);
     /** Show custom context menu on Peers tab */
-    void showMenu(const QPoint& point);
+    void showPeersTableContextMenu(const QPoint& point);
+    /** Show custom context menu on Bans tab */
+    void showBanTableContextMenu(const QPoint& point);
 
 public slots:
     void clear();
@@ -81,6 +83,8 @@ public slots:
     void disconnectSelectedNode();
     /** Ban a selected node on the Peers tab */
     void banSelectedNode(int bantime);
+    /** Unban a selected node on the Bans tab */
+    void unbanSelectedNode();
 
 signals:
     // For RPC command executor
@@ -108,7 +112,8 @@ private:
     QStringList history;
     int historyPtr;
     NodeId cachedNodeid;
-    QMenu *contextMenu;
+    QMenu *peersTableContextMenu;
+    QMenu *banTableContextMenu;
     QSignalMapper* signalMapper;
 };
 

@@ -208,7 +208,8 @@ RPCConsole::RPCConsole(QWidget *parent) :
     clientModel(0),
     historyPtr(0),
     cachedNodeid(-1),
-    contextMenu(0)
+    peersTableContextMenu(0),
+    banTableContextMenu(0)
 {
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nRPCConsoleWindow", this->size(), this);
@@ -311,9 +312,7 @@ void RPCConsole::setClientModel(ClientModel *model)
         ui->peerWidget->setColumnWidth(PeerTableModel::Address, ADDRESS_COLUMN_WIDTH);
         ui->peerWidget->setColumnWidth(PeerTableModel::Subversion, SUBVERSION_COLUMN_WIDTH);
         ui->peerWidget->setColumnWidth(PeerTableModel::Ping, PING_COLUMN_WIDTH);
-
-        // set up ban table
-        ui->banlistWidget->setModel(model->getBanTableModel());
+        ui->peerWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
 
         // create context menu actions
         QAction* disconnectAction   = new QAction(tr("&Disconnect Node"), this);
@@ -324,16 +323,16 @@ void RPCConsole::setClientModel(ClientModel *model)
         QAction* banAction365d      = new QAction(tr("&Ban Node for 1 year"), this);
 
         // create context menu
-        contextMenu = new QMenu();
-        contextMenu->addAction(disconnectAction);
-        contextMenu->addAction(banAction1h);
-        contextMenu->addAction(banAction24h);
-        contextMenu->addAction(banAction7d);
-        contextMenu->addAction(banAction28d);
-        contextMenu->addAction(banAction365d);
+        peersTableContextMenu = new QMenu();
+        peersTableContextMenu->addAction(disconnectAction);
+        peersTableContextMenu->addAction(banAction1h);
+        peersTableContextMenu->addAction(banAction24h);
+        peersTableContextMenu->addAction(banAction7d);
+        peersTableContextMenu->addAction(banAction28d);
+        peersTableContextMenu->addAction(banAction365d);
 
         // context menu signals
-        connect(ui->peerWidget, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showMenu(const QPoint&)));
+        connect(ui->peerWidget, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showPeersTableContextMenu(const QPoint&)));
         connect(disconnectAction, SIGNAL(triggered()), this, SLOT(disconnectSelectedNode()));
 
         //add a signal mapping, use int instead of int64_t for bantime because signalmapper only supports int or objects
@@ -355,6 +354,26 @@ void RPCConsole::setClientModel(ClientModel *model)
         connect(ui->peerWidget->selectionModel(), SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
              this, SLOT(peerSelected(const QItemSelection &, const QItemSelection &)));
         connect(model->getPeerTableModel(), SIGNAL(layoutChanged()), this, SLOT(peerLayoutChanged()));
+
+        // set up ban table
+        ui->banlistWidget->setModel(model->getBanTableModel());
+        ui->banlistWidget->verticalHeader()->hide();
+        ui->banlistWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        ui->banlistWidget->setColumnWidth(BanTableModel::Address, ADDRESS_COLUMN_WIDTH);
+        ui->banlistWidget->setColumnWidth(BanTableModel::Bantime, PING_COLUMN_WIDTH);
+        ui->banlistWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+        ui->banlistWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+        ui->banlistWidget->setContextMenuPolicy(Qt::CustomContextMenu);
+        ui->banlistWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+
+        // create context menu actions
+        QAction* unbanAction   = new QAction(tr("&Unban Node"), this);
+        banTableContextMenu = new QMenu();
+        banTableContextMenu->addAction(unbanAction);
+
+        // context menu signals
+        connect(ui->banlistWidget, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showBanTableContextMenu(const QPoint&)));
+        connect(unbanAction, SIGNAL(triggered()), this, SLOT(unbanSelectedNode()));
 
         // Provide initial values
         ui->clientVersion->setText(model->formatFullVersion());
@@ -708,11 +727,18 @@ void RPCConsole::hideEvent(QHideEvent *event)
     clientModel->getPeerTableModel()->stopAutoRefresh();
 }
 
-void RPCConsole::showMenu(const QPoint& point)
+void RPCConsole::showPeersTableContextMenu(const QPoint& point)
 {
     QModelIndex index = ui->peerWidget->indexAt(point);
     if (index.isValid())
-        contextMenu->exec(QCursor::pos());
+        peersTableContextMenu->exec(QCursor::pos());
+}
+
+void RPCConsole::showBanTableContextMenu(const QPoint& point)
+{
+    QModelIndex index = ui->banlistWidget->indexAt(point);
+    if (index.isValid())
+        banTableContextMenu->exec(QCursor::pos());
 }
 
 void RPCConsole::disconnectSelectedNode()
@@ -742,6 +768,19 @@ void RPCConsole::banSelectedNode(int bantime)
         clearSelectedNode();
         ui->banlistWidget->setVisible(true);
         ui->banHeading->setVisible(true);
+        clientModel->updateBanlist();
+    }
+}
+
+void RPCConsole::unbanSelectedNode()
+{
+    // Get currently selected peer address
+    QString strNode = GUIUtil::getEntryData(ui->banlistWidget, 0, BanTableModel::Address);
+    CSubNet possibleSubnet(strNode.toStdString());
+
+    if (possibleSubnet.IsValid())
+    {
+        CNode::Unban(possibleSubnet);
         clientModel->updateBanlist();
     }
 }
