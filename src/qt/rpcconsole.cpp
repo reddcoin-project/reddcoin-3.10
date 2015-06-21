@@ -316,11 +316,11 @@ void RPCConsole::setClientModel(ClientModel *model)
 
         // create context menu actions
         QAction* disconnectAction   = new QAction(tr("&Disconnect Node"), this);
-        QAction* banAction1h        = new QAction(tr("&Ban Node for 1 hour"), this);
-        QAction* banAction24h       = new QAction(tr("&Ban Node for 24 hours"), this);
-        QAction* banAction7d        = new QAction(tr("&Ban Node for 7 days"), this);
-        QAction* banAction28d       = new QAction(tr("&Ban Node for 28 days"), this);
-        QAction* banAction365d      = new QAction(tr("&Ban Node for 1 year"), this);
+        QAction* banAction1h        = new QAction(tr("&Ban Node for") + " " + tr("&1 hour"), this);
+        QAction* banAction24h       = new QAction(tr("&Ban Node for") + " " + tr("&24 hours"), this);
+        QAction* banAction7d        = new QAction(tr("&Ban Node for") + " " + tr("&7 days"), this);
+        QAction* banAction28d       = new QAction(tr("&Ban Node for") + " " + tr("&28 days"), this);
+        QAction* banAction365d      = new QAction(tr("&Ban Node for") + " " + tr("&1 year"), this);
 
         // create context menu
         peersTableContextMenu = new QMenu();
@@ -762,7 +762,8 @@ void RPCConsole::banSelectedNode(int bantime)
         SplitHostPort(nStr, port, addr);
 
         CNode::Ban(CNetAddr(addr), bantime);
-        bannedNode->CloseSocketDisconnect();
+        bannedNode->fDisconnect = true;
+
         clearSelectedNode();
         ui->banlistWidget->setVisible(true);
         ui->banHeading->setVisible(true);
@@ -794,6 +795,9 @@ void RPCConsole::clearSelectedNode()
 
 void RPCConsole::showOrHideBanTableIfRequired()
 {
+    if (!clientModel)
+        return;
+    
     bool visible = clientModel->getBanTableModel()->shouldShow();
     ui->banlistWidget->setVisible(visible);
     ui->banHeading->setVisible(visible);
