@@ -5,11 +5,10 @@
 #include "rpcconsole.h"
 #include "ui_rpcconsole.h"
 
+#include "bantablemodel.h"
 #include "clientmodel.h"
 #include "guiutil.h"
 #include "peertablemodel.h"
-#include "platformstyle.h"
-#include "bantablemodel.h"
 
 #include "chainparams.h"
 #include "main.h"
@@ -335,9 +334,9 @@ void RPCConsole::setClientModel(ClientModel *model)
         connect(ui->peerWidget, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showPeersTableContextMenu(const QPoint&)));
         connect(disconnectAction, SIGNAL(triggered()), this, SLOT(disconnectSelectedNode()));
 
-        //add a signal mapping to allow a dynamic argument
-        //we need to use int (instead of int64_t) because signal mapper only supports int or objects
-        //this is okay because max bantime (1 Year) is smaler then int_max
+        // Add a signal mapping to allow dynamic context menu arguments.
+        // We need to use int (instead of int64_t), because signal mapper only supports
+        // int or objects, which is okay because max bantime (1 year) is < int_max.
         signalMapper = new QSignalMapper(this);
         signalMapper->setMapping(banAction1h, 60*60);
         signalMapper->setMapping(banAction24h, 60*60*24);
@@ -349,7 +348,7 @@ void RPCConsole::setClientModel(ClientModel *model)
         connect(banAction7d, SIGNAL(triggered()), signalMapper, SLOT(map()));
         connect(banAction28d, SIGNAL(triggered()), signalMapper, SLOT(map()));
         connect(banAction365d, SIGNAL(triggered()), signalMapper, SLOT(map()));
-        connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(banSelectedNode(int))) ;
+        connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(banSelectedNode(int)));
 
         // connect the peerWidget selection model to our peerSelected() handler
         connect(ui->peerWidget->selectionModel(), SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
@@ -367,8 +366,12 @@ void RPCConsole::setClientModel(ClientModel *model)
         ui->banlistWidget->setContextMenuPolicy(Qt::CustomContextMenu);
         ui->banlistWidget->horizontalHeader()->setStretchLastSection(true);
 
+        // ensure ban table is shown or hidden (if empty)
+        connect(model, SIGNAL(banListChanged()), this, SLOT(showOrHideBanTableIfRequired()));
+        showOrHideBanTableIfRequired();
+
         // create banlist context menu actions
-        QAction* unbanAction   = new QAction(tr("&Unban Node"), this);
+        QAction* unbanAction = new QAction(tr("&Unban Node"), this);
         banTableContextMenu = new QMenu();
         banTableContextMenu->addAction(unbanAction);
 
@@ -383,9 +386,6 @@ void RPCConsole::setClientModel(ClientModel *model)
         ui->startupTime->setText(model->formatClientStartupTime());
 
         ui->networkName->setText(QString::fromStdString(Params().NetworkIDString()));
-
-        connect(model, SIGNAL(banListChanged()), this, SLOT(showOrHideBanTableIfRequired()));
-        showOrHideBanTableIfRequired();
     }
 }
 
@@ -797,7 +797,7 @@ void RPCConsole::showOrHideBanTableIfRequired()
 {
     if (!clientModel)
         return;
-    
+
     bool visible = clientModel->getBanTableModel()->shouldShow();
     ui->banlistWidget->setVisible(visible);
     ui->banHeading->setVisible(visible);

@@ -57,11 +57,10 @@ public:
 
     CCombinedBan *index(int idx)
     {
-        if(idx >= 0 && idx < cachedBanlist.size()) {
+        if (idx >= 0 && idx < cachedBanlist.size())
             return &cachedBanlist[idx];
-        } else {
-            return 0;
-        }
+
+        return 0;
     }
 };
 
@@ -125,7 +124,7 @@ QVariant BanTableModel::data(const QModelIndex &index, int role) const
         }
     } else if (role == Qt::TextAlignmentRole) {
         if (index.column() == Bantime)
-            return (int)(Qt::AlignRight | Qt::AlignVCenter);
+            return (QVariant)(Qt::AlignRight | Qt::AlignVCenter);
     }
 
     return QVariant();
@@ -158,13 +157,8 @@ QModelIndex BanTableModel::index(int row, int column, const QModelIndex &parent)
     CCombinedBan *data = priv->index(row);
 
     if (data)
-    {
         return createIndex(row, column, data);
-    }
-    else
-    {
-        return QModelIndex();
-    }
+    return QModelIndex();
 }
 
 void BanTableModel::refresh()
