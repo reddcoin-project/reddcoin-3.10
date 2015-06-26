@@ -15,8 +15,6 @@
 #include <QDebug>
 #include <QList>
 
-#include <boost/date_time/posix_time/posix_time.hpp>
-#include <boost/date_time/c_local_time_adjustor.hpp>
 
 // private implementation
 class BanTablePriv
@@ -39,7 +37,6 @@ public:
 #if QT_VERSION >= 0x040700
         cachedBanlist.reserve(banMap.size());
 #endif
-        std::map<CSubNet, int64_t>::iterator iter;
         foreach (const PAIRTYPE(CSubNet, int64_t)& banentry, banMap)
         {
             CCombinedBan banEntry;
@@ -105,9 +102,6 @@ QVariant BanTableModel::data(const QModelIndex &index, int role) const
             date = date.addSecs(rec->bantil);
             return date.toString(Qt::SystemLocaleLongDate);
         }
-    } else if (role == Qt::TextAlignmentRole) {
-        if (index.column() == Bantime)
-            return (QVariant)(Qt::AlignRight | Qt::AlignVCenter);
     }
 
     return QVariant();
