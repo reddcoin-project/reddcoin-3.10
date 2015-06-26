@@ -15,6 +15,24 @@
 #include <QDebug>
 #include <QList>
 
+bool BannedNodeLessThan::operator()(const CCombinedBan& left, const CCombinedBan& right) const
+{
+    const CCombinedBan* pLeft = &left;
+    const CCombinedBan* pRight = &right;
+
+    if (order == Qt::DescendingOrder)
+        std::swap(pLeft, pRight);
+
+    switch(column)
+    {
+    case BanTableModel::Address:
+        return pLeft->subnet.ToString().compare(pRight->subnet.ToString()) < 0;
+    case BanTableModel::Bantime:
+        return pLeft->bantil < pRight->bantil;
+    }
+
+    return false;
+}
 
 // private implementation
 class BanTablePriv
@@ -44,6 +62,10 @@ public:
             banEntry.bantil = banentry.second;
             cachedBanlist.append(banEntry);
         }
+
+        if (sortColumn >= 0)
+            // sort cachedBanlist (use stable sort to prevent rows jumping around unneceesarily)
+            qStableSort(cachedBanlist.begin(), cachedBanlist.end(), BannedNodeLessThan(sortColumn, sortOrder));
     }
 
     int size() const
