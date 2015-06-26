@@ -63,6 +63,8 @@ private slots:
     void showBanTableContextMenu(const QPoint& point);
     /** Hides ban table if no bans are present */
     void showOrHideBanTableIfRequired();
+    /** clear the selected node */
+    void clearSelectedNode();
 
 public slots:
     void clear();
@@ -98,8 +100,6 @@ private:
     void setTrafficGraphRange(int mins);
     /** show detailed information on ui about selected node */
     void updateNodeDetail(const CNodeCombinedStats *stats);
-    /** clear the selected node */
-    void clearSelectedNode();
 
     enum ColumnWidths
     {
