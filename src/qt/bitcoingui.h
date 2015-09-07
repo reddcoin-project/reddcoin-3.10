@@ -198,6 +198,8 @@ private slots:
     void optionsClicked();
     /** Show about dialog */
     void aboutClicked();
+    /** Show debug window */
+    void showDebugWindow();
     /** Show help message dialog */
     void showHelpMessageClicked();
 #ifndef Q_OS_MAC
