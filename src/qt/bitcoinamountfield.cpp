@@ -4,7 +4,7 @@
 
 #include "bitcoinamountfield.h"
 
-#include "util.h"
+// #include "util.h"
 #include "qvaluecombobox.h"
 #include "bitcoinunits.h"
 #include "guiconstants.h"
@@ -56,7 +56,8 @@ void BitcoinAmountField::setText(const QString &text)
     {
         // remove the space delimiter for every 3 digits
         QString value = text;
-        amount->setValue(value.replace(" ", "").toDouble());
+        value.replace(" ", "");
+        amount->setValue(value.toDouble());
     }
 }
 
