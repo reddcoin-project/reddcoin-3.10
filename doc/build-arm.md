@@ -44,8 +44,6 @@
 	cd reddcoin
 	./autogen.sh
 	./configure --with-gui=no --disable-tests	
-	
-		(maybe this will work: ./configure --disable-tests CXXFLAGS="--param ggc-min-expand=1 --param ggc-min-heapsize=32768" CPPFLAGS="-I${BDB_PREFIX}/include/ -O2" CXXFLAGS="-march=armv7-a -mfpu=vfpv3-d16" LDFLAGS="-L${BDB_PREFIX}/lib/" --enable-sse2=no --with-gui=no)
 
 #### Compile reddcoind/reddcoin-cli
 
