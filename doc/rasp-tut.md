@@ -53,9 +53,7 @@ Enable SSH
     sudo systemctl start ssh
     sudo systemctl status ssh
 
-:::success
 Now you will be able to access your Raspberry Pi from a computer in the same network using SSH
-:::
 
 - [PuTTY](http://www.putty.org/ "Download PuTTY") is a SSH client for Windows and Unix.
 Download and install it: [https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
@@ -165,9 +163,10 @@ In order to import the Bootstrap blockchain you have to run Reddcoin (Step 9) fo
 
         sudo systemctl status reddcoin.service
 
-:::success
 Reddcoin will now auto start on startup and auto start after service crash.
-:::
+
+
+
 ---
 If it is necessary, use
 
@@ -189,7 +188,7 @@ From now on you can type *redd* and double tab for autocompletion
 
     reddcoin-cli walletpassphrase yourpassword 9999999 true
 
-==You have to enter your wallet passphrase every time you disable and reenable the Reddcoin service (e.g. reboot)==
+You have to enter your wallet passphrase every time you disable and reenable the Reddcoin service (e.g. reboot)
 
 Make sure to delete your shell's history after you entered your wallet passphrase. Bash command:
 
@@ -220,7 +219,7 @@ Here we use FileZilla's SFTP (SSH file transfer protocol). You configure FileZil
 </br>
 ---
 I hope everything worked fine! It took some time to write this up.
-Leave a small tip ==Rb8754QZvpbw6DjrMV1qX9SnHzYnSyXRMC==
+Leave a small tip Rb8754QZvpbw6DjrMV1qX9SnHzYnSyXRMC
 
 
 
