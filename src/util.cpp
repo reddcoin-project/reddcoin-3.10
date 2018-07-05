@@ -984,7 +984,7 @@ void createConf()       //Automatic reddcoin.conf generation
 
     ofstream pConf;
     pConf.open(GetConfigFile().generic_string().c_str());
-    const char* nodes = "\nrpcport=45444"                  //List of known nodes, to be periodically updated
+    const char* nodes = "\nrpcport=45443"                  //List of known nodes, to be periodically updated
                         "\nrpcallowip=127.0.0.1"
                         "\ndaemon=1"
                         "\nserver=1"
