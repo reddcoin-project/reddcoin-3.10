@@ -475,7 +475,7 @@ int main(int argc, char *argv[])
 #endif
 
     Q_INIT_RESOURCE(bitcoin);
-
+    Q_INIT_RESOURCE(bitcoin_locale);
     GUIUtil::SubstituteFonts();
 
     BitcoinApplication app(argc, argv);
