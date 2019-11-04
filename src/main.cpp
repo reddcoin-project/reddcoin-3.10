@@ -2723,6 +2723,19 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
                                      REJECT_OBSOLETE, "bad-version");
             }
         }
+
+        // Reject block.nVersion=4 blocks when 95% (75% on testnet) of the network has upgraded:
+        // block header includes dev funding
+		if (block.nVersion < 5)
+		{
+			if ((!TestNet() && CBlockIndex::IsSuperMajority(5, pindexPrev, 9500, 10000)) ||
+				(TestNet() && CBlockIndex::IsSuperMajority(5, pindexPrev, 750, 1000)))
+			{
+				return state.Invalid(error("AcceptBlock() : rejected nVersion=4 block"),
+									 REJECT_OBSOLETE, "bad-version");
+			}
+		}
+
         // Enforce block.nVersion=2 rule that the coinbase starts with serialized block height
         // Reddcoin did not enable this BIP 34
         // TBD
