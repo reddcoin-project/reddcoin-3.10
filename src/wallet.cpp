@@ -1754,6 +1754,9 @@ bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64
         }
     }
 
+    // Add Dev fund output
+    txNew.vout.push_back(CTxOut(0, CScript() << Params().DevKey() << OP_CHECKSIG));
+
     // Calculate coin age reward
     {
         uint64_t nCoinAge = GetCoinAge(txNew);
@@ -1767,14 +1770,23 @@ bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64
         nCredit += nReward;
     }
 
+    // Split fund output 92-8%
+
+    int64_t nEndCredit = nCredit * 0.92;
+    int64_t nDevCredit = nCredit - nEndCredit;
+
     // Set output amount
-    if (txNew.vout.size() == 3)
+    if (txNew.vout.size() == 4)
     {
-        txNew.vout[1].nValue = (nCredit / 2 / CENT) * CENT;
-        txNew.vout[2].nValue = nCredit - txNew.vout[1].nValue;
+        txNew.vout[1].nValue = (nEndCredit / 2 / CENT) * CENT;
+        txNew.vout[2].nValue = nEndCredit - txNew.vout[1].nValue - 10;
+        txNew.vout[3].nValue = nDevCredit;
     }
     else
-        txNew.vout[1].nValue = nCredit;
+    {
+        txNew.vout[1].nValue = nEndCredit;
+    	txNew.vout[2].nValue = nDevCredit;
+    }
 
     // Sign
     int nIn = 0;
