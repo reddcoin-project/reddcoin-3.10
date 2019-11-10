@@ -1291,6 +1291,20 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
     return nSubsidy + nFees;
 }
 
+// PoSV v2: coinstake reward based on coin age spent (coin-days) with inflation adjustment to target 5% network inflation
+int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, double fInflationAdjustment)
+{
+    // some scary rounding dirty trick here for leap / non-leap years
+    // CoinAge=365 -> nSubsidy=9993
+    // CoinAge=366 -> nSubsidy=10020
+    int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * fInflationAdjustment;
+
+    if (fDebug && GetBoolArg("-printcreation", false))
+        LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees));
+
+    return nSubsidy + nFees;
+}
+
 static const int64_t nTargetTimespan = 24 * 60 * 60; // 24 hours
 const int64_t nTargetSpacing = 60; // 1 minute
 
