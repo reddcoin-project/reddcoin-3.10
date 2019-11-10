@@ -43,5 +43,7 @@ uint64_t GetCoinAge(const CTransaction& tx);
 // Calculate total coin age spent in block
 uint64_t GetCoinAge(const CBlock& block);
 
+// Calculate the adjustment to apply to coinstake to align with 5% growth
+double GetInflationAdjustment(const CBlockIndex* pindex);
 
 #endif // REDDCOIN_KERNEL_H
