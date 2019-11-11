@@ -1297,7 +1297,9 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, double fInflation
     // some scary rounding dirty trick here for leap / non-leap years
     // CoinAge=365 -> nSubsidy=9993
     // CoinAge=366 -> nSubsidy=10020
-    int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * fInflationAdjustment;
+    int64_t nSubsidy = (nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8)) * fInflationAdjustment;
+
+    LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s fInflationAdjustment=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees), fInflationAdjustment);
 
     if (fDebug && GetBoolArg("-printcreation", false))
         LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees));
@@ -2074,7 +2076,13 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
         if (!nCoinAge)
             return state.DoS(100, error("ConnectBlock() : %s unable to get coin age for coinstake", block.vtx[1].GetHash().ToString().substr(0,10).c_str()));
 
-        int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees);
+        double fInflationAdjustment = GetInflationAdjustment(pindex->pprev);
+        LogPrintf("fInflationAdjustment=%s\n", fInflationAdjustment);
+
+		 int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, fInflationAdjustment);
+        LogPrintf("fInflationAdjustment=%s nCalculatedStakeReward2=%s\n", fInflationAdjustment, nCalculatedStakeReward);
+
+        //int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees);
         if (nStakeReward > nCalculatedStakeReward)
             return state.DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%s vs calculated=%s)", nStakeReward, nCalculatedStakeReward));
     }

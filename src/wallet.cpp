@@ -9,6 +9,7 @@
 #include "checkpoints.h"
 #include "coincontrol.h"
 #include "net.h"
+#include "kernel.h"
 
 #include <boost/algorithm/string/replace.hpp>
 #include <openssl/rand.h>
@@ -1763,7 +1764,10 @@ bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64
         if (!nCoinAge)
             return error("CreateCoinStake : failed to calculate coin age");
 
-        int64_t nReward = GetProofOfStakeReward(nCoinAge, nFees);
+        double fInflationAdjustment = GetInflationAdjustment(pindexBest);
+
+        //int64_t nReward = GetProofOfStakeReward(nCoinAge, nFees);
+        int64_t nReward = GetProofOfStakeReward(nCoinAge, nFees, fInflationAdjustment);
         if (nReward <= 0)
             return false;
 
@@ -1779,7 +1783,7 @@ bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64
     if (txNew.vout.size() == 4)
     {
         txNew.vout[1].nValue = (nEndCredit / 2 / CENT) * CENT;
-        txNew.vout[2].nValue = nEndCredit - txNew.vout[1].nValue - 10;
+        txNew.vout[2].nValue = nEndCredit - txNew.vout[1].nValue;
         txNew.vout[3].nValue = nDevCredit;
     }
     else
