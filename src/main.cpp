@@ -2076,13 +2076,21 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
         if (!nCoinAge)
             return state.DoS(100, error("ConnectBlock() : %s unable to get coin age for coinstake", block.vtx[1].GetHash().ToString().substr(0,10).c_str()));
 
-        double fInflationAdjustment = GetInflationAdjustment(pindex->pprev);
-        LogPrintf("fInflationAdjustment=%s\n", fInflationAdjustment);
+        int64_t nCalculatedStakeReward;
 
-		 int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, fInflationAdjustment);
-        LogPrintf("fInflationAdjustment=%s nCalculatedStakeReward2=%s\n", fInflationAdjustment, nCalculatedStakeReward);
+        if(block.nVersion <= 4) {
+            nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees);
+        }
+        else
+        {
+        	// New PoSV stake reward calculation for ver 5 blocks
+            double fInflationAdjustment = GetInflationAdjustment(pindex->pprev);
+            LogPrintf("fInflationAdjustment=%s\n", fInflationAdjustment);
 
-        //int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees);
+        	nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, fInflationAdjustment);
+   	        LogPrintf("fInflationAdjustment=%s nCalculatedStakeReward2=%s\n", fInflationAdjustment, nCalculatedStakeReward);
+        }
+
         if (nStakeReward > nCalculatedStakeReward)
             return state.DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%s vs calculated=%s)", nStakeReward, nCalculatedStakeReward));
     }
