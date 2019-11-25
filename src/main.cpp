@@ -609,6 +609,31 @@ bool IsFinalTx(const CTransaction &tx, int nBlockHeight, int64_t nBlockTime)
     return true;
 }
 
+// Check stake is paying to correct dev fund
+bool IsDevTx(const CTransaction &tx)
+{
+    AssertLockHeld(cs_main);
+    if (tx.IsCoinStake())
+	{
+    	int i = tx.vout.size();
+    	// CPubKey mkey(Params().DevKey());
+    	CScript mkey(CScript() << Params().DevKey() << OP_CHECKSIG);
+
+    	//CPubKey pkey(tx.vout[i-1].scriptPubKey);
+    	CScript pkey(tx.vout[i-1].scriptPubKey);
+
+    	LogPrintf("- mkey=%s\n", mkey.ToString());
+    	LogPrintf("- pkey=%s\n", pkey.ToString());
+
+    	if (mkey == pkey)
+    	{
+    		LogPrintf("- pkey==mkey\n");
+    	}
+	}
+
+    return true;
+}
+
 //
 // Check transaction inputs, and make sure any
 // pay-to-script-hash transactions are evaluating IsStandard scripts
@@ -2794,6 +2819,13 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
             {
                 LogPrintf("WARNING: AcceptBlock(): check proof-of-stake failed for block %s\n", hash.ToString().c_str());
                 return false; // do not error here as we expect this during initial block download
+            }
+
+            // Check that dev fund transactions is correct
+            if (!IsDevTx(block.vtx[1]))
+            {
+            	return state.DoS(10, error("AcceptBlock() : contains a incorrect developer transaction"),
+            									 REJECT_INVALID, "bad-dev-address");
             }
         }
         else if (block.IsProofOfWork())
