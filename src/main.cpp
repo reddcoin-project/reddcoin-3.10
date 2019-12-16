@@ -2779,11 +2779,11 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
             }
         }
 
-        // Reject block.nVersion=4 blocks when 95% (75% on testnet) of the network has upgraded:
+        // Reject block.nVersion=4 blocks when 90% (75% on testnet) of the network has upgraded:
         // block header includes dev funding
 		if (block.nVersion < 5)
 		{
-			if ((!TestNet() && CBlockIndex::IsSuperMajority(5, pindexPrev, 9500, 10000)) ||
+			if ((!TestNet() && CBlockIndex::IsSuperMajority(5, pindexPrev, 9000, 10000)) ||
 				(TestNet() && CBlockIndex::IsSuperMajority(5, pindexPrev, 750, 1000)))
 			{
 				return state.Invalid(error("AcceptBlock() : rejected nVersion=4 block"),
