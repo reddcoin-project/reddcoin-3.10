@@ -1,8 +1,8 @@
-Reddcoin 2.0.1 BETA
+Reddcoin 3.0.0 BETA
 =====================
 
-Copyright (c) 2009-2016 Bitcoin Developers
-Copyright (c) 2014-2018 Reddcoin Developers
+Copyright (c) 2009-2019 Bitcoin Developers  
+Copyright (c) 2014-2019 Reddcoin Developers
 
 
 Setup
