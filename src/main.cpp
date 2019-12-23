@@ -628,10 +628,11 @@ bool IsDevTx(const CTransaction &tx)
     	if (mkey == pkey)
     	{
     		LogPrintf("- pkey==mkey\n");
+    		return true;
     	}
 	}
 
-    return true;
+    return false;
 }
 
 //
@@ -2822,11 +2823,17 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
             }
 
             // Check that dev fund transactions is correct
-            if (!IsDevTx(block.vtx[1]))
+            // Dev fund transactions introduced in version 5 blocks
+            if (block.nVersion >= 5)
             {
-            	return state.DoS(10, error("AcceptBlock() : contains a incorrect developer transaction"),
-            									 REJECT_INVALID, "bad-dev-address");
+            	if (!IsDevTx(block.vtx[1]))
+				{
+					LogPrintf("WARNING: AcceptBlock(): check proof-of-stake developer address failed for block %s\n", hash.ToString().c_str());
+					return state.DoS(10, error("AcceptBlock() : contains a incorrect developer transaction"),
+													 REJECT_INVALID, "bad-dev-address");
+				}
             }
+
         }
         else if (block.IsProofOfWork())
         {
