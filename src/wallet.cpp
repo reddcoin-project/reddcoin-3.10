@@ -9,6 +9,7 @@
 #include "checkpoints.h"
 #include "coincontrol.h"
 #include "net.h"
+#include "kernel.h"
 
 #include <boost/algorithm/string/replace.hpp>
 #include <openssl/rand.h>
@@ -1574,7 +1575,7 @@ bool CWallet::GetStakeWeight(uint64_t& nAverageWeight, uint64_t& nTotalWeight)
     return true;
 }
 
-bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64_t nFees, CTransaction& txNew, CKey& key)
+bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64_t nFees, CTransaction& txNew, CKey& key, int nVer)
 {
     CBlockIndex* pindexBest = chainActive.Tip();
     CBlockIndex* pindexPrev = pindexBest;
@@ -1754,27 +1755,64 @@ bool CWallet::CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, int64
         }
     }
 
+    // Add Dev fund output
+    txNew.vout.push_back(CTxOut(0, CScript() << Params().DevKey() << OP_CHECKSIG));
+    int64_t nEndCredit = 0;
+    int64_t nDevCredit = 0;
+
     // Calculate coin age reward
     {
         uint64_t nCoinAge = GetCoinAge(txNew);
+        int64_t nReward;
+
         if (!nCoinAge)
             return error("CreateCoinStake : failed to calculate coin age");
 
-        int64_t nReward = GetProofOfStakeReward(nCoinAge, nFees);
+        if(nVer == 2)
+        {
+        	double fInflationAdjustment = GetInflationAdjustment(pindexBest);
+        	nReward = GetProofOfStakeReward(nCoinAge, nFees, fInflationAdjustment);
+        }
+        else
+        {
+        	nReward = GetProofOfStakeReward(nCoinAge, nFees);
+        }
+
+        LogPrintf("nReward=%s\n", nReward);
+
         if (nReward <= 0)
             return false;
 
-        nCredit += nReward;
+        if(nVer == 2)
+        {
+        	// Split fund output 92-8%
+        	nEndCredit += nReward * 0.92;
+        	nDevCredit += nReward - nEndCredit;
+        }
+        else
+        {
+        	nEndCredit += nReward;
+			nDevCredit += 0;
+        }
+
+        nCredit += nEndCredit;
+        LogPrintf("nCredit=%s\n", nCredit);
     }
 
+    LogPrintf("nCredit=%s nEndCredit=%s nDevCredit=%s\n", nCredit, nEndCredit, nDevCredit);
+
     // Set output amount
-    if (txNew.vout.size() == 3)
+    if (txNew.vout.size() == 4)
     {
         txNew.vout[1].nValue = (nCredit / 2 / CENT) * CENT;
         txNew.vout[2].nValue = nCredit - txNew.vout[1].nValue;
+        txNew.vout[3].nValue = nDevCredit;
     }
     else
+    {
         txNew.vout[1].nValue = nCredit;
+    	txNew.vout[2].nValue = nDevCredit;
+    }
 
     // Sign
     int nIn = 0;
@@ -1811,12 +1849,28 @@ bool CWallet::SignBlock(CBlock *pblock, int64_t nFees)
     CTransaction txCoinStake;
     int64_t nSearchTime = txCoinStake.nTime; // search to current time
     CBlockIndex *pindexBest = chainActive.Tip();
+    int nPosvVer = 1;
 
     if (nSearchTime > nLastCoinStakeSearchTime)
     {
         if (fDebug)
             LogPrintf("SignBlock : about to create coinstake: nFees=%ld\n", nFees);
-        if (CreateCoinStake(pblock->nBits, nSearchTime-nLastCoinStakeSearchTime, nFees, txCoinStake, key))
+
+
+		if ((!TestNet() && CBlockIndex::IsSuperMajority(5, pindexBest->pprev, 9000, 10000)) ||
+			(TestNet() && CBlockIndex::IsSuperMajority(5, pindexBest->pprev, 750, 1000)))
+		{
+			LogPrintf("SignBlock : SuperMajority = True\n");
+			nPosvVer = 2;
+		}
+		else
+		{
+			LogPrintf("SignBlock : SuperMajority = False\n");
+		}
+
+
+
+        if (CreateCoinStake(pblock->nBits, nSearchTime-nLastCoinStakeSearchTime, nFees, txCoinStake, key, nPosvVer))
         {
             LogPrintf("SignBlock : coinstake created: nFees=%ld\n", nFees);
             if (txCoinStake.nTime >= max(pindexBest->GetMedianTimePast()+1, PastDrift(pindexBest->GetBlockTime())))

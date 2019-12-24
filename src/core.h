@@ -380,7 +380,8 @@ public:
     // Block Version 2 : Requirement to have block height in the coinbase
     // Block Version 3 : Introduction of POSV Block
     // Block Version 4 : Introduction of BIP66
-    static const int CURRENT_VERSION=4;
+	// Block Version 5 : Introduction of Developers Funding
+    static const int CURRENT_VERSION=5;
     int nVersion;
     uint256 hashPrevBlock;
     uint256 hashMerkleRoot;
