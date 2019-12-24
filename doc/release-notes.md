@@ -1,24 +1,28 @@
-Reddcoin Core version 2.0.1 is now available from:
+Reddcoin Core version 3.0.0 is now available from:
 
-  https://www.reddcoin.com/#Wallets
+  [https://github.com/reddcoin-project/reddcoin/releases](https://github.com/reddcoin-project/reddcoin/releases)
 
-This is a new minor version release of Reddcoin,
-Previously, the original and sunsequent versions of Reddcoin were taken from a fork of Litecoin.
-With the release of Reddcoin V2.0.0, is now based directly from a fork Bitcoin.
-This allows for better source control and feature implementaion from upstream changes
+This is a new major version release of Reddcoin.  
+Previously, the original and subsequent versions of Reddcoin were taken from a fork of the Litecoin code base.
 
-Upgrading to this release is recommended.
+With the release of Reddcoin V2.0.0, the code was based directly from a fork Bitcoin.
+This allows for better source control and feature implementation from upstream changes into the future
+
+With the release of Reddcoin V3.0.0, the PoSV stake reward has been improved to allow for a target 5% network growth 
+
+Upgrading to this release is strongly recommended and required.  
+Once a supermajority of 90% is reached, old wallets will no longer accept the new v5 blocks.
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/reddcoin-project/reddcoin/issues
+  [https://github.com/reddcoin-project/reddcoin/issues](https://github.com/reddcoin-project/reddcoin/issues)
 
 How to Upgrade
 ===============
 
-If you are running an older version of Reddcoin, shut it down. Wait until it has completely
-shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over /Applications/Reddcoin-Qt (on Mac) or
+If you are running an older version of Reddcoin, shut it down.  
+Wait until it has completely shut down (which may take a few minutes for older versions).  
+Run the installer (on Windows) or just copy over /Applications/Reddcoin-Qt (on Mac) or
 reddcoind/reddcoin-qt (on Linux).
 
 Start wallet
@@ -29,39 +33,46 @@ Notable changes
 Core base code
 ------------------------------------
 
-Reddcoin v2.0.0.0 was forked from Bitcoin v0.9.5
+Reddcoin v3.0.0 introduced an updated PoSV method to better distribute staking rewards and target a overall 5% network growth.
 
 Staking and relay policy enhancements
 ------------------------------------
 
-To implement BIP66, Reddcoin Core's block templates are now for version 4 blocks only.
-When BIP66 concensus (Supermajority 6120/7200) is reached, only v4 blocks will be accepted by the network.
-and any staking
+To implement PoSV v2, Reddcoin Core's block templates are now for version 5 blocks only.  
+When PoSV v2 consensus (Supermajority 9000/10000) is reached, only v5 blocks will be accepted by the network.  
+This equates to approximately 90% of blocks being generated over 1 week period.
 
-OP_Return and data in the blockchain
+Blockchain Download
 ------------------------------------
-Reddcoin allows storing 80bytes of arbitary data in the blockchain
 
-2.0.1 changelog
+Blockchain data for both testnet and mainnet along with instructions can be downloaded from github.
+
+[https://github.com/reddcoin-project/bootstrap_files](https://github.com/reddcoin-project/bootstrap_files)
+
+
+3.0.0 rc1 changelog
 ===============
-- 605d1fa - John Nash, 2018-01-21 : tools: update parameters for linearize.py
-- d74b4079 - John Nash, 2018-01-20 : build: re-add AM_LDFLAGS where it's overridden
-- 4b5bc89 - John Nash, 2018-01-20 : build: fix win32 static linking after libtool merge
-- 8f41ec0 - John Nash, 2018-01-20 : build: adding LIBTOOLIZE
-- 787ee7e - John Nash, 2018-01-20 : build: Bump version, update release notes, update copyright year
-- c5fac37 - John Nash, 2018-01-20 : build update configure to initialize libtool and correct rpath insertion
-- 6bf33b1 - John Nash, 2017-12-23 : Bump version Add release notes
-- fafc567 - John Nash, 2017-12-23 : Add additional dnsseed nodes
-- 47abb78 - Henry Young, 2017-01-08 : Corrected two string literal Bitcoin references to Redecoin
-- f88a2e5 - Stoner19, 2017-01-05 : Update bitcoind.cpp
-- dbbfd6f - John Nash, 2016-11-30 : build: don't let libtool insert rpath into binaries
-- 2ab6541 - John Nash, 2016-11-27 : build: fix newer boost build with c++11
-- 81b7112 - John Nash, 2016-11-26 : add support for miniupnpc api version 14
-- e69213e - John Nash, 2016-11-25 : Clearer meaning to error messages High Fee warning and Not enough inputs
-- 20bda36 - Erkan Yilmaz, 2016-08-18 : typo
-- 87fa337 - John Nash, 2016-08-18 : #89 Improve layout of splash screen Update text layout and adjust background for readability
-- 02572a6 - John Nash, 2016-08-16 : #87 Update Debian installation instructions Add details how to install URI support on Debian Add updated graphic icons
-- cc5cf5b - Sjolus, 2016-08-15 : Update rpcrawtransaction.cpp
+36df6fdfb - John Nash, 2019-12-23 : add check explictly for v5 blocks or greater  
+874dc1f0c - John Nash, 2019-12-17 : remove hardcoded global variable rearrange debug log output  
+763b25db8 - John Nash, 2019-12-17 : move copyright to new line  
+536baf635 - John Nash, 2019-12-17 : update version and set release state to false  
+cde9009f3 - John Nash, 2019-12-17 : update copyright year  
+ae41b7ed3 - John Nash, 2019-12-17 : set isSuperMajority to 90% for mainnet  
+e43e1c8ed - John Nash, 2019-12-10 : additional logging to verify isSuperMajority in the debug.log output  
+e31783cac - John Nash, 2019-12-05 : add/update public key for mainnet  
+405c6f002 - John Nash, 2019-12-05 : add log output for current inflation rate  
+9cc43c3f7 - John Nash, 2019-12-02 : determine calculated stake based on posv version  
+7baa3bf75 - John Nash, 2019-11-25 : check the posv transaction for correct pubkey  
+9ffa7ca38 - John Nash, 2019-11-21 : check for posv v1 or posv v2 blocks when calculating stake reward  
+39f7aad68 - John Nash, 2019-11-14 : add logging  
+0e283e6c3 - John Nash, 2019-11-13 : correct maths  
+74cbdeffd - John Nash, 2019-11-11 : use new posv v2 functions addidtional logging  
+35d7413b5 - John Nash, 2019-11-11 : add new proofofstakereward  
+3d917216c - John Nash, 2019-11-11 : get inflation adjustment  
+f63d17443 - John Nash, 2019-11-08 : add the developer output split fund output  
+ca263c9c9 - John Nash, 2019-11-05 : add dev key to chainparams  
+df6996ab0 - John Nash, 2019-11-05 : add block version checking  
+14b663479 - John Nash, 2019-11-05 : increase block version  
 
 
 Credits
@@ -69,28 +80,9 @@ Credits
 
 Thanks to everyone who contributed to coding, testing and feedback for this release, notably:
 
-- @Deadpool
-- @bmp02050
-- @lionzeye
-- @stoner19
-- @henryyoung
-- Erkan Yilmaz
-- @Sjolus
-
-
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/reddcoin/reddcoin/).
-- @Serkan34
-- @Syar
-- @ricklopez
-- @hyoung
-- @elcryptotrader
-- @Maxamus
-- @Erkan_Yilmaz
-- @tecopos
-- @xDeadp00lx
-- @clickerz
-- @Kasvain
-- @collab
-- @lionzeye
-- @Ragnarice
-
+- @techadept
+- @chris  
+- @cryptobuze 
+- @harmonyq  
+- @mindredder  
+- @paxtech  

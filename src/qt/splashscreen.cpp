@@ -33,7 +33,7 @@ SplashScreen::SplashScreen(const QPixmap &pixmap, Qt::WindowFlags f, bool isTest
     QString copyrightText2   = QChar(0xA9)+QString(" 2014-%1 ").arg(COPYRIGHT_YEAR) + QString(tr("The Reddcoin Core developers"));
     QString testnetAddText  = QString(tr("[testnet]")); // define text to place as single text object
     QString titleText_versionText = titleText + QString(" ") + versionText;
-    QString copyrightText = copyrightText1 + QString(" | ") + copyrightText2;
+    QString copyrightText = copyrightText1 + QString("\n") + copyrightText2;
 
     QString font            = "Arial";
 

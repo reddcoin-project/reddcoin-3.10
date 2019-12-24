@@ -1,11 +1,11 @@
 dnl require autoconf 2.60 (AS_ECHO/AS_ECHO_N)
 AC_PREREQ([2.60])
-define(_CLIENT_VERSION_MAJOR, 2)
+define(_CLIENT_VERSION_MAJOR, 3)
 define(_CLIENT_VERSION_MINOR, 0)
-define(_CLIENT_VERSION_REVISION, 1)
-define(_CLIENT_VERSION_BUILD, 2)
+define(_CLIENT_VERSION_REVISION, 0)
+define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
-define(_COPYRIGHT_YEAR, 2018)
+define(_COPYRIGHT_YEAR, 2019)
 AC_INIT([Reddcoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[support@reddcoin.com],[reddcoin])
 AC_CONFIG_AUX_DIR([src/build-aux])
 AC_CONFIG_MACRO_DIR([src/m4])
@@ -351,10 +351,15 @@ if test x$use_glibc_compat != xno; then
 
 fi
 
+if test x$TARGET_OS != xwindows; then
+  # All windows code is PIC, forcing it on just adds useless compile warnings
+  AX_CHECK_COMPILE_FLAG([-fPIC],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fPIC"])
+  # AX_CHECK_LINK_FLAG([[-pie]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -pie"])
+fi
+
 if test x$use_hardening != xno; then
   AX_CHECK_COMPILE_FLAG([-Wstack-protector],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -Wstack-protector"])
   AX_CHECK_COMPILE_FLAG([-fstack-protector-all],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fstack-protector-all"])
-  AX_CHECK_COMPILE_FLAG([-fPIE],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fPIE"])
 
   AX_CHECK_PREPROC_FLAG([-D_FORTIFY_SOURCE=2],[
     AX_CHECK_PREPROC_FLAG([-U_FORTIFY_SOURCE],[
@@ -368,11 +373,7 @@ if test x$use_hardening != xno; then
   AX_CHECK_LINK_FLAG([[-Wl,-z,relro]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,relro"])
   AX_CHECK_LINK_FLAG([[-Wl,-z,now]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,now"])
 
-  if test x$TARGET_OS != xwindows; then
-    # -pie will link successfully with MinGW, but it's unsupported and leads to undeterministic binaries
-    AX_CHECK_LINK_FLAG([[-pie]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -pie"])
-  fi
-
+  
   CXXFLAGS="$CXXFLAGS $HARDENED_CXXFLAGS"
   CPPFLAGS="$CPPFLAGS $HARDENED_CPPFLAGS"
   LDFLAGS="$LDFLAGS $HARDENED_LDFLAGS"

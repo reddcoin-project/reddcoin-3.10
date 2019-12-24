@@ -609,6 +609,32 @@ bool IsFinalTx(const CTransaction &tx, int nBlockHeight, int64_t nBlockTime)
     return true;
 }
 
+// Check stake is paying to correct dev fund
+bool IsDevTx(const CTransaction &tx)
+{
+    AssertLockHeld(cs_main);
+    if (tx.IsCoinStake())
+	{
+    	int i = tx.vout.size();
+    	// CPubKey mkey(Params().DevKey());
+    	CScript mkey(CScript() << Params().DevKey() << OP_CHECKSIG);
+
+    	//CPubKey pkey(tx.vout[i-1].scriptPubKey);
+    	CScript pkey(tx.vout[i-1].scriptPubKey);
+
+    	LogPrintf("- mkey=%s\n", mkey.ToString());
+    	LogPrintf("- pkey=%s\n", pkey.ToString());
+
+    	if (mkey == pkey)
+    	{
+    		LogPrintf("- pkey==mkey\n");
+    		return true;
+    	}
+	}
+
+    return false;
+}
+
 //
 // Check transaction inputs, and make sure any
 // pay-to-script-hash transactions are evaluating IsStandard scripts
@@ -1284,6 +1310,22 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
     // CoinAge=365 -> nSubsidy=9993
     // CoinAge=366 -> nSubsidy=10020
     int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
+
+    if (fDebug && GetBoolArg("-printcreation", false))
+        LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees));
+
+    return nSubsidy + nFees;
+}
+
+// PoSV v2: coinstake reward based on coin age spent (coin-days) with inflation adjustment to target 5% network inflation
+int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, double fInflationAdjustment)
+{
+    // some scary rounding dirty trick here for leap / non-leap years
+    // CoinAge=365 -> nSubsidy=9993
+    // CoinAge=366 -> nSubsidy=10020
+    int64_t nSubsidy = (nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8)) * fInflationAdjustment;
+
+    LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s fInflationAdjustment=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees), fInflationAdjustment);
 
     if (fDebug && GetBoolArg("-printcreation", false))
         LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees));
@@ -2060,7 +2102,21 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
         if (!nCoinAge)
             return state.DoS(100, error("ConnectBlock() : %s unable to get coin age for coinstake", block.vtx[1].GetHash().ToString().substr(0,10).c_str()));
 
-        int64_t nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees);
+        int64_t nCalculatedStakeReward;
+
+        if(block.nVersion <= 4) {
+            nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees);
+        }
+        else
+        {
+        	// New PoSV stake reward calculation for ver 5 blocks
+            double fInflationAdjustment = GetInflationAdjustment(pindex->pprev);
+            LogPrintf("fInflationAdjustment=%s\n", fInflationAdjustment);
+
+        	nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, fInflationAdjustment);
+   	        LogPrintf("fInflationAdjustment=%s nCalculatedStakeReward2=%s\n", fInflationAdjustment, nCalculatedStakeReward);
+        }
+
         if (nStakeReward > nCalculatedStakeReward)
             return state.DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%s vs calculated=%s)", nStakeReward, nCalculatedStakeReward));
     }
@@ -2723,6 +2779,19 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
                                      REJECT_OBSOLETE, "bad-version");
             }
         }
+
+        // Reject block.nVersion=4 blocks when 90% (75% on testnet) of the network has upgraded:
+        // block header includes dev funding
+		if (block.nVersion < 5)
+		{
+			if ((!TestNet() && CBlockIndex::IsSuperMajority(5, pindexPrev, 9000, 10000)) ||
+				(TestNet() && CBlockIndex::IsSuperMajority(5, pindexPrev, 750, 1000)))
+			{
+				return state.Invalid(error("AcceptBlock() : rejected nVersion=4 block"),
+									 REJECT_OBSOLETE, "bad-version");
+			}
+		}
+
         // Enforce block.nVersion=2 rule that the coinbase starts with serialized block height
         // Reddcoin did not enable this BIP 34
         // TBD
@@ -2752,6 +2821,19 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
                 LogPrintf("WARNING: AcceptBlock(): check proof-of-stake failed for block %s\n", hash.ToString().c_str());
                 return false; // do not error here as we expect this during initial block download
             }
+
+            // Check that dev fund transactions is correct
+            // Dev fund transactions introduced in version 5 blocks
+            if (block.nVersion >= 5)
+            {
+            	if (!IsDevTx(block.vtx[1]))
+				{
+					LogPrintf("WARNING: AcceptBlock(): check proof-of-stake developer address failed for block %s\n", hash.ToString().c_str());
+					return state.DoS(10, error("AcceptBlock() : contains a incorrect developer transaction"),
+													 REJECT_INVALID, "bad-dev-address");
+				}
+            }
+
         }
         else if (block.IsProofOfWork())
         {
@@ -2799,6 +2881,8 @@ bool CBlockIndex::IsSuperMajority(int minVersion, const CBlockIndex* pstart, uns
             ++nFound;
         pstart = pstart->pprev;
     }
+
+    LogPrintf("IsSuperMajority(): Version %s block: %s found of %s required in last %s blocks.\n", minVersion, nFound, nRequired, nToCheck);
     return (nFound >= nRequired);
 }
 

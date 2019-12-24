@@ -211,6 +211,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState &state, const CTransa
 
 // PoSV
 int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees);
+int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, double fInflationAdjustment);
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake);
 
 
