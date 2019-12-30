@@ -1,18 +1,41 @@
-UNIX BUILD NOTES
+ARM BUILD NOTES
 ====================
-Some notes on how to build Reddcoin in Unix. 
+Some notes on how to build Reddcoin in Unix on Arm processors. 
+
+Adapted from the unix build notes, and tested on Raspian/ RasPi2
+
+This will build the commandline and gui components
+
+Raspberry Pi2 has some memory limits and can benefit with the addition of swapfile
+
+Edit /etc/dphys-swap:
+
+    pi@reddnode~$ sudo nano /etc/dphys-swapfile
+
+And change the default size of 100
+
+    CONF_SWAPSIZE=100
+
+To 1000
+
+    CONF_SWAPSIZE=1000
+
+Save and exit. Then run:
+
+    pi@reddnode~$ sudo dphys-swapfile setup
+    pi@reddnode~$ sudo dphys-swapfile swapon
 
 To Build
 ---------------------
 
-	./autogen.sh
-	./configure
-	make
+See noted on building [Berkeley DB](berkeley-db) for the ${BDB_PREFIX}
+
+    ./autogen.sh
+    ./configure LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
+    make -j2
     make install # optional: will install to /usr/local/bin
 
-This will build reddcoin-qt as well if the dependencies are met.
-
-See [Debian Notes](../contrib/debian/README.md) for URI support in Desktop environment.
+This will build reddcoin-cli, reddcoind reddcoin-qt if the dependencies are met.
 
 
 Dependencies
@@ -63,11 +86,8 @@ for Ubuntu 12.04 and later:
 
 	sudo apt-get install libboost-all-dev
 
- db4.8 packages are available [here](https://launchpad.net/~bitcoin/+archive/bitcoin).
- You can add the repository using the following command:
-
-        sudo add-apt-repository ppa:bitcoin/bitcoin
-        sudo apt-get update
+ db4.8 repository packages for are not available for Raspian/jessie so you will need to build using [instuctions here](#berkeley-db).
+ 
 
  Ubuntu 12.04 and later have packages for libdb5.1-dev and libdb5.1++-dev,
  but using these will break binary wallet compatibility, and is not recommended.

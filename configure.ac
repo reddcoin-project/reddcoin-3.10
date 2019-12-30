@@ -267,6 +267,9 @@ case $host in
 
      CPPFLAGS="$CPPFLAGS -DMAC_OSX"
      ;;
+  *arm*)
+     use_sse2=no
+     ;;     
    *)
      ;;
 esac

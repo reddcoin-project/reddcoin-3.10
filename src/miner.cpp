@@ -6,6 +6,7 @@
 #include "miner.h"
 
 #include "core.h"
+#include "crypto/scrypt.h"
 #include "main.h"
 #include "net.h"
 #ifdef ENABLE_WALLET
