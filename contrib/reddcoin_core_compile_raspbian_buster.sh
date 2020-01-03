@@ -33,8 +33,8 @@ sudo sed -i 's/buster/stretch/' /etc/apt/sources.list
 
 # Download and install dependencies for source code build
 sudo apt-get update -y && sudo apt-get install -y git build-essential libqt4-dev libprotobuf-dev protobuf-compiler libtool autotools-dev autoconf wget pkg-config libboost-thread-dev libboost-program-options-dev libboost-filesystem-dev libboost-system-dev
-wget http://apt.screenlyapp.com/raspbian/pool/main/o/openssl/libssl1.0.0_1.0.1t-1%2Bdeb8u6_armhf.deb
-wget http://apt.screenlyapp.com/raspbian/pool/main/o/openssl/libssl-dev_1.0.1t-1%2Bdeb8u6_armhf.deb
+wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_buster_v3.0.0/libssl1.0.0_1.0.1t-1%2Bdeb8u6_armhf.deb
+wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_buster_v3.0.0/libssl-dev_1.0.1t-1%2Bdeb8u6_armhf.deb
 sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_armhf.deb
 sudo dpkg -i libssl-dev_1.0.1t-1+deb8u6_armhf.deb
 
