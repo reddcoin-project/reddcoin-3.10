@@ -39,10 +39,11 @@ sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_armhf.deb
 sudo dpkg -i libssl-dev_1.0.1t-1+deb8u6_armhf.deb
 
 # Downloading Reddcoin Core wallet with ARM cpu support
-wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_buster_v3.0.0/reddcoin-cli
 wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_buster_v3.0.0/reddcoind
+wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_buster_v3.0.0/reddcoin-cli
+wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_buster_v3.0.0/reddcoin-qt
 sudo chown pi reddcoin* && sudo chmod +x reddcoin*
-sudo mv reddcoin* /usr/local/bin
+sudo mv reddcoind reddcoin-cli reddcoin-qt /usr/local/bin
 
 # Cleanup
 sudo rm -r ~/libssl*
@@ -57,6 +58,3 @@ echo "rpcpassword="$RPC_PWD >> reddcoin.conf
 wget -O rdd_blkchain.zip https://sourceforge.net/projects/reddcoin-blockchain-snapshot/files/arm/rdd_blockchain_arm.zip/download
 unzip rdd_blkchain.zip
 rm rdd_blkchain.zip
-
-# Running Reddcoin Core wallet daemon process
-reddcoind -daemon
