@@ -35,10 +35,11 @@ sudo apt-get update -y && sudo apt-get install -y libssl-dev
 sudo sed -i 's/jessie/stretch/g' /etc/apt/sources.list
 
 # Downloading Reddcoin Core wallet with ARM cpu support
-wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_stretch_v3.0.0/reddcoin-cli
 wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_stretch_v3.0.0/reddcoind
+wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_stretch_v3.0.0/reddcoin-cli
+wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_stretch_v3.0.0/reddcoin-qt
 sudo chown pi reddcoin* && sudo chmod +x reddcoin*
-sudo mv reddcoin* /usr/local/bin
+sudo mv reddcoind reddcoin-cli reddcoin-qt /usr/local/bin
 
 # Create reddcoin.conf file for using Reddcoin Core command line interface and RPC calls
 mkdir ~/.reddcoin && cd ~/.reddcoin
@@ -50,6 +51,3 @@ echo "rpcpassword="$RPC_PWD >> reddcoin.conf
 wget -O rdd_blkchain.zip https://sourceforge.net/projects/reddcoin-blockchain-snapshot/files/arm/rdd_blockchain_arm.zip/download
 unzip rdd_blkchain.zip
 rm rdd_blkchain.zip
-
-# Running Reddcoin Core wallet daemon process
-reddcoind -daemon
