@@ -5,7 +5,7 @@ define(_CLIENT_VERSION_MINOR, 0)
 define(_CLIENT_VERSION_REVISION, 0)
 define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
-define(_COPYRIGHT_YEAR, 2019)
+define(_COPYRIGHT_YEAR, 2020)
 AC_INIT([Reddcoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[support@reddcoin.com],[reddcoin])
 AC_CONFIG_AUX_DIR([src/build-aux])
 AC_CONFIG_MACRO_DIR([src/m4])
@@ -267,6 +267,9 @@ case $host in
 
      CPPFLAGS="$CPPFLAGS -DMAC_OSX"
      ;;
+  *arm*)
+     use_sse2=no
+     ;;     
    *)
      ;;
 esac

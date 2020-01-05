@@ -58,7 +58,7 @@ BITCOIN_CORE_H = \
   rpcprotocol.h \
   rpcserver.h \
   script.h \
-  scrypt.h \
+  crytpo/scrypt.h \
   serialize.h \
   sync.h \
   threadsafety.h \
@@ -137,11 +137,15 @@ libbitcoin_common_a_SOURCES = \
   protocol.cpp \
   rpcprotocol.cpp \
   script.cpp \
-  scrypt.cpp \
+  crypto/scrypt.cpp \
   sync.cpp \
   util.cpp \
   version.cpp \
   $(BITCOIN_CORE_H)
+
+if USE_SSE2
+libbitcoin_common_a_SOURCES += crypto/scrypt-sse2.cpp
+endif
 
 if GLIBC_BACK_COMPAT
 libbitcoin_common_a_SOURCES += compat/glibc_compat.cpp

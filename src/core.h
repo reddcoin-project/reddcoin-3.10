@@ -10,7 +10,7 @@
 #include "serialize.h"
 #include "uint256.h"
 #include "bignum.h"
-#include "scrypt.h"
+#include "crypto/scrypt.h"
 
 #include <stdint.h>
 
