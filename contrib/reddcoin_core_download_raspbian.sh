@@ -44,8 +44,8 @@ sudo dphys-swapfile swapon
 if [ $RASPBIAN_VERSION = "jessie" ]
 then
   echo "--- Installing dependencies for Raspbian Jessie ---"
-  sudo apt-get update -y && sudo apt-get install -y libqt4-dev libprotobuf-dev libboost-all-dev wget pkg-config unzip
-  sudo apt-mark hold libqt4-dev libprotobuf-dev libboost-all-dev libssl-dev
+  sudo apt-get update -y && sudo apt-get install -y libqt4-dev libprotobuf-dev libboost-all-dev libminiupnpc-dev wget pkg-config unzip
+  sudo apt-mark hold libqt4-dev libprotobuf-dev libboost-all-dev libssl-dev libminiupnpc-dev
   # Downloading pre compiled Reddcoin Core wallet binaries with ARM cpu support
   echo "--- Downloading pre compiled Reddcoin Core wallet for Raspbian Jessie ---"
   wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_jessie_v3.0.0/reddcoind
@@ -70,7 +70,7 @@ fi
 
 if [ $RASPBIAN_VERSION = "buster" ]
 then
-  "--- Installing dependencies for Raspbian Buster ---"
+  echo "--- Installing dependencies for Raspbian Buster ---"
   sudo apt-get update -y && sudo apt-get install -y libqt4-dev libprotobuf-dev wget libboost-thread-dev libboost-program-options-dev libboost-filesystem-dev libboost-system-dev
   wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_buster_v3.0.0/libssl1.0.0_1.0.1t-1%2Bdeb8u6_armhf.deb
   wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_buster_v3.0.0/libssl-dev_1.0.1t-1%2Bdeb8u6_armhf.deb
