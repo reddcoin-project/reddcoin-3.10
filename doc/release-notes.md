@@ -1,4 +1,4 @@
-Reddcoin Core version 3.0.0 is now available from:
+Reddcoin Core version 3.0.1 is now available from:
 
   [https://github.com/reddcoin-project/reddcoin/releases](https://github.com/reddcoin-project/reddcoin/releases)
 
@@ -50,7 +50,7 @@ Blockchain data for both testnet and mainnet along with instructions can be down
 [https://github.com/reddcoin-project/bootstrap_files](https://github.com/reddcoin-project/bootstrap_files)
 
 
-3.0.0 rc1 changelog
+3.0.1 changelog
 ===============
 36df6fdfb - John Nash, 2019-12-23 : add check explictly for v5 blocks or greater  
 874dc1f0c - John Nash, 2019-12-17 : remove hardcoded global variable rearrange debug log output  
