@@ -52,6 +52,31 @@ Blockchain data for both testnet and mainnet along with instructions can be down
 
 3.0.1 changelog
 ===============
+83e212838 - John Nash, 2020-01-09 : really delete these files  
+3a1458ecd - Oliver Webb, 2020-01-08 : Added missing dependency libminiupnpc-dev for Jessie  
+d21915431 - Tiago Peralta, 2019-06-21 : Add vout to listtransactions/gettransaction  
+8d58ea7cf - Oliver Webb, 2020-01-08 : Script for downloading pre compiled binaries for Raspbian Jessie, Stretch or Buster  
+d4eced1bc - Oliver Webb, 2020-01-08 : Delete reddcoin_core_download_raspbian_stretch.sh  
+c5e9f91cf - Oliver Webb, 2020-01-08 : Delete reddcoin_core_download_raspbian_jessie.sh  
+5d5771b00 - Oliver Webb, 2020-01-08 : Delete reddcoin_core_download_raspbian_buster.sh  
+75c6ae91b - Oliver Webb, 2020-01-05 : add reddcoin-qt and remove starting daemon process  
+54c501787 - Oliver Webb, 2020-01-05 : add reddcoin-qt and remove starting daemon process  
+acb30a2b6 - Oliver Webb, 2020-01-05 : script files for Raspbian Jessie (also Stakebox)  
+cfddbe594 - John Nash, 2020-01-05 : Update copyright year and version  
+e46e5e7de - John Nash, 2020-01-05 : download script for pre compiled wallet  
+37386790a - John Nash, 2020-01-05 : change libssl deb packages links to github  
+9dbc772e6 - Oliver Webb, 2020-01-03 : download script for pre compiled wallet  
+857d697fd - Oliver Webb, 2020-01-03 : change libssl deb packages links to github  
+2cb74b9a8 - John Nash, 2019-12-31 : update copyright year  
+c641a1ab3 - Oliver Webb, 2019-12-30 : Raspberry Pi build script files for v3 wallet  
+a3f21a4a4 - John Nash, 2019-12-30 : add install script for building db4 update instructions  for unix, osx, arm building using the db4 install script  
+5f6299b2a - John Nash, 2019-12-28 : docs: Update build notes for arm processors  
+465716c01 - John Nash, 2019-12-28 : test for arm devices  
+3fec3a535 - John Nash, 2018-02-02 : build: update source paths  
+5f6031ab4 - John Nash, 2019-12-28 : Scrypt n=1024 Pow hash based upon Colin Percival's Tarnsnap (2009) Modified by Artforz, coblee, pooler, wtogami, Nikolay Belikov, reddink  
+2fd4d91a0 - John Nash, 2019-12-24 : update copyright year  
+326828b36 - John Nash, 2019-12-24 : set release state true  
+8ebede0a6 - John Nash, 2019-12-24 : release notes  
 36df6fdfb - John Nash, 2019-12-23 : add check explictly for v5 blocks or greater  
 874dc1f0c - John Nash, 2019-12-17 : remove hardcoded global variable rearrange debug log output  
 763b25db8 - John Nash, 2019-12-17 : move copyright to new line  
@@ -86,3 +111,4 @@ Thanks to everyone who contributed to coding, testing and feedback for this rele
 - @harmonyq  
 - @mindredder  
 - @paxtech  
+- @Tiago Peralta  
