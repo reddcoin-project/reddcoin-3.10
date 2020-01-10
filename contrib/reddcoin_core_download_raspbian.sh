@@ -129,11 +129,14 @@ if test -f ~/reddcoin-2.0.1.2/rdd_logo.png; then
   echo "--- Hey Stakebox user! Replacing now old v2 wallet links to new v3 wallet links ---"
   # Removing older v2 wallet files
   cd ~
-  mv reddcoin-2.0.1.2/* .
+  mv reddcoin-2.0.1.2/rdd_logo.png .
   rm -r reddcoin-2.0.1.2
+  wget https://github.com/cryptoBUZE/reddcoin/releases/download/rpi_raspbian_jessie_v3.0.0/download_blockchain.sh
+  chmod +x download_blockchain.sh
   # Set new wallpaper
   wget -O reddcoin_wallpaper.png https://i.imgur.com/RoTUmUc.png
   pcmanfm --set-wallpaper /home/pi/reddcoin_wallpaper.png
+  # Update desktop links
   echo "[Desktop Entry]" > Desktop/Download\ Blockchain
   echo "Version=1.0" >> Desktop/Download\ Blockchain
   echo "Exec=/home/pi/download_blockchain.sh" >> Desktop/Download\ Blockchain
