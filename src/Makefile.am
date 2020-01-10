@@ -58,7 +58,7 @@ BITCOIN_CORE_H = \
   rpcprotocol.h \
   rpcserver.h \
   script.h \
-  crytpo/scrypt.h \
+  crypto/scrypt.h \
   serialize.h \
   sync.h \
   threadsafety.h \
