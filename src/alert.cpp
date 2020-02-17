@@ -7,6 +7,7 @@
 
 #include "key.h"
 #include "net.h"
+#include "timedata.h"
 #include "ui_interface.h"
 #include "util.h"
 

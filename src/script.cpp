@@ -15,6 +15,7 @@
 #include "sync.h"
 #include "uint256.h"
 #include "util.h"
+#include "timedata.h"
 
 #include <boost/foreach.hpp>
 #include <boost/tuple/tuple.hpp>

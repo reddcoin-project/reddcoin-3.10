@@ -8,6 +8,7 @@
 
 #include "script.h"
 #include "serialize.h"
+#include "timedata.h"
 #include "uint256.h"
 #include "bignum.h"
 #include "crypto/scrypt.h"

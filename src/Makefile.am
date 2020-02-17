@@ -80,6 +80,7 @@ BITCOIN_CORE_H = \
   serialize.h \
   sync.h \
   threadsafety.h \
+  timedata.h \
   tinyformat.h \
   txdb.h \
   txmempool.h \
@@ -174,6 +175,7 @@ libbitcoin_common_a_SOURCES = \
   script.cpp \
   sync.cpp \
   util.cpp \
+  timedata.cpp \
   version.cpp \
   compat/glibc_sanity.cpp \
   compat/glibcxx_sanity.cpp \
