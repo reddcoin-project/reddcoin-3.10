@@ -38,6 +38,11 @@
 #include <boost/interprocess/sync/file_lock.hpp>
 #include <openssl/crypto.h>
 
+
+#ifdef USE_SSE2
+#include "crypto/scrypt.h"
+#endif
+
 using namespace std;
 using namespace boost;
 
@@ -657,7 +662,8 @@ bool AppInit2(boost::thread_group& threadGroup)
     int64_t nStart;
 
 #if defined(USE_SSE2)
-    scrypt_detect_sse2();
+    std::string sse2detect = scrypt_detect_sse2();
+    LogPrintf("%s\n", sse2detect);
 #endif
 
     // ********************************************************* Step 5: verify wallet database integrity
