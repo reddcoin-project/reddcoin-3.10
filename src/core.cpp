@@ -219,6 +219,23 @@ uint256 CBlockHeader::GetHash() const
     return Hash(BEGIN(nVersion), END(nNonce));
 }
 
+uint256 CBlockHeader::GetPoWHash() const
+{
+    uint256 thash;
+    scrypt_1024_1_1_256(BEGIN(nVersion), BEGIN(thash));
+    return thash;
+}
+
+bool CBlockHeader::IsProofOfWork() const
+{
+	return !IsProofOfStake();
+}
+
+bool CBlockHeader::IsProofOfStake() const
+{
+	return nVersion > POW_BLOCK_VERSION;
+}
+
 // PoSV
 bool CBlock::CheckBlockSignature() const
 {
