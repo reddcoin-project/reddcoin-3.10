@@ -1383,7 +1383,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
     CBigNum PastDifficultyAveragePrev;
     CBigNum bnProofOfWorkLimit = Params().ProofOfWorkLimit();
     CBigNum bnProofOfStakeLimit = Params().ProofOfStakeLimit();
-    CBigNum bnProofOfStakeReset(~uint256(0) >> 32); // 1
+    CBigNum bnProofOfStakeReset = Params().ProofOfStakeReset();
 
     double EventHorizonDeviation;
     double EventHorizonDeviationFast;

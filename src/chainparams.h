@@ -70,6 +70,7 @@ public:
 
     // PoSV
     const CBigNum& ProofOfStakeLimit() const { return bnProofOfStakeLimit; }
+    const CBigNum& ProofOfStakeReset() const { return bnProofOfStakeReset; }
     int LastProofOfWorkHeight() const { return nLastProofOfWorkHeight; }
     unsigned int StakeMinAge() const { return nStakeMinAge; }
     unsigned int StakeMaxAge() const { return nStakeMaxAge; }
@@ -92,6 +93,7 @@ protected:
 
     // PoSV
     CBigNum bnProofOfStakeLimit;
+    CBigNum bnProofOfStakeReset;
     int nLastProofOfWorkHeight;
     unsigned int nStakeMinAge;
     unsigned int nStakeMaxAge;

@@ -41,6 +41,7 @@ public:
 
         // PoSV
         bnProofOfStakeLimit = CBigNum(~uint256(0) >> 20);
+        bnProofOfStakeReset = CBigNum(~uint256(0) >> 32); // 1
         nLastProofOfWorkHeight = 260800 - 1;
         vDevPubKey = ParseHex("03c8fc5c87f00bcc32b5ce5c036957f8befeff05bf4d88d2dcde720249f78d9313");
         nStakeMinAge = 8 * 60 * 60; // 8 hours
