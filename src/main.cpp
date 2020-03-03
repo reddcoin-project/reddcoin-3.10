@@ -2821,7 +2821,7 @@ bool AcceptBlockHeader(CBlockHeader& block, CValidationState& state, CBlockIndex
     if (miSelf != mapBlockIndex.end()) {
         pindex = miSelf->second;
         if (pindex->nStatus & BLOCK_FAILED_MASK)
-            return state.Invalid(error("AcceptBlock() : block is marked invalid"), 0, "duplicate");
+            return state.Invalid(error("AcceptBlockHeader() : block is marked invalid"), 0, "duplicate");
     }
 
     // Get prev block index
@@ -2830,39 +2830,39 @@ bool AcceptBlockHeader(CBlockHeader& block, CValidationState& state, CBlockIndex
     if (hash != Params().HashGenesisBlock()) {
         map<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(block.hashPrevBlock);
         if (mi == mapBlockIndex.end())
-            return state.DoS(10, error("AcceptBlock() : prev block not found"), 0, "bad-prevblk");
+            return state.DoS(10, error("AcceptBlockHeader() : prev block not found"), 0, "bad-prevblk");
         pindexPrev = (*mi).second;
         nHeight = pindexPrev->nHeight+1;
 
         if (block.IsProofOfWork() && nHeight > Params().LastProofOfWorkHeight())
-            return state.DoS(100, error("AcceptBlock() : reject proof-of-work at height %d", nHeight));
+            return state.DoS(100, error("AcceptBlockHeader() : reject proof-of-work at height %d", nHeight));
 
         // Check proof of work
         if (block.nBits != GetNextWorkRequired(pindexPrev, &block))
-            return state.DoS(100, error("AcceptBlock() : incorrect proof of work"),
+            return state.DoS(100, error("AcceptBlockHeader() : incorrect proof of work"),
                              REJECT_INVALID, "bad-diffbits");
 
         // Check timestamp against prev
         if (block.GetBlockTime() <= pindexPrev->GetMedianTimePast())
-            return state.Invalid(error("AcceptBlock() : block's timestamp is too early"),
+            return state.Invalid(error("AcceptBlockHeader() : block's timestamp is too early"),
                                  REJECT_INVALID, "time-too-old");
 
         // Check that the block chain matches the known block chain up to a checkpoint
         if (!Checkpoints::CheckBlock(nHeight, hash))
-            return state.DoS(100, error("AcceptBlock() : rejected by checkpoint lock-in at %d", nHeight),
+            return state.DoS(100, error("AcceptBlockHeader() : rejected by checkpoint lock-in at %d", nHeight),
                              REJECT_CHECKPOINT, "checkpoint mismatch");
 
         // Don't accept any forks from the main chain prior to last checkpoint
         CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(mapBlockIndex);
         if (pcheckpoint && nHeight < pcheckpoint->nHeight)
-            return state.DoS(100, error("AcceptBlock() : forked chain older than last checkpoint (height %d)", nHeight));
+            return state.DoS(100, error("AcceptBlockHeader() : forked chain older than last checkpoint (height %d)", nHeight));
 
         // Reject block.nVersion=2 blocks when 95% (75% on testnet) of the network has upgraded:
         // Should pass here as all PoSV blocks nVersion=3
         if (block.nVersion < 3 && 
             CBlockIndex::IsSuperMajority(3, pindexPrev, Params().RejectBlockOutdatedMajority()))
         {
-            return state.Invalid(error("AcceptBlock() : rejected nVersion=2 block"),
+            return state.Invalid(error("AcceptBlockHeader() : rejected nVersion=2 block"),
                                  REJECT_OBSOLETE, "bad-version");
         }
 
@@ -2870,7 +2870,7 @@ bool AcceptBlockHeader(CBlockHeader& block, CValidationState& state, CBlockIndex
         if (block.nVersion < 4 && 
             CBlockIndex::IsSuperMajority(4, pindexPrev, Params().RejectBlockOutdatedMajority_4()))
         {
-            return state.Invalid(error("AcceptBlock() : rejected nVersion=3 block"),
+            return state.Invalid(error("AcceptBlockHeader() : rejected nVersion=3 block"),
                                  REJECT_OBSOLETE, "bad-version");
         }
 
@@ -2879,7 +2879,7 @@ bool AcceptBlockHeader(CBlockHeader& block, CValidationState& state, CBlockIndex
 		if (block.nVersion < 5 && 
             CBlockIndex::IsSuperMajority(5, pindexPrev, Params().RejectBlockOutdatedMajority_5()))
        {
-            return state.Invalid(error("AcceptBlock() : rejected nVersion=4 block"),
+            return state.Invalid(error("AcceptBlockHeader() : rejected nVersion=4 block"),
                                  REJECT_OBSOLETE, "bad-version");
        }
     }
