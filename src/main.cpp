@@ -2779,34 +2779,34 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
     return true;
 }
 
-// Verify hash target and signature of coinstake txciara staggs
+// Verify hash target and signature of coinstake tx
 uint256 VerifyHashTarget(const CBlock& block)
 {
 	AssertLockHeld(cs_main);
 
 	uint256 hash = block.GetHash();
-	uint256 hashProof;
+	uint256 hashProof = 0;
 
-	// Verify hash target and signature of coinstake tx
+	if (hash != Params().HashGenesisBlock()) {
 
-	if (block.IsProofOfStake())
-	{
-		LogPrintf("ProofOfStake: VerifyHashTarget(): hash %s, nBits %i\n", block.vtx[1].GetHash().ToString().c_str(), block.nBits);
-		uint256 targetProofOfStake;
-		if (!CheckProofOfStake(block.vtx[1], block.nBits, hashProof, targetProofOfStake))
+		uint256 hashProof;
+		// Verify hash target and signature of coinstake tx
+		if (block.IsProofOfStake())
 		{
-			LogPrintf("WARNING: VerifyHashTarget(): check proof-of-stake failed for block %s\n", hash.ToString().c_str());
-			return false; // do not error here as we expect this during initial block download
+			LogPrintf("ProofOfStake: VerifyHashTarget(): hash %s, nBits %i\n", block.vtx[1].GetHash().ToString().c_str(), block.nBits);
+			uint256 targetProofOfStake;
+			if (!CheckProofOfStake(block.vtx[1], block.nBits, hashProof, targetProofOfStake))
+			{
+				LogPrintf("WARNING: VerifyHashTarget(): check proof-of-stake failed for block %s\n", hash.ToString().c_str());
+				return false; // do not error here as we expect this during initial block download
+			}
+		}
+		else if (block.IsProofOfWork())
+		{
+			// PoW is checked in CheckBlock()
+			hashProof = block.GetPoWHash();
 		}
 	}
-	else if (block.IsProofOfWork())
-	{
-		// PoW is checked in CheckBlock()
-		hashProof = block.GetPoWHash();
-	}
-
-	// hashProof was bypassed in 1.4.0, need to investigate
-	hashProof = 0;
 
 	return hashProof;
 }
