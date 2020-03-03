@@ -2900,10 +2900,10 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     uint256 hash = block.GetHash();
     uint256 hashProof = 0;
 
-    hashProof = VerifyHashTarget(block);
-
     if (!AcceptBlockHeader(block, state, &pindex))
         return false;
+
+    hashProof = VerifyHashTarget(block);
 
     if (!CheckBlock(block, state)) {
         if (state.Invalid() && !state.CorruptionPossible()) {
