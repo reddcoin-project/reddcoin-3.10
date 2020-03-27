@@ -1,56 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en">
-<context>
-    <name>AboutDialog</name>
-    <message>
-        <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Reddcoin Core</source>
-        <translation>About Reddcoin Core</translation>
-    </message>
-    <message>
-        <location line="+39"/>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</translation>
-    </message>
-    <message>
-        <location line="+59"/>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</translation>
-    </message>
-    <message>
-        <location filename="../utilitydialog.cpp" line="+29"/>
-        <location line="+1"/>
-        <source>Copyright</source>
-        <translation>Copyright</translation>
-    </message>
-    <message>
-        <location line="-1"/>
-        <source>The Bitcoin Core developers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The Reddcoin Core developers</source>
-        <translation>The Reddcoin Core developers</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <location line="+2"/>
-        <source>(%1-bit)</source>
-        <translation>(%1-bit)</translation>
-    </message>
-</context>
+<TS version="2.1" language="en">
 <context>
     <name>AddressBookPage</name>
     <message>
@@ -170,8 +120,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+1"/>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>There was an error trying to save the address list to %1.</translation>
+        <source>There was an error trying to save the address list to %1. Please try again.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -225,12 +175,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>For staking only</translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+42"/>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location filename="../askpassphrasedialog.cpp" line="+43"/>
         <source>Encrypt wallet</source>
         <translation>Encrypt wallet</translation>
     </message>
@@ -297,7 +242,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Wallet encrypted</translation>
     </message>
     <message>
-        <location line="-58"/>
+        <location line="-141"/>
+        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+83"/>
         <source>Reddcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your reddcoins from being stolen by malware infecting your computer.</source>
         <translation>Reddcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your reddcoins from being stolen by malware infecting your computer.</translation>
     </message>
@@ -346,27 +296,27 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+317"/>
+        <location filename="../bitcoingui.cpp" line="+320"/>
         <source>Sign &amp;message...</source>
         <translation>Sign &amp;message...</translation>
     </message>
     <message>
-        <location line="+339"/>
+        <location line="+343"/>
         <source>Synchronizing with network...</source>
         <translation>Synchronizing with network...</translation>
     </message>
     <message>
-        <location line="-415"/>
+        <location line="-419"/>
         <source>&amp;Overview</source>
         <translation>&amp;Overview</translation>
     </message>
     <message>
-        <location line="-147"/>
+        <location line="-150"/>
         <source>Node</source>
         <translation>Node</translation>
     </message>
     <message>
-        <location line="+148"/>
+        <location line="+151"/>
         <source>Show general overview of wallet</source>
         <translation>Show general overview of wallet</translation>
     </message>
@@ -477,13 +427,13 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Open a reddcoin: URI or payment request</translation>
     </message>
     <message>
-        <location line="+166"/>
+        <location line="+171"/>
         <location line="+5"/>
         <source>Reddcoin Core client</source>
         <translation>Reddcoin Core client</translation>
     </message>
     <message>
-        <location line="+157"/>
+        <location line="+156"/>
         <source>Importing blocks from disk...</source>
         <translation>Importing blocks from disk...</translation>
     </message>
@@ -493,7 +443,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Reindexing blocks on disk...</translation>
     </message>
     <message numerus="yes">
-        <location line="+341"/>
+        <location line="+339"/>
         <source>%n second(s)</source>
         <translation>
             <numerusform>%n second</numerusform>
@@ -539,7 +489,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Not staking</translation>
     </message>
     <message>
-        <location line="-784"/>
+        <location line="-786"/>
         <source>Send coins to a Reddcoin address</source>
         <translation>Send coins to a Reddcoin address</translation>
     </message>
@@ -574,17 +524,17 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Verify message...</translation>
     </message>
     <message>
-        <location line="+437"/>
+        <location line="+441"/>
         <source>Reddcoin</source>
         <translation>Reddcoin</translation>
     </message>
     <message>
-        <location line="-664"/>
+        <location line="-671"/>
         <source>Wallet</source>
         <translation>Wallet</translation>
     </message>
     <message>
-        <location line="+156"/>
+        <location line="+159"/>
         <source>&amp;Send</source>
         <translation>&amp;Send</translation>
     </message>
@@ -635,18 +585,18 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Tabs toolbar</translation>
     </message>
     <message>
-        <location line="-302"/>
-        <location line="+394"/>
+        <location line="-305"/>
+        <location line="+402"/>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
     <message>
-        <location line="-419"/>
+        <location line="-427"/>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
     <message>
-        <location line="+202"/>
+        <location line="+205"/>
         <location line="+2"/>
         <source>&amp;About Reddcoin Core</source>
         <translation>&amp;About Reddcoin Core</translation>
@@ -672,7 +622,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Show the Reddcoin Core help message to get a list with possible Reddcoin command-line options</translation>
     </message>
     <message numerus="yes">
-        <location line="+310"/>
+        <location line="+314"/>
         <source>%n active connection(s) to Reddcoin network</source>
         <translation>
             <numerusform>%n active connection to Reddcoin network</numerusform>
@@ -691,7 +641,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message numerus="yes">
         <location line="+26"/>
-        <location line="+309"/>
+        <location line="+307"/>
         <source>%n hour(s)</source>
         <translation>
             <numerusform>%n hour</numerusform>
@@ -699,8 +649,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         </translation>
     </message>
     <message numerus="yes">
-        <location line="-305"/>
-        <location line="+309"/>
+        <location line="-303"/>
+        <location line="+307"/>
         <source>%n day(s)</source>
         <translation>
             <numerusform>%n day</numerusform>
@@ -708,7 +658,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         </translation>
     </message>
     <message numerus="yes">
-        <location line="-305"/>
+        <location line="-303"/>
         <location line="+6"/>
         <source>%n week(s)</source>
         <translation>
@@ -770,7 +720,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Catching up...</translation>
     </message>
     <message>
-        <location line="+130"/>
+        <location line="+126"/>
         <source>Sent transaction</source>
         <translation>Sent transaction</translation>
     </message>
@@ -802,16 +752,11 @@ Address: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
-    <message>
-        <location filename="../bitcoin.cpp" line="+447"/>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</translation>
-    </message>
 </context>
 <context>
     <name>ClientModel</name>
     <message>
-        <location filename="../clientmodel.cpp" line="+136"/>
+        <location filename="../clientmodel.cpp" line="+138"/>
         <source>Network Alert</source>
         <translation>Network Alert</translation>
     </message>
@@ -850,8 +795,8 @@ Address: %4
     </message>
     <message>
         <location line="+32"/>
-        <source>Low Output:</source>
-        <translation>Low Output:</translation>
+        <source>Dust:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+48"/>
@@ -966,8 +911,8 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Copy low output</source>
-        <translation>Copy low output</translation>
+        <source>Copy dust</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1025,17 +970,17 @@ Address: %4
         <translation>(%1 locked)</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+28"/>
         <source>none</source>
         <translation>none</translation>
     </message>
     <message>
-        <location line="+141"/>
-        <source>Dust</source>
-        <translation>Dust</translation>
+        <location line="+154"/>
+        <source>Can vary +/- %1 satoshi(s) per input.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-28"/>
         <source>yes</source>
         <translation>yes</translation>
     </message>
@@ -1045,7 +990,7 @@ Address: %4
         <translation>no</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+16"/>
         <source>This label turns red, if the transaction size is greater than 1000 bytes.</source>
         <translation>This label turns red, if the transaction size is greater than 1000 bytes.</translation>
     </message>
@@ -1076,23 +1021,7 @@ Address: %4
         <translation>This label turns red, if any recipient receives an amount smaller than %1.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <location line="+4"/>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>This means a fee of at least %1 is required.</translation>
-    </message>
-    <message>
-        <location line="-3"/>
-        <source>Amounts below 0.546 times the minimum relay fee are shown as dust.</source>
-        <translation>Amounts below 0.546 times the minimum relay fee are shown as dust.</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>This label turns red, if the change is smaller than %1.</source>
-        <translation>This label turns red, if the change is smaller than %1.</translation>
-    </message>
-    <message>
-        <location line="+43"/>
+        <location line="+50"/>
         <location line="+61"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
@@ -1207,12 +1136,7 @@ Address: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <location filename="../forms/helpmessagedialog.ui" line="+19"/>
-        <source>Reddcoin Core - Command-line options</source>
-        <translation>Reddcoin Core - Command-line options</translation>
-    </message>
-    <message>
-        <location filename="../utilitydialog.cpp" line="+24"/>
+        <location filename="../utilitydialog.cpp" line="+29"/>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
@@ -1222,7 +1146,23 @@ Address: %4
         <translation>version</translation>
     </message>
     <message>
+        <location line="+5"/>
         <location line="+2"/>
+        <source>(%1-bit)</source>
+        <translation type="unfinished">(%1-bit)</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>About Reddcoin Core</source>
+        <translation type="unfinished">About Reddcoin Core</translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>Command-line options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Usage:</source>
         <translation>Usage:</translation>
     </message>
@@ -1301,8 +1241,8 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Error: Specified data directory &quot;%1&quot; can not be created.</source>
-        <translation>Error: Specified data directory &quot;%1&quot; can not be created.</translation>
+        <source>Error: Specified data directory &quot;%1&quot; cannot be created.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+24"/>
@@ -1397,6 +1337,16 @@ Address: %4
     </message>
     <message>
         <location line="+160"/>
+        <source>Accept connections from outside</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Allow incoming connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>Connect to the Reddcoin network through a SOCKS proxy.</source>
         <translation>Connect to the Reddcoin network through a SOCKS proxy.</translation>
     </message>
@@ -1411,7 +1361,7 @@ Address: %4
         <translation>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <location line="+194"/>
+        <location line="+164"/>
         <location line="+13"/>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
         <translation>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</translation>
@@ -1437,7 +1387,7 @@ Address: %4
         <translation>&amp;Reset Options</translation>
     </message>
     <message>
-        <location line="-337"/>
+        <location line="-317"/>
         <source>&amp;Network</source>
         <translation>&amp;Network</translation>
     </message>
@@ -1482,7 +1432,7 @@ Address: %4
         <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+29"/>
         <source>Proxy &amp;IP:</source>
         <translation>Proxy &amp;IP:</translation>
     </message>
@@ -1495,16 +1445,6 @@ Address: %4
         <location line="+25"/>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Port of the proxy (e.g. 9050)</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>SOCKS &amp;Version:</source>
-        <translation>SOCKS &amp;Version:</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>SOCKS version of the proxy (e.g. 5)</translation>
     </message>
     <message>
         <location line="+36"/>
@@ -1557,22 +1497,12 @@ Address: %4
         <translation>Choose the default subdivision unit to show in the interface and when sending coins.</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>Whether to show Reddcoin addresses in the transaction list or not.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>&amp;Display addresses in transaction list</translation>
-    </message>
-    <message>
-        <location line="-262"/>
+        <location line="-240"/>
         <source>Whether to show coin control features or not.</source>
         <translation>Whether to show coin control features or not.</translation>
     </message>
     <message>
-        <location line="+422"/>
+        <location line="+402"/>
         <source>&amp;OK</source>
         <translation>&amp;OK</translation>
     </message>
@@ -1582,7 +1512,7 @@ Address: %4
         <translation>&amp;Cancel</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+72"/>
+        <location filename="../optionsdialog.cpp" line="+68"/>
         <source>default</source>
         <translation>default</translation>
     </message>
@@ -1626,18 +1556,23 @@ Address: %4
         <translation>Form</translation>
     </message>
     <message>
-        <location line="+50"/>
-        <location line="+263"/>
+        <location line="+52"/>
+        <location line="+463"/>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Reddcoin network after a connection is established, but this process has not completed yet.</source>
         <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Reddcoin network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
-        <location line="-270"/>
+        <location line="-470"/>
         <source>Wallet</source>
         <translation>Wallet</translation>
     </message>
     <message>
-        <location line="+51"/>
+        <location line="+33"/>
+        <source>Watch-only:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+43"/>
         <source>Available:</source>
         <translation>Available:</translation>
     </message>
@@ -1672,12 +1607,12 @@ Address: %4
         <translation>Immature:</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+16"/>
         <source>Mined balance that has not yet matured</source>
         <translation>Mined balance that has not yet matured</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+35"/>
         <source>Total:</source>
         <translation>Total:</translation>
     </message>
@@ -1687,12 +1622,37 @@ Address: %4
         <translation>Your current total balance</translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+38"/>
+        <source>Your current balance in watch-only addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Staked transactions to watch-only addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Unconfirmed transactions to watch-only addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Mined balance in watch-only addresses that has not yet matured</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>Current total balance in watch-only addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+67"/>
         <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
         <translation>&lt;b&gt;Recent transactions&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../overviewpage.cpp" line="+121"/>
+        <location filename="../overviewpage.cpp" line="+124"/>
         <location line="+1"/>
         <source>out of sync</source>
         <translation>out of sync</translation>
@@ -1701,68 +1661,91 @@ Address: %4
 <context>
     <name>PaymentServer</name>
     <message>
-        <location filename="../paymentserver.cpp" line="+403"/>
-        <location line="+13"/>
+        <location filename="../paymentserver.cpp" line="+405"/>
+        <location line="+14"/>
+        <location line="+7"/>
         <source>URI handling</source>
         <translation>URI handling</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>URI can not be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
-        <translation>URI can not be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</translation>
-    </message>
-    <message>
-        <location line="+96"/>
+        <location line="+127"/>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
         <translation>Requested payment amount of %1 is too small (considered dust).</translation>
     </message>
     <message>
-        <location line="-221"/>
-        <location line="+212"/>
-        <location line="+13"/>
-        <location line="+95"/>
+        <location line="-253"/>
+        <location line="+219"/>
+        <location line="+34"/>
+        <location line="+98"/>
+        <location line="+14"/>
         <location line="+18"/>
-        <location line="+16"/>
         <source>Payment request error</source>
         <translation>Payment request error</translation>
     </message>
     <message>
-        <location line="-353"/>
+        <location line="-382"/>
         <source>Cannot start reddcoin: click-to-pay handler</source>
         <translation>Cannot start reddcoin: click-to-pay handler</translation>
     </message>
     <message>
-        <location line="+58"/>
-        <source>Net manager warning</source>
-        <translation>Net manager warning</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Your active proxy doesn&apos;t support SOCKS5, which is required for payment requests via proxy.</source>
-        <translation>Your active proxy doesn&apos;t support SOCKS5, which is required for payment requests via proxy.</translation>
-    </message>
-    <message>
-        <location line="+52"/>
+        <location line="+105"/>
         <source>Payment request fetch URL is invalid: %1</source>
         <translation>Payment request fetch URL is invalid: %1</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+13"/>
+        <source>Invalid payment address %1</source>
+        <translation type="unfinished">Invalid payment address %1</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>URI cannot be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Payment request file handling</source>
         <translation>Payment request file handling</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Payment request file can not be read or processed! This can be caused by an invalid payment request file.</source>
-        <translation>Payment request file can not be read or processed! This can be caused by an invalid payment request file.</translation>
+        <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+73"/>
+        <location line="+62"/>
+        <location line="+9"/>
+        <location line="+32"/>
+        <source>Payment request rejected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-41"/>
+        <source>Payment request network doesn&apos;t match client network.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Payment request has expired.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Payment request is not initialized.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+147"/>
+        <source>Payment request cannot be parsed!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-121"/>
         <source>Unverified payment requests to custom payment scripts are unsupported.</source>
         <translation>Unverified payment requests to custom payment scripts are unsupported.</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+58"/>
         <source>Refund from %1</source>
         <translation>Refund from %1</translation>
     </message>
@@ -1772,12 +1755,7 @@ Address: %4
         <translation>Error communicating with %1: %2</translation>
     </message>
     <message>
-        <location line="+24"/>
-        <source>Payment request can not be parsed or processed!</source>
-        <translation>Payment request can not be parsed or processed!</translation>
-    </message>
-    <message>
-        <location line="+11"/>
+        <location line="+33"/>
         <source>Bad response from server %1</source>
         <translation>Bad response from server %1</translation>
     </message>
@@ -1795,7 +1773,7 @@ Address: %4
 <context>
     <name>PeerTableModel</name>
     <message>
-        <location filename="../peertablemodel.cpp" line="+114"/>
+        <location filename="../peertablemodel.cpp" line="+112"/>
         <source>Address/Hostname</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1813,39 +1791,12 @@ Address: %4
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../bitcoin.cpp" line="+76"/>
-        <location line="+7"/>
-        <location line="+13"/>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin Core</translation>
+        <location filename="../guiutil.cpp" line="+103"/>
+        <source>Enter a Reddcoin address (e.g. %1)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-19"/>
-        <source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
-        <translation>Error: Specified data directory &quot;%1&quot; does not exist.</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>Error: Cannot parse configuration file: %1. Only use key=value syntax.</translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>Error: Invalid combination of -regtest and -testnet.</source>
-        <translation>Error: Invalid combination of -regtest and -testnet.</translation>
-    </message>
-    <message>
-        <location line="+60"/>
-        <source>Reddcoin Core didn&apos;t yet exit safely...</source>
-        <translation>Reddcoin Core didn&apos;t yet exit safely...</translation>
-    </message>
-    <message>
-        <location filename="../guiutil.cpp" line="+101"/>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
-    </message>
-    <message>
-        <location line="+693"/>
+        <location line="+698"/>
         <source>%1 d</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1880,7 +1831,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+5"/>
         <source>N/A</source>
         <translation type="unfinished">N/A</translation>
     </message>
@@ -1888,6 +1839,11 @@ Address: %4
         <location line="+0"/>
         <source>%1 ms</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../bitcoinunits.cpp" line="+200"/>
+        <source>Amount</source>
+        <translation type="unfinished">Amount</translation>
     </message>
 </context>
 <context>
@@ -1924,6 +1880,7 @@ Address: %4
         <location line="+10"/>
         <location line="+23"/>
         <location line="+26"/>
+        <location line="+26"/>
         <location line="+23"/>
         <location line="+23"/>
         <location line="+36"/>
@@ -1948,7 +1905,7 @@ Address: %4
         <translation>N/A</translation>
     </message>
     <message>
-        <location line="-961"/>
+        <location line="-987"/>
         <source>Client version</source>
         <translation>Client version</translation>
     </message>
@@ -1971,6 +1928,11 @@ Address: %4
         <location line="+53"/>
         <source>Using OpenSSL version</source>
         <translation>Using OpenSSL version</translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>Using BerkeleyDB version</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+49"/>
@@ -2049,7 +2011,7 @@ Address: %4
     </message>
     <message>
         <location line="+39"/>
-        <location filename="../rpcconsole.cpp" line="+228"/>
+        <location filename="../rpcconsole.cpp" line="+234"/>
         <location line="+327"/>
         <source>Select a peer to view detailed information.</source>
         <translation type="unfinished"></translation>
@@ -2418,12 +2380,12 @@ Address: %4
         <translation>Message</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+99"/>
         <source>Amount</source>
         <translation>Amount</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="-59"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
     </message>
@@ -2442,8 +2404,7 @@ Address: %4
     <name>SendCoinsDialog</name>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
-        <location filename="../sendcoinsdialog.cpp" line="+380"/>
-        <location line="+81"/>
+        <location filename="../sendcoinsdialog.cpp" line="+448"/>
         <source>Send Coins</source>
         <translation>Send Coins</translation>
     </message>
@@ -2493,12 +2454,7 @@ Address: %4
         <translation>Fee:</translation>
     </message>
     <message>
-        <location line="+32"/>
-        <source>Low Output:</source>
-        <translation>Low Output:</translation>
-    </message>
-    <message>
-        <location line="+48"/>
+        <location line="+80"/>
         <source>After Fee:</source>
         <translation>After Fee:</translation>
     </message>
@@ -2533,7 +2489,12 @@ Address: %4
         <translation>Clear all fields of the form.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="-271"/>
+        <source>Dust:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+274"/>
         <source>Clear &amp;All</source>
         <translation>Clear &amp;All</translation>
     </message>
@@ -2553,7 +2514,7 @@ Address: %4
         <translation>S&amp;end</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-230"/>
+        <location filename="../sendcoinsdialog.cpp" line="-216"/>
         <source>Confirm send coins</source>
         <translation>Confirm send coins</translation>
     </message>
@@ -2566,7 +2527,7 @@ Address: %4
         <translation>%1 to %2</translation>
     </message>
     <message>
-        <location line="-121"/>
+        <location line="-122"/>
         <source>Copy quantity</source>
         <translation>Copy quantity</translation>
     </message>
@@ -2596,17 +2557,12 @@ Address: %4
         <translation>Copy priority</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Copy low output</source>
-        <translation>Copy low output</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Copy change</source>
         <translation>Copy change</translation>
     </message>
     <message>
-        <location line="+170"/>
+        <location line="+171"/>
         <source>Total Amount %1 (= %2)</source>
         <translation>Total Amount %1 (= %2)</translation>
     </message>
@@ -2616,7 +2572,7 @@ Address: %4
         <translation>or</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+190"/>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>The recipient address is not valid, please recheck.</translation>
     </message>
@@ -2666,7 +2622,12 @@ Address: %4
         <translation>Warning: Unknown change address</translation>
     </message>
     <message>
-        <location line="-368"/>
+        <location line="-505"/>
+        <source>Copy dust</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+151"/>
         <source>Are you sure you want to send?</source>
         <translation>Are you sure you want to send?</translation>
     </message>
@@ -2674,16 +2635,6 @@ Address: %4
         <location line="+9"/>
         <source>added as transaction fee</source>
         <translation>added as transaction fee</translation>
-    </message>
-    <message>
-        <location line="+171"/>
-        <source>Payment request expired</source>
-        <translation>Payment request expired</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Invalid payment address %1</source>
-        <translation>Invalid payment address %1</translation>
     </message>
 </context>
 <context>
@@ -2721,12 +2672,7 @@ Address: %4
         <translation>This is a normal payment.</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <source>The Reddcoin address to send the payment to (e.g. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</source>
-        <translation>The Reddcoin address to send the payment to (e.g. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</translation>
-    </message>
-    <message>
-        <location line="+17"/>
+        <location line="+50"/>
         <source>Alt+A</source>
         <translation>Alt+A</translation>
     </message>
@@ -2768,7 +2714,12 @@ Address: %4
         <translation>Enter a label for this address to add it to the list of used addresses</translation>
     </message>
     <message>
-        <location line="+459"/>
+        <location line="-70"/>
+        <source>The Reddcoin address to send the payment to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+529"/>
         <source>This is an unverified payment request.</source>
         <translation>This is an unverified payment request.</translation>
     </message>
@@ -2788,7 +2739,7 @@ Address: %4
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <location filename="../utilitydialog.cpp" line="+52"/>
+        <location filename="../utilitydialog.cpp" line="+51"/>
         <source>Reddcoin Core is shutting down...</source>
         <translation>Reddcoin Core is shutting down...</translation>
     </message>
@@ -2817,8 +2768,8 @@ Address: %4
     </message>
     <message>
         <location line="+18"/>
-        <source>The Reddcoin address to sign the message with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>The Reddcoin address to sign the message with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
+        <source>The Reddcoin address to sign the message with</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2890,8 +2841,8 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>The Reddcoin address the message was signed with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>The Reddcoin address the message was signed with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
+        <source>The Reddcoin address the message was signed with</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+37"/>
@@ -2912,11 +2863,6 @@ Address: %4
         <location filename="../signverifymessagedialog.cpp" line="+29"/>
         <source>Click &quot;Sign Message&quot; to generate signature</source>
         <translation>Click &quot;Sign Message&quot; to generate signature</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
     </message>
     <message>
         <location line="+83"/>
@@ -2988,7 +2934,7 @@ Address: %4
 <context>
     <name>SplashScreen</name>
     <message>
-        <location filename="../splashscreen.cpp" line="+33"/>
+        <location filename="../splashscreen.cpp" line="+31"/>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
@@ -3019,7 +2965,7 @@ Address: %4
 <context>
     <name>TransactionDesc</name>
     <message>
-        <location filename="../transactiondesc.cpp" line="+29"/>
+        <location filename="../transactiondesc.cpp" line="+33"/>
         <source>Open until %1</source>
         <translation>Open until %1</translation>
     </message>
@@ -3073,39 +3019,45 @@ Address: %4
     </message>
     <message>
         <location line="+5"/>
-        <location line="+17"/>
+        <location line="+13"/>
+        <location line="+72"/>
         <source>From</source>
         <translation>From</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <location line="+22"/>
-        <location line="+58"/>
+        <location line="-71"/>
+        <location line="+20"/>
+        <location line="+69"/>
         <source>To</source>
         <translation>To</translation>
     </message>
     <message>
-        <location line="-77"/>
-        <location line="+2"/>
+        <location line="-87"/>
         <source>own address</source>
         <translation>own address</translation>
     </message>
     <message>
-        <location line="-2"/>
+        <location line="+0"/>
+        <location line="+69"/>
+        <source>watch-only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-67"/>
         <source>label</source>
         <translation>label</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+34"/>
         <location line="+12"/>
-        <location line="+45"/>
-        <location line="+17"/>
+        <location line="+53"/>
+        <location line="+26"/>
         <location line="+53"/>
         <source>Credit</source>
         <translation>Credit</translation>
     </message>
     <message numerus="yes">
-        <location line="-125"/>
+        <location line="-142"/>
         <source>matures in %n more block(s)</source>
         <translation>
             <numerusform>matures in %n more block</numerusform>
@@ -3118,15 +3070,24 @@ Address: %4
         <translation>not accepted</translation>
     </message>
     <message>
-        <location line="+44"/>
-        <location line="+8"/>
-        <location line="+15"/>
+        <location line="+59"/>
+        <location line="+25"/>
         <location line="+53"/>
         <source>Debit</source>
         <translation>Debit</translation>
     </message>
     <message>
-        <location line="-62"/>
+        <location line="-68"/>
+        <source>Total debit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Total credit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Transaction fee</source>
         <translation>Transaction fee</translation>
     </message>
@@ -3183,16 +3144,18 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
+        <location line="+1"/>
         <source>true</source>
         <translation>true</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-1"/>
+        <location line="+1"/>
         <source>false</source>
         <translation>false</translation>
     </message>
     <message>
-        <location line="-230"/>
+        <location line="-242"/>
         <source>, has not been successfully broadcast yet</source>
         <translation>, has not been successfully broadcast yet</translation>
     </message>
@@ -3205,7 +3168,7 @@ Address: %4
         </translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+67"/>
         <source>unknown</source>
         <translation>unknown</translation>
     </message>
@@ -3226,7 +3189,7 @@ Address: %4
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+238"/>
+        <location filename="../transactiontablemodel.cpp" line="+234"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -3241,12 +3204,7 @@ Address: %4
         <translation>Address</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <source>Amount</source>
-        <translation>Amount</translation>
-    </message>
-    <message>
-        <location line="+70"/>
+        <location line="+76"/>
         <source>Immature (%1 confirmations, will be available after %2)</source>
         <translation>Immature (%1 confirmations, will be available after %2)</translation>
     </message>
@@ -3299,7 +3257,7 @@ Address: %4
         <translation>Conflicted</translation>
     </message>
     <message>
-        <location line="+51"/>
+        <location line="+48"/>
         <source>Received with</source>
         <translation>Received with</translation>
     </message>
@@ -3324,12 +3282,17 @@ Address: %4
         <translation>Generated</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+2"/>
+        <source>Other</source>
+        <translation type="unfinished">Other</translation>
+    </message>
+    <message>
+        <location line="+40"/>
         <source>(n/a)</source>
         <translation>(n/a)</translation>
     </message>
     <message>
-        <location line="+192"/>
+        <location line="+194"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
         <translation>Transaction status. Hover over this field to show number of confirmations.</translation>
     </message>
@@ -3423,7 +3386,7 @@ Address: %4
         <translation>Min amount</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+36"/>
         <source>Copy address</source>
         <translation>Copy address</translation>
     </message>
@@ -3483,12 +3446,12 @@ Address: %4
         <translation>Comma separated file (*.csv)</translation>
     </message>
     <message>
-        <location line="-217"/>
+        <location line="-219"/>
         <source>Generated</source>
         <translation>Generated</translation>
     </message>
     <message>
-        <location line="+226"/>
+        <location line="+228"/>
         <source>Confirmed</source>
         <translation>Confirmed</translation>
     </message>
@@ -3513,12 +3476,7 @@ Address: %4
         <translation>Address</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Amount</source>
-        <translation>Amount</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
@@ -3534,6 +3492,14 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>UnitDisplayStatusBarControl</name>
+    <message>
+        <location filename="../bitcoingui.cpp" line="+165"/>
+        <source>Unit to show amounts in. Click to select another unit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>WalletFrame</name>
     <message>
         <location filename="../walletframe.cpp" line="+26"/>
@@ -3544,7 +3510,7 @@ Address: %4
 <context>
     <name>WalletModel</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+265"/>
+        <location filename="../walletmodel.cpp" line="+279"/>
         <source>Send Coins</source>
         <translation>Send Coins</translation>
     </message>
@@ -3595,87 +3561,62 @@ Address: %4
 <context>
     <name>bitcoin-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+276"/>
-        <source>Usage:</source>
-        <translation>Usage:</translation>
-    </message>
-    <message>
-        <location line="-69"/>
-        <source>List commands</source>
-        <translation>List commands</translation>
-    </message>
-    <message>
-        <location line="-19"/>
-        <source>Get help for a command</source>
-        <translation>Get help for a command</translation>
-    </message>
-    <message>
-        <location line="+31"/>
+        <location filename="../bitcoinstrings.cpp" line="+235"/>
         <source>Options:</source>
         <translation>Options:</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+31"/>
         <source>Specify data directory</source>
         <translation>Specify data directory</translation>
     </message>
     <message>
-        <location line="-43"/>
+        <location line="-38"/>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
         <translation>Maintain at most &lt;n&gt; connections to peers (default: 125)</translation>
     </message>
     <message>
-        <location line="-60"/>
+        <location line="-62"/>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
         <translation>Connect to a node to retrieve peer addresses, and disconnect</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+103"/>
         <source>Specify your own public address</source>
         <translation>Specify your own public address</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+8"/>
         <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
         <translation>Threshold for disconnecting misbehaving peers (default: 100)</translation>
     </message>
     <message>
-        <location line="-181"/>
+        <location line="-175"/>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
         <translation>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</translation>
     </message>
     <message>
-        <location line="-57"/>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
-        <translation>An error occurred while setting up the RPC port %u for listening on IPv4: %s</translation>
-    </message>
-    <message>
-        <location line="+109"/>
+        <location line="+51"/>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Accept command line and JSON-RPC commands</translation>
     </message>
     <message>
-        <location line="+15"/>
-        <source>Connect to JSON-RPC on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>Connect to JSON-RPC on &lt;port&gt; (default: 45443 or testnet: 55443)</translation>
-    </message>
-    <message>
-        <location line="+83"/>
+        <location line="+96"/>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>Run in the background as a daemon and accept commands</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+40"/>
         <source>Use the test network</source>
         <translation>Use the test network</translation>
     </message>
     <message>
-        <location line="-142"/>
+        <location line="-135"/>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
         <translation>Accept connections from outside (default: 1 if no -proxy or -connect)</translation>
     </message>
     <message>
-        <location line="-126"/>
+        <location line="-142"/>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
@@ -3700,32 +3641,22 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
 </translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+16"/>
         <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
         <translation>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
-        <translation>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+10"/>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>Bind to given address and always listen on it. Use [host]:port notation for IPv6</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+10"/>
         <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:15)</source>
         <translation>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:15)</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
-        <translation>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+9"/>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
         <translation>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</translation>
     </message>
@@ -3740,17 +3671,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+12"/>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
         <translation>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Fees smaller than this are considered zero fee (for transaction creation) (default:</source>
-        <translation>Fees smaller than this are considered zero fee (for transaction creation) (default:</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+12"/>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: 100)</source>
         <translation>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: 100)</translation>
     </message>
@@ -3780,7 +3706,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+13"/>
         <source>Unable to bind to %s on this computer. Reddcoin Core is probably already running.</source>
         <translation>Unable to bind to %s on this computer. Reddcoin Core is probably already running.</translation>
     </message>
@@ -3795,12 +3721,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Reddcoin will not work properly.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
         <translation>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</translation>
     </message>
@@ -3820,7 +3741,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+4"/>
         <source>(default: 1)</source>
         <translation>(default: 1)</translation>
     </message>
@@ -3835,7 +3756,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>&lt;category&gt; can be:</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+6"/>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
         <translation>Attempt to recover private keys from a corrupt wallet.dat</translation>
     </message>
@@ -3846,11 +3767,6 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+5"/>
-        <source>Clear list of wallet transactions (diagnostic tool; implies -rescan)</source>
-        <translation>Clear list of wallet transactions (diagnostic tool; implies -rescan)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Connect only to the specified node(s)</source>
         <translation>Connect only to the specified node(s)</translation>
     </message>
@@ -3860,17 +3776,17 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Connect through SOCKS proxy</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Connection options:</source>
         <translation>Connection options:</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Corrupted block database detected</source>
         <translation>Corrupted block database detected</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Debugging/Testing options:</source>
         <translation>Debugging/Testing options:</translation>
     </message>
@@ -3920,7 +3836,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Error: Disk space is low!</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Error: Wallet locked, unable to create transaction!</source>
         <translation>Error: Wallet locked, unable to create transaction!</translation>
     </message>
@@ -3990,22 +3906,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Failed to write undo data</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Fee per kB to add to transactions you send</source>
-        <translation>Fee per kB to add to transactions you send</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Fees smaller than this are considered zero fee (for relaying) (default:</source>
-        <translation>Fees smaller than this are considered zero fee (for relaying) (default:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Force safe mode (default: 0)</source>
         <translation>Force safe mode (default: 0)</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>How many blocks to check at startup (default: 288, 0 = all)</source>
         <translation>How many blocks to check at startup (default: 288, 0 = all)</translation>
     </message>
@@ -4020,7 +3926,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Importing...</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Incorrect or no genesis block found. Wrong datadir for network?</translation>
     </message>
@@ -4045,12 +3951,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+6"/>
         <source>Maintain a full transaction index (default: 1)</source>
         <translation>Maintain a full transaction index (default: 0) {1)?}</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Not enough file descriptors available.</source>
         <translation>Not enough file descriptors available.</translation>
     </message>
@@ -4065,22 +3971,22 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>RPC SSL options: (see the wiki.reddcoin.com for SSL setup instructions)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>RPC client options:</source>
-        <translation>RPC client options:</translation>
-    </message>
-    <message>
         <location line="+4"/>
         <source>Rebuild block chain index from current blk000??.dat files</source>
         <translation>Rebuild block chain index from current blk000??.dat files</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+1"/>
+        <source>Relay and mine data carrier transactions (default: 1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Select SOCKS version for -proxy (4 or 5, default: 5)</source>
         <translation>Select SOCKS version for -proxy (4 or 5, default: 5)</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+4"/>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
         <translation>Set database cache size in megabytes (%d to %d, default: %d)</translation>
     </message>
@@ -4120,7 +4026,17 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Stake your coins to support network and gain reward (default: 1)</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+1"/>
+        <source>Stop running after importing blocks from disk (default: 0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>This is experimental software.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>This is intended for regression testing tools and app development.</translation>
     </message>
@@ -4130,7 +4046,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Unable to bind to %s on this computer (bind returned error %s)</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+9"/>
         <source>Verifying blocks...</source>
         <translation>Verifying blocks...</translation>
     </message>
@@ -4138,11 +4054,6 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <location line="+1"/>
         <source>Verifying wallet...</source>
         <translation>Verifying wallet...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Wait for RPC server to start</source>
-        <translation>Wait for RPC server to start</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4165,17 +4076,47 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>You need to rebuild the database using -reindex to change -txindex</translation>
     </message>
     <message>
-        <location line="-99"/>
+        <location line="-92"/>
         <source>Imports blocks from external blk000??.dat file</source>
         <translation>Imports blocks from external blk000??.dat file</translation>
     </message>
     <message>
-        <location line="-156"/>
+        <location line="-182"/>
+        <source>(default: 1, 1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>An error occurred while setting up the RPC address %s port %u for listening: %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Cannot obtain a lock on data directory %s. Reddcoin Core is probably already running.</source>
         <translation>Cannot obtain a lock on data directory %s. Reddcoin Core is probably already running.</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+6"/>
+        <source>Delete all wallet transactions and only recover those part of the blockchain through -rescan on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Distributed under the MIT/X11 software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation>Error: Listening for incoming connections failed (listen returned error %s)</translation>
     </message>
@@ -4186,11 +4127,26 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+3"/>
+        <source>Execute command when a network tx respends wallet tx input (%s=respend TxID, %t=wallet TxID)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
         <translation>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+9"/>
+        <source>Fees (in RDD/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Fees (in RDD/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
         <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
         <translation>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</translation>
     </message>
@@ -4215,12 +4171,52 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications</translation>
     </message>
     <message>
-        <location line="+41"/>
+        <location line="+3"/>
+        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Bitcoin will not work properly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>Always query for peer addresses via DNS lookup (default: 0)</source>
         <translation>Always query for peer addresses via DNS lookup (default: 0)</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+11"/>
+        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copyright (C) 2014-%i The Reddcoin Core Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Could not parse -rpcbind value %s as network address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Error: Unsupported argument -tor found, use -onion.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Fee (in RDD/kB) to add to transactions you send (default: %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Include IP addresses in debug output (default: 0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Information</source>
         <translation>Information</translation>
     </message>
@@ -4245,7 +4241,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Limit size of signature cache to &lt;n&gt; entries (default: 50000)</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>Listen for connections on &lt;port&gt; (default: 45444 or testnet: 55444)</source>
         <translation>Listen for connections on &lt;port&gt; (default: 45444 or testnet: 55444)</translation>
     </message>
@@ -4258,6 +4254,11 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <location line="+1"/>
         <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
         <translation>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Node relay options:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4280,7 +4281,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Print block tree on startup (default: 0)</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>RPC server options:</source>
         <translation>RPC server options:</translation>
     </message>
@@ -4295,37 +4296,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Randomly fuzz 1 of every &lt;n&gt; network messages</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Reddcoin Core Daemon</source>
-        <translation>Reddcoin Core Daemon</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Reddcoin Core RPC client version</source>
-        <translation>Reddcoin Core RPC client version</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+5"/>
         <source>Run a thread to flush wallet periodically (default: 1)</source>
         <translation>Run a thread to flush wallet periodically (default: 1)</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>SSL options: (see the Reddcoin Wiki for SSL setup instructions)</source>
-        <translation>SSL options: (see the Reddcoin Wiki for SSL setup instructions)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Send command to Reddcoin Core</source>
-        <translation>Send command to Reddcoin Core</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Send command to reddcoin Core</source>
-        <translation>Send command to reddcoin Core</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>Send trace/debug info to console instead of debug.log file</translation>
     </message>
@@ -4365,17 +4341,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Specify connection timeout in milliseconds (default: 5000)</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Start Reddcoin Core Daemon</source>
-        <translation>Start Reddcoin Core Daemon</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+8"/>
         <source>System error: </source>
         <translation>System error: </translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>Transaction amount too small</source>
         <translation>Transaction amount too small</translation>
     </message>
@@ -4390,12 +4361,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Transaction too large</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Usage (deprecated, use reddcoin-cli):</source>
-        <translation>Usage (deprecated, use reddcoin-cli):</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Use UPnP to map the listening port (default: 0)</source>
         <translation>Use UPnP to map the listening port (default: 0)</translation>
     </message>
@@ -4410,7 +4376,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Username for JSON-RPC connections</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+6"/>
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
@@ -4431,56 +4397,41 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+1"/>
-        <source>version</source>
-        <translation>version</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat corrupt, salvage failed</translation>
     </message>
     <message>
-        <location line="-75"/>
+        <location line="-66"/>
         <source>Password for JSON-RPC connections</source>
         <translation>Password for JSON-RPC connections</translation>
     </message>
     <message>
-        <location line="-79"/>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>Allow JSON-RPC connections from specified IP address</translation>
-    </message>
-    <message>
-        <location line="+99"/>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</translation>
-    </message>
-    <message>
-        <location line="-173"/>
+        <location line="-155"/>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
         <translation>Execute command when the best block changes (%s in cmd is replaced by block hash)</translation>
     </message>
     <message>
-        <location line="+207"/>
+        <location line="+204"/>
         <source>Upgrade wallet to latest format</source>
         <translation>Upgrade wallet to latest format</translation>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="-30"/>
         <source>Set key pool size to &lt;n&gt; (default: 100)</source>
         <translation>Set key pool size to &lt;n&gt; (default: 100)</translation>
     </message>
     <message>
-        <location line="-13"/>
+        <location line="-9"/>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>Rescan the block chain for missing wallet transactions</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+40"/>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Use OpenSSL (https) for JSON-RPC connections</translation>
     </message>
     <message>
-        <location line="-35"/>
+        <location line="-34"/>
         <source>Server certificate file (default: server.cert)</source>
         <translation>Server certificate file (default: server.cert)</translation>
     </message>
@@ -4495,17 +4446,17 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>This help message</translation>
     </message>
     <message>
-        <location line="-124"/>
+        <location line="-118"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>Allow DNS lookups for -addnode, -seednode and -connect</translation>
     </message>
     <message>
-        <location line="+69"/>
+        <location line="+68"/>
         <source>Loading addresses...</source>
         <translation>Loading addresses...</translation>
     </message>
     <message>
-        <location line="-43"/>
+        <location line="-42"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
         <translation>Error loading wallet.dat: Wallet corrupted</translation>
     </message>
@@ -4515,12 +4466,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Error loading wallet.dat: Wallet requires newer version of Reddcoin</translation>
     </message>
     <message>
-        <location line="+119"/>
+        <location line="+111"/>
         <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
         <translation>Wallet needed to be rewritten: restart Reddcoin to complete</translation>
     </message>
     <message>
-        <location line="-121"/>
+        <location line="-113"/>
         <source>Error loading wallet.dat</source>
         <translation>Error loading wallet.dat</translation>
     </message>
@@ -4530,7 +4481,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Invalid -proxy address: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+70"/>
         <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
         <translation>Unknown network specified in -onlynet: &apos;%s&apos;</translation>
     </message>
@@ -4540,7 +4491,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Unknown -socks proxy version requested: %i</translation>
     </message>
     <message>
-        <location line="-126"/>
+        <location line="-122"/>
         <source>Cannot resolve -bind address: &apos;%s&apos;</source>
         <translation>Cannot resolve -bind address: &apos;%s&apos;</translation>
     </message>
@@ -4550,7 +4501,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Cannot resolve -externalip address: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+54"/>
+        <location line="+55"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
@@ -4565,17 +4516,17 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Insufficient funds</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+13"/>
         <source>Loading block index...</source>
         <translation>Loading block index...</translation>
     </message>
     <message>
-        <location line="-71"/>
+        <location line="-70"/>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>Add a node to connect to and attempt to keep the connection open</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+71"/>
         <source>Loading wallet...</source>
         <translation>Loading wallet...</translation>
     </message>
@@ -4590,33 +4541,24 @@ for example: alertnotify=echo %%s | mail -s &quot;Reddcoin Alert&quot; admin@foo
         <translation>Cannot write default address</translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+84"/>
         <source>Rescanning...</source>
         <translation>Rescanning...</translation>
     </message>
     <message>
-        <location line="-72"/>
+        <location line="-70"/>
         <source>Done loading</source>
         <translation>Done loading</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+101"/>
         <source>To use the %s option</source>
         <translation>To use the %s option</translation>
     </message>
     <message>
-        <location line="-98"/>
+        <location line="-93"/>
         <source>Error</source>
         <translation>Error</translation>
-    </message>
-    <message>
-        <location line="-40"/>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</translation>
     </message>
 </context>
 </TS>
