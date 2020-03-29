@@ -73,6 +73,7 @@ BITCOIN_CORE_H = \
   bloom.h \
   chainparams.h \
   chainparamsbase.h \
+  chainparamsseeds.h \
   checkpoints.h \
   checkqueue.h \
   clientversion.h \

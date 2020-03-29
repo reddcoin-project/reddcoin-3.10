@@ -1,0 +1,9 @@
+# List of fixed seed nodes for main network
+
+# IPv4 nodes (in old chainparams.cpp 0xDDCCBBAA format)
+#  n.b. when importing a new list, there is no need to use this format, just use IPv4 dotted addresses directly
+
+# IPv4 nodes in dotted format
+178.233.230.93 # dnsseed01.redd.ink
+138.201.22.7 # dnsseed02.redd.ink
+107.147.55.151 # dnsseed03.redd.ink
