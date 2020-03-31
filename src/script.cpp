@@ -1550,6 +1550,13 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
         return ISMINE_NO;
     }
 
+    // extract destination into a new CSript
+    CTxDestination addr;
+    CScript script;
+    if(ExtractDestination(scriptPubKey, addr)) {
+    	script.SetDestination(addr);
+    }
+
     CKeyID keyID;
     switch (whichType)
     {
@@ -1591,7 +1598,7 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
     }
     }
 
-    if (keystore.HaveWatchOnly(scriptPubKey))
+    if (keystore.HaveWatchOnly(script))
         return ISMINE_WATCH_ONLY;
     return ISMINE_NO;
 }
