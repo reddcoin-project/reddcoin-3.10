@@ -174,13 +174,13 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
 //
 unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime, bool fProofOfStake)
 {
-    const CBigNum &bnLimit = fProofOfStake ? Params().ProofOfStakeLimit() : Params().ProofOfWorkLimit();
+    const uint256 &bnLimit = fProofOfStake ? Params().ProofOfStakeLimit().getuint256() : Params().ProofOfWorkLimit().getuint256();
     // Testnet has min-difficulty blocks
     // after Params().TargetSpacing()*2 time between blocks:
     if (Params().AllowMinDifficultyBlocks() && nTime > Params().TargetSpacing()*2)
         return bnLimit.GetCompact();
 
-    CBigNum bnResult;
+    uint256 bnResult;
     bnResult.SetCompact(nBase);
     while (nTime > 0 && bnResult < bnLimit)
     {
