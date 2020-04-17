@@ -35,6 +35,8 @@ using namespace boost::algorithm;
 
 static const unsigned int flags = SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_STRICTENC;
 
+unsigned int ParseScriptFlags(string strFlags);
+
 Array
 read_json(const std::string& jsondata)
 {
@@ -89,7 +91,7 @@ BOOST_AUTO_TEST_CASE(script_valid)
 {
     // Read tests from test/data/script_valid.json
     // Format is an array of arrays
-    // Inner arrays are [ "scriptSig", "scriptPubKey" ]
+    // Inner arrays are [ "scriptSig", "scriptPubKey", "flags" ]
     // ... where scriptSig and scriptPubKey are stringified
     // scripts.
     Array tests = read_json(std::string(json_tests::script_valid, json_tests::script_valid + sizeof(json_tests::script_valid)));
@@ -98,7 +100,7 @@ BOOST_AUTO_TEST_CASE(script_valid)
     {
         Array test = tv.get_array();
         string strTest = write_string(tv, false);
-        if (test.size() < 2) // Allow size > 2; extra stuff ignored (useful for comments)
+        if (test.size() < 3) // Allow size > 3; extra stuff ignored (useful for comments)
         {
             if (test.size() != 1) {
                 BOOST_ERROR("Bad test: " << strTest);
@@ -109,6 +111,7 @@ BOOST_AUTO_TEST_CASE(script_valid)
         CScript scriptSig = ParseScript(scriptSigString);
         string scriptPubKeyString = test[1].get_str();
         CScript scriptPubKey = ParseScript(scriptPubKeyString);
+        unsigned int scriptflags = ParseScriptFlags(test[2].get_str());
 
         int flagsNow = flags;
         if (test.size() > 3 && ("," + test[2].get_str() + ",").find(",DERSIG,") != string::npos) {
@@ -140,6 +143,7 @@ BOOST_AUTO_TEST_CASE(script_invalid)
         CScript scriptSig = ParseScript(scriptSigString);
         string scriptPubKeyString = test[1].get_str();
         CScript scriptPubKey = ParseScript(scriptPubKeyString);
+        unsigned int scriptflags = ParseScriptFlags(test[2].get_str());
 
         int flagsNow = flags;
         if (test.size() > 3 && ("," + test[2].get_str() + ",").find(",DERSIG,") != string::npos) {
