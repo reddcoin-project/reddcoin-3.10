@@ -6,13 +6,14 @@
 #ifndef BITCOIN_CORE_H
 #define BITCOIN_CORE_H
 
+#include "bignum.h"
+#include "crypto/scrypt.h"
 #include "script/compressor.h"
 #include "script/script.h"
 #include "serialize.h"
 #include "timedata.h"
 #include "uint256.h"
-#include "bignum.h"
-#include "crypto/scrypt.h"
+#include "util.h"
 
 #include <stdint.h>
 

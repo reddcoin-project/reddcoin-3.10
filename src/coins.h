@@ -9,6 +9,7 @@
 #include "core.h"
 #include "serialize.h"
 #include "uint256.h"
+#include "util.h"
 
 #include <assert.h>
 #include <stdint.h>
