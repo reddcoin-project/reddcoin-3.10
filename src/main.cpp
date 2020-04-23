@@ -2683,14 +2683,14 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     if (!AcceptBlockHeader(block, state, &pindex))
         return false;
 
-    hashProof = VerifyHashTarget(block);
-
     if (!CheckBlock(block, state)) {
         if (state.IsInvalid() && !state.CorruptionPossible()) {
             pindex->nStatus |= BLOCK_FAILED_VALID;
         }
         return false;
     }
+
+    hashProof = VerifyHashTarget(block);
 
     int nHeight = pindex->nHeight;
 
