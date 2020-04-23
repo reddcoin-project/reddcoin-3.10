@@ -418,7 +418,7 @@ bool CheckStakeModifierCheckpoints(int nHeight, uint64_t nStakeModifierChecksum)
     if (fDebug)
         LogPrintf("CheckStakeModifierCheckpoints : nHeight=%d, nStakeModifierChecksum=0x%016x\n", nHeight, nStakeModifierChecksum);
 
-    MapModifierCheckpoints& checkpoints = (Params().NetworkID() == CBaseChainParams::TESTNET) ? mapStakeModifierCheckpointsTestNet : mapStakeModifierCheckpoints;
+    MapModifierCheckpoints& checkpoints = Params().AllowMinDifficultyBlocks() ? mapStakeModifierCheckpointsTestNet : mapStakeModifierCheckpoints;
     if (checkpoints.count(nHeight))
         return nStakeModifierChecksum == checkpoints[nHeight];
     return true;
