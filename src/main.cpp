@@ -620,28 +620,24 @@ bool IsFinalTx(const CTransaction &tx, int nBlockHeight, int64_t nBlockTime)
 }
 
 // Check stake is paying to correct dev fund
-bool IsDevTx(const CTransaction &tx)
+bool IsDevTx(const CTransaction& tx)
 {
     AssertLockHeld(cs_main);
-    if (tx.IsCoinStake())
-	{
-    	int i = tx.vout.size();
-    	// CPubKey mkey(Params().DevKey());
-    	CScript mkey(CScript() << Params().DevKey() << OP_CHECKSIG);
+    if (tx.IsCoinStake()) {
+        int i = tx.vout.size();
+        CScript mkey(CScript() << Params().DevKey() << OP_CHECKSIG);
+        CScript pkey(tx.vout[i - 1].scriptPubKey);
 
-    	//CPubKey pkey(tx.vout[i-1].scriptPubKey);
-    	CScript pkey(tx.vout[i-1].scriptPubKey);
+        if (fDebug) {
+            LogPrintf("- mkey=%s\n", mkey.ToString());
+            LogPrintf("- pkey=%s\n", pkey.ToString());
+            LogPrintf("- pkey==mkey %s\n", (mkey == pkey));
+        }
 
-    	LogPrintf("- mkey=%s\n", mkey.ToString());
-    	LogPrintf("- pkey=%s\n", pkey.ToString());
-
-    	if (mkey == pkey)
-    	{
-    		LogPrintf("- pkey==mkey\n");
-    		return true;
-    	}
-	}
-
+        if (mkey == pkey) {
+            return true;
+        }
+    }
     return false;
 }
 
@@ -2554,7 +2550,9 @@ uint256 VerifyHashTarget(const CBlock& block)
 		// Verify hash target and signature of coinstake tx
 		if (block.IsProofOfStake())
 		{
-			LogPrintf("ProofOfStake: VerifyHashTarget(): hash %s, nBits %i\n", block.vtx[1].GetHash().ToString().c_str(), block.nBits);
+			if (fDebug)
+				LogPrintf("ProofOfStake: VerifyHashTarget(): hash %s, nBits %i\n", block.vtx[1].GetHash().ToString().c_str(), block.nBits);
+
 			uint256 targetProofOfStake;
 			if (!CheckProofOfStake(block.vtx[1], block.nBits, hashProof, targetProofOfStake))
 			{
@@ -2781,7 +2779,9 @@ bool CBlockIndex::IsSuperMajority(int minVersion, const CBlockIndex* pstart, uns
         pstart = pstart->pprev;
     }
 
-    LogPrintf("IsSuperMajority(): Version %s block: %s found of %s required in last %s blocks.\n", minVersion, nFound, nRequired, nToCheck);
+    if (fDebug)
+    	LogPrintf("IsSuperMajority(): Version %s block: %s found of %s required in last %s blocks.\n", minVersion, nFound, nRequired, nToCheck);
+
     return (nFound >= nRequired);
 }
 

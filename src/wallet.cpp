@@ -1982,26 +1982,17 @@ bool CWallet::SignBlock(CBlock *pblock, CAmount& nFees)
     CBlockIndex *pindexBest = chainActive.Tip();
     int nPosvVer = 1;
 
-    if (nSearchTime > nLastCoinStakeSearchTime)
-    {
-        if (fDebug)
+    if (nSearchTime > nLastCoinStakeSearchTime) {
+        if (fDebug) {
             LogPrintf("SignBlock : about to create coinstake: nFees=%ld\n", nFees);
+            LogPrintf("SignBlock : SuperMajority = %s\n", CBlockIndex::IsSuperMajority(5, pindexBest->pprev, Params().EnforceBlockUpgradeMajority_5()));
+        }
 
+        if (CBlockIndex::IsSuperMajority(5, pindexBest->pprev, Params().EnforceBlockUpgradeMajority_5())) {
+            nPosvVer = 2;
+        }
 
-        if(CBlockIndex::IsSuperMajority(5, pindexBest->pprev, Params().EnforceBlockUpgradeMajority_5()))
-		{
-			LogPrintf("SignBlock : SuperMajority = True\n");
-			nPosvVer = 2;
-		}
-		else
-		{
-			LogPrintf("SignBlock : SuperMajority = False\n");
-		}
-
-
-
-        if (CreateCoinStake(pblock->nBits, nSearchTime-nLastCoinStakeSearchTime, nFees, txCoinStake, key, nPosvVer))
-        {
+        if (CreateCoinStake(pblock->nBits, nSearchTime - nLastCoinStakeSearchTime, nFees, txCoinStake, key, nPosvVer)) {
             LogPrintf("SignBlock : coinstake created: nFees=%ld\n", nFees);
             if (txCoinStake.nTime >= max(pindexBest->GetMedianTimePast()+1, PastDrift(pindexBest->GetBlockTime())))
             {
