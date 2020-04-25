@@ -437,7 +437,15 @@
         <translation>Reindexing blocks on disk...</translation>
     </message>
     <message numerus="yes">
-        <location line="+339"/>
+        <location line="+14"/>
+        <source>Processed %n blocks of transaction history.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location line="+325"/>
         <source>%n second(s)</source>
         <translation>
             <numerusform>%n second</numerusform>
@@ -625,13 +633,8 @@
         <source>No block source available...</source>
         <translation>No block source available...</translation>
     </message>
-    <message>
-        <location line="+10"/>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>Processed %1 blocks of transaction history.</translation>
-    </message>
     <message numerus="yes">
-        <location line="+26"/>
+        <location line="+36"/>
         <location line="+307"/>
         <source>%n hour(s)</source>
         <translation>
@@ -1240,15 +1243,21 @@ Address: %4
         <source>Error</source>
         <translation>Error</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location line="+9"/>
-        <source>GB of free space available</source>
-        <translation>GB of free space available</translation>
+        <source>%n GB of free space available</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location line="+3"/>
-        <source>(of %1GB needed)</source>
-        <translation>(of %1GB needed)</translation>
+        <source>(of %n GB needed)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -3694,12 +3703,7 @@ Address: %4
         <translation>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>Whitelist peers connecting from the given netmask or ip. Can be specified multiple times.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+7"/>
         <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4019,7 +4023,12 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+26"/>
+        <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>Connect through SOCKS5 proxy</source>
         <translation type="unfinished"></translation>
     </message>
