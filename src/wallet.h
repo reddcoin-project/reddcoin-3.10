@@ -34,6 +34,7 @@
 extern CFeeRate payTxFee;
 extern unsigned int nTxConfirmTarget;
 extern bool bSpendZeroConfChange;
+extern bool fSendFreeTransactions;
 extern bool fWalletUnlockStakingOnly;
 
 //! -paytxfee default

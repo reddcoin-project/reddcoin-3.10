@@ -29,6 +29,7 @@ typedef vector<unsigned char> valtype;
 CFeeRate payTxFee(DEFAULT_TRANSACTION_FEE);
 unsigned int nTxConfirmTarget = 1;
 bool bSpendZeroConfChange = true;
+bool fSendFreeTransactions = true;
 
 /**
  * optional setting to unlock wallet for staking only
@@ -1533,6 +1534,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
 
                 CAmount nTotalValue = nValue + nFeeRet;
                 double dPriority = 0;
+                unsigned int nBytesPenalty = 0;
                 // vouts to the payees
                 BOOST_FOREACH (const PAIRTYPE(CScript, CAmount)& s, vecSend)
                 {
@@ -1542,6 +1544,10 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
                         strFailReason = _("Transaction amount too small");
                         return false;
                     }
+                    if (txout.nValue < DUST_THRESHOLD)
+					{
+						nBytesPenalty += 1000;
+					}
                     txNew.vout.push_back(txout);
                 }
 
@@ -1642,27 +1648,33 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
                 }
                 dPriority = wtxNew.ComputePriority(dPriority, nBytes);
 
-                CAmount nFeeNeeded = GetMinimumFee(nBytes, nTxConfirmTarget, mempool);
+                // Can we complete this as a free transaction?
+                if (!nBytesPenalty && fSendFreeTransactions && nBytes <= MAX_FREE_TRANSACTION_CREATE_SIZE)
+                {
+                	// Not enough fee: enough priority?
+                	double dPriorityNeeded = mempool.estimatePriority(nTxConfirmTarget);
+                	// Not enough mempool history to estimate: use hard-coded AllowFree
+                	if (dPriorityNeeded <= 0 && AllowFree(dPriority))
+                		break;
+
+                	// Small enough, and priority high enough, to send for free
+                	if (dPriorityNeeded > 0 && dPriority >= dPriorityNeeded)
+                		break;
+
+                }
+
+                int64_t nFeeNeeded = GetMinimumFee(nBytes + nBytesPenalty, nTxConfirmTarget, mempool);
+
+                // If we made it here and we aren't even able to meet the relay fee on the next pass, give up
+				// because we must be at the maximum allowed fee.
+				if (nFeeNeeded < ::minRelayTxFee.GetFee(nBytes))
+				{
+					strFailReason = _("Transaction too large for fee policy");
+					return false;
+				}
 
                 if (nFeeRet >= nFeeNeeded)
                     break; // Done, enough fee included.
-
-                // Too big to send for free? Include more fee and try again:
-                if (nBytes > MAX_FREE_TRANSACTION_CREATE_SIZE)
-                {
-                    nFeeRet = nFeeNeeded;
-                    continue;
-                }
-
-                // Not enough fee: enough priority?
-                double dPriorityNeeded = mempool.estimatePriority(nTxConfirmTarget);
-                // Not enough mempool history to estimate: use hard-coded AllowFree.
-                if (dPriorityNeeded <= 0 && AllowFree(dPriority))
-                    break;
-
-                // Small enough, and priority high enough, to send for free
-                if (dPriority >= dPriorityNeeded)
-                    break;
 
                 // Include more fee and try again.
                 nFeeRet = nFeeNeeded;
