@@ -100,7 +100,9 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
 #endif
 
     ui->unit->setModel(new BitcoinUnits(this));
-    ui->transactionFee->setSingleStep(CTransaction::minTxFee.GetFeePerK());
+#ifdef ENABLE_WALLET
+    ui->transactionFee->setSingleStep(CWallet::minTxFee.GetFeePerK());
+#endif
 
     /* Widget-to-option mapper */
     mapper = new QDataWidgetMapper(this);

@@ -88,13 +88,13 @@ public:
 
     // Used as belt-and-suspenders check when reading to detect
     // file corruption
-    bool AreSane(const std::vector<CFeeRate>& vecFee)
+    bool AreSane(const std::vector<CFeeRate>& vecFee, const CFeeRate& minRelayFee)
     {
         BOOST_FOREACH(CFeeRate fee, vecFee)
         {
             if (fee < CFeeRate(0))
                 return false;
-            if (fee.GetFee(1000) > CTransaction::minRelayTxFee.GetFee(1000) * 10000)
+            if (fee.GetFeePerK() > minRelayFee.GetFeePerK() * 10000)
                 return false;
         }
         return true;
@@ -117,10 +117,10 @@ public:
         fileout << vecPriority;
     }
 
-    void Read(CAutoFile& filein) {
+    void Read(CAutoFile& filein, const CFeeRate& minRelayFee) {
         std::vector<CFeeRate> vecFee;
         filein >> vecFee;
-        if (AreSane(vecFee))
+        if (AreSane(vecFee, minRelayFee))
             feeSamples.insert(feeSamples.end(), vecFee.begin(), vecFee.end());
         else
             throw runtime_error("Corrupt fee value in estimates file.");
@@ -149,7 +149,7 @@ private:
 
     // nBlocksAgo is 0 based, i.e. transactions that confirmed in the highest seen block are
     // nBlocksAgo == 0, transactions in the block before that are nBlocksAgo == 1 etc.
-    void seenTxConfirm(CFeeRate feeRate, double dPriority, int nBlocksAgo)
+    void seenTxConfirm(const CFeeRate& feeRate, const CFeeRate& minRelayFee, double dPriority, int nBlocksAgo)
     {
         // Last entry records "everything else".
         int nBlocksTruncated = min(nBlocksAgo, (int) history.size() - 1);
@@ -157,7 +157,7 @@ private:
 
         // We need to guess why the transaction was included in a block-- either
         // because it is high-priority or because it has sufficient fees.
-        bool sufficientFee = (feeRate > CTransaction::minRelayTxFee);
+        bool sufficientFee = (feeRate > minRelayFee);
         bool sufficientPriority = AllowFree(dPriority);
         const char* assignedTo = "unassigned";
         if (sufficientFee && !sufficientPriority)
@@ -185,7 +185,7 @@ public:
         history.resize(nEntries);
     }
 
-    void seenBlock(const std::vector<CTxMemPoolEntry>& entries, int nBlockHeight)
+    void seenBlock(const std::vector<CTxMemPoolEntry>& entries, int nBlockHeight, const CFeeRate minRelayFee)
     {
         if (nBlockHeight <= nBestSeenHeight)
         {
@@ -214,7 +214,7 @@ public:
             }
             if ((delta-1) >= (int)history.size())
                 delta = history.size(); // Last bucket is catch-all
-            entriesByConfirmations[delta-1].push_back(&entry);
+            entriesByConfirmations.at(delta-1).push_back(&entry);
         }
         for (size_t i = 0; i < entriesByConfirmations.size(); i++)
         {
@@ -230,9 +230,15 @@ public:
                 // Fees are stored and reported as BTC-per-kb:
                 CFeeRate feeRate(entry->GetFee(), entry->GetTxSize());
                 double dPriority = entry->GetPriority(entry->GetHeight()); // Want priority when it went IN
-                seenTxConfirm(feeRate, dPriority, i);
+                seenTxConfirm(feeRate, minRelayFee, dPriority, i);
             }
         }
+
+        //After new samples are added, we have to clear the sorted lists,
+        //so they'll be resorted the next time someone asks for an estimate
+        sortedFeeSamples.clear();
+        sortedPrioritySamples.clear();
+
         for (size_t i = 0; i < history.size(); i++) {
             if (history[i].FeeSamples() + history[i].PrioritySamples() > 0)
                 LogPrint("estimatefee", "estimates: for confirming within %d blocks based on %d/%d samples, fee=%s, prio=%g\n", 
@@ -240,8 +246,6 @@ public:
                          history[i].FeeSamples(), history[i].PrioritySamples(),
                          estimateFee(i+1).ToString(), estimatePriority(i+1));
         }
-        sortedFeeSamples.clear();
-        sortedPrioritySamples.clear();
     }
 
     // Can return CFeeRate(0) if we don't have any data for that many blocks back. nBlocksToConfirm is 1 based.
@@ -259,8 +263,13 @@ public:
             std::sort(sortedFeeSamples.begin(), sortedFeeSamples.end(),
                       std::greater<CFeeRate>());
         }
-        if (sortedFeeSamples.size() == 0)
+        if (sortedFeeSamples.size() < 11)
+        {
+            // Eleven is Gavin's Favorite Number
+            // ... but we also take a maximum of 10 samples per block so eleven means
+            // we're getting samples from at least two different blocks
             return CFeeRate(0);
+        }
 
         int nBucketSize = history.at(nBlocksToConfirm).FeeSamples();
 
@@ -289,7 +298,7 @@ public:
             std::sort(sortedPrioritySamples.begin(), sortedPrioritySamples.end(),
                       std::greater<double>());
         }
-        if (sortedPrioritySamples.size() == 0)
+        if (sortedPrioritySamples.size() < 11)
             return -1.0;
 
         int nBucketSize = history.at(nBlocksToConfirm).PrioritySamples();
@@ -302,7 +311,7 @@ public:
         size_t nPrevSize = 0;
         for (int i = 0; i < nBlocksToConfirm; i++)
             nPrevSize += history.at(i).PrioritySamples();
-        size_t index = min(nPrevSize + nBucketSize/2, sortedFeeSamples.size()-1);
+        size_t index = min(nPrevSize + nBucketSize/2, sortedPrioritySamples.size()-1);
         return sortedPrioritySamples[index];
     }
 
@@ -316,23 +325,36 @@ public:
         }
     }
 
-    void Read(CAutoFile& filein)
+    void Read(CAutoFile& filein, const CFeeRate& minRelayFee)
     {
-        filein >> nBestSeenHeight;
+        int nFileBestSeenHeight;
+        filein >> nFileBestSeenHeight;
         size_t numEntries;
         filein >> numEntries;
-        history.clear();
+        if (numEntries <= 0 || numEntries > 10000)
+            throw runtime_error("Corrupt estimates file.  Must have between 1 and 10k entires.");
+
+        std::vector<CBlockAverage> fileHistory;
+        
         for (size_t i = 0; i < numEntries; i++)
         {
             CBlockAverage entry;
-            entry.Read(filein);
-            history.push_back(entry);
+            entry.Read(filein, minRelayFee);
+            fileHistory.push_back(entry);
         }
+
+        //Now that we've processed the entire fee estimate data file and not
+        //thrown any errors, we can copy it to our history
+        nBestSeenHeight = nFileBestSeenHeight;
+        history = fileHistory;
+        assert(history.size() > 0);
     }
 };
 
 
-CTxMemPool::CTxMemPool() :  nTransactionsUpdated(0)
+CTxMemPool::CTxMemPool(const CFeeRate& _minRelayFee) :
+    nTransactionsUpdated(0),
+    minRelayFee(_minRelayFee)
 {
     // Sanity checks off by default for performance, because otherwise
     // accepting transactions becomes O(N^2) where N is the number
@@ -449,7 +471,7 @@ void CTxMemPool::removeForBlock(const std::vector<CTransaction>& vtx, unsigned i
         if (mapTx.count(hash))
             entries.push_back(mapTx[hash]);
     }
-    minerPolicyEstimator->seenBlock(entries, nBlockHeight);
+    minerPolicyEstimator->seenBlock(entries, nBlockHeight, minRelayFee);
     BOOST_FOREACH(const CTransaction& tx, vtx)
     {
         std::list<CTransaction> dummy;
@@ -564,7 +586,7 @@ CTxMemPool::ReadFeeEstimates(CAutoFile& filein)
             return error("CTxMemPool::ReadFeeEstimates() : up-version (%d) fee estimate file", nVersionRequired);
 
         LOCK(cs);
-        minerPolicyEstimator->Read(filein);
+        minerPolicyEstimator->Read(filein, minRelayFee);
     }
     catch (const std::exception &) {
         LogPrintf("CTxMemPool::ReadFeeEstimates() : unable to read policy estimator data (non-fatal)");

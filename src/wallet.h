@@ -32,13 +32,17 @@
  * Settings
  */
 extern CFeeRate payTxFee;
+extern unsigned int nTxConfirmTarget;
 extern bool bSpendZeroConfChange;
+extern bool fSendFreeTransactions;
 extern bool fWalletUnlockStakingOnly;
 
 //! -paytxfee default
 static const CAmount DEFAULT_TRANSACTION_FEE = 0;
 //! -paytxfee will warn if called with a higher fee than this amount (in satoshis) per KB
 static const CAmount nHighTransactionFeeWarning = 0.01 * COIN;
+//! Largest (in bytes) free transaction we're willing to create
+static const unsigned int MAX_FREE_TRANSACTION_CREATE_SIZE = 5000;
 
 class CAccountingEntry;
 class CCoinControl;
@@ -297,6 +301,9 @@ public:
     bool GetStakeWeight(uint64_t& nAverageWeight, uint64_t& nTotalWeight);
     bool CreateCoinStake(unsigned int nBits, int64_t nSearchInterval, CAmount& nFees, CMutableTransaction& txNew, CKey& key, int nVer);
     bool SignBlock(CBlock *pblock, CAmount& nFees);
+
+    static CFeeRate minTxFee;
+    static int64_t GetMinimumFee(unsigned int nTxBytes, unsigned int nConfirmTarget, const CTxMemPool& pool);
 
     bool NewKeyPool();
     bool TopUpKeyPool(unsigned int kpSize = 0);

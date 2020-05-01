@@ -78,10 +78,8 @@ static const unsigned int MAX_BLOCKFILE_SIZE = 0x8000000; // 128 MiB
 static const unsigned int BLOCKFILE_CHUNK_SIZE = 0x1000000; // 16 MiB
 /** The pre-allocation chunk size for rev?????.dat files (since 0.8) */
 static const unsigned int UNDOFILE_CHUNK_SIZE = 0x100000; // 1 MiB
-/** Fake height value used in CCoins to signify they are only in the memory pool (since 0.8) */
-static const CAmount DUST_SOFT_LIMIT = 100000000; // 1 RDD
-/** Dust Hard Limit, ignored as wallet inputs (mininput default) */
-static const CAmount DUST_HARD_LIMIT = 1000000;   // 0.01 RDD mininput
+/** Reddcoin: Dust Threshold: outputs below this value in satoshis are assessed an additional 1000 bytes per txout */
+static const int64_t DUST_THRESHOLD = 100000; // 0.01 RDD
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
 static const int COINBASE_MATURITY = 30;
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
@@ -136,6 +134,7 @@ extern int nScriptCheckThreads;
 extern bool fTxIndex;
 extern bool fIsBareMultisigStd;
 extern unsigned int nCoinCacheSize;
+extern CFeeRate minRelayTxFee;
 
 // Reddcoin PoSV
 extern std::set<std::pair<COutPoint, unsigned int> > setStakeSeen;
@@ -262,14 +261,7 @@ struct CDiskTxPos : public CDiskBlockPos
 };
 
 
-
-enum GetMinFee_mode
-{
-    GMF_RELAY,
-    GMF_SEND,
-};
-
-CAmount GetMinFee(const CTransaction& tx, unsigned int nBlockSize, unsigned int nBytes, bool fAllowFree, enum GetMinFee_mode mode);
+CAmount GetMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool fAllowFree);
 
 //
 // Check transaction inputs, and make sure any
