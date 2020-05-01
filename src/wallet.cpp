@@ -1646,32 +1646,30 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
                     strFailReason = _("Transaction too large");
                     return false;
                 }
+
                 dPriority = wtxNew.ComputePriority(dPriority, nBytes);
 
                 // Can we complete this as a free transaction?
-                if (!nBytesPenalty && fSendFreeTransactions && nBytes <= MAX_FREE_TRANSACTION_CREATE_SIZE)
-                {
-                	// Not enough fee: enough priority?
-                	double dPriorityNeeded = mempool.estimatePriority(nTxConfirmTarget);
-                	// Not enough mempool history to estimate: use hard-coded AllowFree
-                	if (dPriorityNeeded <= 0 && AllowFree(dPriority))
-                		break;
+                if (!nBytesPenalty && fSendFreeTransactions && nBytes <= MAX_FREE_TRANSACTION_CREATE_SIZE) {
+                    // Not enough fee: enough priority?
+                    double dPriorityNeeded = mempool.estimatePriority(nTxConfirmTarget);
+                    // Not enough mempool history to estimate: use hard-coded AllowFree
+                    if (dPriorityNeeded <= 0 && AllowFree(dPriority))
+                        break;
 
-                	// Small enough, and priority high enough, to send for free
-                	if (dPriorityNeeded > 0 && dPriority >= dPriorityNeeded)
-                		break;
-
+                    // Small enough, and priority high enough, to send for free
+                    if (dPriorityNeeded > 0 && dPriority >= dPriorityNeeded)
+                        break;
                 }
 
                 int64_t nFeeNeeded = GetMinimumFee(nBytes + nBytesPenalty, nTxConfirmTarget, mempool);
 
                 // If we made it here and we aren't even able to meet the relay fee on the next pass, give up
-				// because we must be at the maximum allowed fee.
-				if (nFeeNeeded < ::minRelayTxFee.GetFee(nBytes))
-				{
-					strFailReason = _("Transaction too large for fee policy");
-					return false;
-				}
+                // because we must be at the maximum allowed fee.
+                if (nFeeNeeded < ::minRelayTxFee.GetFee(nBytes)) {
+                    strFailReason = _("Transaction too large for fee policy");
+                    return false;
+                }
 
                 if (nFeeRet >= nFeeNeeded)
                     break; // Done, enough fee included.
