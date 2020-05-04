@@ -10,19 +10,6 @@
 #endif
 static const char UNUSED *bitcoin_strings[] = {
 QT_TRANSLATE_NOOP("bitcoin-core", ""
-"%s, you must set a rpcpassword in the configuration file:\n"
-"%s\n"
-"It is recommended you use the following random password:\n"
-"rpcuser=reddcoinrpc\n"
-"rpcpassword=%s\n"
-"(you do not need to remember this password)\n"
-"The username and password MUST NOT be the same.\n"
-"If the file does not exist, create it with owner-readable-only file "
-"permissions.\n"
-"It is also recommended to set alertnotify so you are notified of problems;\n"
-"for example: alertnotify=echo %%s | mail -s \"Reddcoin Alert\" admin@foo."
-"com\n"),
-QT_TRANSLATE_NOOP("bitcoin-core", ""
 "(1 = keep tx meta data e.g. account owner and payment request information, 2 "
 "= drop tx meta data)"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
@@ -55,7 +42,7 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Delete all wallet transactions and only recover those parts of the "
 "blockchain through -rescan on startup"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
-"Distributed under the MIT/X11 software license, see the accompanying file "
+"Distributed under the MIT software license, see the accompanying file "
 "COPYING or <http://www.opensource.org/licenses/mit-license.php>."),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Enter regression test mode, which uses a special chain in which blocks can "
@@ -138,6 +125,20 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "This product includes software developed by the OpenSSL Project for use in "
 "the OpenSSL Toolkit <https://www.openssl.org/> and cryptographic software "
 "written by Eric Young and UPnP software written by Thomas Bernard."),
+QT_TRANSLATE_NOOP("bitcoin-core", ""
+"To use reddcoind, or the -server option to reddcoin-qt, you must set an "
+"rpcpassword in the configuration file:\n"
+"%s\n"
+"It is recommended you use the following random password:\n"
+"rpcuser=reddcoinrpc\n"
+"rpcpassword=%s\n"
+"(you do not need to remember this password)\n"
+"The username and password MUST NOT be the same.\n"
+"If the file does not exist, create it with owner-readable-only file "
+"permissions.\n"
+"It is also recommended to set alertnotify so you are notified of problems;\n"
+"for example: alertnotify=echo %%s | mail -s \"Reddcoin Alert\" admin@foo."
+"com\n"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Unable to bind to %s on this computer. Reddcoin Core is probably already "
 "running."),
@@ -286,7 +287,6 @@ QT_TRANSLATE_NOOP("bitcoin-core", "This help message"),
 QT_TRANSLATE_NOOP("bitcoin-core", "This is experimental software."),
 QT_TRANSLATE_NOOP("bitcoin-core", "This is intended for regression testing tools and app development."),
 QT_TRANSLATE_NOOP("bitcoin-core", "Threshold for disconnecting misbehaving peers (default: %u)"),
-QT_TRANSLATE_NOOP("bitcoin-core", "To use the %s option"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Transaction amount too small"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Transaction amounts must be positive"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Transaction too large for fee policy"),
