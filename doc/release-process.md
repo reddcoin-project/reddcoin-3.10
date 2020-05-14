@@ -68,7 +68,7 @@ Release Process
 	mv build/out/reddcoin-*.zip build/out/bitcoin-*.exe ../
 	./bin/gbuild --commit reddcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-osx.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-osx.yml
-	mv build/out/reddcoin-*-unsigned.tar.gz inputs
+	mv build/out/reddcoin-*-unsigned.tar.gz inputs/reddcoin-osx-unsigned.tar.gz
 	mv build/out/reddcoin-*.tar.gz build/out/reddcoin-*.dmg ../
 	popd
   Build output expected:
@@ -102,7 +102,7 @@ Commit your signature to gitian.sigs:
 	cp signature.tar.gz inputs/
 	./bin/gbuild -i ../reddcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	mv build/out/reddcoin-${VERSION}-osx.dmg ../
+	mv build/out/reddcoin-osx-signed.dmg ../reddcoin-${VERSION}-osx.dmg
 	popd
 
 Commit your signature for the signed OSX binary:
