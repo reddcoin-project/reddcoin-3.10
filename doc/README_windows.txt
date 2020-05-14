@@ -1,7 +1,7 @@
-Reddcoin 2.0.0 BETA
+Reddcoin 3.10.99 BETA
 
-Copyright (c) 2009-2016 Bitcoin Core Developers
-Copyright (c) 2014-2016 Reddcoin Core Developers
+Copyright (c) 2009-2020 Bitcoin Core Developers
+Copyright (c) 2014-2020 Reddcoin Core Developers
 
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.

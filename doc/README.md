@@ -1,4 +1,4 @@
-Reddcoin 3.0.1 BETA
+Reddcoin 3.10.99 BETA
 =====================
 
 Copyright (c) 2009-2020 Bitcoin Developers  
