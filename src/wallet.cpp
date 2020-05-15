@@ -30,7 +30,7 @@ CFeeRate payTxFee(DEFAULT_TRANSACTION_FEE);
 CAmount maxTxFee = DEFAULT_TRANSACTION_MAXFEE;
 unsigned int nTxConfirmTarget = 1;
 bool bSpendZeroConfChange = true;
-bool fSendFreeTransactions = false;
+bool fSendFreeTransactions = true;
 bool fPayAtLeastCustomFee = true;
 
 /**
