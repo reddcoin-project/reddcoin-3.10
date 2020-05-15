@@ -179,8 +179,8 @@ public:
          *   vMerkleTree: 97ddfbbae6
          */
         const char* pszTimestamp = "January 21st 2014 was such a nice day...";
-        CMutableTransaction txNew;
-        txNew.nTime = 1390280400;
+        uint32_t nTime = 1390280400;
+        CMutableTransaction txNew(nTime);
         txNew.nVersion = 1;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
