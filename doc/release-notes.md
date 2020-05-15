@@ -235,8 +235,8 @@ server round-trip to execute.
 Other utilities "bitcoin-key" and "bitcoin-script" have been proposed, making
 key and script operations easily accessible via command line.
 
-Staking and relay enhancements
--------------------
+Staking and relay policy enhancements
+-----------------------------
 
 The `prioritisetransaction` RPC method has been added to enable stakers to
 manipulate the priority of transactions on an individual basis.
@@ -275,6 +275,9 @@ The same miner-voting mechanism as in BIP 34 is used: when 6120 out of a
 sequence of 7200 blocks have version number 3 or higher, the new consensus
 rule becomes active for those blocks. When 6120 out of a sequence of 6120
 blocks have version number 3 or higher, it becomes mandatory for all blocks.
+
+Backward compatibility with current staking software is NOT provided, thus stakers
+should read the first paragraph of "Mining and relay policy enhancements" above.
 
 3.10.0 Change log
 =================
