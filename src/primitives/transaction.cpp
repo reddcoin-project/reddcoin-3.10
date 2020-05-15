@@ -61,6 +61,7 @@ std::string CTxOut::ToString() const
 }
 
 CMutableTransaction::CMutableTransaction() : nVersion(CTransaction::CURRENT_VERSION), nLockTime(0), nTime(GetAdjustedTime()) {}
+CMutableTransaction::CMutableTransaction(uint32_t nTime) : nVersion(CTransaction::CURRENT_VERSION), nLockTime(0), nTime(nTime) {}
 CMutableTransaction::CMutableTransaction(const CTransaction& tx) : nVersion(tx.nVersion), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime), nTime(tx.nTime) {}
 
 uint256 CMutableTransaction::GetHash() const

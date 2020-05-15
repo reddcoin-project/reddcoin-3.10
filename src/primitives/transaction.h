@@ -284,7 +284,7 @@ struct CMutableTransaction
     uint32_t nTime;
 
     CMutableTransaction();
-    CMutableTransaction(int64_t nTime);
+    CMutableTransaction(uint32_t nTime);
     CMutableTransaction(const CTransaction& tx);
 
     ADD_SERIALIZE_METHODS;
