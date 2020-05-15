@@ -27,7 +27,7 @@ Table of Contents
 - [Setting up gitian images](#setting-up-gitian-images)
 - [Getting and building the inputs](#getting-and-building-the-inputs)
 - [Building Reddcoin](#building-reddcoin)
-- [Building an alternative repository](#building-an-alternative-repository)
+- [Building an alternative repository](#building-an-alternate-repository)
 - [Signing externally](#signing-externally)
 - [Uploading signatures](#uploading-signatures)
 
@@ -353,15 +353,17 @@ Output from `gbuild` will look something like
     Creating build script (var/build-script)
     lxc-start: Connection refused - inotify event with no name (mask 32768)
     Running build script (log in var/build.log)
+```
 
-Building an alternative repository
------------------------------------
+Building an alternate repository
+--------------------------------
 
 If you want to do a test build of a pull on GitHub it can be useful to point
 the gitian builder at an alternative repository, using the same descriptors
 and inputs.
 
 For example:
+
 ```bash
 URL=https://github.com/user/reddcoin.git
 COMMIT=2014_03_windows_unicode_path
