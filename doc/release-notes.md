@@ -626,6 +626,11 @@ Credits (Reddcoin)
 
 - John Nash
 - TechAdept
+- Randy Vice
+- Harmonyq
+- Roni Toni
+- Tim Musick
+- Doug Chandler
 
 Credits (Bitcoin)
 =================
