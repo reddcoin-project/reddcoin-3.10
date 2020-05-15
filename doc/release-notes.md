@@ -328,6 +328,7 @@ RPC:
 - `44b4c0d` signrawtransaction: validate private key
 - `9765a50` Implement BIP 23 Block Proposal
 - `f9de17e` Add warning comment to getinfo
+- `7f502be` fix crash: createmultisig and addmultisigaddress
 
 Command-line options:
 - `ee21912` Use netmasks instead of wildcards for IP address matching
@@ -385,6 +386,9 @@ Block and transaction handling:
 - `0cb8763` Check against MANDATORY flags prior to accepting to mempool
 - `8446262` Reject headers that build on an invalid parent
 - `008138c` Bugfix: only track UTXO modification after lookup
+- `1d2cdd2` Fix InvalidateBlock to add chainActive.Tip to setBlockIndexCandidates
+- `c91c660` fix InvalidateBlock to repopulate setBlockIndexCandidates
+- `002c8a2` fix possible block db breakage during re-index
 
 P2P protocol and network code:
 - `f80cffa` Do not trigger a DoS ban if SCRIPT_VERIFY_NULLDUMMY fails
@@ -416,6 +420,11 @@ P2P protocol and network code:
 - `3022e7d` Require sufficent priority for relay of free transactions
 - `58fda4d` Update seed IPs, based on bitcoin.sipa.be crawler data
 - `18021d0` Remove bitnodes.io from dnsseeds.
+- `78f64ef` don't trickle for whitelisted nodes
+- `ca301bf` Reduce fingerprinting through timestamps in 'addr' messages.
+- `200f293` Ignore getaddr messages on Outbound connections.
+- `d5d8998` Limit message sizes before transfer
+- `aeb9279` Better fingerprinting protection for non-main-chain getdatas.
 
 Validation:
 - `6fd7ef2` Also switch the (unused) verification code to low-s instead of even-s
@@ -433,6 +442,7 @@ Validation:
 - `ace39db` consensus: guard against openssl's new strict DER checks
 - `12b7c44` Improve robustness of DER recoding code
 - `76ce5c8` fail immediately on an empty signature
+- `d148f62` Acquire CCheckQueue's lock to avoid race condition
 
 Build system:
 - `f25e3ad` Fix build in OS X 10.9
@@ -509,6 +519,9 @@ GUI:
 - `94b362d` On close of splashscreen interrupt verifyDB
 - `b790d13` English translation update
 - `8543b0d` Correct tooltip on address book page
+- `2c08406` some mac specifiy cleanup (memory handling, unnecessary code)
+- `81145a6` fix OSX dock icon window reopening
+- `786cf72` fix a issue where "command line options"-action overwrite "Preference"-action (on OSX)
 
 Tests:
 - `b41e594` Fix script test handling of empty scripts
@@ -569,6 +582,7 @@ Tests:
 - `c8589bf` Add actual signature tests
 - `e2677d7` Fix smartfees test for change to relay policy
 - `263b65e` tests: run sanity checks in tests too
+- `1117378` add RPC test for InvalidateBlock
 
 Miscellaneous:
 - `122549f` Fix incorrect checkpoint data for testnet3
@@ -600,7 +614,8 @@ Miscellaneous:
 - `4e7c219` Catch UTXO set read errors and shutdown
 - `867c600` Catch LevelDB errors during flush
 - `06ca065` Fix CScriptID(const CScript& in) in empty script case
-
+- `c9e022b` Initialization: set Boost path locale in main thread
+- `23126a0` Sanitize command strings before logging them.
 
 Credits (Reddcoin)
 =================
