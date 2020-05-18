@@ -234,7 +234,7 @@ case $host in
        CXXFLAGS="$CXXFLAGS -w"
      fi
      case $host in
-       i?86-*) WINDOWS_BITS=32 use_sse2=no ;;
+       i?86-*) WINDOWS_BITS=32 ;;
        x86_64-*) WINDOWS_BITS=64 ;;
        *) AC_MSG_ERROR("Could not determine win32/win64 for installer") ;;
      esac
@@ -812,6 +812,17 @@ if test x$use_sse2 != xno; then
 else
   use_sse2=no
 fi
+
+dnl enable SSE2 support in the compiler
+if test "x$use_sse2" = xyes; then
+    if test "x$GCC" = xyes; then
+        CFLAGS="$CFLAGS -msse2"
+    fi
+    
+    if test "x$GXX" = xyes; then
+        CXXFLAGS="$CXXFLAGS -msse2"
+    fi
+fi 
 AC_MSG_RESULT($use_sse2)
 
 AC_MSG_CHECKING([whether to build test_reddcoin])
