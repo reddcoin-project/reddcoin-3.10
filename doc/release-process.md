@@ -54,19 +54,19 @@ Release Process
 
   By default, Gitian will fetch source files as needed. For offline builds, they can be fetched ahead of time:
 
-	make -C ../bitcoin/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../reddcoin/depends download SOURCES_PATH=`pwd`/cache/common
 
   Only missing files will be fetched, so this is safe to re-run for each build.
 
 ###Build Reddcoin Core for Linux, Windows, and OS X:
 
-	./bin/gbuild --commit reddcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gbuild --commit reddcoin=v${VERSION} ../reddcoin/contrib/gitian-descriptors/gitian-linux.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-linux.yml
-	mv build/out/reddcoin-*.tar.gz build/out/src/bitcoin-*.tar.gz ../
-	./bin/gbuild --commit reddcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-win.yml
+	mv build/out/reddcoin-*.tar.gz build/out/src/reddcoin-*.tar.gz ../
+	./bin/gbuild --commit reddcoin=v${VERSION} ../reddcoin/contrib/gitian-descriptors/gitian-win.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-win --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-win.yml
-	mv build/out/reddcoin-*.zip build/out/bitcoin-*.exe ../
-	./bin/gbuild --commit reddcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-osx.yml
+	mv build/out/reddcoin-*.zip build/out/reddcoin-*.exe ../
+	./bin/gbuild --commit reddcoin=v${VERSION} ../reddcoin/contrib/gitian-descriptors/gitian-osx.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-osx.yml
 	mv build/out/reddcoin-*-unsigned.tar.gz inputs/reddcoin-osx-unsigned.tar.gz
 	mv build/out/reddcoin-*.tar.gz build/out/reddcoin-*.dmg ../
@@ -75,7 +75,7 @@ Release Process
 
   1. source tarball (reddcoin-${VERSION}.tar.gz)
   2. linux 32-bit and 64-bit binaries dist tarballs (reddcoin-${VERSION}-linux[32|64].tar.gz)
-  3. windows 32-bit and 64-bit installers and dist zips (reddcoin-${VERSION}-win[32|64]-setup.exe, bitcoin-${VERSION}-win[32|64].zip)
+  3. windows 32-bit and 64-bit installers and dist zips (reddcoin-${VERSION}-win[32|64]-setup.exe, reddcoin-${VERSION}-win[32|64].zip)
   4. OS X unsigned installer (reddcoin-${VERSION}-osx-unsigned.dmg)
   5. Gitian signatures (in gitian.sigs/${VERSION}-<linux|win|osx-unsigned>/(your gitian key)/
 
