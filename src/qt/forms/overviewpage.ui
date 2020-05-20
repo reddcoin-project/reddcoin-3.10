@@ -159,7 +159,7 @@
                <cursorShape>IBeamCursor</cursorShape>
               </property>
               <property name="toolTip">
-               <string>Mined balance in watch-only addresses that has not yet matured</string>
+               <string>Staked balance in watch-only addresses that has not yet matured</string>
               </property>
               <property name="text">
                <string notr="true">0.000 000 00 RDD</string>
@@ -217,7 +217,7 @@
                <cursorShape>IBeamCursor</cursorShape>
               </property>
               <property name="toolTip">
-               <string>Mined balance that has not yet matured</string>
+               <string>Staked balance that has not yet matured</string>
               </property>
               <property name="text">
                <string notr="true">0.000 000 00 RDD</string>
@@ -386,7 +386,7 @@
                <cursorShape>IBeamCursor</cursorShape>
               </property>
               <property name="toolTip">
-               <string>Your current spendable balance</string>
+               <string>Total of coins that were staked and do not yet count toward the current balance</string>
               </property>
               <property name="text">
                <string notr="true">0.000 000 00 RDD</string>
@@ -411,7 +411,7 @@
                <cursorShape>IBeamCursor</cursorShape>
               </property>
               <property name="toolTip">
-               <string>Your current balance in watch-only addresses</string>
+               <string>Total of coins that are being staked in watch-only addresses</string>
               </property>
               <property name="text">
                <string notr="true">0.000 000 00 RDD</string>
