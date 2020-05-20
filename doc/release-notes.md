@@ -20,7 +20,7 @@ shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over /Applications/Bitcoin-Qt (on Mac) or
 bitcoind/bitcoin-qt (on Linux).
 
-Downgrading warning
+Downgrade warning
 ---------------------
 
 If you want to be able to downgrade smoothly, make a backup of your entire data
@@ -30,6 +30,59 @@ synchronised 3.10 node may be usable in older versions as-is, but this is not
 supported and may break as soon as the older version attempts to reindex.
 
 This does not affect wallet forward or backward compatibility.
+
+Notable changes
+===============
+
+Fix buffer overflow in bundled upnp
+------------------------------------
+
+Bundled miniupnpc was updated to 1.9.20151008. This fixes a buffer overflow in
+the XML parser during initial network discovery.
+
+Details can be found here: http://talosintel.com/reports/TALOS-2015-0035/
+
+This applies to the distributed executables only, not when building from source or
+using distribution provided packages.
+
+Additionally, upnp has been disabled by default. This may result in a lower
+number of reachable nodes on IPv4, however this prevents future libupnpc
+vulnerabilities from being a structural risk to the network
+(see https://github.com/bitcoin/bitcoin/pull/6795).
+
+Test for LowS signatures before relaying
+-----------------------------------------
+
+Make the node require the canonical 'low-s' encoding for ECDSA signatures when
+relaying or mining.  This removes a nuisance malleability vector.
+
+Consensus behavior is unchanged.
+
+If widely deployed this change would eliminate the last remaining known vector
+for nuisance malleability on SIGHASH_ALL P2PKH transactions. On the down-side
+it will block most transactions made by sufficiently out of date software.
+
+Unlike the other avenues to change txids on transactions this
+one was randomly violated by all deployed reddcoin software prior to
+its discovery. So, while other malleability vectors where made
+non-standard as soon as they were discovered, this one has remained
+permitted. Even BIP62 did not propose applying this rule to
+old version transactions, but conforming implementations have become
+much more common since BIP62 was initially written.
+
+Reddcoin Core has produced compatible signatures since a28fb70e in
+January 2014, but this didn't make it into a release until 2.0
+in September 2015; Bitcoinj has done so for a similar span of time.
+Bitcoinjs and electrum have been more recently updated.
+
+This does not replace the need for BIP62 or similar, as miners can
+still cooperate to break transactions.  Nor does it replace the
+need for wallet software to handle malleability sanely[1]. This
+only eliminates the cheap and irritating DOS attack.
+
+[1] On the Malleability of Bitcoin Transactions
+Marcin Andrychowicz, Stefan Dziembowski, Daniel Malinowski, Łukasz Mazurek
+http://fc15.ifca.ai/preproceedings/bitcoin/paper_9.pdf
 
 Transaction fee changes
 -----------------------
@@ -351,7 +404,7 @@ Command-line options:
 - `57be955` Remove -printblock, -printblocktree, and -printblockindex
 - `ad3d208` remove -maxorphanblocks config parameter since it is no longer functional
 
-Block and transaction handling:
+Block (database) and transaction handling:
 - `7a0e84d` ProcessGetData(): abort if a block file is missing from disk
 - `8c93bf4` LoadBlockIndexDB(): Require block db reindex if any `blk*.dat` files are missing
 - `77339e5` Get rid of the static chainMostWork (optimization)
@@ -389,6 +442,8 @@ Block and transaction handling:
 - `1d2cdd2` Fix InvalidateBlock to add chainActive.Tip to setBlockIndexCandidates
 - `c91c660` fix InvalidateBlock to repopulate setBlockIndexCandidates
 - `002c8a2` fix possible block db breakage during re-index
+- `a1f425b` Add (optional) consistency check for the block chain data structures
+- `1c62e84` Keep mempool consistent during block-reorgs
 
 P2P protocol and network code:
 - `f80cffa` Do not trigger a DoS ban if SCRIPT_VERIFY_NULLDUMMY fails
@@ -465,6 +520,7 @@ Build system:
 - `914868a` build: add a deterministic dmg signer 
 - `2d375fe` depends: bump openssl to 1.0.1k
 - `b7a4ecc` Build: Only check for boost when building code that requires it
+- `8752b5c` 0.10 fix for crashes on OSX 10.6
 
 Wallet:
 - `b33d1f5` Use fee/priority estimates in wallet CreateTransaction
@@ -481,6 +537,7 @@ Wallet:
 - `a53fd41` Deterministic signing
 - `15ad0b5` Apply AreSane() checks to the fees from the network
 - `11855c1` Enforce minRelayTxFee on wallet created tx and add a maxtxfee option
+- `824c011` fix boost::get usage with boost 1.58
 
 GUI:
 - `c21c74b` osx: Fix missing dock menu with qt5
@@ -526,6 +583,8 @@ GUI:
 - `2c08406` some mac specifiy cleanup (memory handling, unnecessary code)
 - `81145a6` fix OSX dock icon window reopening
 - `786cf72` fix a issue where "command line options"-action overwrite "Preference"-action (on OSX)
+- `da65606` Avoid crash on start in TestBlockValidity with gen=1.
+- `424ae66` don't imbue boost::filesystem::path with locale "C" on windows (fixes #6078)
 
 Tests:
 - `b41e594` Fix script test handling of empty scripts
@@ -620,6 +679,49 @@ Miscellaneous:
 - `06ca065` Fix CScriptID(const CScript& in) in empty script case
 - `c9e022b` Initialization: set Boost path locale in main thread
 - `23126a0` Sanitize command strings before logging them.
+- `e4a7d51` #6186 Fix two problems in CSubnet parsing
+- `ebd7d8d` #6153 Parameter interaction: disable upnp if -proxy set
+- `ecc96f5` #6203 Remove P2SH coinbase flag, no longer interesting
+- `181771b` #6226 json: fail read_string if string contains trailing garbage
+- `09334e0` #6244 configure: Detect (and reject) LibreSSL
+- `0fd8464` #6276 Fix getbalance * 0
+- `be64204` #6274 Add option `-alerts` to opt out of alert system
+- `3f55638` #6319 doc: update mailing list address
+- `7e66e9c` #6438 openssl: avoid config file load/race
+- `255eced` #6439 Updated URL location of netinstall for Debian
+- `0739e6e` #6412 Test whether created sockets are select()able
+- `f696ea1` #6694 [QT] fix thin space word wrap line brake issue
+- `743cc9e` #6704 Backport bugfixes to 0.10
+- `1cea6b0` #6769 Test LowS in standardness, removes nuisance malleability vector.
+- `093d7b5` #6789 Update miniupnpc to 1.9.20151008
+- `f2778e0` #6795 net: Disable upnp by default
+- `91ef4d9` #6797 Do not store more than 200 timedata samples
+- `842c48d` #6793 Bump minrelaytxfee default
+- `8b3311f` #6953 alias -h for --help
+- `97546fc` #6953 Change URLs to https in debian/control
+- `38671bf` #6953 Update debian/changelog and slight tweak to debian/control
+- `256321e` #6953 Correct spelling mistakes in doc folder
+- `eae0350` #6953 Clarification of unit test build instructions
+- `90897ab` #6953 Update bluematt-key, the old one is long-since revoked
+- `a2f2fb6` #6953 build: disable -Wself-assign
+- `cf67d8b` #6953 Bugfix: Allow mining on top of old tip blocks for testnet (fixes testnet-in-a-box use case)
+- `b3964e3` #6953 Drop "with minimal dependencies" from description
+- `43c2789` #6953 Split bitcoin-tx into its own package
+- `dfe0d4d` #6953 Include bitcoin-tx binary on Debian/Ubuntu
+- `612efe8` #6953 [Qt] Raise debug window when requested
+- `3ad96bd` #6953 Fix locking in GetTransaction
+- `9c81005` #6953 Fix spelling of Qt
+- `94b67e5` #6946 Update LevelDB
+- `5dc72f8` #6706 CLTV: Add more tests to improve coverage
+- `6a1343b` #6706 Add RPC tests for the CHECKLOCKTIMEVERIFY (BIP65) soft-fork
+- `4137248` #6706 Add CHECKLOCKTIMEVERIFY (BIP65) soft-fork logic
+- `0e01d0f` #6706 Enable CHECKLOCKTIMEVERIFY as a standard script verify flag
+- `6d01325` #6706 Replace NOP2 with CHECKLOCKTIMEVERIFY (BIP65)
+- `750d54f` #6706 Move LOCKTIME_THRESHOLD to src/script/script.h
+- `6897468` #6706 Make CScriptNum() take nMaxNumSize as an argument
+- `5297194` #6867 Set TCP_NODELAY on P2P sockets
+- `fb818b6` #6836 Bring historical release notes up to date
+- `0b3fd07` #6852 build: make sure OpenSSL heeds noexecstack
 
 Credits (Reddcoin)
 =================
@@ -651,6 +753,7 @@ Thanks to everyone who contributed to this release:
 - Ben Holden-Crowther
 - Bryan Bishop
 - BtcDrak
+- Casey Rodarmor
 - Christian von Roques
 - Clinton Christian
 - Cory Fields
@@ -667,6 +770,7 @@ Thanks to everyone who contributed to this release:
 - elkingtowa
 - ENikS
 - Eric Shaw
+- fanquake
 - Federico Bond
 - Francis GASCHET
 - Gavin Andresen
@@ -686,6 +790,7 @@ Thanks to everyone who contributed to this release:
 - JL2035
 - Johnathan Corgan
 - Jonas Schnelli
+- J Ross Nicoll
 - jtimon
 - Julian Haight
 - Kamil Domanski
@@ -733,10 +838,15 @@ Thanks to everyone who contributed to this release:
 - tm314159
 - Tom Harding
 - Trevin Hofmann
+- Veres Lajos
 - Whit J
 - Wladimir J. van der Laan
 - Yoichi Hirai
 - Zak Wilcox
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/reddcoin/).
+And all those who contributed additional code review and/or security research:
 
+- timothy on IRC for reporting the issue
+- Vulnerability in miniupnp discovered by Aleksandar Nikolic of Cisco Talos
+
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/reddcoin/).
