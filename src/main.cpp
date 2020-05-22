@@ -1263,10 +1263,8 @@ CAmount GetProofOfStakeReward(int64_t nCoinAge, const CAmount& nFees, double fIn
     // CoinAge=366 -> nSubsidy=10020
     CAmount nSubsidy = (nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8)) * fInflationAdjustment;
 
-    LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s fInflationAdjustment=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees), fInflationAdjustment);
-
     if (fDebug && GetBoolArg("-printcreation", false))
-        LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees));
+    	LogPrintf("GetProofOfStakeReward(): nSubsidy=%s nCoinAge=%s nFees=%s fInflationAdjustment=%s\n", FormatMoney(nSubsidy).c_str(), nCoinAge, FormatMoney(nFees), fInflationAdjustment);
 
     return nSubsidy + nFees;
 }
@@ -1862,10 +1860,7 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
         {
         	// New PoSV stake reward calculation for ver 5 blocks
             double fInflationAdjustment = GetInflationAdjustment(pindex->pprev);
-            LogPrintf("fInflationAdjustment=%s\n", fInflationAdjustment);
-
         	nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, fInflationAdjustment);
-   	        LogPrintf("fInflationAdjustment=%s nCalculatedStakeReward2=%s\n", fInflationAdjustment, nCalculatedStakeReward);
         }
 
         if (nStakeReward > nCalculatedStakeReward)
