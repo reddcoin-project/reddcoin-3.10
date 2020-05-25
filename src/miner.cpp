@@ -133,7 +133,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn)
     }
 
     // Add dummy coinbase tx as first transaction
-    pblock->vtx.push_back(CTransaction());
+    pblock->vtx.push_back(txNew);
     pblocktemplate->vTxFees.push_back(-1); // updated at end
     pblocktemplate->vTxSigOps.push_back(-1); // updated at end
 
