@@ -80,7 +80,7 @@ Build requirements:
 
 	sudo apt-get install build-essential
 	sudo apt-get install libtool autotools-dev autoconf
-	sudo apt-get install libssl-dev
+	sudo apt-get install libssl1.0-dev
 
 for Ubuntu 12.04 and later:
 
