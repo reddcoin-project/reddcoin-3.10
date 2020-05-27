@@ -1,7 +1,7 @@
 Reddcoin Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/reddcoin/reddcoin.svg?branch=master)](https://travis-ci.org/reddcoin/reddcoin)
+[![Build Status](https://travis-ci.org/reddcoin-project/reddcoin.svg?branch=master)](https://travis-ci.org/reddcoin-project/reddcoin)
 
 https://www.reddcoin.com
 
