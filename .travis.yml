@@ -42,9 +42,9 @@ matrix:
     - compiler: ": Cross-Mac"
       env: HOST=x86_64-apple-darwin11 PACKAGES="cmake libcap-dev libz-dev libbz2-dev" OSX_SDK=10.9 GOAL="deploy"
     - compiler: ": Win64"
-      env: HOST=x86_64-w64-mingw32 PACKAGES="nsis gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 binutils-mingw-w64-x86-64 mingw-w64-dev wine bc" RUN_TESTS=false GOAL="deploy" BITCOIN_CONFIG="--enable-gui" MAKEJOBS="-j2"
+      env: HOST=x86_64-w64-mingw32 PACKAGES="nsis gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 binutils-mingw-w64-x86-64 mingw-w64-dev wine bc" RUN_TESTS=false GOAL="deploy" BITCOIN_CONFIG="--enable-gui --with-libs=no" MAKEJOBS="-j2"
     - compiler: ": Win32"
-      env: HOST=i686-w64-mingw32 PACKAGES="nsis gcc-mingw-w64-i686 g++-mingw-w64-i686 binutils-mingw-w64-i686 mingw-w64-dev wine bc" RUN_TESTS=false GOAL="deploy" BITCOIN_CONFIG="--enable-gui" MAKEJOBS="-j2"
+      env: HOST=i686-w64-mingw32 PACKAGES="nsis gcc-mingw-w64-i686 g++-mingw-w64-i686 binutils-mingw-w64-i686 mingw-w64-dev wine bc" RUN_TESTS=false GOAL="deploy" BITCOIN_CONFIG="--enable-gui --with-libs=no" MAKEJOBS="-j2"
   exclude:
     - compiler: gcc
 before_install:
