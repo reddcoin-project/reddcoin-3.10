@@ -1832,7 +1832,10 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
         if (!nCoinAge)
             return state.DoS(100, error("ConnectBlock() : %s unable to get coin age for coinstake", block.vtx[1].GetHash().ToString().substr(0,10).c_str()));
 
-        CAmount nCalculatedStakeReward;
+        CAmount nCalculatedStakeReward = 0;
+        CAmount nCalculatedPoSVEndCredit = 0;
+        CAmount nCalculatedDevEndCredit = 0;
+        CAmount nDevEndCredit = 0;
 
         if(block.nVersion <= 4) {
             nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees);
@@ -1845,6 +1848,20 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
 
         	nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, fInflationAdjustment);
    	        LogPrintf("fInflationAdjustment=%s nCalculatedStakeReward2=%s\n", fInflationAdjustment, nCalculatedStakeReward);
+
+			// Check output values
+   	        if (block.nVersion >= 5 &&
+				CBlockIndex::IsSuperMajority(5, pindex->pprev, Params().RejectBlockOutdatedMajority_5())) {
+
+				nCalculatedPoSVEndCredit = nCalculatedStakeReward * 0.92;
+				nCalculatedDevEndCredit = nCalculatedStakeReward - nCalculatedPoSVEndCredit;
+				nDevEndCredit = block.vtx[1].vout[block.vtx[1].vout.size() - 1].nValue;
+
+                if (nDevEndCredit != nCalculatedDevEndCredit &&
+                        CBlockIndex::IsSuperMajority(5, pindex->pprev->pprev, Params().RejectBlockOutdatedMajority_5())) {
+                	return state.DoS(100, error("ConnectBlock() : dev credit pays too %s (actual=%s vs calculated=%s\n)", (nDevEndCredit > nCalculatedDevEndCredit ? "much" : "little"), nDevEndCredit, nCalculatedDevEndCredit));
+                }
+            }
         }
 
         if (nStakeReward > nCalculatedStakeReward)
