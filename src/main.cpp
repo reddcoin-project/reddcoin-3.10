@@ -1849,9 +1849,15 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
         // PoSV: coinstake tx earns reward instead of paying fee
         uint64_t nCoinAge = GetCoinAge(block.vtx[1]);
         if (!nCoinAge)
-            return state.DoS(100, error("ConnectBlock() : %s unable to get coin age for coinstake", block.vtx[1].GetHash().ToString().substr(0,10).c_str()));
+            return state.DoS(100,
+                             error("ConnectBlock() : %s unable to get coin age for coinstake",
+                                   block.vtx[1].GetHash().ToString().substr(0, 10).c_str()),
+                             REJECT_INVALID, "bad-posv-coinage");
 
-        CAmount nCalculatedStakeReward;
+        CAmount nCalculatedStakeReward = 0;
+        CAmount nCalculatedPoSVEndCredit = 0;
+        CAmount nCalculatedDevEndCredit = 0;
+        CAmount nDevEndCredit = 0;
 
         if(block.nVersion <= 4) {
             nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees);
@@ -1861,10 +1867,30 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
         	// New PoSV stake reward calculation for ver 5 blocks
             double fInflationAdjustment = GetInflationAdjustment(pindex->pprev);
         	nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, fInflationAdjustment);
+
+			// Check output values
+   	        if (block.nVersion >= 5 &&
+				CBlockIndex::IsSuperMajority(5, pindex->pprev, Params().RejectBlockOutdatedMajority_5())) {
+
+				nCalculatedPoSVEndCredit = nCalculatedStakeReward * 0.92;
+				nCalculatedDevEndCredit = nCalculatedStakeReward - nCalculatedPoSVEndCredit;
+				nDevEndCredit = block.vtx[1].vout[block.vtx[1].vout.size() - 1].nValue;
+
+                if (nDevEndCredit != nCalculatedDevEndCredit &&
+                        CBlockIndex::IsSuperMajority(5, pindex->pprev->pprev, Params().RejectBlockOutdatedMajority_5())) {
+                    return state.DoS(100,
+                                     error("ConnectBlock() : dev credit pays too %s (actual=%s vs calculated=%s)",
+                                           (nDevEndCredit > nCalculatedDevEndCredit ? "much" : "little"), nDevEndCredit, nCalculatedDevEndCredit),
+                                     REJECT_INVALID, "bad-dev-amount");
+                }
+            }
         }
 
         if (nStakeReward > nCalculatedStakeReward)
-            return state.DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%s vs calculated=%s)", nStakeReward, nCalculatedStakeReward));
+            return state.DoS(100,
+                             error("ConnectBlock() : coinstake pays too much(actual=%s vs calculated=%s)",
+                                   nStakeReward, nCalculatedStakeReward),
+                             REJECT_INVALID, "bad-posv-amount");
     }
 
     // PoSV: track money supply and mint amount info

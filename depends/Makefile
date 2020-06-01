@@ -7,7 +7,7 @@ NO_QT ?=
 NO_WALLET ?=
 NO_UPNP ?=
 USE_LINUX_STATIC_QT5 ?=
-FALLBACK_DOWNLOAD_PATH ?= https://reddcoin.com/depends-sources
+FALLBACK_DOWNLOAD_PATH ?= https://download.reddcoin.com/depends-sources
 
 BUILD = $(shell ./config.guess)
 HOST ?= $(BUILD)
