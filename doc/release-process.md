@@ -18,7 +18,7 @@ Release Process
 
 	git shortlog --no-merges v(current version, e.g. 0.7.2)..v(new version, e.g. 0.8.0)
 	or alternatively
-	git log --date=short --pretty=format:"%h - %an, %ad : %s  " v(current version, e.g. 1.4.1)..v(new version, e.g. 2.0.0) > git.log
+	git log --no-merges --abbrev=7 --date=short --pretty=format:"- \`%h\` %s  " v(current version, e.g. 1.4.1)..v(new version, e.g. 2.0.0) > git.log
 
 
 * * *
