@@ -722,6 +722,24 @@ Miscellaneous:
 - `5297194` #6867 Set TCP_NODELAY on P2P sockets
 - `fb818b6` #6836 Bring historical release notes up to date
 - `0b3fd07` #6852 build: make sure OpenSSL heeds noexecstack
+- `7631aac` update error messages
+- `5b41e31` check that the outputs of the stake are correct.
+- `9bd1820` travis: test with wallet enabled
+- `55f2dd5` fix reference to Reddcoin
+- `220f404` travis: disable libs for windows builds (temp)
+- `b044e0f` depends: qt update download source path
+- `2fe2d85` depends: set new download source
+- `4cf531e` remove duplicated entry
+- `0d8d0da` travis: diable tests
+- `e13ad81` travis: manually disable sse2 support for ARM processors
+- `1f62045` travis: fix crash due to missing (and not required) package
+- `0fb3b75` travis: update path
+- `9d6a642` docs: update travis build status badge with correct path
+- `707e730` Preparations for 3.10.0rc3
+- `1567ab1` [docs] Update documentation
+- `030a9e2` Use CMutableTransaction tx as coinbase
+- `faf6e09` use correct value in GetMinRelayFee
+- `1366f87` reduce some PoSV2 log messages
 
 Credits (Reddcoin)
 =================
