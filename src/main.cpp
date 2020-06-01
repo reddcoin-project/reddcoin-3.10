@@ -1830,7 +1830,10 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
         // PoSV: coinstake tx earns reward instead of paying fee
         uint64_t nCoinAge = GetCoinAge(block.vtx[1]);
         if (!nCoinAge)
-            return state.DoS(100, error("ConnectBlock() : %s unable to get coin age for coinstake", block.vtx[1].GetHash().ToString().substr(0,10).c_str()));
+            return state.DoS(100,
+                             error("ConnectBlock() : %s unable to get coin age for coinstake",
+                                   block.vtx[1].GetHash().ToString().substr(0, 10).c_str()),
+                             REJECT_INVALID, "bad-posv-coinage");
 
         CAmount nCalculatedStakeReward = 0;
         CAmount nCalculatedPoSVEndCredit = 0;
@@ -1859,13 +1862,19 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
 
                 if (nDevEndCredit != nCalculatedDevEndCredit &&
                         CBlockIndex::IsSuperMajority(5, pindex->pprev->pprev, Params().RejectBlockOutdatedMajority_5())) {
-                	return state.DoS(100, error("ConnectBlock() : dev credit pays too %s (actual=%s vs calculated=%s\n)", (nDevEndCredit > nCalculatedDevEndCredit ? "much" : "little"), nDevEndCredit, nCalculatedDevEndCredit));
+                    return state.DoS(100,
+                                     error("ConnectBlock() : dev credit pays too %s (actual=%s vs calculated=%s)",
+                                           (nDevEndCredit > nCalculatedDevEndCredit ? "much" : "little"), nDevEndCredit, nCalculatedDevEndCredit),
+                                     REJECT_INVALID, "bad-dev-amount");
                 }
             }
         }
 
         if (nStakeReward > nCalculatedStakeReward)
-            return state.DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%s vs calculated=%s)", nStakeReward, nCalculatedStakeReward));
+            return state.DoS(100,
+                             error("ConnectBlock() : coinstake pays too much(actual=%s vs calculated=%s)",
+                                   nStakeReward, nCalculatedStakeReward),
+                             REJECT_INVALID, "bad-posv-amount");
     }
 
     // PoSV: track money supply and mint amount info
