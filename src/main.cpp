@@ -1852,15 +1852,15 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
         	nCalculatedStakeReward = GetProofOfStakeReward(nCoinAge, nFees, fInflationAdjustment);
    	        LogPrintf("fInflationAdjustment=%s nCalculatedStakeReward2=%s\n", fInflationAdjustment, nCalculatedStakeReward);
 
+			if (!IsDevTx(block.vtx[1])) {
+				return state.DoS(100,
+							 error("ConnectBlock() : incorrect dev output in stake"),
+							 REJECT_INVALID, "bad-dev-address");
+			}
+
 			// Check output values
    	        if (block.nVersion >= 5 &&
 				CBlockIndex::IsSuperMajority(5, pindex->pprev, Params().RejectBlockOutdatedMajority_5())) {
-
-   	        	if (!IsDevTx(block.vtx[1])) {
-   	        		return state.DoS(100,
-									 error("ConnectBlock() : incorrect dev output in stake"),
-									 REJECT_INVALID, "bad-dev-address");
-   	        	}
 
 				nCalculatedPoSVEndCredit = nCalculatedStakeReward * 0.92;
 				nCalculatedDevEndCredit = nCalculatedStakeReward - nCalculatedPoSVEndCredit;
