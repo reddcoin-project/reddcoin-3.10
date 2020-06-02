@@ -7,7 +7,6 @@
 #   IPv6 support
 
 dist: precise
-group: legacy
 
 os: linux
 language: cpp
