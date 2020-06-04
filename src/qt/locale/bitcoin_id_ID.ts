@@ -1,47 +1,6 @@
 <TS language="id_ID" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>About Reddcoin Core</source>
-        <translation>Mengenai Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>versi &lt;b&gt;Reddcoin Core&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
- Software ini adalah yang bersifat percobaan.
-
- Dibagikan dengan izin software MIT/X11, bacalah arsip COPYING atau http://www.opensource.org/licenses/mit-license.php.
-
- Produk ini termasuk software yang dibangun oleh Proyek OpenSSL untuk Toolkit OpenSSL (http://www.openssl.org/) dan software kriptografi dibangun oleh Eric Young (eay@cryptsoft.com) dan software UPnP dibangun oleh Thomas Bernard.</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>Hak cipta</translation>
-    </message>
-    <message>
-        <source>The Reddcoin Core developers</source>
-        <translation>Pembangun Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>(%1-bit)</source>
-        <translation>(%1-bit)</translation>
-    </message>
-</context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>Klik-ganda untuk mengubah alamat atau label</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>Buat alamat baru</translation>
@@ -130,11 +89,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Exporting Failed</source>
         <translation>Proses Ekspor Gagal</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>Ada kesalahan di dalam menyimpan susunan alamat ke %1.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -167,10 +122,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Repeat new passphrase</source>
         <translation>Ulangi kata kunci baru</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Masukkan kata kunci baru ke dompet.&lt;br/&gt;Mohon gunakan kata kunci dengan &lt;b&gt;10 karakter atau lebih dengan acak&lt;/b&gt;, atau &lt;b&gt;delapan kata atau lebih&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -302,10 +253,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Quit application</source>
         <translation>Keluar dari aplikasi</translation>
-    </message>
-    <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Tampilkan informasi mengenai Reddcoin</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -452,10 +399,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Baris tab</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[testnet]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
@@ -479,37 +422,13 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Show the Reddcoin Core help message to get a list with possible Reddcoin command-line options</source>
         <translation>Tampilkan pesan bantuan Reddcoin Core untuk memberikan daftar pilihan perintah-baris yang memungkinkan dalam aplikasi Reddcoin</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Reddcoin network</source>
-        <translation><numerusform>%n hubungan aktif ke jaringan Reddcoin</numerusform></translation>
-    </message>
     <message>
         <source>No block source available...</source>
         <translation>Sumber blok tidak tersedia...</translation>
     </message>
     <message>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>%1 blok-blok riwayat transaksi telah diproses</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n jam</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n hari</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n minggu</numerusform></translation>
-    </message>
-    <message>
         <source>%1 and %2</source>
         <translation>%1 dan %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n tahun</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -571,10 +490,6 @@ Alamat: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Dompet saat ini &lt;b&gt;terenkripsi&lt;/b&gt; dan &lt;b&gt;terkunci&lt;/b&gt;</translation>
     </message>
-    <message>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>Terjadi kesalahan fatal. Reddcoin tidak bisa lagi meneruskan dengan aman dan akan berhenti.</translation>
-    </message>
 </context>
 <context>
     <name>ClientModel</name>
@@ -585,10 +500,6 @@ Alamat: %4
 </context>
 <context>
     <name>CoinControlDialog</name>
-    <message>
-        <source>Coin Control Address Selection</source>
-        <translation>Pilihan alamat pengaturan koin</translation>
-    </message>
     <message>
         <source>Quantity:</source>
         <translation>Kuantitas:</translation>
@@ -608,10 +519,6 @@ Alamat: %4
     <message>
         <source>Fee:</source>
         <translation>Biaya:</translation>
-    </message>
-    <message>
-        <source>Low Output:</source>
-        <translation>Jumlah Yang Sedikit:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -636,10 +543,6 @@ Alamat: %4
     <message>
         <source>Amount</source>
         <translation>Nilai</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Alamat</translation>
     </message>
     <message>
         <source>Date</source>
@@ -702,10 +605,6 @@ Alamat: %4
         <translation>Salin prioritas</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Salin jumlah yang sedikit</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Salin uang kembali</translation>
     </message>
@@ -754,10 +653,6 @@ Alamat: %4
         <translation>tidak satupun</translation>
     </message>
     <message>
-        <source>Dust</source>
-        <translation>Debu</translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>ya</translation>
     </message>
@@ -788,18 +683,6 @@ Alamat: %4
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
         <translation>Label ini akan berubah merah, jika setiap penerima menerima nilai lebih kecil dari %1.</translation>
-    </message>
-    <message>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>Berarti perlu biaya lebih dari %1.</translation>
-    </message>
-    <message>
-        <source>Amounts below 0.546 times the minimum relay fee are shown as dust.</source>
-        <translation>Nilai yang kurang dari 0.546 kali biaya pengiriman minimal akan ditampilkan sebagai debu.</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the change is smaller than %1.</source>
-        <translation>Label ini akan berubah merah, jika perubahan itu lebih kecil dari %1.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -895,16 +778,20 @@ Alamat: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Reddcoin Core - Command-line options</source>
-        <translation>Reddcoin Core - pilihan Perintah-baris</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
     <message>
         <source>version</source>
         <translation>versi</translation>
+    </message>
+    <message>
+        <source>(%1-bit)</source>
+        <translation>(%1-bit)</translation>
+    </message>
+    <message>
+        <source>About Reddcoin Core</source>
+        <translation>Mengenai Reddcoin Core</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -966,22 +853,10 @@ Alamat: %4
         <translation>Reddcoin Core</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" can not be created.</source>
-        <translation>Gagal: Direktori untuk data "%1" tidak bisa dibuat.</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Gagal</translation>
     </message>
-    <message>
-        <source>GB of free space available</source>
-        <translation>GB di hard disk yang masih tersedia</translation>
-    </message>
-    <message>
-        <source>(of %1GB needed)</source>
-        <translation>(dari %1GB yang diperlu)</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1016,14 +891,6 @@ Alamat: %4
         <translation>&amp;Utama</translation>
     </message>
     <message>
-        <source>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB.</source>
-        <translation>Biaya transaksi untuk setiap kB yang membantu transaksi Andi diproses cepat (biayanya opsional). Ukuran transaksi biasanya 1kB.</translation>
-    </message>
-    <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>Bayar &amp;biaya transaksi</translation>
-    </message>
-    <message>
         <source>Automatically start Reddcoin after logging in to the system.</source>
         <translation>Menyalakan Reddcoin secara otomatis setelah masuk ke dalam sistem.</translation>
     </message>
@@ -1042,14 +909,6 @@ Alamat: %4
     <message>
         <source>Number of script &amp;verification threads</source>
         <translation>Jumlah script &amp;verification threads</translation>
-    </message>
-    <message>
-        <source>Connect to the Reddcoin network through a SOCKS proxy.</source>
-        <translation>Menghubungkan jaringan Reddcoin lewat proxy SOCKS.</translation>
-    </message>
-    <message>
-        <source>&amp;Connect through SOCKS proxy (default proxy):</source>
-        <translation>&amp;Hubungkan melalui proxy SOCKS (standar proxy):</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -1124,14 +983,6 @@ Alamat: %4
         <translation>Port proxy (cth. 9050)</translation>
     </message>
     <message>
-        <source>SOCKS &amp;Version:</source>
-        <translation>Versi &amp;SOCKS:</translation>
-    </message>
-    <message>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>Versi proxy SOCKS (cth. 5)</translation>
-    </message>
-    <message>
         <source>&amp;Window</source>
         <translation>&amp;Jendela</translation>
     </message>
@@ -1170,14 +1021,6 @@ Alamat: %4
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Pilihan standar unit yang ingin ditampilkan pada layar aplikasi dan saat mengirim koin.</translation>
-    </message>
-    <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>Apakah menampilkan alamat-alamat Reddcoin dalam daftar transaksi atau tidak.</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>&amp;Tampilkan alamat dalam daftar transaksi</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1231,10 +1074,6 @@ Alamat: %4
         <translation>Informasi terlampir mungkin sudah kedaluwarsa. Dompet Anda secara otomatis mensinkronisasi dengan jaringan Reddcoin ketika sebuah hubungan terbentuk, namun proses ini belum selesai.</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Dompet</translation>
-    </message>
-    <message>
         <source>Available:</source>
         <translation>Tersedia:</translation>
     </message>
@@ -1267,10 +1106,6 @@ Alamat: %4
         <translation>Jumlah saldo Anda sekarang</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Transaksi sebelumnya&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>out of sync</source>
         <translation>tidak tersinkron</translation>
     </message>
@@ -1282,10 +1117,6 @@ Alamat: %4
         <translation>Penanganan URI</translation>
     </message>
     <message>
-        <source>URI can not be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
-        <translation>URI tidak bisa dimengerti! Biasanya oleh karena alamat Reddcoin yang tidak sah atau persoalan tentang parameter-parameter URI.</translation>
-    </message>
-    <message>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
         <translation>Nilai pembayaran %1 yang diminta oleh Anda terlalu sedikit (dianggap debu).</translation>
     </message>
@@ -1294,8 +1125,8 @@ Alamat: %4
         <translation>Gagalan permintaan pembayaran</translation>
     </message>
     <message>
-        <source>Your active proxy doesn't support SOCKS5, which is required for payment requests via proxy.</source>
-        <translation>Proxy Anda tidak mendukung SOCKS5, yang diperlu untuk permintaan pembayaran melalui proxy.</translation>
+        <source>Invalid payment address %1</source>
+        <translation>Alamat pembayaran salah %1</translation>
     </message>
     <message>
         <source>Refund from %1</source>
@@ -1319,30 +1150,25 @@ Alamat: %4
     </message>
 </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin Core</translation>
+        <source>%1 h</source>
+        <translation>%1 Jam</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>Gagal: Tidak ada direktori untuk data "%1".</translation>
+        <source>%1 m</source>
+        <translation>%1 menit</translation>
     </message>
     <message>
-        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>Gagal: Tidak dapat memproses pengaturan berkas: %1. Hanya menggunakan kunci= nilai sintak.</translation>
+        <source>N/A</source>
+        <translation>T/S</translation>
     </message>
     <message>
-        <source>Error: Invalid combination of -regtest and -testnet.</source>
-        <translation>Gagal: Gabungan -regtest dan -testnet salah.</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core didn't yet exit safely...</source>
-        <translation>Inti Reddcoin belum keluar dengan sempurna...</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Masukkan alamat Reddcoin (cth. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
+        <source>Amount</source>
+        <translation>Nilai</translation>
     </message>
 </context>
 <context>
@@ -1494,19 +1320,7 @@ Alamat: %4
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 menit</translation>
-    </message>
-    <message>
-        <source>%1 h</source>
-        <translation>%1 Jam</translation>
-    </message>
-    <message>
-        <source>%1 h %2 m</source>
-        <translation>%1 Jam %2 menit</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
@@ -1711,10 +1525,6 @@ Alamat: %4
         <translation>Biaya:</translation>
     </message>
     <message>
-        <source>Low Output:</source>
-        <translation>Jumlah Yang Sedikit:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation>Dengan Biaya:</translation>
     </message>
@@ -1791,10 +1601,6 @@ Alamat: %4
         <translation>Salin prioritas</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Salin jumlah yang sedikit</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Salin uang kembali</translation>
     </message>
@@ -1850,14 +1656,6 @@ Alamat: %4
         <source>added as transaction fee</source>
         <translation>ditambahkan sebagai biaya transaksi</translation>
     </message>
-    <message>
-        <source>Payment request expired</source>
-        <translation>Permintaan pembayaran telah kadaluarsa</translation>
-    </message>
-    <message>
-        <source>Invalid payment address %1</source>
-        <translation>Alamat pembayaran salah %1</translation>
-    </message>
 </context>
 <context>
     <name>SendCoinsEntry</name>
@@ -1884,10 +1682,6 @@ Alamat: %4
     <message>
         <source>This is a normal payment.</source>
         <translation>Ini adalah pembayaran normal.</translation>
-    </message>
-    <message>
-        <source>The Reddcoin address to send the payment to (e.g. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</source>
-        <translation>Alamat Reddcoin untuk mengirim pembayaran ke (cth. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1952,10 +1746,6 @@ Alamat: %4
         <translation>&amp;Tandakan Pesan</translation>
     </message>
     <message>
-        <source>The Reddcoin address to sign the message with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Alamat Reddcoin yang akan ditandai pesan (cth. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
-    </message>
-    <message>
         <source>Choose previously used address</source>
         <translation>Pilih alamat yang telah digunakan sebelumnya</translation>
     </message>
@@ -2014,10 +1804,6 @@ Alamat: %4
     <message>
         <source>Click "Sign Message" to generate signature</source>
         <translation>Tekan "Tandatangan Pesan" untuk menghasilan tanda tangan</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Masukkan alamat Reddcoin (cth. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -2116,10 +1902,6 @@ Alamat: %4
         <source>Status</source>
         <translation>Status</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, kirim lewat %n node</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Tanggal</translation>
@@ -2151,10 +1933,6 @@ Alamat: %4
     <message>
         <source>Credit</source>
         <translation>Kredit</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>cukup tua sesudah %n blok lagi</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -2216,10 +1994,6 @@ Alamat: %4
         <source>, has not been successfully broadcast yet</source>
         <translation>, belum berhasil disiarkan</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Buka untuk %n blok lagi</numerusform></translation>
-    </message>
     <message>
         <source>unknown</source>
         <translation>tidak diketahui</translation>
@@ -2251,16 +2025,8 @@ Alamat: %4
         <translation>Alamat</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Nilai</translation>
-    </message>
-    <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
         <translation>Terlalu muda (cuma %1 konfirmasi, akan siap sesudah %2)</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Buka untuk %n blok lagi</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -2313,6 +2079,10 @@ Alamat: %4
     <message>
         <source>Generated</source>
         <translation>Dibuat</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Lainnya</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -2458,10 +2228,6 @@ Alamat: %4
         <translation>Alamat</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Nilai</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>ID</translation>
     </message>
@@ -2474,6 +2240,9 @@ Alamat: %4
         <translation>ke</translation>
     </message>
 </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
 <context>
     <name>WalletFrame</name>
     <message>
@@ -2522,18 +2291,6 @@ Alamat: %4
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>Penggunaan:</translation>
-    </message>
-    <message>
-        <source>List commands</source>
-        <translation>Daftar perintah</translation>
-    </message>
-    <message>
-        <source>Get help for a command</source>
-        <translation>Dapatkan bantuan untuk perintah</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Pilihan:</translation>
     </message>
@@ -2542,24 +2299,12 @@ Alamat: %4
         <translation>Tentukan direktori data</translation>
     </message>
     <message>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>Mengatur hubungan paling banyak &lt;n&gt; ke peer (standar: 125)</translation>
-    </message>
-    <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
         <translation>Hubungkan ke node untuk menerima alamat peer, dan putuskan</translation>
     </message>
     <message>
         <source>Specify your own public address</source>
         <translation>Tentukan alamat publik Anda sendiri</translation>
-    </message>
-    <message>
-        <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>Batas untuk memutuskan peer buruk (standar: 100)</translation>
-    </message>
-    <message>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>Jumlah kedua untuk menjaga peer buruk dari hubung-ulang (standar: 86400)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -2578,14 +2323,6 @@ Alamat: %4
         <translation>Terima hubungan dari luar (standar: 1 kalau -proxy atau -connect tidak dipilih)</translation>
     </message>
     <message>
-        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
-        <translation>Sandi yang diterima (standar: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</translation>
-    </message>
-    <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Gagal: Transaksi ditolak. Ini mungkin terjadi jika beberapa dari koin dalam dompet Anda telah digunakan, seperti ketika Anda menggunakan salinan wallet.dat dan beberapa koin telah dibelanjakan dalam salinan tersebut tetapi disini tidak tertandai sebagai terpakai.</translation>
-    </message>
-    <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
         <translation>Jalankan perintah ketika perubahan transaksi dompet (%s di cmd digantikan oleh TxID)</translation>
     </message>
@@ -2594,16 +2331,8 @@ Alamat: %4
         <translation>Tidak bisa mengikat dengan %s di computer ini. Kemungkinan Reddcoin Core sudah mulai.</translation>
     </message>
     <message>
-        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: -proxy)</source>
-        <translation>Gunakanlah proxy SOCKS5 yang tersendiri supaya menghubungkan peer dengan layanan tersembunyi Tor (standar: -proxy)</translation>
-    </message>
-    <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Peringatan: -paytxfee sangat besar! Ini adalah biaya pengiriman yang akan dibayar oleh Anda jika transaksi terkirim.</translation>
-    </message>
-    <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>Perhatian: Mohon diperiksa pengaturan tanggal dan waktu komputer anda apakah sudah benar! Jika pengaturan waktu salah aplikasi Reddcoin tidak akan berjalan dengan tepat.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -2622,10 +2351,6 @@ Alamat: %4
         <translation>(pengaturan awal: 1)</translation>
     </message>
     <message>
-        <source>(default: wallet.dat)</source>
-        <translation>(pengaturan awal: wallet.dat)</translation>
-    </message>
-    <message>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
         <translation>Coba memulihkan kunci-kunci pribadi dari wallet.dat yang rusak</translation>
     </message>
@@ -2636,10 +2361,6 @@ Alamat: %4
     <message>
         <source>Connect only to the specified node(s)</source>
         <translation>Jangan menghubungkan node(-node) selain yang di daftar</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS proxy</source>
-        <translation>Hubungkan melalui proxy SOCKS</translation>
     </message>
     <message>
         <source>Connection options:</source>
@@ -2682,58 +2403,6 @@ Alamat: %4
         <translation>Gagal: Hard disk hampir terisi!</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Gagal: Dompet terkunci, transaksi tidak bisa dibuat!</translation>
-    </message>
-    <message>
-        <source>Failed to read block info</source>
-        <translation>Gagal membaca informasi dari blok</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>Gagal membaca blok</translation>
-    </message>
-    <message>
-        <source>Failed to sync block index</source>
-        <translation>Gagal menyamakan daftar isi blok</translation>
-    </message>
-    <message>
-        <source>Failed to write block index</source>
-        <translation>Gagal menulis daftar isi blok</translation>
-    </message>
-    <message>
-        <source>Failed to write block info</source>
-        <translation>Gagal menulis info blok</translation>
-    </message>
-    <message>
-        <source>Failed to write block</source>
-        <translation>Gagal menulis blok</translation>
-    </message>
-    <message>
-        <source>Failed to write file info</source>
-        <translation>Gagal menulis info arsip</translation>
-    </message>
-    <message>
-        <source>Failed to write to coin database</source>
-        <translation>Gagal menuliskan ke dalam database koin</translation>
-    </message>
-    <message>
-        <source>Failed to write transaction index</source>
-        <translation>Gagal menulis daftar isi transaksi</translation>
-    </message>
-    <message>
-        <source>Failed to write undo data</source>
-        <translation>Gagal menulis ulang data</translation>
-    </message>
-    <message>
-        <source>Fee per kB to add to transactions you send</source>
-        <translation>Biaya untuk setiap kB yang akan ditambahkan ke transaksi yang Anda kirim</translation>
-    </message>
-    <message>
-        <source>How many blocks to check at startup (default: 288, 0 = all)</source>
-        <translation>Periksakan berapa blok waktu mulai (standar: 288, 0 = setiapnya)</translation>
-    </message>
-    <message>
         <source>Importing...</source>
         <translation>Mengimpor...</translation>
     </message>
@@ -2742,44 +2411,16 @@ Alamat: %4
         <translation>Tidak bisa cari blok pertama, atau blok pertama salah. Salah direktori untuk jaringan?</translation>
     </message>
     <message>
-        <source>Maintain a full transaction index (default: 1)</source>
-        <translation>Jaga daftar transaksi yang lengkap (standar: 0) {1)?}</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Deskripsi berkas tidak tersedia dengan cukup.</translation>
-    </message>
-    <message>
-        <source>RPC client options:</source>
-        <translation>Pilihan RPC klien:</translation>
-    </message>
-    <message>
-        <source>Select SOCKS version for -proxy (4 or 5, default: 5)</source>
-        <translation>Pililah versi SOCKS untuk -proxy (4 atau 5, standar: 5)</translation>
     </message>
     <message>
         <source>Set maximum block size in bytes (default: %d)</source>
         <translation>Atur ukuran maksimal untuk blok dalam byte (standar: %d)</translation>
     </message>
     <message>
-        <source>Set the number of threads to service RPC calls (default: 4)</source>
-        <translation>Mengatur jumlah urutan untuk layanan panggilan RPC (standar: 4)</translation>
-    </message>
-    <message>
-        <source>Specify configuration file (default: reddcoin.conf)</source>
-        <translation>Tentukan berkas konfigurasi (standar: reddcoin.conf)</translation>
-    </message>
-    <message>
-        <source>Specify pid file (default: reddcoind.pid)</source>
-        <translation>Tentukan berkas pid (standar: reddcoind.pid)</translation>
-    </message>
-    <message>
         <source>Specify wallet file (within data directory)</source>
         <translation>Tentukan arsip dompet (dalam direktori data)</translation>
-    </message>
-    <message>
-        <source>Spend unconfirmed change when sending transactions (default: 1)</source>
-        <translation>Perubahan saldo untuk transaksi yang belum dikonfirmasi setelah transaksi terkirim (default: 1)</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -2788,10 +2429,6 @@ Alamat: %4
     <message>
         <source>Verifying wallet...</source>
         <translation>Dompet sedang diverifikasi...</translation>
-    </message>
-    <message>
-        <source>Wait for RPC server to start</source>
-        <translation>Tunggu sampai server RPC dimulai</translation>
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>
@@ -2830,20 +2467,8 @@ Alamat: %4
         <translation>Nilai yang salah untuk -reservebalance=&lt;amount&gt;: '%s'</translation>
     </message>
     <message>
-        <source>Only connect to nodes in network &lt;net&gt; (IPv4, IPv6 or Tor)</source>
-        <translation>Dilarang menghubungkan node-node selain &lt;net&gt; (IPv4, IPv6 atau Tor)</translation>
-    </message>
-    <message>
         <source>RPC server options:</source>
         <translation>Opsi server RPC:</translation>
-    </message>
-    <message>
-        <source>SSL options: (see the Reddcoin Wiki for SSL setup instructions)</source>
-        <translation>Pilihan SSL: (petunjuk pengaturan SSL lihat dalam Reddcoin Wiki)</translation>
-    </message>
-    <message>
-        <source>Set minimum block size in bytes (default: 0)</source>
-        <translation>Atur ukuran minimal untuk blok dalam byte (standar: 0)</translation>
     </message>
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
@@ -2852,18 +2477,6 @@ Alamat: %4
     <message>
         <source>Signing transaction failed</source>
         <translation>Tandatangani transaksi tergagal</translation>
-    </message>
-    <message>
-        <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>Menetapkan waktu berakhir koneksi di milidetik (standar: 5000)</translation>
-    </message>
-    <message>
-        <source>Start Reddcoin Core Daemon</source>
-        <translation>Memulai Reddcoin Core Daemon</translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>Kesalahan sistem:</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -2894,24 +2507,12 @@ Alamat: %4
         <translation>Setiap transaksi dalam dompet sedang di-'Zap'...</translation>
     </message>
     <message>
-        <source>version</source>
-        <translation>versi</translation>
-    </message>
-    <message>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat rusak, tidak bisa diperbaiki</translation>
     </message>
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Kata sandi untuk hubungan JSON-RPC</translation>
-    </message>
-    <message>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>Izinkan hubungan JSON-RPC dari alamat IP yang ditentukan</translation>
-    </message>
-    <message>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>Kirim perintah ke node berjalan pada &lt;ip&gt; (standar: 127.0.0.1)</translation>
     </message>
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
@@ -2922,24 +2523,12 @@ Alamat: %4
         <translation>Perbarui dompet ke format terbaru</translation>
     </message>
     <message>
-        <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>Kirim ukuran kolam kunci ke &lt;n&gt; (standar: 100)</translation>
-    </message>
-    <message>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>Pindai ulang rantai-blok untuk transaksi dompet yang hilang</translation>
     </message>
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Gunakan OpenSSL (https) untuk hubungan JSON-RPC</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: server.cert)</source>
-        <translation>Berkas sertifikat server (standar: server.cert)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: server.pem)</source>
-        <translation>Kunci pribadi server (standar: server.pem)</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -2958,14 +2547,6 @@ Alamat: %4
         <translation>Gagal memuat wallet.dat: Dompet rusak</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin</source>
-        <translation>Gagal memuat wallet.dat: Dompet memerlukan versi Reddcoin yang terbaru</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>Dompet diperlukan untuk disimpan-ulang: nyala-ulangkan Reddcoin untuk menyelesaikan</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>Gagal memuat wallet.dat</translation>
     </message>
@@ -2978,10 +2559,6 @@ Alamat: %4
         <translation>Jaringan tidak diketahui yang ditentukan dalam -onlynet: '%s'</translation>
     </message>
     <message>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>Diminta versi proxy -socks tidak diketahui: %i</translation>
-    </message>
-    <message>
         <source>Cannot resolve -bind address: '%s'</source>
         <translation>Tidak dapat menyelesaikan alamat -bind: '%s'</translation>
     </message>
@@ -2992,10 +2569,6 @@ Alamat: %4
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>Nilai salah untuk -paytxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Nilai salah</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3030,20 +2603,8 @@ Alamat: %4
         <translation>Memuat selesai</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>Gunakan pilihan %s</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Gagal</translation>
-    </message>
-    <message>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>Anda harus mengatur rpcpassword=&lt;kata sandi&gt; dalam berkas konfigurasi:
-%s
-Jika berkas tidak ada, buatlah dengan permisi berkas hanya-dapat-dibaca-oleh-pemilik.</translation>
     </message>
 </context>
 </TS>

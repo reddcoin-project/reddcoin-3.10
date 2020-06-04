@@ -1,31 +1,6 @@
 <TS language="he" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-זוהי תוכנה ניסיונית.
-
-מופצת תחת רישיון התוכנה MIT/X11, ראה את הקובץ המצורף COPYING או http://www.opensource.org/licenses/mit-license.php.
-
-המוצר הזה כולל תוכנה שפותחה ע"י פרויקט OpenSSL לשימוש בתיבת הכלים OpenSSL (http://www.openssl.org/) ותוכנה קריפטוגרפית שנכתבה ע"י אריק יאנג (eay@cryptsoft.com) ותוכנת UPnP שנכתבה ע"י תומס ברנרד.</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>זכויות יוצרים</translation>
-    </message>
-    </context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>לחץ לחיצה כפולה לערוך כתובת או תוית</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>יצירת כתובת חדשה</translation>
@@ -99,10 +74,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Repeat new passphrase</source>
         <translation>חזור על הסיסמה החדשה</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>הכנס את הסיסמה החדשה לארנק. &lt;br/&gt;אנא השתמש בסיסמה המכילה &lt;b&gt;10 תוים אקראיים או יותר&lt;/b&gt;, או &lt;b&gt;שמונה מילים או יותר&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -224,10 +195,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>סגור תוכנה</translation>
     </message>
     <message>
-        <source>Show information about Reddcoin</source>
-        <translation>הצג מידע על לייטקוין</translation>
-    </message>
-    <message>
         <source>About &amp;Qt</source>
         <translation>אודות Qt</translation>
     </message>
@@ -340,16 +307,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>סרגל כלים טאבים</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[רשת-בדיקה]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>ליבת לייטקוין</translation>
-    </message>
-    <message>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>הושלם עיבוד של %1 בלוקים של היסטוריית פעולות.</translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -410,10 +369,6 @@ Address: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>הארנק &lt;b&gt;מוצפן&lt;/b&gt; וכרגע &lt;b&gt;נעול&lt;/b&gt;</translation>
     </message>
-    <message>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>שגיאה סופנית אירעה. לייטקוין אינו יכול להמשיך לפעול בבטחה ולכן ייסגר.</translation>
-    </message>
 </context>
 <context>
     <name>ClientModel</name>
@@ -427,10 +382,6 @@ Address: %4
     <message>
         <source>Amount</source>
         <translation>כמות</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>כתובת</translation>
     </message>
     <message>
         <source>Date</source>
@@ -547,10 +498,6 @@ Address: %4
         <translation>ראשי</translation>
     </message>
     <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>שלם &amp;עמלת פעולה</translation>
-    </message>
-    <message>
         <source>Automatically start Reddcoin after logging in to the system.</source>
         <translation>הפעל את לייטקוין באופן עצמאי לאחר התחברות למערכת.</translation>
     </message>
@@ -589,14 +536,6 @@ Address: %4
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>הפורט של הפרוקסי (למשל 9050)</translation>
-    </message>
-    <message>
-        <source>SOCKS &amp;Version:</source>
-        <translation>גרסת SOCKS:</translation>
-    </message>
-    <message>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>גרסת SOCKS של הפרוקסי (למשל 5)</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -639,14 +578,6 @@ Address: %4
         <translation>בחר את ברירת המחדל ליחידת החלוקה אשר תוצג בממשק ובעת שליחת מטבעות.</translation>
     </message>
     <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>האם להציג כתובות לייטקוין ברשימת הפעולות או לא.</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>הצג כתובות ברשימת הפעולות</translation>
-    </message>
-    <message>
         <source>&amp;OK</source>
         <translation>אישור</translation>
     </message>
@@ -678,20 +609,12 @@ Address: %4
         <translation>המידע המוצג עשוי להיות מיושן. הארנק שלך מסתנכרן באופן אוטומטי עם רשת הלייטקוין לאחר כינון חיבור, אך התהליך טרם הסתיים.</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>ארנק</translation>
-    </message>
-    <message>
         <source>Immature:</source>
         <translation>לא בשל:</translation>
     </message>
     <message>
         <source>Mined balance that has not yet matured</source>
         <translation>מאזן שנכרה וטרם הבשיל</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;פעולות אחרונות&lt;/b&gt;</translation>
     </message>
     <message>
         <source>out of sync</source>
@@ -706,12 +629,19 @@ Address: %4
     </message>
     </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>ליבת לייטקוין</translation>
+        <source>N/A</source>
+        <translation>N/A</translation>
     </message>
-    </context>
+    <message>
+        <source>Amount</source>
+        <translation>כמות</translation>
+    </message>
+</context>
 <context>
     <name>QRImageWidget</name>
     </context>
@@ -1234,10 +1164,6 @@ Address: %4
         <translation>כתובת</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>כמות</translation>
-    </message>
-    <message>
         <source>Open until %1</source>
         <translation>פתוח עד %1</translation>
     </message>
@@ -1272,6 +1198,10 @@ Address: %4
     <message>
         <source>Generated</source>
         <translation>נוצר</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>אחר</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -1405,10 +1335,6 @@ Address: %4
         <translation>כתובת</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>כמות</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>מזהה</translation>
     </message>
@@ -1421,6 +1347,9 @@ Address: %4
         <translation>אל</translation>
     </message>
 </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
 <context>
     <name>WalletFrame</name>
     </context>
@@ -1457,18 +1386,6 @@ Address: %4
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>שימוש:</translation>
-    </message>
-    <message>
-        <source>List commands</source>
-        <translation>רשימת פקודות</translation>
-    </message>
-    <message>
-        <source>Get help for a command</source>
-        <translation>קבל עזרה עבור פקודה</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>אפשרויות:</translation>
     </message>
@@ -1477,28 +1394,12 @@ Address: %4
         <translation>ציין תיקיית נתונים</translation>
     </message>
     <message>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>החזק לכל היותר &lt;n&gt; חיבורים לעמיתים (ברירת מחדל: 125)</translation>
-    </message>
-    <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
         <translation>התחבר לצומת כדי לדלות כתובות עמיתים, ואז התנתק</translation>
     </message>
     <message>
         <source>Specify your own public address</source>
         <translation>ציין את הכתובת הפומבית שלך</translation>
-    </message>
-    <message>
-        <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>סף להתנתקות מעמיתים הנוהגים שלא כהלכה (ברירת מחדל: 100)</translation>
-    </message>
-    <message>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>מספר שניות למנוע מעמיתים הנוהגים שלא כהלכה מלהתחבר מחדש (ברירת מחדל: 86400)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
-        <translation>אירעה שגיאה בעת הגדרת פורט RPC %u להאזנה ב-IPv4: %s</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -1517,44 +1418,8 @@ Address: %4
         <translation>קבל חיבורים מבחוץ (ברירת מחדל: 1 ללא -proxy או -connect)</translation>
     </message>
     <message>
-        <source>%s, you must set a rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=reddcoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-</source>
-        <translation>%s, עליך לקבוע סיסמת RPC בקובץ הקונפיגורציה:
- %s
-מומלץ להשתמש בסיסמא האקראית הבאה:
-rpcuser=reddcoinrpc
-rpcpassword=%s
-(אין צורך לזכור את הסיסמה)
-אסור ששם המשתמש והסיסמא יהיו זהים.
-אם הקובץ אינו קיים, צור אותו עם הרשאות קריאה לבעלים בלבד.
-זה מומלץ לסמן alertnotify כדי לקבל דיווח על תקלות;
-למשל: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com 
-</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
-        <translation>אירעה שגיאה בעת הגדרת פורט RPC %u להאזנה ב-IPv6, נסוג ל-IPv4: %s</translation>
-    </message>
-    <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>קשור עם כתובת נתונה והאזן לה תמיד. השתמש בסימון [host]:port עבוד IPv6.</translation>
-    </message>
-    <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>שגיאה: הפעולה נדחתה! זה עלול לקרות אם כמה מהמטבעות בארנק שלך כבר נוצלו, למשל אם השתמשת בעותק של wallet.dat ומטבעות נשלחו בעותק אך לא סומנו כמנוצלות כאן.</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>שגיאה: הפעולה הזאת דורשת עמלת פעולה של לפחות %s עקב הכמות, המורכבות, או השימוש בכספים שהתקבלו לאחרונה!</translation>
     </message>
     <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
@@ -1563,10 +1428,6 @@ rpcpassword=%s
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>אזהרה: -paytxfee נקבע לערך מאד גבוה! זוהי עמלת הפעולה שתשלם אם אתה שולח פעולה.</translation>
-    </message>
-    <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>אזהרה: אנא בדוק שהתאריך והשעה של המחשב שלך נכונים! אם השעון שלך אינו נכון לייטקוין לא יעבוד כראוי.</translation>
     </message>
     <message>
         <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
@@ -1621,76 +1482,12 @@ rpcpassword=%s
         <translation>שגיאה: מעט מקום פנוי בדיסק!</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>שגיאה: הארנק נעול, אין אפשרות ליצור פעולה!</translation>
-    </message>
-    <message>
-        <source>Error: system error: </source>
-        <translation>שגיאה: שגיאת מערכת:</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>האזנה נכשלה בכל פורט. השתמש ב- -listen=0 אם ברצונך בכך.</translation>
     </message>
     <message>
-        <source>Failed to read block info</source>
-        <translation>קריאת מידע הבלוקים נכשלה</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>קריאת הבלוק נכשלה</translation>
-    </message>
-    <message>
-        <source>Failed to sync block index</source>
-        <translation>סנכרון אינדקס הבלוקים נכשל</translation>
-    </message>
-    <message>
-        <source>Failed to write block index</source>
-        <translation>כתיבת אינדקס הבלוקים נכשל</translation>
-    </message>
-    <message>
-        <source>Failed to write block info</source>
-        <translation>כתיבת מידע הבלוקים נכשל</translation>
-    </message>
-    <message>
-        <source>Failed to write block</source>
-        <translation>כתיבת הבלוק נכשלה</translation>
-    </message>
-    <message>
-        <source>Failed to write file info</source>
-        <translation>כתיבת מידע הקבצים נכשלה</translation>
-    </message>
-    <message>
-        <source>Failed to write to coin database</source>
-        <translation>כתיבת מסד נתוני המטבעות נכשלה</translation>
-    </message>
-    <message>
-        <source>Failed to write transaction index</source>
-        <translation>כתיבת אינדקס הפעולות נכשלה</translation>
-    </message>
-    <message>
-        <source>Failed to write undo data</source>
-        <translation>כתיבת נתוני ביטול נכשלה</translation>
-    </message>
-    <message>
-        <source>How many blocks to check at startup (default: 288, 0 = all)</source>
-        <translation>מספר הבלוקים לבדוק בעת אתחול (ברירת מחדל: 288, 0 = כולם)</translation>
-    </message>
-    <message>
         <source>Rebuild block chain index from current blk000??.dat files</source>
         <translation>בנה מחדש את אינדק שרשרת הבלוקים מקבצי ה-blk000??.dat הנוכחיים.</translation>
-    </message>
-    <message>
-        <source>Set the number of threads to service RPC calls (default: 4)</source>
-        <translation>קבע את מספר תהליכוני לשירות קריאות RPC (ברירת מחדל: 4)</translation>
-    </message>
-    <message>
-        <source>Specify configuration file (default: reddcoin.conf)</source>
-        <translation>ציין קובץ הגדרות (ברירת מחדל: reddcoin.conf)</translation>
-    </message>
-    <message>
-        <source>Specify pid file (default: reddcoind.pid)</source>
-        <translation>ציין קובץ pid (ברירת מחדל: reddcoind.pid)</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -1709,44 +1506,12 @@ rpcpassword=%s
         <translation>מידע</translation>
     </message>
     <message>
-        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
-        <translation>חוצץ קבלה מירבי לכל חיבור, &lt;n&gt;*1000 בתים (ברירת מחדל: 5000)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
-        <translation>חוצץ שליחה מירבי לכל חיבור, &lt;n&gt;*1000 בתים (ברירת מחדל: 1000)</translation>
-    </message>
-    <message>
-        <source>Only accept block chain matching built-in checkpoints (default: 1)</source>
-        <translation>קבל רק שרשרת בלוקים התואמת נקודות ביקורת מובנות (ברירת מחדל: 1)</translation>
-    </message>
-    <message>
-        <source>Only connect to nodes in network &lt;net&gt; (IPv4, IPv6 or Tor)</source>
-        <translation>התחבר רק לצמתים ברשת &lt;net&gt; (IPv4, IPv6 או Tor)</translation>
-    </message>
-    <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>שלח מידע דיבאג ועקבה לקונסולה במקום לקובץ debug.log</translation>
     </message>
     <message>
-        <source>Set minimum block size in bytes (default: 0)</source>
-        <translation>קבע את גודל הבלוק המינימלי בבתים (ברירת מחדל: 0)</translation>
-    </message>
-    <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>כווץ את קובץ debug.log בהפעלת הקליינט (ברירת מחדל: 1 ללא -debug)</translation>
-    </message>
-    <message>
-        <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>ציין הגבלת זמן לחיבור במילישניות (ברירת מחדל: 5000)</translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>שגיאת מערכת:</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>השתמש ב-UPnP כדי למפות את הפורט להאזנה (ברירת מחדל: 0)</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
@@ -1773,14 +1538,6 @@ rpcpassword=%s
         <translation>סיסמה לחיבורי JSON-RPC</translation>
     </message>
     <message>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>אפשר חיבורי JSON-RPC מכתובת האינטרנט המצוינת</translation>
-    </message>
-    <message>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>שלח פקודות לצומת ב-&lt;ip&gt; (ברירת מחדל: 127.0.0.1)</translation>
-    </message>
-    <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
         <translation>בצע פקודה זו כשהבלוק הטוב ביותר משתנה (%s בפקודה יוחלף בגיבוב הבלוק)</translation>
     </message>
@@ -1789,24 +1546,12 @@ rpcpassword=%s
         <translation>שדרג את הארנק לפורמט העדכני</translation>
     </message>
     <message>
-        <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>קבע את גודל המאגר ל -&lt;n&gt; (ברירת מחדל: 100)</translation>
-    </message>
-    <message>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>סרוק מחדש את שרשרת הבלוקים למציאת פעולות חסרות בארנק</translation>
     </message>
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>השתמש ב-OpenSSL (https( עבור חיבורי JSON-RPC</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: server.cert)</source>
-        <translation>קובץ תעודת שרת (ברירת מחדל: server.cert)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: server.pem)</source>
-        <translation>מפתח פרטי של השרת (ברירת מחדל: server.pem)</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -1825,14 +1570,6 @@ rpcpassword=%s
         <translation>שגיאה בטעינת הקובץ wallet.dat: הארנק מושחת</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin</source>
-        <translation>שגיאה בטעינת הקובץ wallet.dat: הארנק דורש גרסה חדשה יותר של לייטקוין</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>יש לכתוב מחדש את הארנק: אתחל את לייטקוין לסיום</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>שגיאה בטעינת הקובץ wallet.dat</translation>
     </message>
@@ -1845,10 +1582,6 @@ rpcpassword=%s
         <translation>רשת לא ידועה צוינה ב- -onlynet: '%s'</translation>
     </message>
     <message>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>התבקשה גרסת פרוקסי -socks לא ידועה: %i</translation>
-    </message>
-    <message>
         <source>Cannot resolve -bind address: '%s'</source>
         <translation>לא מסוגל לפתור כתובת -bind: '%s'</translation>
     </message>
@@ -1859,10 +1592,6 @@ rpcpassword=%s
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>כמות לא תקינה עבור -paytxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>כמות לא תקינה</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -1897,20 +1626,8 @@ rpcpassword=%s
         <translation>טעינה הושלמה</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>להשתמש באפשרות %s</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>שגיאה</translation>
-    </message>
-    <message>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>עליך לקבוע rpcpassword=yourpassword בקובץ ההגדרות:
-%s
-אם הקובץ אינו קיים, צור אותו עם הרשאות קריאה לבעלים בלבד.</translation>
     </message>
 </context>
 </TS>

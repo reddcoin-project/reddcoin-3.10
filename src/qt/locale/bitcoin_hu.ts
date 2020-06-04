@@ -1,47 +1,6 @@
 <TS language="hu" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>About Reddcoin Core</source>
-        <translation>A Reddcoin Core-ról</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Reddcoin Core&lt;/b&gt; verzió</translation>
-    </message>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-Ez egy kísérleti program.
-
- MIT/X11 szoftverlicenc alatt kiadva, lásd a mellékelt fájlt COPYING vagy http://www.opensource.org/licenses/mit-license.php.
-
- Ez a termék az OpenSSL Project által lett kifejlesztve az OpenSSL Toolkit (http://www.openssl.org/) és kriptográfiai szoftvertben való felhasználásra,  írta Eric Young (eay@cryptsoft.com) és UPnP szoftver, írta Thomas Bernard.</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>Szerzői jog</translation>
-    </message>
-    <message>
-        <source>The Reddcoin Core developers</source>
-        <translation>A Reddcoin Core fejlesztői</translation>
-    </message>
-    <message>
-        <source>(%1-bit)</source>
-        <translation>(%1-bit)</translation>
-    </message>
-</context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>Dupla-kattintás a cím vagy a címke szerkesztéséhez</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>Új cím létrehozása</translation>
@@ -130,11 +89,7 @@ Ez egy kísérleti program.
         <source>Exporting Failed</source>
         <translation>Exportálás Sikertelen</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>Hiba történt a címjegyzék %1 helyre való mentésekor. Kérlek próbáld újra.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -167,10 +122,6 @@ Ez egy kísérleti program.
     <message>
         <source>Repeat new passphrase</source>
         <translation>Új jelszó újra</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Add meg a tárca új jelszavát.&lt;br/&gt;Olyan jelszót válassz, ami &lt;b&gt;legalább 10 véletlenszerű karakterből&lt;/b&gt; vagy &lt;b&gt;legalább 8 véletlenszerű szóból&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -298,10 +249,6 @@ Ez egy kísérleti program.
     <message>
         <source>Quit application</source>
         <translation>Kilépés</translation>
-    </message>
-    <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Információk a Reddcoinról</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -448,10 +395,6 @@ Ez egy kísérleti program.
         <translation>Fül eszköztár</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[teszthálózat]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Mag</translation>
     </message>
@@ -475,37 +418,13 @@ Ez egy kísérleti program.
         <source>Show the Reddcoin Core help message to get a list with possible Reddcoin command-line options</source>
         <translation>A Reddcoin Core súgóüzenet megjelenítése a Reddcoin lehetséges parancssori kapcsolóival.</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Reddcoin network</source>
-        <translation><numerusform>%n aktív kapcsolat a Reddcoin hálózathoz</numerusform><numerusform>%n aktív kapcsolat a Reddcoin hálózathoz</numerusform></translation>
-    </message>
     <message>
         <source>No block source available...</source>
         <translation>Blokk forrása ismeretlen...</translation>
     </message>
     <message>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>A tranzakció-történet %1 blokkja feldolgozva.</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n óra</numerusform><numerusform>%n óra</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n nap</numerusform><numerusform>%n nap</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n hét</numerusform><numerusform>%n hét</numerusform></translation>
-    </message>
-    <message>
         <source>%1 and %2</source>
         <translation>%1 és %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n év</numerusform><numerusform>%n év</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -567,10 +486,6 @@ Cím: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Tárca &lt;b&gt;kódolva&lt;/b&gt; és jelenleg &lt;b&gt;zárva&lt;/b&gt;.</translation>
     </message>
-    <message>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>Végzetes hiba történt. Reddcoin már nem fut tovább, és kilép.</translation>
-    </message>
 </context>
 <context>
     <name>ClientModel</name>
@@ -581,10 +496,6 @@ Cím: %4
 </context>
 <context>
     <name>CoinControlDialog</name>
-    <message>
-        <source>Coin Control Address Selection</source>
-        <translation>Ellenőrző cím kiválasztása</translation>
-    </message>
     <message>
         <source>Quantity:</source>
         <translation>Mennyiség:</translation>
@@ -604,10 +515,6 @@ Cím: %4
     <message>
         <source>Fee:</source>
         <translation>Díj</translation>
-    </message>
-    <message>
-        <source>Low Output:</source>
-        <translation>Alacsony teljesítmény:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -632,10 +539,6 @@ Cím: %4
     <message>
         <source>Amount</source>
         <translation>Összeg</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Cím</translation>
     </message>
     <message>
         <source>Date</source>
@@ -746,10 +649,6 @@ Cím: %4
         <translation>semmi</translation>
     </message>
     <message>
-        <source>Dust</source>
-        <translation>Por-határ</translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>igen</translation>
     </message>
@@ -780,10 +679,6 @@ Cím: %4
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
         <translation>Ez a címke pirosra változik, ha bármely fogadónak %1-nál kevesebb összeg érkezik.</translation>
-    </message>
-    <message>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>Legalább %1 díj szüksége</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -875,16 +770,20 @@ Cím: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Reddcoin Core - Command-line options</source>
-        <translation>Reddcoin Core - Parancssoros opciók</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Mag</translation>
     </message>
     <message>
         <source>version</source>
         <translation>verzió</translation>
+    </message>
+    <message>
+        <source>(%1-bit)</source>
+        <translation>(%1-bit)</translation>
+    </message>
+    <message>
+        <source>About Reddcoin Core</source>
+        <translation>A Reddcoin Core-ról</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -950,22 +849,10 @@ Cím: %4
         <translation>Reddcoin Mag</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" can not be created.</source>
-        <translation>Hiba: A megadott "%1" adatkönyvtár nem hozható létre. </translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
-    <message>
-        <source>GB of free space available</source>
-        <translation>GB elérhető szabad hely</translation>
-    </message>
-    <message>
-        <source>(of %1GB needed)</source>
-        <translation>( ebből %1GB szükséges)</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1000,14 +887,6 @@ Cím: %4
         <translation>&amp;Fő</translation>
     </message>
     <message>
-        <source>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB.</source>
-        <translation>Opcionális, kB-onkénti tranzakciós díj a tranzakcióid minél gyorsabb feldolgozásának elősegítésére. A legtöbb tranzakció 1 kB-os.</translation>
-    </message>
-    <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>Tranzakciós &amp;díj fizetése</translation>
-    </message>
-    <message>
         <source>Automatically start Reddcoin after logging in to the system.</source>
         <translation>Induljon el a Reddcoin a számítógép bekapcsolásakor</translation>
     </message>
@@ -1022,14 +901,6 @@ Cím: %4
     <message>
         <source>MB</source>
         <translation>MB</translation>
-    </message>
-    <message>
-        <source>Connect to the Reddcoin network through a SOCKS proxy.</source>
-        <translation>Csatlakozás a Reddcoin hálózatához SOCKS proxyn keresztül</translation>
-    </message>
-    <message>
-        <source>&amp;Connect through SOCKS proxy (default proxy):</source>
-        <translation>&amp;Keresztül csatlakoztassa SOCKS proxy (alapértelmezett proxy):</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -1080,14 +951,6 @@ Cím: %4
         <translation>Proxy portja (pl.: 9050)</translation>
     </message>
     <message>
-        <source>SOCKS &amp;Version:</source>
-        <translation>SOCKS &amp;Verzió:</translation>
-    </message>
-    <message>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>A proxy SOCKS verziója (pl. 5)</translation>
-    </message>
-    <message>
         <source>&amp;Window</source>
         <translation>&amp;Ablak</translation>
     </message>
@@ -1126,14 +989,6 @@ Cím: %4
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Válaszd ki az interfészen és érmék küldésekor megjelenítendő alapértelmezett alegységet.</translation>
-    </message>
-    <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>Mutassa-e a Reddcoin címeket a tranzakciólistában.</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>&amp;Címek megjelenítése a tranzakciólistában</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -1179,10 +1034,6 @@ Cím: %4
         <translation>A kijelzett információ lehet, hogy elavult. A pénztárcája automatikusan szinkronizálja magát a Reddcoin hálózattal miután a kapcsolat létrejön, de ez e folyamat még nem fejeződött be.</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Tárca</translation>
-    </message>
-    <message>
         <source>Available:</source>
         <translation>Elérhető:</translation>
     </message>
@@ -1215,10 +1066,6 @@ Cím: %4
         <translation>A jelenlegi teljes egyenlege:</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Legutóbbi tranzakciók&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>out of sync</source>
         <translation>Nincs szinkronban.</translation>
     </message>
@@ -1233,16 +1080,31 @@ Cím: %4
         <source>Cannot start reddcoin: click-to-pay handler</source>
         <translation>A reddcoint nem lehet elindítani: click-to-pay handler</translation>
     </message>
+    <message>
+        <source>Invalid payment address %1</source>
+        <translation>Érvénytelen fizetési cím %1</translation>
+    </message>
+    </context>
+<context>
+    <name>PeerTableModel</name>
     </context>
 <context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin Mag</translation>
+        <source>%1 h</source>
+        <translation>%1 h</translation>
     </message>
     <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Ad meg egy Reddcoin címet (pl: RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
+        <source>%1 m</source>
+        <translation>%1 m</translation>
+    </message>
+    <message>
+        <source>N/A</source>
+        <translation>Nem elérhető</translation>
+    </message>
+    <message>
+        <source>Amount</source>
+        <translation>Összeg</translation>
     </message>
 </context>
 <context>
@@ -1390,19 +1252,7 @@ Cím: %4
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 m</translation>
-    </message>
-    <message>
-        <source>%1 h</source>
-        <translation>%1 h</translation>
-    </message>
-    <message>
-        <source>%1 h %2 m</source>
-        <translation>%1 h %2 m</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
@@ -1583,10 +1433,6 @@ Cím: %4
         <translation>Díj</translation>
     </message>
     <message>
-        <source>Low Output:</source>
-        <translation>Alacsony teljesítmény:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation>Díj után:</translation>
     </message>
@@ -1698,14 +1544,6 @@ Cím: %4
         <source>added as transaction fee</source>
         <translation>hozzá tranzakciós díj</translation>
     </message>
-    <message>
-        <source>Payment request expired</source>
-        <translation>A fizetési kérelem lejárt</translation>
-    </message>
-    <message>
-        <source>Invalid payment address %1</source>
-        <translation>Érvénytelen fizetési cím %1</translation>
-    </message>
 </context>
 <context>
     <name>SendCoinsEntry</name>
@@ -1788,10 +1626,6 @@ Cím: %4
         <translation>Aláírhat a címeivel üzeneteket, amivel bizonyíthatja, hogy a címek az önéi. Vigyázzon, hogy ne írjon alá semmi félreérthetőt, mivel a phising támadásokkal megpróbálhatják becsapni, hogy az azonosságát átírja másokra. Csak olyan részletes állításokat írjon alá, amivel egyetért.</translation>
     </message>
     <message>
-        <source>The Reddcoin address to sign the message with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Adj meg egy Reddcoin-címet (pl.: RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
-    </message>
-    <message>
         <source>Choose previously used address</source>
         <translation>Válassz egy korábban már használt címet</translation>
     </message>
@@ -1838,10 +1672,6 @@ Cím: %4
     <message>
         <source>Verify &amp;Message</source>
         <translation>&amp;Üzenet ellenőrzése</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Ad meg egy Reddcoin címet (pl: RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -2012,10 +1842,6 @@ Cím: %4
         <source>, has not been successfully broadcast yet</source>
         <translation>, még nem sikerült elküldeni.</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>%n további blokkra megnyitva</numerusform><numerusform>%n további blokkra megnyitva</numerusform></translation>
-    </message>
     <message>
         <source>unknown</source>
         <translation>ismeretlen </translation>
@@ -2045,14 +1871,6 @@ Cím: %4
     <message>
         <source>Address</source>
         <translation>Cím</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>Összeg</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>%n további blokkra megnyitva</numerusform><numerusform>%n további blokkra megnyitva</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -2097,6 +1915,10 @@ Cím: %4
     <message>
         <source>Generated</source>
         <translation>Generálva</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Más</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -2238,10 +2060,6 @@ Cím: %4
         <translation>Cím</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Összeg</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>Azonosító</translation>
     </message>
@@ -2254,6 +2072,9 @@ Cím: %4
         <translation>meddig</translation>
     </message>
 </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
 <context>
     <name>WalletFrame</name>
     <message>
@@ -2298,18 +2119,6 @@ Cím: %4
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>Használat:</translation>
-    </message>
-    <message>
-        <source>List commands</source>
-        <translation>Parancsok kilistázása</translation>
-    </message>
-    <message>
-        <source>Get help for a command</source>
-        <translation>Segítség egy parancsród</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Opciók</translation>
     </message>
@@ -2318,24 +2127,12 @@ Cím: %4
         <translation>Adatkönyvtár</translation>
     </message>
     <message>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>Maximálisan &lt;n&gt; számú kapcsolat fenntartása a peerekkel (alapértelmezés: 125)</translation>
-    </message>
-    <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
         <translation>Kapcsolódás egy csomóponthoz a peerek címeinek megszerzése miatt, majd szétkapcsolás</translation>
     </message>
     <message>
         <source>Specify your own public address</source>
         <translation>Adja meg az Ön saját nyilvános címét</translation>
-    </message>
-    <message>
-        <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>Helytelenül viselkedő peerek leválasztási határértéke (alapértelmezés: 100)</translation>
-    </message>
-    <message>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>Helytelenül viselkedő peerek kizárási ideje másodpercben (alapértelmezés: 86400)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -2354,14 +2151,6 @@ Cím: %4
         <translation>Kívülről érkező kapcsolatok elfogadása (alapértelmezett: 1, ha nem használt a -proxy vagy a -connect)</translation>
     </message>
     <message>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
-        <translation>Regressziós teszt mód indítása, amely egy speciális láncot használ, amelyben a blokkok azonnal feloldhatók. Ez regressziós tesztalkalmazások által és alkalmazásfejlesztéshez használható.</translation>
-    </message>
-    <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Hiba: a tranzakciót elutasították. Ezt az okozhatja, ha már elköltöttél valamennyi érmét a tárcádból például ha a wallet.dat-od egy másolatát használtad, és így az elköltés csak abban lett jelölve, de itt nem.</translation>
-    </message>
-    <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
         <translation>Parancs, amit akkor hajt végre, amikor egy tárca-tranzakció megváltozik (%s a parancsban lecserélődik a blokk TxID-re)</translation>
     </message>
@@ -2374,16 +2163,8 @@ Cím: %4
         <translation>Figyelem: a -paytxfee nagyon magas.  Ennyi tranzakciós díjat fogsz fizetni, ha elküldöd a tranzakciót.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>Figyelem: Ellenőrizd, hogy helyesen van-e beállítva a gépeden a dátum és az idő.  A Reddcoin nem fog megfelelően működni, ha rosszul van beállítvaaz órád.</translation>
-    </message>
-    <message>
         <source>(default: 1)</source>
         <translation>(alapértelmezett: 1)</translation>
-    </message>
-    <message>
-        <source>(default: wallet.dat)</source>
-        <translation>(alapértelmezett: wallet.dat)</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -2422,56 +2203,8 @@ Cím: %4
         <translation>Hiba: Nincs elég hely a számítógépen!</translation>
     </message>
     <message>
-        <source>Error: system error: </source>
-        <translation>Hiba: rendszerhiba:</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Egyik hálózati porton sem sikerül hallgatni. Használja a -listen=0 kapcsolót, ha ezt szeretné.</translation>
-    </message>
-    <message>
-        <source>Failed to read block info</source>
-        <translation>A blokkinformáció olvasása nem sikerült</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>A blokk olvasása nem sikerült</translation>
-    </message>
-    <message>
-        <source>Failed to sync block index</source>
-        <translation>A blokkindex szinkronizálása nem sikerült</translation>
-    </message>
-    <message>
-        <source>Failed to write block index</source>
-        <translation>A blokkindex írása nem sikerült</translation>
-    </message>
-    <message>
-        <source>Failed to write block info</source>
-        <translation>A fájlinformáció írása nem sikerült</translation>
-    </message>
-    <message>
-        <source>Failed to write block</source>
-        <translation>A blokk írása nem sikerült</translation>
-    </message>
-    <message>
-        <source>Failed to write file info</source>
-        <translation>A fájlinformáció írása nem sikerült</translation>
-    </message>
-    <message>
-        <source>Failed to write to coin database</source>
-        <translation>Az érme-adatbázis írása nem sikerült</translation>
-    </message>
-    <message>
-        <source>Failed to write transaction index</source>
-        <translation>A tranzakcióindex írása nem sikerült</translation>
-    </message>
-    <message>
-        <source>Failed to write undo data</source>
-        <translation>A stornóadatok írása nem sikerült</translation>
-    </message>
-    <message>
-        <source>How many blocks to check at startup (default: 288, 0 = all)</source>
-        <translation>Hány blokkot ellenőrizzen induláskor (alapértelmezett: 288, 0 = mindet)</translation>
     </message>
     <message>
         <source>Importing...</source>
@@ -2486,24 +2219,8 @@ Cím: %4
         <translation>Érvénytelen -onion cím: '%s'</translation>
     </message>
     <message>
-        <source>Maintain a full transaction index (default: 1)</source>
-        <translation>Teljes tranzakcióindex megőrzése (alapértelmezett: 0) {1)?}</translation>
-    </message>
-    <message>
-        <source>RPC client options:</source>
-        <translation>RPC kliens beállítások:</translation>
-    </message>
-    <message>
         <source>Rebuild block chain index from current blk000??.dat files</source>
         <translation>Blokklánc index újraalkotása az alábbi blk000??.dat fájlokból</translation>
-    </message>
-    <message>
-        <source>Specify configuration file (default: reddcoin.conf)</source>
-        <translation>Konfigurációs fájl (alapértelmezett: reddcoin.conf)</translation>
-    </message>
-    <message>
-        <source>Specify pid file (default: reddcoind.pid)</source>
-        <translation>pid-fájl (alapértelmezett: reddcoind.pid)</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -2512,10 +2229,6 @@ Cím: %4
     <message>
         <source>Verifying wallet...</source>
         <translation>Tárca ellenőrzése...</translation>
-    </message>
-    <message>
-        <source>Wait for RPC server to start</source>
-        <translation>Várakozás az RPC szerver indulására</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -2542,40 +2255,12 @@ Cím: %4
         <translation>Érvénytelen összeg mert -reservebalance=&lt;összeg&gt;: '%s' </translation>
     </message>
     <message>
-        <source>Only accept block chain matching built-in checkpoints (default: 1)</source>
-        <translation>Csak blokklánccal egyező beépített ellenőrző pontok elfogadása (alapértelmezés: 1)</translation>
-    </message>
-    <message>
-        <source>Only connect to nodes in network &lt;net&gt; (IPv4, IPv6 or Tor)</source>
-        <translation>Csak a &lt;net&gt; hálózat csomópontjaihoz kapcsolódjon (IPv4, IPv6 vagy Tor)</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core Daemon</source>
-        <translation>Reddcoin Core Daemon</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core RPC client version</source>
-        <translation>Reddcoin Core RPC kliens verzió</translation>
-    </message>
-    <message>
-        <source>SSL options: (see the Reddcoin Wiki for SSL setup instructions)</source>
-        <translation>SSL-opciók: (lásd a Reddcoin Wiki SSL-beállítási instrukcióit)</translation>
-    </message>
-    <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>trace/debug információ küldése a konzolra a debog.log fájl helyett</translation>
     </message>
     <message>
         <source>Signing transaction failed</source>
         <translation>Tranzakció aláírása sikertelen</translation>
-    </message>
-    <message>
-        <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>Csatlakozás időkerete milliszekundumban (alapértelmezett: 5000)</translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>Rendszerhiba:</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -2590,10 +2275,6 @@ Cím: %4
         <translation>Túl nagy tranzakció</translation>
     </message>
     <message>
-        <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>UPnP-használat engedélyezése a figyelő port feltérképezésénél (default: 0)</translation>
-    </message>
-    <message>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
         <translation>UPnP-használat engedélyezése a figyelő port feltérképezésénél (default: 1 when listening)</translation>
     </message>
@@ -2606,20 +2287,8 @@ Cím: %4
         <translation>Figyelem</translation>
     </message>
     <message>
-        <source>version</source>
-        <translation>verzió</translation>
-    </message>
-    <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Jelszó JSON-RPC csatlakozásokhoz</translation>
-    </message>
-    <message>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>JSON-RPC csatlakozások engedélyezése meghatározott IP-címről</translation>
-    </message>
-    <message>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>Parancsok küldése &lt;ip&gt; címen működő csomóponthoz (alapértelmezett: 127.0.0.1)</translation>
     </message>
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
@@ -2630,10 +2299,6 @@ Cím: %4
         <translation>A Tárca frissítése a legfrissebb formátumra</translation>
     </message>
     <message>
-        <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>Kulcskarika mérete &lt;n&gt; (alapértelmezett: 100)</translation>
-    </message>
-    <message>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>Blokklánc újraszkennelése hiányzó tárca-tranzakciók után
 </translation>
@@ -2641,14 +2306,6 @@ Cím: %4
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>OpenSSL (https) használata JSON-RPC csatalkozásokhoz</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: server.cert)</source>
-        <translation>Szervertanúsítvány-fájl (alapértelmezett: server.cert)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: server.pem)</source>
-        <translation>Szerver titkos kulcsa (alapértelmezett: server.pem)</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -2668,14 +2325,6 @@ Cím: %4
         <translation>Hiba a wallet.dat betöltése közben: meghibásodott tárca</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin</source>
-        <translation>Hiba a wallet.dat betöltése közben: ehhez a tárcához újabb verziójú Reddcoin-kliens szükséges</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>A Tárca újraírása szükséges: Indítsa újra a teljesen a Reddcoin-t</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>Hiba az wallet.dat betöltése közben</translation>
     </message>
@@ -2688,10 +2337,6 @@ Cím: %4
         <translation>Ismeretlen hálózat lett megadva -onlynet: '%s'</translation>
     </message>
     <message>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>Ismeretlen -socks proxy kérése: %i</translation>
-    </message>
-    <message>
         <source>Cannot resolve -bind address: '%s'</source>
         <translation>Külső cím (-bind address) feloldása nem sikerült: '%s'</translation>
     </message>
@@ -2702,10 +2347,6 @@ Cím: %4
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>Étvénytelen -paytxfee=&lt;összeg&gt; összeg: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Étvénytelen összeg</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -2740,20 +2381,8 @@ Cím: %4
         <translation>Betöltés befejezve.</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>Használd a %s opciót</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Hiba</translation>
-    </message>
-    <message>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>Be kell állítani rpcpassword=&lt;password&gt; a konfigurációs fájlban
-%s
-Ha a fájl nem létezik, hozd létre 'csak a felhasználó által olvasható' fájl engedéllyel</translation>
     </message>
 </context>
 </TS>

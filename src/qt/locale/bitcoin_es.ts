@@ -1,47 +1,6 @@
 <TS language="es" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>About Reddcoin Core</source>
-        <translation>Acerca de Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>Versión de &lt;b&gt;Reddcoin&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
- Este es un software experimental.
-
- Distribuido bajo la licencia MIT/X11, vea el archivo adjunto COPYING o http://www.opensource.org/licenses/mit-license.php.
-
- Este producto incluye software desarrollado por OpenSSL Project para su uso en el OpenSSL Toolkit (http://www.openssl.org/) y software criptográfico escrito por Eric Young (eay@cryptsoft.com) y el software UPnP escrito por Thomas Bernard.</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>Copyright</translation>
-    </message>
-    <message>
-        <source>The Reddcoin Core developers</source>
-        <translation>Los desarrolladores de Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>(%1-bit)</source>
-        <translation>(%1-bit)</translation>
-    </message>
-</context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>Haga doble clic para editar una dirección o etiqueta</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>Crear una nueva dirección</translation>
@@ -130,11 +89,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Exporting Failed</source>
         <translation>Error exportando</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>Ha habido un error al intentar guardar los datos del monedero en %1.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -175,10 +130,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>For staking only</source>
         <translation>Solo para almacenar.</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Introduzca la nueva contraseña del monedero.&lt;br/&gt;Por favor elija una con &lt;b&gt;10 o más caracteres aleatorios&lt;/b&gt; u &lt;b&gt;ocho o más palabras&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -312,10 +263,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Salir de la aplicación</translation>
     </message>
     <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Mostrar información acerca de Reddcoin Core</translation>
-    </message>
-    <message>
         <source>About &amp;Qt</source>
         <translation>Acerca de &amp;Qt</translation>
     </message>
@@ -382,14 +329,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Reindexing blocks on disk...</source>
         <translation>Reindexando bloques en disco...</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n second(s)</source>
-        <translation><numerusform>%n segundo</numerusform><numerusform>%n segundos</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n minute(s)</source>
-        <translation><numerusform>%n minuto</numerusform><numerusform>%n minutos</numerusform></translation>
     </message>
     <message>
         <source>Staking.&lt;br&gt;Your average weight is %1&lt;br&gt;Your total weight is %2&lt;br&gt;Network weight is %3&lt;br&gt;Expected to earn reward once every %4</source>
@@ -492,10 +431,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[testnet]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
@@ -519,37 +454,13 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Show the Reddcoin Core help message to get a list with possible Reddcoin command-line options</source>
         <translation>Mostrar el mensaje de ayuda de Reddcoin Core con una lista de las posibles opciones de la consola de comandos de Reddcoin</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Reddcoin network</source>
-        <translation><numerusform>%n conexion activa hacia la red Reddcoin</numerusform><numerusform>%n conexiones activas hacia la red Reddcoin</numerusform></translation>
-    </message>
     <message>
         <source>No block source available...</source>
         <translation>Ninguna fuente de bloques disponible ...</translation>
     </message>
     <message>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>%1 bloques procesados del historial de transacciones.</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n hora</numerusform><numerusform>%n horas</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n día</numerusform><numerusform>%n días</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n semana</numerusform><numerusform>%n semanas</numerusform></translation>
-    </message>
-    <message>
         <source>%1 and %2</source>
         <translation>%1 y %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n año</numerusform><numerusform>%n años</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -611,10 +522,6 @@ Dirección: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>El monedero está &lt;b&gt;cifrado&lt;/b&gt; y actualmente &lt;b&gt;bloqueado&lt;/b&gt;</translation>
     </message>
-    <message>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>Ha ocurrido un error crítico. Reddcoin ya no puede continuar con seguridad y se cerrará.</translation>
-    </message>
 </context>
 <context>
     <name>ClientModel</name>
@@ -625,10 +532,6 @@ Dirección: %4
 </context>
 <context>
     <name>CoinControlDialog</name>
-    <message>
-        <source>Coin Control Address Selection</source>
-        <translation>Selección de direcciones bajo Coin Control</translation>
-    </message>
     <message>
         <source>Quantity:</source>
         <translation>Cantidad:</translation>
@@ -648,10 +551,6 @@ Dirección: %4
     <message>
         <source>Fee:</source>
         <translation>Tasa:</translation>
-    </message>
-    <message>
-        <source>Low Output:</source>
-        <translation>Envío pequeño:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -676,10 +575,6 @@ Dirección: %4
     <message>
         <source>Amount</source>
         <translation>Cantidad</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Dirección</translation>
     </message>
     <message>
         <source>Date</source>
@@ -742,10 +637,6 @@ Dirección: %4
         <translation>Copiar prioridad</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Copiar envío pequeño</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Copiar Cambio</translation>
     </message>
@@ -794,10 +685,6 @@ Dirección: %4
         <translation>ninguna</translation>
     </message>
     <message>
-        <source>Dust</source>
-        <translation>Basura</translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>si</translation>
     </message>
@@ -828,18 +715,6 @@ Dirección: %4
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
         <translation>Esta etiqueta se torna roja si cualquier destinatario recibe una cantidad menor a %1.</translation>
-    </message>
-    <message>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>Esto significa que se necesita una tarifa de al menos %1.</translation>
-    </message>
-    <message>
-        <source>Amounts below 0.546 times the minimum relay fee are shown as dust.</source>
-        <translation>Cantidades por debajo de 0.546 veces la tasa serán mostradas como basura</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the change is smaller than %1.</source>
-        <translation>Esta etiqueta se vuelve roja si el cambio es menor que %1</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -935,16 +810,20 @@ Dirección: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Reddcoin Core - Command-line options</source>
-        <translation>Reddcoin Core - Opciones de la consola de comandos</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
     <message>
         <source>version</source>
         <translation>versión</translation>
+    </message>
+    <message>
+        <source>(%1-bit)</source>
+        <translation>(%1-bit)</translation>
+    </message>
+    <message>
+        <source>About Reddcoin Core</source>
+        <translation>Acerca de Reddcoin Core</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -1010,22 +889,10 @@ Dirección: %4
         <translation>Reddcoin Core</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" can not be created.</source>
-        <translation>Error: No puede crearse el directorio de datos especificado "%1".</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Error</translation>
     </message>
-    <message>
-        <source>GB of free space available</source>
-        <translation>GB de espacio libre disponible</translation>
-    </message>
-    <message>
-        <source>(of %1GB needed)</source>
-        <translation>(de los %1GB necesarios)</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1060,14 +927,6 @@ Dirección: %4
         <translation>&amp;Principal</translation>
     </message>
     <message>
-        <source>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB.</source>
-        <translation>Tarifa de transacción opcional por kB que ayuda a asegurar que sus transacciones sean procesadas rápidamente. La mayoría de transacciones son de 1kB.</translation>
-    </message>
-    <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>Comisión de &amp;transacciones</translation>
-    </message>
-    <message>
         <source>Automatically start Reddcoin after logging in to the system.</source>
         <translation>Iniciar automáticamente Reddcoin al iniciar el sistema.</translation>
     </message>
@@ -1086,14 +945,6 @@ Dirección: %4
     <message>
         <source>Number of script &amp;verification threads</source>
         <translation>Número de hilos de &amp;verificación de scripts</translation>
-    </message>
-    <message>
-        <source>Connect to the Reddcoin network through a SOCKS proxy.</source>
-        <translation>Conectarse a la red Reddcoin a través de un proxy SOCKS.</translation>
-    </message>
-    <message>
-        <source>&amp;Connect through SOCKS proxy (default proxy):</source>
-        <translation>&amp;Conectarse a través de proxy SOCKS (proxy predeterminado):</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -1168,14 +1019,6 @@ Dirección: %4
         <translation>Puerto del servidor proxy (ej. 9050)</translation>
     </message>
     <message>
-        <source>SOCKS &amp;Version:</source>
-        <translation>&amp;Versión SOCKS:</translation>
-    </message>
-    <message>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>Versión del proxy SOCKS (ej. 5)</translation>
-    </message>
-    <message>
         <source>&amp;Window</source>
         <translation>&amp;Ventana</translation>
     </message>
@@ -1214,14 +1057,6 @@ Dirección: %4
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Elegir la subdivisión predeterminada para mostrar cantidades en la interfaz y cuando se envían reddcoins.</translation>
-    </message>
-    <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>Mostrar o no las direcciones Reddcoin en la lista de transacciones.</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>&amp;Mostrar las direcciones en la lista de transacciones</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1275,10 +1110,6 @@ Dirección: %4
         <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Reddcoin después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Monedero</translation>
-    </message>
-    <message>
         <source>Available:</source>
         <translation>Disponible:</translation>
     </message>
@@ -1289,10 +1120,6 @@ Dirección: %4
     <message>
         <source>Stake:</source>
         <translation>Acumulado:</translation>
-    </message>
-    <message>
-        <source>Total of coins that were staked and do not yet count toward the current balance</source>
-        <translation>Total de monedas que fueron acumuladas y todavía no cuentan para el balance actual</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -1319,10 +1146,6 @@ Dirección: %4
         <translation>Su balance actual total</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Movimientos recientes&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>out of sync</source>
         <translation>desincronizado</translation>
     </message>
@@ -1332,10 +1155,6 @@ Dirección: %4
     <message>
         <source>URI handling</source>
         <translation>Gestión de URI</translation>
-    </message>
-    <message>
-        <source>URI can not be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
-        <translation>¡No se puede interpretar la URI! Esto puede deberse a una dirección Reddcoin inválida o a parámetros de URI mal formados.</translation>
     </message>
     <message>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
@@ -1350,24 +1169,16 @@ Dirección: %4
         <translation>No se pudo iniciar reddcoin: manejador de pago-al-clic</translation>
     </message>
     <message>
-        <source>Net manager warning</source>
-        <translation>Advertencia del gestor de red</translation>
-    </message>
-    <message>
-        <source>Your active proxy doesn't support SOCKS5, which is required for payment requests via proxy.</source>
-        <translation>El proxy configurado no soporta el protocolo SOCKS5, el cual es requerido para pagos vía proxy.</translation>
-    </message>
-    <message>
         <source>Payment request fetch URL is invalid: %1</source>
         <translation>La URL de obtención de la solicitud de pago es inválida: %1</translation>
     </message>
     <message>
-        <source>Payment request file handling</source>
-        <translation>Procesado del archivo de solicitud de pago</translation>
+        <source>Invalid payment address %1</source>
+        <translation>Dirección de pago no válida %1</translation>
     </message>
     <message>
-        <source>Payment request file can not be read or processed! This can be caused by an invalid payment request file.</source>
-        <translation>¡No se ha podido leer o procesar el archivo de solicitud de pago! Esto puede deberse a un archivo inválido de solicitud de pago.</translation>
+        <source>Payment request file handling</source>
+        <translation>Procesado del archivo de solicitud de pago</translation>
     </message>
     <message>
         <source>Unverified payment requests to custom payment scripts are unsupported.</source>
@@ -1380,10 +1191,6 @@ Dirección: %4
     <message>
         <source>Error communicating with %1: %2</source>
         <translation>Error comunicándose con %1: %2</translation>
-    </message>
-    <message>
-        <source>Payment request can not be parsed or processed!</source>
-        <translation>¡La solicitud de pago no puede leerse ni procesarse!</translation>
     </message>
     <message>
         <source>Bad response from server %1</source>
@@ -1399,30 +1206,25 @@ Dirección: %4
     </message>
 </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin Core</translation>
+        <source>%1 h</source>
+        <translation>%1 h</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>Error: El directorio de datos especificado "%1" no existe.</translation>
+        <source>%1 m</source>
+        <translation>%1 m</translation>
     </message>
     <message>
-        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>Error: No se ha podido leer el archivo de configuración: %1. Debe utilizarse solamente la sintaxis clave=valor.</translation>
+        <source>N/A</source>
+        <translation>N/D</translation>
     </message>
     <message>
-        <source>Error: Invalid combination of -regtest and -testnet.</source>
-        <translation>Error: Combinación no válida de -regtest y -testnet.</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core didn't yet exit safely...</source>
-        <translation>Reddcoin core no se ha cerrado de forma segura todavía...</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Introduzca una dirección de Reddcoin (p. ej. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX) </translation>
+        <source>Amount</source>
+        <translation>Cantidad</translation>
     </message>
 </context>
 <context>
@@ -1574,19 +1376,7 @@ Dirección: %4
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 m</translation>
-    </message>
-    <message>
-        <source>%1 h</source>
-        <translation>%1 h</translation>
-    </message>
-    <message>
-        <source>%1 h %2 m</source>
-        <translation>%1 h %2 m</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
@@ -1608,10 +1398,6 @@ Dirección: %4
     <message>
         <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>R&amp;eutilizar una dirección existente para recibir (no recomendado)</translation>
-    </message>
-    <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Reddcoin network.</source>
-        <translation>Un mensaje opcional para adjuntar a la solicitud de pago, que se muestra cuando se abre la solicitud. Nota: El mensaje no se enviará con el pago por la red Reddcoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1799,10 +1585,6 @@ Dirección: %4
         <translation>Tasa:</translation>
     </message>
     <message>
-        <source>Low Output:</source>
-        <translation>Envío pequeño:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation>Después de tasas:</translation>
     </message>
@@ -1879,10 +1661,6 @@ Dirección: %4
         <translation>Copiar prioridad</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Copiar envío pequeño</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Copiar Cambio</translation>
     </message>
@@ -1942,14 +1720,6 @@ Dirección: %4
         <source>added as transaction fee</source>
         <translation>añadido como comisión de transacción</translation>
     </message>
-    <message>
-        <source>Payment request expired</source>
-        <translation>Petición de pago expirada</translation>
-    </message>
-    <message>
-        <source>Invalid payment address %1</source>
-        <translation>Dirección de pago no válida %1</translation>
-    </message>
 </context>
 <context>
     <name>SendCoinsEntry</name>
@@ -1976,10 +1746,6 @@ Dirección: %4
     <message>
         <source>This is a normal payment.</source>
         <translation>Esto es un pago ordinario.</translation>
-    </message>
-    <message>
-        <source>The Reddcoin address to send the payment to (e.g. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</source>
-        <translation>Dirección Reddcoin a la que enviar el pago (p. ej. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2052,10 +1818,6 @@ Dirección: %4
         <translation>Puede firmar mensajes con sus direcciones para demostrar que las posee. Tenga cuidado de no firmar cualquier cosa vaga, ya que los ataques de phishing pueden tratar de engañarle para suplantar su identidad. Firme solo declaraciones totalmente detalladas con las que usted esté de acuerdo.</translation>
     </message>
     <message>
-        <source>The Reddcoin address to sign the message with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Dirección Reddcoin con la que firmar el mensaje (p. ej. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
-    </message>
-    <message>
         <source>Choose previously used address</source>
         <translation>Escoger dirección previamente usada</translation>
     </message>
@@ -2097,7 +1859,7 @@ Dirección: %4
     </message>
     <message>
         <source>Clear &amp;All</source>
-        <translation>Limpiar &amp;todo</translation>
+        <translation>Vaciar &amp;todo</translation>
     </message>
     <message>
         <source>&amp;Verify Message</source>
@@ -2106,10 +1868,6 @@ Dirección: %4
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>Introduzca la dirección para la firma, el mensaje (asegurándose de copiar tal cual los saltos de línea, espacios, tabulaciones, etc.) y la firma a continuación para verificar el mensaje. Tenga cuidado de no asumir más información de lo que dice el propio mensaje firmado para evitar fraudes basados en ataques de tipo man-in-the-middle.</translation>
-    </message>
-    <message>
-        <source>The Reddcoin address the message was signed with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>La dirección Reddcoin con la que se firmó el mensaje (p. ej. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Reddcoin address</source>
@@ -2126,10 +1884,6 @@ Dirección: %4
     <message>
         <source>Click "Sign Message" to generate signature</source>
         <translation>Haga clic en "Firmar mensaje" para generar la firma</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Introduzca una dirección de Reddcoin (p. ej. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX) </translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -2187,6 +1941,10 @@ Dirección: %4
         <translation>Reddcoin Core</translation>
     </message>
     <message>
+        <source>The Bitcoin Core developers</source>
+        <translation>Los desarrolladores del Núcleo de Bitcoin</translation>
+    </message>
+    <message>
         <source>The Reddcoin Core developers</source>
         <translation>Los desarrolladores de Reddcoin Core</translation>
     </message>
@@ -2228,10 +1986,6 @@ Dirección: %4
         <source>Status</source>
         <translation>Estado</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, transmitir a través de %n nodo</numerusform><numerusform>, transmitir a través de %n nodos</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Fecha</translation>
@@ -2263,10 +2017,6 @@ Dirección: %4
     <message>
         <source>Credit</source>
         <translation>Crédito</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>disponible en %n bloque más</numerusform><numerusform>disponible en %n bloques más</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -2332,10 +2082,6 @@ Dirección: %4
         <source>, has not been successfully broadcast yet</source>
         <translation>, todavía no se ha sido difundido satisfactoriamente</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Abrir para %n bloque más</numerusform><numerusform>Abrir para %n bloques más</numerusform></translation>
-    </message>
     <message>
         <source>unknown</source>
         <translation>desconocido</translation>
@@ -2367,16 +2113,8 @@ Dirección: %4
         <translation>Dirección</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Cantidad</translation>
-    </message>
-    <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
         <translation>No vencidos (%1 confirmaciones. Estarán disponibles al cabo de %2)</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Abrir para %n bloque más</numerusform><numerusform>Abrir para %n bloques más</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -2429,6 +2167,10 @@ Dirección: %4
     <message>
         <source>Generated</source>
         <translation>Generado</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Otra</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -2582,10 +2324,6 @@ Dirección: %4
         <translation>Dirección</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Cantidad</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>ID</translation>
     </message>
@@ -2598,6 +2336,9 @@ Dirección: %4
         <translation>para</translation>
     </message>
 </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
 <context>
     <name>WalletFrame</name>
     <message>
@@ -2650,28 +2391,12 @@ Dirección: %4
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>Uso:</translation>
-    </message>
-    <message>
-        <source>List commands</source>
-        <translation>Muestra comandos</translation>
-    </message>
-    <message>
-        <source>Get help for a command</source>
-        <translation>Recibir ayuda para un comando</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Opciones:</translation>
     </message>
     <message>
         <source>Specify data directory</source>
         <translation>Especificar directorio para los datos</translation>
-    </message>
-    <message>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>Mantener como máximo &lt;n&gt; conexiones a pares (predeterminado: 125)</translation>
     </message>
     <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
@@ -2682,24 +2407,8 @@ Dirección: %4
         <translation>Especifique su propia dirección pública</translation>
     </message>
     <message>
-        <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>Umbral para la desconexión de pares con mal comportamiento (predeterminado: 100)</translation>
-    </message>
-    <message>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>Número de segundos en que se evita la reconexión de pares con mal comportamiento (predeterminado: 86400)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
-        <translation>Ha ocurrido un error al configurar el puerto RPC %u para escucha en IPv4: %s</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Aceptar comandos consola y JSON-RPC</translation>
-    </message>
-    <message>
-        <source>Connect to JSON-RPC on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>Escuchar conexiones JSON-RPC en &lt;port&gt; (Por defecto: 45443 o testnet: 55443) </translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
@@ -2714,85 +2423,20 @@ Dirección: %4
         <translation>Aceptar conexiones desde el exterior (predeterminado: 1 si no -proxy o -connect)</translation>
     </message>
     <message>
-        <source>%s, you must set a rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=reddcoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-</source>
-        <translation>%s, debe establecer un valor rpcpassword en el archivo de configuración:
-%s
-Se recomienda utilizar la siguiente contraseña aleatoria:  rpcuser=reddcoinrpc rpcpassword=%s
-(no es necesario recordar esta contraseña)
-El nombre de usuario y la contraseña DEBEN NO ser iguales.
-Si el archivo no existe, créelo con permisos de archivo de solo lectura.
-Se recomienda también establecer alertnotify para recibir notificaciones de problemas. Por ejemplo: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-</translation>
-    </message>
-    <message>
-        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
-        <translation>Cifrados aceptables (predeterminados: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
-        <translation>Ha ocurrido un error al configurar el puerto RPC %u para escuchar mediante IPv6. Recurriendo a IPv4: %s</translation>
-    </message>
-    <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>Vincular a la dirección dada y escuchar siempre en ella. Utilice la notación [host]:port para IPv6</translation>
-    </message>
-    <message>
-        <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:15)</source>
-        <translation>Limitar continuamente las transacciones gratuitas a &lt;n&gt;*1000 bytes por minuto (predeterminado:15)</translation>
-    </message>
-    <message>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
-        <translation>Iniciar modo de prueba de regresión, el cuál utiliza una cadena especial en la cual los bloques pueden ser resueltos instantáneamente. Se utiliza para herramientas de prueba de regresión y desarrollo de aplicaciones.</translation>
     </message>
     <message>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
         <translation>Ingresar en el modo de prueba de regresión, que utiliza una cadena especial en la que los bloques se pueden resolver instantáneamente.</translation>
     </message>
     <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Error: se ha rechazado la transacción! Esto puede ocurrir si ya se han gastado algunas de las monedas del monedero, como ocurriría si hubiera hecho una copia de wallet.dat y se hubieran gastado monedas a partir de la copia, con lo que no se habrían marcado aquí como gastadas.</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>Error: Esta transacción requiere una comisión de al menos %s debido a su monto, complejidad, o al uso de fondos recién recibidos!</translation>
-    </message>
-    <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
         <translation>Ejecutar comando cuando una transacción del monedero cambia (%s en cmd se remplazará por TxID)</translation>
     </message>
     <message>
-        <source>Fees smaller than this are considered zero fee (for transaction creation) (default:</source>
-        <translation>Las comisiones inferiores se consideran comisión cero (a efectos de creación de transacciones) (predeterminado:</translation>
-    </message>
-    <message>
-        <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: 100)</source>
-        <translation>Volcar la actividad de la base de datos de memoria al registro en disco cada &lt;n&gt; megabytes (predeterminado: 100)</translation>
-    </message>
-    <message>
-        <source>How thorough the block verification of -checkblocks is (0-4, default: 3)</source>
-        <translation>Nivel de rigor en la verificación de bloques de -checkblocks (0-4; predeterminado: 3)</translation>
-    </message>
-    <message>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
         <translation>En este modo -genproclimit controla cuántos bloques se generan de inmediato.</translation>
-    </message>
-    <message>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>Escuchar conexiones JSON-RPC en &lt;puerto&gt; (predeterminado: 45443 o testnet: 55443)</translation>
-    </message>
-    <message>
-        <source>Log transaction priority and fee per kB when staking blocks (default: 0)</source>
-        <translation>Registrar en el log la prioridad de transacciones y la comisión por kB al apilar bloques (predeterminado: 0)</translation>
     </message>
     <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
@@ -2803,16 +2447,8 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>No se ha podido acceder a %s en esta máquina. Probablemente ya se está ejecutando Reddcoin Core.</translation>
     </message>
     <message>
-        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: -proxy)</source>
-        <translation>Usar proxy SOCKS5 distinto para comunicarse vía Tor de forma anónima (Predeterminado: -proxy)</translation>
-    </message>
-    <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Aviso: ¡-paytxfee tiene un valor muy alto! Esta es la comisión que pagará si envía una transacción.</translation>
-    </message>
-    <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>Aviso: Por favor, ¡revise que la fecha y hora de su ordenador son correctas! Si su reloj está mal, Reddcoin no funcionará correctamente.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -2835,10 +2471,6 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>(predeterminado: 1)</translation>
     </message>
     <message>
-        <source>(default: wallet.dat)</source>
-        <translation>(predeterminado: wallet.dat)</translation>
-    </message>
-    <message>
         <source>&lt;category&gt; can be:</source>
         <translation>&lt;category&gt; puede ser:</translation>
     </message>
@@ -2851,16 +2483,8 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Opciones de creación de bloques:</translation>
     </message>
     <message>
-        <source>Clear list of wallet transactions (diagnostic tool; implies -rescan)</source>
-        <translation>Vaciar lista de transacciones (herramienta de diagnóstico; implica -rescan)</translation>
-    </message>
-    <message>
         <source>Connect only to the specified node(s)</source>
         <translation>Conectar sólo a los nodos (o nodo) especificados</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS proxy</source>
-        <translation>Conectar a través de un proxy SOCKS</translation>
     </message>
     <message>
         <source>Connection options:</source>
@@ -2873,10 +2497,6 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
     <message>
         <source>Debugging/Testing options:</source>
         <translation>Opciones de depuración/pruebas:</translation>
-    </message>
-    <message>
-        <source>Disable safemode, override a real safe mode event (default: 0)</source>
-        <translation>Inhabilitar el modo seguro, no considerar un suceso real de modo seguro (predeterminado: 0)</translation>
     </message>
     <message>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
@@ -2911,76 +2531,8 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Error: ¡Espacio en disco bajo!</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Error: ¡El monedero está bloqueado; no se puede crear la transacción!</translation>
-    </message>
-    <message>
-        <source>Error: Wallet unlocked for staking only, unable to create transaction.</source>
-        <translation>Error: Monedero desbloqueado solo para staking, incapaz de crear la transacción.</translation>
-    </message>
-    <message>
-        <source>Error: system error: </source>
-        <translation>Error: error de sistema:</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Ha fallado la escucha en todos los puertos. Use -listen=0 si desea esto.</translation>
-    </message>
-    <message>
-        <source>Failed to read block info</source>
-        <translation>No se ha podido leer la información de bloque</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>No se ha podido leer el bloque</translation>
-    </message>
-    <message>
-        <source>Failed to sync block index</source>
-        <translation>No se ha podido sincronizar el índice de bloques</translation>
-    </message>
-    <message>
-        <source>Failed to write block index</source>
-        <translation>No se ha podido escribir en el índice de bloques</translation>
-    </message>
-    <message>
-        <source>Failed to write block info</source>
-        <translation>No se ha podido escribir la información de bloques</translation>
-    </message>
-    <message>
-        <source>Failed to write block</source>
-        <translation>No se ha podido escribir el bloque</translation>
-    </message>
-    <message>
-        <source>Failed to write file info</source>
-        <translation>No se ha podido escribir la información de archivo</translation>
-    </message>
-    <message>
-        <source>Failed to write to coin database</source>
-        <translation>No se ha podido escribir en la base de datos de monedas</translation>
-    </message>
-    <message>
-        <source>Failed to write transaction index</source>
-        <translation>No se ha podido escribir en el índice de transacciones</translation>
-    </message>
-    <message>
-        <source>Failed to write undo data</source>
-        <translation>No se han podido escribir los datos de deshacer</translation>
-    </message>
-    <message>
-        <source>Fee per kB to add to transactions you send</source>
-        <translation>Donación por KB añadida a las transacciones que envíe</translation>
-    </message>
-    <message>
-        <source>Fees smaller than this are considered zero fee (for relaying) (default:</source>
-        <translation>Las comisiones inferiores se consideran comisión cero (a efectos de propagación) (predeterminado:</translation>
-    </message>
-    <message>
-        <source>Force safe mode (default: 0)</source>
-        <translation>Forzar modo seguro (predeterminado: 0)</translation>
-    </message>
-    <message>
-        <source>How many blocks to check at startup (default: 288, 0 = all)</source>
-        <translation>Cuántos bloques comprobar al iniciar (predeterminado: 288, 0 = todos)</translation>
     </message>
     <message>
         <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
@@ -3011,32 +2563,16 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Mantener como máximo &lt;n&gt; transacciones no conectables en memoria (por defecto: %u)</translation>
     </message>
     <message>
-        <source>Maintain a full transaction index (default: 1)</source>
-        <translation>¿Mantener un índice completo de transacciones (Por defecto: 0) {1)?}</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>No hay suficientes descriptores de archivo disponibles.</translation>
-    </message>
-    <message>
-        <source>Prepend debug output with timestamp (default: 1)</source>
-        <translation>Anteponer marca temporal a la información de depuración (predeterminado: 1)</translation>
     </message>
     <message>
         <source>RPC SSL options: (see the wiki.reddcoin.com for SSL setup instructions)</source>
         <translation>Opciones SSL de RPC: (véase la wiki.reddcoin.com para las instrucciones de instalación de SSL)</translation>
     </message>
     <message>
-        <source>RPC client options:</source>
-        <translation>Opciones para cliente RPC:</translation>
-    </message>
-    <message>
         <source>Rebuild block chain index from current blk000??.dat files</source>
         <translation>Reconstruir el índice de la cadena de bloques a partir de los archivos blk000??.dat actuales</translation>
-    </message>
-    <message>
-        <source>Select SOCKS version for -proxy (4 or 5, default: 5)</source>
-        <translation>Seleccionar versión de SOCKS para -proxy (4 o 5, predeterminado: 5)</translation>
     </message>
     <message>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
@@ -3047,28 +2583,8 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Establecer tamaño máximo de bloque en bytes (predeterminado: %d)</translation>
     </message>
     <message>
-        <source>Set the number of threads to service RPC calls (default: 4)</source>
-        <translation>Establecer el número de hilos para atender las llamadas RPC (predeterminado: 4)</translation>
-    </message>
-    <message>
-        <source>Specify configuration file (default: reddcoin.conf)</source>
-        <translation>Especificar archivo de configuración (por defecto: reddcoin.conf) </translation>
-    </message>
-    <message>
-        <source>Specify pid file (default: reddcoind.pid)</source>
-        <translation>Especificar archivo pid (predeterminado: reddcoind.pid)</translation>
-    </message>
-    <message>
         <source>Specify wallet file (within data directory)</source>
         <translation>Especificar archivo de monedero (dentro del directorio de datos)</translation>
-    </message>
-    <message>
-        <source>Spend unconfirmed change when sending transactions (default: 1)</source>
-        <translation>Gastar cambio no confirmado al enviar transacciones (predeterminado: 1)</translation>
-    </message>
-    <message>
-        <source>Stake your coins to support network and gain reward (default: 1)</source>
-        <translation>Acumule sus monedas para apoyar la red y ganar recompensas (Por defecto: 1)</translation>
     </message>
     <message>
         <source>This is intended for regression testing tools and app development.</source>
@@ -3087,20 +2603,12 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Verificando monedero...</translation>
     </message>
     <message>
-        <source>Wait for RPC server to start</source>
-        <translation>Espere a que se inicie el servidor RPC</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>El monedero %s se encuentra fuera del directorio de datos %s</translation>
     </message>
     <message>
         <source>Wallet options:</source>
         <translation>Opciones de monedero:</translation>
-    </message>
-    <message>
-        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
-        <translation>Aviso: Argumento -debugnet anticuado, utilice -debug=net</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
@@ -3127,10 +2635,6 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Ejecutar comando cuando una alerta relevante es recibida o vemos un fork verdaderamente largo (%s en el comando es reemplazado por un mensaje)</translation>
     </message>
     <message>
-        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
-        <translation>Mostrar información de depuración (predeterminado: 0, proporcionar &lt;category&gt; es opcional)</translation>
-    </message>
-    <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
         <translation>Consulta de direcciones pares mediante búsqueda de DNS, si bajo en direcciones (por defecto: 1 a menos que - conectar)</translation>
     </message>
@@ -3139,16 +2643,8 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Establecer tamaño máximo de las transacciones de alta prioridad/baja comisión en bytes (predeterminado: %d)</translation>
     </message>
     <message>
-        <source>Set the processor limit for when generation is on (-1 = unlimited, default: 0)</source>
-        <translation>Establecer el límite de procesadores cuando está activada la generación (-1 = sin límite; predeterminado: 0)</translation>
-    </message>
-    <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications</source>
         <translation>Esta es una versión de pre-prueba - utilícela bajo su propio riesgo. No la utilice para usos comerciales o de minería.</translation>
-    </message>
-    <message>
-        <source>Always query for peer addresses via DNS lookup (default: 0)</source>
-        <translation>Siempre consultar direcciones de otros equipos por medio de DNS lookup (por defecto: 0)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3167,38 +2663,6 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Cantidad inválida para -reservebalance=&lt;amount&gt;: '%s'</translation>
     </message>
     <message>
-        <source>Limit size of signature cache to &lt;n&gt; entries (default: 50000)</source>
-        <translation>Limitar tamaño de la cache de firmas a &lt;n&gt; entradas (predeterminado: 50000)</translation>
-    </message>
-    <message>
-        <source>Listen for connections on &lt;port&gt; (default: 45444 or testnet: 55444)</source>
-        <translation>Escuchar conexiones en &lt;puerto&gt; (predeterminado: 45444 o testnet: 55444)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
-        <translation>Búfer de recepción máximo por conexión, &lt;n&gt;*1000 bytes (por defecto: 5000)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
-        <translation>Búfer de recepción máximo por conexión, , &lt;n&gt;*1000 bytes (por defecto: 1000)</translation>
-    </message>
-    <message>
-        <source>Only accept block chain matching built-in checkpoints (default: 1)</source>
-        <translation>Aceptar solamente cadena de bloques que concuerde con los puntos de control internos (predeterminado: 1)</translation>
-    </message>
-    <message>
-        <source>Only connect to nodes in network &lt;net&gt; (IPv4, IPv6 or Tor)</source>
-        <translation>Sólo conectar a nodos en redes &lt;net&gt; (ipv4, ipv6 o Tor)</translation>
-    </message>
-    <message>
-        <source>Print block on startup, if found in block index</source>
-        <translation>Imprimir bloque al iniciar, si se encuentra en el índice de bloques</translation>
-    </message>
-    <message>
-        <source>Print block tree on startup (default: 0)</source>
-        <translation>Imprimir árbol de bloques al iniciar (predeterminado: 0)</translation>
-    </message>
-    <message>
         <source>RPC server options:</source>
         <translation>Opciones de servidor RPC:</translation>
     </message>
@@ -3211,48 +2675,12 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Introducir datos fuzz en 1 de cada &lt;n&gt; mensajes de red al azar</translation>
     </message>
     <message>
-        <source>Reddcoin Core Daemon</source>
-        <translation>Reddcoin Core Daemon</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core RPC client version</source>
-        <translation>Versión de cliente RPC Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>Run a thread to flush wallet periodically (default: 1)</source>
-        <translation>Ejecutar un hilo (thread) para limpiar de la memoria el monedero periódicamente (predeterminado: 1)</translation>
-    </message>
-    <message>
-        <source>SSL options: (see the Reddcoin Wiki for SSL setup instructions)</source>
-        <translation>Opciones SSL: (ver la Reddcoin Wiki para instrucciones de configuración SSL)</translation>
-    </message>
-    <message>
-        <source>Send command to Reddcoin Core</source>
-        <translation>Envíe comando al  Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>Send command to reddcoin Core</source>
-        <translation>Send command to reddcoin Core</translation>
-    </message>
-    <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>Enviar información de trazas/depuración a la consola en lugar de al archivo debug.log</translation>
     </message>
     <message>
-        <source>Set minimum block size in bytes (default: 0)</source>
-        <translation>Establecer tamaño mínimo de bloque en bytes (por defecto: 0)</translation>
-    </message>
-    <message>
-        <source>Sets the DB_PRIVATE flag in the wallet db environment (default: 1)</source>
-        <translation>Establece la opción DB_PRIVATE en el entorno de base de datos del monedero (predeterminado: 1)</translation>
-    </message>
-    <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
         <translation>Muestra todas las opciones de depuración (uso: --help -help-debug)</translation>
-    </message>
-    <message>
-        <source>Show benchmark information (default: 0)</source>
-        <translation>Mostrar información de benchmarking (predeterminado: 0)</translation>
     </message>
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
@@ -3261,18 +2689,6 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
     <message>
         <source>Signing transaction failed</source>
         <translation>Transacción falló</translation>
-    </message>
-    <message>
-        <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>Especificar el tiempo máximo de conexión en milisegundos (predeterminado: 5000)</translation>
-    </message>
-    <message>
-        <source>Start Reddcoin Core Daemon</source>
-        <translation>Iniciar Reddcoin Core Daemon</translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>Error de sistema:</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -3285,14 +2701,6 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
     <message>
         <source>Transaction too large</source>
         <translation>Transacción demasiado grande</translation>
-    </message>
-    <message>
-        <source>Usage (deprecated, use reddcoin-cli):</source>
-        <translation>Uso (desaconsejado, usar reddcoin-cli)</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>Usar UPnP para asignar el puerto de escucha (predeterminado: 0)</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
@@ -3319,24 +2727,12 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>al iniciar</translation>
     </message>
     <message>
-        <source>version</source>
-        <translation>versión</translation>
-    </message>
-    <message>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat corrupto. Ha fallado la recuperación.</translation>
     </message>
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Contraseña para las conexiones JSON-RPC</translation>
-    </message>
-    <message>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>Permitir conexiones JSON-RPC desde la dirección IP especificada</translation>
-    </message>
-    <message>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>Enviar comando al nodo situado en &lt;ip&gt; (predeterminado: 127.0.0.1)</translation>
     </message>
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
@@ -3347,24 +2743,12 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Actualizar el monedero al último formato</translation>
     </message>
     <message>
-        <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>Ajustar el número de claves en reserva &lt;n&gt; (predeterminado: 100)</translation>
-    </message>
-    <message>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>Volver a examinar la cadena de bloques en busca de transacciones del monedero perdidas</translation>
     </message>
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Usar OpenSSL (https) para las conexiones JSON-RPC</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: server.cert)</source>
-        <translation>Certificado del servidor (predeterminado: server.cert)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: server.pem)</source>
-        <translation>Clave privada del servidor (predeterminado: server.pem)</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -3383,14 +2767,6 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Error al cargar wallet.dat: el monedero está dañado</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin</source>
-        <translation>Error al cargar wallet.dat: El monedero requiere una versión más reciente de Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>El monedero ha necesitado ser reescrito. Reinicie Reddcoin para completar el proceso</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>Error al cargar wallet.dat</translation>
     </message>
@@ -3403,10 +2779,6 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>La red especificada en -onlynet '%s' es desconocida</translation>
     </message>
     <message>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>Solicitada versión de proxy -socks desconocida: %i</translation>
-    </message>
-    <message>
         <source>Cannot resolve -bind address: '%s'</source>
         <translation>No se puede resolver la dirección de -bind: '%s'</translation>
     </message>
@@ -3417,10 +2789,6 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>Cantidad inválida para -paytxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Cuantía no válida</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3455,20 +2823,8 @@ Se recomienda también establecer alertnotify para recibir notificaciones de pro
         <translation>Generado pero no aceptado</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>Para utilizar la opción %s</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Error</translation>
-    </message>
-    <message>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>Tiene que establecer rpcpassword=&lt;contraseña&gt; en el fichero de configuración:
-%s
-Si el archivo no existe, créelo con permiso de lectura solamente del propietario.</translation>
     </message>
 </context>
 </TS>

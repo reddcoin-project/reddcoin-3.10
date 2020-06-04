@@ -1,42 +1,5 @@
 <TS language="tl_PH" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>About Reddcoin Core</source>
-        <translation>Tungkol sa Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Reddcoin Core&lt;/b&gt; bersyon</translation>
-    </message>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>Karapatang sipi</translation>
-    </message>
-    <message>
-        <source>The Reddcoin Core developers</source>
-        <translation>Reddcoin Core mga nag-develop</translation>
-    </message>
-    <message>
-        <source>(%1-bit)</source>
-        <translation>(%1-bit)</translation>
-    </message>
-</context>
-<context>
     <name>AddressBookPage</name>
     <message>
         <source>Create a new address</source>
@@ -110,11 +73,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Exporting Failed</source>
         <translation>Di natuloy ang pagsalin</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>May mali sa pag-save ng address listahan sa %1.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -150,7 +109,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>Unlock wallet</source>
-        <translation>Buksan ang wallet</translation>
+        <translation>Buksan pitaka</translation>
     </message>
     <message>
         <source>Change passphrase</source>
@@ -186,10 +145,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Quit application</source>
         <translation>Tumigil aplikasyon</translation>
-    </message>
-    <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Ipakita ang impormasyon tungkol sa Reddcoin</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -256,10 +211,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Tulong</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[testnet]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
@@ -267,25 +218,9 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>&amp;About Reddcoin Core</source>
         <translation>&amp;Tungkol sa Reddcoin Core</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n oras</numerusform><numerusform>%n oras</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n araw</numerusform><numerusform>%n araw</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n linggo</numerusform><numerusform>%n linggo</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 at %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n taon</numerusform><numerusform>%n taon</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -310,20 +245,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Dami</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Address</translation>
-    </message>
-    <message>
         <source>Date</source>
         <translation>Araw</translation>
     </message>
     <message>
         <source>Priority</source>
         <translation>Karapatang mauna</translation>
-    </message>
-    <message>
-        <source>Dust</source>
-        <translation>Alikabok</translation>
     </message>
     <message>
         <source>yes</source>
@@ -335,7 +262,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(Walang nakasulat)</translation>
+        <translation>(walang label)</translation>
     </message>
     </context>
 <context>
@@ -353,6 +280,14 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>version</source>
         <translation>Bersiyon</translation>
+    </message>
+    <message>
+        <source>(%1-bit)</source>
+        <translation>(%1-bit)</translation>
+    </message>
+    <message>
+        <source>About Reddcoin Core</source>
+        <translation>Tungkol sa Reddcoin Core</translation>
     </message>
     </context>
 <context>
@@ -379,12 +314,15 @@ This product includes software developed by the OpenSSL Project for use in the O
     <name>PaymentServer</name>
     </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin Core</translation>
+        <source>Amount</source>
+        <translation>Dami</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>QRImageWidget</name>
     </context>
@@ -406,7 +344,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>Label</source>
-        <translation>Marka</translation>
+        <translation>Label</translation>
     </message>
     </context>
 <context>
@@ -417,7 +355,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>Label</source>
-        <translation>Marka</translation>
+        <translation>Label</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -425,14 +363,14 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(Walang nakasulat)</translation>
+        <translation>(walang label)</translation>
     </message>
     </context>
 <context>
     <name>SendCoinsDialog</name>
     <message>
         <source>(no label)</source>
-        <translation>(Walang nakasulat)</translation>
+        <translation>(walang label)</translation>
     </message>
     </context>
 <context>
@@ -486,10 +424,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Address</source>
         <translation>Address</translation>
     </message>
-    <message>
-        <source>Amount</source>
-        <translation>Dami</translation>
-    </message>
     </context>
 <context>
     <name>TransactionView</name>
@@ -503,16 +437,15 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>Label</source>
-        <translation>Marka</translation>
+        <translation>Label</translation>
     </message>
     <message>
         <source>Address</source>
         <translation>Address</translation>
     </message>
-    <message>
-        <source>Amount</source>
-        <translation>Dami</translation>
-    </message>
+    </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
     <name>WalletFrame</name>
@@ -534,14 +467,6 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Start Reddcoin Core Daemon</source>
-        <translation>Simulan ang Reddcoin Core Daemon</translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>System error:</translation>
-    </message>
-    <message>
         <source>Transaction amount too small</source>
         <translation>Ang tansaksiyong halaga ay sobrang liit</translation>
     </message>
@@ -560,10 +485,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>on startup</source>
         <translation>sa pagsimula</translation>
-    </message>
-    <message>
-        <source>version</source>
-        <translation>Bersiyon</translation>
     </message>
     <message>
         <source>wallet.dat corrupt, salvage failed</source>
@@ -590,16 +511,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Nagkaroon ng error sa pag loload ng wallet.dat: Wallet:corrupted</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>Kailngang mai-load muli ang wallet: Restart ang Reddcoin para makumpleto</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>May mali sa paglaod ng wallet.dat</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Inbalidong halaga</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -618,12 +531,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Tapos na ang pagdadownload</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>Pagamit ng %s na opsiyon</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>May pagkakamli</translation>
     </message>
-    </context>
+</context>
 </TS>

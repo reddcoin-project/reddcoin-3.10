@@ -1,46 +1,6 @@
 <TS language="zh_CN" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>About Reddcoin Core</source>
-        <translation>關於Reddcoin核心</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Reddcoin核心&lt;/b&gt; 版本</translation>
-    </message>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>这是一套实验性的软件。
-
-此软件根据MIT(麻省理工学院)/ X11 软件许可协议分发, 详情参阅随附的 COPYING 文件, 或 http://www.opensource.org/licenses/mit-license.php。
-
-本产品包含由 OpenSSL Project 开发的用于 OpenSSL 工具包的软件, 由 Eric Young (eay@cryptsoft.com) 写的加密软件, 以及由 Thomas Bernard 写的 UPnP 软件。</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>版权</translation>
-    </message>
-    <message>
-        <source>The Reddcoin Core developers</source>
-        <translation>Reddcoin Core 的开发者</translation>
-    </message>
-    <message>
-        <source>(%1-bit)</source>
-        <translation>(%1 位)</translation>
-    </message>
-</context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>双击编辑地址或标签</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>创建新地址</translation>
@@ -129,11 +89,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Exporting Failed</source>
         <translation>导出失败</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>地址列表存至 %1 时发生错误。</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -174,10 +130,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>For staking only</source>
         <translation>只用于staking而已</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>输入钱包的新密码。&lt;br/&gt;使用的密码请至少包含&lt;b&gt;10个以上随机字符&lt;/&gt;，或者是&lt;b&gt;8个以上的单词&lt;/b&gt;。</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -309,10 +261,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Quit application</source>
         <translation>退出程序</translation>
-    </message>
-    <message>
-        <source>Show information about Reddcoin</source>
-        <translation>显示Reddcoin的相关信息</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -483,10 +431,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>分页工具栏</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[testnet]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin 核心</translation>
     </message>
@@ -510,37 +454,13 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Show the Reddcoin Core help message to get a list with possible Reddcoin command-line options</source>
         <translation>顯示Reddcoin核心幫助信息獲取與可能Reddcoin命令行選項列表</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Reddcoin network</source>
-        <translation><numerusform>%n 來Reddcoin網絡有效連接</numerusform></translation>
-    </message>
     <message>
         <source>No block source available...</source>
         <translation>沒有可用的区块来源...</translation>
     </message>
     <message>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>已处理 %1 个交易历史数据块。</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n 小时前</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n 天前</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n 周前</numerusform></translation>
-    </message>
-    <message>
         <source>%1 and %2</source>
         <translation>%1 和 %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n 年</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -602,10 +522,6 @@ Address: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>钱包已被&lt;b&gt;加密&lt;/b&gt;，当前为&lt;b&gt;锁定&lt;/b&gt;状态</translation>
     </message>
-    <message>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>發生致命錯誤。Reddcoin再也不能安全地繼續，並會退出。</translation>
-    </message>
 </context>
 <context>
     <name>ClientModel</name>
@@ -616,10 +532,6 @@ Address: %4
 </context>
 <context>
     <name>CoinControlDialog</name>
-    <message>
-        <source>Coin Control Address Selection</source>
-        <translation>选择交易源地址</translation>
-    </message>
     <message>
         <source>Quantity:</source>
         <translation>总量：</translation>
@@ -639,10 +551,6 @@ Address: %4
     <message>
         <source>Fee:</source>
         <translation>费用：</translation>
-    </message>
-    <message>
-        <source>Low Output:</source>
-        <translation>低输出</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -667,10 +575,6 @@ Address: %4
     <message>
         <source>Amount</source>
         <translation>金额</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>地址</translation>
     </message>
     <message>
         <source>Date</source>
@@ -702,7 +606,7 @@ Address: %4
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>复制交易ID</translation>
+        <translation>复制交易编号</translation>
     </message>
     <message>
         <source>Lock unspent</source>
@@ -731,10 +635,6 @@ Address: %4
     <message>
         <source>Copy priority</source>
         <translation>复制优先级</translation>
-    </message>
-    <message>
-        <source>Copy low output</source>
-        <translation>复制低输出</translation>
     </message>
     <message>
         <source>Copy change</source>
@@ -785,10 +685,6 @@ Address: %4
         <translation>无</translation>
     </message>
     <message>
-        <source>Dust</source>
-        <translation>尘埃交易</translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>是</translation>
     </message>
@@ -819,18 +715,6 @@ Address: %4
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
         <translation>如果有任何收款地址收到小于 %1 的金额，此标签会变成红色。</translation>
-    </message>
-    <message>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>这意味着至少要 %1 的交易费。</translation>
-    </message>
-    <message>
-        <source>Amounts below 0.546 times the minimum relay fee are shown as dust.</source>
-        <translation>小于最低转发费乘 0.546 的金额，将被显示为尘埃交易。</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the change is smaller than %1.</source>
-        <translation>如果零钱小于 %1，此标签会变成红色。</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -926,16 +810,20 @@ Address: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Reddcoin Core - Command-line options</source>
-        <translation>Reddcoin核心 - 命令行選項</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin 核心</translation>
     </message>
     <message>
         <source>version</source>
         <translation>版本</translation>
+    </message>
+    <message>
+        <source>(%1-bit)</source>
+        <translation>(%1 位)</translation>
+    </message>
+    <message>
+        <source>About Reddcoin Core</source>
+        <translation>關於Reddcoin核心</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -1001,22 +889,10 @@ Address: %4
         <translation>Reddcoin 核心</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" can not be created.</source>
-        <translation>错误：指定的数据目录“%1”无法创建。</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>错误</translation>
     </message>
-    <message>
-        <source>GB of free space available</source>
-        <translation>可用空间（GB）</translation>
-    </message>
-    <message>
-        <source>(of %1GB needed)</source>
-        <translation>（需要 %1GB）</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1051,14 +927,6 @@ Address: %4
         <translation>主要的 (&amp;M)</translation>
     </message>
     <message>
-        <source>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB.</source>
-        <translation>可选的每 kB 交易费，这有助于您的交易被快速处理。大多数交易都是 1 kB。</translation>
-    </message>
-    <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>支付交易费用 (&amp;F)</translation>
-    </message>
-    <message>
         <source>Automatically start Reddcoin after logging in to the system.</source>
         <translation>登录系统后自动开启Reddcoin客户端</translation>
     </message>
@@ -1077,14 +945,6 @@ Address: %4
     <message>
         <source>Number of script &amp;verification threads</source>
         <translation>脚本和验证进程数量</translation>
-    </message>
-    <message>
-        <source>Connect to the Reddcoin network through a SOCKS proxy.</source>
-        <translation>通过 SOCKS 代理连接到 Reddcoin 网络。</translation>
-    </message>
-    <message>
-        <source>&amp;Connect through SOCKS proxy (default proxy):</source>
-        <translation>通过 SO&amp;CKS 代理连接 (默认代理):</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -1159,14 +1019,6 @@ Address: %4
         <translation>代理端口（例如 9050）</translation>
     </message>
     <message>
-        <source>SOCKS &amp;Version:</source>
-        <translation>SOCKS 版本(&amp;V)：</translation>
-    </message>
-    <message>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>Socks 代理版本（例如 5）</translation>
-    </message>
-    <message>
         <source>&amp;Window</source>
         <translation>窗口(&amp;W)</translation>
     </message>
@@ -1205,14 +1057,6 @@ Address: %4
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>选择界面显示和发送的硬币时默认的Reddcoin单位。</translation>
-    </message>
-    <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>是否需要在交易清单中显示 Reddcoin 地址。</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>在交易清单中显示 Reddcoin 地址 (&amp;D)</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1266,10 +1110,6 @@ Address: %4
         <translation>现在显示的消息可能是过期的. 在连接上 Reddcoin 网络节点后，您的钱包将自动与网络同步，但是这个过程还没有完成.</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>钱包</translation>
-    </message>
-    <message>
         <source>Available:</source>
         <translation>可使用的余额：</translation>
     </message>
@@ -1280,10 +1120,6 @@ Address: %4
     <message>
         <source>Stake:</source>
         <translation>Stake:</translation>
-    </message>
-    <message>
-        <source>Total of coins that were staked and do not yet count toward the current balance</source>
-        <translation>已经stake但尚未归入目前总余额的货币量</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -1310,10 +1146,6 @@ Address: %4
         <translation>您当前的总余额</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;最近交易记录&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>out of sync</source>
         <translation>数据同步中</translation>
     </message>
@@ -1323,10 +1155,6 @@ Address: %4
     <message>
         <source>URI handling</source>
         <translation>URI 处理</translation>
-    </message>
-    <message>
-        <source>URI can not be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
-        <translation>URI无法解析！原因可能是Reddcoin地址不正确，或URI参数错误。</translation>
     </message>
     <message>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
@@ -1341,24 +1169,16 @@ Address: %4
         <translation>暂时无法启动 Reddcoin ：点击支付功能</translation>
     </message>
     <message>
-        <source>Net manager warning</source>
-        <translation>网络管理警告</translation>
-    </message>
-    <message>
-        <source>Your active proxy doesn't support SOCKS5, which is required for payment requests via proxy.</source>
-        <translation>您现行的代理不支持SOCKS5，而通过代理进行支付是需要 SOCKS5 的。</translation>
-    </message>
-    <message>
         <source>Payment request fetch URL is invalid: %1</source>
         <translation>付款请求URI有错误: %1</translation>
     </message>
     <message>
-        <source>Payment request file handling</source>
-        <translation>付款请求文件处理</translation>
+        <source>Invalid payment address %1</source>
+        <translation>无效的付款地址 %1</translation>
     </message>
     <message>
-        <source>Payment request file can not be read or processed! This can be caused by an invalid payment request file.</source>
-        <translation>不能读取或处理付款请求文件！这可能是个不合格的文件。</translation>
+        <source>Payment request file handling</source>
+        <translation>付款请求文件处理</translation>
     </message>
     <message>
         <source>Unverified payment requests to custom payment scripts are unsupported.</source>
@@ -1371,10 +1191,6 @@ Address: %4
     <message>
         <source>Error communicating with %1: %2</source>
         <translation>%1: %2 通讯出错</translation>
-    </message>
-    <message>
-        <source>Payment request can not be parsed or processed!</source>
-        <translation>支付请求不能被解析或处理！</translation>
     </message>
     <message>
         <source>Bad response from server %1</source>
@@ -1390,30 +1206,25 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin 核心</translation>
+        <source>%1 h</source>
+        <translation>%1 小时</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>错误：指定的数据目录“%1”不存在。</translation>
+        <source>%1 m</source>
+        <translation>%1 分钟</translation>
     </message>
     <message>
-        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>错误: 无法解析配置文件: %1. 只有钥匙=重要的私匙.</translation>
+        <source>N/A</source>
+        <translation>不可用</translation>
     </message>
     <message>
-        <source>Error: Invalid combination of -regtest and -testnet.</source>
-        <translation>错误：无效的 -regtest 与 -testnet 组合。</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core didn't yet exit safely...</source>
-        <translation>Reddcoin核心钱包没有安全退出....</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>请输入比特币地址（例如: RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX）</translation>
+        <source>Amount</source>
+        <translation>金额</translation>
     </message>
 </context>
 <context>
@@ -1565,19 +1376,7 @@ Address: %4
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 分钟</translation>
-    </message>
-    <message>
-        <source>%1 h</source>
-        <translation>%1 小时</translation>
-    </message>
-    <message>
-        <source>%1 h %2 m</source>
-        <translation>%1 小时 %2 分</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
@@ -1599,10 +1398,6 @@ Address: %4
     <message>
         <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>重复使用接收地址（不推荐） (&amp;E)</translation>
-    </message>
-    <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Reddcoin network.</source>
-        <translation>可在付款请求上附带一条信息，在打开付款请求时可以看到。注意：该消息不是通过Reddcoin网络传送。</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1790,10 +1585,6 @@ Address: %4
         <translation>费用：</translation>
     </message>
     <message>
-        <source>Low Output:</source>
-        <translation>低输出</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation>加上费用后:</translation>
     </message>
@@ -1870,10 +1661,6 @@ Address: %4
         <translation>复制优先级</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>复制低输出</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>复制零钱</translation>
     </message>
@@ -1933,14 +1720,6 @@ Address: %4
         <source>added as transaction fee</source>
         <translation>作为交易费添加</translation>
     </message>
-    <message>
-        <source>Payment request expired</source>
-        <translation>支付请求已过期</translation>
-    </message>
-    <message>
-        <source>Invalid payment address %1</source>
-        <translation>无效的付款地址 %1</translation>
-    </message>
 </context>
 <context>
     <name>SendCoinsEntry</name>
@@ -1967,10 +1746,6 @@ Address: %4
     <message>
         <source>This is a normal payment.</source>
         <translation>这是笔正常的支付。</translation>
-    </message>
-    <message>
-        <source>The Reddcoin address to send the payment to (e.g. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</source>
-        <translation>付款给这个Reddcoin地址  (例如 Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2043,10 +1818,6 @@ Address: %4
         <translation>您可以用你的地址对消息进行签名，以证明您是该地址的所有人。注意不要对模棱两可的消息签名，以免遭受钓鱼式攻击。请确保消息内容准确的表达了您的真实意愿。</translation>
     </message>
     <message>
-        <source>The Reddcoin address to sign the message with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>用于签名消息的Reddcoin地址（例如: RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX）</translation>
-    </message>
-    <message>
         <source>Choose previously used address</source>
         <translation>选择以前用过的地址</translation>
     </message>
@@ -2099,10 +1870,6 @@ Address: %4
         <translation>在下面输入签名地址，消息（请确保换行符、空格符、制表符等等一个不漏）和签名以验证消息。请确保签名信息准确，提防中间人攻击。</translation>
     </message>
     <message>
-        <source>The Reddcoin address the message was signed with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>用于签名消息的Reddcoin地址(例如: RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
-    </message>
-    <message>
         <source>Verify the message to ensure it was signed with the specified Reddcoin address</source>
         <translation>验证消息，确保消息是由指定的 Reddcoin 地址签名过的。</translation>
     </message>
@@ -2117,10 +1884,6 @@ Address: %4
     <message>
         <source>Click "Sign Message" to generate signature</source>
         <translation>单击“签名消息“产生签名。</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>请输入Reddcoin地址 (例如: RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -2178,6 +1941,10 @@ Address: %4
         <translation>Reddcoin 核心</translation>
     </message>
     <message>
+        <source>The Bitcoin Core developers</source>
+        <translation>Bitcoin 核心开发者</translation>
+    </message>
+    <message>
         <source>The Reddcoin Core developers</source>
         <translation>Reddcoin Core 的开发者</translation>
     </message>
@@ -2219,10 +1986,6 @@ Address: %4
         <source>Status</source>
         <translation>状态</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>通过 %n 个节点广播</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>日期</translation>
@@ -2254,10 +2017,6 @@ Address: %4
     <message>
         <source>Credit</source>
         <translation>收入</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>将在 %n 个数据块后成熟</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -2323,10 +2082,6 @@ Address: %4
         <source>, has not been successfully broadcast yet</source>
         <translation>，未被成功广播</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Open for %n more block</numerusform></translation>
-    </message>
     <message>
         <source>unknown</source>
         <translation>未知</translation>
@@ -2351,23 +2106,15 @@ Address: %4
     </message>
     <message>
         <source>Type</source>
-        <translation>类型</translation>
+        <translation>类别</translation>
     </message>
     <message>
         <source>Address</source>
         <translation>地址</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>金额</translation>
-    </message>
-    <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
         <translation>未成熟 (%1 个确认，还要 %2 才可用)</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Open for %n more block</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -2420,6 +2167,10 @@ Address: %4
     <message>
         <source>Generated</source>
         <translation>已生成</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>其他</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -2573,10 +2324,6 @@ Address: %4
         <translation>地址</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>金额</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>ID</translation>
     </message>
@@ -2589,6 +2336,9 @@ Address: %4
         <translation>到</translation>
     </message>
 </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
 <context>
     <name>WalletFrame</name>
     <message>
@@ -2607,7 +2357,7 @@ Address: %4
     <name>WalletView</name>
     <message>
         <source>&amp;Export</source>
-        <translation>导出 (&amp;E)</translation>
+        <translation>导出(&amp;E)</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -2641,20 +2391,6 @@ Address: %4
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>用法:</translation>
-    </message>
-    <message>
-        <source>List commands</source>
-        <translation>列出命令
-</translation>
-    </message>
-    <message>
-        <source>Get help for a command</source>
-        <translation>获得某条命令的帮助
-</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>选项：
 </translation>
@@ -2665,10 +2401,6 @@ Address: %4
 </translation>
     </message>
     <message>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>最大连接数 &lt;n&gt; （缺省: 125）</translation>
-    </message>
-    <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
         <translation>连接一个节点并获取对端地址，然后断开连接</translation>
     </message>
@@ -2677,24 +2409,8 @@ Address: %4
         <translation>指定您的公共地址</translation>
     </message>
     <message>
-        <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>断开行为不端对端阀值（缺省: 100）</translation>
-    </message>
-    <message>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>重新连接异常节点的秒数(缺省: 86400)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
-        <translation>设置RPC监听端口%u时发生错误, IPv4:%s</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>接受命令行和 JSON-RPC 命令</translation>
-    </message>
-    <message>
-        <source>Connect to JSON-RPC on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>JSON-RPC的连接端口 (默认：8332　testnet：18332) </translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
@@ -2709,88 +2425,20 @@ Address: %4
         <translation>接受来自外部的连接 (缺省: 如果不带 -proxy or -connect 参数设置为1)</translation>
     </message>
     <message>
-        <source>%s, you must set a rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=reddcoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-</source>
-        <translation>%s, 您必须在配置文件设置rpcpassword:
- %s
-建议您使用下面的随机密码:
-rpcuser=reddcoinrpc
-rpcpassword=%s
-(您无需记住此密码)
-用户名和密码 必! 须! 不一样。
-如果配置文件不存在，请自行建立一个只有所有者拥有只读权限的文件。
-推荐您开启提示通知以便收到错误通知，
-像这样: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-</translation>
-    </message>
-    <message>
-        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
-        <translation>可接受的密码（默认：TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH）</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
-        <translation>在IPv6模式下设置RPC监听端口 %u 失败，返回到IPv4模式: %s</translation>
-    </message>
-    <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>绑定指定的IP地址开始监听。IPv6地址请使用[host]:port 格式</translation>
-    </message>
-    <message>
-        <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:15)</source>
-        <translation>自由交易不断的速率限制为&lt;n&gt;*1000 字节每分钟(默认值:15)</translation>
-    </message>
-    <message>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
-        <translation>进入回归测试模式，它采用一种特殊的,可立即计算出答案的区块链。这是为了回归测试工具和应用的开发所设。</translation>
     </message>
     <message>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
         <translation>进入回归测试模式，它采用一种特殊的可立即解决的区块链模拟情况。</translation>
     </message>
     <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>错误：该交易被拒绝！发生这种错误的原因可能是：钱包中的 Reddcoin 已经被用掉，有可能您复制了wallet.dat钱包文件，然后用复制的钱包文件支付了 Reddcoin，但是这个钱包文件中没有记录。</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>错误：因为该交易的数量、复杂度或者动用了刚收到不久的资金，您需要支付不少于%s的交易费用。</translation>
-    </message>
-    <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
         <translation>当最佳区块变化时执行命令 (命令行中的 %s 会被替换成区块哈希值)</translation>
     </message>
     <message>
-        <source>Fees smaller than this are considered zero fee (for transaction creation) (default:</source>
-        <translation>比这手续费更小的被认为零手续费 (交易产生) (默认:</translation>
-    </message>
-    <message>
-        <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: 100)</source>
-        <translation>从缓冲池清理磁盘数据库活动日志每&lt;n&gt;兆字节 (默认值: 100)</translation>
-    </message>
-    <message>
-        <source>How thorough the block verification of -checkblocks is (0-4, default: 3)</source>
-        <translation>如何有效的验证checkblocks区块(0-4, 默认值: 3)</translation>
-    </message>
-    <message>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
         <translation>在-genproclimit这种模式下控制产出多少区块</translation>
-    </message>
-    <message>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>JSON-RPC连接监听端口&lt;port&gt; (缺省：45443　testnet：55443)</translation>
-    </message>
-    <message>
-        <source>Log transaction priority and fee per kB when staking blocks (default: 0)</source>
-        <translation>开采区块时，日志优先级和手续费每KB (默认值: 0)</translation>
     </message>
     <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
@@ -2801,16 +2449,8 @@ rpcpassword=%s
         <translation>无法在本机绑定 %s 端口 .  Reddcoin 客户端软件可能已经在运行.</translation>
     </message>
     <message>
-        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: -proxy)</source>
-        <translation>使用不同的SOCKS5代理,通过隐藏服务器达到同行(默认: -proxy) </translation>
-    </message>
-    <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>警告：-paytxfee 交易费设置得太高了！每笔交易都将支付交易费。</translation>
-    </message>
-    <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>警告：请检查电脑的日期时间设置是否正确！时间错误可能会导致 Reddcoin 客户端运行异常。</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -2833,10 +2473,6 @@ rpcpassword=%s
         <translation>(默认值: 1)</translation>
     </message>
     <message>
-        <source>(default: wallet.dat)</source>
-        <translation>(默认: wallet.dat)</translation>
-    </message>
-    <message>
         <source>&lt;category&gt; can be:</source>
         <translation>&lt;category&gt;可能是：</translation>
     </message>
@@ -2849,16 +2485,8 @@ rpcpassword=%s
         <translation>数据块创建选项：</translation>
     </message>
     <message>
-        <source>Clear list of wallet transactions (diagnostic tool; implies -rescan)</source>
-        <translation>清除钱包的交易记录 (诊断用，意味着将重新扫描 -rescan) </translation>
-    </message>
-    <message>
         <source>Connect only to the specified node(s)</source>
         <translation>仅连接到指定节点</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS proxy</source>
-        <translation>通过Socks代理连接</translation>
     </message>
     <message>
         <source>Connection options:</source>
@@ -2871,10 +2499,6 @@ rpcpassword=%s
     <message>
         <source>Debugging/Testing options:</source>
         <translation>调试/测试选项：</translation>
-    </message>
-    <message>
-        <source>Disable safemode, override a real safe mode event (default: 0)</source>
-        <translation>禁止使用安全模式，重新写入一个真正的安全模式日志(默认值: 0)</translation>
     </message>
     <message>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
@@ -2909,76 +2533,8 @@ rpcpassword=%s
         <translation>错误：磁盘剩余空间低!</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>错误：钱包被锁定，无法创建交易！</translation>
-    </message>
-    <message>
-        <source>Error: Wallet unlocked for staking only, unable to create transaction.</source>
-        <translation>错误：钱包只为staking解锁，无法创建交易。</translation>
-    </message>
-    <message>
-        <source>Error: system error: </source>
-        <translation>错误：系统出错。</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>监听端口失败。请使用 -listen=0 参数。</translation>
-    </message>
-    <message>
-        <source>Failed to read block info</source>
-        <translation>无法读取数据块信息</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>读取数据块失败</translation>
-    </message>
-    <message>
-        <source>Failed to sync block index</source>
-        <translation>无法同步数据块索引</translation>
-    </message>
-    <message>
-        <source>Failed to write block index</source>
-        <translation>无法写入数据块索引</translation>
-    </message>
-    <message>
-        <source>Failed to write block info</source>
-        <translation>无法写入数据块信息</translation>
-    </message>
-    <message>
-        <source>Failed to write block</source>
-        <translation>无法写数据块</translation>
-    </message>
-    <message>
-        <source>Failed to write file info</source>
-        <translation>无法写入文件信息</translation>
-    </message>
-    <message>
-        <source>Failed to write to coin database</source>
-        <translation>无法写入coin数据库</translation>
-    </message>
-    <message>
-        <source>Failed to write transaction index</source>
-        <translation>无法写入交易索引</translation>
-    </message>
-    <message>
-        <source>Failed to write undo data</source>
-        <translation>无法写入回滚信息</translation>
-    </message>
-    <message>
-        <source>Fee per kB to add to transactions you send</source>
-        <translation>为交易支付的每kb的费用</translation>
-    </message>
-    <message>
-        <source>Fees smaller than this are considered zero fee (for relaying) (default:</source>
-        <translation>比这手续费更小的被认为零手续费 (中继) (默认值: </translation>
-    </message>
-    <message>
-        <source>Force safe mode (default: 0)</source>
-        <translation>强制安全模式(默认值: 0)</translation>
-    </message>
-    <message>
-        <source>How many blocks to check at startup (default: 288, 0 = all)</source>
-        <translation>启动时检测多少个数据块(缺省：288，0=所有)</translation>
     </message>
     <message>
         <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
@@ -3001,32 +2557,16 @@ rpcpassword=%s
         <translation>无效的 -onion 地址：“%s”</translation>
     </message>
     <message>
-        <source>Maintain a full transaction index (default: 1)</source>
-        <translation>维护一份完整的交易索引(默认:1)</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>没有足够的文件描述符可用。</translation>
-    </message>
-    <message>
-        <source>Prepend debug output with timestamp (default: 1)</source>
-        <translation>调试信息输出时，前面加上时间戳 (默认: 1)</translation>
     </message>
     <message>
         <source>RPC SSL options: (see the wiki.reddcoin.com for SSL setup instructions)</source>
         <translation>RPC SSL选项：(见有关Reddcoin设置用于SSL说明的维基百科)</translation>
     </message>
     <message>
-        <source>RPC client options:</source>
-        <translation>RPC 客户端选项：</translation>
-    </message>
-    <message>
         <source>Rebuild block chain index from current blk000??.dat files</source>
         <translation>重新为当前的blk000??.dat文件建立索引</translation>
-    </message>
-    <message>
-        <source>Select SOCKS version for -proxy (4 or 5, default: 5)</source>
-        <translation>为 -proxy 选择 SOCKS 版本（4 或 5，默认: 5）</translation>
     </message>
     <message>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
@@ -3037,28 +2577,8 @@ rpcpassword=%s
         <translation>设置区块最多字节 (默认: %d)</translation>
     </message>
     <message>
-        <source>Set the number of threads to service RPC calls (default: 4)</source>
-        <translation>设置使用调用服务 RPC 的线程数量（默认：4）</translation>
-    </message>
-    <message>
-        <source>Specify configuration file (default: reddcoin.conf)</source>
-        <translation>指定配置文件 (默认为 reddcoin.conf)</translation>
-    </message>
-    <message>
-        <source>Specify pid file (default: reddcoind.pid)</source>
-        <translation>指定 pid 文件 (默认为 reddcoind.pid)</translation>
-    </message>
-    <message>
         <source>Specify wallet file (within data directory)</source>
         <translation>指定钱包文件（数据目录内）</translation>
-    </message>
-    <message>
-        <source>Spend unconfirmed change when sending transactions (default: 1)</source>
-        <translation>付款时允许使用未确认的零钱 (默认: 1)</translation>
-    </message>
-    <message>
-        <source>Stake your coins to support network and gain reward (default: 1)</source>
-        <translation>Stake 您的货币来支持网络并获得奖励（默认：1）</translation>
     </message>
     <message>
         <source>This is intended for regression testing tools and app development.</source>
@@ -3077,20 +2597,12 @@ rpcpassword=%s
         <translation>正在检测钱包的完整性...</translation>
     </message>
     <message>
-        <source>Wait for RPC server to start</source>
-        <translation>等待 RPC 服务器</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>钱包 %s 在数据目录 %s 之外</translation>
     </message>
     <message>
         <source>Wallet options:</source>
         <translation>钱包选项:</translation>
-    </message>
-    <message>
-        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
-        <translation>警告：已废弃的 -debugnet 参数已忽略，请用 -debug=net</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
@@ -3117,20 +2629,12 @@ rpcpassword=%s
         <translation>当收到相关提醒或看到一个长分叉时执行命令（命令中的 %s 被换为消息）</translation>
     </message>
     <message>
-        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
-        <translation>输出调试信息（默认:0，提供  &lt;category&gt; 是可选的）</translation>
-    </message>
-    <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
         <translation>通过DNS查找节点(缺省：1 除非使用 -connect 选项)</translation>
     </message>
     <message>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
         <translation>设置 高优先级/低交易费 交易的最多字节(默认: %d)</translation>
-    </message>
-    <message>
-        <source>Set the processor limit for when generation is on (-1 = unlimited, default: 0)</source>
-        <translation>设置处理器生成的限制 (-1 = 无限, 默认值: -1)</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications</source>
@@ -3153,38 +2657,6 @@ rpcpassword=%s
         <translation>-reservebalance=&lt;amount&gt;: '%s' 无效的金额</translation>
     </message>
     <message>
-        <source>Limit size of signature cache to &lt;n&gt; entries (default: 50000)</source>
-        <translation>签名缓冲大小限制每&lt;n&gt; 条目 (默认值: 50000)</translation>
-    </message>
-    <message>
-        <source>Listen for connections on &lt;port&gt; (default: 45444 or testnet: 55444)</source>
-        <translation>监听端口连接 &lt;port&gt;（缺省: 45444 或测试网络: 55444）</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
-        <translation>每个连接的最大接收缓存，&lt;n&gt;*1000 字节(缺省：5000)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
-        <translation>每个连接的最大发送缓存，&lt;n&gt;*1000 字节(缺省：1000)</translation>
-    </message>
-    <message>
-        <source>Only accept block chain matching built-in checkpoints (default: 1)</source>
-        <translation>仅接受符合客户端检查点设置的数据块文件</translation>
-    </message>
-    <message>
-        <source>Only connect to nodes in network &lt;net&gt; (IPv4, IPv6 or Tor)</source>
-        <translation>仅连接至指定网络的节点&lt;net&gt;(IPv4, IPv6 或者 Tor)</translation>
-    </message>
-    <message>
-        <source>Print block on startup, if found in block index</source>
-        <translation>如果在搜索区块中找到，请启动打印区块</translation>
-    </message>
-    <message>
-        <source>Print block tree on startup (default: 0)</source>
-        <translation>启动时打印区块树 (默认值: 0)</translation>
-    </message>
-    <message>
         <source>RPC server options:</source>
         <translation>RPC 服务器选项：</translation>
     </message>
@@ -3197,48 +2669,12 @@ rpcpassword=%s
         <translation>随机每1个模拟测试&lt;n&gt;网络信息</translation>
     </message>
     <message>
-        <source>Reddcoin Core Daemon</source>
-        <translation>Reddcoin核心 守护程序</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core RPC client version</source>
-        <translation>Reddcoin核心钱包RPC客户端版本</translation>
-    </message>
-    <message>
-        <source>Run a thread to flush wallet periodically (default: 1)</source>
-        <translation>运行一个程序，定时清理钱包 (默认值：1)</translation>
-    </message>
-    <message>
-        <source>SSL options: (see the Reddcoin Wiki for SSL setup instructions)</source>
-        <translation>SSL选项：(参见Reddcoin Wiki关于SSL设置栏目)</translation>
-    </message>
-    <message>
-        <source>Send command to Reddcoin Core</source>
-        <translation>发送指令到Reddcoin核心钱包</translation>
-    </message>
-    <message>
-        <source>Send command to reddcoin Core</source>
-        <translation>发送指令到Reddcoin核心钱包</translation>
-    </message>
-    <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>跟踪/调试信息输出到控制台，不输出到 debug.log 文件</translation>
     </message>
     <message>
-        <source>Set minimum block size in bytes (default: 0)</source>
-        <translation>设置最小数据块大小(缺省:0)</translation>
-    </message>
-    <message>
-        <source>Sets the DB_PRIVATE flag in the wallet db environment (default: 1)</source>
-        <translation>设置DB_PRIVATE钱包标志DB环境 (默认值: 1)</translation>
-    </message>
-    <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
         <translation>显示所有调试选项 (用法: --帮助 -帮助调试)</translation>
-    </message>
-    <message>
-        <source>Show benchmark information (default: 0)</source>
-        <translation>显示标准信息 (默认值: 0)</translation>
     </message>
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
@@ -3247,18 +2683,6 @@ rpcpassword=%s
     <message>
         <source>Signing transaction failed</source>
         <translation>签署交易失败</translation>
-    </message>
-    <message>
-        <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>设置连接超时时间(缺省：5000毫秒)</translation>
-    </message>
-    <message>
-        <source>Start Reddcoin Core Daemon</source>
-        <translation>开启Reddcoin核心钱包守护进程</translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>系统错误：</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -3271,14 +2695,6 @@ rpcpassword=%s
     <message>
         <source>Transaction too large</source>
         <translation>交易太大</translation>
-    </message>
-    <message>
-        <source>Usage (deprecated, use reddcoin-cli):</source>
-        <translation>用法（不推荐，请使用 reddcoin-cli）：</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>使用UPnP映射监听端口 (缺省: 0)</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
@@ -3305,10 +2721,6 @@ rpcpassword=%s
         <translation>启动中</translation>
     </message>
     <message>
-        <source>version</source>
-        <translation>版本</translation>
-    </message>
-    <message>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>钱包文件wallet.dat损坏，抢救备份失败</translation>
     </message>
@@ -3316,14 +2728,6 @@ rpcpassword=%s
         <source>Password for JSON-RPC connections</source>
         <translation>JSON-RPC 连接密码
 </translation>
-    </message>
-    <message>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>允许从指定IP接受到的 JSON-RPC 连接</translation>
-    </message>
-    <message>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>向IP地址为 &lt;ip&gt; 的节点发送指令 (缺省: 127.0.0.1)</translation>
     </message>
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
@@ -3334,27 +2738,12 @@ rpcpassword=%s
         <translation>将钱包升级到最新的格式</translation>
     </message>
     <message>
-        <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>设置密钥池大小为 &lt;n&gt; (缺省: 100)
-</translation>
-    </message>
-    <message>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>重新扫描区块链以查找遗漏的钱包交易</translation>
     </message>
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>为 JSON-RPC 连接使用 OpenSSL (https) 连接</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: server.cert)</source>
-        <translation>服务器证书 (默认为 server.cert)
-</translation>
-    </message>
-    <message>
-        <source>Server private key (default: server.pem)</source>
-        <translation>服务器私钥 (默认为 server.pem)
-</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -3374,14 +2763,6 @@ rpcpassword=%s
         <translation>wallet.dat 钱包文件加载出错：钱包损坏</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin</source>
-        <translation>wallet.dat 钱包文件加载错误：请升级到最新版Reddcoin客户端</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>钱包文件需要被重写：请退出并重新启动Reddcoin客户端</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>wallet.dat 钱包文件加载出错</translation>
     </message>
@@ -3394,10 +2775,6 @@ rpcpassword=%s
         <translation>-onlynet 指定的是未知网络：%s</translation>
     </message>
     <message>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>被指定的是未知socks代理版本: %i</translation>
-    </message>
-    <message>
         <source>Cannot resolve -bind address: '%s'</source>
         <translation>无法解析 -bind 端口地址: '%s'</translation>
     </message>
@@ -3408,10 +2785,6 @@ rpcpassword=%s
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>非法金额 -paytxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>无效金额</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3446,20 +2819,8 @@ rpcpassword=%s
         <translation>加载完成</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>使用 %s 选项</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>错误</translation>
-    </message>
-    <message>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>您必须在配置文件中加入选项 rpcpassword :
- %s
-如果配置文件不存在，请新建，并将文件权限设置为仅允许文件所有者读取.</translation>
     </message>
 </context>
 </TS>

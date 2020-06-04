@@ -1,46 +1,9 @@
 <TS language="uk" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>About Reddcoin Core</source>
-        <translation>Про Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>Версія &lt;b&gt;Reddcoin Core&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-Це програмне забезпечення є експериментальним.
-
-Поширюється за ліцензією MIT/X11, додаткова інформація міститься у файлі COPYING, а також за адресою http://www.opensource.org/licenses/mit-license.php.
-
-Цей продукт включає в себе програмне забезпечення, розроблене в рамках проекту OpenSSL (http://www.openssl.org/), криптографічне програмне забезпечення, написане Еріком Янгом (eay@cryptsoft.com), та функції для роботи з UPnP, написані Томасом Бернардом.</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>Авторське право</translation>
-    </message>
-    <message>
-        <source>The Reddcoin Core developers</source>
-        <translation>Розробники Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>(%1-bit)</source>
-        <translation>(%1-бітний)</translation>
-    </message>
-</context>
-<context>
     <name>AddressBookPage</name>
     <message>
-        <source>Double-click to edit address or label</source>
-        <translation>Двічі клікніть на адресу чи назву для їх зміни</translation>
+        <source>Right-click to edit address or label</source>
+        <translation>Правий клік для редагування адреси або мітки</translation>
     </message>
     <message>
         <source>Create a new address</source>
@@ -84,7 +47,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Виберіть адресу для відправлення монет</translation>
+        <translation>Виберіть, на яку адресу надіслати монети</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
@@ -96,7 +59,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>Sending addresses</source>
-        <translation>Адреси для відправлення</translation>
+        <translation>Адреси для надсилання</translation>
     </message>
     <message>
         <source>Receiving addresses</source>
@@ -104,7 +67,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>These are your Reddcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Це ваші Reddcoin-адреси для відправлення платежів. Перед відправленням монет завжди перевіряйте суму та адресу прийому.</translation>
+        <translation>Це ваші Reddcoin-адреси для надсилання платежів. Завжди перевіряйте суму та адресу перед тим, як відправляти монети.</translation>
     </message>
     <message>
         <source>These are your Reddcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
@@ -131,8 +94,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Помилка експорту</translation>
     </message>
     <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>Виникла помилка при спробі зберігання адрес до %1.</translation>
+        <source>There was an error trying to save the address list to %1. Please try again.</source>
+        <translation>Сталася помилка при спробі зберегти перелік адрес до %1. Спробуйте ще.</translation>
     </message>
 </context>
 <context>
@@ -147,7 +110,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(немає назви)</translation>
+        <translation>(без мітки)</translation>
     </message>
 </context>
 <context>
@@ -169,8 +132,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Повторіть пароль</translation>
     </message>
     <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Введіть новий пароль для гаманця.&lt;br/&gt;Будь ласка, використовуйте паролі що містять &lt;b&gt;як мінімум 10 випадкових символів&lt;/b&gt;, або &lt;b&gt;як мінімум 8 слів&lt;/b&gt;.</translation>
+        <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
+        <translation>Слугує для деактивації звичайного надсилання монет (sendmoney) при відсутності довіри до облікового запису ОС. Не надає реального захисту.</translation>
+    </message>
+    <message>
+        <source>For staking only</source>
+        <translation>Лише для стейкінгу</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -206,7 +173,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR REDDCOINS&lt;/b&gt;!</source>
-        <translation>УВАГА: Якщо ви зашифруєте гаманець і забудете пароль, ви &lt;b&gt;ВТРАТИТЕ ВСІ СВОЇ БІТКОІНИ&lt;/b&gt;!</translation>
+        <translation>УВАГА: Якщо ви зашифруєте гаманець і забудете пароль, ви &lt;b&gt;ВТРАТИТЕ ВСІ СВОЇ МОНЕТИ&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -225,8 +192,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Гаманець зашифровано</translation>
     </message>
     <message>
+        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
+        <translation>Введіть новий пароль для гаманця.&lt;br/&gt;Будь ласка, вживайте пароль з &lt;b&gt;десяти або більше випадкових символів&lt;/b&gt;, або &lt;b&gt;восьми чи быльше слів&lt;/b&gt;.</translation>
+    </message>
+    <message>
         <source>Reddcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your reddcoins from being stolen by malware infecting your computer.</source>
-        <translation>Біткоін-клієнт буде закрито для завершення процесу шифрування. Пам'ятайте, що шифрування гаманця не може повністю захистити ваші біткоіни від крадіжки, у випадку якщо ваш комп'ютер буде інфіковано шкідливими програмами.</translation>
+        <translation>Reddcoin-клієнт буде закрито для завершення процесу шифрування. Пам'ятайте, що шифрування гаманця не може повністю захистити ваші монети від крадіжки, у випадку якщо ваш комп'ютер буде інфіковано шкідливими програмами.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -280,6 +251,10 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Показати загальний огляд гаманця</translation>
     </message>
     <message>
+        <source>&amp;Request</source>
+        <translation>&amp;Запит</translation>
+    </message>
+    <message>
         <source>Request payments (generates QR codes and reddcoin: URIs)</source>
         <translation>Створити запит платежу (генерує QR-код та reddcoin: URI)</translation>
     </message>
@@ -298,10 +273,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Quit application</source>
         <translation>Вийти</translation>
-    </message>
-    <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Показати інформацію про Reddcoin</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -345,7 +316,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>&amp;Sending addresses...</source>
-        <translation>Адреси для &amp;відправлення...</translation>
+        <translation>Адреси для &amp;надсилання...</translation>
     </message>
     <message>
         <source>&amp;Receiving addresses...</source>
@@ -357,7 +328,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>Open a reddcoin: URI or payment request</source>
-        <translation>Відкрити reddcoin: URI чи запит платежу</translation>
+        <translation>Відкрити reddcoin: URI чи платіжний запит</translation>
     </message>
     <message>
         <source>Reddcoin Core client</source>
@@ -371,9 +342,45 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Reindexing blocks on disk...</source>
         <translation>Переіндексація блоків на диску ...</translation>
     </message>
+    <message numerus="yes">
+        <source>Processed %n blocks of transaction history.</source>
+        <translation><numerusform>Оброблено %n блок з історії транзакцій.</numerusform><numerusform>Оброблено %n блока з історії транзакцій.</numerusform><numerusform>Оброблено %n блоків з історії транзакцій.</numerusform><numerusform>Оброблено %n блоків з історії транзакцій.</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n second(s)</source>
+        <translation><numerusform>%n секунда</numerusform><numerusform>%n секунди</numerusform><numerusform>%n секунд</numerusform><numerusform>%n секунд</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n minute(s)</source>
+        <translation><numerusform>%n хвилина</numerusform><numerusform>%n хвилини</numerusform><numerusform>%n хвилин</numerusform><numerusform>%n хвилин</numerusform></translation>
+    </message>
+    <message>
+        <source>Staking.&lt;br&gt;Your average weight is %1&lt;br&gt;Your total weight is %2&lt;br&gt;Network weight is %3&lt;br&gt;Expected to earn reward once every %4</source>
+        <translation>Стейкінг.&lt;br&gt;Ваша середня вага: %1&lt;br&gt;Ваша повна вага: %2&lt;br&gt;Загальна вага мережі: %3&lt;br&gt;Очікувана періодичність отримання винагороды: %4</translation>
+    </message>
+    <message>
+        <source>Not staking because wallet is locked</source>
+        <translation>Стейкінг не відбувається, бо гаманець зашифровано</translation>
+    </message>
+    <message>
+        <source>Not staking because wallet is offline</source>
+        <translation>Стейкінг не відбувається, бо гаманець не підключено до мережі</translation>
+    </message>
+    <message>
+        <source>Not staking because wallet is syncing</source>
+        <translation>Стейкінг не відбувається, бо гаманець синхронізується</translation>
+    </message>
+    <message>
+        <source>Not staking because you don't have mature coins</source>
+        <translation>Стейкінг не відбувається, бо ви не маєте зрілих монет</translation>
+    </message>
+    <message>
+        <source>Not staking</source>
+        <translation>Стейкінг не відбувається</translation>
+    </message>
     <message>
         <source>Send coins to a Reddcoin address</source>
-        <translation>Відправити монети на вказану адресу</translation>
+        <translation>Надіслати монети на Reddcoin-адресу</translation>
     </message>
     <message>
         <source>Modify configuration options for Reddcoin</source>
@@ -389,11 +396,11 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>&amp;Debug window</source>
-        <translation>Вікно зневадження</translation>
+        <translation>Вікно налагодження</translation>
     </message>
     <message>
         <source>Open debugging and diagnostic console</source>
-        <translation>Відкрити консоль зневадження і діагностики</translation>
+        <translation>Відкрити консоль налагодження і діагностики</translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
@@ -409,7 +416,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>&amp;Send</source>
-        <translation>&amp;Відправити</translation>
+        <translation>&amp;Надіслати</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -421,11 +428,11 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Шифрування закритих ключів, які належать вашому гаманці</translation>
+        <translation>Шифрування закритих ключів, які належать вашому гаманцю</translation>
     </message>
     <message>
         <source>Sign messages with your Reddcoin addresses to prove you own them</source>
-        <translation>Підтвердіть, що Ви є власником повідомлення підписавши його Вашою Reddcoin-адресою </translation>
+        <translation>Підтвердіть, що ви є власником повідомлення, підписавши його вашою Reddcoin-адресою</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Reddcoin addresses</source>
@@ -448,10 +455,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Панель вкладок</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[тестова мережа]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
@@ -460,8 +463,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Про Reddcoin Core</translation>
     </message>
     <message>
+        <source>Show information about Reddcoin Core</source>
+        <translation>Показати інформацію про Reddcoin Core</translation>
+    </message>
+    <message>
         <source>Show the list of used sending addresses and labels</source>
-        <translation>Показати список адрес і міток, що були використані для відправлення</translation>
+        <translation>Показати перелік адрес та міток, що були використані для надсилання</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
@@ -477,27 +484,23 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Reddcoin network</source>
-        <translation><numerusform>%n активне з'єднання з мережею Reddcoin</numerusform><numerusform>%n активні з'єднання з мережею Reddcoin</numerusform><numerusform>%n активних з'єднань з мережею Reddcoin</numerusform></translation>
+        <translation><numerusform>%n активне з'єднання з мережею Reddcoin</numerusform><numerusform>%n активних з'єднання з мережею Reddcoin</numerusform><numerusform>%n активних з'єднання з мережею Reddcoin</numerusform><numerusform>%n активних з'єднання з мережею Reddcoin</numerusform></translation>
     </message>
     <message>
         <source>No block source available...</source>
         <translation>Недоступно жодного джерела блоків...</translation>
     </message>
-    <message>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>Оброблено %1 блоків історії транзакцій.</translation>
-    </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
-        <translation><numerusform>%n година</numerusform><numerusform>%n години</numerusform><numerusform>%n годин</numerusform></translation>
+        <translation><numerusform>%n година</numerusform><numerusform>%n години</numerusform><numerusform>%n годин</numerusform><numerusform>%n годин</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
-        <translation><numerusform>%n день</numerusform><numerusform>%n дні</numerusform><numerusform>%n днів</numerusform></translation>
+        <translation><numerusform>%n день</numerusform><numerusform>%n дні</numerusform><numerusform>%n днів</numerusform><numerusform>%n днів</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation><numerusform>%n тиждень</numerusform><numerusform>%n тижня</numerusform><numerusform>%n тижнів</numerusform></translation>
+        <translation><numerusform>%n тиждень</numerusform><numerusform>%n тижні</numerusform><numerusform>%n тижнів</numerusform><numerusform>%n тижнів</numerusform></translation>
     </message>
     <message>
         <source>%1 and %2</source>
@@ -505,7 +508,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message numerus="yes">
         <source>%n year(s)</source>
-        <translation><numerusform>%n рік</numerusform><numerusform>%n роки</numerusform><numerusform>%n років</numerusform></translation>
+        <translation><numerusform>%n рік</numerusform><numerusform>%n роки</numerusform><numerusform>%n років</numerusform><numerusform>%n років</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -545,7 +548,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <source>Incoming transaction</source>
-        <translation>Отримані перекази</translation>
+        <translation>Отримані транзакції</translation>
     </message>
     <message>
         <source>Date: %1
@@ -561,15 +564,11 @@ Address: %4
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Зашифрований&lt;/b&gt; гаманець &lt;b&gt;розблоковано&lt;/b&gt;</translation>
+        <translation>Гаманець &lt;b&gt;зашифровано&lt;/b&gt; та &lt;b&gt;розблоковано&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Зашифрований&lt;/b&gt; гаманець &lt;b&gt;заблоковано&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>Сталася фатальна помилка. Reddcoin завершить роботу.</translation>
+        <translation>Гаманець &lt;b&gt;зашифровано&lt;/b&gt; та &lt;b&gt;заблоковано&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -582,8 +581,8 @@ Address: %4
 <context>
     <name>CoinControlDialog</name>
     <message>
-        <source>Coin Control Address Selection</source>
-        <translation>Вибір адрес для керування монетами</translation>
+        <source>Coin Selection</source>
+        <translation>Вибір монети</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -606,8 +605,8 @@ Address: %4
         <translation>Комісія:</translation>
     </message>
     <message>
-        <source>Low Output:</source>
-        <translation>Малий вихід:</translation>
+        <source>Dust:</source>
+        <translation>Пил</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -634,8 +633,12 @@ Address: %4
         <translation>Кількість</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Адреса</translation>
+        <source>Received with label</source>
+        <translation>Отримано за міткою</translation>
+    </message>
+    <message>
+        <source>Received with address</source>
+        <translation>Отримано за адресою</translation>
     </message>
     <message>
         <source>Date</source>
@@ -663,47 +666,47 @@ Address: %4
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Копіювати кількість</translation>
+        <translation>Скопіювати кількість</translation>
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Копіювати ID транзакції</translation>
+        <translation>Скопіювати ID транзакції</translation>
     </message>
     <message>
         <source>Lock unspent</source>
-        <translation>Заблокувати</translation>
+        <translation>Заблокувати ненадіслане</translation>
     </message>
     <message>
         <source>Unlock unspent</source>
-        <translation>Розблокувати</translation>
+        <translation>Розблокувати ненадіслане</translation>
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>Копіювати кількість</translation>
+        <translation>Скопіювати кількість</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Копіювати комісію</translation>
+        <translation>Скопіювати комісію</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Копіювати після комісії</translation>
+        <translation>Скопіювати після комісії</translation>
     </message>
     <message>
         <source>Copy bytes</source>
-        <translation>Копіювати байти</translation>
+        <translation>Скопіювати байти</translation>
     </message>
     <message>
         <source>Copy priority</source>
-        <translation>Копіювати пріорітет</translation>
+        <translation>Скопіювати пріорітет</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Копіювати малий вихід</translation>
+        <source>Copy dust</source>
+        <translation>Скопіювати пил</translation>
     </message>
     <message>
         <source>Copy change</source>
-        <translation>Копіювати решту</translation>
+        <translation>Скопіювати решту</translation>
     </message>
     <message>
         <source>highest</source>
@@ -750,8 +753,8 @@ Address: %4
         <translation>відсутній</translation>
     </message>
     <message>
-        <source>Dust</source>
-        <translation>Пил</translation>
+        <source>Can vary +/- %1 satoshi(s) per input.</source>
+        <translation>Може відрізнятися на +/- %1 satoshi за вхід.</translation>
     </message>
     <message>
         <source>yes</source>
@@ -763,7 +766,7 @@ Address: %4
     </message>
     <message>
         <source>This label turns red, if the transaction size is greater than 1000 bytes.</source>
-        <translation>Ця позначка буде червоною, якщо розмір транзакції вищий за 1000 байт.</translation>
+        <translation>Ця позначка стане червоною, якщо розмір транзакції перевищує 1000 байт.</translation>
     </message>
     <message>
         <source>This means a fee of at least %1 per kB is required.</source>
@@ -779,27 +782,15 @@ Address: %4
     </message>
     <message>
         <source>This label turns red, if the priority is smaller than "medium".</source>
-        <translation>Ця позначка буде червоною, якщо пріоритет транзакції нижчий за «середній».</translation>
+        <translation>Ця позначка стане червоною, якщо пріоритет транзакції нижчий за «середній».</translation>
     </message>
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
-        <translation>Ця позначка буде червоною, якщо будь хто з отримувачів отримає менше ніж %1.</translation>
-    </message>
-    <message>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>Це означає, що необхідно сплатити щонайменше %1 комісії.</translation>
-    </message>
-    <message>
-        <source>Amounts below 0.546 times the minimum relay fee are shown as dust.</source>
-        <translation>Суми, що менші за 0.546 мінімальних комісій ретрансляції, відображаються як пил.</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the change is smaller than %1.</source>
-        <translation>Ця позначка буде червоною, якщо решта менша за %1.</translation>
+        <translation>Ця позначка стане червоною, якщо будь-хто з отримувачів отримає менше ніж %1.</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(немає назви)</translation>
+        <translation>(без мітки)</translation>
     </message>
     <message>
         <source>change from %1 (%2)</source>
@@ -814,7 +805,7 @@ Address: %4
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
-        <translation>Редагувати адресу</translation>
+        <translation>Змінити адресу</translation>
     </message>
     <message>
         <source>&amp;Label</source>
@@ -822,11 +813,11 @@ Address: %4
     </message>
     <message>
         <source>The label associated with this address list entry</source>
-        <translation>Мітка, пов'язана з цим записом списку адрес</translation>
+        <translation>Мітка, пов'язана з цим записом з переліку адрес</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
-        <translation>Адреса, пов'язана з цим записом списку адрес. Це поле може бути модифіковане лише для адрес відправлення.</translation>
+        <translation>Адреса, пов'язана з цим записом переліку адрес. Це поле може бути модифіковане лише для адрес надсилання.</translation>
     </message>
     <message>
         <source>&amp;Address</source>
@@ -838,7 +829,7 @@ Address: %4
     </message>
     <message>
         <source>New sending address</source>
-        <translation>Нова адреса для відправлення</translation>
+        <translation>Нова адреса для надсилання</translation>
     </message>
     <message>
         <source>Edit receiving address</source>
@@ -846,7 +837,7 @@ Address: %4
     </message>
     <message>
         <source>Edit sending address</source>
-        <translation>Редагувати адресу для відправлення</translation>
+        <translation>Редагувати адресу для надсилання</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -869,7 +860,7 @@ Address: %4
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
-        <translation>Буде створена новий каталог даних.</translation>
+        <translation>Буде створено новий каталог даних.</translation>
     </message>
     <message>
         <source>name</source>
@@ -877,7 +868,7 @@ Address: %4
     </message>
     <message>
         <source>Directory already exists. Add %1 if you intend to create a new directory here.</source>
-        <translation>Каталог вже існує. Додайте %1, якщо ви мали намір створити там новий каталог.</translation>
+        <translation>Каталог вже існує. Додайте %1, якщо ви мали намір створити тут новий.</translation>
     </message>
     <message>
         <source>Path already exists, and is not a directory.</source>
@@ -891,16 +882,24 @@ Address: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Reddcoin Core - Command-line options</source>
-        <translation>Reddcoin Core - Параметри командного рядка</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
     <message>
         <source>version</source>
         <translation>версії</translation>
+    </message>
+    <message>
+        <source>(%1-bit)</source>
+        <translation>(%1-бітний)</translation>
+    </message>
+    <message>
+        <source>About Reddcoin Core</source>
+        <translation>Про Reddcoin Core</translation>
+    </message>
+    <message>
+        <source>Command-line options</source>
+        <translation>Параметри командного рядка</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -924,7 +923,7 @@ Address: %4
     </message>
     <message>
         <source>Set SSL root certificates for payment request (default: -system-)</source>
-        <translation>Вказати кореневі SSL-сертифікати для запиту платежу (типово: -системні-)</translation>
+        <translation>Вказати кореневі SSL-сертифікати для платіжного запиту (типово: -системні-)</translation>
     </message>
     <message>
         <source>Show splash screen on startup (default: 1)</source>
@@ -954,17 +953,57 @@ Address: %4
         <translation>Reddcoin Core завантажить та збереже копію ланцюжка блоків Reddcoin. Щонайменше %1ГБ даних буде збережено в цьому каталозі. Гаманець теж буде збережено в цьому каталозі.</translation>
     </message>
     <message>
+        <source>Use the default data directory</source>
+        <translation>Використовувати стандартний робочий каталог</translation>
+    </message>
+    <message>
+        <source>Use a custom data directory:</source>
+        <translation>Використовувати інший робочий каталог</translation>
+    </message>
+    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
+    </message>
+    <message>
+        <source>Error: Specified data directory "%1" cannot be created.</source>
+        <translation>Помилка: Вказаний каталог даних "%1" неможливо створити.</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
-    </context>
+    <message numerus="yes">
+        <source>%n GB of free space available</source>
+        <translation><numerusform>%n ГБ вільного простору</numerusform><numerusform>%n ГБ вільного простору</numerusform><numerusform>%n ГБ вільного простору</numerusform><numerusform>%n ГБ вільного простору</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>(of %n GB needed)</source>
+        <translation><numerusform>(з необхідних %n ГБ)</numerusform><numerusform>(з необхідних %n ГБ)</numerusform><numerusform>(з необхідних %n ГБ)</numerusform><numerusform>(з необхідних %n ГБ)</numerusform></translation>
+    </message>
+</context>
 <context>
     <name>OpenURIDialog</name>
-    </context>
+    <message>
+        <source>Open URI</source>
+        <translation>Відкрити &amp;URI</translation>
+    </message>
+    <message>
+        <source>Open payment request from URI or file</source>
+        <translation>Відкрити платіжний запит з URI або файлу</translation>
+    </message>
+    <message>
+        <source>URI:</source>
+        <translation>URI:</translation>
+    </message>
+    <message>
+        <source>Select payment request file</source>
+        <translation>Вибрати файл платіжного запиту</translation>
+    </message>
+    <message>
+        <source>Select payment request file to open</source>
+        <translation>Вибрати файл платіжного запиту для відкриття</translation>
+    </message>
+</context>
 <context>
     <name>OptionsDialog</name>
     <message>
@@ -976,10 +1015,6 @@ Address: %4
         <translation>&amp;Головні</translation>
     </message>
     <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>Заплатити комісі&amp;ю</translation>
-    </message>
-    <message>
         <source>Automatically start Reddcoin after logging in to the system.</source>
         <translation>Автоматично запускати гаманець при вході до системи.</translation>
     </message>
@@ -988,12 +1023,44 @@ Address: %4
         <translation>&amp;Запускати гаманець при вході в систему</translation>
     </message>
     <message>
-        <source>Connect to the Reddcoin network through a SOCKS proxy.</source>
-        <translation>Підключення до мережі Reddcoin через SOCKS5 проксі.</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>Розмір кешу бази &amp;даних</translation>
+    </message>
+    <message>
+        <source>MB</source>
+        <translation>МБ</translation>
+    </message>
+    <message>
+        <source>Number of script &amp;verification threads</source>
+        <translation>Кількість потоків &amp;веріфікації скрипту</translation>
+    </message>
+    <message>
+        <source>Accept connections from outside</source>
+        <translation>Приймати підключення ззовні</translation>
+    </message>
+    <message>
+        <source>Allow incoming connections</source>
+        <translation>Дозволити вхідні підключення</translation>
+    </message>
+    <message>
+        <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
+        <translation>IP адреса проксі (напр. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
+    </message>
+    <message>
+        <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
+        <translation>Сторонні URL (наприклад, з block explorer), що з'являються на вкладці транзакцій як пункти контекстного меню. %s в URL замінюється хешем транзакції. Окремі URL розділяються вертикальною рискою |.</translation>
+    </message>
+    <message>
+        <source>Third party transaction URLs</source>
+        <translation>URL сторонніх транзакцій</translation>
+    </message>
+    <message>
+        <source>Active command-line options that override above options:</source>
+        <translation>Активні опції командного рядка, що перезаписують зазначені вище:</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
-        <translation>Скинути всі параметри клієнта на типові.</translation>
+        <translation>Скинути всі параметри клієнта на стандартні.</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
@@ -1004,12 +1071,44 @@ Address: %4
         <translation>&amp;Мережа</translation>
     </message>
     <message>
+        <source>(0 = auto, &lt;0 = leave that many cores free)</source>
+        <translation>(0 = авто, &lt;0 = залишити стільки вільних ядер)</translation>
+    </message>
+    <message>
+        <source>W&amp;allet</source>
+        <translation>Г&amp;аманець</translation>
+    </message>
+    <message>
+        <source>Expert</source>
+        <translation>Експерт</translation>
+    </message>
+    <message>
+        <source>Enable coin &amp;control features</source>
+        <translation>Активувати функцію &amp;керування монетами</translation>
+    </message>
+    <message>
+        <source>If you disable the spending of unconfirmed change, the change from a transaction cannot be used until that transaction has at least one confirmation. This also affects how your balance is computed.</source>
+        <translation>У разі відключення витрати непідтвердженої решти, решта з транзакції не може бути використана, поки у цієї транзакції немає жодного підтвердження. Це також впливає на розрахунок вашого балансу.</translation>
+    </message>
+    <message>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>Ви&amp;трачати непідтверджену решту</translation>
+    </message>
+    <message>
         <source>Automatically open the Reddcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматично відкривати порт для клієнту біткоін на роутері. Працює лише якщо ваш роутер підтримує UPnP і ця функція увімкнена.</translation>
+        <translation>Автоматично відкривати порт для Reddcoin-клієнту на роутері. Працює лише якщо ваш роутер підтримує UPnP і ця функція увімкнена.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
-        <translation>Відображення порту через &amp;UPnP</translation>
+        <translation>Підключити порт через &amp;UPnP</translation>
+    </message>
+    <message>
+        <source>Connect to the Reddcoin network through a SOCKS5 proxy.</source>
+        <translation>Підключення до мережі Reddcoin через SOCKS5 проксі.</translation>
+    </message>
+    <message>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>Підключитися через SOCKS проксі (типовий проксі):</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1021,15 +1120,7 @@ Address: %4
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
-        <translation>Порт проксі-сервера (наприклад 9050)</translation>
-    </message>
-    <message>
-        <source>SOCKS &amp;Version:</source>
-        <translation>SOCKS версії:</translation>
-    </message>
-    <message>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>Версія SOCKS-проксі (наприклад 5)</translation>
+        <translation>Порт проксі-сервера (напр. 9050)</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1037,11 +1128,11 @@ Address: %4
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
-        <translation>Показувати лише іконку в треї після згортання вікна.</translation>
+        <translation>Після згортання вікна, показувати лише іконку в треї.</translation>
     </message>
     <message>
         <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>Мінімізувати &amp;у трей</translation>
+        <translation>&amp;Мінімізувати в трей замість таскбару</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
@@ -1061,7 +1152,7 @@ Address: %4
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting Reddcoin.</source>
-        <translation>Встановлює мову інтерфейсу. Зміни набудуть чинності після перезапуску Reddcoin.</translation>
+        <translation>Застосовує мову інтерфейсу. Зміни набудуть чинності після перезапуску Reddcoin-клієнта.</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
@@ -1069,19 +1160,15 @@ Address: %4
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Виберіть одиницю вимірювання монет, яка буде відображатись в гаманці та при відправленні.</translation>
+        <translation>Виберіть одиницю вимірювання монет, яка буде відображена в гаманці та при надсиланні.</translation>
     </message>
     <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>Незалежно від того, щоб показати Reddcoin адреси в списку транзакцій чи ні.</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>&amp;Відображати адресу в списку транзакцій</translation>
+        <source>Whether to show coin control features or not.</source>
+        <translation>Чи відображати функцію контролю монет.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation>&amp;Гаразд</translation>
+        <translation>&amp;ОК</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
@@ -1105,11 +1192,11 @@ Address: %4
     </message>
     <message>
         <source>Client will be shutdown, do you want to proceed?</source>
-        <translation>Клієнт вимкнеться, продовжувати?</translation>
+        <translation>Клієнт буде вимкнено, продовжити?</translation>
     </message>
     <message>
         <source>This change would require a client restart.</source>
-        <translation>Ця зміна вступить в силу після перезапуску клієнта.</translation>
+        <translation>Ця зміна вимагає перезапуску клієнта.</translation>
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
@@ -1124,19 +1211,23 @@ Address: %4
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Reddcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Показана інформація вже може бути застарілою. Ваш гаманець буде автоматично синхронізовано з мережею Reddcoin після встановлення підключення, але цей процес ще не завершено.</translation>
+        <translation>Показана інформація може бути застарілою. Ваш гаманець автоматично синхронізується з мережею Reddcoin після встановлення підключення, але цей процес ще не завершено.</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Гаманець</translation>
+        <source>Watch-only:</source>
+        <translation>Тільки для перегляду:</translation>
     </message>
     <message>
         <source>Available:</source>
-        <translation>Наявно:</translation>
+        <translation>В наявності:</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
-        <translation>Ваш поточний підтверджений баланс</translation>
+        <translation>Ваш поточний баланс що можна використовувати</translation>
+    </message>
+    <message>
+        <source>Stake:</source>
+        <translation>Винагорода:</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -1144,7 +1235,7 @@ Address: %4
     </message>
     <message>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
-        <translation>Сума монет у непідтверджених транзакціях</translation>
+        <translation>Сума у непідтверджених транзакціях, що наразі не враховується у остаточному балансі доступному для використання</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -1155,6 +1246,10 @@ Address: %4
         <translation>Баланс видобутих та ще недозрілих монет</translation>
     </message>
     <message>
+        <source>Balances</source>
+        <translation>Баланс:</translation>
+    </message>
+    <message>
         <source>Total:</source>
         <translation>Всього:</translation>
     </message>
@@ -1163,8 +1258,28 @@ Address: %4
         <translation>Ваш поточний сукупний баланс</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Недавні транзакції&lt;/b&gt;</translation>
+        <source>Your current balance in watch-only addresses</source>
+        <translation>Ваш поточний баланс у доступних тільки для перегляду адресах</translation>
+    </message>
+    <message>
+        <source>Spendable:</source>
+        <translation>Доступный для використання:</translation>
+    </message>
+    <message>
+        <source>Recent transactions</source>
+        <translation>Недавні транзакциї</translation>
+    </message>
+    <message>
+        <source>Unconfirmed transactions to watch-only addresses</source>
+        <translation>Непідтверджені транзакції на адреси тільки для перегляду</translation>
+    </message>
+    <message>
+        <source>Mined balance in watch-only addresses that has not yet matured</source>
+        <translation>Добутий баланс у адресах тільки для перегляду, який ще не дозрів</translation>
+    </message>
+    <message>
+        <source>Current total balance in watch-only addresses</source>
+        <translation>Поточний підсумковий баланс в адресах доступних тільки для перегляду</translation>
     </message>
     <message>
         <source>out of sync</source>
@@ -1178,40 +1293,64 @@ Address: %4
         <translation>Обробка URI</translation>
     </message>
     <message>
-        <source>URI can not be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
-        <translation>Неможливо обробити URI! Причиною цього може бути некоректна Reddcoin-адреса або неправильні параметри URI.</translation>
-    </message>
-    <message>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
-        <translation>Сума запиту платежу для %1 занадто мала (вважається пилом).</translation>
+        <translation>Сума платіжного запиту для %1 занадто мала (вважається пилом).</translation>
     </message>
     <message>
         <source>Payment request error</source>
-        <translation>Помилка запиту платежу</translation>
+        <translation>Помилка платіжного запиту</translation>
     </message>
     <message>
         <source>Cannot start reddcoin: click-to-pay handler</source>
         <translation>Неможливо запустити reddcoin: обробник click-to-pay</translation>
     </message>
     <message>
-        <source>Net manager warning</source>
-        <translation>Попередження менеджера мережі</translation>
-    </message>
-    <message>
-        <source>Your active proxy doesn't support SOCKS5, which is required for payment requests via proxy.</source>
-        <translation>Ваш поточний проксі не підтримує SOCKS5; підтримка SOCKS5 необхідна для запитів платежу через проксі.</translation>
-    </message>
-    <message>
         <source>Payment request fetch URL is invalid: %1</source>
-        <translation>URL запиту платежу є некоректним: %1</translation>
+        <translation>URL платіжного запиту є некоректним: %1</translation>
+    </message>
+    <message>
+        <source>Invalid payment address %1</source>
+        <translation>Помилка в адресі платежу %1</translation>
+    </message>
+    <message>
+        <source>URI cannot be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
+        <translation>Неможливо розібрати URI! Причиною цього може бути некоректна Reddcoin-адреса або неправильні параметри URI.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
-        <translation>Обробка файлу запиту платежу</translation>
+        <translation>Обробка файлу платіжного запиту</translation>
     </message>
     <message>
-        <source>Payment request file can not be read or processed! This can be caused by an invalid payment request file.</source>
-        <translation>Неможливо прочитати/обробити файл запиту платежу! Ймовірно, файл пошкоджено.</translation>
+        <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
+        <translation>Неможливо прочитати файл платіжного запиту! Ймовірно, файл некоректний чи пошкоджений.</translation>
+    </message>
+    <message>
+        <source>Payment request rejected</source>
+        <translation>Платіжний запит відхилено</translation>
+    </message>
+    <message>
+        <source>Payment request network doesn't match client network.</source>
+        <translation>Мережі платіжного запиту та клієнта не співпадають.</translation>
+    </message>
+    <message>
+        <source>Payment request has expired.</source>
+        <translation>Термін дії платіжного запиту вичерпано.</translation>
+    </message>
+    <message>
+        <source>Payment request is not initialized.</source>
+        <translation>Платіжний запит не ініціалізовано.</translation>
+    </message>
+    <message>
+        <source>Payment request %2 is too large (%3 bytes, allowed %4 bytes).</source>
+        <translation>Платіжний запит %2 завеликий (байтів: %3 з %4 дозволених).</translation>
+    </message>
+    <message>
+        <source>Payment request DoS protection</source>
+        <translation>DoS захист платіжниого запиту</translation>
+    </message>
+    <message>
+        <source>Payment request cannot be parsed!</source>
+        <translation>Не вдалось розібрати платіжний запит!</translation>
     </message>
     <message>
         <source>Unverified payment requests to custom payment scripts are unsupported.</source>
@@ -1224,10 +1363,6 @@ Address: %4
     <message>
         <source>Error communicating with %1: %2</source>
         <translation>Помилка зв'язку з %1: %2</translation>
-    </message>
-    <message>
-        <source>Payment request can not be parsed or processed!</source>
-        <translation>Неможливо розпізнати/обробити запит платежу!</translation>
     </message>
     <message>
         <source>Bad response from server %1</source>
@@ -1243,30 +1378,65 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>PeerTableModel</name>
+    <message>
+        <source>Address/Hostname</source>
+        <translation>Адреса / Хост</translation>
+    </message>
+    <message>
+        <source>User Agent</source>
+        <translation>Клієнт</translation>
+    </message>
+    <message>
+        <source>Ping Time</source>
+        <translation>Час пінгу</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin Core</translation>
+        <source>Enter a Reddcoin address (e.g. %1)</source>
+        <translation>Введіть Reddcoin-адресу (напр. %1)</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>Помилка: Вказаного каталогу даних «%1» не існує.</translation>
+        <source>%1 d</source>
+        <translation>%1 д</translation>
     </message>
     <message>
-        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>Помилка: Неможливо розібрати файл конфігурації: %1. Використовуйте наступний синтаксис: ключ=значення.</translation>
+        <source>%1 h</source>
+        <translation>%1 год</translation>
     </message>
     <message>
-        <source>Error: Invalid combination of -regtest and -testnet.</source>
-        <translation>Помилка: Неможливо скомбінувати -regtest і -testnet.</translation>
+        <source>%1 m</source>
+        <translation>%1 хв</translation>
     </message>
     <message>
-        <source>Reddcoin Core didn't yet exit safely...</source>
-        <translation>Reddcoin Core ще не завершив роботу...</translation>
+        <source>%1 s</source>
+        <translation>%1 с</translation>
     </message>
     <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Введіть адресу Reddcoin (наприклад RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
+        <source>NETWORK</source>
+        <translation>МЕРЕЖА</translation>
+    </message>
+    <message>
+        <source>UNKNOWN</source>
+        <translation>НЕВІДОМИЙ</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ніхто</translation>
+    </message>
+    <message>
+        <source>N/A</source>
+        <translation>Н/Д</translation>
+    </message>
+    <message>
+        <source>%1 ms</source>
+        <translation>%1 мс</translation>
+    </message>
+    <message>
+        <source>Amount</source>
+        <translation>Кількість</translation>
     </message>
 </context>
 <context>
@@ -1308,15 +1478,19 @@ Address: %4
     </message>
     <message>
         <source>Debug window</source>
-        <translation>Вікно зневадження</translation>
+        <translation>Вікно налагодження</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Загальна</translation>
+        <translation>Загальне</translation>
     </message>
     <message>
         <source>Using OpenSSL version</source>
-        <translation>Використовується OpenSSL версії</translation>
+        <translation>Використовується версія OpenSSL</translation>
+    </message>
+    <message>
+        <source>Using BerkeleyDB version</source>
+        <translation>Використовується версія BerkeleyDB</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -1348,11 +1522,11 @@ Address: %4
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>Відкрити</translation>
+        <translation>&amp;Відкрити</translation>
     </message>
     <message>
         <source>&amp;Console</source>
-        <translation>Консоль</translation>
+        <translation>&amp;Консоль</translation>
     </message>
     <message>
         <source>&amp;Network Traffic</source>
@@ -1364,27 +1538,99 @@ Address: %4
     </message>
     <message>
         <source>Totals</source>
-        <translation>всього:</translation>
+        <translation>Підсумок</translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation>Отримано</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Відправлено</translation>
+    </message>
+    <message>
+        <source>&amp;Peers</source>
+        <translation>&amp;Підключення</translation>
+    </message>
+    <message>
+        <source>Select a peer to view detailed information.</source>
+        <translation>Виберіть підключення для перегляду докладної інформації.</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Напрямок</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Версія</translation>
+    </message>
+    <message>
+        <source>User Agent</source>
+        <translation>Клієнт (User Agent)</translation>
+    </message>
+    <message>
+        <source>Services</source>
+        <translation>Служби</translation>
+    </message>
+    <message>
+        <source>Sync Node</source>
+        <translation>Вузол синхронізації</translation>
+    </message>
+    <message>
+        <source>Starting Height</source>
+        <translation>Початкова висота</translation>
+    </message>
+    <message>
+        <source>Sync Height</source>
+        <translation>Висота синхронізації</translation>
+    </message>
+    <message>
+        <source>Ban Score</source>
+        <translation>Оцінка блокувань</translation>
+    </message>
+    <message>
+        <source>Connection Time</source>
+        <translation>Час підключення</translation>
+    </message>
+    <message>
+        <source>Last Send</source>
+        <translation>Востаннє надіслано</translation>
+    </message>
+    <message>
+        <source>Last Receive</source>
+        <translation>Востаннє отримано</translation>
+    </message>
+    <message>
+        <source>Bytes Sent</source>
+        <translation>Відправлено</translation>
+    </message>
+    <message>
+        <source>Bytes Received</source>
+        <translation>Отримано</translation>
+    </message>
+    <message>
+        <source>Ping Time</source>
+        <translation>Час пінгу</translation>
     </message>
     <message>
         <source>In:</source>
-        <translation>Вхідних:</translation>
+        <translation>Вх:</translation>
     </message>
     <message>
         <source>Out:</source>
-        <translation>Вихідних:</translation>
+        <translation>Вих:</translation>
     </message>
     <message>
         <source>Build date</source>
-        <translation>Дата збирання</translation>
+        <translation>Дата збірки</translation>
     </message>
     <message>
         <source>Debug log file</source>
-        <translation>Файл звіту зневадження</translation>
+        <translation>Файл звіту налагодження</translation>
     </message>
     <message>
         <source>Open the Reddcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Відкрийте файл журналу налагодження Reddcoin з поточного каталогу даних. Це може зайняти кілька секунд для великих файлів журналів.</translation>
+        <translation>Відкрийте файл журналу налагодження Reddcoin з поточного каталогу даних. Це може зайняти декілька секунд для великих файлів журналу.</translation>
     </message>
     <message>
         <source>Clear console</source>
@@ -1419,16 +1665,32 @@ Address: %4
         <translation>%1 ГБ</translation>
     </message>
     <message>
-        <source>%1 m</source>
-        <translation>%1 хв</translation>
+        <source>via %1</source>
+        <translation>через %1</translation>
     </message>
     <message>
-        <source>%1 h</source>
-        <translation>%1 год</translation>
+        <source>never</source>
+        <translation>ніколи</translation>
     </message>
     <message>
-        <source>%1 h %2 m</source>
-        <translation>%1 год %2 хв</translation>
+        <source>Inbound</source>
+        <translation>Вхідні</translation>
+    </message>
+    <message>
+        <source>Outbound</source>
+        <translation>Вихідні</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Fetching...</source>
+        <translation>Завантаження...</translation>
     </message>
 </context>
 <context>
@@ -1447,15 +1709,11 @@ Address: %4
     </message>
     <message>
         <source>Reuse one of the previously used receiving addresses. Reusing addresses has security and privacy issues. Do not use this unless re-generating a payment request made before.</source>
-        <translation>Повторно використати одну з адрес. Повторне використання адрес створює ризики безпеки та конфіденційності. Не використовуйте її, окрім як для створення повторного запиту платежу.</translation>
+        <translation>Повторно використати попередньо створену адресу. Повторне використання адреси має ризики для безпеки та конфіденційності. Не використовуйте її, окрім як для повторного платіжного запиту.</translation>
     </message>
     <message>
         <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>По&amp;вторно використати адресу для отримання (не рекомендується)</translation>
-    </message>
-    <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Reddcoin network.</source>
-        <translation>Необов'язкове повідомлення на додаток до запиту платежу, котре буде показане під час відкриття запиту. Примітка: Це повідомлення не буде відправлено з платежем через мережу Reddcoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1479,11 +1737,15 @@ Address: %4
     </message>
     <message>
         <source>Requested payments history</source>
-        <translation>Історія запитів платежу</translation>
+        <translation>Історія платіжних запитів</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
-        <translation>Н&amp;адіслати запит платежу</translation>
+        <translation>Створити платіжний &amp;запит</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
+        <translation>Необов'язкове повідомлення прикріплене до платіжного запиту, що буде відображено під час перегляду цього запиту. Примітка: Це повідомлення не буде відправлено через мережу Reddcoin.</translation>
     </message>
     <message>
         <source>Show the selected request (does the same as double clicking an entry)</source>
@@ -1534,7 +1796,7 @@ Address: %4
     </message>
     <message>
         <source>Request payment to %1</source>
-        <translation>Запит платежу на %1</translation>
+        <translation>Платіжний запит на %1</translation>
     </message>
     <message>
         <source>Payment information</source>
@@ -1589,7 +1851,7 @@ Address: %4
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(немає назви)</translation>
+        <translation>(без мітки)</translation>
     </message>
     <message>
         <source>(no message)</source>
@@ -1604,7 +1866,7 @@ Address: %4
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Відправити</translation>
+        <translation>Надіслати монети</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -1643,10 +1905,6 @@ Address: %4
         <translation>Комісія:</translation>
     </message>
     <message>
-        <source>Low Output:</source>
-        <translation>Малий вихід:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation>Після комісії:</translation>
     </message>
@@ -1663,8 +1921,80 @@ Address: %4
         <translation>Вказати адресу для решти</translation>
     </message>
     <message>
+        <source>Transaction Fee:</source>
+        <translation>Комісія за транзакцію</translation>
+    </message>
+    <message>
+        <source>Choose...</source>
+        <translation>Вибрати...</translation>
+    </message>
+    <message>
+        <source>collapse fee-settings</source>
+        <translation>Згорнути налаштування комісій</translation>
+    </message>
+    <message>
+        <source>Minimize</source>
+        <translation>Згорнути</translation>
+    </message>
+    <message>
+        <source>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then "per kilobyte" only pays 250 satoshis in fee, while "at least" pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Якщо спеціально вказана комісія дорівнює 1000 satoshi а транзакція лише 250 байт, тоді "за кілобайт" сплачується лише 250 satoshi, в той час як "щонайменше" сплачується 1000 satoshi. Комісія для транзакцій більших за кілобайт в обох випадках сплачується за кілобайт.</translation>
+    </message>
+    <message>
+        <source>per kilobyte</source>
+        <translation>на кілобайт</translation>
+    </message>
+    <message>
+        <source>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then "per kilobyte" only pays 250 satoshis in fee, while "total at least" pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Якщо спеціально вказана комісія дорівнює 1000 satoshi а транзакція лише 250 байт, тоді "за кілобайт" сплачується лише 250 satoshi, в той час як "всього щонайменше" сплачується 1000 satoshi. Комісія для транзакцій більших за кілобайт в обох випадках сплачується за кілобайт.</translation>
+    </message>
+    <message>
+        <source>total at least</source>
+        <translation>сумарно щонайменше</translation>
+    </message>
+    <message>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
+        <translation>Сплачувати лише мінімальну комісію нормально, допоки об'єм транзакцій не перевищує ємність блоків. Майте на увазі, що це може призвести до безкінечного непідтвердження, коли попит на транзакції перевищуватиме можливості мережі.</translation>
+    </message>
+    <message>
+        <source>(read the tooltip)</source>
+        <translation>(читати підказку)</translation>
+    </message>
+    <message>
+        <source>Recommended:</source>
+        <translation>Рекомендовано:</translation>
+    </message>
+    <message>
+        <source>Custom:</source>
+        <translation>Вказати:</translation>
+    </message>
+    <message>
+        <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
+        <translation>(Смарт-комісія ще не ініціалізована. Зазвичай потребує декілька блоків...)</translation>
+    </message>
+    <message>
+        <source>Confirmation time:</source>
+        <translation>Час підтвердження:</translation>
+    </message>
+    <message>
+        <source>normal</source>
+        <translation>звичайн.</translation>
+    </message>
+    <message>
+        <source>fast</source>
+        <translation>швидко</translation>
+    </message>
+    <message>
+        <source>Send as zero-fee transaction if possible</source>
+        <translation>Надіслати як транзакцію без комісії, якщо можливо</translation>
+    </message>
+    <message>
+        <source>(confirmation may take longer)</source>
+        <translation>(підтвердження може тривати довше)</translation>
+    </message>
+    <message>
         <source>Send to multiple recipients at once</source>
-        <translation>Відправити на декілька адрес</translation>
+        <translation>Надіслати на декілька адрес</translation>
     </message>
     <message>
         <source>Add &amp;Recipient</source>
@@ -1673,6 +2003,10 @@ Address: %4
     <message>
         <source>Clear all fields of the form.</source>
         <translation>Очистити всі поля в формі</translation>
+    </message>
+    <message>
+        <source>Dust:</source>
+        <translation>Пил</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -1684,7 +2018,7 @@ Address: %4
     </message>
     <message>
         <source>Confirm the send action</source>
-        <translation>Підтвердити відправлення</translation>
+        <translation>Підтвердити надсилання</translation>
     </message>
     <message>
         <source>S&amp;end</source>
@@ -1692,7 +2026,7 @@ Address: %4
     </message>
     <message>
         <source>Confirm send coins</source>
-        <translation>Підтвердіть відправлення</translation>
+        <translation>Підтвердіть надсилання</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -1723,10 +2057,6 @@ Address: %4
         <translation>Копіювати пріорітет</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Копіювати малий вихід</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Копіювати решту</translation>
     </message>
@@ -1740,15 +2070,15 @@ Address: %4
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
-        <translation>Адреса отримувача невірна, будь ласка перепровірте.</translation>
+        <translation>Адреса отримувача невірна, будь ласка перевірте.</translation>
     </message>
     <message>
         <source>The amount to pay must be larger than 0.</source>
-        <translation>Кількість монет для відправлення повинна бути більшою 0.</translation>
+        <translation>Кількість монет що надсилаються має бути більшою за 0.</translation>
     </message>
     <message>
         <source>The amount exceeds your balance.</source>
-        <translation>Кількість монет для відправлення перевищує ваш баланс.</translation>
+        <translation>Кількість монет перевищує ваш баланс.</translation>
     </message>
     <message>
         <source>The total exceeds your balance when the %1 transaction fee is included.</source>
@@ -1756,7 +2086,7 @@ Address: %4
     </message>
     <message>
         <source>Duplicate address found, can only send to each address once per send operation.</source>
-        <translation>Знайдено адресу що дублюється. Відправлення на кожну адресу дозволяється лише один раз на кожну операцію переказу.</translation>
+        <translation>Знайдено адресу що дублюється. Надсилання на кожну адресу дозволяється лише один раз на кожну операцію переказу.</translation>
     </message>
     <message>
         <source>Transaction creation failed!</source>
@@ -1767,32 +2097,40 @@ Address: %4
         <translation>Транзакцію відхилено! Це може статись, якщо декілька монет з вашого гаманця вже використані, наприклад, якщо ви використовуєте одну копію гаманця (wallet.dat), а монети були використані з іншої копії, але не позначені як використані в цій.</translation>
     </message>
     <message>
+        <source>A fee higher than %1 is considered an insanely high fee.</source>
+        <translation>Комісія, що перевищує %1 вважається безглуздо високою.</translation>
+    </message>
+    <message>
+        <source>Pay only the minimum fee of %1</source>
+        <translation>Сплачуйте лише мінімальну комісію в розмірі %1</translation>
+    </message>
+    <message>
+        <source>Estimated to begin confirmation within %1 block(s).</source>
+        <translation>Очікується початок підтвердження в межах %1 блока(ів).</translation>
+    </message>
+    <message>
         <source>Warning: Invalid Reddcoin address</source>
         <translation>Увага: Неправильна Reddcoin-адреса</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(немає назви)</translation>
+        <translation>(без мітки)</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
         <translation>Увага: Невідома адреса для решти</translation>
     </message>
     <message>
+        <source>Copy dust</source>
+        <translation>Скопіювати пил</translation>
+    </message>
+    <message>
         <source>Are you sure you want to send?</source>
-        <translation>Ви впевнені, що хочете відправити?</translation>
+        <translation>Ви впевнені, що хочете надіслати?</translation>
     </message>
     <message>
         <source>added as transaction fee</source>
         <translation>додано як комісія за транзакцію</translation>
-    </message>
-    <message>
-        <source>Payment request expired</source>
-        <translation>Запит платежу прострочено</translation>
-    </message>
-    <message>
-        <source>Invalid payment address %1</source>
-        <translation>Помилка в адресі платежу %1</translation>
     </message>
 </context>
 <context>
@@ -1807,7 +2145,7 @@ Address: %4
     </message>
     <message>
         <source>Enter a label for this address to add it to your address book</source>
-        <translation>Введіть мітку для цієї адреси для додавання її в адресну книгу</translation>
+        <translation>Введіть мітку для цієї адреси для додавання її до книги адрес</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
@@ -1820,10 +2158,6 @@ Address: %4
     <message>
         <source>This is a normal payment.</source>
         <translation>Це звичайний платіж.</translation>
-    </message>
-    <message>
-        <source>The Reddcoin address to send the payment to (e.g. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</source>
-        <translation>Адреса Reddcoin для відправлення платежу (наприклад Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1851,15 +2185,19 @@ Address: %4
     </message>
     <message>
         <source>This is a verified payment request.</source>
-        <translation>Це перевірений запит платежу.</translation>
+        <translation>Це перевірений платіжний запит.</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
-        <translation>Введіть мітку для цієї адреси для додавання її в список використаних адрес</translation>
+        <translation>Введіть мітку для цієї адреси для додавання її до переліку використаних адрес</translation>
+    </message>
+    <message>
+        <source>The Reddcoin address to send the payment to</source>
+        <translation>Reddcoin-адреса, на яку надсилається платіж</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
-        <translation>Це неперевірений запит платежу.</translation>
+        <translation>Це неперевірений платіжний запит.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1885,7 +2223,7 @@ Address: %4
     <name>SignVerifyMessageDialog</name>
     <message>
         <source>Signatures - Sign / Verify a Message</source>
-        <translation>Підписи - Підпис / Перевірка повідомлення</translation>
+        <translation>Підписи - Підписати / Перевірити повідомлення</translation>
     </message>
     <message>
         <source>&amp;Sign Message</source>
@@ -1896,12 +2234,12 @@ Address: %4
         <translation>Ви можете підписувати повідомлення зі своїми адресами, щоб довести, що ви є їх власником. Остерігайтеся підписувати будь-що незрозуміле, так як за допомогою фішинг-атаки вас можуть спробувати обдурити для отримання вашого підпису під чужими словами. Підписуйте тільки ті повідомлення, з якими ви повністю згодні.</translation>
     </message>
     <message>
-        <source>The Reddcoin address to sign the message with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Адреса Reddcoin для підпису цього повідомлення (наприклад RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
+        <source>The Reddcoin address to sign the message with</source>
+        <translation>Reddcoin-адреса для підпису цього повідомлення</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>Обрати ранiш використовувану адресу</translation>
+        <translation>Обрати ранiше використану адресу</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1909,7 +2247,7 @@ Address: %4
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Вставити адресу</translation>
+        <translation>Вставити адресу із сховку</translation>
     </message>
     <message>
         <source>Alt+P</source>
@@ -1925,7 +2263,7 @@ Address: %4
     </message>
     <message>
         <source>Copy the current signature to the system clipboard</source>
-        <translation>Копіювати поточну сигнатуру до системного буферу обміну</translation>
+        <translation>Копіювати поточну сигнатуру до системного сховку</translation>
     </message>
     <message>
         <source>Sign the message to prove you own this Reddcoin address</source>
@@ -1949,11 +2287,11 @@ Address: %4
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
-        <translation>Введіть нижче адресу підпису, повідомлення (впевніться, що ви точно скопіювали символи завершення рядку, табуляцію, пробіли тощо) та підпис для перевірки повідомлення. Впевніться, що в підпис не було додано зайвих символів: це допоможе уникнути атак типу «людина посередині».</translation>
+        <translation>Введіть нижче адресу підпису, повідомлення (переконайтеся, що ви точно скопіювали символи завершення рядку, табуляцію, пробіли тощо) та підпис нижче для перевірки повідомлення. Впевніться, що в підпис не було додано зайвих символів: це допоможе уникнути атак типу «людина посередині».</translation>
     </message>
     <message>
-        <source>The Reddcoin address the message was signed with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Адреса Reddcoin, якою було підписано це повідомлення (наприклад RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX) </translation>
+        <source>The Reddcoin address the message was signed with</source>
+        <translation>Reddcoin-адреса, якою було підписано повідомлення</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Reddcoin address</source>
@@ -1969,11 +2307,7 @@ Address: %4
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>
-        <translation>Натисніть кнопку «Підписати повідомлення», для отримання підпису</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Введіть адресу Reddcoin (наприклад RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
+        <translation>Натисніть кнопку «Підписати повідомлення», для створення підпису</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -2031,6 +2365,10 @@ Address: %4
         <translation>Reddcoin Core</translation>
     </message>
     <message>
+        <source>The Bitcoin Core developers</source>
+        <translation>Розробники Bitcoin Core</translation>
+    </message>
+    <message>
         <source>The Reddcoin Core developers</source>
         <translation>Розробники Reddcoin Core</translation>
     </message>
@@ -2074,7 +2412,7 @@ Address: %4
     </message>
     <message numerus="yes">
         <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, розіслано через %n вузол</numerusform><numerusform>, розіслано через %n вузли</numerusform><numerusform>, розіслано через %n вузлів</numerusform></translation>
+        <translation><numerusform>, трансляція через %n ноду</numerusform><numerusform>, трансляція через %n ноди</numerusform><numerusform>, трансляція через %n нод</numerusform><numerusform>, трансляція через %n нод</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -2098,11 +2436,15 @@ Address: %4
     </message>
     <message>
         <source>own address</source>
-        <translation>Власна адреса</translation>
+        <translation>власна адреса</translation>
+    </message>
+    <message>
+        <source>watch-only</source>
+        <translation>тільки перегляд</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>Мітка</translation>
+        <translation>мітка</translation>
     </message>
     <message>
         <source>Credit</source>
@@ -2110,7 +2452,7 @@ Address: %4
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation><numerusform>«дозріє» через %n блок</numerusform><numerusform>«дозріє» через %n блоки</numerusform><numerusform>«дозріє» через %n блоків</numerusform></translation>
+        <translation><numerusform>дозріває ще в %n блоці</numerusform><numerusform>дозріває ще в %n блоках</numerusform><numerusform>дозріває ще в %n блоках</numerusform><numerusform>дозріває ще в %n блоках</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -2119,6 +2461,14 @@ Address: %4
     <message>
         <source>Debit</source>
         <translation>Дебет</translation>
+    </message>
+    <message>
+        <source>Total debit</source>
+        <translation>Сума дебіту</translation>
+    </message>
+    <message>
+        <source>Total credit</source>
+        <translation>Сума кредиту</translation>
     </message>
     <message>
         <source>Transaction fee</source>
@@ -2146,7 +2496,7 @@ Address: %4
     </message>
     <message>
         <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Після генерації монет, потрібно зачекати %1 блоків, перш ніж їх можна буде використати. Коли ви згенерували цей блок, його було відправлено в мережу для того, щоб він був доданий до ланцюжка блоків. Якщо ця процедура не вдасться, статус буде змінено на «не підтверджено» і ви не зможете витратити згенеровані монети. Таке може статись, якщо хтось інший згенерував блок на декілька секунд раніше.</translation>
+        <translation>Згенеровані монети мають дозрівати %1 блоків, перш ніж їх можна буде використати. Після створення цього блоку, його було відправлено в мережу для приєднання до ланцюжка блоків. Якщо він не потрапить в ланцюжок, його статус буде змінено на «не підтверджено» і не можливо буде використати. Таке може статися, якщо хтось інший згенерував блок у межах декількох секунд.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -2158,7 +2508,7 @@ Address: %4
     </message>
     <message>
         <source>Inputs</source>
-        <translation>витрати</translation>
+        <translation>Входи</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -2178,7 +2528,7 @@ Address: %4
     </message>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Відкрито на %n блок</numerusform><numerusform>Відкрито на %n блоки</numerusform><numerusform>Відкрито на %n блоків</numerusform></translation>
+        <translation><numerusform>Відкр. ще для %n блоку</numerusform><numerusform>Відкр. ще для %n блоків</numerusform><numerusform>Відкр. ще для %n блоків</numerusform><numerusform>Відкр. ще для %n блоків</numerusform></translation>
     </message>
     <message>
         <source>unknown</source>
@@ -2211,16 +2561,12 @@ Address: %4
         <translation>Адреса</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Кількість</translation>
-    </message>
-    <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
         <translation>Незрілі (%1 підтверджень, будуть доступні після %2)</translation>
     </message>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Відкрито на %n блок</numerusform><numerusform>Відкрито на %n блоки</numerusform><numerusform>Відкрито на %n блоків</numerusform></translation>
+        <translation><numerusform>Відкр. ще для %n блоку</numerusform><numerusform>Відкр. ще для %n блоків</numerusform><numerusform>Відкр. ще для %n блоків</numerusform><numerusform>Відкр. ще для %n блоків</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -2264,19 +2610,27 @@ Address: %4
     </message>
     <message>
         <source>Sent to</source>
-        <translation>Відправлені на</translation>
+        <translation>Надіслані на</translation>
     </message>
     <message>
         <source>Payment to yourself</source>
-        <translation>Відправлено собі</translation>
+        <translation>Надіслано собі</translation>
     </message>
     <message>
         <source>Generated</source>
         <translation>Згенеровано</translation>
     </message>
     <message>
+        <source>Other</source>
+        <translation>Інше</translation>
+    </message>
+    <message>
+        <source>watch-only</source>
+        <translation>тільки перегляд</translation>
+    </message>
+    <message>
         <source>(n/a)</source>
-        <translation>(недоступно)</translation>
+        <translation>(н/д)</translation>
     </message>
     <message>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
@@ -2289,6 +2643,10 @@ Address: %4
     <message>
         <source>Type of transaction.</source>
         <translation>Тип транзакції.</translation>
+    </message>
+    <message>
+        <source>Whether or not a watch-only address is involved in this transaction.</source>
+        <translation>Не зважаючи на те, чи задіяна адреса тільки для перегляду в цій транзакції</translation>
     </message>
     <message>
         <source>Destination address of transaction.</source>
@@ -2335,11 +2693,11 @@ Address: %4
     </message>
     <message>
         <source>Sent to</source>
-        <translation>Відправлені на</translation>
+        <translation>Надіслані на</translation>
     </message>
     <message>
         <source>To yourself</source>
-        <translation>Відправлені собі</translation>
+        <translation>Надіслано собі</translation>
     </message>
     <message>
         <source>Other</source>
@@ -2347,7 +2705,7 @@ Address: %4
     </message>
     <message>
         <source>Enter address or label to search</source>
-        <translation>Введіть адресу чи мітку для пошуку</translation>
+        <translation>Введіть адресу або мітку для пошуку</translation>
     </message>
     <message>
         <source>Min amount</source>
@@ -2371,7 +2729,7 @@ Address: %4
     </message>
     <message>
         <source>Edit label</source>
-        <translation>Редагувати мітку</translation>
+        <translation>Змінити мітку</translation>
     </message>
     <message>
         <source>Show transaction details</source>
@@ -2382,12 +2740,16 @@ Address: %4
         <translation>Експортувати історію транзакцій</translation>
     </message>
     <message>
+        <source>Watch-only</source>
+        <translation>Тільки для перегляду</translation>
+    </message>
+    <message>
         <source>Exporting Failed</source>
         <translation>Помилка експорту</translation>
     </message>
     <message>
         <source>There was an error trying to save the transaction history to %1.</source>
-        <translation>Виникла помилка при спробі зберігання історії транзакцій до %1.</translation>
+        <translation>Виникла помилка при спробі збереження історії транзакцій до %1.</translation>
     </message>
     <message>
         <source>Exporting Successful</source>
@@ -2399,7 +2761,7 @@ Address: %4
     </message>
     <message>
         <source>Comma separated file (*.csv)</source>
-        <translation>Файли, розділені комою (*.csv)</translation>
+        <translation>Файл розділений комою (*.csv)</translation>
     </message>
     <message>
         <source>Generated</source>
@@ -2426,10 +2788,6 @@ Address: %4
         <translation>Адреса</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Кількість</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>Ідентифікатор</translation>
     </message>
@@ -2443,6 +2801,13 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>UnitDisplayStatusBarControl</name>
+    <message>
+        <source>Unit to show amounts in. Click to select another unit.</source>
+        <translation>Одиниця позначення кількості. Натисніть для зазначення иншої одиници.</translation>
+    </message>
+</context>
+<context>
     <name>WalletFrame</name>
     <message>
         <source>No wallet has been loaded.</source>
@@ -2453,7 +2818,7 @@ Address: %4
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Відправити</translation>
+        <translation>Надіслати монети</translation>
     </message>
 </context>
 <context>
@@ -2468,7 +2833,7 @@ Address: %4
     </message>
     <message>
         <source>Backup Wallet</source>
-        <translation>Зробити резервне копіювання гаманця</translation>
+        <translation>Зробити резервну копію гаманця</translation>
     </message>
     <message>
         <source>Wallet Data (*.dat)</source>
@@ -2494,28 +2859,12 @@ Address: %4
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>Використання:</translation>
-    </message>
-    <message>
-        <source>List commands</source>
-        <translation>Список команд</translation>
-    </message>
-    <message>
-        <source>Get help for a command</source>
-        <translation>Отримати довідку по команді</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Параметри:</translation>
     </message>
     <message>
         <source>Specify data directory</source>
         <translation>Вкажіть робочий каталог</translation>
-    </message>
-    <message>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>Підтримувати не більше &lt;n&gt; зв'язків з колегами (типово: 125)</translation>
     </message>
     <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
@@ -2526,24 +2875,8 @@ Address: %4
         <translation>Вкажіть вашу власну публічну адресу</translation>
     </message>
     <message>
-        <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>Поріг відключення неправильно під'єднаних пірів (типово: 100)</translation>
-    </message>
-    <message>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>Максимальній розмір вхідного буферу на одне з'єднання (типово: 86400)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
-        <translation>Сталася помилка при спробі відкрити порт RPC %u для прослуховування в мережі IPv4: %s</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Приймати команди із командного рядка та команди JSON-RPC</translation>
-    </message>
-    <message>
-        <source>Connect to JSON-RPC on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>Підключитися через JSON-RPC на &lt;port&gt; (типово: 45443 або testnet: 55443)</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
@@ -2558,7 +2891,75 @@ Address: %4
         <translation>Приймати підключення ззовні (типово: 1 за відсутності -proxy чи -connect)</translation>
     </message>
     <message>
-        <source>%s, you must set a rpcpassword in the configuration file:
+        <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
+        <translation>Прив'язатися до наданої адреси та завжди слухати її. Використовуйте запис виду [хост]:порт для IPv6</translation>
+    </message>
+    <message>
+        <source>Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</source>
+        <translation>Прив'язатися до наданої адреси та додавти до переліку дозволених всі підключення до неї. Використовуйте запис виду [хост]:порт для IPv6</translation>
+    </message>
+    <message>
+        <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
+        <translation>Створювати системні файли з типовими для системи дозволами замість umask 077 (чинно лише при відключених функціях гаманця)</translation>
+    </message>
+    <message>
+        <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
+        <translation>Видалити всі транзакції гаманця та лише відновлювати такі частини ланцюжку блоків через -rescan під час запуску</translation>
+    </message>
+    <message>
+        <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
+        <translation>Розповсюджується під ліцензією MIT, див. супровідний файл COPYING або &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
+    </message>
+    <message>
+        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
+        <translation>Увійти в режим регресивного тестування, що використовує спеціальний ланцюг з миттєвим знаходженням блоків.</translation>
+    </message>
+    <message>
+        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin Core</source>
+        <translation>Помилка при завантаженні wallet.dat: Гаманець потребує новішої версії Reddcoin-клієнта</translation>
+    </message>
+    <message>
+        <source>Error: Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
+        <translation>Помилка: Знайдено аргумент -socks що не підтримується. Налаштування версії SOCKS більше неможливе, підтримуються тільки проксі SOCKS5.</translation>
+    </message>
+    <message>
+        <source>Execute command when a network tx respends wallet tx input (%s=respend TxID, %t=wallet TxID)</source>
+        <translation>Виконати команду коли мережа tx повторно витрачае tx входу гаманця (%s=respend TxID, %t=wallet TxID)</translation>
+    </message>
+    <message>
+        <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
+        <translation>Виконати команду, коли транзакція гаманця змінюється (%s в команді буде замінено на ідентифікатор транзакції TxID)</translation>
+    </message>
+    <message>
+        <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
+        <translation>Якщо paytxfee не вказано, додати достатню комісію, щоб транзакція почала підтверджуватися всередньому в межах n блоків (типово: %u)</translation>
+    </message>
+    <message>
+        <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
+        <translation>В цьому режимі -genproclimit встановлює кількість блоків, що можуть бути згенеровані негайно.</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
+        <translation>Некоректна сума для -maxtxfee=&lt;amount&gt;: '%s' (має відповідати щонайменше мінімальній (minrelay) комісії %s щоб уникнути зависання транзакцій)</translation>
+    </message>
+    <message>
+        <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
+        <translation>Максимальний об'єм даних в несучих (data carrier) транзакціях, що передаються та майняться (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
+        <translation>Максимальна сума комісії для однієї транзакції. Занижене значення може призвести до скасування великих транзакцій (типово: %s)</translation>
+    </message>
+    <message>
+        <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
+        <translation>Встановити кількість потоків скрипту перевірки (від %u до %d, 0 = автоматично, &lt;0 = вказує кількість вільних ядер, типово: %d)</translation>
+    </message>
+    <message>
+        <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
+        <translation>Встановити кількість потоків для генерування монет, якщо включено (-1 = всі ядра, типово: %d)</translation>
+    </message>
+    <message>
+        <source>To use reddcoind, or the -server option to reddcoin-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
 rpcuser=reddcoinrpc
@@ -2569,93 +2970,29 @@ If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
 for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
 </source>
-        <translation>%s, ви повинні встановити rpcpassword в файлі конфігурації:
+        <translation>Для використання reddcoind або опції -server для reddcoin-qt, має бути вказано пароль (rpcpassword) у файлі конфігурації:
 %s
-Рекомендується використати такий випадковий пароль:
+Рекомендовано користати наступний випадковий пароль:
 rpcuser=reddcoinrpc
 rpcpassword=%s
-(ви не повинні пам'ятати цей пароль)
-Ім’я користувача та пароль ПОВИННІ бути різними.
-Якщо файлу не існує, створіть його, обмеживши доступ правом читання для власника.
-Також рекомендується використовувати alertnotify для того, щоб отримувати сповіщення про проблеми;
-наприклад: alertnotify=echo %%s | mail -s "Сповіщення Reddcoin" admin@foo.com
+(можно не запам'ятовувати)
+Им'я та пароль ПОВИННІ відрізнятися.
+Якщо такого файлу не існує, створіть його з правами власник-тільки-перегляд.
+Також рекомендовано зазначити alertnotify щоб отримувати сповіщення в разі проблем;
+наприклад: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
 </translation>
-    </message>
-    <message>
-        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
-        <translation>Допустимі шифри (типово: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
-        <translation>Сталася помилка при спробі відкрити порт RPC %u для прослуховування в мережі IPv6 (надалі буде використовуватися IPv4): %s</translation>
-    </message>
-    <message>
-        <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
-        <translation>Прив'язатися до даної адреси та прослуховувати її. Використовуйте запис виду [хост]:порт для IPv6</translation>
-    </message>
-    <message>
-        <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:15)</source>
-        <translation>Обмежити швидкість передачі безкоштовних транзакцій до &lt;n&gt;*1000 байт за хвилину (типово: 15)</translation>
-    </message>
-    <message>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
-        <translation>Ввійти в режим регресивного тестування, що використовує спеціальний ланцюг з миттєвим знаходженням блоків. Це призначено для інструментів регресивного тестування та розробки додатків.</translation>
-    </message>
-    <message>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
-        <translation>Ввійти в режим регресивного тестування, що використовує спеціальний ланцюг з миттєвим знаходженням блоків.</translation>
-    </message>
-    <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Помилка: транзакцію було відхилено. Це може статись, якщо декілька монет з вашого гаманця вже використані, наприклад, якщо ви використовуєте одну копію гаманця (wallet.dat), а монети були використані з іншої копії, але не позначені як використані в цій.</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>Помилка: Ця транзакція потребує додавання комісії щонайменше в %s через її розмір, складність, або внаслідок використання недавно отриманих коштів!</translation>
-    </message>
-    <message>
-        <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
-        <translation>Виконати команду, коли транзакція гаманця зміниться (замість %s в команді буде підставлено ідентифікатор транзакції)</translation>
-    </message>
-    <message>
-        <source>Fees smaller than this are considered zero fee (for transaction creation) (default:</source>
-        <translation>Комісії, що менші за вказану, вважатимуться нульовими (для створення транзакції) (типово:</translation>
-    </message>
-    <message>
-        <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: 100)</source>
-        <translation>Записувати зміни в базі даних до файлу кожні &lt;n&gt; мегабайтів (типово: 100)</translation>
-    </message>
-    <message>
-        <source>How thorough the block verification of -checkblocks is (0-4, default: 3)</source>
-        <translation>Рівень ретельності перевірки блоків (0-4, типово: 3)</translation>
-    </message>
-    <message>
-        <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
-        <translation>В цьому режимі -genproclimit встановлює кількість блоків, що можуть бути згенеровані негайно.</translation>
-    </message>
-    <message>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>Прослуховувати &lt;port&gt; для JSON-RPC-з'єднань (типово: 45443 або тестова мережа: 55443)</translation>
-    </message>
-    <message>
-        <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
-        <translation>Встановити кількість потоків скрипту перевірки (від %u до %d, 0 = автоматично, &lt;0 = вказує кількість вільних ядер, типово: %d)</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer. Reddcoin Core is probably already running.</source>
         <translation>Неможливо прив'язатися до %s на цьому комп'ютері. Можливо, Reddcoin Core вже запущено.</translation>
     </message>
     <message>
-        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: -proxy)</source>
-        <translation>Використовувати окремий SOCKS5-проксі для з'єднання з учасниками через приховані сервіси Tor (типово: -proxy)</translation>
+        <source>Warning: -maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
+        <translation>Увага: зазначено дуже велике -maxtxfee. Така велика комісія може буди утримана при здійсненні кожної транзакції.</translation>
     </message>
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>Увага: встановлено занадто велику комісію (-paytxfee). Комісія зніматиметься кожен раз коли ви проводитимете транзакції.</translation>
-    </message>
-    <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>Увага: будь ласка, перевірте дату і час на своєму комп'ютері. Якщо ваш годинник йде неправильно, Reddcoin може працювати некоректно.</translation>
+        <translation>Увага: зазначено дуже велике -paytxfee. Це розмір комісії, що буде утримана при здійсненні транзакції.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -2674,16 +3011,20 @@ rpcpassword=%s
         <translation>Увага: файл wallet.dat пошкоджено, дані врятовано! Оригінальний wallet.dat збережено як wallet.{timestamp}.bak до %s; якщо Ваш баланс чи транзакції неправильні, Ви можете відновити їх з резервної копії. </translation>
     </message>
     <message>
+        <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
+        <translation>Підключення, додані до переліку дозволених, неможливо заблокувати від DoS та їх транзакції завжди передаються, навіть якщо вони вже у переліку непідтверджених транзакцій (mempool), корисно напр. для шлюзу(ів)</translation>
+    </message>
+    <message>
         <source>(default: 1)</source>
         <translation>(типово: 1)</translation>
     </message>
     <message>
-        <source>(default: wallet.dat)</source>
-        <translation>(типово: wallet.dat)</translation>
+        <source>&lt;category&gt; can be:</source>
+        <translation>&lt;category&gt; може бути:</translation>
     </message>
     <message>
-        <source>&lt;category&gt; can be:</source>
-        <translation>category&gt; може бути:</translation>
+        <source>Accept public REST requests (default: %u)</source>
+        <translation>Приймати публічні запити REST (типово: %u)</translation>
     </message>
     <message>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
@@ -2694,16 +3035,12 @@ rpcpassword=%s
         <translation>Опції створення блоку:</translation>
     </message>
     <message>
-        <source>Clear list of wallet transactions (diagnostic tool; implies -rescan)</source>
-        <translation>Очистити список транзакцій гаманця (використовується для діагностики, включає -rescan)</translation>
+        <source>Cannot resolve -whitebind address: '%s'</source>
+        <translation>Не вдалось розібрати адресу -whitebind: '%s'</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
-        <translation>Підключитись лише до вказаного вузла</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS proxy</source>
-        <translation>Підключитись через SOCKS-проксі</translation>
+        <translation>Підключитись лише до вказаного вузла(ів)</translation>
     </message>
     <message>
         <source>Connection options:</source>
@@ -2718,10 +3055,6 @@ rpcpassword=%s
         <translation>Параметри тестування/налагодження:</translation>
     </message>
     <message>
-        <source>Disable safemode, override a real safe mode event (default: 0)</source>
-        <translation>Вимкнути безпечний режим та ігнорувати події, що здатні ввімкнути його (типово: 0)</translation>
-    </message>
-    <message>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
         <translation>Визначити власну IP-адресу (типово: 1 при прослуховуванні та за відсутності -externalip)</translation>
     </message>
@@ -2731,7 +3064,7 @@ rpcpassword=%s
     </message>
     <message>
         <source>Do you want to rebuild the block database now?</source>
-        <translation>Ви хочете перебудувати базу даних блоку зараз?</translation>
+        <translation>Ви хочете перезібрати базу даних блоків зараз?</translation>
     </message>
     <message>
         <source>Error initializing block database</source>
@@ -2747,87 +3080,27 @@ rpcpassword=%s
     </message>
     <message>
         <source>Error opening block database</source>
-        <translation>Помилка завантаження бази даних блоків</translation>
+        <translation>Помилка відкривання бази даних блоків</translation>
+    </message>
+    <message>
+        <source>Error: A fatal internal error occured, see debug.log for details</source>
+        <translation>Помилка: Виникла фатальна внутрішня помилка, дивись деталі у debug.log </translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
         <translation>Помилка: Мало вільного місця на диску!</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Помилка: Гаманець заблокований, неможливо створити транзакцію!</translation>
-    </message>
-    <message>
-        <source>Error: system error: </source>
-        <translation>Помилка: системна помилка: </translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
-        <translation>Не вдалося слухати на жодному порту. Використовуйте -listen=0, якщо ви хочете цього.</translation>
-    </message>
-    <message>
-        <source>Failed to read block info</source>
-        <translation>Не вдалося розпізнати блок інформації</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>Не вдалося розпізнати блок</translation>
-    </message>
-    <message>
-        <source>Failed to sync block index</source>
-        <translation>Не вдалося синхронізувати індекс блоку</translation>
-    </message>
-    <message>
-        <source>Failed to write block index</source>
-        <translation>Не вдалося записати індекс блоку</translation>
-    </message>
-    <message>
-        <source>Failed to write block info</source>
-        <translation>Не вдалося записати інформацію індекса</translation>
-    </message>
-    <message>
-        <source>Failed to write block</source>
-        <translation>Не вдалося записати блок</translation>
-    </message>
-    <message>
-        <source>Failed to write file info</source>
-        <translation>Не вдалося записати інформацію файла</translation>
-    </message>
-    <message>
-        <source>Failed to write to coin database</source>
-        <translation>Не вдалося записати до бази даних монет</translation>
-    </message>
-    <message>
-        <source>Failed to write transaction index</source>
-        <translation>Не вдалося записати індекс транзакції</translation>
-    </message>
-    <message>
-        <source>Failed to write undo data</source>
-        <translation>Не вдалося записати дані для відкату</translation>
-    </message>
-    <message>
-        <source>Fee per kB to add to transactions you send</source>
-        <translation>Комісія за Кб</translation>
-    </message>
-    <message>
-        <source>Fees smaller than this are considered zero fee (for relaying) (default:</source>
-        <translation>Комісії, що менші за вказану, вважатимуться нульовими (для ретрансляції) (типово:</translation>
-    </message>
-    <message>
-        <source>Force safe mode (default: 0)</source>
-        <translation>Ввімкнути безпечний режим (типово: 0)</translation>
-    </message>
-    <message>
-        <source>How many blocks to check at startup (default: 288, 0 = all)</source>
-        <translation>Скільки блоків перевіряти під час запуску (типово: 288, 0 = всі)</translation>
+        <translation>Не вдалося слухати на жодному порту. Використовуйте -listen=0, якщо ви цього хочете.</translation>
     </message>
     <message>
         <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
-        <translation>Якщо &lt;category&gt; не задано, виводить всю налагоджувальну інформацію.</translation>
+        <translation>Якщо &lt;category&gt; не задано, виводити всю налагоджувальну інформацію.</translation>
     </message>
     <message>
         <source>Importing...</source>
-        <translation>Імпорт...</translation>
+        <translation>Імпортування...</translation>
     </message>
     <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
@@ -2842,36 +3115,48 @@ rpcpassword=%s
         <translation>Помилка в адресі -onion: «%s»</translation>
     </message>
     <message>
+        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
+        <translation>Некоректна сума для параметру -maxtxfee=&lt;amount&gt;: '%s'</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
+        <translation>Некоректна сума для параметру -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</translation>
+    </message>
+    <message>
+        <source>Invalid netmask specified in -whitelist: '%s'</source>
+        <translation>Невірно вказано netmask в -whitelist: '%s'</translation>
+    </message>
+    <message>
+        <source>Keep at most &lt;n&gt; unconnectable blocks in memory (default: %u)</source>
+        <translation>Зберігати не більше &lt;n&gt; недоступних блоків у пам'яті (default: %u)</translation>
+    </message>
+    <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Утримувати в пам'яті щонайбільше &lt;n&gt; транзакцій, що споживають невідомі входи (типово: %u)</translation>
     </message>
     <message>
-        <source>Maintain a full transaction index (default: 1)</source>
-        <translation>Утримувати повний індекс транзакцій (типово: 0) {1)?}</translation>
+        <source>Need to specify a port with -whitebind: '%s'</source>
+        <translation>Необхідно вказати порт з -whitebind: '%s'</translation>
     </message>
     <message>
         <source>Not enough file descriptors available.</source>
         <translation>Бракує доступних дескрипторів файлів.</translation>
     </message>
     <message>
-        <source>Prepend debug output with timestamp (default: 1)</source>
-        <translation>Доповнювати налагоджувальний вивід відміткою часу (типово: 1)</translation>
+        <source>Only connect to nodes in network &lt;net&gt; (ipv4, ipv6 or onion)</source>
+        <translation>Підключатися тільки до вузлів в мережі &lt;net&gt; (ipv4, ipv6 або onion)</translation>
     </message>
     <message>
         <source>RPC SSL options: (see the wiki.reddcoin.com for SSL setup instructions)</source>
         <translation>Параметри RPC SSL: (див. wiki.reddcoin.com для налаштування SSL)</translation>
     </message>
     <message>
-        <source>RPC client options:</source>
-        <translation>Параметри клієнта RPC:</translation>
-    </message>
-    <message>
         <source>Rebuild block chain index from current blk000??.dat files</source>
         <translation>Перебудувати індекс ланцюжка блоків з поточних файлів blk000??.dat</translation>
     </message>
     <message>
-        <source>Select SOCKS version for -proxy (4 or 5, default: 5)</source>
-        <translation>Вибір версії SOCKS для параметру -proxy (4 чи 5, типово: 5)</translation>
+        <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
+        <translation>Надіслати як транзакцію без комісії, якщо можливо (типово: %u)</translation>
     </message>
     <message>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
@@ -2879,35 +3164,31 @@ rpcpassword=%s
     </message>
     <message>
         <source>Set maximum block size in bytes (default: %d)</source>
-        <translation>Встановити максимальний розмір блоку у байтах (типово: %d)</translation>
-    </message>
-    <message>
-        <source>Set the number of threads to service RPC calls (default: 4)</source>
-        <translation>Встановити число потоків для обслуговування викликів RPC (типово: 4)</translation>
-    </message>
-    <message>
-        <source>Specify configuration file (default: reddcoin.conf)</source>
-        <translation>Вкажіть файл конфігурації (типово: reddcoin.conf)</translation>
-    </message>
-    <message>
-        <source>Specify pid file (default: reddcoind.pid)</source>
-        <translation>Вкажіть pid-файл (типово: reddcoind.pid)</translation>
+        <translation>Встановити максимальний розмір блоку в байтах (типово: %d)</translation>
     </message>
     <message>
         <source>Specify wallet file (within data directory)</source>
         <translation>Вкажіть файл гаманця (в межах каталогу даних)</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change when sending transactions (default: 1)</source>
-        <translation>Витрачати непідтверджену решту при відправленні транзакцій (типово: 1)</translation>
+        <source>This is experimental software.</source>
+        <translation>Ця программа експериментальна.</translation>
     </message>
     <message>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>Це призначено для інструментів регресивного тестування та розробки додатків.</translation>
     </message>
     <message>
+        <source>Transaction too large for fee policy</source>
+        <translation>Завелика транзакція для визначення комісії</translation>
+    </message>
+    <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Неможливо прив'язатися до %s на цьому комп'ютері (bind повернув помилку: %s)</translation>
+    </message>
+    <message>
+        <source>Use UPnP to map the listening port (default: %u)</source>
+        <translation>Застосувати UPnP для визначення порту слухання (default: %u)</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -2918,20 +3199,16 @@ rpcpassword=%s
         <translation>Перевірка гаманця...</translation>
     </message>
     <message>
-        <source>Wait for RPC server to start</source>
-        <translation>Чекати, допоки RPC-сервер не буде запущено</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Гаманець %s знаходиться поза каталогом даних %s</translation>
     </message>
     <message>
-        <source>Wallet options:</source>
-        <translation>Параметри гаманця:</translation>
+        <source>Wallet needed to be rewritten: restart Reddcoin Core to complete</source>
+        <translation>Гаманець потрібно було перезаписати: перезапустіть Reddcoin-клієнт для завершення</translation>
     </message>
     <message>
-        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
-        <translation>Увага: Застарілий параметр -debugnet буде проігнорований, використовуйте -debug=net</translation>
+        <source>Wallet options:</source>
+        <translation>Параметри гаманця:</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
@@ -2939,23 +3216,47 @@ rpcpassword=%s
     </message>
     <message>
         <source>Imports blocks from external blk000??.dat file</source>
-        <translation>Імпорт блоків з зовнішнього файлу blk000??.dat</translation>
+        <translation>Імпорт блоків із зовнішнього файлу blk000??.dat</translation>
+    </message>
+    <message>
+        <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
+        <translation>Дозволити підключення JSON-RPC з вказаного джерела. Дійсні для &lt;ip&gt; тільки єдиний IP (напр. 1.2.3.4), IP/маска (напр. 1.2.3.4/255.255.255.0) або IP/CIDR (напр. 1.2.3.4/24). Ця опція може бути зазначена декілька разів</translation>
+    </message>
+    <message>
+        <source>An error occurred while setting up the RPC address %s port %u for listening: %s</source>
+        <translation>Виникла помилка при встановленні RPC-адреси %s порт %u для слухання: %s</translation>
+    </message>
+    <message>
+        <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
+        <translation>Прив'язатися до наданої адреси для слухання JSON-RPC ппідключень. Використовуйте запис виду [хост]:порт для IPv6. Ця опція може бути зазначена декілька разів (типово: прив'язуватися до усіх інтерфейсів)</translation>
     </message>
     <message>
         <source>Cannot obtain a lock on data directory %s. Reddcoin Core is probably already running.</source>
         <translation>Не вдалося встановити блокування на каталог даних %s. Reddcoin Core, ймовірно, вже запущений.</translation>
     </message>
     <message>
+        <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:%u)</source>
+        <translation>Неперервно обмежувати безкоштовні транзакції до &lt;n&gt;*1000 байт на хвилину (типово: %u)</translation>
+    </message>
+    <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation>Помилка: Не вдалося налаштувати прослуховування вхідних підключень (listen повернув помилку: %s)</translation>
+    </message>
+    <message>
+        <source>Execute command when a coinstake transaction is created (%s in cmd is replaced by TxID)</source>
+        <translation>Виконати команду, коли створюється транзакція coinstake (%s в cmd змінюється на TxID)</translation>
     </message>
     <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
         <translation>Виконати команду при надходженні важливого сповіщення або при спостереженні тривалого розгалуження ланцюжка (замість %s буде підставлено повідомлення)</translation>
     </message>
     <message>
-        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
-        <translation>Виводити налагоджувальну інформацію (типово: 0, вказання &lt;category&gt; необов'язкове)</translation>
+        <source>Fees (in RDD/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Комісії (в RDD/Кб), менші за цю суму, вважаються нульовим комісіями за передачу (типово: %s)</translation>
+    </message>
+    <message>
+        <source>Fees (in RDD/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Комісії (в RDD/Кб), менші за цю суму, вважаються нульовим комісіями за створення транзакції (типово: %s)</translation>
     </message>
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
@@ -2966,12 +3267,42 @@ rpcpassword=%s
         <translation>Встановити максимальний розмір транзакцій з високим пріоритетом та низькою комісією (в байтах) (типово: %d)</translation>
     </message>
     <message>
-        <source>Set the processor limit for when generation is on (-1 = unlimited, default: 0)</source>
-        <translation>Встановити максимальну кількість процесорів, що будуть використовуватися при ввімкненій генерації (-1 = необмежена, типово: 0)</translation>
+        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications</source>
+        <translation>Це тестова, дорелізна версія - користати на власний ризик - не підходить для стейкінгу чи комерційних цілей</translation>
     </message>
     <message>
-        <source>Always query for peer addresses via DNS lookup (default: 0)</source>
-        <translation>Завжди дізнаватися адреси учасників через DNS (типово: 0)</translation>
+        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
+        <translation>Цей продукт містить програмне забезпечення (ПЗ) від OpenSSL Project для користання у OpenSSL Toolkit &lt;https://www.openssl.org/&gt; та ПЗ для криптографії написане Еріком Янгом (Eric Young), а також ПЗ UPnP написане Томасом Бернардом (Thomas Bernard).
+
+На українську перекладав - Dima Ins</translation>
+    </message>
+    <message>
+        <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
+        <translation>Додавати до переліку дозволених підключення з наданої маски чи IP-адреси. Може бути зазначено декілька разів.</translation>
+    </message>
+    <message>
+        <source>Connect through SOCKS5 proxy</source>
+        <translation>Підключатися через SOCKS5 проксі</translation>
+    </message>
+    <message>
+        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
+        <translation>Авторське право (C) 2009-%i Розробники Bitcoin Core</translation>
+    </message>
+    <message>
+        <source>Copyright (C) 2014-%i The Reddcoin Core Developers</source>
+        <translation>Авторське право (C) 2014-%i Розробники Reddcoin Core</translation>
+    </message>
+    <message>
+        <source>Could not parse -rpcbind value %s as network address</source>
+        <translation>Не вдалось розібрати параметр -rpcbind (%s) як мережеву адресу</translation>
+    </message>
+    <message>
+        <source>Error: Unsupported argument -tor found, use -onion.</source>
+        <translation>Помилка: Агрумет -tor не підтримується, користуйте -onion.</translation>
+    </message>
+    <message>
+        <source>Fee (in RDD/kB) to add to transactions you send (default: %s)</source>
+        <translation>Додати комісію (в RDD/кБ) до транзакцій, що відправляється (типово: %s)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2990,36 +3321,8 @@ rpcpassword=%s
         <translation>Вказано некоректну суму для параметру -reservebalance: «%s»</translation>
     </message>
     <message>
-        <source>Limit size of signature cache to &lt;n&gt; entries (default: 50000)</source>
-        <translation>Обмежити розмір кешу підписів до &lt;n&gt; записів (типово: 50000)</translation>
-    </message>
-    <message>
-        <source>Listen for connections on &lt;port&gt; (default: 45444 or testnet: 55444)</source>
-        <translation>Чекати на з'єднання на &lt;port&gt; (типово: 45444 або тестова мережа: 55444)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
-        <translation>Максимальний буфер, &lt;n&gt;*1000 байт (типово: 5000)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
-        <translation>Максимальній розмір вихідного буферу на одне з'єднання, &lt;n&gt;*1000 байт (типово: 1000)</translation>
-    </message>
-    <message>
-        <source>Only accept block chain matching built-in checkpoints (default: 1)</source>
-        <translation>Приймати тільки той ланцюжок блоків, що не суперечить вбудованим контрольним точкам (типово: 1)</translation>
-    </message>
-    <message>
-        <source>Only connect to nodes in network &lt;net&gt; (IPv4, IPv6 or Tor)</source>
-        <translation>Підключатися тільки до вузлів в мережі &lt;net&gt; (IPv4, IPv6 або Tor)</translation>
-    </message>
-    <message>
-        <source>Print block on startup, if found in block index</source>
-        <translation>Роздрукувати блок під час запуску (якщо він буде знайдений в індексі)</translation>
-    </message>
-    <message>
-        <source>Print block tree on startup (default: 0)</source>
-        <translation>Роздрукувати дерево блоків під час запуску (типово: 0)</translation>
+        <source>Node relay options:</source>
+        <translation>Опції ретрансляції вузла:</translation>
     </message>
     <message>
         <source>RPC server options:</source>
@@ -3034,48 +3337,12 @@ rpcpassword=%s
         <translation>Випадковим чином пошкоджувати 1 з &lt;n&gt; мережевих повідомлень</translation>
     </message>
     <message>
-        <source>Reddcoin Core Daemon</source>
-        <translation>Демон Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core RPC client version</source>
-        <translation>RPC-клієнт Reddcoin Core версії</translation>
-    </message>
-    <message>
-        <source>Run a thread to flush wallet periodically (default: 1)</source>
-        <translation>Запустити потік для періодичного збереження даних гаманця (типово: 1)</translation>
-    </message>
-    <message>
-        <source>SSL options: (see the Reddcoin Wiki for SSL setup instructions)</source>
-        <translation>Параметри SSL: (див. Reddcoin Wiki для налаштування SSL)</translation>
-    </message>
-    <message>
-        <source>Send command to Reddcoin Core</source>
-        <translation>Надіслати команду до Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>Send command to reddcoin Core</source>
-        <translation>Надіслати команду до reddcoin Core</translation>
-    </message>
-    <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
-        <translation>Відсилати налагоджувальну інформацію на консоль, а не у файл debug.log</translation>
-    </message>
-    <message>
-        <source>Set minimum block size in bytes (default: 0)</source>
-        <translation>Встановити мінімальний розмір блоку у байтах (типово: 0)</translation>
-    </message>
-    <message>
-        <source>Sets the DB_PRIVATE flag in the wallet db environment (default: 1)</source>
-        <translation>Встановити прапорець DB_PRIVATE в середовищі бази даних гаманця (типово: 1)</translation>
+        <translation>Відправляти налагоджувальну інформацію (trace/debug) на консоль замість файлу debug.log</translation>
     </message>
     <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
         <translation>Показати всі налагоджувальні параметри (використання: --help -help-debug)</translation>
-    </message>
-    <message>
-        <source>Show benchmark information (default: 0)</source>
-        <translation>Виводити час виконання деяких операцій (типово: 0)</translation>
     </message>
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
@@ -3084,18 +3351,6 @@ rpcpassword=%s
     <message>
         <source>Signing transaction failed</source>
         <translation>Підписання транзакції не вдалося</translation>
-    </message>
-    <message>
-        <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>Вказати тайм-аут підключення у мілісекундах (типово: 5000)</translation>
-    </message>
-    <message>
-        <source>Start Reddcoin Core Daemon</source>
-        <translation>Запустити демона Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>Системна помилка: </translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -3108,14 +3363,6 @@ rpcpassword=%s
     <message>
         <source>Transaction too large</source>
         <translation>Транзакція занадто велика</translation>
-    </message>
-    <message>
-        <source>Usage (deprecated, use reddcoin-cli):</source>
-        <translation>Використання (застаріле, використовуйте reddcoin-cli):</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>Намагатись використовувати UPnP для відображення порту, що прослуховується на роутері (default: 0)</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
@@ -3134,16 +3381,20 @@ rpcpassword=%s
         <translation>Увага: Поточна версія застаріла, необхідне оновлення!</translation>
     </message>
     <message>
+        <source>Warning: Unsupported argument -benchmark ignored, use -debug=bench.</source>
+        <translation>Увага: Аргумент -benchmark не підтримується та ігнорується, використовуйте -debug=bench.</translation>
+    </message>
+    <message>
+        <source>Warning: Unsupported argument -debugnet ignored, use -debug=net.</source>
+        <translation>Увага: Аргумент -debugnet не підтримується та ігнорується, використовуйте -debug=net.</translation>
+    </message>
+    <message>
         <source>Zapping all transactions from wallet...</source>
         <translation>Видалення всіх транзакцій з гаманця...</translation>
     </message>
     <message>
         <source>on startup</source>
         <translation>під час запуску</translation>
-    </message>
-    <message>
-        <source>version</source>
-        <translation>версії</translation>
     </message>
     <message>
         <source>wallet.dat corrupt, salvage failed</source>
@@ -3154,20 +3405,12 @@ rpcpassword=%s
         <translation>Пароль для JSON-RPC-з'єднань</translation>
     </message>
     <message>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>Дозволити JSON-RPC-з'єднання з вказаної IP-адреси</translation>
-    </message>
-    <message>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>Відправляти команди на вузол, запущений на &lt;ip&gt; (типово: 127.0.0.1)</translation>
+        <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
+        <translation>Виконати команду коли найкращий блок змінюється (%s в cmd замінюється на хеш блока)</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
         <translation>Модернізувати гаманець до останнього формату</translation>
-    </message>
-    <message>
-        <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>Встановити розмір пулу ключів &lt;n&gt; (типово: 100)</translation>
     </message>
     <message>
         <source>Rescan the block chain for missing wallet transactions</source>
@@ -3176,14 +3419,6 @@ rpcpassword=%s
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Використовувати OpenSSL (https) для JSON-RPC-з'єднань</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: server.cert)</source>
-        <translation>Файл сертифіката сервера (типово: server.cert)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: server.pem)</source>
-        <translation>Закритий ключ сервера (типово: server.pem)</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -3202,28 +3437,172 @@ rpcpassword=%s
         <translation>Помилка при завантаженні wallet.dat: Гаманець пошкоджено</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin</source>
-        <translation>Помилка при завантаженні wallet.dat: Гаманець потребує новішої версії Біткоін-клієнта</translation>
+        <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
+        <translation>(1 = зберігати метадані транзакції, напр. власника рахунку та інформацію про платіжний запит, 2 = вилучити метадані)</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>Потрібно перезаписати гаманець: перезапустіть Біткоін-клієнт для завершення</translation>
+        <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
+        <translation>Скидати активність бази даних із пула пам'яті до журналу на диску кожні &lt;n&gt; мегабайт (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Generate coins via staking to support network and gain reward (default: %u)</source>
+        <translation>Генерувати монети за допомогою стейкінга для підтримки мережі та отримання винагороди (типово: %u)</translation>
+    </message>
+    <message>
+        <source>How thorough the block verification of -checkblocks is (0-4, default: %u)</source>
+        <translation>На скільки глибокою має бути перевірка блоків -checkblocks (0-4, типово: %u)</translation>
+    </message>
+    <message>
+        <source>Log transaction priority and fee per kB when staking blocks (default: %u)</source>
+        <translation>Пріоритет довгих транзакцій та покілобайтова комісія під час стейкінгу блоків (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</source>
+        <translation>Тримати повний індекс транзакції, що використовуеться зверненням getrawtransaction rpc (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</source>
+        <translation>Кількість секунд затримки перепідключення неправильних під'єднань (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</source>
+        <translation>Виводити налагоджувальну інформацію (типово: %u, надання &lt;category&gt; необов'язкове)</translation>
+    </message>
+    <message>
+        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
+        <translation>Користати окремий SOCKS5 проксі для доступу до підключень через приховані сервіси Tor (типово: %s)</translation>
+    </message>
+    <message>
+        <source>(default: %s)</source>
+        <translation>(типово: %s)</translation>
+    </message>
+    <message>
+        <source>Acceptable ciphers (default: %s)</source>
+        <translation>Прийнятні шифри (типово: %s)</translation>
+    </message>
+    <message>
+        <source>Always query for peer addresses via DNS lookup (default: %u)</source>
+        <translation>Завжди запитувати адреси вузлів через пошук DNS (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Disable safemode, override a real safe mode event (default: %u)</source>
+        <translation>Відключити безпечний режим, перезаписати справжню подію безпечного режиму (типово: %u)</translation>
     </message>
     <message>
         <source>Error loading wallet.dat</source>
         <translation>Помилка при завантаженні wallet.dat</translation>
     </message>
     <message>
+        <source>Force safe mode (default: %u)</source>
+        <translation>Примусовий безпечний режим (типово: %u)</translation>
+    </message>
+    <message>
+        <source>How many blocks to check at startup (default: %u, 0 = all)</source>
+        <translation>Скільки блоків перевіряти при старті (типово: %u, 0 = всі)</translation>
+    </message>
+    <message>
+        <source>Include IP addresses in debug output (default: %u)</source>
+        <translation>Додавати IP-адреси до записів налагодження (типово: %u)</translation>
+    </message>
+    <message>
         <source>Invalid -proxy address: '%s'</source>
         <translation>Помилка в адресі проксі-сервера: «%s»</translation>
     </message>
     <message>
-        <source>Unknown network specified in -onlynet: '%s'</source>
-        <translation>Невідома мережа вказана в -onlynet: «%s»</translation>
+        <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
+        <translation>Обмежити розмір кешу підпису до &lt;n&gt; записів (типово: %u)</translation>
     </message>
     <message>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>В параметрі -socks запитується невідома версія: %i</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</source>
+        <translation>Слухати JSON-RPC підключення на &lt;port&gt; (типово: %u або testnet: %u)</translation>
+    </message>
+    <message>
+        <source>Listen for connections on &lt;port&gt; (default: %u or testnet: %u)</source>
+        <translation>Слухати підключення на &lt;port&gt; (типово: %u або testnet: %u)</translation>
+    </message>
+    <message>
+        <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
+        <translation>Утримувати не більше &lt;n&gt; активних підключень (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
+        <translation>Максимальний відпружник для одного з'єднання отримання, &lt;n&gt;*1000 байтів (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
+        <translation>Максимальний відпружник для одного з'єднання надсилання, &lt;n&gt;*1000 байтів (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
+        <translation>Приймати тільки той ланцюжок блоків, що не суперечить вбудованим контрольним точкам (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Prepend debug output with timestamp (default: %u)</source>
+        <translation>Починати записи налагодження з часових відміток (timestamp) (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Relay and mine data carrier transactions (default: %u)</source>
+        <translation>Ретранслювати та майнити транзакції з даними (data carrier) (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Relay non-P2SH multisig (default: %u)</source>
+        <translation>Ретранслювати не-P2SH multisig (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Run a thread to flush wallet periodically (default: %u)</source>
+        <translation>Запускати потік для періодичного збереження даних гаманця (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Server certificate file (default: %s)</source>
+        <translation>Файл сертифіката сервера (типово: %s)</translation>
+    </message>
+    <message>
+        <source>Server private key (default: %s)</source>
+        <translation>Закритий ключ сервера (типово: %s)</translation>
+    </message>
+    <message>
+        <source>Set key pool size to &lt;n&gt; (default: %u)</source>
+        <translation>Встановити розмір пулу ключів &lt;n&gt; (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Set minimum block size in bytes (default: %u)</source>
+        <translation>Задати мінімальний розмір блоку в байтах (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Set the number of threads to service RPC calls (default: %d)</source>
+        <translation>Задати число потоків для обслуговування викликів RPC (типово: %d)</translation>
+    </message>
+    <message>
+        <source>Sets the DB_PRIVATE flag in the wallet db environment (default: %u)</source>
+        <translation>Встановити прапорець DB_PRIVATE в середовищі бази даних гаманця (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Specify configuration file (default: %s)</source>
+        <translation>Вкажіть файл конфігурації (типово: %s)</translation>
+    </message>
+    <message>
+        <source>Specify connection timeout in milliseconds (minimum: 1, default: %d)</source>
+        <translation>Вказати тайм-аут підключення у мілісекундах (мін.: 1, типово: %d)</translation>
+    </message>
+    <message>
+        <source>Specify pid file (default: %s)</source>
+        <translation>Вкажіть pid-файл (типово: %s)</translation>
+    </message>
+    <message>
+        <source>Spend unconfirmed change when sending transactions (default: %u)</source>
+        <translation>Використати непідтверджену решту під час надсилання транзакцій (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Stop running after importing blocks from disk (default: %u)</source>
+        <translation>Зупинити після імпорту блоків з диску (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
+        <translation>Поріг відключення неправильних під'єднань (типово: %u)</translation>
+    </message>
+    <message>
+        <source>Unknown network specified in -onlynet: '%s'</source>
+        <translation>Невідома мережа вказана в -onlynet: «%s»</translation>
     </message>
     <message>
         <source>Cannot resolve -bind address: '%s'</source>
@@ -3236,10 +3615,6 @@ rpcpassword=%s
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>Помилка у величині комісії -paytxfee=&lt;amount&gt;: «%s»</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Некоректна кількість</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3274,20 +3649,8 @@ rpcpassword=%s
         <translation>Завантаження завершене</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>Щоб використати опцію %s</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Помилка</translation>
-    </message>
-    <message>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>Ви мусите встановити rpcpassword=&lt;password&gt; в файлі конфігурації:
-%s
-Якщо файл не існує, створіть його із правами тільки для читання власником (owner-readable-only).</translation>
     </message>
 </context>
 </TS>

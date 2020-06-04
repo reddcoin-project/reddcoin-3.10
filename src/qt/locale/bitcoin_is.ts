@@ -1,30 +1,6 @@
 <TS language="is" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-Þetta er tilraunar hugbúnaður.
-Dreift undir MIT / X11 hugbúnaðar leyfi, sjá meðfylgjandi skrá afritar eða á http://www.opensource.org/licenses/mit-license.php.
-Þessi vara inniheldur hugbúnað þróað af OpenSSL Project til notkunar í OpenSSL Toolkit (http://www.openssl.org/) og dulmáls hugbúnaður skrifaður af Eric Young (eay@cryptsoft.com) og UPnP hugbúnaður eftir Thomas Bernard.
-</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>Höfundarréttur</translation>
-    </message>
-    </context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>Tví klikkið til að bæta við reikningi eða reikningsmerki</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>Útbúa nýtt reiknings númer </translation>
@@ -113,11 +89,7 @@ Dreift undir MIT / X11 hugbúnaðar leyfi, sjá meðfylgjandi skrá afritar eða
         <source>Exporting Failed</source>
         <translation>Útflutningur misfórst</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>Það varð villa við að reyna vista reikningsnúmer á listann %1.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -158,10 +130,6 @@ Dreift undir MIT / X11 hugbúnaðar leyfi, sjá meðfylgjandi skrá afritar eða
     <message>
         <source>For staking only</source>
         <translation>Aðeins fyrir stöflun</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Sláðu inn nýtt lykilorð fyrir veskið.&lt;br/&gt;vinsamlegast notaðu lykilorð með minnsta kosti &lt;b&gt;10 eða fleiri tilviljunarkenndum stöfum&lt;/b&gt;, eða &lt;b&gt; átta eða fleiri orð&lt;/b&gt;. </translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -289,10 +257,6 @@ Dreift undir MIT / X11 hugbúnaðar leyfi, sjá meðfylgjandi skrá afritar eða
     <message>
         <source>Quit application</source>
         <translation>Hætta við umsókn</translation>
-    </message>
-    <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Sýna upplýsingar um Reddcoin </translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -459,10 +423,6 @@ Dreift undir MIT / X11 hugbúnaðar leyfi, sjá meðfylgjandi skrá afritar eða
         <translation>Flipa toolbar</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[prufunet]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin kjarni </translation>
     </message>
@@ -481,10 +441,6 @@ Dreift undir MIT / X11 hugbúnaðar leyfi, sjá meðfylgjandi skrá afritar eða
     <message>
         <source>No block source available...</source>
         <translation>Engin blokkar uppspretta í boði...</translation>
-    </message>
-    <message>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>Unnar %1 blokkir af millifærslu sögu.</translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -546,10 +502,6 @@ Reikningur: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Veskið er &lt;b&gt;dulkóðað&lt;/b&gt; og nú &lt;b&gt;læst&lt;/b&gt;</translation>
     </message>
-    <message>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>Stórvægileg villa hefur átt sér stað. Reddcoin getur ekki lengur starfað öruggann hátt og mun slökkva á sér. </translation>
-    </message>
 </context>
 <context>
     <name>ClientModel</name>
@@ -560,10 +512,6 @@ Reikningur: %4
 </context>
 <context>
     <name>CoinControlDialog</name>
-    <message>
-        <source>Coin Control Address Selection</source>
-        <translation>Mynt stjórnunar reiknings valmynd </translation>
-    </message>
     <message>
         <source>Quantity:</source>
         <translation>Magn:</translation>
@@ -583,10 +531,6 @@ Reikningur: %4
     <message>
         <source>Fee:</source>
         <translation>Gjald: </translation>
-    </message>
-    <message>
-        <source>Low Output:</source>
-        <translation>Lág Afköst:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -611,10 +555,6 @@ Reikningur: %4
     <message>
         <source>Amount</source>
         <translation>upphæð </translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Reikningsnúmer </translation>
     </message>
     <message>
         <source>Date</source>
@@ -677,10 +617,6 @@ Reikningur: %4
         <translation>Afrita forgang </translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Afrita lága framleiðslu </translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Afrita breytingar </translation>
     </message>
@@ -721,10 +657,6 @@ Reikningur: %4
         <translation>ekkert</translation>
     </message>
     <message>
-        <source>Dust</source>
-        <translation>ryk </translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>já </translation>
     </message>
@@ -751,18 +683,6 @@ Reikningur: %4
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
         <translation>Þetta merki verður rauður, ef einhver viðtakandi fær upphæð minni en %1.</translation>
-    </message>
-    <message>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>Þetta merkir að gjald að minstakosti %1 er krafist.</translation>
-    </message>
-    <message>
-        <source>Amounts below 0.546 times the minimum relay fee are shown as dust.</source>
-        <translation>Upphæðir sem eru lægri en 0.546 sinnum lágmarks gegni eru sýndar sem ryk.</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the change is smaller than %1.</source>
-        <translation>Þetta merki verður rautt, ef breyting er minni en %1.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -913,22 +833,10 @@ Reikningur: %4
         <translation>Reddcoin kjarni </translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" can not be created.</source>
-        <translation>Villa: Tilgreint gagnamappa "%1" er ekki hægt að búa til.</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Villa </translation>
     </message>
-    <message>
-        <source>GB of free space available</source>
-        <translation>GB af frýju plássi möguleg </translation>
-    </message>
-    <message>
-        <source>(of %1GB needed)</source>
-        <translation>(af %1GB vantar)</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -963,14 +871,6 @@ Reikningur: %4
         <translation>&amp;Aðal</translation>
     </message>
     <message>
-        <source>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB.</source>
-        <translation>Valfrjálst millifærslu gjald á hvert kB sem hjálpar að tryggja viðskipti þín er afgreidd fljótt. Flest viðskipti eru um 1 kB.</translation>
-    </message>
-    <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>Borga millifærslu &amp;gjald</translation>
-    </message>
-    <message>
         <source>Automatically start Reddcoin after logging in to the system.</source>
         <translation>Sjálfkrafa starta Reddcoin eftir að hafa skrá þig inn í kerfið.</translation>
     </message>
@@ -989,14 +889,6 @@ Reikningur: %4
     <message>
         <source>Number of script &amp;verification threads</source>
         <translation>Fjöldi handrita  &amp;skráðum þráðum </translation>
-    </message>
-    <message>
-        <source>Connect to the Reddcoin network through a SOCKS proxy.</source>
-        <translation>Tengjast við Reddcoin netkerfið gegnum SOCKS proxy.</translation>
-    </message>
-    <message>
-        <source>&amp;Connect through SOCKS proxy (default proxy):</source>
-        <translation>&amp;Tengjast gegnum SOCKS proxy (sjálfvalið proxy):</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -1047,14 +939,6 @@ Reikningur: %4
         <translation>Tengi af proxy (e.g. 9050)</translation>
     </message>
     <message>
-        <source>SOCKS &amp;Version:</source>
-        <translation>SOCKS &amp;útgáfa:</translation>
-    </message>
-    <message>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>SOCKS útgáfa af proxy (e.g. 5)</translation>
-    </message>
-    <message>
         <source>&amp;Window</source>
         <translation>&amp;Gluggi </translation>
     </message>
@@ -1093,14 +977,6 @@ Reikningur: %4
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Veldu sjálfgefna sjálfstjórnareiningu til að sýna í tengiborði þegar þú sendir mynt.</translation>
-    </message>
-    <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>Hvort eigi að sýna Reddcoin reikningsnúmer í millifærslulistanum eða ekki.</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>&amp;Sýna reikningsnúmer í millifærslulistanum</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1154,20 +1030,12 @@ Reikningur: %4
         <translation>Uppgefnar upplýsingar gætu verið úreldar. Veskið þitt mun sjálfkrafa samstillast Reddcoin netkerfinu eftir að net tengingu hefur verið komið á, en þetta ferli hefur ekki klárast nú þegar.</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Veski </translation>
-    </message>
-    <message>
         <source>Your current spendable balance</source>
         <translation>Núverandi staða reiknings </translation>
     </message>
     <message>
         <source>Stake:</source>
         <translation>Staflað:</translation>
-    </message>
-    <message>
-        <source>Total of coins that were staked and do not yet count toward the current balance</source>
-        <translation>Heildar hlutfall af mynt sem hefur verið staflaðar og sást ekki en í heildar stöðu reiknings </translation>
     </message>
     <message>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
@@ -1190,10 +1058,6 @@ Reikningur: %4
         <translation> Heildar staða þín á reikningi  </translation>
     </message>
     <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Nýlegar millifærslur&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>out of sync</source>
         <translation>Úr stillingu </translation>
     </message>
@@ -1203,10 +1067,6 @@ Reikningur: %4
     <message>
         <source>URI handling</source>
         <translation>URI stjórnun  </translation>
-    </message>
-    <message>
-        <source>URI can not be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
-        <translation>URI vefslóð nær ekki að þátta! Þetta getur stafað af ó gildu Reddcoin heimilisfang eða gölluð URI breytum.</translation>
     </message>
     <message>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
@@ -1221,24 +1081,16 @@ Reikningur: %4
         <translation>Get ekki ræst reddcoin: click-to-pay handler</translation>
     </message>
     <message>
-        <source>Net manager warning</source>
-        <translation>Viðvörun frá Net-stjórnendum</translation>
-    </message>
-    <message>
-        <source>Your active proxy doesn't support SOCKS5, which is required for payment requests via proxy.</source>
-        <translation>Proxy þitt styður ekki SOCKS5, sem er nauðsynlegt til að framkvæma greiðslubeiðni í gegnum Proxy.</translation>
-    </message>
-    <message>
         <source>Payment request fetch URL is invalid: %1</source>
         <translation>URL greiðslubeiðni er ógild: %1</translation>
     </message>
     <message>
-        <source>Payment request file handling</source>
-        <translation>Greiðslubeiðnis skrá meðhöndluð </translation>
+        <source>Invalid payment address %1</source>
+        <translation>Ógiltur greiðslureikningur %1</translation>
     </message>
     <message>
-        <source>Payment request file can not be read or processed! This can be caused by an invalid payment request file.</source>
-        <translation>Greiðslubeiðnis möppu er hvorki hægt að lesa né vinna! Þetta getur stafað af ógildri greiðslubeiðnis skrá.</translation>
+        <source>Payment request file handling</source>
+        <translation>Greiðslubeiðnis skrá meðhöndluð </translation>
     </message>
     <message>
         <source>Unverified payment requests to custom payment scripts are unsupported.</source>
@@ -1251,10 +1103,6 @@ Reikningur: %4
     <message>
         <source>Error communicating with %1: %2</source>
         <translation> Villa í samskiptum við %1: %2</translation>
-    </message>
-    <message>
-        <source>Payment request can not be parsed or processed!</source>
-        <translation>Þessa greiðslubeiðni er hvorki hægt að flokka eða vinna!</translation>
     </message>
     <message>
         <source>Bad response from server %1</source>
@@ -1270,20 +1118,27 @@ Reikningur: %4
     </message>
 </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin kjarni </translation>
+        <source>%1 h</source>
+        <translation>%1 h</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>Villa: Valin gagna mappa ''%1'' er ekki til.</translation>
+        <source>%1 m</source>
+        <translation>%1 m</translation>
     </message>
     <message>
-        <source>Error: Invalid combination of -regtest and -testnet.</source>
-        <translation>Villa: Ógilt samsetning á -regtest og -testnet.</translation>
+        <source>N/A</source>
+        <translation>Á.E.V </translation>
     </message>
-    </context>
+    <message>
+        <source>Amount</source>
+        <translation>upphæð </translation>
+    </message>
+</context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -1429,19 +1284,7 @@ Reikningur: %4
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 m</translation>
-    </message>
-    <message>
-        <source>%1 h</source>
-        <translation>%1 h</translation>
-    </message>
-    <message>
-        <source>%1 h %2 m</source>
-        <translation>%1 h %2 m</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
@@ -1463,10 +1306,6 @@ Reikningur: %4
     <message>
         <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>E&amp;ndur nota áður notað móttökureikningsnúmer ( Mælum ekki með þessu)</translation>
-    </message>
-    <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Reddcoin network.</source>
-        <translation>Valfrjáls skilaboð til að festa við greiðslubeiðnina, sem verður sýnilegt þegar beiðnin er opnuð . Ath: Þessi skilaboð munu ekki vera send með greiðslu yfir Reddcoin netkerfið.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1654,10 +1493,6 @@ Reikningur: %4
         <translation>Gjald: </translation>
     </message>
     <message>
-        <source>Low Output:</source>
-        <translation>Lág Afköst:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation>Eftir á gjald:</translation>
     </message>
@@ -1734,10 +1569,6 @@ Reikningur: %4
         <translation>Afrita forgang </translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Afrita lága framleiðslu </translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Afrita breytingar </translation>
     </message>
@@ -1792,14 +1623,6 @@ Reikningur: %4
     <message>
         <source>added as transaction fee</source>
         <translation>bætt við sem millifærslugjald </translation>
-    </message>
-    <message>
-        <source>Payment request expired</source>
-        <translation>Greiðslu beiðni rann út </translation>
-    </message>
-    <message>
-        <source>Invalid payment address %1</source>
-        <translation>Ógiltur greiðslureikningur %1</translation>
     </message>
 </context>
 <context>
@@ -2018,6 +1841,10 @@ Reikningur: %4
         <translation>Reddcoin kjarni </translation>
     </message>
     <message>
+        <source>The Bitcoin Core developers</source>
+        <translation>Hönnuðir Bitcoin core</translation>
+    </message>
+    <message>
         <source>[testnet]</source>
         <translation>[prufunet]</translation>
     </message>
@@ -2182,10 +2009,6 @@ Reikningur: %4
         <translation>Reikningsnúmer </translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>upphæð </translation>
-    </message>
-    <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
         <translation>Ótímabær (%1 staðfestingar, verða sýnilegar eftir %2)</translation>
     </message>
@@ -2232,6 +2055,10 @@ Reikningur: %4
     <message>
         <source>Generated</source>
         <translation>Mynduð </translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Aðrir</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -2385,10 +2212,6 @@ Reikningur: %4
         <translation>Reikningsnúmer </translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>upphæð </translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>Auðkenni </translation>
     </message>
@@ -2401,6 +2224,9 @@ Reikningur: %4
         <translation>Til </translation>
     </message>
 </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
 <context>
     <name>WalletFrame</name>
     <message>
@@ -2453,28 +2279,12 @@ Reikningur: %4
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>Notkun:</translation>
-    </message>
-    <message>
-        <source>List commands</source>
-        <translation> Listi yfir skipunnir </translation>
-    </message>
-    <message>
-        <source>Get help for a command</source>
-        <translation>Aðstoð frá stjórnborði </translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Val möguleikar:</translation>
     </message>
     <message>
         <source>Specify data directory</source>
         <translation>Tilgreina gangnaskrár</translation>
-    </message>
-    <message>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>Viðhaltu að mestu &lt;n&gt; tengingum við jafningja (sjálfgefið: 125)</translation>
     </message>
     <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
@@ -2485,24 +2295,8 @@ Reikningur: %4
         <translation>Taka fram þinn eigið opinbera reikning </translation>
     </message>
     <message>
-        <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>Mörk tenginga við spilltra jafningja (sjálfgefið: 100) </translation>
-    </message>
-    <message>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>Fjöldi sekúnda til að halda frá spilltum jafningum frá að tengjast (sjálfgefið: 86400)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
-        <translation>Villa hefur átt sér stað á meðan uppsetningu RPC ports %u ætlað til hlustunar við IPv4: %s</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Samþykkt  skipunarlína og JSON-RPC skipanir </translation>
-    </message>
-    <message>
-        <source>Connect to JSON-RPC on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>Tengja við JSON-RPC við &lt;port&gt; (sjálfgefið: 45443 eða tilraunanet: 55443)</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
@@ -2517,73 +2311,20 @@ Reikningur: %4
         <translation>Samþykkja utanaðkomandi tengingar (sjálfgefið: 1 ef ekkert -proxy eða -tenging) </translation>
     </message>
     <message>
-        <source>%s, you must set a rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=reddcoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-</source>
-        <translation>%s, þú verður að stilla rpclykilorð inn í stillingarskrá:
-%s
-Það er mælt með að þú notir eftir farandi tilviljunarkend lykilorð:
-rpcuser=reddcoinrpc
-rpcpassword=%s
-(þú þarft ekki að muna þessi lykilorð)
-Notenda nafn og lykilorð ÞURFA EKKI að vera eins.
-Ef mappan er ekki til, búðu hana þá til með læsingum sem leyfir bara eiganda að nálgast hana.
-Það er einnig mælt með að stilla viðvörunarmerki þannig að þér er tilkynt ef vandamál koma upp:
-t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-
-</translation>
-    </message>
-    <message>
-        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
-        <translation>Viðunandi dulmál (sjálfgefið: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
-        <translation>Villa varð til við uppsetningu RCP port %u fyrir hlustunn á IPv6, fellur aftur til IPv4: %s</translation>
-    </message>
-    <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>Festa við uppgefið reikning og taka mark á því. Nota [gestgjafa]: port tákn fyrir IPv6</translation>
-    </message>
-    <message>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
-        <translation>Sláðu inn aðahvarfsgreiningar prófs ham,sem notar sérstakan keðju í hverri blokktil að leysa hann þegar í stað. Þetta er ætlað til að prófa afturför verkfæra og app þróun.</translation>
     </message>
     <message>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
         <translation>Sláðu inn aðahvarfsgreiningar prófs ham,sem notar sérstakan keðju í hverri blokktil að leysa hann þegar í stað.</translation>
     </message>
     <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Millifærslunni var hafnað! Þetta gæti gerst ef einhverjar af myntunum í veskinu þínu hefa þegar verið eytt.Svo sem ef þú notaðir afrit af wallet.dat og myntinni var eytt í að afritinu en ekki merkt sem eytt hér.</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>Villa: Þessi millifærsla krefst að minsta kosti lágmargs gjalds %s vegna uppæðar sinnar, vegna margbreytileika, eða notkun undanförnu fengu fé!</translation>
-    </message>
-    <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
         <translation>Framkvæma skipun þegar veskið breytist við millifærslu (%s ef cmd er skipt út fyrir TxID)</translation>
     </message>
     <message>
-        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: -proxy)</source>
-        <translation>Nota aðskilda SOCKS5 proxy til að ná jafningja um Tor-leyni netið (sjálfgefið: -proxy)</translation>
-    </message>
-    <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Viðvörun: -sölugjald er stillt á mjög hátt! Þetta er millifærslu gjaldið sem þú munt borga ef þú sendir greiðsluna.</translation>
-    </message>
-    <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>Viðvörun: Vinsamlegast athugaðu hvort tími og dagsetning í klukkunni þinni séu réttir! Ef klukkan er röng þá mun Reddcoin veskið ekki virka rétt.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -2614,16 +2355,8 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>sköpunar valmöguleika blokkar:</translation>
     </message>
     <message>
-        <source>Clear list of wallet transactions (diagnostic tool; implies -rescan)</source>
-        <translation>Hreinsa veski af millifærslu listum (greiningar tæki; felur í sér -endurskönnun)</translation>
-    </message>
-    <message>
         <source>Connect only to the specified node(s)</source>
         <translation>Tengjast aðeins við sérvalin merki(n)</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS proxy</source>
-        <translation>Tengjast í gegnum SOCKS proxy</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -2662,68 +2395,8 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Villa: pláss á harðadiski er of lítið!</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Villa: veskið er læst, ekki er hægt að búa til millifærslu!</translation>
-    </message>
-    <message>
-        <source>Error: Wallet unlocked for staking only, unable to create transaction.</source>
-        <translation>Villa: veskið er ólæst aðeins fyrir stöflun, ekki er hægt að millifæra.</translation>
-    </message>
-    <message>
-        <source>Error: system error: </source>
-        <translation>Villa: kerfis villa:</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Mistókst að hlusta á öll port. Nota -listen=0 ef þú vilt þetta.</translation>
-    </message>
-    <message>
-        <source>Failed to read block info</source>
-        <translation>Mistókst að lesa blokkar upplýsingar</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>Mistókst að lesa blokk</translation>
-    </message>
-    <message>
-        <source>Failed to sync block index</source>
-        <translation>Mistókst að samstilla blokkar vísitölu</translation>
-    </message>
-    <message>
-        <source>Failed to write block index</source>
-        <translation>Tókst ekki að skrifa blokkar vísitölu</translation>
-    </message>
-    <message>
-        <source>Failed to write block info</source>
-        <translation>Mistókst að skrifa blokkar upplýsingar </translation>
-    </message>
-    <message>
-        <source>Failed to write block</source>
-        <translation>Mistókst að skrifa blokk</translation>
-    </message>
-    <message>
-        <source>Failed to write file info</source>
-        <translation>Tókst ekki að skrifa möppu upplýsingar</translation>
-    </message>
-    <message>
-        <source>Failed to write to coin database</source>
-        <translation>Gat ekki ritað í gagnasafn myntar</translation>
-    </message>
-    <message>
-        <source>Failed to write transaction index</source>
-        <translation>Tókst ekki að skrifa millifærslu vísitölu</translation>
-    </message>
-    <message>
-        <source>Failed to write undo data</source>
-        <translation>Mistókst að skrifa aftur kölluð gögn</translation>
-    </message>
-    <message>
-        <source>Fee per kB to add to transactions you send</source>
-        <translation>Gjald fyrir hvert kB er bætt við hverja millifærslu sem þú sendir </translation>
-    </message>
-    <message>
-        <source>How many blocks to check at startup (default: 288, 0 = all)</source>
-        <translation>Hversu margar blokkir að skoða við ræsun (sjálfgefið: 288, 0 = allt) </translation>
     </message>
     <message>
         <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
@@ -2738,57 +2411,20 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Ógiltur -onion reikningur: '%s'</translation>
     </message>
     <message>
-        <source>Maintain a full transaction index (default: 1)</source>
-        <translation>Viðhalda fullum millifærslu vísunum (sjálfgefið: 0) {1)?}</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Ekki nægilega nægar möppu upplýsingar í boði. </translation>
-    </message>
-    <message>
-        <source>Prepend debug output with timestamp (default: 1)</source>
-        <translation>Festu af villu úttak við tímastimpil (sjálfgefið: 1)
- </translation>
-    </message>
-    <message>
-        <source>RPC client options:</source>
-        <translation>RPC notenda möguleikar:</translation>
     </message>
     <message>
         <source>Rebuild block chain index from current blk000??.dat files</source>
         <translation>Endurbyggja blokkar keðju vísitölu frá núverandi  blk000??.dat möppu </translation>
     </message>
     <message>
-        <source>Select SOCKS version for -proxy (4 or 5, default: 5)</source>
-        <translation>Veldu SOCKS útgáfu fyrir -proxy (4 eða 5, sjálfgefið: 5)</translation>
-    </message>
-    <message>
         <source>Set maximum block size in bytes (default: %d)</source>
         <translation>Stilla hámarks blokkar stærð í bitum (sjálfgefið: %d)</translation>
     </message>
     <message>
-        <source>Set the number of threads to service RPC calls (default: 4)</source>
-        <translation>Stilla fjölda af þráðum til miðlara RPC tengingar (sjálfgefið: 4)</translation>
-    </message>
-    <message>
-        <source>Specify configuration file (default: reddcoin.conf)</source>
-        <translation>Tilgreinið stillingaskrá (sjálfgefið: reddcoin.conf)</translation>
-    </message>
-    <message>
-        <source>Specify pid file (default: reddcoind.pid)</source>
-        <translation>Tilgreinið pid möppu (sjálfgefið: reddcoind.pid)</translation>
-    </message>
-    <message>
         <source>Specify wallet file (within data directory)</source>
         <translation>Sérstök veskis mappa (innan gagna skráa)</translation>
-    </message>
-    <message>
-        <source>Spend unconfirmed change when sending transactions (default: 1)</source>
-        <translation>Eyða óstaðfestum breytingum þegar þú sendir millifærslur (sjálfgefið: 1)</translation>
-    </message>
-    <message>
-        <source>Stake your coins to support network and gain reward (default: 1)</source>
-        <translation>Stafla þinni mynt til að styðja við netkerfi og fá umbun fyrir (sjálfgefið: 1)</translation>
     </message>
     <message>
         <source>This is intended for regression testing tools and app development.</source>
@@ -2803,20 +2439,12 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Staðfestir veski...</translation>
     </message>
     <message>
-        <source>Wait for RPC server to start</source>
-        <translation>Bíða eftir RPC miðlara til að byrjar</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Veskið  %s er staðset fyrir utan gagnaskrá %s</translation>
     </message>
     <message>
         <source>Wallet options:</source>
         <translation>Veskis möguleikar: </translation>
-    </message>
-    <message>
-        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
-        <translation>Varúð: Úrelt rök -af villunet hunsað, nota -af villu = net </translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
@@ -2835,10 +2463,6 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Framkvæma skipun þegar viðkomandi viðvörun berst eða við sjáum mjög langt fork (%s í cmd er skipt út fyrir skilaboð)</translation>
     </message>
     <message>
-        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
-        <translation>Úttak af af villu upplýsingum (sjálfgefið: 0, afgreiða &lt;category&gt; er valfrjálst)</translation>
-    </message>
-    <message>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
         <translation>Stilla hámarks stærð af há-forgangs / lág-gjalda millifærslum í bitum (sjálfgefið: %d)</translation>
     </message>
@@ -2855,28 +2479,8 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Ógild upphæð fyrir -mintxfee=&lt;amount&gt;: '%s'</translation>
     </message>
     <message>
-        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
-        <translation>Hámarks jafningja-tengingar frá biðminni, &lt;n&gt;*1000 bitar (sjálfgefið: 5000)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
-        <translation>Hámarks jafningja-tengingar senda biðminni&lt;n&gt;*1000 bitar (sjálfgefið: 1000)</translation>
-    </message>
-    <message>
-        <source>Only accept block chain matching built-in checkpoints (default: 1)</source>
-        <translation>Aðeins samþykkja blokk keðju sem samsvarar við innbyggða-í checkpoints (sjálfgefið: 1)</translation>
-    </message>
-    <message>
-        <source>Only connect to nodes in network &lt;net&gt; (IPv4, IPv6 or Tor)</source>
-        <translation>Aðeins tengjast með minnismiðum í netkerfi &lt;net&gt; (IPv4, IPv6 eða Tor)</translation>
-    </message>
-    <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>Senda rekja / af villu upplýsingar til að stjórnborðs í stað þess að senda í af villu/ debug.log skrá</translation>
-    </message>
-    <message>
-        <source>Set minimum block size in bytes (default: 0)</source>
-        <translation>Stilla minnstu mögulega blokkarstærð, stærð í bitum (sjálfgefið: 0)</translation>
     </message>
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
@@ -2885,14 +2489,6 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Signing transaction failed</source>
         <translation>Undirskrift millifærslu mistókst </translation>
-    </message>
-    <message>
-        <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>Tilgreina tengingartíma í millisekúndum (sjálfgefið: 5000) </translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>Kerfis villa:</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -2905,14 +2501,6 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Transaction too large</source>
         <translation>Millifærslan er of stór </translation>
-    </message>
-    <message>
-        <source>Usage (deprecated, use reddcoin-cli):</source>
-        <translation>Notkun (úrelt, notið reddcoin-CLI):</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>Notaðu UPnP kort fyrir hlustunar port (sjálfgefið: 0)</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
@@ -2935,24 +2523,12 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Grípa allar millifærslur frá veskinu...</translation>
     </message>
     <message>
-        <source>version</source>
-        <translation>Útgáfa </translation>
-    </message>
-    <message>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat spillt,björgun mistókst </translation>
     </message>
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Lykilorð fyrir JSON-RPC tengingar </translation>
-    </message>
-    <message>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>Leyfa JSON-RPC tengingar frá tilgreindum IP tölum</translation>
-    </message>
-    <message>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>Senda skipanir til miða sem gengur á &lt;ip&gt; (sjálfgefið: 127.0.0.1)</translation>
     </message>
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
@@ -2963,24 +2539,12 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Uppfæra veski í nýjasta form </translation>
     </message>
     <message>
-        <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>stilla lykil pool  stærð í  &lt;n&gt; (sjálfgefið: 100)</translation>
-    </message>
-    <message>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>Endur skanna blokkina vegna týndar veskis millifærslna</translation>
     </message>
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Notað OpenSLL (https) fyrir JSON-RPC tengingar </translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: server.cert)</source>
-        <translation>Miðlara skráningar vottorðs mappa (sjálfgefið: server.cert)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: server.pem)</source>
-        <translation>Einkalykill miðlara (sjálfgefið: server.pem)</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -2999,14 +2563,6 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Villa við að hlaða wallet.dat: Veskið er skemmd </translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin</source>
-        <translation>Villa við að hlaða wallet.dat:  Veskið fer fram á nýrri útgáfu af Reddcoin</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>Veskið þarf að verða endur skrifað: Endur ræstu Reddcoin til að ljúka</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>Villa við að hlaða wallet.dat</translation>
     </message>
@@ -3019,10 +2575,6 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Óþekkt netkerfi tilgreint sem -onlynet: '%s'</translation>
     </message>
     <message>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>Óþekkt -socks proxy útgáfu beiðni: %i</translation>
-    </message>
-    <message>
         <source>Cannot resolve -bind address: '%s'</source>
         <translation>Getur ekki leyst -bind netfang: '%s'</translation>
     </message>
@@ -3033,10 +2585,6 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>Ónæg upphæð fyrir -sölugjald=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Ónæg innistæða </translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3071,20 +2619,8 @@ t.d.:alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Búinn að hlaðaniður</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>Til að nota %s valmöguleika</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Villa </translation>
-    </message>
-    <message>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>Þú verður að stilla rpclykilorð=&lt;password&gt; í stillingar möppunni
-%s
-Ef mappan er ekki til, búðu hana þá til með viðeigandi eiganda-læsilegu möppu heimild.</translation>
     </message>
 </context>
 </TS>

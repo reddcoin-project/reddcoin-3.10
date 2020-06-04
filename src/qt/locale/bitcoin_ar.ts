@@ -1,29 +1,6 @@
 <TS language="ar" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>About Reddcoin Core</source>
-        <translation>نبذه عن اساسيات ريدكوين</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;اساسيات ريدكوين&lt;/b&gt; نسخه</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>حقوق الملكيه</translation>
-    </message>
-    <message>
-        <source>The Reddcoin Core developers</source>
-        <translation>مطوري الريدكوين الاساسي</translation>
-    </message>
-    </context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>انقر-نقرتين لتغير العنوان او الملصق</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>انشاء عنوان جديد</translation>
@@ -60,6 +37,10 @@
     </context>
 <context>
     <name>HelpMessageDialog</name>
+    <message>
+        <source>About Reddcoin Core</source>
+        <translation>نبذه عن اساسيات ريدكوين</translation>
+    </message>
     </context>
 <context>
     <name>Intro</name>
@@ -75,6 +56,9 @@
     </context>
 <context>
     <name>PaymentServer</name>
+    </context>
+<context>
+    <name>PeerTableModel</name>
     </context>
 <context>
     <name>QObject</name>
@@ -127,6 +111,9 @@
     </context>
 <context>
     <name>TransactionView</name>
+    </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
     <name>WalletFrame</name>

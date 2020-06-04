@@ -1,48 +1,6 @@
 <TS language="fi" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>About Reddcoin Core</source>
-        <translation>Tietoa Reddcoin Coresta</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Reddcoin Core&lt;/b&gt; versio</translation>
-    </message>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-Tämä on kokeellinen ohjelmisto.
-
-Levitetään MIT/X11 ohjelmistolisenssin alaisuudessa. Tarkemmat tiedot löytyvät tiedostosta COPYING tai osoitteesta http://www.opensource.org/licenses/mit-license.php.
-
-Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.openssl.org/), Eric Youngin (eay@cryptsoft.com) kehittämän salausohjelmiston sekä Thomas Bernardin UPnP ohjelmiston.
-</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>Tekijänoikeus</translation>
-    </message>
-    <message>
-        <source>The Reddcoin Core developers</source>
-        <translation>Reddcoin Core-kehittäjät</translation>
-    </message>
-    <message>
-        <source>(%1-bit)</source>
-        <translation>(%1-bit)</translation>
-    </message>
-</context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>Kaksoisnapauta muokataksesi osoitetta tai nimeä</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>Luo uusi osoite</translation>
@@ -160,10 +118,6 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     <message>
         <source>For staking only</source>
         <translation>Vain osuuttamista varten</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Anna lompakolle uusi tunnuslause.&lt;br/&gt;Käytä tunnuslausetta, jossa on ainakin  &lt;b&gt;10 satunnaista mekkiä&lt;/b&gt; tai &lt;b&gt;kahdeksan sanaa&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -295,10 +249,6 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     <message>
         <source>Quit application</source>
         <translation>Sulje ohjelma</translation>
-    </message>
-    <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Näytä tietoa Reddcoin-projektista</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -469,10 +419,6 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
         <translation>Välilehtipalkki</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[testnet]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin-ydin</translation>
     </message>
@@ -496,37 +442,13 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
         <source>Show the Reddcoin Core help message to get a list with possible Reddcoin command-line options</source>
         <translation>Näytä Reddcoin Coren apuviesti saadaksesi lista kelvollisista komentorivin valinnoista</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Reddcoin network</source>
-        <translation><numerusform>%n aktiivinen yhteys Reddcoin-verkkoon</numerusform><numerusform>%n aktiivista yhteyttä Reddcoin-verkkoon</numerusform></translation>
-    </message>
     <message>
         <source>No block source available...</source>
         <translation>Lohkojen lähdettä ei ole saatavilla...</translation>
     </message>
     <message>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>Käsitelty %1 lohkoa rahansiirtohistoriasta</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n tunti</numerusform><numerusform>%n tuntia</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n päivä</numerusform><numerusform>%n päivää</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n viikko</numerusform><numerusform>%n viikkoa</numerusform></translation>
-    </message>
-    <message>
         <source>%1 and %2</source>
         <translation>%1 ja %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n vuosi</numerusform><numerusform>%n vuotta</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -587,10 +509,6 @@ Osoite: %4</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Lompakko on &lt;b&gt;salattu&lt;/b&gt; ja tällä hetkellä &lt;b&gt;lukittuna&lt;/b&gt;</translation>
     </message>
-    <message>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>Peruuttamaton virhe on tapahtunut. Reddcoin ei voi enää jatkaa turvallisesti ja sammutetaan.</translation>
-    </message>
 </context>
 <context>
     <name>ClientModel</name>
@@ -601,10 +519,6 @@ Osoite: %4</translation>
 </context>
 <context>
     <name>CoinControlDialog</name>
-    <message>
-        <source>Coin Control Address Selection</source>
-        <translation>Osoitteen valinta kolikoidenhallinnassa</translation>
-    </message>
     <message>
         <source>Quantity:</source>
         <translation>Määrä:</translation>
@@ -624,10 +538,6 @@ Osoite: %4</translation>
     <message>
         <source>Fee:</source>
         <translation>Rahansiirtokulu:</translation>
-    </message>
-    <message>
-        <source>Low Output:</source>
-        <translation>Matalan tason tuloste:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -652,10 +562,6 @@ Osoite: %4</translation>
     <message>
         <source>Amount</source>
         <translation>Määrä</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Osoite</translation>
     </message>
     <message>
         <source>Date</source>
@@ -718,10 +624,6 @@ Osoite: %4</translation>
         <translation>Kopio prioriteetti</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Kopioi matalan tason tuloste</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Kopioi vaihtoraha</translation>
     </message>
@@ -768,10 +670,6 @@ Osoite: %4</translation>
     <message>
         <source>none</source>
         <translation>ei yhtään</translation>
-    </message>
-    <message>
-        <source>Dust</source>
-        <translation>Pöly</translation>
     </message>
     <message>
         <source>yes</source>
@@ -879,16 +777,20 @@ Osoite: %4</translation>
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Reddcoin Core - Command-line options</source>
-        <translation>Reddcoin Core - Komentorivin asetukset</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin-ydin</translation>
     </message>
     <message>
         <source>version</source>
         <translation>versio</translation>
+    </message>
+    <message>
+        <source>(%1-bit)</source>
+        <translation>(%1-bit)</translation>
+    </message>
+    <message>
+        <source>About Reddcoin Core</source>
+        <translation>Tietoa Reddcoin Coresta</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -925,10 +827,6 @@ Osoite: %4</translation>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
-    <message>
-        <source>GB of free space available</source>
-        <translation>Gt vapaata tilaa käytettävissä</translation>
-    </message>
     </context>
 <context>
     <name>OpenURIDialog</name>
@@ -954,10 +852,6 @@ Osoite: %4</translation>
     <message>
         <source>&amp;Main</source>
         <translation>&amp;Yleiset</translation>
-    </message>
-    <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>Maksa rahansiirtopalkkio</translation>
     </message>
     <message>
         <source>Automatically start Reddcoin after logging in to the system.</source>
@@ -1012,14 +906,6 @@ Osoite: %4</translation>
         <translation>Proxyn Portti (esim. 9050)</translation>
     </message>
     <message>
-        <source>SOCKS &amp;Version:</source>
-        <translation>SOCKS &amp;Versio:</translation>
-    </message>
-    <message>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>Proxyn SOCKS-versio (esim. 5)</translation>
-    </message>
-    <message>
         <source>&amp;Window</source>
         <translation>&amp;Ikkuna</translation>
     </message>
@@ -1058,14 +944,6 @@ Osoite: %4</translation>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Valitse mitä yksikköä käytetään ensisijaisesti reddcoin-määrien näyttämiseen.</translation>
-    </message>
-    <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>Näytetäänkö Reddcoin-osoitteet rahansiirrot listassa vai ei.</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>&amp;Näytä osoitteet rahansiirrot listassa</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1111,10 +989,6 @@ Osoite: %4</translation>
         <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu Reddcoin-verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Lompakko</translation>
-    </message>
-    <message>
         <source>Available:</source>
         <translation>Saatavilla:</translation>
     </message>
@@ -1147,10 +1021,6 @@ Osoite: %4</translation>
         <translation>Tämänhetkinen kokonaissaldosi</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Viimeisimmät rahansiirrot&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>out of sync</source>
         <translation>Ei ajan tasalla</translation>
     </message>
@@ -1162,23 +1032,30 @@ Osoite: %4</translation>
         <translation>URI-käsittely</translation>
     </message>
     <message>
-        <source>Net manager warning</source>
-        <translation>Verkonhallinnan varoitus</translation>
-    </message>
-    <message>
         <source>Payment acknowledged</source>
         <translation>Maksu hyväksytty</translation>
     </message>
     </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin-ydin</translation>
+        <source>%1 h</source>
+        <translation>%1 h</translation>
     </message>
     <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Syötä Reddcoin-osoite (esim. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
+        <source>%1 m</source>
+        <translation>%1 min</translation>
+    </message>
+    <message>
+        <source>N/A</source>
+        <translation>Ei saatavilla</translation>
+    </message>
+    <message>
+        <source>Amount</source>
+        <translation>Määrä</translation>
     </message>
 </context>
 <context>
@@ -1330,19 +1207,7 @@ Osoite: %4</translation>
         <source>%1 GB</source>
         <translation>%1 Gt</translation>
     </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 min</translation>
-    </message>
-    <message>
-        <source>%1 h</source>
-        <translation>%1 h</translation>
-    </message>
-    <message>
-        <source>%1 h %2 m</source>
-        <translation>%1 h %2 min</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
@@ -1492,7 +1357,7 @@ Osoite: %4</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Määrä:</translation>
+        <translation>Summa:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -1500,15 +1365,11 @@ Osoite: %4</translation>
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Kulu:</translation>
-    </message>
-    <message>
-        <source>Low Output:</source>
-        <translation>Heikko ulosanti:</translation>
+        <translation>Rahansiirtokulu:</translation>
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Maksukulun jälkeen:</translation>
+        <translation>Rahansiirtokulun jälkeen:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -1567,12 +1428,8 @@ Osoite: %4</translation>
         <translation>Kopio prioriteetti</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Kopioi matalan tason tuloste</translation>
-    </message>
-    <message>
         <source>Copy change</source>
-        <translation>Kopioi vaihtorahat</translation>
+        <translation>Kopioi vaihtoraha</translation>
     </message>
     <message>
         <source>or</source>
@@ -1714,10 +1571,6 @@ Osoite: %4</translation>
     <message>
         <source>Click "Sign Message" to generate signature</source>
         <translation>Klikkaa "Allekirjoita Viesti luodaksesi allekirjoituksen </translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Syötä Reddcoin-osoite (esim. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -1935,10 +1788,6 @@ Osoite: %4</translation>
         <translation>Osoite</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Määrä</translation>
-    </message>
-    <message>
         <source>Open until %1</source>
         <translation>Avoinna %1 asti</translation>
     </message>
@@ -1989,6 +1838,10 @@ Osoite: %4</translation>
     <message>
         <source>Generated</source>
         <translation>Generoitu</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Muu</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -2134,10 +1987,6 @@ Osoite: %4</translation>
         <translation>Osoite</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Määrä</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>ID</translation>
     </message>
@@ -2150,6 +1999,9 @@ Osoite: %4</translation>
         <translation>kenelle</translation>
     </message>
 </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
 <context>
     <name>WalletFrame</name>
     </context>
@@ -2178,18 +2030,6 @@ Osoite: %4</translation>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>Käyttö:</translation>
-    </message>
-    <message>
-        <source>List commands</source>
-        <translation>Lista komennoista</translation>
-    </message>
-    <message>
-        <source>Get help for a command</source>
-        <translation>Hanki apua käskyyn</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Asetukset:</translation>
     </message>
@@ -2198,28 +2038,12 @@ Osoite: %4</translation>
         <translation>Määritä data-hakemisto</translation>
     </message>
     <message>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>Pidä enintään &lt;n&gt; yhteyttä verkkoihin (oletus: 125)</translation>
-    </message>
-    <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
         <translation>Yhdistä noodiin hakeaksesi naapurien osoitteet ja katkaise yhteys</translation>
     </message>
     <message>
         <source>Specify your own public address</source>
         <translation>Määritä julkinen osoitteesi</translation>
-    </message>
-    <message>
-        <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>Kynnysarvo aikakatkaisulle heikosti toimiville verkoille (oletus: 100)</translation>
-    </message>
-    <message>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>Sekuntien määrä, kuinka kauan uudelleenkytkeydytään verkkoihin (oletus: 86400)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
-        <translation>Virhe valmisteltaessa RPC-portin %u avaamista kuunneltavaksi: %s</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -2238,16 +2062,8 @@ Osoite: %4</translation>
         <translation>Hyväksy yhteyksiä ulkopuolelta (vakioasetus: 1 jos -proxy tai -connect ei määritelty)</translation>
     </message>
     <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
-        <translation>Virhe ilmennyt asetettaessa RPC-porttia %u IPv6:n kuuntelemiseksi, palataan takaisin IPv4:ään %s</translation>
-    </message>
-    <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Varoitus: -paytxfee on asetettu erittäin korkeaksi! Tämä on maksukulu jonka tulet maksamaan kun lähetät siirron.</translation>
-    </message>
-    <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>Varoitus: Tarkista että tietokoneesi kellonaika ja päivämäärä ovat paikkansapitäviä! Reddcoin ei toimi oikein väärällä päivämäärällä ja/tai kellonajalla.</translation>
     </message>
     <message>
         <source>Block creation options:</source>
@@ -2270,32 +2086,12 @@ Osoite: %4</translation>
         <translation>Varoitus: Levytila on vähissä!</translation>
     </message>
     <message>
-        <source>Error: system error: </source>
-        <translation>Virhe: Järjestelmävirhe</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Ei onnistuttu kuuntelemaan missään portissa. Käytä -listen=0 jos haluat tätä.</translation>
     </message>
     <message>
-        <source>Failed to write block</source>
-        <translation>Lohkon kirjoitus epäonnistui</translation>
-    </message>
-    <message>
         <source>Importing...</source>
         <translation>Tuodaan...</translation>
-    </message>
-    <message>
-        <source>Specify configuration file (default: reddcoin.conf)</source>
-        <translation>Määritä asetustiedosto (oletus: reddcoin.conf)</translation>
-    </message>
-    <message>
-        <source>Specify pid file (default: reddcoind.pid)</source>
-        <translation>Määritä pid-tiedosto (oletus: reddcoin.pid)</translation>
-    </message>
-    <message>
-        <source>Wait for RPC server to start</source>
-        <translation>Odotetaan RPC-palvelimen käynnistymistä</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -2310,52 +2106,16 @@ Osoite: %4</translation>
         <translation>Tietoa</translation>
     </message>
     <message>
-        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
-        <translation>Suurin vastaanottopuskuri yksittäiselle yhteydelle, &lt;n&gt;*1000 tavua (vakioasetus: 5000)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
-        <translation>Suurin lähetyspuskuri yksittäiselle yhteydelle, &lt;n&gt;*1000 tavua (vakioasetus: 1000)</translation>
-    </message>
-    <message>
-        <source>Only connect to nodes in network &lt;net&gt; (IPv4, IPv6 or Tor)</source>
-        <translation>Yhdistä vain noodeihin verkossa &lt;net&gt; (IPv4, IPv6 tai Tor)</translation>
-    </message>
-    <message>
         <source>RPC server options:</source>
         <translation>RPC-palvelimen valinnat:</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core Daemon</source>
-        <translation>Reddcoin Core-daemon</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core RPC client version</source>
-        <translation>Reddcoin Core:n RPC-asiakasohjelman versio</translation>
     </message>
     <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>Lähetä jäljitys/debug-tieto konsoliin, debug.log-tiedoston sijaan</translation>
     </message>
     <message>
-        <source>Set minimum block size in bytes (default: 0)</source>
-        <translation>Asetan pienin lohkon koko tavuissa (vakioasetus: 0)</translation>
-    </message>
-    <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>Pienennä debug.log tiedosto käynnistyksen yhteydessä (vakioasetus: 1 kun ei -debug)</translation>
-    </message>
-    <message>
-        <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>Määritä yhteyden aikakataisu millisekunneissa (vakioasetus: 5000)</translation>
-    </message>
-    <message>
-        <source>Start Reddcoin Core Daemon</source>
-        <translation>Käynnistä Reddcoin Core-daemon</translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>Järjestelmävirhe:</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -2368,10 +2128,6 @@ Osoite: %4</translation>
     <message>
         <source>Transaction too large</source>
         <translation>Rahansiirto on liian suuri</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>Käytä UPnP:tä kuunneltavan portin avaamiseen (vakioasetus: 0)</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
@@ -2394,24 +2150,12 @@ Osoite: %4</translation>
         <translation>käynnistyksessä</translation>
     </message>
     <message>
-        <source>version</source>
-        <translation>versio</translation>
-    </message>
-    <message>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat on korruptoitunut, pelastus epäonnistui</translation>
     </message>
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Salasana JSON-RPC-yhteyksille</translation>
-    </message>
-    <message>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>Salli JSON-RPC yhteydet tietystä ip-osoitteesta</translation>
-    </message>
-    <message>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>Lähetä käskyjä solmuun osoitteessa &lt;ip&gt; (oletus: 127.0.0.1)</translation>
     </message>
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
@@ -2422,24 +2166,12 @@ Osoite: %4</translation>
         <translation>Päivitä lompakko uusimpaan formaattiin</translation>
     </message>
     <message>
-        <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>Aseta avainpoolin koko arvoon &lt;n&gt; (oletus: 100)</translation>
-    </message>
-    <message>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>Skannaa uudelleen lohkoketju lompakon puuttuvien rahasiirtojen vuoksi</translation>
     </message>
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Käytä OpenSSL:ää (https) JSON-RPC-yhteyksille</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: server.cert)</source>
-        <translation>Palvelimen sertifikaatti-tiedosto (oletus: server.cert)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: server.pem)</source>
-        <translation>Palvelimen yksityisavain (oletus: server.pem)</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -2458,14 +2190,6 @@ Osoite: %4</translation>
         <translation>Virhe ladattaessa wallet.dat-tiedostoa: Lompakko vioittunut</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin</source>
-        <translation>Virhe ladattaessa wallet.dat-tiedostoa: Tarvitset uudemman version Reddcoinista</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>Lompakko tarvitsee uudelleenkirjoittaa: käynnistä Reddcoin uudelleen</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>Virhe ladattaessa wallet.dat-tiedostoa</translation>
     </message>
@@ -2478,10 +2202,6 @@ Osoite: %4</translation>
         <translation>Tuntematon verkko -onlynet parametrina: '%s'</translation>
     </message>
     <message>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>Tuntematon -socks proxy versio pyydetty: %i</translation>
-    </message>
-    <message>
         <source>Cannot resolve -bind address: '%s'</source>
         <translation>-bind osoitteen '%s' selvittäminen epäonnistui</translation>
     </message>
@@ -2492,10 +2212,6 @@ Osoite: %4</translation>
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>-paytxfee=&lt;amount&gt;: '%s' on virheellinen</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Virheellinen määrä</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -2530,20 +2246,8 @@ Osoite: %4</translation>
         <translation>Lataus on valmis</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>Käytä %s optiota</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Virhe</translation>
-    </message>
-    <message>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>Sinun täytyy asettaa rpcpassword=&lt;password&gt; asetustiedostoon:
-%s
-Jos tiedostoa ei ole, niin luo se ainoastaan omistajan kirjoitusoikeuksin.</translation>
     </message>
 </context>
 </TS>

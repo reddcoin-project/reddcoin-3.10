@@ -1,47 +1,6 @@
 <TS language="cs" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>About Reddcoin Core</source>
-        <translation>O Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Reddcoin&lt;/b&gt; verze</translation>
-    </message>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
- Tohle je experimentální program.
-
- Šířen pod licencí MIT/X11, viz přiložený soubor COPYING nebo http://www.opensource.org/licenses/mit-license.php.
-
- Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v OpenSSL Toolkitu (http://www.openssl.org/) a kryptografický program od Erika Younga (eay@cryptsoft.com) a program UPnP od Thomase Bernarda.</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>Copyright</translation>
-    </message>
-    <message>
-        <source>The Reddcoin Core developers</source>
-        <translation>Vývojáři Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>(%1-bit)</source>
-        <translation>(%1-bit)</translation>
-    </message>
-</context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>Dvojklikem myši začneš upravovat označení adresy</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>Vytvoř novou adresu</translation>
@@ -130,11 +89,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Exporting Failed</source>
         <translation>Exportování selhalo</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>Při ukládání seznamu adres do %1 se přihodila nějaká chyba.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -167,10 +122,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Repeat new passphrase</source>
         <translation>Totéž heslo ještě jednou</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Zadej nové heslo k peněžence.&lt;br/&gt;Použij &lt;b&gt;alespoň 10 náhodných znaků&lt;/b&gt; nebo &lt;b&gt;alespoň osm slov&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -302,10 +253,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Quit application</source>
         <translation>Ukonči aplikaci</translation>
-    </message>
-    <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Zobraz informace o Reddcoinu</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -444,10 +391,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Panel s listy</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[testnet]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
@@ -471,33 +414,9 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Show the Reddcoin Core help message to get a list with possible Reddcoin command-line options</source>
         <translation>Seznam argumentů Reddcoinu pro příkazovou řádku získáš v nápovědě Bitcoinu Core</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Reddcoin network</source>
-        <translation><numerusform>%n aktivní spojení do Reddcoinové sítě</numerusform><numerusform>%n aktivní spojení do Reddcoinové sítě</numerusform><numerusform>%n aktivních spojení do Reddcoinové sítě</numerusform></translation>
-    </message>
     <message>
         <source>No block source available...</source>
         <translation>Není dostupný žádný zdroj bloků...</translation>
-    </message>
-    <message>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>Zpracováno %1 bloků transakční historie</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n hodinu</numerusform><numerusform>%n hodiny</numerusform><numerusform>%n hodin</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n den</numerusform><numerusform>%n dny</numerusform><numerusform>%n dnů</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n týden</numerusform><numerusform>%n týdny</numerusform><numerusform>%n týdnů</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n rok</numerusform><numerusform>%n roky</numerusform><numerusform>%n roků</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -559,10 +478,6 @@ Adresa: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Peněženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálně &lt;b&gt;zamčená&lt;/b&gt;</translation>
     </message>
-    <message>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>Stala se fatální chyba. Reddcoin nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
-    </message>
 </context>
 <context>
     <name>ClientModel</name>
@@ -573,10 +488,6 @@ Adresa: %4
 </context>
 <context>
     <name>CoinControlDialog</name>
-    <message>
-        <source>Coin Control Address Selection</source>
-        <translation>Volba adres v rámci ruční správy mincí</translation>
-    </message>
     <message>
         <source>Quantity:</source>
         <translation>Počet:</translation>
@@ -596,10 +507,6 @@ Adresa: %4
     <message>
         <source>Fee:</source>
         <translation>Poplatek:</translation>
-    </message>
-    <message>
-        <source>Low Output:</source>
-        <translation>Malý výstup:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -624,10 +531,6 @@ Adresa: %4
     <message>
         <source>Amount</source>
         <translation>Částka</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Adresa</translation>
     </message>
     <message>
         <source>Date</source>
@@ -690,10 +593,6 @@ Adresa: %4
         <translation>Kopíruj prioritu</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Kopíruj malý výstup</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Kopíruj drobné</translation>
     </message>
@@ -742,10 +641,6 @@ Adresa: %4
         <translation>žádná</translation>
     </message>
     <message>
-        <source>Dust</source>
-        <translation>Prach</translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>ano</translation>
     </message>
@@ -776,18 +671,6 @@ Adresa: %4
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
         <translation>Popisek zčervená, pokud má některý příjemce obdržet částku menší než %1.</translation>
-    </message>
-    <message>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>To znamená, že je vyžadován poplatek alespoň %1.</translation>
-    </message>
-    <message>
-        <source>Amounts below 0.546 times the minimum relay fee are shown as dust.</source>
-        <translation>Částky menší než 0,546násobek minimálního poplatku pro přenos jsou označovány jako prach.</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the change is smaller than %1.</source>
-        <translation>Popisek zčervená, pokud jsou drobné menší než %1.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -883,16 +766,20 @@ Adresa: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Reddcoin Core - Command-line options</source>
-        <translation>ReddcoinCore – Argumenty z příkazové řádky</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
     <message>
         <source>version</source>
         <translation>verze</translation>
+    </message>
+    <message>
+        <source>(%1-bit)</source>
+        <translation>(%1-bit)</translation>
+    </message>
+    <message>
+        <source>About Reddcoin Core</source>
+        <translation>O Reddcoin Core</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -958,22 +845,10 @@ Adresa: %4
         <translation>Reddcoin Core</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" can not be created.</source>
-        <translation>Chyba: Nejde vytvořit požadovaný adresář pro data „%1“.</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
-    <message>
-        <source>GB of free space available</source>
-        <translation>GB volného místa</translation>
-    </message>
-    <message>
-        <source>(of %1GB needed)</source>
-        <translation>(z potřebných %1 GB)</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1008,14 +883,6 @@ Adresa: %4
         <translation>&amp;Hlavní</translation>
     </message>
     <message>
-        <source>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB.</source>
-        <translation>Dobrovolný transakční poplatek za každý započatý kB dopomáhá k rychlému zpracování tvých transakcí. Většina transakcí má do 1 kB.</translation>
-    </message>
-    <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>Platit &amp;transakční poplatek</translation>
-    </message>
-    <message>
         <source>Automatically start Reddcoin after logging in to the system.</source>
         <translation>Automaticky spustí Reddcoin po přihlášení do systému.</translation>
     </message>
@@ -1034,14 +901,6 @@ Adresa: %4
     <message>
         <source>Number of script &amp;verification threads</source>
         <translation>Počet vláken pro &amp;verifikaci skriptů</translation>
-    </message>
-    <message>
-        <source>Connect to the Reddcoin network through a SOCKS proxy.</source>
-        <translation>Připojí se do Reddcoinové sítě přes SOCKS proxy.</translation>
-    </message>
-    <message>
-        <source>&amp;Connect through SOCKS proxy (default proxy):</source>
-        <translation>&gt;&amp;Připojit přes SOCKS proxy (výchozí proxy):</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -1116,14 +975,6 @@ Adresa: %4
         <translation>Port proxy (např. 9050)</translation>
     </message>
     <message>
-        <source>SOCKS &amp;Version:</source>
-        <translation>&amp;Verze SOCKS:</translation>
-    </message>
-    <message>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>Verze SOCKS proxy (např. 5)</translation>
-    </message>
-    <message>
         <source>&amp;Window</source>
         <translation>O&amp;kno</translation>
     </message>
@@ -1162,14 +1013,6 @@ Adresa: %4
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Zvol výchozí podjednotku, která se bude zobrazovat v programu a při posílání mincí.</translation>
-    </message>
-    <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>Zda ukazovat bitcoinové adresy ve výpisu transakcí nebo ne.</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>Ukazo&amp;vat adresy ve výpisu transakcí</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1223,10 +1066,6 @@ Adresa: %4
         <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s Reddcoinovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Peněženka</translation>
-    </message>
-    <message>
         <source>Available:</source>
         <translation>K dispozici:</translation>
     </message>
@@ -1259,10 +1098,6 @@ Adresa: %4
         <translation>Celkový stav tvého účtu</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Poslední transakce&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>out of sync</source>
         <translation>nesynchronizováno</translation>
     </message>
@@ -1272,10 +1107,6 @@ Adresa: %4
     <message>
         <source>URI handling</source>
         <translation>Zpracování URI</translation>
-    </message>
-    <message>
-        <source>URI can not be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
-        <translation>Nepodařilo se analyzovat URI! Důvodem může být neplatná Reddcoinová adresa nebo poškozené parametry URI.</translation>
     </message>
     <message>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
@@ -1290,24 +1121,16 @@ Adresa: %4
         <translation>Nemůžu spustit reddcoin: obsluha click-to-pay</translation>
     </message>
     <message>
-        <source>Net manager warning</source>
-        <translation>Upozornění správce sítě</translation>
-    </message>
-    <message>
-        <source>Your active proxy doesn't support SOCKS5, which is required for payment requests via proxy.</source>
-        <translation>Tvá aktivní proxy nepodporuje SOCKS5, které je vyžadováno pro platební požadavky skrz proxy.</translation>
-    </message>
-    <message>
         <source>Payment request fetch URL is invalid: %1</source>
         <translation>Zdrojová URL platebního požadavku není platná: %1</translation>
     </message>
     <message>
-        <source>Payment request file handling</source>
-        <translation>Zpracování souboru platebního požadavku</translation>
+        <source>Invalid payment address %1</source>
+        <translation>Neplatná platební adresa %1</translation>
     </message>
     <message>
-        <source>Payment request file can not be read or processed! This can be caused by an invalid payment request file.</source>
-        <translation>Soubor platebního požadavku nejde přečíst nebo zpracovat! Příčinou může být špatný soubor platebního požadavku.</translation>
+        <source>Payment request file handling</source>
+        <translation>Zpracování souboru platebního požadavku</translation>
     </message>
     <message>
         <source>Unverified payment requests to custom payment scripts are unsupported.</source>
@@ -1320,10 +1143,6 @@ Adresa: %4
     <message>
         <source>Error communicating with %1: %2</source>
         <translation>Chyba při komunikaci s %1: %2</translation>
-    </message>
-    <message>
-        <source>Payment request can not be parsed or processed!</source>
-        <translation>Platebního požadavku nejde přečíst nebo zpracovat!</translation>
     </message>
     <message>
         <source>Bad response from server %1</source>
@@ -1339,30 +1158,25 @@ Adresa: %4
     </message>
 </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin Core</translation>
+        <source>%1 h</source>
+        <translation>%1 h</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>Chyba: Zadaný adresář pro data „%1“ neexistuje.</translation>
+        <source>%1 m</source>
+        <translation>%1 m</translation>
     </message>
     <message>
-        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>Chyba: Nemohu zpracovat konfigurační soubor: %1. Používej pouze syntaxi klíč=hodnota.</translation>
+        <source>N/A</source>
+        <translation>N/A</translation>
     </message>
     <message>
-        <source>Error: Invalid combination of -regtest and -testnet.</source>
-        <translation>Chyba: Neplatná kombinace -regtest a -testnet.</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core didn't yet exit safely...</source>
-        <translation>Reddcoin Core ještě bezpečně neskončil...</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Zadej Reddcoinovou adresu (např. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
+        <source>Amount</source>
+        <translation>Částka</translation>
     </message>
 </context>
 <context>
@@ -1514,19 +1328,7 @@ Adresa: %4
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 m</translation>
-    </message>
-    <message>
-        <source>%1 h</source>
-        <translation>%1 h</translation>
-    </message>
-    <message>
-        <source>%1 h %2 m</source>
-        <translation>%1 h %2 m</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
@@ -1548,10 +1350,6 @@ Adresa: %4
     <message>
         <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>&amp;Recyklovat již existující adresy (nedoporučeno)</translation>
-    </message>
-    <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Reddcoin network.</source>
-        <translation>Volitelná zpráva, která se připojí k platebnímu požadavku a která se zobrazí, když se požadavek otevře. Poznámka: Tahle zpráva se neposílá s platbou po Reddcoinové síti.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1739,10 +1537,6 @@ Adresa: %4
         <translation>Poplatek:</translation>
     </message>
     <message>
-        <source>Low Output:</source>
-        <translation>Malý výstup:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation>Čistá částka:</translation>
     </message>
@@ -1819,10 +1613,6 @@ Adresa: %4
         <translation>Kopíruj prioritu</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Kopíruj malý výstup</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Kopíruj drobné</translation>
     </message>
@@ -1882,14 +1672,6 @@ Adresa: %4
         <source>added as transaction fee</source>
         <translation>přidán jako transakční poplatek</translation>
     </message>
-    <message>
-        <source>Payment request expired</source>
-        <translation>Platební požadavek vypršel</translation>
-    </message>
-    <message>
-        <source>Invalid payment address %1</source>
-        <translation>Neplatná platební adresa %1</translation>
-    </message>
 </context>
 <context>
     <name>SendCoinsEntry</name>
@@ -1916,10 +1698,6 @@ Adresa: %4
     <message>
         <source>This is a normal payment.</source>
         <translation>Tohle je normální platba.</translation>
-    </message>
-    <message>
-        <source>The Reddcoin address to send the payment to (e.g. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</source>
-        <translation>Reddcoinová adresa příjemce (např. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1992,10 +1770,6 @@ Adresa: %4
         <translation>Podepsáním zprávy svými adresami můžeš prokázat, že je skutečně vlastníš. Buď opatrný a nepodepisuj nic vágního; například při phishingových útocích můžeš být lákán, abys něco takového podepsal. Podepisuj pouze zcela úplná a detailní prohlášení, se kterými souhlasíš.</translation>
     </message>
     <message>
-        <source>The Reddcoin address to sign the message with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Reddcoinová adresa, kterou se zpráva podepíše (např. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
-    </message>
-    <message>
         <source>Choose previously used address</source>
         <translation>Vyber již použitou adresu</translation>
     </message>
@@ -2048,10 +1822,6 @@ Adresa: %4
         <translation>K ověření podpisu zprávy zadej podepisující adresu, zprávu (ověř si, že správně kopíruješ zalomení řádků, mezery, tabulátory apod.) a podpis. Dávej pozor na to, abys nezkopíroval do podpisu víc, než co je v samotné podepsané zprávě, abys nebyl napálen man-in-the-middle útokem.</translation>
     </message>
     <message>
-        <source>The Reddcoin address the message was signed with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Reddcoinová adresa, kterou je zpráva podepsána (např. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
-    </message>
-    <message>
         <source>Verify the message to ensure it was signed with the specified Reddcoin address</source>
         <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou Reddcoinovou adresou</translation>
     </message>
@@ -2066,10 +1836,6 @@ Adresa: %4
     <message>
         <source>Click "Sign Message" to generate signature</source>
         <translation>Kliknutím na „Podepiš zprávu“ vygeneruješ podpis</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Zadej Reddcoinovou adresu (např. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -2168,10 +1934,6 @@ Adresa: %4
         <source>Status</source>
         <translation>Stav</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, rozesláno přes %n uzel</numerusform><numerusform>, rozesláno přes %n uzly</numerusform><numerusform>, rozesláno přes %n uzlů</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Datum</translation>
@@ -2203,10 +1965,6 @@ Adresa: %4
     <message>
         <source>Credit</source>
         <translation>Příjem</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>dozraje po %n bloku</numerusform><numerusform>dozraje po %n blocích</numerusform><numerusform>dozraje po %n blocích</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -2272,10 +2030,6 @@ Adresa: %4
         <source>, has not been successfully broadcast yet</source>
         <translation>, ještě nebylo rozesláno</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otevřeno pro %n další blok</numerusform><numerusform>Otevřeno pro %n další bloky</numerusform><numerusform>Otevřeno pro %n dalších bloků</numerusform></translation>
-    </message>
     <message>
         <source>unknown</source>
         <translation>neznámo</translation>
@@ -2307,16 +2061,8 @@ Adresa: %4
         <translation>Adresa</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Částka</translation>
-    </message>
-    <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
         <translation>Nedozráno (%1 potvrzení, dozraje při %2 potvrzeních)</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otevřeno pro %n další blok</numerusform><numerusform>Otevřeno pro %n další bloky</numerusform><numerusform>Otevřeno pro %n dalších bloků</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -2369,6 +2115,10 @@ Adresa: %4
     <message>
         <source>Generated</source>
         <translation>Vygenerováno</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Ostatní</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -2522,10 +2272,6 @@ Adresa: %4
         <translation>Adresa</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Částka</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>ID</translation>
     </message>
@@ -2538,6 +2284,9 @@ Adresa: %4
         <translation>až</translation>
     </message>
 </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
 <context>
     <name>WalletFrame</name>
     <message>
@@ -2590,28 +2339,12 @@ Adresa: %4
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>Užití:</translation>
-    </message>
-    <message>
-        <source>List commands</source>
-        <translation>Výpis příkazů</translation>
-    </message>
-    <message>
-        <source>Get help for a command</source>
-        <translation>Získat nápovědu pro příkaz</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Možnosti:</translation>
     </message>
     <message>
         <source>Specify data directory</source>
         <translation>Adresář pro data</translation>
-    </message>
-    <message>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>Povolit nejvýše &lt;n&gt; připojení k uzlům (výchozí: 125)</translation>
     </message>
     <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
@@ -2622,24 +2355,8 @@ Adresa: %4
         <translation>Specifikuj svou veřejnou adresu</translation>
     </message>
     <message>
-        <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>Práh pro odpojování zlobivých uzlů (výchozí: 100)</translation>
-    </message>
-    <message>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>Doba ve vteřinách, po kterou se nebudou moci zlobivé uzly znovu připojit (výchozí: 86400)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
-        <translation>Při nastavování naslouchacího RPC portu %u pro IPv4 nastala chyba: %s</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Akceptovat příkazy z příkazové řádky a přes JSON-RPC</translation>
-    </message>
-    <message>
-        <source>Connect to JSON-RPC on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>Připojit se k JSON RPC na &lt;port&gt; (výchozí: 45443 nebo testnet: 55443)</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
@@ -2650,84 +2367,20 @@ Adresa: %4
         <translation>Použít testovací síť (testnet)</translation>
     </message>
     <message>
-        <source>%s, you must set a rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=reddcoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-</source>
-        <translation>%s, musíš nastavit rpcpassword v konfiguračním souboru:
-%s
-Je vhodné použít následující náhodné heslo:
-rpcuser=reddcoinrpc
-rpcpassword=%s
-(není potřeba si ho pamatovat)
-rpcuser a rpcpassword NESMÍ být stejné.
-Pokud konfigurační soubor ještě neexistuje, vytvoř ho tak, aby ho mohl číst pouze vlastník.
-Je také doporučeno si nastavit alertnotify, abys byl upozorněn na případné problémy;
-například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-</translation>
-    </message>
-    <message>
-        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
-        <translation>Akceptovatelné šifry (výchozí: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
-        <translation>Při nastavování naslouchacího RPC portu %u pro IPv6 nastala chyba, vracím se k IPv4: %s</translation>
-    </message>
-    <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>Poslouchat na zadané adrese. Pro zápis IPv6 adresy použij notaci [adresa]:port</translation>
-    </message>
-    <message>
-        <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:15)</source>
-        <translation>Kontinuálně omezovat bezpoplatkové transakce na &lt;n&gt;*1000 bajtů za minutu (výchozí: 15)</translation>
-    </message>
-    <message>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
-        <translation>Přepnout do módu testování regresí, který používá speciální řetězec, ve kterém jsou mohou být bloky okamžitě vyřešeny. Je to určeno pro nástroje pro regresní testování a vyvíjení aplikací.</translation>
     </message>
     <message>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
         <translation>Přepnout do módu testování regresí, který používá speciální řetězec, ve kterém mohou být bloky okamžitě vyřešeny.</translation>
     </message>
     <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Chyba: Transakce byla odmítnuta! Tohle může nastat, pokud nějaké mince z tvé peněženky už jednou byly utraceny, například pokud používáš kopii souboru wallet.dat a mince byly utraceny v druhé kopii, ale nebyly označeny jako utracené v této.</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>Chyba: Tahle transakce vyžaduje transakční poplatek nejméně %s kvůli velikosti zasílané částky, komplexnosti nebo použití nedávno přijatých mincí!</translation>
-    </message>
-    <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
         <translation>Spustit příkaz, když se objeví transakce týkající se peněženky (%s se v příkazu nahradí za TxID)</translation>
     </message>
     <message>
-        <source>Fees smaller than this are considered zero fee (for transaction creation) (default:</source>
-        <translation>Poplatky menší než tato hodnota jsou považovány za nulové (pro vytváření transakcí) (výchozí:</translation>
-    </message>
-    <message>
-        <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: 100)</source>
-        <translation>Promítnout databázovou aktivitu z paměťového prostoru do záznamu na disku každých &lt;n&gt; megabajtů (výchozí: 100)</translation>
-    </message>
-    <message>
-        <source>How thorough the block verification of -checkblocks is (0-4, default: 3)</source>
-        <translation>Jak moc důkladná má být verifikace bloků -checkblocks (0-4, výchozí: 3)</translation>
-    </message>
-    <message>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
         <translation>V tomto módu -genproclimit určuje, kolik bloků je vygenerováno okamžitě.</translation>
-    </message>
-    <message>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>Čekat na JSON RPC spojení na &lt;portu&gt; (výchozí: 45443 nebo testnet: 55443)</translation>
     </message>
     <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
@@ -2738,16 +2391,8 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Nedaří se mi připojit na %s na tomhle počítači. Reddcoin Core už pravděpodobně jednou běží.</translation>
     </message>
     <message>
-        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: -proxy)</source>
-        <translation>Použít samostatnou SOCKS5 proxy ke spojení s peery přes skryté služby v Toru (výchozí: -proxy)</translation>
-    </message>
-    <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Upozornění: -paytxfee je nastaveno velmi vysoko! Toto je transakční poplatek, který zaplatíš za každou poslanou transakci.</translation>
-    </message>
-    <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>Upozornění: Zkontroluj, že máš v počítači správně nastavený datum a čas! Pokud jsou nastaveny špatně, Reddcoin nebude fungovat správně.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -2770,10 +2415,6 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>(výchozí: 1)</translation>
     </message>
     <message>
-        <source>(default: wallet.dat)</source>
-        <translation>(výchozí: wallet.dat)</translation>
-    </message>
-    <message>
         <source>&lt;category&gt; can be:</source>
         <translation>&lt;category&gt; může být:</translation>
     </message>
@@ -2786,16 +2427,8 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Možnosti vytvoření bloku:</translation>
     </message>
     <message>
-        <source>Clear list of wallet transactions (diagnostic tool; implies -rescan)</source>
-        <translation>Smazat seznam transakcí peněženky (diagnostický nástroj; vynutí -rescan)</translation>
-    </message>
-    <message>
         <source>Connect only to the specified node(s)</source>
         <translation>Připojit se pouze k zadanému uzlu (příp. zadaným uzlům)</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS proxy</source>
-        <translation>Připojit se přes SOCKS proxy</translation>
     </message>
     <message>
         <source>Connection options:</source>
@@ -2808,10 +2441,6 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Debugging/Testing options:</source>
         <translation>Možnosti ladění/testování:</translation>
-    </message>
-    <message>
-        <source>Disable safemode, override a real safe mode event (default: 0)</source>
-        <translation>Vypnout bezpečný režim, překrýt skutečnou událost bezpečného režimu (výchozí: 0)</translation>
     </message>
     <message>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
@@ -2846,72 +2475,8 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Problém: Na disku je málo místa!</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Chyba: Peněženka je zamčená, nemohu vytvořit transakci!</translation>
-    </message>
-    <message>
-        <source>Error: system error: </source>
-        <translation>Chyba: systémová chyba:</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Nepodařilo se naslouchat na žádném portu. Použij -listen=0, pokud to byl tvůj záměr.</translation>
-    </message>
-    <message>
-        <source>Failed to read block info</source>
-        <translation>Nepodařilo se přečíst informace o bloku</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>Nepodařilo se přečíst blok</translation>
-    </message>
-    <message>
-        <source>Failed to sync block index</source>
-        <translation>Nepodařilo se sesynchronizovat index bloků</translation>
-    </message>
-    <message>
-        <source>Failed to write block index</source>
-        <translation>Nepodařilo se zapsat index bloků</translation>
-    </message>
-    <message>
-        <source>Failed to write block info</source>
-        <translation>Nepodařilo se zapsat informace o bloku</translation>
-    </message>
-    <message>
-        <source>Failed to write block</source>
-        <translation>Nepodařilo se zapsat blok</translation>
-    </message>
-    <message>
-        <source>Failed to write file info</source>
-        <translation>Nepodařilo se zapsat informace o souboru</translation>
-    </message>
-    <message>
-        <source>Failed to write to coin database</source>
-        <translation>Selhal zápis do databáze mincí</translation>
-    </message>
-    <message>
-        <source>Failed to write transaction index</source>
-        <translation>Nepodařilo se zapsat index transakcí</translation>
-    </message>
-    <message>
-        <source>Failed to write undo data</source>
-        <translation>Nepodařilo se zapsat data o vracení změn</translation>
-    </message>
-    <message>
-        <source>Fee per kB to add to transactions you send</source>
-        <translation>Poplatek za kB, který se přidá ke každé odeslané transakci</translation>
-    </message>
-    <message>
-        <source>Fees smaller than this are considered zero fee (for relaying) (default:</source>
-        <translation>Poplatky menší než tato hodnota jsou považovány za nulové (pro přeposílání transakcí) (výchozí:</translation>
-    </message>
-    <message>
-        <source>Force safe mode (default: 0)</source>
-        <translation>Vynutit bezpečný mód (výchozí: 0)</translation>
-    </message>
-    <message>
-        <source>How many blocks to check at startup (default: 288, 0 = all)</source>
-        <translation>Kolik bloků při startu zkontrolovat (výchozí: 288, 0 = všechny)</translation>
     </message>
     <message>
         <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
@@ -2942,32 +2507,16 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Držet v paměti nejvýše &lt;n&gt; nespojitelných transakcí (výchozí: %u)</translation>
     </message>
     <message>
-        <source>Maintain a full transaction index (default: 1)</source>
-        <translation>Spravovat úplný index transakcí (výchozí: 0) {1)?}</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Je nedostatek deskriptorů souborů.</translation>
-    </message>
-    <message>
-        <source>Prepend debug output with timestamp (default: 1)</source>
-        <translation>Připojit před ladicí výstup časové razítko (výchozí: 1)</translation>
     </message>
     <message>
         <source>RPC SSL options: (see the wiki.reddcoin.com for SSL setup instructions)</source>
         <translation>Možnosti SSL pro RPC: (viz instrukce nastavení SSL na wiki.reddcoin.com)</translation>
     </message>
     <message>
-        <source>RPC client options:</source>
-        <translation>Možnosti RPC klienta:</translation>
-    </message>
-    <message>
         <source>Rebuild block chain index from current blk000??.dat files</source>
         <translation>Znovu vytvořit index řetězce bloků z aktuálních blk000??.dat souborů</translation>
-    </message>
-    <message>
-        <source>Select SOCKS version for -proxy (4 or 5, default: 5)</source>
-        <translation>Zvol verzi SOCKS proxy pro -proxy (4 nebo 5, výchozí: 5)</translation>
     </message>
     <message>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
@@ -2978,24 +2527,8 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Nastavit maximální velikost bloku v bajtech (výchozí: %d)</translation>
     </message>
     <message>
-        <source>Set the number of threads to service RPC calls (default: 4)</source>
-        <translation>Nastavení počtu vláken pro servisní RPC volání (výchozí: 4)</translation>
-    </message>
-    <message>
-        <source>Specify configuration file (default: reddcoin.conf)</source>
-        <translation>Konfigurační soubor (výchozí: reddcoin.conf)</translation>
-    </message>
-    <message>
-        <source>Specify pid file (default: reddcoind.pid)</source>
-        <translation>PID soubor (výchozí: reddcoind.pid)</translation>
-    </message>
-    <message>
         <source>Specify wallet file (within data directory)</source>
         <translation>Udej název souboru s peněženkou (v rámci datového adresáře)</translation>
-    </message>
-    <message>
-        <source>Spend unconfirmed change when sending transactions (default: 1)</source>
-        <translation>Utrácet i ještě nepotvrzené drobné při posílání transakcí (výchozí: 1)</translation>
     </message>
     <message>
         <source>This is intended for regression testing tools and app development.</source>
@@ -3014,20 +2547,12 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Kontroluji peněženku...</translation>
     </message>
     <message>
-        <source>Wait for RPC server to start</source>
-        <translation>Počkat, než RPC server nastartuje</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Peněženka %s se nachází mimo datový adresář %s</translation>
     </message>
     <message>
         <source>Wallet options:</source>
         <translation>Možnosti peněženky:</translation>
-    </message>
-    <message>
-        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
-        <translation>Upozornění: Zastaralý argument -debugnet se ignoruje, použij -debug=net</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
@@ -3046,20 +2571,8 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Spustit příkaz, když přijde relevantní upozornění nebo když dojde k opravdu dlouhému rozštěpení řetezce bloků (%s se v příkazu nahradí zprávou)</translation>
     </message>
     <message>
-        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
-        <translation>Tisknout ladicí informace (výchozí: 0, zadání &lt;category&gt; je volitelné)</translation>
-    </message>
-    <message>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
         <translation>Nastavit maximální velikost prioritních/nízkopoplatkových transakcí v bajtech (výchozí: %d)</translation>
-    </message>
-    <message>
-        <source>Set the processor limit for when generation is on (-1 = unlimited, default: 0)</source>
-        <translation>Nastavit omezení procesoru pro zapnuté generování (-1 = bez omezení, výchozí: 0)</translation>
-    </message>
-    <message>
-        <source>Always query for peer addresses via DNS lookup (default: 0)</source>
-        <translation>Vždy získávat adresy dalších protějšků přes DNS (výchozí: 0)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3078,38 +2591,6 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Neplatná částka pro -reservebalance=&lt;částka&gt;: '%s'</translation>
     </message>
     <message>
-        <source>Limit size of signature cache to &lt;n&gt; entries (default: 50000)</source>
-        <translation>Omezit velikost vyrovnávací paměti pro podpisy na &lt;n&gt; položek (výchozí: 50000)</translation>
-    </message>
-    <message>
-        <source>Listen for connections on &lt;port&gt; (default: 45444 or testnet: 55444)</source>
-        <translation>Čekat na spojení na &lt;portu&gt; (výchozí: 45444 nebo testnet: 55444)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
-        <translation>Maximální velikost přijímacího bufferu pro každé spojení, &lt;n&gt;*1000 bajtů (výchozí: 5000)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
-        <translation>Maximální velikost odesílacího bufferu pro každé spojení, &lt;n&gt;*1000 bajtů (výchozí: 1000)</translation>
-    </message>
-    <message>
-        <source>Only accept block chain matching built-in checkpoints (default: 1)</source>
-        <translation>Uznávat pouze řetězec bloků, který odpovídá vnitřním kontrolním bodům (výchozí: 1)</translation>
-    </message>
-    <message>
-        <source>Only connect to nodes in network &lt;net&gt; (IPv4, IPv6 or Tor)</source>
-        <translation>Připojit se pouze k uzlům v &lt;net&gt; síti (IPv4, IPv6 nebo Tor)</translation>
-    </message>
-    <message>
-        <source>Print block on startup, if found in block index</source>
-        <translation>Vypsat při startu blok,pokud se nachází v indexu bloků</translation>
-    </message>
-    <message>
-        <source>Print block tree on startup (default: 0)</source>
-        <translation>Vypsat při startu strom bloků (výchozí: 0)</translation>
-    </message>
-    <message>
         <source>RPC server options:</source>
         <translation>Možnosti RPC serveru:</translation>
     </message>
@@ -3122,44 +2603,12 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Náhodně pozměňovat 1 z každých &lt;n&gt; síťových zpráv</translation>
     </message>
     <message>
-        <source>Reddcoin Core Daemon</source>
-        <translation>Reddcoin Core Démon</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core RPC client version</source>
-        <translation>Verze Reddcoin Core RPC klienta</translation>
-    </message>
-    <message>
-        <source>SSL options: (see the Reddcoin Wiki for SSL setup instructions)</source>
-        <translation>Možnosti SSL pro RPC: (viz instrukce nastavení SSL na Reddcoin Wiki)</translation>
-    </message>
-    <message>
-        <source>Send command to Reddcoin Core</source>
-        <translation>Poslat příkaz Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>Send command to reddcoin Core</source>
-        <translation>Poslat příkaz reddcoin Core</translation>
-    </message>
-    <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>Posílat stopovací/ladicí informace do konzole místo do souboru debug.log</translation>
     </message>
     <message>
-        <source>Set minimum block size in bytes (default: 0)</source>
-        <translation>Nastavit minimální velikost bloku v bajtech (výchozí: 0)</translation>
-    </message>
-    <message>
-        <source>Sets the DB_PRIVATE flag in the wallet db environment (default: 1)</source>
-        <translation>Nastavit příznak DB_PRIVATE v databázovém prostředí peněženky (výchozí: 1)</translation>
-    </message>
-    <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
         <translation>Zobrazit všechny možnosti ladění (užití: --help -help-debug)</translation>
-    </message>
-    <message>
-        <source>Show benchmark information (default: 0)</source>
-        <translation>Zobrazit výkonnostní informace (výchozí: 0)</translation>
     </message>
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
@@ -3168,18 +2617,6 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Signing transaction failed</source>
         <translation>Podepisování transakce selhalo</translation>
-    </message>
-    <message>
-        <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>Zadej časový limit spojení v milisekundách (výchozí: 5000)</translation>
-    </message>
-    <message>
-        <source>Start Reddcoin Core Daemon</source>
-        <translation>Spustit Reddcoin Core Démona</translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>Systémová chyba:</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -3192,14 +2629,6 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Transaction too large</source>
         <translation>Transace je příliš velká</translation>
-    </message>
-    <message>
-        <source>Usage (deprecated, use reddcoin-cli):</source>
-        <translation>Užití (zastaralé, použij reddcoin-cli):</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>Použít UPnP k namapování naslouchacího portu (výchozí: 0)</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
@@ -3226,24 +2655,12 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>při startu</translation>
     </message>
     <message>
-        <source>version</source>
-        <translation>verze</translation>
-    </message>
-    <message>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>Soubor wallet.dat je poškozen, jeho záchrana se nezdařila</translation>
     </message>
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Heslo pro JSON-RPC spojení</translation>
-    </message>
-    <message>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>Povolit JSON-RPC spojení ze specifikované IP adresy</translation>
-    </message>
-    <message>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>Posílat příkazy uzlu běžícím na &lt;ip&gt; (výchozí: 127.0.0.1)</translation>
     </message>
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
@@ -3254,24 +2671,12 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Převést peněženku na nejnovější formát</translation>
     </message>
     <message>
-        <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>Nastavit zásobník klíčů na velikost &lt;n&gt; (výchozí: 100)</translation>
-    </message>
-    <message>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>Přeskenovat řetězec bloků na chybějící transakce tvé pěněženky</translation>
     </message>
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Použít OpenSSL (https) pro JSON-RPC spojení</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: server.cert)</source>
-        <translation>Soubor se serverovým certifikátem (výchozí: server.cert)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: server.pem)</source>
-        <translation>Soubor se serverovým soukromým klíčem (výchozí: server.pem)</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -3290,14 +2695,6 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Chyba při načítání wallet.dat: peněženka je poškozená</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin</source>
-        <translation>Chyba při načítání wallet.dat: peněženka vyžaduje novější verzi Reddcoinu</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>Soubor s peněženkou potřeboval přepsat: restartuj Reddcoin, aby se operace dokončila</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>Chyba při načítání wallet.dat</translation>
     </message>
@@ -3310,10 +2707,6 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>V -onlynet byla uvedena neznámá síť: '%s'</translation>
     </message>
     <message>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>V -socks byla požadována neznámá verze proxy: %i</translation>
-    </message>
-    <message>
         <source>Cannot resolve -bind address: '%s'</source>
         <translation>Nemohu přeložit -bind adresu: '%s'</translation>
     </message>
@@ -3324,10 +2717,6 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>Neplatná částka pro -paytxfee=&lt;částka&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Neplatná částka</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3362,20 +2751,8 @@ například: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Načítání dokončeno</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>K použití volby %s</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Chyba</translation>
-    </message>
-    <message>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>Musíš nastavit rpcpassword=&lt;heslo&gt; v konfiguračním souboru:
-%s
-Pokud konfigurační soubor ještě neexistuje, vytvoř ho tak, aby ho mohl číst pouze vlastník.</translation>
     </message>
 </context>
 </TS>

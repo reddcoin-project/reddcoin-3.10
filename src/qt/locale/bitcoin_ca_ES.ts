@@ -1,8 +1,5 @@
 <TS language="ca_ES" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    </context>
-<context>
     <name>AddressBookPage</name>
     <message>
         <source>Choose the address to send coins to</source>
@@ -20,11 +17,7 @@
         <source>Export Address List</source>
         <translation>Exportar llista d'adreces</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>Hi ha hagut un error intentant desar la llista d'adreces a %1.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -88,14 +81,6 @@
         <translation>Aquesta etiqueta es torna vermella, si qualsevol recipient rep una quantitat menor a %1</translation>
     </message>
     <message>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>Això significa que una quota d'al menys un %1 és necessària.</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the change is smaller than %1.</source>
-        <translation>Aquesta etiqueta es torna vermella si el canvi es menor que %1</translation>
-    </message>
-    <message>
         <source>(no label)</source>
         <translation>(sense etiqueta)</translation>
     </message>
@@ -145,6 +130,9 @@
     </message>
     </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     </context>
 <context>
@@ -163,10 +151,6 @@
     </context>
 <context>
     <name>ReceiveCoinsDialog</name>
-    <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Reddcoin network.</source>
-        <translation>Un missatge opcional a adjuntar a la petició de pagament que serà mostrat quan la petició sigui oberta. Nota: el missatge no serà retransmès amb el pagament per la Xarxa Reddcoin</translation>
-    </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
         <translation>Una etiqueta opcional a associar amb la nova adreça de recepció.</translation>
@@ -329,6 +313,9 @@
     </message>
     </context>
 <context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
+<context>
     <name>WalletFrame</name>
     </context>
 <context>
@@ -339,10 +326,6 @@
     </context>
 <context>
     <name>bitcoin-core</name>
-    <message>
-        <source>Clear list of wallet transactions (diagnostic tool; implies -rescan)</source>
-        <translation>Buida llista de transaccions (eina de diagnòstic; implica -rescan)</translation>
-    </message>
     <message>
         <source>Signing transaction failed</source>
         <translation>La firma de la transacció ha fallat</translation>

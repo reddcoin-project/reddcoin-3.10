@@ -1,8 +1,5 @@
 <TS language="zh_TW" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    </context>
-<context>
     <name>AddressBookPage</name>
     <message>
         <source>&amp;New</source>
@@ -48,11 +45,7 @@
         <source>Exporting Failed</source>
         <translation>匯出失敗</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>儲存位址清單到 %1 時發生錯誤</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -154,10 +147,6 @@
         <translation>瑞迪幣</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[測試網絡]</translation>
-    </message>
-    <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>顯示已使用的付款位址及其標記</translation>
     </message>
@@ -180,10 +169,6 @@
 <context>
     <name>CoinControlDialog</name>
     <message>
-        <source>Coin Control Address Selection</source>
-        <translation>選擇用來交易的錢幣來源</translation>
-    </message>
-    <message>
         <source>Quantity:</source>
         <translation>數量:</translation>
     </message>
@@ -202,10 +187,6 @@
     <message>
         <source>Fee:</source>
         <translation>交易徵費:</translation>
-    </message>
-    <message>
-        <source>Low Output:</source>
-        <translation>極小額付款:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -230,10 +211,6 @@
     <message>
         <source>Amount</source>
         <translation>金額</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>位址</translation>
     </message>
     <message>
         <source>Date</source>
@@ -296,10 +273,6 @@
         <translation>複製優先度</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>複製極小額付款狀態</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>複製找贖金額</translation>
     </message>
@@ -340,10 +313,6 @@
         <translation>沒有</translation>
     </message>
     <message>
-        <source>Dust</source>
-        <translation>極少</translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>是</translation>
     </message>
@@ -370,18 +339,6 @@
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
         <translation>如果有任何收款者將收取少於 %1 的金額，這個標記會顯示為紅色。</translation>
-    </message>
-    <message>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>這表示需要最少 %1 的交易費。</translation>
-    </message>
-    <message>
-        <source>Amounts below 0.546 times the minimum relay fee are shown as dust.</source>
-        <translation>少於最低轉發費的0.546倍的金頞將顯示為極少.</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the change is smaller than %1.</source>
-        <translation>如果找贖少於 %1，這個標記會題示為紅色。</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -480,22 +437,10 @@
         <translation>使用自定的資料夾位置</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" can not be created.</source>
-        <translation>錯誤：指定的資料夾 "%1" 無法被建立</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
-    <message>
-        <source>GB of free space available</source>
-        <translation>GB 的可用空間</translation>
-    </message>
-    <message>
-        <source>(of %1GB needed)</source>
-        <translation>(需要 %1 GB的空間)</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -532,14 +477,6 @@
     <message>
         <source>Number of script &amp;verification threads</source>
         <translation>使用作手稿語言確認的線程數目 (&amp;V)</translation>
-    </message>
-    <message>
-        <source>Connect to the Reddcoin network through a SOCKS proxy.</source>
-        <translation>利用 SOCKS 代理連接到瑞迪幣的網絡</translation>
-    </message>
-    <message>
-        <source>&amp;Connect through SOCKS proxy (default proxy):</source>
-        <translation>利用 SOCKS 代理連接 (預設代理):</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -589,10 +526,6 @@
         <translation>正產生持份紅利:</translation>
     </message>
     <message>
-        <source>Total of coins that were staked and do not yet count toward the current balance</source>
-        <translation>正產生持份紅利的總頞，這金額將暫時不計算進錢包總額。</translation>
-    </message>
-    <message>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
         <translation>未確認的交易總額，這金額將暫時不計算進可供花費的總額。</translation>
     </message>
@@ -612,10 +545,6 @@
         <translation>正處理 URI</translation>
     </message>
     <message>
-        <source>URI can not be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
-        <translation>未能解析 URI，這可能是因為瑞迪幣位址錯誤或 URI 參數出現問題。</translation>
-    </message>
-    <message>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
         <translation>請求付款的金頞 (%1) 太少，將被當作極少額付款。</translation>
     </message>
@@ -624,24 +553,16 @@
         <translation>請求付款錯誤</translation>
     </message>
     <message>
-        <source>Net manager warning</source>
-        <translation>網絡管理員警告</translation>
-    </message>
-    <message>
-        <source>Your active proxy doesn't support SOCKS5, which is required for payment requests via proxy.</source>
-        <translation>你正在使用的代理不支援 SOCKS5，它需要用來經代理作請求付款。</translation>
-    </message>
-    <message>
         <source>Payment request fetch URL is invalid: %1</source>
         <translation>請求付款的 URL 錯誤: %1</translation>
     </message>
     <message>
-        <source>Payment request file handling</source>
-        <translation>請求付款檔案處理</translation>
+        <source>Invalid payment address %1</source>
+        <translation>錯誤的付款位址 %1</translation>
     </message>
     <message>
-        <source>Payment request file can not be read or processed! This can be caused by an invalid payment request file.</source>
-        <translation>不能讀取請求付款檔案，這可能是因為請求付款檔案有錯誤。</translation>
+        <source>Payment request file handling</source>
+        <translation>請求付款檔案處理</translation>
     </message>
     <message>
         <source>Unverified payment requests to custom payment scripts are unsupported.</source>
@@ -654,10 +575,6 @@
     <message>
         <source>Error communicating with %1: %2</source>
         <translation>與 %1 未能連接: %2</translation>
-    </message>
-    <message>
-        <source>Payment request can not be parsed or processed!</source>
-        <translation>付款請求不能解析或處理!</translation>
     </message>
     <message>
         <source>Bad response from server %1</source>
@@ -673,16 +590,23 @@
     </message>
 </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>錯誤：指定的資料夾 "%1" 不存在</translation>
+        <source>%1 h</source>
+        <translation>%1 小時</translation>
     </message>
     <message>
-        <source>Error: Invalid combination of -regtest and -testnet.</source>
-        <translation>錯誤：-regtest 與 -testnet 不可並存。</translation>
+        <source>%1 m</source>
+        <translation>%1 分鐘</translation>
     </message>
-    </context>
+    <message>
+        <source>Amount</source>
+        <translation>金額</translation>
+    </message>
+</context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -748,19 +672,7 @@
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 分鐘</translation>
-    </message>
-    <message>
-        <source>%1 h</source>
-        <translation>%1 小時</translation>
-    </message>
-    <message>
-        <source>%1 h %2 m</source>
-        <translation>%1 小時 %2 分鐘</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
@@ -782,10 +694,6 @@
     <message>
         <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>重用已使用過的收款位址 (不建議) (&amp;R)</translation>
-    </message>
-    <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Reddcoin network.</source>
-        <translation>附加到付款請求的選擇性訊息，當請求被打開時會顯示出來。注意：這個訊息不會隨交易被加入到瑞迪幣網絡傳送。</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -969,10 +877,6 @@
         <translation>交易徵費:</translation>
     </message>
     <message>
-        <source>Low Output:</source>
-        <translation>極小額付款:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation>減去交易費後餘額:</translation>
     </message>
@@ -1021,10 +925,6 @@
         <translation>複製優先度</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>複製極小額付款狀態</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>複製找贖金額</translation>
     </message>
@@ -1059,14 +959,6 @@
     <message>
         <source>added as transaction fee</source>
         <translation>為交易徵費</translation>
-    </message>
-    <message>
-        <source>Payment request expired</source>
-        <translation>請求付款已過期</translation>
-    </message>
-    <message>
-        <source>Invalid payment address %1</source>
-        <translation>錯誤的付款位址 %1</translation>
     </message>
 </context>
 <context>
@@ -1133,6 +1025,10 @@
 <context>
     <name>SplashScreen</name>
     <message>
+        <source>The Bitcoin Core developers</source>
+        <translation>比特幣核心開發者</translation>
+    </message>
+    <message>
         <source>[testnet]</source>
         <translation>[測試網絡]</translation>
     </message>
@@ -1187,10 +1083,6 @@
     <message>
         <source>Address</source>
         <translation>位址</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>金額</translation>
     </message>
     <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
@@ -1267,10 +1159,9 @@
         <source>Address</source>
         <translation>位址</translation>
     </message>
-    <message>
-        <source>Amount</source>
-        <translation>金額</translation>
-    </message>
+    </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
     <name>WalletFrame</name>
@@ -1296,20 +1187,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>使用量：</translation>
-    </message>
-    <message>
-        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
-        <translation>接受的加密法 (預設： TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</translation>
-    </message>
-    <message>
-        <source>version</source>
-        <translation>版本</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
-    </context>
+</context>
 </TS>

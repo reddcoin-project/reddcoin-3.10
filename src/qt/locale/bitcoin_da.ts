@@ -1,47 +1,6 @@
 <TS language="da" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>About Reddcoin Core</source>
-        <translation>Om Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Reddcoin Core&lt;/b&gt; version</translation>
-    </message>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-Dette program er ekperimentielt.
-
-Det er gjort tilgængeligt under MIT/X11-softwarelicensen. Se den tilhørende fil "COPYING" eller http://www.opensource.org/licenses/mit-license.php.
-
-Produktet indeholder software som er udviklet af OpenSSL Project til brug i OpenSSL Toolkit (http://www.openssl.org/), kryptografisk software skrevet af Eric Young (eay@cryptsoft.com) og UPnP-software skrevet af Thomas Bernard.</translation>
-    </message>
-    <message>
-        <source>Copyright</source>
-        <translation>Ophavsret</translation>
-    </message>
-    <message>
-        <source>The Reddcoin Core developers</source>
-        <translation>Udviklerne af Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>(%1-bit)</source>
-        <translation>(%1-bit)</translation>
-    </message>
-</context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>Dobbeltklik for at redigere adresse eller mærkat</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>Opret en ny adresse</translation>
@@ -130,11 +89,7 @@ Produktet indeholder software som er udviklet af OpenSSL Project til brug i Open
         <source>Exporting Failed</source>
         <translation>Eksport mislykkedes</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>Der opstod en fejl under gemning af adresselisten til %1. Prøv venligst igen.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -171,10 +126,6 @@ Produktet indeholder software som er udviklet af OpenSSL Project til brug i Open
     <message>
         <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
         <translation>Serverer at deaktivere trivielle send penge, når OS konto kompromitteret. Giver ingen reel sikkerhed.</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Indtast det nye kodeord til tegnebogen.&lt;br/&gt;Brug venligst et kodeord på &lt;b&gt;10 eller flere tilfældige tegn&lt;/b&gt; eller &lt;b&gt;otte eller flere ord&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -306,10 +257,6 @@ Produktet indeholder software som er udviklet af OpenSSL Project til brug i Open
     <message>
         <source>Quit application</source>
         <translation>Afslut program</translation>
-    </message>
-    <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Vis oplysninger om Reddcoin </translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -448,10 +395,6 @@ Produktet indeholder software som er udviklet af OpenSSL Project til brug i Open
         <translation>Faneværktøjslinje</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[testnet]</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
@@ -475,38 +418,13 @@ Produktet indeholder software som er udviklet af OpenSSL Project til brug i Open
         <source>Show the Reddcoin Core help message to get a list with possible Reddcoin command-line options</source>
         <translation>Vis Reddcoin Core hjælpebesked for at få en liste over mulige tilvalg for Reddcoin kommandolinje</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Reddcoin network</source>
-        <translation><numerusform>%n aktiv forbindelse til Reddcoin-netværket</numerusform><numerusform>%n aktive forbindelser til Reddcoin-netværket</numerusform></translation>
-    </message>
     <message>
         <source>No block source available...</source>
         <translation>Ingen blokkilde tilgængelig...</translation>
     </message>
     <message>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>%1 blokke af transaktionshistorikken er blevet behandlet.</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n time</numerusform><numerusform>%n timer</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n dag</numerusform><numerusform>%n dage</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n uge</numerusform><numerusform>%n uger</numerusform></translation>
-    </message>
-    <message>
         <source>%1 and %2</source>
         <translation>%1 og %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n år
-</numerusform><numerusform>%n år</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -568,10 +486,6 @@ Adresse: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Tegnebog er &lt;b&gt;krypteret&lt;/b&gt; og i øjeblikket &lt;b&gt;låst&lt;/b&gt;</translation>
     </message>
-    <message>
-        <source>A fatal error occurred. Reddcoin can no longer continue safely and will quit.</source>
-        <translation>Der opstod en fatal fejl. Reddcoin kan ikke længere fortsætte sikkert og vil afslutte.</translation>
-    </message>
 </context>
 <context>
     <name>ClientModel</name>
@@ -582,10 +496,6 @@ Adresse: %4
 </context>
 <context>
     <name>CoinControlDialog</name>
-    <message>
-        <source>Coin Control Address Selection</source>
-        <translation>Adressevalg for coin-styring</translation>
-    </message>
     <message>
         <source>Quantity:</source>
         <translation>Mængde:</translation>
@@ -605,10 +515,6 @@ Adresse: %4
     <message>
         <source>Fee:</source>
         <translation>Gebyr:</translation>
-    </message>
-    <message>
-        <source>Low Output:</source>
-        <translation>Lavt output:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -633,10 +539,6 @@ Adresse: %4
     <message>
         <source>Amount</source>
         <translation>Beløb</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Adresse</translation>
     </message>
     <message>
         <source>Date</source>
@@ -699,10 +601,6 @@ Adresse: %4
         <translation>Kopiér prioritet</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Kopiér lavt output</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Kopiér byttepenge</translation>
     </message>
@@ -751,10 +649,6 @@ Adresse: %4
         <translation>ingen</translation>
     </message>
     <message>
-        <source>Dust</source>
-        <translation>Støv</translation>
-    </message>
-    <message>
         <source>yes</source>
         <translation>ja</translation>
     </message>
@@ -785,18 +679,6 @@ Adresse: %4
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
         <translation>Denne mærkat bliver rød, hvis en eller flere modtagere modtager et beløb, der er mindre end %1.</translation>
-    </message>
-    <message>
-        <source>This means a fee of at least %1 is required.</source>
-        <translation>Dette betyder, at et gebyr på mindst %1 er nødvendigt.</translation>
-    </message>
-    <message>
-        <source>Amounts below 0.546 times the minimum relay fee are shown as dust.</source>
-        <translation>Beløb under 0,546 gange det minimale videreførselsgebyr vises som støv.</translation>
-    </message>
-    <message>
-        <source>This label turns red, if the change is smaller than %1.</source>
-        <translation>Dette mærkat bliver rødt, hvis byttepengene er mindre end %1.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -892,16 +774,20 @@ Adresse: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Reddcoin Core - Command-line options</source>
-        <translation>Reddcoin Core - Kommandolinjetilvalg</translation>
-    </message>
-    <message>
         <source>Reddcoin Core</source>
         <translation>Reddcoin Core</translation>
     </message>
     <message>
         <source>version</source>
         <translation>version</translation>
+    </message>
+    <message>
+        <source>(%1-bit)</source>
+        <translation>(%1-bit)</translation>
+    </message>
+    <message>
+        <source>About Reddcoin Core</source>
+        <translation>Om Reddcoin Core</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -967,22 +853,10 @@ Adresse: %4
         <translation>Reddcoin Core</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" can not be created.</source>
-        <translation>Fejl: Angivet datamappe "%1" kan ikke oprettes.</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Fejl</translation>
     </message>
-    <message>
-        <source>GB of free space available</source>
-        <translation>GB fri plads tilgængelig</translation>
-    </message>
-    <message>
-        <source>(of %1GB needed)</source>
-        <translation>(ud af %1 GB behøvet)</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1017,14 +891,6 @@ Adresse: %4
         <translation>&amp;Generelt</translation>
     </message>
     <message>
-        <source>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB.</source>
-        <translation>Valgfrit transaktionsgebyr pr. kB, der hjælper dine transaktioner med at blive behandlet hurtigt. De fleste transaktioner er på 1 kB.</translation>
-    </message>
-    <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>Betal transaktionsgebyr</translation>
-    </message>
-    <message>
         <source>Automatically start Reddcoin after logging in to the system.</source>
         <translation>Start Reddcoin automatisk efter der logges ind på systemet.</translation>
     </message>
@@ -1043,14 +909,6 @@ Adresse: %4
     <message>
         <source>Number of script &amp;verification threads</source>
         <translation>Antallet af script&amp;verificeringstråde</translation>
-    </message>
-    <message>
-        <source>Connect to the Reddcoin network through a SOCKS proxy.</source>
-        <translation>Forbind til Reddcoin-netværket gennem en SOCKS-proxy.</translation>
-    </message>
-    <message>
-        <source>&amp;Connect through SOCKS proxy (default proxy):</source>
-        <translation>&amp;Forbind gennem SOCKS-proxy (standard-proxy):</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -1125,14 +983,6 @@ Adresse: %4
         <translation>Port for proxyen (fx 9050)</translation>
     </message>
     <message>
-        <source>SOCKS &amp;Version:</source>
-        <translation>SOCKS &amp;Version:</translation>
-    </message>
-    <message>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>SOCKS-version for proxyen (fx 5)</translation>
-    </message>
-    <message>
         <source>&amp;Window</source>
         <translation>&amp;Vindue</translation>
     </message>
@@ -1171,14 +1021,6 @@ Adresse: %4
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Vælg standard for underopdeling af enhed, som skal vises i brugergrænsefladen og ved afsendelse af reddcoins.</translation>
-    </message>
-    <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>Afgør hvorvidt Reddcoin-adresser skal vises i transaktionslisten eller ej.</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>&amp;Vis adresser i transaktionsliste</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1232,10 +1074,6 @@ Adresse: %4
         <translation>Den viste information kan være forældet. Din tegnebog synkroniserer automatisk med Reddcoin-netværket, når en forbindelse etableres, men denne proces er ikke gennemført endnu.</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Tegnebog</translation>
-    </message>
-    <message>
         <source>Available:</source>
         <translation>Tilgængelig:</translation>
     </message>
@@ -1268,10 +1106,6 @@ Adresse: %4
         <translation>Din nuværende totale saldo</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Nylige transaktioner&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>out of sync</source>
         <translation>ikke synkroniseret</translation>
     </message>
@@ -1281,10 +1115,6 @@ Adresse: %4
     <message>
         <source>URI handling</source>
         <translation>URI-håndtering</translation>
-    </message>
-    <message>
-        <source>URI can not be parsed! This can be caused by an invalid Reddcoin address or malformed URI parameters.</source>
-        <translation>URI kan ikke tolkes! Dette kan skyldes en ugyldig Reddcoin-adresse eller forkert udformede URL-parametre.</translation>
     </message>
     <message>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
@@ -1299,24 +1129,16 @@ Adresse: %4
         <translation>Kan ikke starte reddcoin: click-to-pay-håndtering</translation>
     </message>
     <message>
-        <source>Net manager warning</source>
-        <translation>Net-håndterings-advarsel</translation>
-    </message>
-    <message>
-        <source>Your active proxy doesn't support SOCKS5, which is required for payment requests via proxy.</source>
-        <translation>Din aktuelle proxy understøtter ikke SOCKS5, hvilket kræves for betalingsforespørgsler via proxy.</translation>
-    </message>
-    <message>
         <source>Payment request fetch URL is invalid: %1</source>
         <translation>Hentnings-URL for betalingsanmodning er ugyldig: %1</translation>
     </message>
     <message>
-        <source>Payment request file handling</source>
-        <translation>Filhåndtering for betalingsanmodninger</translation>
+        <source>Invalid payment address %1</source>
+        <translation>Ugyldig betalingsadresse %1</translation>
     </message>
     <message>
-        <source>Payment request file can not be read or processed! This can be caused by an invalid payment request file.</source>
-        <translation>Fil for betalingsanmodning kan ikke læses! Dette kan skyldes en ugyldig fil for betalingsanmodning.</translation>
+        <source>Payment request file handling</source>
+        <translation>Filhåndtering for betalingsanmodninger</translation>
     </message>
     <message>
         <source>Unverified payment requests to custom payment scripts are unsupported.</source>
@@ -1329,10 +1151,6 @@ Adresse: %4
     <message>
         <source>Error communicating with %1: %2</source>
         <translation>Fejl under kommunikation med %1: %2</translation>
-    </message>
-    <message>
-        <source>Payment request can not be parsed or processed!</source>
-        <translation>Betalingsanmodning kan ikke fortolkes eller bearbejdes!</translation>
     </message>
     <message>
         <source>Bad response from server %1</source>
@@ -1348,30 +1166,25 @@ Adresse: %4
     </message>
 </context>
 <context>
+    <name>PeerTableModel</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
-        <source>Reddcoin Core</source>
-        <translation>Reddcoin Core</translation>
+        <source>%1 h</source>
+        <translation>%1 t</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>Fejl: Angivet datamappe "%1" eksisterer ikke.</translation>
+        <source>%1 m</source>
+        <translation>%1 m</translation>
     </message>
     <message>
-        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>Fejl: Kan ikke fortolke konfigurationsfil: %1. Brug kun syntaksen nøgle=værdi.</translation>
+        <source>N/A</source>
+        <translation>N/A</translation>
     </message>
     <message>
-        <source>Error: Invalid combination of -regtest and -testnet.</source>
-        <translation>Fejl: Ugyldig kombination af -regtest og -testnet.</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core didn't yet exit safely...</source>
-        <translation>Reddcoin Core blev ikke afsluttet på sikker vis …</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Indtast en Reddcoin-adresse (fx RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
+        <source>Amount</source>
+        <translation>Beløb</translation>
     </message>
 </context>
 <context>
@@ -1523,19 +1336,7 @@ Adresse: %4
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 m</translation>
-    </message>
-    <message>
-        <source>%1 h</source>
-        <translation>%1 t</translation>
-    </message>
-    <message>
-        <source>%1 h %2 m</source>
-        <translation>%1 t %2 m</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
@@ -1557,10 +1358,6 @@ Adresse: %4
     <message>
         <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>&amp;Genbrug en eksisterende modtagelsesadresse (anbefales ikke)</translation>
-    </message>
-    <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Reddcoin network.</source>
-        <translation>En valgfri besked, der føjes til betalingsanmodningen, og som vil vises, når anmodningen åbnes. Bemærk: Beskeden vil ikke sendes sammen med betalingen over Reddcoin-netværket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1748,10 +1545,6 @@ Adresse: %4
         <translation>Gebyr:</translation>
     </message>
     <message>
-        <source>Low Output:</source>
-        <translation>Lavt output:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation>Efter gebyr:</translation>
     </message>
@@ -1828,10 +1621,6 @@ Adresse: %4
         <translation>Kopiér prioritet</translation>
     </message>
     <message>
-        <source>Copy low output</source>
-        <translation>Kopiér lavt output</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation>Kopiér byttepenge</translation>
     </message>
@@ -1891,14 +1680,6 @@ Adresse: %4
         <source>added as transaction fee</source>
         <translation>tilføjet som transaktionsgebyr</translation>
     </message>
-    <message>
-        <source>Payment request expired</source>
-        <translation>Betalingsanmodning er udløbet</translation>
-    </message>
-    <message>
-        <source>Invalid payment address %1</source>
-        <translation>Ugyldig betalingsadresse %1</translation>
-    </message>
 </context>
 <context>
     <name>SendCoinsEntry</name>
@@ -1925,10 +1706,6 @@ Adresse: %4
     <message>
         <source>This is a normal payment.</source>
         <translation>Dette er en normal betaling.</translation>
-    </message>
-    <message>
-        <source>The Reddcoin address to send the payment to (e.g. Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</source>
-        <translation>Reddcoin-adresse, som betalingen skal sendes til (fx Rppgy8PHbBrknXfDmfEmqZXTKMR1yiwVtB)</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2001,10 +1778,6 @@ Adresse: %4
         <translation>Du kan signere beskeder/aftaler med dine adresser for at bevise, at du kan modtage bitcoin, der bliver sendt til adresserne. Vær forsigtig med ikke at signere noget vagt eller tilfældigt, da eventuelle phishing-angreb kan snyde dig til at overlade din identitet til dem. Signér kun fuldt ud detaljerede udsagn, som du er enig i.</translation>
     </message>
     <message>
-        <source>The Reddcoin address to sign the message with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Reddcoin-adresse, som beskeden skal signeres med (fx RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
-    </message>
-    <message>
         <source>Choose previously used address</source>
         <translation>Vælg tidligere brugt adresse</translation>
     </message>
@@ -2057,10 +1830,6 @@ Adresse: %4
         <translation>Indtast den underskrevne adresse, beskeden (inkluder linjeskift, mellemrum mv. nøjagtigt, som de fremgår) og underskriften for at efterprøve beskeden. Vær forsigtig med ikke at lægge mere i underskriften end besked selv, så du undgår at blive narret af et man-in-the-middle-angreb.</translation>
     </message>
     <message>
-        <source>The Reddcoin address the message was signed with (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Reddcoin-adressen, som beskeden blev signeret med (fx RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
-    </message>
-    <message>
         <source>Verify the message to ensure it was signed with the specified Reddcoin address</source>
         <translation>Verificér beskeden for at sikre, at den er underskrevet med den angivne Reddcoin-adresse</translation>
     </message>
@@ -2075,10 +1844,6 @@ Adresse: %4
     <message>
         <source>Click "Sign Message" to generate signature</source>
         <translation>Klik "Underskriv besked" for at generere underskriften</translation>
-    </message>
-    <message>
-        <source>Enter a Reddcoin address (e.g. RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</source>
-        <translation>Indtast en Reddcoin-adresse (fx RdXd6m9nZ6GsUA6ZXLJjiyuKeS3vvsS7NX)</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -2177,10 +1942,6 @@ Adresse: %4
         <source>Status</source>
         <translation>Status</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, transmitteret igennem %n knude</numerusform><numerusform>, transmitteret igennem %n knuder</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Dato</translation>
@@ -2212,10 +1973,6 @@ Adresse: %4
     <message>
         <source>Credit</source>
         <translation>Kredit</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>modner efter yderligere %n blok</numerusform><numerusform>modner efter yderligere %n blokke</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -2281,10 +2038,6 @@ Adresse: %4
         <source>, has not been successfully broadcast yet</source>
         <translation>, er ikke blevet transmitteret endnu</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Åbn yderligere %n blok</numerusform><numerusform>Åbn yderligere %n blokke</numerusform></translation>
-    </message>
     <message>
         <source>unknown</source>
         <translation>ukendt</translation>
@@ -2316,16 +2069,8 @@ Adresse: %4
         <translation>Adresse</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Beløb</translation>
-    </message>
-    <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
         <translation>Umoden (%1 bekræftelser; vil være tilgængelig efter %2)</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Åbn yderligere %n blok</numerusform><numerusform>Åbn yderligere %n blokke</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -2378,6 +2123,10 @@ Adresse: %4
     <message>
         <source>Generated</source>
         <translation>Genereret</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Andet</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -2531,10 +2280,6 @@ Adresse: %4
         <translation>Adresse</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Beløb</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>ID</translation>
     </message>
@@ -2548,6 +2293,9 @@ Adresse: %4
     </message>
 </context>
 <context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
+<context>
     <name>WalletFrame</name>
     <message>
         <source>No wallet has been loaded.</source>
@@ -2558,7 +2306,7 @@ Adresse: %4
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Send Reddcoin</translation>
+        <translation>Send reddcoins</translation>
     </message>
 </context>
 <context>
@@ -2599,28 +2347,12 @@ Adresse: %4
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>Anvendelse:</translation>
-    </message>
-    <message>
-        <source>List commands</source>
-        <translation>Liste over kommandoer</translation>
-    </message>
-    <message>
-        <source>Get help for a command</source>
-        <translation>Få hjælp til en kommando</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Indstillinger:</translation>
     </message>
     <message>
         <source>Specify data directory</source>
         <translation>Angiv datamappe</translation>
-    </message>
-    <message>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>Oprethold højest &lt;n&gt; forbindelser til andre knuder (standard: 125)</translation>
     </message>
     <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
@@ -2631,24 +2363,8 @@ Adresse: %4
         <translation>Angiv din egen offentlige adresse</translation>
     </message>
     <message>
-        <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>Grænse for afbrydelse af forbindelse til knuder, der opfører sig upassende (standard: 100)</translation>
-    </message>
-    <message>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>Antal sekunder, som knuder der opfører sig upassende, skal vente før reetablering (standard: 86400)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
-        <translation>Der opstod en fejl ved angivelse af RPC-porten %u til at lytte på IPv4: %s</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Acceptér kommandolinje- og JSON-RPC-kommandoer</translation>
-    </message>
-    <message>
-        <source>Connect to JSON-RPC on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>Forbind til JSON-RPC på &lt;port&gt; (standard: 45443 or testnet: 55443)</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
@@ -2663,84 +2379,20 @@ Adresse: %4
         <translation>Acceptér forbindelser udefra (standard: 1 hvis hverken -proxy eller -connect)</translation>
     </message>
     <message>
-        <source>%s, you must set a rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=reddcoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-</source>
-        <translation>%s, du skal angive en RPC-adgangskode i konfigurationsfilen:
- %s
- Det anbefales, at du bruger nedenstående, tilfældige adgangskode:
- rpcuser=reddcoinrpc
- rpcpassword=%s
- (du behøver ikke huske denne adgangskode)
- Brugernavnet og adgangskode MÅ IKKE være det samme.
- Hvis filen ikke eksisterer, opret den og giv ingen andre end ejeren læserettighed.
- Det anbefales også at angive alertnotify, så du påmindes om problemer;
- f.eks.: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
-</translation>
-    </message>
-    <message>
-        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
-        <translation>Accepterede krypteringer (standard: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
-        <translation>Der opstod en fejl ved angivelse af RPC-porten %u til at lytte på IPv6, falder tilbage til IPv4: %s</translation>
-    </message>
-    <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>Tildel til den givne adresse og lyt altid på den. Brug [vært]:port-notation for IPv6</translation>
-    </message>
-    <message>
-        <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:15)</source>
-        <translation>Rate-begræns kontinuerligt frie transaktioner til &lt;n&gt;*1000 byte i minuttet (standard:15)</translation>
-    </message>
-    <message>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
-        <translation>Start regressionstesttilstand, som bruger en speciel kæde, hvor blokke kan løses med det samme. Dette er tiltænkt til testværktøjer for regression of programudvikling.</translation>
     </message>
     <message>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
         <translation>Start regressionstesttilstand, som bruger en speciel kæde, hvor blokke kan løses med det samme.</translation>
     </message>
     <message>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Transaktionen blev afvist! Dette kan ske, hvis nogle af dine bitcoins i din tegnebog allerede er brugt, som hvis du brugte en kopi af wallet.dat og dine bitcoins er blevet brugt i kopien, men ikke er markeret som brugt her.</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>Fejl: Denne transaktion kræver et transaktionsgebyr på minimum %s pga. dens størrelse, kompleksitet eller anvendelse af nyligt modtagne reddcoins!</translation>
-    </message>
-    <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
         <translation>Udfør kommando, når en transaktion i tegnebogen ændres (%s i kommandoen erstattes med TxID)</translation>
     </message>
     <message>
-        <source>Fees smaller than this are considered zero fee (for transaction creation) (default:</source>
-        <translation>Gebyrer mindre end dette opfattes som nul-gebyr (for oprettelse af transaktioner) (standard:</translation>
-    </message>
-    <message>
-        <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: 100)</source>
-        <translation>Flyt databaseaktivitet fra hukommelsespulje til disklog hver &lt;n&gt; megabytes (standard: 100)</translation>
-    </message>
-    <message>
-        <source>How thorough the block verification of -checkblocks is (0-4, default: 3)</source>
-        <translation>Hvor gennemarbejdet blokverificeringen for -checkblocks er (0-4; standard: 3)</translation>
-    </message>
-    <message>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
         <translation>I denne tilstand styrer -genproclimit hvor mange blokke, der genereres med det samme.</translation>
-    </message>
-    <message>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 45443 or testnet: 55443)</source>
-        <translation>Lyt efter JSON-RPC-forbindelser på &lt;port&gt; (standard: 45443 eller testnet: 55443)</translation>
     </message>
     <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
@@ -2751,16 +2403,8 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Ikke i stand til at tildele til %s på denne computer. Reddcoin Core kører sansynligvis allerede.</translation>
     </message>
     <message>
-        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: -proxy)</source>
-        <translation>Brug separat SOCS5-proxy for at nå knuder via skjulte Tor-tjenester (standard: -proxy)</translation>
-    </message>
-    <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Advarsel: -paytxfee er sat meget højt! Dette er det gebyr du vil betale, hvis du sender en transaktion.</translation>
-    </message>
-    <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Reddcoin will not work properly.</source>
-        <translation>Advarsel: Undersøg venligst, at din computers dato og klokkeslæt er korrekt indstillet! Hvis der er fejl i disse, vil Reddcoin ikke fungere korrekt.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -2783,10 +2427,6 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>(standard: 1)</translation>
     </message>
     <message>
-        <source>(default: wallet.dat)</source>
-        <translation>(standard: wallet.dat)</translation>
-    </message>
-    <message>
         <source>&lt;category&gt; can be:</source>
         <translation>&lt;kategori&gt; kan være:</translation>
     </message>
@@ -2799,16 +2439,8 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Blokoprettelsestilvalg:</translation>
     </message>
     <message>
-        <source>Clear list of wallet transactions (diagnostic tool; implies -rescan)</source>
-        <translation>Ryd liste over transaktioner i tegnebog (diagnoseværktøj; medfører -rescan)</translation>
-    </message>
-    <message>
         <source>Connect only to the specified node(s)</source>
         <translation>Tilslut kun til den angivne knude(r)</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS proxy</source>
-        <translation>Forbind gennem SOCKS-proxy</translation>
     </message>
     <message>
         <source>Connection options:</source>
@@ -2821,10 +2453,6 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Debugging/Testing options:</source>
         <translation>Tilvalg for fejlfinding/test:</translation>
-    </message>
-    <message>
-        <source>Disable safemode, override a real safe mode event (default: 0)</source>
-        <translation>Slå sikker tilstand fra, tilsidesæt hændelser fra sikker tilstand (standard: 0)</translation>
     </message>
     <message>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
@@ -2859,72 +2487,8 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Fejl: Mangel på ledig diskplads!</translation>
     </message>
     <message>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Fejl: Tegnebog låst, kan ikke oprette transaktion!</translation>
-    </message>
-    <message>
-        <source>Error: system error: </source>
-        <translation>Fejl: systemfejl:</translation>
-    </message>
-    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Lytning på enhver port mislykkedes. Brug -listen=0, hvis du ønsker dette.</translation>
-    </message>
-    <message>
-        <source>Failed to read block info</source>
-        <translation>Læsning af blokinformation mislykkedes</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>Læsning af blok mislykkedes</translation>
-    </message>
-    <message>
-        <source>Failed to sync block index</source>
-        <translation>Synkronisering af blokindeks mislykkedes</translation>
-    </message>
-    <message>
-        <source>Failed to write block index</source>
-        <translation>Skrivning af blokindeks mislykkedes</translation>
-    </message>
-    <message>
-        <source>Failed to write block info</source>
-        <translation>Skrivning af blokinformation mislykkedes</translation>
-    </message>
-    <message>
-        <source>Failed to write block</source>
-        <translation>Skrivning af blok mislykkedes</translation>
-    </message>
-    <message>
-        <source>Failed to write file info</source>
-        <translation>Skriving af filinformation mislykkedes</translation>
-    </message>
-    <message>
-        <source>Failed to write to coin database</source>
-        <translation>Skrivning af reddcoin-database mislykkedes</translation>
-    </message>
-    <message>
-        <source>Failed to write transaction index</source>
-        <translation>Skrivning af transaktionsindeks mislykkedes</translation>
-    </message>
-    <message>
-        <source>Failed to write undo data</source>
-        <translation>Skrivning af genskabelsesdata mislykkedes</translation>
-    </message>
-    <message>
-        <source>Fee per kB to add to transactions you send</source>
-        <translation>Føj gebyr pr. kB til transaktioner, du sender</translation>
-    </message>
-    <message>
-        <source>Fees smaller than this are considered zero fee (for relaying) (default:</source>
-        <translation>Gebyrer mindre end dette opfattes som nul-gebyr (for videreførsler) (standard:</translation>
-    </message>
-    <message>
-        <source>Force safe mode (default: 0)</source>
-        <translation>Gennemtving sikker tilstand (standard: 0)</translation>
-    </message>
-    <message>
-        <source>How many blocks to check at startup (default: 288, 0 = all)</source>
-        <translation>Antal blokke som tjekkes ved opstart (standard: 288, 0 = alle)</translation>
     </message>
     <message>
         <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
@@ -2955,32 +2519,16 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Behold højest &lt;n&gt; uforbindelige transaktioner i hukommelsen (standard: %u)</translation>
     </message>
     <message>
-        <source>Maintain a full transaction index (default: 1)</source>
-        <translation>Vedligehold et komplet transaktionsindeks (standard: 0) {1)?}</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>For få tilgængelige fildeskriptorer.</translation>
-    </message>
-    <message>
-        <source>Prepend debug output with timestamp (default: 1)</source>
-        <translation>Føj tidsstempel foran fejlsøgningsoutput (standard: 1)</translation>
     </message>
     <message>
         <source>RPC SSL options: (see the wiki.reddcoin.com for SSL setup instructions)</source>
         <translation>Tilvalg for RPC SSL: (se wiki.reddcoin.com for instruktioner i SSL-opstart)</translation>
     </message>
     <message>
-        <source>RPC client options:</source>
-        <translation>Tilvalg for RPC-klient:</translation>
-    </message>
-    <message>
         <source>Rebuild block chain index from current blk000??.dat files</source>
         <translation>Genopbyg blokkædeindeks fra nuværende blk000??.dat-filer </translation>
-    </message>
-    <message>
-        <source>Select SOCKS version for -proxy (4 or 5, default: 5)</source>
-        <translation>Vælg SOCKS-version for -proxy (4 eller 5, standard: 5)</translation>
     </message>
     <message>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
@@ -2991,24 +2539,8 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Sæt maksimum blokstørrelse i byte (standard: %d)</translation>
     </message>
     <message>
-        <source>Set the number of threads to service RPC calls (default: 4)</source>
-        <translation>Angiv antallet af tråde til at håndtere RPC-kald (standard: 4)</translation>
-    </message>
-    <message>
-        <source>Specify configuration file (default: reddcoin.conf)</source>
-        <translation>Angiv konfigurationsfil (standard: reddcoin.conf)</translation>
-    </message>
-    <message>
-        <source>Specify pid file (default: reddcoind.pid)</source>
-        <translation>Angiv pid-fil (standard: reddcoind.pid)</translation>
-    </message>
-    <message>
         <source>Specify wallet file (within data directory)</source>
         <translation>Angiv tegnebogsfil (inden for datamappe)</translation>
-    </message>
-    <message>
-        <source>Spend unconfirmed change when sending transactions (default: 1)</source>
-        <translation>Brug ubekræftede byttepenge under afsendelse af transaktioner (standard: 1)</translation>
     </message>
     <message>
         <source>This is intended for regression testing tools and app development.</source>
@@ -3027,20 +2559,12 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Verificerer tegnebog…</translation>
     </message>
     <message>
-        <source>Wait for RPC server to start</source>
-        <translation>Vent på opstart af RPC-server</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Tegnebog %s findes uden for datamappe %s</translation>
     </message>
     <message>
         <source>Wallet options:</source>
         <translation>Tilvalg for tegnebog:</translation>
-    </message>
-    <message>
-        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
-        <translation>Advarsel: Forældet argument -debugnet ignoreret; brug -debug=net</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
@@ -3063,24 +2587,12 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Udfør kommando, når en relevant alarm modtages eller vi ser en virkelig lang udsplitning (%s i cmd erstattes af besked)</translation>
     </message>
     <message>
-        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
-        <translation>Udskriv fejlsøgningsinformation (standard: 0, angivelse af &lt;kategori&gt; er valgfri)</translation>
-    </message>
-    <message>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
         <translation>Sæt maksimumstørrelse for højprioritet/lavgebyr-transaktioner i byte (standard: %d)</translation>
     </message>
     <message>
-        <source>Set the processor limit for when generation is on (-1 = unlimited, default: 0)</source>
-        <translation>Sæt processorbegrænsning for når generering er slået til (-1 = ubegrænset, standard: 0)</translation>
-    </message>
-    <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications</source>
         <translation>Dette er en foreløbig testudgivelse - brug på eget ansvar - brug ikke til udvinding eller handelsprogrammer</translation>
-    </message>
-    <message>
-        <source>Always query for peer addresses via DNS lookup (default: 0)</source>
-        <translation>Forespørg altid adresser på andre knuder via DNS-opslag (default: 0)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3095,38 +2607,6 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Ugyldigt beløb for -mintxfee=&lt;beløb&gt;: "%s"</translation>
     </message>
     <message>
-        <source>Limit size of signature cache to &lt;n&gt; entries (default: 50000)</source>
-        <translation>Begræns størrelsen på signaturcache til &lt;n&gt; indgange (standard: 50000)</translation>
-    </message>
-    <message>
-        <source>Listen for connections on &lt;port&gt; (default: 45444 or testnet: 55444)</source>
-        <translation>Lyt efter forbindelser på &lt;port&gt; (standard: 45444 eller testnet: 55444)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
-        <translation>Maksimum for modtagelsesbuffer pr. forbindelse, &lt;n&gt;*1000 byte (standard: 5000)</translation>
-    </message>
-    <message>
-        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
-        <translation>Maksimum for afsendelsesbuffer pr. forbindelse, &lt;n&gt;*1000 byte (standard: 1000)</translation>
-    </message>
-    <message>
-        <source>Only accept block chain matching built-in checkpoints (default: 1)</source>
-        <translation>Acceptér kun blokkæde, som matcher indbyggede kontrolposter (standard: 1)</translation>
-    </message>
-    <message>
-        <source>Only connect to nodes in network &lt;net&gt; (IPv4, IPv6 or Tor)</source>
-        <translation>Tilslut kun til knuder i netværk &lt;net&gt; (IPv4, IPv6 eller Tor)</translation>
-    </message>
-    <message>
-        <source>Print block on startup, if found in block index</source>
-        <translation>Udskriv blok under opstart, hvis den findes i blokindeks</translation>
-    </message>
-    <message>
-        <source>Print block tree on startup (default: 0)</source>
-        <translation>Udskriv bloktræ under startop (standard: 0)</translation>
-    </message>
-    <message>
         <source>RPC server options:</source>
         <translation>Tilvalg for RPC-server:</translation>
     </message>
@@ -3139,48 +2619,12 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Slør tilfældigt 1 ud af hver &lt;n&gt; netværksbeskeder</translation>
     </message>
     <message>
-        <source>Reddcoin Core Daemon</source>
-        <translation>Reddcoin Core-tjeneste</translation>
-    </message>
-    <message>
-        <source>Reddcoin Core RPC client version</source>
-        <translation>Reddcoin Core RPC klientversion</translation>
-    </message>
-    <message>
-        <source>Run a thread to flush wallet periodically (default: 1)</source>
-        <translation>Kør en tråd for at rydde tegnebog periodisk (standard: 1)</translation>
-    </message>
-    <message>
-        <source>SSL options: (see the Reddcoin Wiki for SSL setup instructions)</source>
-        <translation>SSL-indstillinger: (se Reddcoin Wiki for SSL-opsætningsinstruktioner)</translation>
-    </message>
-    <message>
-        <source>Send command to Reddcoin Core</source>
-        <translation>Send kommando til Reddcoin Core</translation>
-    </message>
-    <message>
-        <source>Send command to reddcoin Core</source>
-        <translation>Send kommando til reddcoin Core</translation>
-    </message>
-    <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>Send sporings-/fejlsøgningsinformation til konsollen i stedet for debug.log filen</translation>
     </message>
     <message>
-        <source>Set minimum block size in bytes (default: 0)</source>
-        <translation>Angiv minimumsblokstørrelse i bytes (standard: 0)</translation>
-    </message>
-    <message>
-        <source>Sets the DB_PRIVATE flag in the wallet db environment (default: 1)</source>
-        <translation>Sætter DB_PRIVATE-flaget i tegnebogens db-miljø (standard: 1)</translation>
-    </message>
-    <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
         <translation>Vis alle tilvalg for fejlsøgning (brug: --help -help-debug)</translation>
-    </message>
-    <message>
-        <source>Show benchmark information (default: 0)</source>
-        <translation>Vis information om ydelsesmåling (standard: 0)</translation>
     </message>
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
@@ -3189,18 +2633,6 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Signing transaction failed</source>
         <translation>Underskrift af transaktion mislykkedes</translation>
-    </message>
-    <message>
-        <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>Angiv tilslutningstimeout i millisekunder (standard: 5000)</translation>
-    </message>
-    <message>
-        <source>Start Reddcoin Core Daemon</source>
-        <translation>Start Reddcoin Core-tjeneste</translation>
-    </message>
-    <message>
-        <source>System error: </source>
-        <translation>Systemfejl:</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -3213,14 +2645,6 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Transaction too large</source>
         <translation>Transaktionen er for stor</translation>
-    </message>
-    <message>
-        <source>Usage (deprecated, use reddcoin-cli):</source>
-        <translation>Brug (forældet, brug reddcoin-cli):</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>Brug UPnP for at konfigurere den lyttende port (standard: 0)</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
@@ -3247,24 +2671,12 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>under opstart</translation>
     </message>
     <message>
-        <source>version</source>
-        <translation>version</translation>
-    </message>
-    <message>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat ødelagt, redning af data mislykkedes</translation>
     </message>
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Adgangskode til JSON-RPC-forbindelser</translation>
-    </message>
-    <message>
-        <source>Allow JSON-RPC connections from specified IP address</source>
-        <translation>Tillad JSON-RPC-forbindelser fra bestemt IP-adresse</translation>
-    </message>
-    <message>
-        <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>Send kommandoer til knude, der kører på &lt;ip&gt; (standard: 127.0.0.1)</translation>
     </message>
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
@@ -3275,24 +2687,12 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Opgradér tegnebog til seneste format</translation>
     </message>
     <message>
-        <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>Sæt nøglepuljestørrelse til &lt;n&gt; (standard: 100)</translation>
-    </message>
-    <message>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>Genindlæs blokkæden efter manglende tegnebogstransaktioner</translation>
     </message>
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Brug OpenSSL (https) for JSON-RPC-forbindelser</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: server.cert)</source>
-        <translation>Servercertifikat-fil (standard: server.cert)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: server.pem)</source>
-        <translation>Serverens private nøgle (standard: server.pem)</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -3311,14 +2711,6 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Fejl ved indlæsning af wallet.dat: Tegnebog ødelagt</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Reddcoin</source>
-        <translation>Fejl ved indlæsning af wallet.dat: Tegnebog kræver en nyere version af Reddcoin </translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Reddcoin to complete</source>
-        <translation>Det var nødvendigt at genskrive tegnebogen: genstart Reddcoin for at gennemføre</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>Fejl ved indlæsning af wallet.dat</translation>
     </message>
@@ -3331,10 +2723,6 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Ukendt netværk anført i -onlynet: "%s"</translation>
     </message>
     <message>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>Ukendt -socks proxy-version: %i</translation>
-    </message>
-    <message>
         <source>Cannot resolve -bind address: '%s'</source>
         <translation>Kan ikke finde -bind adressen: "%s"</translation>
     </message>
@@ -3345,10 +2733,6 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>Ugyldigt beløb for -paytxfee=&lt;beløb&gt;: "%s"</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Ugyldigt beløb</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3383,20 +2767,8 @@ for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
         <translation>Indlæsning gennemført</translation>
     </message>
     <message>
-        <source>To use the %s option</source>
-        <translation>For at bruge %s mulighed</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Fejl</translation>
-    </message>
-    <message>
-        <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
-%s
-If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>Du skal angive rpcpassword=&lt;password&gt; i konfigurationsfilen:
-%s
-Hvis filen ikke eksisterer, opret den og giv ingen andre end ejeren læserettighed.</translation>
     </message>
 </context>
 </TS>

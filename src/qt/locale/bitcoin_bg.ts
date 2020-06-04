@@ -1,27 +1,6 @@
 <TS language="bg" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    <message>
-        <source>
-This is experimental software.
-
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-Това е експериментален софтуер.
-
-Разпространява се под MIT/X11 софтуерен лиценз, виж COPYING или http://www.opensource.org/licenses/mit-license.php.
-
-Използван е софтуер, разработен от OpenSSL Project за употреба в OpenSSL Toolkit (http://www.openssl.org/), криптографски софтуер разработен от Eric Young (eay@cryptsoft.com) и UPnP софтуер разработен от Thomas Bernard.</translation>
-    </message>
-    </context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>Двоен клик за редакция на адрес или име</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>Създава нов адрес</translation>
@@ -66,11 +45,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Exporting Failed</source>
         <translation>Грешка при експортирането</translation>
     </message>
-    <message>
-        <source>There was an error trying to save the address list to %1.</source>
-        <translation>Появи се грешка при опита ни да запазим списъка с адреси във %1</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -107,10 +82,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>For staking only</source>
         <translation>Само за залагане</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Въведете нова парола за портфейла.&lt;br/&gt;Моля използвайте &lt;b&gt;поне 10 случайни символа&lt;/b&gt; или &lt;b&gt;8 или повече думи&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -222,10 +193,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Quit application</source>
         <translation>Затваря приложението</translation>
-    </message>
-    <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Показва информация за Reddcoin</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -352,10 +319,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Раздели</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[testnet]</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
@@ -391,7 +354,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Портфейлът е &lt;b&gt;криптиран&lt;/b&gt; и &lt;b&gt;заключен&lt;/b&gt;</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ClientModel</name>
     </context>
@@ -416,10 +379,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Amount</source>
         <translation>Сума</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Адрес</translation>
     </message>
     <message>
         <source>Date</source>
@@ -577,10 +536,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
-    <message>
-        <source>GB of free space available</source>
-        <translation>GB свободно място</translation>
-    </message>
     </context>
 <context>
     <name>OpenURIDialog</name>
@@ -594,10 +549,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>&amp;Main</source>
         <translation>&amp;Основни</translation>
-    </message>
-    <message>
-        <source>Pay transaction &amp;fee</source>
-        <translation>&amp;Такса за изходяща транзакция</translation>
     </message>
     <message>
         <source>&amp;Start Reddcoin on system login</source>
@@ -656,14 +607,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Изберете единиците, показвани по подразбиране в интерфейса.</translation>
     </message>
     <message>
-        <source>Whether to show Reddcoin addresses in the transaction list or not.</source>
-        <translation>Ще се показват адресите в списъка с транзакции независимо от наличието на кратко име.</translation>
-    </message>
-    <message>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>Показвай и адресите в списъка с транзакции</translation>
-    </message>
-    <message>
         <source>default</source>
         <translation>по подразбиране</translation>
     </message>
@@ -679,20 +622,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Форма</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Портфейл</translation>
-    </message>
-    <message>
         <source>Stake:</source>
         <translation>Залог:</translation>
     </message>
     <message>
         <source>Total:</source>
         <translation>Общо:</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Последни транзакции&lt;/b&gt;</translation>
     </message>
     <message>
         <source>out of sync</source>
@@ -703,8 +638,19 @@ This product includes software developed by the OpenSSL Project for use in the O
     <name>PaymentServer</name>
     </context>
 <context>
-    <name>QObject</name>
+    <name>PeerTableModel</name>
     </context>
+<context>
+    <name>QObject</name>
+    <message>
+        <source>N/A</source>
+        <translation>N/A</translation>
+    </message>
+    <message>
+        <source>Amount</source>
+        <translation>Сума</translation>
+    </message>
+</context>
 <context>
     <name>QRImageWidget</name>
     </context>
@@ -1163,10 +1109,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Адрес</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Сума</translation>
-    </message>
-    <message>
         <source>Open until %1</source>
         <translation>Подлежи на промяна до %1</translation>
     </message>
@@ -1205,6 +1147,10 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Generated</source>
         <translation>Генерирани</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Други</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -1350,10 +1296,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Адрес</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Сума</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>Уникален Номер</translation>
     </message>
@@ -1366,6 +1308,9 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>до</translation>
     </message>
 </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
+    </context>
 <context>
     <name>WalletFrame</name>
     <message>
@@ -1406,10 +1351,6 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Usage:</source>
-        <translation>Начин на употреба:</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Опции:</translation>
     </message>
@@ -1434,42 +1375,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Грешка: дисковото пространство е малко</translation>
     </message>
     <message>
-        <source>Failed to read block info</source>
-        <translation>Неуспех при четене на информация за блок</translation>
-    </message>
-    <message>
-        <source>Failed to read block</source>
-        <translation>Неуспех при четене на блок</translation>
-    </message>
-    <message>
-        <source>Failed to sync block index</source>
-        <translation>Неуспех при синхронизиране на блоков индекс</translation>
-    </message>
-    <message>
-        <source>Failed to write block index</source>
-        <translation>Неуспех при писане на блоков индекс</translation>
-    </message>
-    <message>
-        <source>Failed to write block info</source>
-        <translation>Неуспех при писане на информацията за блока</translation>
-    </message>
-    <message>
-        <source>Failed to write block</source>
-        <translation>Неуспех при писане на блока</translation>
-    </message>
-    <message>
-        <source>Failed to write file info</source>
-        <translation>Неуспех при писане на информация за файла</translation>
-    </message>
-    <message>
-        <source>Failed to write to coin database</source>
-        <translation>Неуспех при писане в базата за койни</translation>
-    </message>
-    <message>
-        <source>Failed to write transaction index</source>
-        <translation>Неуспех при писане на индекса на транзакцията</translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation>Информация</translation>
     </message>
@@ -1480,10 +1385,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Warning</source>
         <translation>Внимание</translation>
-    </message>
-    <message>
-        <source>version</source>
-        <translation>версия</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -1500,10 +1401,6 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <source>Invalid -proxy address: '%s'</source>
         <translation>Невалиден -proxy address: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount</source>
-        <translation>Грешна сума</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -1529,5 +1426,5 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
-    </context>
+</context>
 </TS>

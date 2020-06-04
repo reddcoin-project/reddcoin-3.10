@@ -1,13 +1,6 @@
 <TS language="cy" version="2.1">
 <context>
-    <name>AboutDialog</name>
-    </context>
-<context>
     <name>AddressBookPage</name>
-    <message>
-        <source>Double-click to edit address or label</source>
-        <translation>Clicio dwywaith i olygu cyfeiriad neu label</translation>
-    </message>
     <message>
         <source>Create a new address</source>
         <translation>Creu cyfeiriad newydd</translation>
@@ -49,10 +42,6 @@
     <message>
         <source>Repeat new passphrase</source>
         <translation>Ailadroddwch gyfrinymadrodd newydd</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Dewiswch gyfrinymadrodd newydd ar gyfer y waled. &lt;br/&gt; Defnyddiwch cyfrinymadrodd o &lt;b&gt;10 neu fwy o lythyrennau hapgyrch&lt;/b&gt;, neu &lt;b&gt; wyth neu fwy o eiriau.</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -138,10 +127,6 @@
         <translation>Gadael rhaglen</translation>
     </message>
     <message>
-        <source>Show information about Reddcoin</source>
-        <translation>Dangos gwybodaeth am Reddcoin</translation>
-    </message>
-    <message>
         <source>&amp;Options...</source>
         <translation>&amp;Opsiynau</translation>
     </message>
@@ -170,10 +155,6 @@
         <translation>Bar offer tabiau</translation>
     </message>
     <message>
-        <source>[testnet]</source>
-        <translation>[testnet]</translation>
-    </message>
-    <message>
         <source>Up to date</source>
         <translation>Cyfamserol</translation>
     </message>
@@ -197,16 +178,12 @@
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Mae'r waled &lt;b&gt;wedi'i amgryptio&lt;/b&gt; ac &lt;b&gt;ar glo&lt;/b&gt; ar hyn o bryd</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ClientModel</name>
     </context>
 <context>
     <name>CoinControlDialog</name>
-    <message>
-        <source>Address</source>
-        <translation>Cyfeiriad</translation>
-    </message>
     <message>
         <source>(no label)</source>
         <translation>(heb label)</translation>
@@ -280,13 +257,12 @@
         <source>Form</source>
         <translation>Ffurflen</translation>
     </message>
-    <message>
-        <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Trafodion diweddar&lt;/b&gt;</translation>
-    </message>
     </context>
 <context>
     <name>PaymentServer</name>
+    </context>
+<context>
+    <name>PeerTableModel</name>
     </context>
 <context>
     <name>QObject</name>
@@ -431,6 +407,9 @@
         <source>Address</source>
         <translation>Cyfeiriad</translation>
     </message>
+    </context>
+<context>
+    <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
     <name>WalletFrame</name>
