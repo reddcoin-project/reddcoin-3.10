@@ -85,5 +85,5 @@ postprocessing steps before committing the translations.
 2. update `src/qt/bitcoin.qrc` manually or via
    `ls src/qt/locale/*ts|xargs -n1 basename|sed 's/\(bitcoin_\(.*\)\).ts/        <file alias="\2">locale\/\1.qm<\/file>/' > bitcoin.qrc.txt`
 3. update `src/qt/Makefile.am` manually or via
-   `ls src/qt/locale/*ts|xargs -n1 basename|sed 's/\(bitcoin_\(.*\)\).ts/  locale\/\1.ts \\/' > Makefile.am.txt`
+   `ls src/qt/locale/*ts|xargs -n1 basename|sed 's/\(bitcoin_\(.*\)\).ts/  qt\/locale\/\1.ts \\/' > Makefile.am.txt`
 4. `git add` new translations from `src/qt/locale/`
