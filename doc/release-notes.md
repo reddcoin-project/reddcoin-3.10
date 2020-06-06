@@ -740,6 +740,30 @@ Miscellaneous:
 - `030a9e2` Use CMutableTransaction tx as coinbase
 - `faf6e09` use correct value in GetMinRelayFee
 - `1366f87` reduce some PoSV2 log messages
+- `2a8c7e6` Preparations for 3.10.0 rc4  
+- `4a6f398` Update translations  
+- `7aa5151` build: update reference time to something more recent  
+- `1a65b8c` Update translations  
+- `d4a1ca6` transifex: update translation instructions  
+- `a03895b` transifex: update config for this release  
+- `51ad1e0` move check before supermajority reached  
+- `794680f` Make check for developer address when receiving block  
+- `457503e` travis: Remove `group: legacy`  
+- `97d3a2a` travis: Remove depreciated sudo flag  
+- `21dcfa6` docs: update release notes  
+- `7631aac` update error messages  
+- `5b41e31` check that the outputs of the stake are correct.  
+- `9bd1820` travis: test with wallet enabled  
+- `55f2dd5` fix reference to Reddcoin  
+- `220f404` travis: disable libs for windows builds (temp)  
+- `b044e0f` depends: qt update download source path  
+- `2fe2d85` depends: set new download source  
+- `4cf531e` remove duplicated entry  
+- `0d8d0da` travis: diable tests  
+- `e13ad81` travis: manually disable sse2 support for ARM processors  
+- `1f62045` travis: fix crash due to missing (and not required) package  
+- `0fb3b75` travis: update path  
+- `9d6a642` docs: update travis build status badge with correct path  
 
 Credits (Reddcoin)
 =================
@@ -751,6 +775,11 @@ Credits (Reddcoin)
 - Roni Toni
 - Tim Musick
 - Doug Chandler
+- Ball0r
+- ReddheadJK
+- luxiliod
+- SYAR
+- Dimal
 
 Credits (Bitcoin)
 =================
