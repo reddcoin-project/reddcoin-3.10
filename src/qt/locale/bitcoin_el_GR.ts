@@ -11,7 +11,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Αντέγραψε την επιλεγμένη διεύθυνση στο πρόχειρο του συστήματος</translation>
+        <translation>Αντιγραφή επιλεγμένης διεύθυνσης στο πρόχειρο του συστήματος</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -1302,7 +1302,7 @@ Address: %4
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
-        <translation>Γράψτε &lt;b&gt;help&lt;/b&gt; για μια επισκόπηση των διαθέσιμων εντολών.</translation>
+        <translation>Γράψτε &lt;b&gt;help&lt;/b&gt; για επισκόπηση διαθέσιμων εντολών.</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -1319,6 +1319,14 @@ Address: %4
     <message>
         <source>%1 GB</source>
         <translation>%1 GB</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ναί</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Όχι</translation>
     </message>
     </context>
 <context>
@@ -1346,6 +1354,10 @@ Address: %4
     <message>
         <source>Clear</source>
         <translation>Καθαρισμός</translation>
+    </message>
+    <message>
+        <source>Requested payments history</source>
+        <translation>Ιστορικό</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>

@@ -837,7 +837,15 @@ Address: %4
         <source>Set SSL root certificates for payment request (default: -system-)</source>
         <translation>支払いリクエスト用にSSLルート証明書を設定する (デフォルト：-system-)</translation>
     </message>
-    </context>
+    <message>
+        <source>Show splash screen on startup (default: 1)</source>
+        <translation>起動時にスプラッシュ画面を表示する (初期値: 1)</translation>
+    </message>
+    <message>
+        <source>Choose data directory on startup (default: 0)</source>
+        <translation>起動時にデータ ディレクトリを選ぶ (初期値: 0)</translation>
+    </message>
+</context>
 <context>
     <name>Intro</name>
     <message>
@@ -847,6 +855,10 @@ Address: %4
     <message>
         <source>Welcome to Reddcoin Core.</source>
         <translation>レッドコインコアーへようこそ。</translation>
+    </message>
+    <message>
+        <source>As this is the first time the program is launched, you can choose where Reddcoin Core will store its data.</source>
+        <translation>これはプログラム最初の起動です。がデータを保存する場所を選択して下さい。</translation>
     </message>
     <message>
         <source>Reddcoin Core will download and store a copy of the Reddcoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>

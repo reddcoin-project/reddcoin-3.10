@@ -3362,6 +3362,10 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
         <translation>(Standard: %s)</translation>
     </message>
     <message>
+        <source>Acceptable ciphers (default: %s)</source>
+        <translation>Zulässige Chiffren (Standard: %s)</translation>
+    </message>
+    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Adressen von Gegenstellen immer über DNS-Namensauflösung abfragen (Standard: %u)</translation>
     </message>
