@@ -764,12 +764,20 @@ Miscellaneous:
 - `1f62045` travis: fix crash due to missing (and not required) package  
 - `0fb3b75` travis: update path  
 - `9d6a642` docs: update travis build status badge with correct path  
+- `660cbb3` translation updates  
+- `c56a21d` Avoid launching as admin when NSIS installer ends.  
+- `227fbf3` update for correct app name  
+- `67baf58` depends: fix a static qt5 crash when using certain versions of libxcb  
+- `d965399` depends: always use static qt5 for linux  
+- `07ed13c` revert check for dev address output  
+- `5faebfb` docs: release notes 
 
 Credits (Reddcoin)
 =================
 
 - John Nash
 - TechAdept
+- cryptoBUZE
 - Randy Vice
 - Harmonyq
 - Roni Toni
@@ -780,6 +788,7 @@ Credits (Reddcoin)
 - luxiliod
 - SYAR
 - Dimal
+- George DGB
 
 Credits (Bitcoin)
 =================
