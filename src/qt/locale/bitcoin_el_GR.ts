@@ -3,7 +3,7 @@
     <name>AddressBookPage</name>
     <message>
         <source>Create a new address</source>
-        <translation>Δημιούργησε νέα διεύθυνση</translation>
+        <translation>Δημιουργία νέας διεύθυνσης</translation>
     </message>
     <message>
         <source>&amp;New</source>
@@ -23,11 +23,11 @@
     </message>
     <message>
         <source>&amp;Copy Address</source>
-        <translation>&amp;Αντιγραφή διεύθυνσης</translation>
+        <translation>&amp;Αντιγραφή Διεύθυνσης</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation>Αντιγραφη της επιλεγμενης διεύθυνσης στο πρόχειρο του συστηματος</translation>
+        <translation>Διαγραφή της επιλεγμένης διεύθυνσης απο τη λίστα</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -63,11 +63,11 @@
     </message>
     <message>
         <source>These are your Reddcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Αυτές είναι οι Reddcoin διευθύνσεις σας για να λαμβάνετε πληρωμές. Δίνοντας μία ξεχωριστή διεύθυνση σε κάθε αποστολέα, θα μπορείτε να ελέγχετε ποιος σας πληρώνει.</translation>
+        <translation>Αυτές είναι οι Reddcoin διευθύνσεις σας για να στείλετε πληρωμές. Να ελέγχετε πάντα το ποσό και την διεύθυνση αποστολής πρίν στείλετε νομίσματα.</translation>
     </message>
     <message>
         <source>These are your Reddcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Αυτές είναι οι Reddcoin διευθύνσεις σας για να λαμβάνετε πληρωμές. Δίνοντας μία ξεχωριστή διεύθυνση σε κάθε αποστολέα, θα μπορείτε να ελέγχετε ποιος σας πληρώνει.</translation>
+        <translation>Αυτές είναι οι Reddcoin διευθύνσεις σας για λήψη πληρωμών. Συνιστάται νέα διεύθυνση για κάθε συναλλαγή.</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
@@ -79,7 +79,7 @@
     </message>
     <message>
         <source>Export Address List</source>
-        <translation>Εξαγωγή της λίστας διευθύνσεων</translation>
+        <translation>Εξαγωγή Λίστας Διευθύνσεων</translation>
     </message>
     <message>
         <source>Comma separated file (*.csv)</source>
@@ -87,9 +87,13 @@
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>Η εξαγωγή απέτυχε</translation>
+        <translation>Αποτυχία Εξαγωγής</translation>
     </message>
-    </context>
+    <message>
+        <source>There was an error trying to save the address list to %1. Please try again.</source>
+        <translation>Υπήρξε σφάλμα κατα την αποθήκευση διεύθυνσης στο %1. Δοκίμασε ξανά.</translation>
+    </message>
+</context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -113,7 +117,7 @@
     </message>
     <message>
         <source>Enter passphrase</source>
-        <translation>Βάλτε κωδικό πρόσβασης</translation>
+        <translation>Εισαγωγή κωδικού πρόσβασης</translation>
     </message>
     <message>
         <source>New passphrase</source>
@@ -122,6 +126,10 @@
     <message>
         <source>Repeat new passphrase</source>
         <translation>Επανέλαβε τον νέο κωδικό πρόσβασης</translation>
+    </message>
+    <message>
+        <source>For staking only</source>
+        <translation>Mόνο για staking</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -137,23 +145,23 @@
     </message>
     <message>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>Αυτη η ενεργεια χρειάζεται τον κωδικο του πορτοφολιου για να αποκρυπτογραφησειι το πορτοφολι.</translation>
+        <translation>Αυτη η ενέργεια χρειάζεται τον κωδικό του πορτοφολιού για να αποκρυπτογραφήσει το πορτοφόλι.</translation>
     </message>
     <message>
         <source>Decrypt wallet</source>
-        <translation>Αποκρυπτογράφησε το πορτοφολι</translation>
+        <translation>Αποκρυπτογράφηση πορτοφολιού</translation>
     </message>
     <message>
         <source>Change passphrase</source>
-        <translation>Άλλαξε κωδικο πρόσβασης</translation>
+        <translation>Αλλαγή κωδικού πρόσβασης</translation>
     </message>
     <message>
         <source>Enter the old and new passphrase to the wallet.</source>
-        <translation>Εισάγετε τον παλιό και τον νεο κωδικο στο πορτοφολι.</translation>
+        <translation>Εισαγωγή του παλιού και νέου κωδικού στο πορτοφολι.</translation>
     </message>
     <message>
         <source>Confirm wallet encryption</source>
-        <translation>Επιβεβαίωσε την κρυπτογραφηση του πορτοφολιού</translation>
+        <translation>Επιβεβαίωσε την κρυπτογράφηση του πορτοφολιού</translation>
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR REDDCOINS&lt;/b&gt;!</source>
@@ -169,11 +177,11 @@
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
-        <translation>Προσοχη: το πλήκτρο Caps Lock είναι ενεργο.</translation>
+        <translation>Προσοχή: το πλήκτρο Caps Lock είναι ενεργό.</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
-        <translation>Κρυπτογραφημενο πορτοφολι</translation>
+        <translation>Το πορτοφολι κρυπτογραφηθηκε</translation>
     </message>
     <message>
         <source>Reddcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your reddcoins from being stolen by malware infecting your computer.</source>
@@ -193,7 +201,7 @@
     </message>
     <message>
         <source>Wallet unlock failed</source>
-        <translation>το ξεκλείδωμα του πορτοφολιού απέτυχε</translation>
+        <translation>Ξεκλείδωμα πορτοφολιού απέτυχε</translation>
     </message>
     <message>
         <source>The passphrase entered for the wallet decryption was incorrect.</source>
@@ -228,7 +236,7 @@
     </message>
     <message>
         <source>Show general overview of wallet</source>
-        <translation>Εμφάνισε τη γενική εικόνα του πορτοφολιού</translation>
+        <translation>Εμφάνιση της γενικής εικόνας του πορτοφολιού</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and reddcoin: URIs)</source>
@@ -240,7 +248,7 @@
     </message>
     <message>
         <source>Browse transaction history</source>
-        <translation>Περιήγηση στο ιστορικό συναλλαγών</translation>
+        <translation>Περιήγηση τουιστορικού συναλλαγών</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -272,7 +280,7 @@
     </message>
     <message>
         <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Άλλαξε κωδικο πρόσβασης...</translation>
+        <translation>&amp;Άλλαγή κωδικού πρόσβασης...</translation>
     </message>
     <message>
         <source>&amp;Unlock Wallet...</source>
@@ -281,6 +289,14 @@
     <message>
         <source>Unlock wallet</source>
         <translation>Ξεκλειδωσε το πορτοφολι</translation>
+    </message>
+    <message>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Κλείδωμα πορτοφολιού</translation>
+    </message>
+    <message>
+        <source>Lock wallet</source>
+        <translation>Κλείδωμα πορτοφολιού</translation>
     </message>
     <message>
         <source>&amp;Sending addresses...</source>
@@ -309,6 +325,14 @@
     <message>
         <source>Reindexing blocks on disk...</source>
         <translation>Φόρτωση ευρετηρίου μπλοκ στον σκληρο δισκο...</translation>
+    </message>
+    <message>
+        <source>Not staking because wallet is syncing</source>
+        <translation>Αδυναμία staking γιατί το πορτοφόλι συγχρονίζει</translation>
+    </message>
+    <message>
+        <source>Not staking because you don't have mature coins</source>
+        <translation>Αδυναμία staking γιατί δεν έχεις ώριμα νομίσματα</translation>
     </message>
     <message>
         <source>Send coins to a Reddcoin address</source>
@@ -1161,6 +1185,14 @@ Address: %4
     <message>
         <source>%1 m</source>
         <translation>%1 λ</translation>
+    </message>
+    <message>
+        <source>NETWORK</source>
+        <translation>ΔΙΚΤΥΟ</translation>
+    </message>
+    <message>
+        <source>UNKNOWN</source>
+        <translation>ΑΓΝΩΣΤΟ</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -2577,6 +2609,10 @@ Address: %4
     <message>
         <source>Invalid -proxy address: '%s'</source>
         <translation>Δεν είναι έγκυρη η διεύθυνση διαμεσολαβητή: '%s'</translation>
+    </message>
+    <message>
+        <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
+        <translation>Διατήρηση το πολύ 1 σύνδεση με το δίκτυο (προεπιλογή: %u)</translation>
     </message>
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>

@@ -150,7 +150,7 @@ Bitte versuchen Sie es erneut.</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
-        <translation>Brieftasche entsperren</translation>
+        <translation>Wallet entsperren</translation>
     </message>
     <message>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
@@ -297,23 +297,23 @@ Bitte versuchen Sie es erneut.</translation>
     </message>
     <message>
         <source>&amp;Change Passphrase...</source>
-        <translation>Passphrase &amp;ändern...</translation>
+        <translation>Passwort &amp;ändern...</translation>
     </message>
     <message>
         <source>&amp;Unlock Wallet...</source>
-        <translation>Brieftasche &amp;entsperren...</translation>
+        <translation>Wallet &amp;entsperren...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
-        <translation>Brieftasche entsperren</translation>
+        <translation>Wallet entsperren</translation>
     </message>
     <message>
         <source>&amp;Lock Wallet</source>
-        <translation>Brieftasche &amp;sperren</translation>
+        <translation>Wallet &amp;sperren</translation>
     </message>
     <message>
         <source>Lock wallet</source>
-        <translation>Brieftasche sperren</translation>
+        <translation>Wallet sperren</translation>
     </message>
     <message>
         <source>&amp;Sending addresses...</source>
@@ -333,7 +333,7 @@ Bitte versuchen Sie es erneut.</translation>
     </message>
     <message>
         <source>Reddcoin Core client</source>
-        <translation>"Reddcoin Core"-Client</translation>
+        <translation>Reddcoin Core-Client</translation>
     </message>
     <message>
         <source>Importing blocks from disk...</source>
@@ -361,15 +361,15 @@ Bitte versuchen Sie es erneut.</translation>
     </message>
     <message>
         <source>Not staking because wallet is locked</source>
-        <translation>Kein Staking, da Ihre Brieftasche gesperrt ist</translation>
+        <translation>Kein Staking, da Ihre Wallet gesperrt ist</translation>
     </message>
     <message>
         <source>Not staking because wallet is offline</source>
-        <translation>Kein Staking, da Ihre Brieftasche offline ist</translation>
+        <translation>Kein Staking, da Ihre Wallet offline ist</translation>
     </message>
     <message>
         <source>Not staking because wallet is syncing</source>
-        <translation>Kein Staking, da sich Ihre Brieftasche gerade synchronisiert</translation>
+        <translation>Kein Staking, da sich Ihre Wallet gerade synchronisiert</translation>
     </message>
     <message>
         <source>Not staking because you don't have mature coins</source>
@@ -481,7 +481,7 @@ Bitte versuchen Sie es erneut.</translation>
     </message>
     <message>
         <source>Show the Reddcoin Core help message to get a list with possible Reddcoin command-line options</source>
-        <translation>Zeige den "Reddcoin Core"-Hilfetext, um eine Liste mit möglichen Kommandozeilenoptionen zu erhalten</translation>
+        <translation>Zeige den Reddcoin Core-Hilfetext, um eine Liste mit möglichen Kommandozeilenoptionen zu erhalten</translation>
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Reddcoin network</source>
@@ -583,7 +583,7 @@ Adresse: %4
     <name>CoinControlDialog</name>
     <message>
         <source>Coin Selection</source>
-        <translation>"Coin Control"-Adressauswahl</translation>
+        <translation>Coin Control-Adressauswahl</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -659,35 +659,35 @@ Adresse: %4
     </message>
     <message>
         <source>Copy address</source>
-        <translation>Kopiere die Adresse</translation>
+        <translation>Kopiere Adresse</translation>
     </message>
     <message>
         <source>Copy label</source>
-        <translation>Kopiere die Bezeichnung</translation>
+        <translation>Kopiere Bezeichnung</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopiere den Betrag</translation>
+        <translation>Kopiere Betrag</translation>
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Kopiere die Transaktions-ID</translation>
+        <translation>Kopiere Transaktions-ID</translation>
     </message>
     <message>
         <source>Lock unspent</source>
-        <translation>Sperre nicht-verwendete</translation>
+        <translation>Sperre für Verwendung</translation>
     </message>
     <message>
         <source>Unlock unspent</source>
-        <translation>Entsperre nicht-verwendete</translation>
+        <translation>Zur Verwendung freigeben</translation>
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>Kopiere die Anzahl</translation>
+        <translation>Kopiere Anzahl</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Kopiere die Gebühr</translation>
+        <translation>Kopiere Transaktionsgebühr</translation>
     </message>
     <message>
         <source>Copy after fee</source>
@@ -699,7 +699,7 @@ Adresse: %4
     </message>
     <message>
         <source>Copy priority</source>
-        <translation>Kopiere die Priorität</translation>
+        <translation>Kopiere Priorität</translation>
     </message>
     <message>
         <source>Copy dust</source>
@@ -751,7 +751,7 @@ Adresse: %4
     </message>
     <message>
         <source>none</source>
-        <translation>kein(e)</translation>
+        <translation>keine</translation>
     </message>
     <message>
         <source>Can vary +/- %1 satoshi(s) per input.</source>
@@ -1085,7 +1085,7 @@ Adresse: %4
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>"&amp;Coin Control"-Funktionen aktivieren</translation>
+        <translation>&amp;Coin Control-Funktionen aktivieren</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction cannot be used until that transaction has at least one confirmation. This also affects how your balance is computed.</source>
@@ -1165,7 +1165,7 @@ Adresse: %4
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>Legt fest, ob die "Coin Control"-Funktionen angezeigt werden.</translation>
+        <translation>Legt fest, ob die Coin Control-Funktionen angezeigt werden.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -1181,7 +1181,7 @@ Adresse: %4
     </message>
     <message>
         <source>none</source>
-        <translation>kein(e)</translation>
+        <translation>keine</translation>
     </message>
     <message>
         <source>Confirm options reset</source>
@@ -1574,6 +1574,14 @@ Adresse: %4
         <translation>Synchronisiere Netzwerkknoten</translation>
     </message>
     <message>
+        <source>Starting Height</source>
+        <translation>Verbunden seit Block</translation>
+    </message>
+    <message>
+        <source>Sync Height</source>
+        <translation>Synchronisierte Blockhöhe</translation>
+    </message>
+    <message>
         <source>Connection Time</source>
         <translation>Verbindungszeit</translation>
     </message>
@@ -1750,7 +1758,7 @@ Adresse: %4
     </message>
     <message>
         <source>Copy label</source>
-        <translation>Kopiere die Bezeichnung</translation>
+        <translation>Kopiere Bezeichnung</translation>
     </message>
     <message>
         <source>Copy message</source>
@@ -1758,7 +1766,7 @@ Adresse: %4
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopiere die Betrag</translation>
+        <translation>Kopiere Betrag</translation>
     </message>
 </context>
 <context>
@@ -1855,7 +1863,7 @@ Adresse: %4
     </message>
     <message>
         <source>Coin Control Features</source>
-        <translation>"Coin Control"-Funktionen</translation>
+        <translation>Coin Control-Funktionen</translation>
     </message>
     <message>
         <source>Inputs...</source>
@@ -1977,7 +1985,7 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     </message>
     <message>
         <source>(confirmation may take longer)</source>
-        <translation>(Die Bestätigung könnte länger dauern)</translation>
+        <translation>(Die Bestätigung könnte länger dauern oder fehlschlagen)</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
@@ -2021,15 +2029,15 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>Kopiere die Anzahl</translation>
+        <translation>Kopiere Anzahl</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopiere die Betrag</translation>
+        <translation>Kopiere Betrag</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Kopiere die Gebühr</translation>
+        <translation>Kopiere Transaktionsgebühr</translation>
     </message>
     <message>
         <source>Copy after fee</source>
@@ -2041,7 +2049,7 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     </message>
     <message>
         <source>Copy priority</source>
-        <translation>Kopiere die Priorität</translation>
+        <translation>Kopiere Priorität</translation>
     </message>
     <message>
         <source>Copy change</source>
@@ -2109,7 +2117,7 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     </message>
     <message>
         <source>Copy dust</source>
-        <translation>Kopiere Kleinstbetrag ("dust")</translation>
+        <translation>Kopiere "Dust"</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
@@ -2357,7 +2365,7 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     </message>
     <message>
         <source>The Reddcoin Core developers</source>
-        <translation>Die "Reddcoin Core"-Entwickler</translation>
+        <translation>Die Reddcoin Core-Entwickler</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2700,19 +2708,19 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     </message>
     <message>
         <source>Copy address</source>
-        <translation>Kopiere die Adresse</translation>
+        <translation>Kopiere Adresse</translation>
     </message>
     <message>
         <source>Copy label</source>
-        <translation>Kopiere die Bezeichnung</translation>
+        <translation>Kopiere Bezeichnung</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopiere die Betrag</translation>
+        <translation>Kopiere Betrag</translation>
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Kopiere die Transaktions-ID</translation>
+        <translation>Kopiere Transaktions-ID</translation>
     </message>
     <message>
         <source>Edit label</source>
@@ -2914,16 +2922,64 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
         <translation>Kommando ausführen wenn sich eine Transaktion der Brieftasche verändert (%s im Kommando wird durch die TxID ersetzt)</translation>
     </message>
     <message>
+        <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
+        <translation>Falls 'paytxfee' nicht definiert ist, füge eine ausreichende Transaktionsgebühr hinzu, um nach durchschnittlich 'n' Blöcken die Bestätigung zu beginnen (Standard: %u)</translation>
+    </message>
+    <message>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
         <translation>In diesem Modus legt -genproclimit fest, wie viele Blöcke sofort erzeugt werden.</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
+        <translation>Ungültiger Betrag für -maxtxfee=&lt;amount&gt;: '%s' (muss mindestens %s betragen, um ein Steckenbleiben in der Warteschlange zu vermeiden)</translation>
+    </message>
+    <message>
+        <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
+        <translation>Maximale Größer der angehängten Daten einer Transaktion zur Weiterleitung und Bestätigung (Standard: %u)</translation>
+    </message>
+    <message>
+        <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
+        <translation>Höchstbetrag der Transaktionsgebühr einer einzigen Transaktion. Diesen zu gering einzustellen, könnte bei umfangreichen Transaktionen zum Abbruch führen (Standard: %s)</translation>
     </message>
     <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
         <translation>Maximale Anzahl an Skript-Verifizierungs-Threads festlegen (%u bis %d, 0 = automatisch, &lt;0 = so viele Kerne frei lassen, Standard: %d)</translation>
     </message>
     <message>
+        <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
+        <translation>Maximale Anzahl an Threads zur Generierung von Coins festlegen (-1 = alle Threads, Standard: %d)</translation>
+    </message>
+    <message>
+        <source>To use reddcoind, or the -server option to reddcoin-qt, you must set an rpcpassword in the configuration file:
+%s
+It is recommended you use the following random password:
+rpcuser=reddcoinrpc
+rpcpassword=%s
+(you do not need to remember this password)
+The username and password MUST NOT be the same.
+If the file does not exist, create it with owner-readable-only file permissions.
+It is also recommended to set alertnotify so you are notified of problems;
+for example: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
+</source>
+        <translation>Um reddcoind bzw. die Serveroption für Reddcoin-Qt zu nutzen, müssen Sie den Wert rpcpasswort in dieser Konfigurationsdatei angeben:
+%s
+Es wird empfohlen das folgende Zufallspasswort zu verwenden:
+rpcuser=reddcoinrpc
+rpcpassword=%s
+(Sie müssen sich dieses Passwort nicht merken!)
+Der Benutzername und das Passwort dürfen NICHT identisch sein.
+Falls die Konfigurationsdatei nicht existiert, erzeugen Sie diese bitte mit Leserechten nur für den Dateibesitzer.
+Es wird ebenfalls empfohlen alertnotify anzugeben, um im Problemfall benachrichtigt zu werden.
+Zum Beispiel: alertnotify=echo %%s | mail -s "Reddcoin Alert" admin@foo.com
+</translation>
+    </message>
+    <message>
         <source>Unable to bind to %s on this computer. Reddcoin Core is probably already running.</source>
         <translation>Kann auf diesem Computer nicht an %s binden, da Reddcoin Core wahrscheinlich bereits gestartet wurde.</translation>
+    </message>
+    <message>
+        <source>Warning: -maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
+        <translation>Warnung: '-maxtxfee' ist auf einen sehr hohen Wert festgelegt! Transaktionsgebühren in dieser Höhe können den eigentlichen Zahlbetrag übersteigen.</translation>
     </message>
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
@@ -2944,6 +3000,10 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     <message>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
         <translation>Warnung: wallet.dat beschädigt, Datenrettung erfolgreich! Original wallet.dat wurde als wallet.{Zeitstempel}.dat in %s gespeichert. Falls ihr Kontostand oder Transaktionen nicht korrekt sind, sollten Sie von einer Datensicherung wiederherstellen.</translation>
+    </message>
+    <message>
+        <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
+        <translation>Peers auf der Ausnahmeliste bzw. 'whitelist' können keinen DoS Ban erhalten und deren Transaktionen werden stets weitergeleitet - auch wenn sie sich bereits im Mempool befinden. Das ist beispielsweise für ein Gateway hilfreich.</translation>
     </message>
     <message>
         <source>(default: 1)</source>
@@ -3154,8 +3214,20 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
         <translation>JSON-RPC Verbindungen von einer festgelegten Quelle zulassen. Gültig für &lt;ip&gt; ist eine IP (192.168.0.1), IP/Subnetzmaske (z.B. 192.168.0.1/255.255.255.0) oder IP/CIDR (z.B. 192.168.0.1/24). Die Regel kann mehrfach definiert werden.</translation>
     </message>
     <message>
+        <source>An error occurred while setting up the RPC address %s port %u for listening: %s</source>
+        <translation>Beim Einrichten der RPC Adresse %s auf Port %u ist ein Fehler aufgetreten: %s</translation>
+    </message>
+    <message>
+        <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
+        <translation>An die angegebene IP-Adresse binden und auf JSON-RPC Verbindungen von dort warten. Verwenden Sie [host]:port für IPv6. Die Regel kann mehrfach definiert werden. (Standard: Verbindungen von allen Adressen zulassen)</translation>
+    </message>
+    <message>
         <source>Cannot obtain a lock on data directory %s. Reddcoin Core is probably already running.</source>
         <translation>Datenverzeichnis %s kann nicht gesperrt werden, da Reddcoin Core wahrscheinlich bereits gestartet wurde.</translation>
+    </message>
+    <message>
+        <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:%u)</source>
+        <translation>Gebührenfreie Transaktionen auf &lt;n&gt;*1000 bytes pro Minute begrenzen (Standard: %u)</translation>
     </message>
     <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
@@ -3170,12 +3242,33 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
         <translation>Befehl ausführen wenn ein relevanter Alarm empfangen wird oder wir einen wirklich langen Fork entdecken (%s im Befehl wird durch die Nachricht ersetzt)</translation>
     </message>
     <message>
+        <source>Fees (in RDD/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Geringere Transaktionsgebühren (in RDD/Kilobyte) als dieser Wert, werden bei der Weiterleitung einer Transaktion als Gebührenfrei betrachtet (Standard: %s)</translation>
+    </message>
+    <message>
+        <source>Fees (in RDD/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Geringere Transaktionsgebühren (in RDD/Kilobyte) als dieser Wert, werden bei der Erstellung einer Transaktion als Gebührenfrei betrachtet (Standard: %s)</translation>
+    </message>
+    <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
         <translation>Adressen von Gegenstellen via DNS-Namensauflösung finden, falls zu wenige Adressen verfügbar sind (Standard: 1, außer bei -connect)</translation>
     </message>
     <message>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
         <translation>Maximale Größe in Byte von Transaktionen hoher Priorität/mit niedrigen Gebühren festlegen (Standard: %d)</translation>
+    </message>
+    <message>
+        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications</source>
+        <translation>Die ist eine Vorabversion zu Testzwecken - Die Benutzung erfolgt auf eigene Gefahr - Nicht für Staking und Händleranwendungen nutzen!</translation>
+    </message>
+    <message>
+        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
+        <translation>Dieses Programm enthält Software, die vom OpenSSL Projekt für die Verwendung durch das OpenSSL Toolkit &lt;https://www.openssl.org/&gt; entwickelt wurde.
+Außerdem ist Kryptographische Software geschrieben von Eric Young sowie UPnP Software geschrieben von Thomas Bernard enthalten.</translation>
+    </message>
+    <message>
+        <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
+        <translation>Peers zur Ausnahmeliste (whitelist) hinzufügen, die sich von einer festgelegten Netzmaske oder IP verbinden. Die Regel kann mehrfach definiert werden.</translation>
     </message>
     <message>
         <source>Connect through SOCKS5 proxy</source>
@@ -3188,6 +3281,10 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     <message>
         <source>Copyright (C) 2014-%i The Reddcoin Core Developers</source>
         <translation>Copyright (C) 2014-%i Die Reddcoin Core Entwickler</translation>
+    </message>
+    <message>
+        <source>Could not parse -rpcbind value %s as network address</source>
+        <translation>Konnte den Wert '-rpcbind' %s nicht als Netzwerkadresse auflösen.</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -tor found, use -onion.</source>
@@ -3212,6 +3309,10 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     <message>
         <source>Invalid amount for -reservebalance=&lt;amount&gt;: '%s'</source>
         <translation>Ungültige Betrag für die -reservebalance=&lt;amount&gt;: '%s'</translation>
+    </message>
+    <message>
+        <source>Node relay options:</source>
+        <translation>Weiterleitungsoptionen:</translation>
     </message>
     <message>
         <source>RPC server options:</source>
@@ -3326,6 +3427,10 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
         <translation>Fehler beim Laden von wallet.dat: Wallet beschädigt</translation>
     </message>
     <message>
+        <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
+        <translation>(1=Metadaten der Transaktionen behalten wie; 2=Metadaten verwerfen) </translation>
+    </message>
+    <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Datenbankaktivitäten vom Arbeitsspeicher-Pool alle &lt;n&gt; Megabyte auf den Datenträger schreiben (Standard: %u)</translation>
     </message>
@@ -3363,7 +3468,7 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     </message>
     <message>
         <source>Acceptable ciphers (default: %s)</source>
-        <translation>Zulässige Chiffren (Standard: %s)</translation>
+        <translation>Zulässige Verschlüsselungsverfahren (Standard: %s)</translation>
     </message>
     <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
@@ -3424,6 +3529,10 @@ Ist die Transaktion größer als ein Kilobyte, dann wird immer "pro Kilobyte" be
     <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
         <translation>Debugausgaben einen Zeitstempel voranstellen (Standard: %u)</translation>
+    </message>
+    <message>
+        <source>Relay and mine data carrier transactions (default: %u)</source>
+        <translation>Weiterleitung und Bestätigung von Transaktionen mit angehängten Daten zulassen (Standard: %u)</translation>
     </message>
     <message>
         <source>Relay non-P2SH multisig (default: %u)</source>
