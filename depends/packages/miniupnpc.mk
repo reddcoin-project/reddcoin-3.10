@@ -1,6 +1,6 @@
 package=miniupnpc
 $(package)_version=1.9.20151008
-$(package)_download_path=http://miniupnp.free.fr/files
+$(package)_download_path=https://miniupnp.free.fr/files
 $(package)_file_name=$(package)-$($(package)_version).tar.gz
 $(package)_sha256_hash=e444ac3b587ce82709c4d0cfca1fe71f44f9fc433e9f946b12b9e1bfe667a633
 
