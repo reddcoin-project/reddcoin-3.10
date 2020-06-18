@@ -2402,12 +2402,12 @@ bool ReceivedBlockTransactions(const CBlock &block, CValidationState& state, CBl
                 mapBlocksUnlinked.erase(it);
             }
 
-            // PoSV
-            if (pindex->IsProofOfStake())
-                setStakeSeen.insert(make_pair(pindex->prevoutStake, pindex->nStakeTime));
-
             if (!pblocktree->WriteBlockIndex(CDiskBlockIndex(pindex)))
                 return state.Abort("Failed to write block index");
+
+            // PoSV Stake seen once successfully added to index
+            if (pindex->IsProofOfStake())
+                setStakeSeen.insert(make_pair(pindex->prevoutStake, pindex->nStakeTime));
         }
     } else {
         if (pindexNew->pprev && pindexNew->pprev->IsValid(BLOCK_VALID_TREE)) {
