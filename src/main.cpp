@@ -2382,7 +2382,12 @@ bool ReceivedBlockTransactions(const CBlock &block, CValidationState& state, CBl
             pindex->nChainTx = (pindex->pprev ? pindex->pprev->nChainTx : 0) + pindex->nTx;
 
             // PoSV: Record proof hash value
-            pindex->hashProof = hashProof;
+            uint256 hash = hashProof;
+            if (hash == 0) {
+            	if (!VerifyHashTarget(block, hash))
+            		return state.Invalid(error("%s : VerifyHashTarget() failed", __func__));
+            }
+            pindex->hashProof = hash;
 
             // PoSV: compute stake modifier
             uint64_t nStakeModifier = 0;
@@ -2618,16 +2623,14 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 }
 
 // Verify hash target and signature of coinstake tx
-uint256 VerifyHashTarget(const CBlock& block)
+bool VerifyHashTarget(const CBlock& block, uint256& hashProof)
 {
 	AssertLockHeld(cs_main);
 
 	uint256 hash = block.GetHash();
-	uint256 hashProof = 0;
 
 	if (hash != Params().HashGenesisBlock()) {
 
-		uint256 hashProof;
 		// Verify hash target and signature of coinstake tx
 		if (block.IsProofOfStake())
 		{
@@ -2637,7 +2640,7 @@ uint256 VerifyHashTarget(const CBlock& block)
 			uint256 targetProofOfStake;
 			if (!CheckProofOfStake(block.vtx[1], block.nBits, hashProof, targetProofOfStake))
 			{
-				LogPrintf("WARNING: VerifyHashTarget(): check proof-of-stake failed for block %s\n", hash.ToString().c_str());
+				LogPrintf("WARNING: VerifyHashTarget(): check proof-of-stake failed for block %s\n", hash.ToString());
 				return false; // do not error here as we expect this during initial block download
 			}
 		}
@@ -2647,8 +2650,9 @@ uint256 VerifyHashTarget(const CBlock& block)
 			hashProof = block.GetPoWHash();
 		}
 	}
+	hashProof = 0;
 
-	return hashProof;
+	return true;
 }
 
 bool AcceptBlockHeader(const CBlockHeader& block, CValidationState& state, CBlockIndex** ppindex)
@@ -2765,8 +2769,6 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         }
         return false;
     }
-
-    hashProof = VerifyHashTarget(block);
 
     int nHeight = pindex->nHeight;
 

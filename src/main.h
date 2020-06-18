@@ -237,7 +237,8 @@ CAmount GetProofOfStakeReward(int64_t nCoinAge, const CAmount& nFees);
 CAmount GetProofOfStakeReward(int64_t nCoinAge, const CAmount& nFees, double fInflationAdjustment);
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake);
 
-
+// Verify hash target and signature of coinstake tx
+bool VerifyHashTarget(const CBlock& block, uint256& hashProof);
 
 
 
