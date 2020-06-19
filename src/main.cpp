@@ -4082,6 +4082,9 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         for (unsigned int n = 0; n < nCount; n++) {
             vRecv >> headers[n];
             ReadCompactSize(vRecv); // ignore tx count; assume it is 0.
+            if (headers[n].nVersion > POW_BLOCK_VERSION) {
+            	ReadCompactSize(vRecv); // ignore vchBlockSig; assume it is 0.
+            }
         }
 
         LOCK(cs_main);
