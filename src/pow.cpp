@@ -149,6 +149,9 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     uint64_t PastBlocksMin = PastSecondsMin / BlocksTargetSpacing;
     uint64_t PastBlocksMax = PastSecondsMax / BlocksTargetSpacing;
 
+    if (fDebug)
+    	LogPrintf("%s : Height = %s (%s) PastBlocksMin = %s, PastBlocksMax = %s \n", __func__, pindexLast->nHeight, pindexLast->GetBlockHash().ToString(), PastBlocksMin, PastBlocksMax);
+
     return KimotoGravityWell(pindexLast, pblock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax);
 }
 
