@@ -1269,6 +1269,11 @@ CAmount GetProofOfStakeReward(int64_t nCoinAge, const CAmount& nFees, double fIn
     return nSubsidy + nFees;
 }
 
+bool IsStaking()
+{
+	return GetBoolArg("-staking", true);
+}
+
 // PoSV: find last block index up to pindex
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake)
 {
