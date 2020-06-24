@@ -16,7 +16,7 @@ import httplib
 import sys
 
 ERR_SLEEP = 15
-MAX_NONCE = 1000000L
+# MAX_NONCE = 1000000L
 
 settings = {}
 
@@ -26,7 +26,7 @@ class BitcoinRPC:
 	def __init__(self, host, port, username, password):
 		authpair = "%s:%s" % (username, password)
 		self.authhdr = "Basic %s" % (base64.b64encode(authpair))
-		self.conn = httplib.HTTPConnection(host, port, False, 30)
+		self.conn = httplib.HTTPConnection(host, port, False, 60)
 	def rpc(self, method, params=None):
 		self.OBJID += 1
 		obj = { 'version' : '1.1',
@@ -42,18 +42,18 @@ class BitcoinRPC:
 
 		resp = self.conn.getresponse()
 		if resp is None:
-			print "JSON-RPC: no response"
+			print("JSON-RPC: no response")
 			return None
 
 		body = resp.read()
 		resp_obj = json.loads(body)
 		if resp_obj is None:
-			print "JSON-RPC: cannot JSON-decode body"
+			print("JSON-RPC: cannot JSON-decode body")
 			return None
 		if 'error' in resp_obj and resp_obj['error'] != None:
 			return resp_obj['error']
 		if 'result' not in resp_obj:
-			print "JSON-RPC: no result in object"
+			print("JSON-RPC: no result in object")
 			return None
 
 		return resp_obj['result']
@@ -83,8 +83,8 @@ def get_blocks(settings):
 
 	if (settings['max_height'] == 0):
 		settings['max_height']=getblockcount(rpc)
-	print "MaxHeight = " + repr(settings['max_height'])
-	print "MinHeight = " + repr(settings['min_height'])
+	print("MaxHeight = " + repr(settings['max_height']))
+	print("MinHeight = " + repr(settings['min_height']))
 
 
 	prevtime=0
@@ -97,11 +97,11 @@ def get_blocks(settings):
 		blockdata = getblock(rpc, settings, height)
 		time = blockdata["time"]
 		blkheight = blockdata["height"]
-                blkhash = blockdata["hash"]
+		blkhash = blockdata["hash"]
 
 		if (height >= settings['min_height']):
 #			out = repr(height - 1) + " - " + repr(height) + "," + repr(diff) + "," + repr(time - prevtime) + "\r\n"
-			out = "(" + '{:>7}'.format(repr(blkheight)) + ", uint256(\"0x" + str(blkhash) + "\"))\r\n"
+			out = "    (" + '{:>7}'.format(repr(blkheight)) + ", uint256(\"0x" + str(blkhash) + "\"))\r\n"
 			outf.write(out)
 
 		prevtime=time
@@ -111,7 +111,7 @@ def get_blocks(settings):
 	
 if __name__ == '__main__':
 	if len(sys.argv) != 2:
-		print "Usage: blocktime.py CONFIG-FILE"
+		print("Usage: blocktime.py CONFIG-FILE")
 		sys.exit(1)
 
 	f = open(sys.argv[1])
@@ -143,7 +143,7 @@ if __name__ == '__main__':
 	if 'step' not in settings:
 		settings['step'] = 1
 	if 'rpcuser' not in settings or 'rpcpassword' not in settings:
-		print "Missing username and/or password in cfg file"
+		print("Missing username and/or password in cfg file")
 		sys.exit(1)
 
 	settings['netmagic'] = settings['netmagic'].decode('hex')
@@ -153,4 +153,3 @@ if __name__ == '__main__':
 	settings['step'] = int(settings['step'])
 
 	get_blocks(settings)
-
