@@ -2093,21 +2093,12 @@ bool static DisconnectTip(CValidationState &state) {
         return false;
     // Resurrect mempool transactions from the disconnected block.
     BOOST_FOREACH(const CTransaction &tx, block.vtx) {
-        if (tx.IsCoinStake())
-        {
-            uint256 hashTx = tx.GetHash();
-            g_signals.EraseTransaction(hashTx);
-            g_signals.UpdatedTransaction(hashTx);
-        }
-        else
-        {
-            // ignore validation errors in resurrected transactions
-            list<CTransaction> removed;
-            CValidationState stateDummy;
-            if (!(tx.IsCoinBase() || tx.IsCoinStake()))
-                if (!AcceptToMemoryPool(mempool, stateDummy, tx, false, NULL))
-                    mempool.remove(tx, removed, true);
-        }
+        // ignore validation errors in resurrected transactions
+        list<CTransaction> removed;
+        CValidationState stateDummy;
+        if (!(tx.IsCoinBase() || tx.IsCoinStake()))
+            if (!AcceptToMemoryPool(mempool, stateDummy, tx, false, NULL))
+                mempool.remove(tx, removed, true);
     }
     mempool.check(pcoinsTip);
     // Update chainActive and related variables.
