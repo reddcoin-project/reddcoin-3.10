@@ -7,7 +7,7 @@ NSEEDS=512
 
 MAX_SEEDS_PER_ASN=2
 
-MIN_BLOCKS = 337600
+MIN_BLOCKS = 3000000
 
 # These are hosts that have been observed to be behaving strangely (e.g.
 # aggressively connecting to every node).
@@ -23,8 +23,8 @@ import re
 import sys
 import dns.resolver
 
-PATTERN_IPV4 = re.compile(r"^((\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})):8333$")
-PATTERN_AGENT = re.compile(r"^(\/Satoshi:0.8.6\/|\/Satoshi:0.9.(2|3)\/|\/Satoshi:0.10.\d{1,2}\/)$")
+PATTERN_IPV4 = re.compile(r"^((\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})):45444$")
+PATTERN_AGENT = re.compile(r"^(\/Reddcoin:2.0.0\/|\/Reddcoin:2.0.1.2\/|\/Reddcoin:3.0.(0|1)\/|\/Reddcoin:3.10.0.([0-9]|[0-9][0-9])\/)$")
 
 def parseline(line):
     sline = line.split()
