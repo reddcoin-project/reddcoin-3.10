@@ -77,7 +77,9 @@ static const unsigned int BLOCKFILE_CHUNK_SIZE = 0x1000000; // 16 MiB
 /** The pre-allocation chunk size for rev?????.dat files (since 0.8) */
 static const unsigned int UNDOFILE_CHUNK_SIZE = 0x100000; // 1 MiB
 /** Reddcoin: Dust Threshold: outputs below this value in satoshis are assessed an additional 1000 bytes per txout */
-static const int64_t DUST_THRESHOLD = 100000; // 0.01 RDD
+static const int64_t DUST_THRESHOLD = 100000000; // 1 RDD
+/** Reddcoin: Dust Threshold Fee: outputs below the dust threshold incur a fee for relay */
+static const int64_t DUST_THRESHOLD_FEE = 100000; // 0.001 RDD
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
 static const int COINBASE_MATURITY = 30;
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */

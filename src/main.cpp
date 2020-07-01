@@ -55,7 +55,7 @@ bool fIsBareMultisigStd = true;
 unsigned int nCoinCacheSize = 5000;
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying and mining) */
-CFeeRate minRelayTxFee = CFeeRate(DUST_THRESHOLD);
+CFeeRate minRelayTxFee = CFeeRate(DUST_THRESHOLD_FEE);
 
 CTxMemPool mempool(::minRelayTxFee);
 
