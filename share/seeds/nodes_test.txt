@@ -1,5 +1,7 @@
 # List of fixed seed nodes for testnet
 
 # IPv4 dotted notation
+124.187.38.155
+167.172.231.130
 
 # Onion nodes
