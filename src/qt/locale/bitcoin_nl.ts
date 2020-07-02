@@ -334,6 +334,14 @@
         <source>Reindexing blocks on disk...</source>
         <translation>Bezig met herindexeren van blokken op harde schijf...</translation>
     </message>
+    <message numerus="yes">
+        <source>%n second(s)</source>
+        <translation><numerusform>%n seconde</numerusform><numerusform>%n seconden</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n minute(s)</source>
+        <translation><numerusform>%n minuut</numerusform><numerusform>%n minuten</numerusform></translation>
+    </message>
     <message>
         <source>Staking.&lt;br&gt;Your average weight is %1&lt;br&gt;Your total weight is %2&lt;br&gt;Network weight is %3&lt;br&gt;Expected to earn reward once every %4</source>
         <translation>Dividend-verwerving actief.&lt;br&gt;Uw gemiddelde gewicht %1&lt;br&gt;Uw totale gewicht is %2&lt;br&gt;Het netwerk-gewicht is %3&lt;br&gt;Naar verwachting een beloning in elke %4</translation>
@@ -443,6 +451,10 @@
         <translation>&amp;Over Reddcoin Core</translation>
     </message>
     <message>
+        <source>Show information about Reddcoin Core</source>
+        <translation>Toon informatie over Reddcoin Core</translation>
+    </message>
+    <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Toon de lijst van gebruikte verzendingsadressen en labels</translation>
     </message>
@@ -458,13 +470,33 @@
         <source>Show the Reddcoin Core help message to get a list with possible Reddcoin command-line options</source>
         <translation>Toon het Reddcoin Core hulpbericht om een lijst te krijgen met mogelijke Reddcoin opdrachtregelopties</translation>
     </message>
+    <message numerus="yes">
+        <source>%n active connection(s) to Reddcoin network</source>
+        <translation><numerusform>%n actieve verbinding met Reddcoinnetwerk</numerusform><numerusform>%n actieve verbindingen met Reddcoinnetwerk</numerusform></translation>
+    </message>
     <message>
         <source>No block source available...</source>
         <translation>Geen bron voor blokken beschikbaar...</translation>
     </message>
+    <message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation><numerusform>%n uur</numerusform><numerusform>%n uren</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n day(s)</source>
+        <translation><numerusform>%n dag</numerusform><numerusform>%n dagen</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n week(s)</source>
+        <translation><numerusform>%n week</numerusform><numerusform>%n weken</numerusform></translation>
+    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 en %2</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n year(s)</source>
+        <translation><numerusform>%n jaar</numerusform><numerusform>%n jaren</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -537,6 +569,10 @@ Adres: %4
 <context>
     <name>CoinControlDialog</name>
     <message>
+        <source>Coin Selection</source>
+        <translation>Coinselectie</translation>
+    </message>
+    <message>
         <source>Quantity:</source>
         <translation>Hoeveelheid:</translation>
     </message>
@@ -555,6 +591,10 @@ Adres: %4
     <message>
         <source>Fee:</source>
         <translation>Transactievergoeding:</translation>
+    </message>
+    <message>
+        <source>Dust:</source>
+        <translation>Dust:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -649,6 +689,10 @@ Adres: %4
         <translation>Kopieer prioriteit</translation>
     </message>
     <message>
+        <source>Copy dust</source>
+        <translation>Kopieer dust</translation>
+    </message>
+    <message>
         <source>Copy change</source>
         <translation>Kopieer wisselgeld</translation>
     </message>
@@ -695,6 +739,10 @@ Adres: %4
     <message>
         <source>none</source>
         <translation>geen</translation>
+    </message>
+    <message>
+        <source>Can vary +/- %1 satoshi(s) per input.</source>
+        <translation>Kan +/- %1 satoshi(s) variëren per input.</translation>
     </message>
     <message>
         <source>yes</source>
@@ -838,6 +886,10 @@ Adres: %4
         <translation>Over Reddcoin Core</translation>
     </message>
     <message>
+        <source>Command-line options</source>
+        <translation>Command-line-opties</translation>
+    </message>
+    <message>
         <source>Usage:</source>
         <translation>Gebruik:</translation>
     </message>
@@ -901,10 +953,22 @@ Adres: %4
         <translation>Reddcoin Core</translation>
     </message>
     <message>
+        <source>Error: Specified data directory "%1" cannot be created.</source>
+        <translation>Error: Gekozen data-map "%1" kan niet worden aangemaakt.</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
-    </context>
+    <message numerus="yes">
+        <source>%n GB of free space available</source>
+        <translation><numerusform>%n GB vrije schijfruimte beschikbaar</numerusform><numerusform>%n GB vrije schijfruimte beschikbaar</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>(of %n GB needed)</source>
+        <translation><numerusform>(van de benodigde %n GB)</numerusform><numerusform>(van de benodigde %n GB)</numerusform></translation>
+    </message>
+</context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -957,6 +1021,14 @@ Adres: %4
     <message>
         <source>Number of script &amp;verification threads</source>
         <translation>Aantal script &amp;verificatie threads</translation>
+    </message>
+    <message>
+        <source>Accept connections from outside</source>
+        <translation>Accepteer verbindingen van buitenaf</translation>
+    </message>
+    <message>
+        <source>Allow incoming connections</source>
+        <translation>Accepteer inkomende verbindingen</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -1017,6 +1089,14 @@ Adres: %4
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Portmapping via &amp;UPnP</translation>
+    </message>
+    <message>
+        <source>Connect to the Reddcoin network through a SOCKS5 proxy.</source>
+        <translation>Verbind met het Reddcoinnetwerk door middel van een SOCKS proxy.</translation>
+    </message>
+    <message>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Verbind door middel van SOCKS proxy (standaard proxy):</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1122,6 +1202,10 @@ Adres: %4
         <translation>De weergegeven informatie kan verouderd zijn. Uw portemonnee synchroniseert automaticsh met het Reddcoin netwerk nadat een verbinding is gelegd, maar dit proces is nog niet voltooid.</translation>
     </message>
     <message>
+        <source>Watch-only:</source>
+        <translation>Watch-only:</translation>
+    </message>
+    <message>
         <source>Available:</source>
         <translation>Beschikbaar:</translation>
     </message>
@@ -1150,12 +1234,24 @@ Adres: %4
         <translation>Gedolven saldo dat nog niet tot wasdom is gekomen</translation>
     </message>
     <message>
+        <source>Balances</source>
+        <translation>Saldi</translation>
+    </message>
+    <message>
         <source>Total:</source>
         <translation>Totaal:</translation>
     </message>
     <message>
         <source>Your current total balance</source>
         <translation>Je huidige totale saldo</translation>
+    </message>
+    <message>
+        <source>Your current balance in watch-only addresses</source>
+        <translation>Je huidige saldo in watch-only-adressen</translation>
+    </message>
+    <message>
+        <source>Spendable:</source>
+        <translation>Te besteden:</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -1673,6 +1769,10 @@ Adres: %4
         <translation>Wis alle velden op het formulier.</translation>
     </message>
     <message>
+        <source>Dust:</source>
+        <translation>Dust:</translation>
+    </message>
+    <message>
         <source>Clear &amp;All</source>
         <translation>Verwijder &amp;Alles</translation>
     </message>
@@ -1771,6 +1871,10 @@ Adres: %4
     <message>
         <source>Warning: Unknown change address</source>
         <translation>Waarschuwing: onbekend wissel-adres</translation>
+    </message>
+    <message>
+        <source>Copy dust</source>
+        <translation>Kopieer dust</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>

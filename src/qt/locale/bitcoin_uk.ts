@@ -15,11 +15,11 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Копіювати виділену адресу в буфер обміну</translation>
+        <translation>Скопіювати виділену адресу в буфер обміну</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation>&amp;Копіювати</translation>
+        <translation>&amp;Скопіювати</translation>
     </message>
     <message>
         <source>C&amp;lose</source>
@@ -71,7 +71,7 @@
     </message>
     <message>
         <source>These are your Reddcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Це ваша нова Reddcoin адреса для отримування платежів. Рекомендовано використовувати нову адресу для кожної транзакції.</translation>
+        <translation>Це ваші Reddcoin-адреси для отримування платежів. Рекомендовано використовувати нову адресу для кожної транзакції.</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
@@ -256,7 +256,7 @@
     </message>
     <message>
         <source>Request payments (generates QR codes and reddcoin: URIs)</source>
-        <translation>Створити запит платежу (генерує QR-код та reddcoin: URI)</translation>
+        <translation>Створити платіжний запит (генерує QR-код та reddcoin: URI)</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
@@ -308,11 +308,11 @@
     </message>
     <message>
         <source>&amp;Lock Wallet</source>
-        <translation>&amp;заблокувати гаманець</translation>
+        <translation>&amp;Заблокувати гаманець</translation>
     </message>
     <message>
         <source>Lock wallet</source>
-        <translation>заблокувати гаманець</translation>
+        <translation>Заблокувати гаманець</translation>
     </message>
     <message>
         <source>&amp;Sending addresses...</source>
@@ -598,7 +598,7 @@ Address: %4
     </message>
     <message>
         <source>Priority:</source>
-        <translation>Пріорітет:</translation>
+        <translation>Пріоритет:</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -618,7 +618,7 @@ Address: %4
     </message>
     <message>
         <source>(un)select all</source>
-        <translation>Вибрати/зняти всі</translation>
+        <translation>позначити/зняти всі</translation>
     </message>
     <message>
         <source>Tree mode</source>
@@ -698,7 +698,7 @@ Address: %4
     </message>
     <message>
         <source>Copy priority</source>
-        <translation>Скопіювати пріорітет</translation>
+        <translation>Скопіювати пріоритет</translation>
     </message>
     <message>
         <source>Copy dust</source>
@@ -931,7 +931,7 @@ Address: %4
     </message>
     <message>
         <source>Choose data directory on startup (default: 0)</source>
-        <translation>Обрати каталог даних під час запуску (типово: 0)</translation>
+        <translation>Вибрати каталог даних під час запуску (типово: 0)</translation>
     </message>
 </context>
 <context>
@@ -946,7 +946,7 @@ Address: %4
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where Reddcoin Core will store its data.</source>
-        <translation>Оскільки це перший запуск програми, ви можете обрати де Reddcoin Core буде зберігати дані.</translation>
+        <translation>Оскільки це перший запуск програми, ви можете вибрати де Reddcoin Core буде зберігати дані.</translation>
     </message>
     <message>
         <source>Reddcoin Core will download and store a copy of the Reddcoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
@@ -1192,7 +1192,7 @@ Address: %4
     </message>
     <message>
         <source>Client will be shutdown, do you want to proceed?</source>
-        <translation>Клієнт буде вимкнено, продовжити?</translation>
+        <translation>Роботу клієнта буде припинено, продовжити?</translation>
     </message>
     <message>
         <source>This change would require a client restart.</source>
@@ -1354,7 +1354,7 @@ Address: %4
     </message>
     <message>
         <source>Unverified payment requests to custom payment scripts are unsupported.</source>
-        <translation>Неперевірені запити платежів з власними платіжними сценаріями не підтримуються.</translation>
+        <translation>Неперевірені платіжні запити з власними платіжними сценаріями не підтримуються.</translation>
     </message>
     <message>
         <source>Refund from %1</source>
@@ -1447,7 +1447,7 @@ Address: %4
     </message>
     <message>
         <source>&amp;Copy Image</source>
-        <translation>&amp;Копіювати зображення</translation>
+        <translation>&amp;Скопіювати зображення</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -1721,7 +1721,7 @@ Address: %4
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
-        <translation>Використовуйте цю форму, щоб отримати платежі. Всі поля є &lt;b&gt;необов'язковими&lt;/b&gt;.</translation>
+        <translation>Використовуйте цю форму, щоб створювати платіжні запити. Всі поля є &lt;b&gt;необов'язковими&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
@@ -1773,7 +1773,7 @@ Address: %4
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Копіювати кількість</translation>
+        <translation>Скопіювати кількість</translation>
     </message>
 </context>
 <context>
@@ -1898,7 +1898,7 @@ Address: %4
     </message>
     <message>
         <source>Priority:</source>
-        <translation>Пріорітет:</translation>
+        <translation>Пріоритет:</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -2034,31 +2034,31 @@ Address: %4
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>Копіювати кількість</translation>
+        <translation>Скопіювати кількість</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Копіювати кількість</translation>
+        <translation>Скопіювати кількість</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Копіювати комісію</translation>
+        <translation>Скопіювати комісію</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Копіювати після комісії</translation>
+        <translation>Скопіювати після комісії</translation>
     </message>
     <message>
         <source>Copy bytes</source>
-        <translation>Копіювати байти</translation>
+        <translation>Скопіювати байти</translation>
     </message>
     <message>
         <source>Copy priority</source>
-        <translation>Копіювати пріорітет</translation>
+        <translation>Скопіювати пріоритет</translation>
     </message>
     <message>
         <source>Copy change</source>
-        <translation>Копіювати решту</translation>
+        <translation>Скопіювати решту</translation>
     </message>
     <message>
         <source>Total Amount %1 (= %2)</source>
@@ -2153,7 +2153,7 @@ Address: %4
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>Обрати ранiш використовувану адресу</translation>
+        <translation>Вибрати ранiше використану адресу</translation>
     </message>
     <message>
         <source>This is a normal payment.</source>
@@ -2212,7 +2212,7 @@ Address: %4
     <name>ShutdownWindow</name>
     <message>
         <source>Reddcoin Core is shutting down...</source>
-        <translation>Reddcoin Core вимикається...</translation>
+        <translation>Reddcoin Core припиняє роботу...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -2239,7 +2239,7 @@ Address: %4
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>Обрати ранiше використану адресу</translation>
+        <translation>Вибрати ранiше використану адресу</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2263,7 +2263,7 @@ Address: %4
     </message>
     <message>
         <source>Copy the current signature to the system clipboard</source>
-        <translation>Копіювати поточну сигнатуру до системного сховку</translation>
+        <translation>Скопіювати поточну сигнатуру до системного сховку</translation>
     </message>
     <message>
         <source>Sign the message to prove you own this Reddcoin address</source>
@@ -2614,15 +2614,15 @@ Address: %4
     </message>
     <message>
         <source>Payment to yourself</source>
-        <translation>Надіслано собі</translation>
+        <translation>Надіслані собі</translation>
     </message>
     <message>
         <source>Generated</source>
-        <translation>Згенеровано</translation>
+        <translation>Згенеровані</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Інше</translation>
+        <translation>Інші</translation>
     </message>
     <message>
         <source>watch-only</source>
@@ -2673,7 +2673,7 @@ Address: %4
     </message>
     <message>
         <source>This month</source>
-        <translation>На цьому місяці</translation>
+        <translation>У цьому місяці</translation>
     </message>
     <message>
         <source>Last month</source>
@@ -2721,11 +2721,11 @@ Address: %4
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Копіювати кількість</translation>
+        <translation>Скопіювати кількість</translation>
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Копіювати ID транзакції</translation>
+        <translation>Скопіювати ID транзакції</translation>
     </message>
     <message>
         <source>Edit label</source>

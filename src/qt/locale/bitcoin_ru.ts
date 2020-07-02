@@ -1385,7 +1385,7 @@ Address: %4
     </message>
     <message>
         <source>User Agent</source>
-        <translation>User Agent</translation>
+        <translation>Версия клиента</translation>
     </message>
     <message>
         <source>Ping Time</source>
@@ -1566,7 +1566,7 @@ Address: %4
     </message>
     <message>
         <source>User Agent</source>
-        <translation>User Agent</translation>
+        <translation>Версия клиента</translation>
     </message>
     <message>
         <source>Services</source>
@@ -1926,7 +1926,7 @@ Address: %4
     </message>
     <message>
         <source>Choose...</source>
-        <translation>Выбирать...</translation>
+        <translation>Выбрать...</translation>
     </message>
     <message>
         <source>collapse fee-settings</source>

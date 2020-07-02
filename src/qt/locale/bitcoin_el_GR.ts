@@ -11,7 +11,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Αντιγραφή επιλεγμένης διεύθυνσης στο πρόχειρο του συστήματος</translation>
+        <translation>Αντιγραφή επιλεγμένης διεύθυνσης στο πρόχειρο συστήματος</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Επιλογή διεύθυνσης όπου θα σταλθούν νομίσματα</translation>
+        <translation>Επιλογή διεύθυνσης αποστολής νομισμάτων</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Επιλογή διεύθυνσης απ' όπου θα ληφθούν νομίσματα</translation>
+        <translation>Επιλογή διεύθυνσης λήψης νομισμάτων</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -133,11 +133,11 @@
     </message>
     <message>
         <source>Encrypt wallet</source>
-        <translation>Κρυπτογράφησε το πορτοφόλι</translation>
+        <translation>Κρυπτογράφηση πορτοφολιού</translation>
     </message>
     <message>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>Αυτη η ενεργεία χρειάζεται τον κωδικό του πορτοφολιού για να ξεκλειδώσει το πορτοφόλι.</translation>
+        <translation>Αυτή η ενέργεια χρειάζεται τον κωδικό του πορτοφολιού για να ξεκλειδωθεί το πορτοφόλι.</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
@@ -145,7 +145,7 @@
     </message>
     <message>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>Αυτη η ενέργεια χρειάζεται τον κωδικό του πορτοφολιού για να αποκρυπτογραφήσει το πορτοφόλι.</translation>
+        <translation>Αυτη η ενέργεια χρειάζεται τον κωδικό του πορτοφολιού για να αποκρυπτογραφηθεί το πορτοφόλι.</translation>
     </message>
     <message>
         <source>Decrypt wallet</source>
