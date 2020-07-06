@@ -59,6 +59,7 @@ public:
     int ToCheckBlockUpgradeMajority() const { return nToCheckBlockUpgradeMajority; }
     int ToCheckBlockUpgradeMajority_4() const { return nToCheckBlockUpgradeMajority_4; }
     int ToCheckBlockUpgradeMajority_5() const { return nToCheckBlockUpgradeMajority_5; }
+    int MaxReorganizationDepth() const { return nMaxReorganizationDepth; }
 
     /** Used if GenerateBitcoins is called with a negative number of threads */
     int DefaultMinerThreads() const { return nMinerThreads; }
@@ -116,6 +117,7 @@ protected:
     int nToCheckBlockUpgradeMajority;
     int nToCheckBlockUpgradeMajority_4;
     int nToCheckBlockUpgradeMajority_5;
+    int nMaxReorganizationDepth;
     int64_t nTargetTimespan;
     int64_t nTargetSpacing;
     int nMinerThreads;

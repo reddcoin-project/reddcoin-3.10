@@ -2811,6 +2811,11 @@ bool AcceptBlockHeader(const CBlockHeader& block, CValidationState& state, CBloc
         pindexPrev = (*mi).second;
         nHeight = pindexPrev->nHeight+1;
 
+        //If this is a reorg, check that it is not too deep
+        int nMaxReorgDepth = GetArg("-maxreorg", Params().MaxReorganizationDepth());
+        if (chainActive.Height() - nHeight >= nMaxReorgDepth)
+            return state.DoS(1, error("%s: forked chain older than max reorganization depth (height %d)", __func__, nHeight));
+
         if (block.IsProofOfWork() && nHeight > Params().LastProofOfWorkHeight())
             return state.Invalid(error("%s : reject proof-of-work at height %d", __func__, nHeight),
                              REJECT_INVALID, "wrong-proof-of-work");
@@ -3769,10 +3774,10 @@ void static ProcessGetData(CNode* pfrom)
                         send = true;
                     } else {
                         // To prevent fingerprinting attacks, only send blocks outside of the active
-                        // chain if they are valid, and no more than a month older than the best header
+                        // chain if they are valid, and no more than a max reorg depth than the best header
                         // chain we know about.
                         send = mi->second->IsValid(BLOCK_VALID_SCRIPTS) && (pindexBestHeader != NULL) &&
-                            (mi->second->GetBlockTime() > pindexBestHeader->GetBlockTime() - 30 * 24 * 60 * 60);
+                            (chainActive.Height() - mi->second->nHeight < Params().MaxReorganizationDepth());
                         if (!send) {
                             LogPrintf("ProcessGetData(): ignoring request from peer=%i for old block that isn't in the main chain\n", pfrom->GetId());
                         }
