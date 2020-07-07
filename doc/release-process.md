@@ -25,7 +25,7 @@ Release Process
 
 ###update Gitian
 
- In order to take advantage of the new caching features in Gitian, be sure to update to a recent version (e9741525c or higher is recommended)
+ In order to take advantage of the new caching features in Gitian, be sure to update to a recent version (fa0f0f4e5 is recommended)
 
 ###perform Gitian builds
 

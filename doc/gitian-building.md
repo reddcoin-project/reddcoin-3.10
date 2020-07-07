@@ -281,6 +281,9 @@ Clone the git repositories for reddcoin and Gitian and then checkout the bitcoin
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
+cd gitian-builder
+git checkout fa0f0f4e5
+cd ..
 git clone https://github.com/reddcoin-project/reddcoin.git
 cd reddcoin
 git checkout v${VERSION}
