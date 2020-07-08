@@ -2692,8 +2692,8 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
     // PoSV: check proof-of-stake
     // Limited duplicity on stake: prevents block flood attack
 	// if (pblock->IsProofOfStake() && setStakeSeen.count(pblock->GetProofOfStake()) && !mapOrphanBlocksByPrev.count(hash))
-	if (block.IsProofOfStake() && setStakeSeen.count(block.GetProofOfStake()))
-        return error("%s : duplicate proof-of-stake (%s, %d) for block %s", __func__, block.GetProofOfStake().first.ToString().c_str(), block.GetProofOfStake().second, block.GetHash().ToString().c_str());
+	// if (block.IsProofOfStake() && setStakeSeen.count(block.GetProofOfStake()))
+    //    return error("%s : duplicate proof-of-stake (%s, %d) for block %s", __func__, block.GetProofOfStake().first.ToString().c_str(), block.GetProofOfStake().second, block.GetHash().ToString().c_str());
 
 
     // Check that the header is valid (particularly PoW).  This is mostly
