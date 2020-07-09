@@ -2531,6 +2531,10 @@ bool ReceivedBlockTransactions(const CBlock &block, CValidationState& state, CBl
         pindexNew->nStakeTime = block.vtx[1].nTime;
     }
 
+    // PoSV
+    if (block.IsProofOfStake())
+        setStakeSeen.insert(make_pair(pindexNew->prevoutStake, pindexNew->nStakeTime));
+
     // PoSV: compute stake entropy bit for stake modifier
     if (!pindexNew->SetStakeEntropyBit(block.GetStakeEntropyBit()))
         return state.Invalid(error("ReceivedBlockTransactions() : SetStakeEntropyBit() failed"));
@@ -2578,9 +2582,6 @@ bool ReceivedBlockTransactions(const CBlock &block, CValidationState& state, CBl
                 range.first++;
                 mapBlocksUnlinked.erase(it);
             }
-            // PoSV Stake seen once successfully added to index
-            if (pindex->IsProofOfStake())
-                setStakeSeen.insert(make_pair(pindex->prevoutStake, pindex->nStakeTime));
         }
     } else {
         if (pindexNew->pprev && pindexNew->pprev->IsValid(BLOCK_VALID_TREE)) {
