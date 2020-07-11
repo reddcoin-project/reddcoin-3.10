@@ -23,6 +23,18 @@ reddcoind/reddcoin-qt (on Linux).
 Downgrade warning
 ---------------------
 
+Because release 3.10.2 makes use of headers-first synchronization and parallel
+block download, the block files and databases are not backwards-compatible
+with older versions of Reddcoin Core:
+
+* Blocks will be stored on disk out of order (in the order they are
+received, really), which makes it incompatible with some tools or
+other programs. Reindexing using earlier versions will also not work
+anymore as a result of this.
+
+* The block index database will now hold headers for which no block is
+stored on disk, which earlier versions won't support.
+
 If you want to be able to downgrade smoothly, make a backup of your entire data
 directory. Without this your node will need start syncing (or importing from
 bootstrap.dat) anew afterwards. It is possible that the data from a completely
