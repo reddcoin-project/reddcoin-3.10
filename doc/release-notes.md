@@ -1,4 +1,4 @@
-Reddcoin Core version 3.10.1 is now available from:
+Reddcoin Core version 3.10.2 is now available from:
 
   https://reddcoin.com/
 
@@ -332,8 +332,68 @@ blocks have version number 3 or higher, it becomes mandatory for all blocks.
 Backward compatibility with current staking software is NOT provided, thus stakers
 should read the first paragraph of "Mining and relay policy enhancements" above.
 
-3.10.1 Change log
+3.10.2 Change log
 =================
+Misc:
+- `118331a` remove duplicate stake check from checkblock  
+- `7a86b95` update stakeseen when transactions have been received  
+- `51680e5` reduce logging output  
+- `7513a68` Stake spent amplification attack fix  
+- `33d8302` update staking icon status when wallet (un)lock is toggled  
+- `5e19fd0` add MaxReorganizationDepth()  
+- `6b93b48` Bugfix: Allow mining on top of old tip blocks for testnet (fixes testnet-in-a-box use case)  
+- `a77aacf` Set nSequenceId when a block is fully linked  
+- `6161588` Fix CheckBlockIndex for reindex.  
+- `231af74` Keep mempool consistent during block-reorgs  
+- `f662510` Add a consistency check for the block chain data structures  
+- `b63dda7` Fix InvalidateBlock to add chainActive.Tip to setBlockIndexCandidates  
+- `bc820a9` Reduce fingerprinting through timestamps in 'addr' messages.  
+- `c0325bf` add RPC test for InvalidateBlock  
+- `cf1e370` fix InvalidateBlock to repopulate setBlockIndexCandidates  
+- `7c71dde` Better fingerprinting protection for non-main-chain getdatas.  
+- `782ed72` Increase block download timeout base from 10 to 20 minutes.  
+- `2ea6cdd` Introduce 10 minute block download timeout  
+- `8baab45` DOS: Respect max per-peer blocks in flight limit  
+- `174e8c2` remove max orphan blocks config parameter since it is no longer functional  
+- `1affeef` RPC-test based on invalidateblock for mempool coinbase spends  
+- `5387020` Make CTxMemPool::remove more effecient by avoiding recursion  
+- `d26d997` Make CTxMemPool::check more thourough by using CheckInputs  
+- `91b74f5` Remove txn which are invalidated by coinbase maturity during reorg  
+- `9113dca` Remove coinbase-dependant transactions during reorg.  
+- `b87115c` remove g_signals from DisconnectTip  
+- `cd13a53` Test resurrecting memory pool transactions during chain re-org  
+- `690ca2e` Introduce separate flushing modes  
+- `8c1ec39` Improve chainstate/blockindex disk writing policy  
+- `744a9e4` Move `setmocktime` to hidden category  
+- `90aa895` Introduce a hidden category  
+- `1824833` Delay writing block indexes in invalidate/reconsider  
+- `af6f429` Add 'invalidateblock' and 'reconsiderblock' RPC commands.  
+- `7e5d4b3` Make PruneBlockIndexCandidates safer  
+- `4ae2cb5` Reset setBlockIndexCandidates once block index db loaded  
+- `d47fd6b` Be a bit more verbose during -loadblock if we already have blocks  
+- `fa3340f` Fix -loadblock after shutdown during IBD  
+- `d77a809` Fix for crash during block download  
+- `2e2d15f` Introduce preferred download peers  
+- `78e7f1e` Add a locking mechanism to IsInitialBlockDownload to ensure it never goes from false to true.  
+- `80e4e22` Fix IsInitialBlockDownload which was broken by headers first.  
+- `159d8d9` VerifyHashTarget needs previous transactions  
+- `f4a4a06` update stakeseen after written to index  
+- `6c288a8` check pindex instead of chainActive.tip  
+- `c8e31ef` Select a specific commit to use for gitian-builder  
+- `27dff69` account for vchBlockSig in posv blocks  
+- `be5933d` Add GetNextWorkRequired debug logging  
+- `afa19a6` Increase number of blocks in transit  
+- `d0d7bf5` Fix large reorgs  
+- `f533c73` Fix rebuild-chainstate feature and improve its performance  
+- `7534936` Skip reindexed blocks individually  
+- `4d400db` Make -reindex cope with out-of-order blocks  
+- `a47fa14` Rename setBlockIndexValid to setBlockIndexCandidates  
+- `319b7e2` Add height to "Requesting block" debug  
+- `c6f9c31` Better logging of stalling  
+- `9d5d393` Improve getheaders (sending) logging  
+- `120b9b5` Remove CheckMinWork, as we always know all parent headers  
+- `6e28e5f` RPC additions after headers-first  
+- `f614ed5` Headers-first synchronization  
 
 Misc:
 - `fefad63` update translations 
