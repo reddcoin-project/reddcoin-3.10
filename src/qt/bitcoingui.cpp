@@ -930,6 +930,8 @@ bool BitcoinGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
 
 void BitcoinGUI::setEncryptionStatus(int status)
 {
+	updateStakingIcon();
+
     switch(status)
     {
     case WalletModel::Unencrypted:
@@ -1015,7 +1017,7 @@ void BitcoinGUI::updateStakingIcon()
     updateWeight();
     IsStaking();
 
-    if (nLastCoinStakeSearchInterval && nAverageWeight && IsStaking()) {
+    if (nLastCoinStakeSearchInterval && nAverageWeight && IsStaking() && (pwalletMain && !pwalletMain->IsLocked())) {
         uint64_t nNetworkWeight = GetPoSVKernelPS();
         uint64_t nEstimateTime = Params().TargetSpacing() * nNetworkWeight / nTotalWeight;
 
