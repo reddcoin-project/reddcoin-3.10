@@ -116,14 +116,10 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
         bnNew = bnProofOfStakeLimit;
     }
 
-     /// debug print
-    if (fDebug)
-    {
-        LogPrintf("Difficulty Retarget - Kimoto Gravity Well\n");
-        LogPrintf("PastRateAdjustmentRatio = %g\n", PastRateAdjustmentRatio);
-        LogPrintf("Before: %08x  %s\n", BlockLastSolved->nBits, CBigNum().SetCompact(BlockLastSolved->nBits).getuint256().ToString().c_str());
-        LogPrintf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.getuint256().ToString().c_str());
-    }
+	LogPrint("kgw", "Difficulty Retarget - Kimoto Gravity Well\n");
+	LogPrint("kgw", "PastRateAdjustmentRatio = %g\n", PastRateAdjustmentRatio);
+	LogPrint("kgw", "Before: %08x  %s\n", BlockLastSolved->nBits, CBigNum().SetCompact(BlockLastSolved->nBits).getuint256().ToString().c_str());
+	LogPrint("kgw", "After:  %08x  %s\n", bnNew.GetCompact(), bnNew.getuint256().ToString().c_str());
 
      return bnNew.GetCompact();
 }
@@ -131,7 +127,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
     // always mine PoW blocks at the lowest diff on testnet
-    if (Params().AllowMinDifficultyBlocks() && chainActive.Tip()->nHeight < Params().LastProofOfWorkHeight())
+    if (Params().AllowMinDifficultyBlocks() && pindexLast->nHeight < Params().LastProofOfWorkHeight())
         return Params().ProofOfWorkLimit().GetCompact();
 
     static const int64_t BlocksTargetSpacing = 1 * 60; // 1 Minute
@@ -140,7 +136,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     int64_t PastSecondsMin = TimeDaySeconds * 0.25;
     int64_t PastSecondsMax = TimeDaySeconds * 7;
 
-    if (chainActive.Tip()->nHeight < 6000)
+    if (pindexLast->nHeight < 6000)
     {
         PastSecondsMin = TimeDaySeconds * 0.01;
         PastSecondsMax = TimeDaySeconds * 0.14;
@@ -148,6 +144,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     uint64_t PastBlocksMin = PastSecondsMin / BlocksTargetSpacing;
     uint64_t PastBlocksMax = PastSecondsMax / BlocksTargetSpacing;
+
+   	LogPrint("kgw", "%s : Height = %s (%s) PastBlocksMin = %s, PastBlocksMax = %s \n", __func__, pindexLast->nHeight, pindexLast->GetBlockHash().ToString(), PastBlocksMin, PastBlocksMax);
 
     return KimotoGravityWell(pindexLast, pblock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax);
 }
@@ -170,39 +168,6 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
         return error("CheckProofOfWork() : hash doesn't match nBits");
 
     return true;
-}
-
-//
-// true if nBits is greater than the minimum amount of work that could
-// possibly be required deltaTime after minimum work required was nBase
-//
-bool CheckMinWork(unsigned int nBits, unsigned int nBase, int64_t deltaTime, bool fProofOfStake)
-{
-    bool fOverflow = false;
-    uint256 bnNewBlock;
-    bnNewBlock.SetCompact(nBits, NULL, &fOverflow);
-    if (fOverflow)
-        return false;
-
-    const uint256 &bnLimit = fProofOfStake ? Params().ProofOfStakeLimit().getuint256() : Params().ProofOfWorkLimit().getuint256();
-    // Testnet has min-difficulty blocks
-    // after Params().TargetSpacing()*2 time between blocks:
-    if (Params().AllowMinDifficultyBlocks() && deltaTime > Params().TargetSpacing()*2)
-        return bnNewBlock <= bnLimit;
-
-    uint256 bnResult;
-    bnResult.SetCompact(nBase);
-    while (deltaTime > 0 && bnResult < bnLimit)
-    {
-        // Maximum 400% adjustment...
-        bnResult *= 4;
-        // ... in best-case exactly 4-times-normal target time
-        deltaTime -= Params().TargetTimespan()*4;
-    }
-    if (bnResult > bnLimit)
-        bnResult = bnLimit;
-
-    return bnNewBlock <= bnResult;
 }
 
 uint256 GetBlockProof(const CBlockIndex& block)

@@ -59,6 +59,7 @@ public:
     int ToCheckBlockUpgradeMajority() const { return nToCheckBlockUpgradeMajority; }
     int ToCheckBlockUpgradeMajority_4() const { return nToCheckBlockUpgradeMajority_4; }
     int ToCheckBlockUpgradeMajority_5() const { return nToCheckBlockUpgradeMajority_5; }
+    int MaxReorganizationDepth() const { return nMaxReorganizationDepth; }
 
     /** Used if GenerateBitcoins is called with a negative number of threads */
     int DefaultMinerThreads() const { return nMinerThreads; }
@@ -66,8 +67,8 @@ public:
     bool RequireRPCPassword() const { return fRequireRPCPassword; }
     /** Make miner wait to have peers to avoid wasting work */
     bool MiningRequiresPeers() const { return fMiningRequiresPeers; }
-    /** Default value for -checkmempool argument */
-    bool DefaultCheckMemPool() const { return fDefaultCheckMemPool; }
+    /** Default value for -checkmempool and -checkblockindex argument */
+    bool DefaultConsistencyChecks() const { return fDefaultConsistencyChecks; }
     /** Allow mining of a min-difficulty block */
     bool AllowMinDifficultyBlocks() const { return fAllowMinDifficultyBlocks; }
     /** Skip proof-of-work check: allow mining of any difficulty block */
@@ -77,6 +78,7 @@ public:
     int64_t TargetTimespan() const { return nTargetTimespan; }
     int64_t TargetSpacing() const { return nTargetSpacing; }
     int64_t Interval() const { return nTargetTimespan / nTargetSpacing; }
+    int64_t MaxTipAge() const { return nMaxTipAge; }
     /** Make miner stop after a block is found. In RPC, don't return until nGenProcLimit blocks are generated */
     bool MineBlocksOnDemand() const { return fMineBlocksOnDemand; }
     /** In the future use NetworkIDString() for RPC fields */
@@ -115,9 +117,11 @@ protected:
     int nToCheckBlockUpgradeMajority;
     int nToCheckBlockUpgradeMajority_4;
     int nToCheckBlockUpgradeMajority_5;
+    int nMaxReorganizationDepth;
     int64_t nTargetTimespan;
     int64_t nTargetSpacing;
     int nMinerThreads;
+    long nMaxTipAge;
     std::vector<CDNSSeedData> vSeeds;
     std::vector<unsigned char> base58Prefixes[MAX_BASE58_TYPES];
     CBaseChainParams::Network networkID;
@@ -126,8 +130,8 @@ protected:
     std::vector<CAddress> vFixedSeeds;
     bool fRequireRPCPassword;
     bool fMiningRequiresPeers;
-    bool fDefaultCheckMemPool;
     bool fAllowMinDifficultyBlocks;
+    bool fDefaultConsistencyChecks;
     bool fRequireStandard;
     bool fMineBlocksOnDemand;
     bool fSkipProofOfWorkCheck;
@@ -154,7 +158,7 @@ public:
     virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority)=0;
     virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority)=0;
     virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority)=0;
-    virtual void setDefaultCheckMemPool(bool aDefaultCheckMemPool)=0;
+    virtual void setDefaultConsistencyChecks(bool aDefaultConsistencyChecks)=0;
     virtual void setAllowMinDifficultyBlocks(bool aAllowMinDifficultyBlocks)=0;
     virtual void setSkipProofOfWorkCheck(bool aSkipProofOfWorkCheck)=0;
 };
