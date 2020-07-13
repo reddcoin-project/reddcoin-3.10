@@ -1995,7 +1995,7 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
     for (map<COutPoint, int>::iterator it = mapStakeSpent.begin(); it != mapStakeSpent.end();) {
         if (it->second < pindex->nHeight - Params().MaxReorganizationDepth()) {
         	LogPrint("map", "mapStakeSpent: Erase %s | %u\n", it->first.ToString(), it->second);
-        	mapStakeSpent.erase(it);
+        	mapStakeSpent.erase(it++);
         } else {
         	it++;
         }
