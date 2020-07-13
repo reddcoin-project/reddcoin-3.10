@@ -1997,12 +1997,10 @@ bool ConnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, C
     }
 
     // delete old entries
-    for (map<COutPoint, int>::iterator it = mapStakeSpent.begin(); it != mapStakeSpent.end();) {
+    for (map<COutPoint, int>::iterator it = mapStakeSpent.begin(); it != mapStakeSpent.end(); it++) {
         if (it->second < pindex->nHeight - Params().MaxReorganizationDepth()) {
         	LogPrint("map", "mapStakeSpent: Erase %s | %u\n", it->first.ToString(), it->second);
         	mapStakeSpent.erase(it);
-        } else {
-        	it++;
         }
     }
 
