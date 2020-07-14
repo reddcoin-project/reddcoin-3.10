@@ -252,6 +252,7 @@ public:
         nDefaultPort = 45444;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
         nSubsidyHalvingInterval = 210000;
+        nMaxReorganizationDepth = 200;
         nEnforceBlockUpgradeMajority = 9500;
         nRejectBlockOutdatedMajority = 9500;
         nToCheckBlockUpgradeMajority = 10000;
@@ -264,6 +265,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 24 * 60 * 60; // 24 hours
         nTargetSpacing = 60; // 1 minute
+        nMaxTipAge = 8 * 60 * 60;
 
         // PoSV
         bnProofOfStakeLimit = CBigNum(~uint256(0) >> 20);
@@ -319,8 +321,8 @@ public:
 
         fRequireRPCPassword = true;
         fMiningRequiresPeers = true;
-        fDefaultCheckMemPool = false;
         fAllowMinDifficultyBlocks = false;
+        fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
         fSkipProofOfWorkCheck = false;
@@ -360,6 +362,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 24 * 60 * 60; //! 24 hours
         nTargetSpacing = 60; //! 1 minute
+        nMaxTipAge = 0x7fffffff;
 
         nLastProofOfWorkHeight = 350 - 1; // Last POW block
         vDevPubKey = ParseHex("03081542439583f7632ce9ff7c8851b0e9f56d0a6db9a13645ce102a8809287d4f");
@@ -385,8 +388,8 @@ public:
 
         fRequireRPCPassword = true;
         fMiningRequiresPeers = true;
-        fDefaultCheckMemPool = false;
         fAllowMinDifficultyBlocks = true;
+        fDefaultConsistencyChecks = false;
         fRequireStandard = false;
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
@@ -424,6 +427,7 @@ public:
         nTargetTimespan = 24 * 60 * 60; // 24 hours
         nTargetSpacing = 60; // 1 minute
         bnProofOfWorkLimit = bnProofOfStakeLimit = CBigNum(~uint256(0) >> 1);
+        nMaxTipAge = 8 * 60 * 60;
         nLastProofOfWorkHeight = 350 - 1;
         genesis.nTime = 1401051600;
         genesis.nBits = 0x207fffff;
@@ -437,8 +441,8 @@ public:
 
         fRequireRPCPassword = false;
         fMiningRequiresPeers = false;
-        fDefaultCheckMemPool = true;
         fAllowMinDifficultyBlocks = true;
+        fDefaultConsistencyChecks = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
         fTestnetToBeDeprecatedFieldRPC = false;
@@ -464,7 +468,7 @@ public:
 
         fRequireRPCPassword = false;
         fMiningRequiresPeers = false;
-        fDefaultCheckMemPool = true;
+        fDefaultConsistencyChecks = true;
         fAllowMinDifficultyBlocks = false;
         fMineBlocksOnDemand = true;
     }
@@ -480,7 +484,7 @@ public:
     virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority)  { nEnforceBlockUpgradeMajority=anEnforceBlockUpgradeMajority; }
     virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority)  { nRejectBlockOutdatedMajority=anRejectBlockOutdatedMajority; }
     virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority)  { nToCheckBlockUpgradeMajority=anToCheckBlockUpgradeMajority; }
-    virtual void setDefaultCheckMemPool(bool afDefaultCheckMemPool)  { fDefaultCheckMemPool=afDefaultCheckMemPool; }
+    virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks)  { fDefaultConsistencyChecks=afDefaultConsistencyChecks; }
     virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) {  fAllowMinDifficultyBlocks=afAllowMinDifficultyBlocks; }
     virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }
 };
