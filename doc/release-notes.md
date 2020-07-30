@@ -1,4 +1,4 @@
-Reddcoin Core version 3.10.1 is now available from:
+Reddcoin Core version 3.10.2 is now available from:
 
   https://reddcoin.com/
 
@@ -331,6 +331,25 @@ blocks have version number 3 or higher, it becomes mandatory for all blocks.
 
 Backward compatibility with current staking software is NOT provided, thus stakers
 should read the first paragraph of "Mining and relay policy enhancements" above.
+
+3.10.2 Change log
+===================
+
+Misc:
+- `4db53d7` - Jonas Schnelli, 2015-06-19 : fix missing lock in CNode::ClearBanned()  
+- `1d0dd29` - Jonas Schnelli, 2015-06-12 : setban: add RPCErrorCode  
+- `f9cc1c9` - Jonas Schnelli, 2015-06-12 : fix CSubNet comparison operator  
+- `2074e33` - John Nash, 2020-07-30 : allow absolute bantime  
+- `0a6433a` - Jonas Schnelli, 2015-06-12 : rename json field "bannedtill" to "banned_until"  
+- `886bded` - Jonas Schnelli, 2015-05-25 : [RPC] extend setban to allow subnets  
+- `302b06f` - Jonas Schnelli, 2015-05-19 : [net] remove unused return type bool from CNode::Ban()  
+- `345d46a` - Jonas Schnelli, 2015-05-19 : [QA] add setban/listbanned/clearbanned tests  
+- `67cae75` - Jonas Schnelli, 2015-05-19 : [RPC] add setban/listbanned/clearbanned RPC commands  
+- `2ab1e23` - Jonas Schnelli, 2015-05-19 : [net] extend core functionallity for ban/unban/listban  
+- `fb2765e` - Alex van der Peet, 2015-06-11 : New RPC command disconnectnode  
+- `4c41d2f` - Philip Kaufmann, 2015-06-01 : [Qt] disconnect peers from peers tab via context menu  
+- `33d8302` - John Nash, 2020-07-11 : update staking icon status when wallet (un)lock is toggled  
+- `c8e31ef` - John Nash, 2020-07-07 : Select a specific commit to use for gitian-builder
 
 3.10.1 Change log
 =================
