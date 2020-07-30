@@ -90,6 +90,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "prioritisetransaction", 1 },
     { "prioritisetransaction", 2 },
     { "setban", 2 },
+    { "setban", 3 },
 
     // PoSV
     { "reservebalance", 0 },
