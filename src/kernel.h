@@ -43,6 +43,9 @@ uint64_t GetCoinAge(const CTransaction& tx);
 // Calculate total coin age spent in block
 uint64_t GetCoinAge(const CBlock& block);
 
+// Calculate the inflation rate for the current block
+double GetInflation(const CBlockIndex* pindex);
+
 // Calculate the adjustment to apply to coinstake to align with 5% growth
 double GetInflationAdjustment(const CBlockIndex* pindex);
 
