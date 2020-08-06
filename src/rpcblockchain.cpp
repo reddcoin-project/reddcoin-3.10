@@ -5,6 +5,7 @@
 
 #include "chainparams.h"
 #include "checkpoints.h"
+#include "kernel.h"
 #include "main.h"
 #include "rpcserver.h"
 #include "sync.h"
@@ -626,5 +627,81 @@ Value getmempoolinfo(const Array& params, bool fHelp)
     ret.push_back(Pair("bytes", (int64_t) mempool.GetTotalTxSize()));
 
     return ret;
+}
+
+Value getinflation(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() > 1)
+        throw runtime_error(
+            "getinflation\n"
+            "\nReturns details on the current inflation.\n"
+			"1. index          (integer, optional, default=current block tip) The block number\n"
+            "\nResult:\n"
+            "{\n"
+            "  \"height\" : n,           (numeric) block height when transaction entered pool\n"
+            "  \"inflation\": xxxxx      (numeric) Current inflation\n"
+            "}\n"
+            "\nExamples:\n"
+            + HelpExampleCli("getinflation", "")
+            + HelpExampleRpc("getinflation", "")
+        );
+
+    int nHeight;
+
+    if (params.size() > 0) {
+    	nHeight = params[0].get_int();
+    } else {
+    	nHeight = chainActive.Height();
+    }
+
+	if (nHeight < 0 || nHeight > chainActive.Height())
+		throw JSONRPCError(RPC_INVALID_PARAMETER, "Block height out of range");
+
+	CBlockIndex* pblockindex = chainActive[nHeight];
+
+	Object ret;
+	ret.push_back(Pair("height", pblockindex->nHeight));
+	ret.push_back(Pair("inflation", (double) GetInflation(pblockindex)));
+
+	return ret;
+}
+
+Value getinflationmultiplier(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() > 1)
+        throw runtime_error(
+            "getinflationmultiplier\n"
+            "\nReturns details on the current inflationmultiplier.\n"
+			"1. index          (integer, optional, default=current block tip) The block number\n"
+            "\nResult:\n"
+            "{\n"
+            "  \"height\" : n,           (numeric) block height when transaction entered pool\n"
+            "  \"inflation\": xxxxx      (numeric) Current inflation\n"
+        	"  \"multiplier\": xxxxx      (numeric) Current inflation multiplier\n"
+            "}\n"
+            "\nExamples:\n"
+            + HelpExampleCli("getinflationmultiplier", "")
+            + HelpExampleRpc("getinflationmultiplier", "")
+        );
+
+    int nHeight;
+
+    if (params.size() > 0) {
+    	nHeight = params[0].get_int();
+    } else {
+    	nHeight = chainActive.Height();
+    }
+
+	if (nHeight < 0 || nHeight > chainActive.Height())
+		throw JSONRPCError(RPC_INVALID_PARAMETER, "Block height out of range");
+
+	CBlockIndex* pblockindex = chainActive[nHeight];
+
+	Object ret;
+	ret.push_back(Pair("height", pblockindex->nHeight));
+	ret.push_back(Pair("inflation", (double) GetInflation(pblockindex)));
+	ret.push_back(Pair("multiplier", (double) GetInflationAdjustment(pblockindex)));
+
+	return ret;
 }
 

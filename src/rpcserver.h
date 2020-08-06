@@ -233,6 +233,8 @@ extern json_spirit::Value getchaintips(const json_spirit::Array& params, bool fH
 extern json_spirit::Value getstakinginfo(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value reservebalance(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value getinterest(const json_spirit::Array& params, bool fHelp);
+extern json_spirit::Value getinflation(const json_spirit::Array& params, bool fHelp);
+extern json_spirit::Value getinflationmultiplier(const json_spirit::Array& params, bool fHelp);
 
 // in rest.cpp
 extern bool HTTPReq_REST(AcceptedConnection *conn,
