@@ -339,12 +339,13 @@ void RPCConsole::setClientModel(ClientModel *model)
         signalMapper->setMapping(banAction7d, 60*60*24*7);
         signalMapper->setMapping(banAction28d, 60*60*24*28);
         signalMapper->setMapping(banAction365d, 60*60*24*365);
-        connect(banAction1h, SIGNAL(triggered()), signalMapper, SLOT(map()));
-        connect(banAction24h, SIGNAL(triggered()), signalMapper, SLOT(map()));
-        connect(banAction7d, SIGNAL(triggered()), signalMapper, SLOT(map()));
-        connect(banAction28d, SIGNAL(triggered()), signalMapper, SLOT(map()));
-        connect(banAction365d, SIGNAL(triggered()), signalMapper, SLOT(map()));
-        connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(banSelectedNode(int)));
+        connect(banAction1h, &QAction::triggered, signalMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
+        connect(banAction24h, &QAction::triggered, signalMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
+        connect(banAction7d, &QAction::triggered, signalMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
+        connect(banAction28d, &QAction::triggered, signalMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
+        connect(banAction365d, &QAction::triggered, signalMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
+        connect(signalMapper, static_cast<void (QSignalMapper::*)(int)>(&QSignalMapper::mapped), this, &RPCConsole::banSelectedNode);
+
 
         // peer table context menu signals
         connect(ui->peerWidget, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showPeersTableContextMenu(const QPoint&)));
