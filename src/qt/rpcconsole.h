@@ -21,7 +21,6 @@ namespace Ui {
 QT_BEGIN_NAMESPACE
 class QMenu;
 class QItemSelection;
-class QSignalMapper;
 QT_END_NAMESPACE
 
 /** Local Bitcoin RPC console. */
@@ -119,7 +118,6 @@ private:
     NodeId cachedNodeid;
     QMenu *peersTableContextMenu;
     QMenu *banTableContextMenu;
-    QSignalMapper* signalMapper;
 };
 
 #endif // BITCOIN_QT_RPCCONSOLE_H
