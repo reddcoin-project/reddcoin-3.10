@@ -493,6 +493,42 @@ uint64_t GetCoinAge(const CBlock& block)
     return nCoinAge;
 }
 
+// PoSV2 determine the current inflation rate
+double GetInflation(const CBlockIndex* pindex)
+{
+	int64_t nMoneySupply = pindex->pprev->nMoneySupply;
+	// some rounding for year/ leap year
+	int64_t nBlocksPerDay = 1440; // generate block per 60sec
+	int64_t nBlocksPerYear = ((365 * 33 + 8.0) / 33.0) * nBlocksPerDay;
+	// month are a consistent period
+	int64_t nBlocksPerMonth = nBlocksPerYear / 12;
+
+	double nInflation = 0;
+	int64_t nPoSVRewards = 0;
+
+    if (pindex && pindex->nHeight >= Params().LastProofOfWorkHeight()) {
+        if (pindex->nHeight - Params().LastProofOfWorkHeight() < nBlocksPerMonth) {
+            nBlocksPerMonth = pindex->nHeight - Params().LastProofOfWorkHeight();
+        }
+    }
+
+    // get previous block interval
+    std::string strHash = chainActive[pindex->nHeight - nBlocksPerMonth]->GetBlockHash().GetHex();
+    uint256 hash(strHash);
+
+    if (mapBlockIndex.count(hash) == 0)
+        LogPrintf("- Hash block missing\n");
+
+	int64_t nMoneySupplyPrev = mapBlockIndex[hash]->nMoneySupply;
+
+	nPoSVRewards = nMoneySupply - nMoneySupplyPrev;
+	nInflation = (double(nPoSVRewards) / double(nMoneySupply)) * 12 * 100;
+
+	LogPrint("inflation", "- Block rewards in last interval = %s. Inflation1 = %s\n", FormatMoney(nPoSVRewards), nInflation);
+
+	return nInflation;
+}
+
 // PoSV2 determine the inflation adjustment to apply
 // look back over the last month of rewards (365.2424 / 12)
 double GetInflationAdjustment(const CBlockIndex* pindex)
@@ -510,10 +546,7 @@ double GetInflationAdjustment(const CBlockIndex* pindex)
     int64_t nBlocksPerMonth = nBlocksPerYear / 12;
     int64_t nPoSVRewards = 0;
 
-    bool fProofOfStake = false;
-
     if (pindex && pindex->nHeight >= Params().LastProofOfWorkHeight()) {
-        fProofOfStake = true;
         if (pindex->nHeight - Params().LastProofOfWorkHeight() < nBlocksPerMonth) {
             nBlocksPerMonth = pindex->nHeight - Params().LastProofOfWorkHeight();
         }
@@ -533,13 +566,12 @@ double GetInflationAdjustment(const CBlockIndex* pindex)
 
     double nRatio = (double(nMoneySupply) / double(nPoSVRewards));
     double nRawInflationAdjustment = ((nInflationTarget / 12) * nRatio); // looking at the last month of blocks
-    double nInflation = (double(nPoSVRewards) / double(nMoneySupply)) * 12 * 100;
+
+    LogPrint("inflation", "- Block rewards in last interval = %s. Inflation2 = %s\n", FormatMoney(nPoSVRewards), GetInflation(pindex));
+
     double nInflationAdjustment = max(min(nRawInflationAdjustment, dMaxThreshold), dMinThreshold);
 
-    if (fDebug) {
-    	LogPrintf("- Block rewards in last interval = %s. Inflation = %s\n", FormatMoney(nPoSVRewards), nInflation);
-    	LogPrintf("- Inflation Adjustment (Bounded) = %s. Using Max %s | Min %s thresholds\n", nInflationAdjustment, dMaxThreshold, dMinThreshold);
-    }
+	LogPrint("inflation", "- Inflation Adjustment (Bounded) = %s. Using Max %s | Min %s thresholds\n", nInflationAdjustment, dMaxThreshold, dMinThreshold);
 
     int64_t nTime = GetTimeMicros() - nStart;
     LogPrint("bench", "- Inflation Unbound Adjustment = %s Using last %s blocks from height %s to height %s: %.2fms\n", nRawInflationAdjustment, nBlocksPerMonth, nHeightPrev, pindex->nHeight, nTime * 0.001);

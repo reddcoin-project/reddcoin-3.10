@@ -89,12 +89,19 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "estimatepriority", 0 },
     { "prioritisetransaction", 1 },
     { "prioritisetransaction", 2 },
+    { "setban", 2 },
+    { "setban", 3 },
 
     // PoSV
     { "reservebalance", 0 },
     { "reservebalance",  1 },
     { "getinterest", 0 },
     { "getinterest", 1 },
+	{ "getinflation", 0 },
+	{ "getinflation", 1 },
+	{ "getinflationmultiplier", 0 },
+	{ "getinflationmultiplier", 1 },
+
 };
 
 class CRPCConvertTable

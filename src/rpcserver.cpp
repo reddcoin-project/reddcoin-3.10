@@ -260,11 +260,15 @@ static const CRPCCommand vRPCCommands[] =
     /* P2P networking */
     { "network",            "getnetworkinfo",         &getnetworkinfo,         true,      false,      false },
     { "network",            "addnode",                &addnode,                true,      true,       false },
+    { "network",            "disconnectnode",         &disconnectnode,         true,      true,       false },
     { "network",            "getaddednodeinfo",       &getaddednodeinfo,       true,      true,       false },
     { "network",            "getconnectioncount",     &getconnectioncount,     true,      false,      false },
     { "network",            "getnettotals",           &getnettotals,           true,      true,       false },
     { "network",            "getpeerinfo",            &getpeerinfo,            true,      false,      false },
     { "network",            "ping",                   &ping,                   true,      false,      false },
+    { "network",            "setban",                 &setban,                 true,      true,       false },
+    { "network",            "listbanned",             &listbanned,             true,      true,       false },
+    { "network",            "clearbanned",            &clearbanned,            true,      true,       false },
 
     /* Block chain and UTXO */
     { "blockchain",         "getblockchaininfo",      &getblockchaininfo,      true,      false,      false },
@@ -274,6 +278,8 @@ static const CRPCCommand vRPCCommands[] =
     { "blockchain",         "getblockhash",           &getblockhash,           true,      false,      false },
     { "blockchain",         "getchaintips",           &getchaintips,           true,      false,      false },
     { "blockchain",         "getdifficulty",          &getdifficulty,          true,      false,      false },
+	{ "blockchain",         "getinflation",           &getinflation,           true,      false,      false },
+	{ "blockchain",         "getinflationmultiplier", &getinflationmultiplier, true,      false,      false },
     { "blockchain",         "getmempoolinfo",         &getmempoolinfo,         true,      true,       false },
     { "blockchain",         "getrawmempool",          &getrawmempool,          true,      false,      false },
     { "blockchain",         "gettxout",               &gettxout,               true,      false,      false },
