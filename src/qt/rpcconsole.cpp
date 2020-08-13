@@ -692,10 +692,10 @@ void RPCConsole::updateNodeDetail(const CNodeCombinedStats *stats)
         ui->peerBanScore->setText(QString("%1").arg(stats->nodeStateStats.nMisbehavior));
 
         // Sync height is init to -1 //re-introduce after headers first
-        // if (stats->nodeStateStats.nSyncHeight > -1)
-        //    ui->peerSyncHeight->setText(QString("%1").arg(stats->nodeStateStats.nSyncHeight));
-        //else
-        //    ui->peerSyncHeight->setText(tr("Unknown"));
+        if (stats->nodeStateStats.nSyncHeight > -1)
+            ui->peerSyncHeight->setText(QString("%1").arg(stats->nodeStateStats.nSyncHeight));
+        else
+            ui->peerSyncHeight->setText(tr("Unknown"));
     } else {
         ui->peerBanScore->setText(tr("Fetching..."));
         //ui->peerSyncHeight->setText(tr("Fetching..."));
