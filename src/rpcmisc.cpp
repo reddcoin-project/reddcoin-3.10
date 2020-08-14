@@ -12,6 +12,7 @@
 #include "rpcserver.h"
 #include "timedata.h"
 #include "util.h"
+#include "rpcmisc.h"
 #ifdef ENABLE_WALLET
 #include "wallet.h"
 #include "walletdb.h"
@@ -19,12 +20,19 @@
 
 #include <stdint.h>
 
-#include <boost/assign/list_of.hpp>
 #include "json/json_spirit_utils.h"
 #include "json/json_spirit_value.h"
 
+#include <boost/asio.hpp>
+#include <boost/asio/ssl.hpp>
+#include <boost/assign/list_of.hpp>
+#include <boost/algorithm/string/replace.hpp>
+
+using boost::asio::ip::tcp;
+
 using namespace boost;
 using namespace boost::assign;
+using namespace boost::asio;
 using namespace json_spirit;
 using namespace std;
 
@@ -378,3 +386,165 @@ Value setmocktime(const Array& params, bool fHelp)
 
     return Value::null;
 }
+
+Value checkforupdates(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() != 0)
+        throw runtime_error(
+                "checkforupdates\n"
+                "\nCheck latest wallet version.\n"
+                "\nResult:\n"
+                "{\n"
+                "  \"installedVersion\": \"v......\",  (string) Installed wallet version.\n"
+                "  \"latestReleaseVersion\": \"v......\",       (string) Latest release wallet version pulled from reddcoin GitHub.\n"
+                "  \"message\": \"......\",       (string) Message confirming if you are on latest release version and where to download the latest version from.\n"
+                "  \"officialDownloadLink\": \"https://......\",       (string) Official direct download link.\n"
+                "  \"errors\": \"......\",      (string) Any error messages.\n"
+                "}\n"
+                "\nExamples:\n"
+                + HelpExampleCli("checkforupdates", "")
+                + HelpExampleRpc("checkforupdates", "")
+                );
+
+    return checkforupdatesinfo();
+}
+
+// Get updates info
+Value checkforupdatesinfo() {
+    Object result;
+
+    std::string installedVersion = "v" + std::to_string(CLIENT_VERSION_MAJOR) + "." + std::to_string(CLIENT_VERSION_MINOR) + "." + std::to_string(CLIENT_VERSION_REVISION);
+    std::string latestReleaseVersion = "";
+    std::string message = "";
+    std::string officialDownloadLink = "";
+    std::string errors = "";
+
+    try {
+        io_service svc;
+        ssl::context ctx(svc, ssl::context::method::sslv23_client);
+        ssl::stream<ip::tcp::socket> ssock(svc, ctx);
+        ip::tcp::resolver resolver(svc);
+        tcp::resolver::query query("api.github.com", "https");
+        tcp::resolver::iterator endpoint_iterator = resolver.resolve(query);
+
+        // Establish a connection.
+        boost::asio::connect(ssock.lowest_layer(), endpoint_iterator);
+        ssock.handshake(ssl::stream_base::handshake_type::client);
+
+        // Send request
+        boost::asio::streambuf request;
+        std::ostream request_stream(&request);
+        request_stream << "GET /repos/reddcoin-project/reddcoin/releases/latest HTTP/1.1\r\n";  // note that you can change it if you wish to HTTP/1.0
+        request_stream << "Host: api.github.com\r\n";
+        request_stream << "User-Agent: C/1.0\r\n";
+        request_stream << "Content-Type: application/json; charset=utf-8\r\n";
+        request_stream << "Accept: */*\r\n";
+        request_stream << "Connection: close\r\n\r\n";
+
+        boost::asio::write(ssock, request);
+
+        // Read the response status line. The response streambuf will automatically
+        // grow to accommodate the entire line. The growth may be limited by passing
+        // a maximum size to the streambuf constructor.
+        boost::asio::streambuf response;
+        boost::asio::read_until(ssock, response, "\r\n");
+
+        // Check that response is OK.
+        std::istream response_stream(&response);
+        std::string http_version;
+        response_stream >> http_version;
+        unsigned int status_code;
+        response_stream >> status_code;
+        std::string status_message;
+        std::getline(response_stream, status_message);
+        if (!response_stream || http_version.substr(0, 5) != "HTTP/")
+        {
+            errors = "Invalid response";
+        }
+        if (status_code != 200)
+        {
+            errors = "Response returned with status code " + std::to_string(status_code);
+        }
+
+        // Read the response headers, which are terminated by a blank line.
+        boost::asio::read_until(ssock, response, "\r\n\r\n");
+
+        std::string header;
+        while (std::getline(response_stream, header) && header != "\r") {
+            //cout << header << endl;
+        }
+
+        // Write whatever content we already have to output.
+        std::ostringstream ostringstream_content;
+        if (response.size() > 0) {
+            ostringstream_content << &response;
+        }
+
+        // Read until EOF, writing data to output as we go.
+        boost::system::error_code error;
+        while (true) {
+            size_t n = asio::read(ssock, response, asio::transfer_at_least(1), error);
+            if (!error) {
+                if (n) {
+                    ostringstream_content << &response;
+                }
+            }
+            if (error == boost::asio::error::eof) {
+                break;
+            }
+            if (error) {
+                std::string errorMsg = error.message();
+                errors = errorMsg + " " + std::to_string(error.value());
+                break;
+            }
+        }
+
+        auto str_response = ostringstream_content.str();
+
+        // Parse json response
+        json_spirit::Value val;
+
+        auto success = json_spirit::read_string(str_response, val);
+        if (success) {
+            auto jsonObject = val.get_obj();
+
+            for (auto entry : jsonObject) {
+                if (entry.name_ == "tag_name" && entry.value_.type() == json_spirit::Value_type::str_type) {
+                    latestReleaseVersion = entry.value_.get_str();
+                    break;
+                }
+            }
+        }
+
+        // Compare installed and latest GitHub versions
+        if (installedVersion.compare(latestReleaseVersion) == 0) {
+            message = "You're currently running the most recent version of Reddcoin Core (" + latestReleaseVersion + ").";
+        } else {
+            // Build direct download link
+            std::string urlWalletVersion = latestReleaseVersion;
+            boost::replace_all(urlWalletVersion, "v", "");
+            officialDownloadLink = "https://download.reddcoin.com/bin/reddcoin-core-" + urlWalletVersion;
+
+            std::string preleaseWarning = "";
+
+            // Display pre-release note if the installed version is a pre-release version
+            if (!CLIENT_VERSION_IS_RELEASE) {
+                installedVersion += " (Note: This is a pre-release test build - use at your own risk - do not use for staking or merchant applications.)";
+            }
+
+            message = "Please download the latest version from our official website below.";
+        }
+    }
+    catch (std::exception& e)
+    {
+        errors = e.what();
+    }
+
+    result.push_back(Pair("installedVersion", installedVersion));
+    result.push_back(Pair("latestReleaseVersion", latestReleaseVersion));
+    result.push_back(Pair("message", message));
+    result.push_back(Pair("officialDownloadLink", officialDownloadLink));
+    result.push_back(Pair("errors", errors));
+    return result;
+}
+

@@ -93,6 +93,7 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle *networkStyle, QWidget *parent) :
     unlockWalletAction(0),
     lockWalletAction(0),
     aboutQtAction(0),
+    checkUpdatesAction(0),
     openRPCConsoleAction(0),
     openAction(0),
     showHelpMessageAction(0),
@@ -309,6 +310,8 @@ void BitcoinGUI::createActions(const NetworkStyle *networkStyle)
 #endif
     aboutQtAction->setStatusTip(tr("Show information about Qt"));
     aboutQtAction->setMenuRole(QAction::AboutQtRole);
+    checkUpdatesAction = new QAction(QIcon(":/icons/refresh"), tr("Check for &Updates"), this);
+    checkUpdatesAction->setStatusTip(tr("Check for latest updates"));
     optionsAction = new QAction(QIcon(":/icons/options"), tr("&Options..."), this);
     optionsAction->setStatusTip(tr("Modify configuration options for Reddcoin"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
@@ -348,6 +351,7 @@ void BitcoinGUI::createActions(const NetworkStyle *networkStyle)
     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutClicked()));
     connect(aboutQtAction, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+    connect(checkUpdatesAction, SIGNAL(triggered()), this, SLOT(checkUpdatesClicked()));
     connect(optionsAction, SIGNAL(triggered()), this, SLOT(optionsClicked()));
     connect(toggleHideAction, SIGNAL(triggered()), this, SLOT(toggleHidden()));
     connect(showHelpMessageAction, SIGNAL(triggered()), this, SLOT(showHelpMessageClicked()));
@@ -410,9 +414,10 @@ void BitcoinGUI::createMenuBar()
         help->addAction(openRPCConsoleAction);
     }
     help->addAction(showHelpMessageAction);
+    help->addAction(checkUpdatesAction);
     help->addSeparator();
     help->addAction(aboutAction);
-    help->addAction(aboutQtAction);
+    help->addAction(aboutQtAction);    
 }
 
 void BitcoinGUI::createToolBars()
@@ -586,15 +591,25 @@ void BitcoinGUI::aboutClicked()
     if(!clientModel)
         return;
 
-    HelpMessageDialog dlg(this, true);
+    HelpMessageDialog dlg(this, true, false);
     dlg.exec();
 }
 
 void BitcoinGUI::showHelpMessageClicked()
 {
-    HelpMessageDialog *help = new HelpMessageDialog(this, false);
+    HelpMessageDialog *help = new HelpMessageDialog(this, false, false);
     help->setAttribute(Qt::WA_DeleteOnClose);
     help->show();
+}
+
+//TODO: check github release api and grab latest version
+void BitcoinGUI::checkUpdatesClicked()
+{
+    if(!clientModel)
+        return;
+
+    HelpMessageDialog dlg(this, false, true);
+    dlg.exec();
 }
 
 #ifdef ENABLE_WALLET

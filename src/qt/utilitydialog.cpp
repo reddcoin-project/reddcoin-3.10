@@ -12,6 +12,7 @@
 
 #include "clientversion.h"
 #include "init.h"
+#include "rpcmisc.h"
 
 #include <stdio.h>
 
@@ -20,8 +21,10 @@
 #include <QRegExp>
 #include <QVBoxLayout>
 
+#include "json/json_spirit_value.h"
+
 /** "Help message" or "About" dialog box */
-HelpMessageDialog::HelpMessageDialog(QWidget *parent, bool about) :
+HelpMessageDialog::HelpMessageDialog(QWidget *parent, bool about, bool checkUpdates) :
     QDialog(parent),
     ui(new Ui::HelpMessageDialog)
 {
@@ -38,38 +41,89 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, bool about) :
     version += " " + tr("(%1-bit)").arg(32);
 #endif
 
-    if (about)
+    if (about || checkUpdates)
     {
-        setWindowTitle(tr("About Reddcoin Core"));
-
-        /// HTML-format the license message from the core
-        QString licenseInfo = QString::fromStdString(LicenseInfo());
-        QString licenseInfoHTML = licenseInfo;
         // Make URLs clickable
         QRegExp uri("<(.*)>", Qt::CaseSensitive, QRegExp::RegExp2);
         uri.setMinimal(true); // use non-greedy matching
-        licenseInfoHTML.replace(uri, "<a href=\"\\1\">\\1</a>");
-        // Replace newlines with HTML breaks
-        licenseInfoHTML.replace("\n\n", "<br><br>");
-
         ui->helpMessageLabel->setTextFormat(Qt::RichText);
         ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-        text = version + "\n" + licenseInfo;
-        ui->helpMessageLabel->setText(version + "<br><br>" + licenseInfoHTML);
         ui->helpMessageLabel->setWordWrap(true);
+
+        if (about) {
+            // Switching back to normal dialog window size
+            resize(800, 400);
+            setWindowTitle(tr("About Reddcoin Core"));
+            /// HTML-format the license message from the core
+            QString licenseInfo = QString::fromStdString(LicenseInfo());
+            QString licenseInfoHTML = licenseInfo;
+
+            licenseInfoHTML.replace(uri, "<a href=\"\\1\">\\1</a>");
+            // Replace newlines with HTML breaks
+            licenseInfoHTML.replace("\n\n", "<br><br>");
+
+            text = version + "\n" + licenseInfo;
+            ui->helpMessageLabel->setText(version + "<br><br>" + licenseInfoHTML);
+        } else {
+            // Set small initial dialog window size for checkupdates dialog
+            resize(800, 200);
+
+            setWindowTitle(tr("Check for Updates"));
+            text = "Checking for updates. Please wait...";
+            ui->helpMessageLabel->setText(text);
+
+            // Get checkforupdatesinfo from rpcmisc
+            json_spirit::Value result = checkforupdatesinfo();
+            json_spirit::Object jsonObject = result.get_obj();
+            QString installedVersion = "";
+            QString latestReleaseVersion = "";
+            QString message = "";
+            QString officialDownloadLink = "";
+            QString errors = "";
+
+            for (auto entry : jsonObject) {
+                if (entry.name_ == "installedVersion") {
+                    installedVersion = QString::fromStdString(entry.value_.get_str());
+                } else if (entry.name_ == "latestReleaseVersion") {
+                    latestReleaseVersion = QString::fromStdString(entry.value_.get_str());
+                } else if (entry.name_ == "message") {
+                    message = QString::fromStdString(entry.value_.get_str());
+                } else if (entry.name_ == "officialDownloadLink") {
+                    officialDownloadLink = QString::fromStdString(entry.value_.get_str());
+                } else {
+                    errors = QString::fromStdString(entry.value_.get_str());
+                }
+            }
+
+            if (!errors.isEmpty()) {
+                text = "<font color = 'red'>Error: </font>";
+                text += errors;
+            } else if (installedVersion == latestReleaseVersion) {
+                text = message;
+            } else {
+                QString url = "<a href=\""+ officialDownloadLink +"\">"+ officialDownloadLink +"</a>";
+
+                text = "Installed version: <b>" + installedVersion  + "</b><br>";
+                text += "Latest release version: <b>" + latestReleaseVersion + "</b><br><br>";
+                text += "Please download the latest version from our official website (" + url + ").";
+            }
+
+            ui->helpMessageLabel->setText(text);
+        }
     } else {
+        // Switching back to normal dialog window size
+        resize(800, 400);
         setWindowTitle(tr("Command-line options"));
         QString header = tr("Usage:") + "\n" +
-            "  reddcoin-qt [" + tr("command-line options") + "]                     " + "\n";
+                "  reddcoin-qt [" + tr("command-line options") + "]                     " + "\n";
 
         QString coreOptions = QString::fromStdString(HelpMessage(HMM_BITCOIN_QT));
-
         QString uiOptions = tr("UI options") + ":\n" +
-            "  -choosedatadir            " + tr("Choose data directory on startup (default: 0)") + "\n" +
-            "  -lang=<lang>              " + tr("Set language, for example \"de_DE\" (default: system locale)") + "\n" +
-            "  -min                      " + tr("Start minimized") + "\n" +
-            "  -rootcertificates=<file>  " + tr("Set SSL root certificates for payment request (default: -system-)") + "\n" +
-            "  -splash                   " + tr("Show splash screen on startup (default: 1)");
+                "  -choosedatadir            " + tr("Choose data directory on startup (default: 0)") + "\n" +
+                "  -lang=<lang>              " + tr("Set language, for example \"de_DE\" (default: system locale)") + "\n" +
+                "  -min                      " + tr("Start minimized") + "\n" +
+                "  -rootcertificates=<file>  " + tr("Set SSL root certificates for payment request (default: -system-)") + "\n" +
+                "  -splash                   " + tr("Show splash screen on startup (default: 1)");
 
         ui->helpMessageLabel->setFont(GUIUtil::bitcoinAddressFont());
         text = version + "\n" + header + "\n" + coreOptions + "\n" + uiOptions;

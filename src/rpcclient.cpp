@@ -95,6 +95,9 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "reservebalance",  1 },
     { "getinterest", 0 },
     { "getinterest", 1 },
+
+    // Updates
+    { "checkforupdates", 4 },
 };
 
 class CRPCConvertTable

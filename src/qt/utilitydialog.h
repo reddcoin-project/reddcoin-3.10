@@ -21,7 +21,7 @@ class HelpMessageDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit HelpMessageDialog(QWidget *parent, bool about);
+    explicit HelpMessageDialog(QWidget *parent, bool about, bool checkUpdates);
     ~HelpMessageDialog();
 
     void printToConsole();
