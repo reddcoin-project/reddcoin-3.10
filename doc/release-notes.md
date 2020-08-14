@@ -1,4 +1,4 @@
-Reddcoin Core version 3.10.2 is now available from:
+Reddcoin Core version 3.10.3 is now available from:
 
   https://reddcoin.com/
 
@@ -348,11 +348,50 @@ should read the first paragraph of "Mining and relay policy enhancements" above.
 =================
 
 Misc:
+- `9a88a1c` fix branding - reddcoin  
+- `6a25de4` enable syncheight on peers tab  
+- `d077d8a` during getheaders sync monitor and manage the number of connection out to peers  
+- `4f33c94` Ignore getheaders requests when not synced.  
+- `5192b7f` fix insane fee check  
+- `1a701dd` [QT] dump banlist to disk in case of ban/unban over QT  
+- `1ba58a3` [QA] adabt QT_NO_KEYWORDS for QT ban implementation  
+- `104f8cc` [QA] fix netbase tests because of new CSubNet::ToString() output  
+- `09d3c85` [Qt] call DumpBanlist() when baning unbaning nodes  
+- `a9ed4cb` [Qt] reenabling hotkeys for ban context menu, use different words  
+- `79abfb8` Use new Qt5 connect syntax  
+- `82b03a4` [Qt] adapt QT ban option to banlist.dat changes  
+- `ec459ea` [Qt] add sorting for bantable  
+- `42b7aa7` [Qt] bantable polish  
+- `2a6c21e` [Qt] simplify ban list signal handling  
+- `a5f38d3` [Qt] remove unused timer-code from banlistmodel.cpp  
+- `7ccd640` net: Fix CIDR notation in ToString()  
+- `7e62c45` [QT] refactor QSignalMapper  
+- `650ec98` [Qt] polish ban table  
+- `cfcd15f` net: use CIDR notation in CSubNet::ToString()  
+- `650c493` [Qt] bantable overhaul  
+- `1fd5c03` [Qt] bantable fix timestamp 64bit issue  
+- `4ceea86` [Qt] banlist, UI optimizing and better signal handling  
+- `482a625` [Qt] add context menu with unban option to ban table  
+- `cad6cf1` [Qt] add ui signal for banlist changes  
+- `1798835` [Qt] add banlist table below peers table  
+- `a7c4794` [Qt] add ban functions to peers window  
+- `4c175ca` Adding CSubNet constructor over a single CNetAddr  
+- `3a581fe` use CBanEntry as object container for banned nodes  
+- `b9eceb9` CAddrDB/CBanDB: change filesize variables from int to uint64_t  
+- `47d5611` banlist.dat: store banlist on disk  
+- `b0e0d4e` fix lock issue for QT node diconnect and RPC disconnectnode  
+- `8d230a4` setban: add IPv6 tests  
+- `4f3bd6f` [RPC] add getinflation/ getinflationmultiplier RPC commands  
+- `f0d4a26` split getinflation from getinflationadjustment  
+- `f80bd0c` Reduce download timeouts as blocks arrive  
+- `2caef42` fix iterator progression  
+- `1c5b378` update details about downgrading  
+- `66bcefd` release candidate  
+- `f7b5d7d` release notes  
 - `118331a` remove duplicate stake check from checkblock  
 - `7a86b95` update stakeseen when transactions have been received  
 - `51680e5` reduce logging output  
 - `7513a68` Stake spent amplification attack fix  
-- `33d8302` update staking icon status when wallet (un)lock is toggled  
 - `5e19fd0` add MaxReorganizationDepth()  
 - `6b93b48` Bugfix: Allow mining on top of old tip blocks for testnet (fixes testnet-in-a-box use case)  
 - `a77aacf` Set nSequenceId when a block is fully linked  
@@ -392,7 +431,6 @@ Misc:
 - `159d8d9` VerifyHashTarget needs previous transactions  
 - `f4a4a06` update stakeseen after written to index  
 - `6c288a8` check pindex instead of chainActive.tip  
-- `c8e31ef` Select a specific commit to use for gitian-builder  
 - `27dff69` account for vchBlockSig in posv blocks  
 - `be5933d` Add GetNextWorkRequired debug logging  
 - `afa19a6` Increase number of blocks in transit  
