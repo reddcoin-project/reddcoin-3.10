@@ -123,6 +123,11 @@ private:
     /** PoSV: local weight for staking */
     uint64_t nAverageWeight;
     uint64_t nTotalWeight;
+    uint64_t cachedAverageWeight;
+    uint64_t cachedTotalWeight;
+    uint64_t cachedNetworkWeight;
+    uint64_t cachedEstimateTime;
+    bool cachedIBD;
 
     /** Create the main UI actions. */
     void createActions(const NetworkStyle *networkStyle);
@@ -212,8 +217,11 @@ private slots:
     /** Simply calls showNormalIfMinimized(true) for use in SLOT() macro */
     void toggleHidden();
 
-    void updateWeight();
-    void updateStakingIcon();
+    /** Update the values for network weight */
+    void updateStakingWeight();
+
+    /** Update the Staking Icon */
+    void setStakingStatus();
 
     /** called by a timer to check if fRequestShutdown has been set **/
     void detectShutdown();

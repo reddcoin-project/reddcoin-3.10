@@ -103,7 +103,12 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle *networkStyle, QWidget *parent) :
     prevBlocks(0),
     spinnerFrame(0),
     nAverageWeight(0),
-    nTotalWeight(0)
+    nTotalWeight(0),
+    cachedAverageWeight(0),
+    cachedTotalWeight(0),
+    cachedNetworkWeight(0),
+    cachedEstimateTime(0),
+	cachedIBD(true)
 {
     GUIUtil::restoreWindowGeometry("nWindow", QSize(850, 550), this);
 
@@ -196,9 +201,12 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle *networkStyle, QWidget *parent) :
 
     {
         QTimer *timerStakingIcon = new QTimer(labelStakingIcon);
-        connect(timerStakingIcon, SIGNAL(timeout()), this, SLOT(updateStakingIcon()));
-        timerStakingIcon->start(60 * 1000);
-        updateStakingIcon();
+        connect(timerStakingIcon, SIGNAL(timeout()), this, SLOT(setStakingStatus()));
+        timerStakingIcon->start(MODEL_UPDATE_DELAY);
+
+        QTimer *timerStakingWeight = new QTimer(this);
+        connect(timerStakingWeight, SIGNAL(timeout()), this, SLOT(updateStakingWeight()));
+        timerStakingWeight->start(MODEL_UPDATE_DELAY * 4 * 60);
     }
 
     // Progress bar and label for blocks download
@@ -705,6 +713,8 @@ void BitcoinGUI::setNumBlocks(int count)
         tooltip = tr("Up to date") + QString(".<br>") + tooltip;
         labelBlocksIcon->setPixmap(QIcon(":/icons/synced").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
 
+        cachedIBD = false;
+
 #ifdef ENABLE_WALLET
         if(walletFrame)
             walletFrame->showOutOfSyncWarning(false);
@@ -739,6 +749,8 @@ void BitcoinGUI::setNumBlocks(int count)
             int remainder = secs % YEAR_IN_SECONDS;
             timeBehindText = tr("%1 and %2").arg(tr("%n year(s)", "", years)).arg(tr("%n week(s)","", remainder/WEEK_IN_SECONDS));
         }
+
+        cachedIBD = true;
 
         progressBarLabel->setVisible(true);
         progressBar->setFormat(tr("%1 behind").arg(timeBehindText));
@@ -930,8 +942,6 @@ bool BitcoinGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
 
 void BitcoinGUI::setEncryptionStatus(int status)
 {
-	updateStakingIcon();
-
     switch(status)
     {
     case WalletModel::Unencrypted:
@@ -996,7 +1006,7 @@ void BitcoinGUI::toggleHidden()
     showNormalIfMinimized(true);
 }
 
-void BitcoinGUI::updateWeight()
+void BitcoinGUI::updateStakingWeight()
 {
     if (!pwalletMain)
         return;
@@ -1010,41 +1020,52 @@ void BitcoinGUI::updateWeight()
         return;
 
     pwalletMain->GetStakeWeight(nAverageWeight, nTotalWeight);
+
+    uint64_t nNetworkWeight;
+    uint64_t nEstimateTime;
+
+    if (nAverageWeight) {
+        nNetworkWeight = GetPoSVKernelPS();
+        nEstimateTime = Params().TargetSpacing() * nNetworkWeight / nTotalWeight;
+
+        if (cachedAverageWeight != nAverageWeight || cachedTotalWeight != nTotalWeight || cachedNetworkWeight != nNetworkWeight || cachedEstimateTime != nEstimateTime) {
+            cachedAverageWeight = nAverageWeight;
+            cachedTotalWeight = nTotalWeight;
+            cachedNetworkWeight = nNetworkWeight;
+            cachedEstimateTime = nEstimateTime;
+        }
+    }
 }
 
-void BitcoinGUI::updateStakingIcon()
+void BitcoinGUI::setStakingStatus()
 {
-    updateWeight();
-    IsStaking();
 
-    if (nLastCoinStakeSearchInterval && nAverageWeight && IsStaking() && (pwalletMain && !pwalletMain->IsLocked())) {
-        uint64_t nNetworkWeight = GetPoSVKernelPS();
-        uint64_t nEstimateTime = Params().TargetSpacing() * nNetworkWeight / nTotalWeight;
+    if (nLastCoinStakeSearchInterval && cachedAverageWeight && IsStaking() && (pwalletMain && !pwalletMain->IsLocked())) {
 
         QString text;
-        if (nEstimateTime < 60) {
-            text = tr("%n second(s)", "", nEstimateTime);
-        } else if (nEstimateTime < 60 * 60) {
-            text = tr("%n minute(s)", "", nEstimateTime / 60);
-        } else if (nEstimateTime < 24 * 60 * 60) {
-            text = tr("%n hour(s)", "", nEstimateTime / (60 * 60));
+        if (cachedEstimateTime < 60) {
+            text = tr("%n second(s)", "", cachedEstimateTime);
+        } else if (cachedEstimateTime < 60 * 60) {
+            text = tr("%n minute(s)", "", cachedEstimateTime / 60);
+        } else if (cachedEstimateTime < 24 * 60 * 60) {
+            text = tr("%n hour(s)", "", cachedEstimateTime / (60 * 60));
         } else {
-            text = tr("%n day(s)", "", nEstimateTime / (60 * 60 * 24));
+            text = tr("%n day(s)", "", cachedEstimateTime / (60 * 60 * 24));
         }
 
         labelStakingIcon->setPixmap(QIcon(":/icons/staking_on").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
-        labelStakingIcon->setToolTip(tr("Staking.<br>Your average weight is %1<br>Your total weight is %2<br>Network weight is %3<br>Expected to earn reward once every %4").arg(nAverageWeight).arg(nTotalWeight).arg(nNetworkWeight).arg(text));
+        labelStakingIcon->setToolTip(tr("Staking.<br>Your average weight is %1<br>Your total weight is %2<br>Network weight is %3<br>Expected to earn reward once every %4").arg(cachedAverageWeight).arg(cachedTotalWeight).arg(cachedNetworkWeight).arg(text));
     } else {
         labelStakingIcon->setPixmap(QIcon(":/icons/staking_off").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
         if (vNodes.empty())
             labelStakingIcon->setToolTip(tr("Not staking because wallet is offline"));
-        else if (IsInitialBlockDownload())
+        else if (cachedIBD)
             labelStakingIcon->setToolTip(tr("Not staking because wallet is syncing"));
         else if (!IsStaking())
         	labelStakingIcon->setToolTip(tr("Not staking because staking is disabled"));
         else if (pwalletMain && pwalletMain->IsLocked())
             labelStakingIcon->setToolTip(tr("Not staking because wallet is locked"));
-        else if (!nAverageWeight)
+        else if (!cachedAverageWeight)
             labelStakingIcon->setToolTip(tr("Not staking because you don't have mature coins"));
         else
             labelStakingIcon->setToolTip(tr("Not staking"));
