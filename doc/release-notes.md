@@ -348,6 +348,10 @@ should read the first paragraph of "Mining and relay policy enhancements" above.
 =================
 
 Misc:
+- `c2f2daf` fix duplication of help messages  
+- `384dd7a` Replace save|restoreWindowGeometry with Qt functions  
+- `c6412f8` qt: Don't save geometry for options and about/help window  
+- `598081b` no need to check for sync started  
 - `9a88a1c` fix branding - reddcoin  
 - `6a25de4` enable syncheight on peers tab  
 - `d077d8a` during getheaders sync monitor and manage the number of connection out to peers  
@@ -922,6 +926,7 @@ Credits (Reddcoin)
 =================
 
 - John Nash
+- Pramod Joshi
 - TechAdept
 - cryptoBUZE
 - Randy Vice
