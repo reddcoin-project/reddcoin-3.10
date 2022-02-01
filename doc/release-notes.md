@@ -1,8 +1,8 @@
-Reddcoin Core version 3.10.3 is now available from:
+Reddcoin Core version 3.10.4 is now available from:
 
   https://reddcoin.com/
 
-This is a new major version release, bringing both new features and
+This is a new minor version release, bringing both new features and
 bug fixes.
 
 Please report bugs using the issue tracker at github:
@@ -343,6 +343,14 @@ blocks have version number 3 or higher, it becomes mandatory for all blocks.
 
 Backward compatibility with current staking software is NOT provided, thus stakers
 should read the first paragraph of "Mining and relay policy enhancements" above.
+
+3.10.4 Change log
+=================
+
+Misc:
+- `48fdd99` update dns for testnet seeders
+- `7d12dcc` update for new testnet3
+- `cce0cb2` reddcoin uri is 1 char longer
 
 3.10.3 Change log
 =================
