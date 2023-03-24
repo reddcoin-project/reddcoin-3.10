@@ -151,6 +151,8 @@ Value getpeerinfo(const Array& params, bool fHelp)
                 heights.push_back(height);
             }
             obj.push_back(Pair("inflight", heights));
+            obj.push_back(Pair("addr_processed", stats.m_addr_processed));
+            obj.push_back(Pair("addr_rate_limited", stats.m_addr_rate_limited));
         }
         obj.push_back(Pair("whitelisted", stats.fWhitelisted));
 

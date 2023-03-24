@@ -638,6 +638,8 @@ void CNode::copyStats(CNodeStats &stats)
     X(nSendBytes);
     X(nRecvBytes);
     X(fWhitelisted);
+    X(m_addr_rate_limited);
+    X(m_addr_processed);
 
     // It is common for nodes with good ping times to suddenly become lagged,
     // due to a new block arriving or other large transfer.
@@ -2122,6 +2124,7 @@ CNode::CNode(SOCKET hSocketIn, CAddress addrIn, std::string addrNameIn, bool fIn
     nPingUsecStart = 0;
     nPingUsecTime = 0;
     fPingQueued = false;
+    m_addr_token_timestamp = GetTimeMicros();
 
     {
         LOCK(cs_nLastNodeId);
