@@ -20,6 +20,7 @@
 #include "utilstrencodings.h"
 
 #include <deque>
+#include <atomic>
 #include <stdint.h>
 
 #ifndef WIN32
@@ -46,6 +47,13 @@ static const int TIMEOUT_INTERVAL = 20 * 60;
 static const unsigned int MAX_INV_SZ = 50000;
 /** The maximum number of new addresses to accumulate before announcing. */
 static const unsigned int MAX_ADDR_TO_SEND = 1000;
+/** The maximum rate of address records we're willing to process on average. Can be bypassed using
+ *  the NetPermissionFlags::Addr permission. */
+static constexpr double MAX_ADDR_RATE_PER_SECOND = 0.1;
+/** The soft limit of the address processing token bucket (the regular MAX_ADDR_RATE_PER_SECOND
+ *  based increments won't go above this, but the MAX_ADDR_TO_SEND increment following GETADDR
+ *  is exempt from this limit. */
+static constexpr size_t MAX_ADDR_PROCESSING_TOKEN_BUCKET = MAX_ADDR_TO_SEND;
 /** Maximum length of incoming protocol messages (no message over 2 MiB is currently acceptable). */
 static const unsigned int MAX_PROTOCOL_MESSAGE_LENGTH = 2 * 1024 * 1024;
 /** -listen default */
@@ -168,6 +176,8 @@ public:
     double dPingTime;
     double dPingWait;
     std::string addrLocal;
+    uint64_t m_addr_rate_limited;
+    uint64_t m_addr_processed;
 };
 
 
@@ -322,6 +332,17 @@ public:
     CBloomFilter* pfilter;
     int nRefCount;
     NodeId id;
+
+
+    /** Number of addresses that can be processed from this peer. Start at 1 to
+     *  permit self-announcement. */
+    double m_addr_token_bucket = 1.0;
+       /** When m_addr_token_bucket was last updated */
+    int64_t m_addr_token_timestamp = 0;
+    /** Total number of addresses that were dropped due to rate limiting. */
+    uint64_t m_addr_rate_limited = 0;
+    /** Total number of addresses that were processed (excludes rate limited ones). */
+    uint64_t m_addr_processed = 0;
 protected:
 
     // Denial-of-service detection/prevention

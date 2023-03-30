@@ -22,6 +22,8 @@
 #include "utilmoneystr.h"
 
 #include <sstream>
+#include <algorithm> // std::shuffle
+#include <random>
 
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
@@ -4021,6 +4023,9 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             {
                 pfrom->PushMessage("getaddr");
                 pfrom->fGetAddr = true;
+                // When requesting a getaddr, accept an additional MAX_ADDR_TO_SEND addresses in response
+                // (bypassing the MAX_ADDR_PROCESSING_TOKEN_BUCKET limit).
+                pfrom->m_addr_token_bucket += MAX_ADDR_TO_SEND;
             }
             addrman.Good(pfrom->addr);
         } else {
@@ -4091,13 +4096,40 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         vector<CAddress> vAddrOk;
         int64_t nNow = GetAdjustedTime();
         int64_t nSince = nNow - 10 * 60;
+
+        // Update/increment addr rate limiting bucket.
+        const int64_t current_time = GetTimeMicros();
+        if (pfrom->m_addr_token_bucket < MAX_ADDR_PROCESSING_TOKEN_BUCKET) {
+            // Don't increment bucket if it's already full
+            const int64_t time_diff = std::max(current_time - pfrom->m_addr_token_timestamp, (int64_t)0);
+            const double increment = time_diff * MAX_ADDR_RATE_PER_SECOND / 1000000.0;
+            pfrom->m_addr_token_bucket = std::min<double>(pfrom->m_addr_token_bucket + increment, MAX_ADDR_PROCESSING_TOKEN_BUCKET);
+        }
+        pfrom->m_addr_token_timestamp = current_time;
+
+        uint64_t num_proc = 0;
+        uint64_t num_rate_limit = 0;
+        std::mt19937 randomSeed(std::random_device{}());
+        std::shuffle(vAddr.begin(), vAddr.end(), randomSeed); // TODO: check this randomness
+
         BOOST_FOREACH(CAddress& addr, vAddr)
         {
             boost::this_thread::interruption_point();
 
+            constexpr bool rate_limited = true; // TODO: do we want to expose this to the CLI?
+             // Apply rate limiting.
+            if (rate_limited) {
+                if (pfrom->m_addr_token_bucket < 1.0) {
+                    ++num_rate_limit;
+                    continue;
+                }
+                pfrom->m_addr_token_bucket -= 1.0;
+            }
+
             if (addr.nTime <= 100000000 || addr.nTime > nNow + 10 * 60)
                 addr.nTime = nNow - 5 * 24 * 60 * 60;
             pfrom->AddAddressKnown(addr);
+            ++num_proc;
             bool fReachable = IsReachable(addr);
             if (addr.nTime > nSince && !pfrom->fGetAddr && vAddr.size() <= 10 && addr.IsRoutable())
             {
@@ -4132,6 +4164,16 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             if (fReachable)
                 vAddrOk.push_back(addr);
         }
+        CNodeState *nodestate = State(pfrom->GetId());
+		pfrom->m_addr_processed += num_proc;
+		pfrom->m_addr_rate_limited += num_rate_limit;
+		LogPrint("net", "Received addr: %u addresses (%u processed, %u rate-limited) from peer=%d%s\n",
+				 vAddr.size(),
+				 num_proc,
+				 num_rate_limit,
+				 pfrom->GetId(),
+				 fLogIPs ? ", peeraddr=" + pfrom->addr.ToString() : "");
+
         addrman.Add(vAddrOk, pfrom->addr, 2 * 60 * 60);
         if (vAddr.size() < 1000)
             pfrom->fGetAddr = false;
