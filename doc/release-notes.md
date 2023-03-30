@@ -2,8 +2,8 @@ Reddcoin Core version 3.10.5 is now available from:
 
   https://reddcoin.com/
 
-This version release, brings two new important features and
-bug fixes to maintain compatibility with newer core walletsi.
+This is a security release that fixes some identified vulnerabilities in the core wallet.
+All users should update to this release immediately.
 
 Please report bugs using the issue tracker at github:
 
