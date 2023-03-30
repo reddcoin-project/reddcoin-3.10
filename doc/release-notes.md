@@ -1,9 +1,9 @@
-Reddcoin Core version 3.10.4 is now available from:
+Reddcoin Core version 3.10.5 is now available from:
 
   https://reddcoin.com/
 
-This is a new minor version release, bringing both new features and
-bug fixes.
+This version release, brings two new important features and
+bug fixes to maintain compatibility with newer core walletsi.
 
 Please report bugs using the issue tracker at github:
 
@@ -21,7 +21,7 @@ installer (on Windows) or just copy over /Applications/Reddcoin-Qt (on Mac) or
 reddcoind/reddcoin-qt (on Linux).
 
 Downgrade warning
----------------------
+-----------------
 
 Because release 3.10.2 makes use of headers-first synchronization and parallel
 block download, the block files and databases are not backwards-compatible
@@ -46,88 +46,17 @@ This does not affect wallet forward or backward compatibility.
 Notable changes
 ===============
 
-Fix buffer overflow in bundled upnp
-------------------------------------
+Allow Segwit transactions to be included in POS blocks
+------------------------------------------------------
 
-Bundled miniupnpc was updated to 1.9.20151008. This fixes a buffer overflow in
-the XML parser during initial network discovery.
+Newer releases of Reddcoin Core include support for segwit transactions.
+This update includes a change to allow for segwit transactions to be included in POS blocks
 
-Details can be found here: http://talosintel.com/reports/TALOS-2015-0035/
+Rate-limit p2p addr message
+---------------------------
 
-This applies to the distributed executables only, not when building from source or
-using distribution provided packages.
-
-Additionally, upnp has been disabled by default. This may result in a lower
-number of reachable nodes on IPv4, however this prevents future libupnpc
-vulnerabilities from being a structural risk to the network
-(see https://github.com/bitcoin/bitcoin/pull/6795).
-
-Test for LowS signatures before relaying
------------------------------------------
-
-Make the node require the canonical 'low-s' encoding for ECDSA signatures when
-relaying or mining.  This removes a nuisance malleability vector.
-
-Consensus behavior is unchanged.
-
-If widely deployed this change would eliminate the last remaining known vector
-for nuisance malleability on SIGHASH_ALL P2PKH transactions. On the down-side
-it will block most transactions made by sufficiently out of date software.
-
-Unlike the other avenues to change txids on transactions this
-one was randomly violated by all deployed reddcoin software prior to
-its discovery. So, while other malleability vectors where made
-non-standard as soon as they were discovered, this one has remained
-permitted. Even BIP62 did not propose applying this rule to
-old version transactions, but conforming implementations have become
-much more common since BIP62 was initially written.
-
-Reddcoin Core has produced compatible signatures since a28fb70e in
-January 2014, but this didn't make it into a release until 2.0
-in September 2015; Bitcoinj has done so for a similar span of time.
-Bitcoinjs and electrum have been more recently updated.
-
-This does not replace the need for BIP62 or similar, as miners can
-still cooperate to break transactions.  Nor does it replace the
-need for wallet software to handle malleability sanely[1]. This
-only eliminates the cheap and irritating DOS attack.
-
-[1] On the Malleability of Bitcoin Transactions
-Marcin Andrychowicz, Stefan Dziembowski, Daniel Malinowski, Łukasz Mazurek
-http://fc15.ifca.ai/preproceedings/bitcoin/paper_9.pdf
-
-Transaction fee changes
------------------------
-
-This release automatically estimates how high a transaction fee (or how
-high a priority) transactions require to be confirmed quickly. The default
-settings will create transactions that confirm quickly; see the new
-'txconfirmtarget' setting to control the tradeoff between fees and
-confirmation times. Fees are added by default unless the 'sendfreetransactions' 
-setting is enabled.
-
-Prior releases used hard-coded fees (and priorities), and would
-sometimes create transactions that took a very long time to confirm.
-
-Statistics used to estimate fees and priorities are saved in the
-data directory in the `fee_estimates.dat` file just before
-program shutdown, and are read in at startup.
-
-New command line options for transaction fee changes:
-- `-txconfirmtarget=n` : create transactions that have enough fees (or priority)
-so they are likely to begin confirmation within n blocks (default: 1). This setting
-is over-ridden by the -paytxfee option.
-- `-sendfreetransactions` : Send transactions as zero-fee transactions if possible 
-(default: 1)
-
-New RPC commands for fee estimation:
-- `estimatefee nblocks` : Returns approximate fee-per-1,000-bytes needed for
-a transaction to begin confirmation within nblocks. Returns -1 if not enough
-transactions have been observed to compute a good estimate.
-- `estimatepriority nblocks` : Returns approximate priority needed for
-a zero-fee transaction to begin confirmation within nblocks. Returns -1 if not
-enough free transactions have been observed to compute a good
-estimate.
+P2P messaging had a resource consumption vulnerability that might allow for Denial of Service/ DOS attacks against a peer.
+This update includes a fix to rate-limit the messages exchanged between nodes.
 
 RPC access control changes
 --------------------------
