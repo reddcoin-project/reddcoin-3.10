@@ -303,7 +303,7 @@ Execute the following as user `debian`:
 
 ```bash
 cd gitian-builder
-bin/make-base-vm --lxc --arch amd64 --suite precise
+bin/make-base-vm --lxc --arch amd64 --suite trusty
 ```
 
 There will be a lot of warnings printed during build of the images. These can be ignored.
