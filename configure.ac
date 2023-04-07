@@ -113,9 +113,9 @@ AC_ARG_ENABLE([hardening],
 
 AC_ARG_ENABLE([reduce-exports],
   [AS_HELP_STRING([--enable-reduce-exports],
-  [attempt to reduce exported symbols in the resulting executables (default is yes)])],
+  [attempt to reduce exported symbols in the resulting executables (default is np)])],
   [use_reduce_exports=$enableval],
-  [use_reduce_exports=auto])
+  [use_reduce_exports=no])
 
 AC_ARG_ENABLE([ccache],
   [AS_HELP_STRING([--enable-ccache],
