@@ -1,4 +1,4 @@
-Reddcoin Core version 3.10.5 is now available from:
+Reddcoin Core version 3.10.6 is now available from:
 
   https://reddcoin.com/
 
@@ -57,6 +57,17 @@ Rate-limit p2p addr message
 
 P2P messaging had a resource consumption vulnerability that might allow for Denial of Service/ DOS attacks against a peer.
 This update includes a fix to rate-limit the messages exchanged between nodes.
+
+Build Process
+-------------
+
+Reddcoin 3.10 is now built using ubuntu 'trusty' and c++11 during the gitian build process.
+C++11 is a minimum for all further builds.
+
+The selection of 'trusty' was in order to enable support for c++11 (supported in gcc 4.8)
+The requirement for c++11 extends to the previous Reddcoin release (3.10.5) having some unsupported calls in c++98.
+Along with the gitian build process, a number of software depends have also been updated. 
+
 
 RPC access control changes
 --------------------------
