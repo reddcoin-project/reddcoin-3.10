@@ -92,15 +92,15 @@ Commit your signature to gitian.sigs:
 	popd
 
   Wait for OS X detached signature:
-	Once the OS X build has 3 matching signatures, John will sign it with the apple App-Store key.
-	He will then upload a detached signature to be combined with the unsigned app to create a signed binary.
+	Once the OS X build has 3 matching signatures, it will be signed with the Apple App-Store key.
+	A detached signature will then be committed to the bitcoin-detached-sigs repository, which can be combined with the unsigned app to create a signed binary.
 
   Create the signed OS X binary:
 
 	pushd ./gitian-builder
 	# Fetch the signature as instructed by John
 	cp signature.tar.gz inputs/
-	./bin/gbuild -i ../reddcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gbuild i --commit signature=v${VERSION} ../reddcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../reddcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
 	mv build/out/reddcoin-osx-signed.dmg ../reddcoin-${VERSION}-osx.dmg
 	popd
