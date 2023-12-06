@@ -8,6 +8,34 @@ https://www.reddcoin.com
 Copyright (c) 2009-2020 Bitcoin Core Developers  
 Copyright (c) 2014-2020 Reddcoin Core Developers
 
+### Notice
+
+In preparation of moving to an updated code base, this repository is being renamed (and potentially archived)  
+The new location will be https://github.com/reddcoin-project/reddcoin-3.10  
+If you have cloned this repo previously, you will need to update and refresh git source links  
+```
+NEW_URL=https://github.com/reddcoin-project/reddcoin-3.10
+git remote set-url origin NEW_URL
+```
+
+This current repository location https://github.com/reddcoin-project/reddcoin will be used for the updated code base of  
+https://github.com/reddcoin-project/reddcoin-0.22
+
+
+That is, [Reddcoin 0.22](https://github.com/reddcoin-project/reddcoin-0.22) => [Reddcoin](https://github.com/reddcoin-project/reddcoin)
+
+If you have cloned this repo previously, you will need to update and refresh git source links  
+```
+NEW_URL=https://github.com/reddcoin-project/reddcoin
+git remote set-url origin NEW_URL
+```
+
+
+ref:
+- https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository
+- https://docs.github.com/en/repositories/archiving-a-github-repository/archiving-repositories
+
+
 What is Reddcoin?
 ----------------
 
