@@ -117,6 +117,7 @@ BITCOIN_CORE_H = \
   pubkey.h \
   random.h \
   rpcclient.h \
+  rpcmisc.h \
   rpcprotocol.h \
   rpcserver.h \
   script/interpreter.h \
