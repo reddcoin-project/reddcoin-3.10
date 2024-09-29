@@ -59,6 +59,8 @@ class BitcoinRPC:
 		return resp_obj['result']
 	def getblock(self, hash, verbose=True):
 		return self.rpc('getblock', [hash, verbose])
+	def getblockcount(self):
+		return self.rpc('getblockcount')
 	def getblockhash(self, index):
 		return self.rpc('getblockhash', [index])
 
@@ -75,7 +77,18 @@ def get_blocks(settings):
 
 	outf = open(settings['output'], 'ab')
 
-	for height in xrange(settings['min_height'], settings['max_height']+1):
+	block_count = rpc.getblockcount()
+
+	min_block = settings['min_height']
+
+	if settings['max_height'] == 0:
+		max_block = block_count - (block_count % settings['nearest_multiple'])
+	else:
+		max_block = settings['max_height']
+
+	print "Generating block range {} ... {}".format(min_block, max_block)
+
+	for height in xrange(min_block, max_block+1):
 		data = getblock(rpc, settings, height)
 
 		outhdr = settings['netmagic']
@@ -113,11 +126,13 @@ if __name__ == '__main__':
 	if 'host' not in settings:
 		settings['host'] = '127.0.0.1'
 	if 'port' not in settings:
-		settings['port'] = 8332
+		settings['port'] = 45443
 	if 'min_height' not in settings:
 		settings['min_height'] = 0
 	if 'max_height' not in settings:
-		settings['max_height'] = 279000
+		settings['max_height'] = 0
+	if 'nearest_multiple' not in settings:
+		settings['nearest_multiple'] = 1000
 	if 'rpcuser' not in settings or 'rpcpassword' not in settings:
 		print "Missing username and/or password in cfg file"
 		sys.exit(1)
@@ -126,6 +141,7 @@ if __name__ == '__main__':
 	settings['port'] = int(settings['port'])
 	settings['min_height'] = int(settings['min_height'])
 	settings['max_height'] = int(settings['max_height'])
+	settings['nearest_multiple'] = int(settings['nearest_multiple'])
 
 	get_blocks(settings)
 
